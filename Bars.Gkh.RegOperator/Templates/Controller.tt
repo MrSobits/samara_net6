@@ -1,0 +1,42 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ assembly Name="C:\_TFS\GKH.GKH.CMMI\Sources\Bars.Gkh.RegOperator\bin\Debug\Bars.Gkh.dll" #>
+<#@ assembly Name="C:\_TFS\GKH.GKH.CMMI\Sources\Bars.Gkh.RegOperator\bin\Debug\Newtonsoft.Json.dll" #>
+<#@ assembly Name="C:\_TFS\GKH.GKH.CMMI\Sources\Bars.Gkh.RegOperator\bin\Debug\Bars.B4.Core.dll" #>
+<#@ assembly Name="C:\_TFS\GKH.GKH.CMMI\Sources\Bars.Gkh.RegOperator\bin\Debug\Bars.Gkh.RegOperator.dll" #>
+<#@ import namespace="Newtonsoft.Json" #>
+<#@ import namespace="Bars.Gkh.RegOperator.Entities" #>
+<#@ output extension=".js" #>
+Ext.define('B4.controller.<#= entityName #>', {
+    extend: 'B4.base.Controller',
+    requires: [
+        'B4.mixins.Context',
+        'B4.view.<#= entityName #>Grid'
+    ],
+
+    stores: ['<#= entityName #>'],
+
+    mixins: {
+        context: 'B4.mixins.Context'
+    },
+
+    refs: [
+        {
+            ref: 'mainView',
+            selector: '<#= widget #>'
+        }
+    ],
+
+    index: function () {
+        var view = this.getMainView() || Ext.widget('<#= widget #>');
+        this.bindContext(view);
+        this.application.deployView(view);
+    }
+});
+
+<#+ string entityName="regop.personal_account.PersonalAccount"; #>
+<#+ string widget=""; #>
+<#+ Type t = typeof(PersonalAccount); #>

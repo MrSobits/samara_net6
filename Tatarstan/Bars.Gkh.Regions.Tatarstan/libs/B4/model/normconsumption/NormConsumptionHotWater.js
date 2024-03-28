@@ -1,0 +1,41 @@
+﻿Ext.define('B4.model.normconsumption.NormConsumptionHotWater', {
+    extend: 'B4.base.Model',
+    idProperty: 'Id',
+    proxy: {
+        type: 'b4proxy',
+        controllerName: 'NormConsumptionHotWater',
+        listAction: 'ListNormConsumptionHotWater'
+    },
+    fields: [
+        { name: 'Id', useNull: true },
+        { name: 'Municipality' },
+        { name: 'RealityObject' },
+        { name: 'Address' },
+        { name: 'ObjectId' },
+        { name: 'FloorNumber' },
+        { name: 'MetersInstalled' },
+        { name: 'BuildYear' },
+        { name: 'AreaHouse' },
+        { name: 'AreaLivingRooms' },
+        { name: 'AreaNotLivingRooms' },
+        { name: 'AreaOtherRooms' },
+        { name: 'IsIpuNotLivingPermises' },
+        { name: 'AreaIpuNotLivingPermises' },
+        { name: 'VolumeHotWaterNotLivingIsIpu' },
+        { name: 'VolumeWaterOpuOnPeriod' },
+        { name: 'HeatingPeriod' },
+        { name: 'TypeSystemHotWater' },
+        { name: 'ResidentsNumber' },
+        { name: 'DepreciationIntrahouseUtilities' },
+        { name: 'OverhaulDate' },
+        { name: 'IsBath1200' },
+        { name: 'IsBath1500With1550' },
+        { name: 'IsBath1650With1700' },
+        { name: 'IsBathNotShower' },
+        { name: 'IsShower' },
+        { name: 'SharedShowerInHostel' },
+        { name: 'IsHostelShowerAllLivPermises' },
+        { name: 'ShowerInHostelInSection' },
+        { name: 'Gvs12Floor' }
+    ]
+});

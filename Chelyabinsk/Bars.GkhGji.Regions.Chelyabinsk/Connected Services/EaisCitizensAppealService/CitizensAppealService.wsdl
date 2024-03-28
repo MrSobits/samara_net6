@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ExportInfoAcceptWorkResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AcceptResult" type="tns:ExportInfoAcceptWorkResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ExportInfoAcceptWorkResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="АppealUID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAcceptWork" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateAcceptWork" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExecutantFIO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExportInfoAcceptWorkResultResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ExportInfoCompletionOfWorkResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompletionResult" type="tns:ExportInfoCompletionOfWorkResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ExportInfoCompletionOfWorkResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AppealUID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCompletionOfWork" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendingDateToDeclarant" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="AnswerNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AnswerContent" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AnswerAttachments" type="tns:ArrayOfAnswerAttachment" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateOfExtension" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="KindOfFactCheck" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FinalReply" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ConsiderationResult" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppealQuestions" type="tns:ArrayOfAppealQuestion" />
+          <s:element minOccurs="0" maxOccurs="1" name="AnswerUID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExecutantFIO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnswerAttachment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AnswerAttachment" nillable="true" type="tns:AnswerAttachment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AnswerAttachment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UniqueName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAppealQuestion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AppealQuestion" nillable="true" type="tns:AppealQuestion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AppealQuestion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SectionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatementSubjectName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubsubjectName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QuestionName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExportInfoCompletionOfWorkResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AnswerTransferResult" type="tns:ImportInfoDataTransferResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ImportInfoDataTransferResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AnswerUID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsUploaded" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalInformation" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExportInfoCitizensAppealCancelResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelResult" type="tns:ExportInfoCitizensAppealCancelResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ExportInfoCitizensAppealCancelResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="АppealUID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsАppealСancel" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExportInfoCitizensAppealCancelResultResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ExportInfoAcceptWorkResultSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportInfoAcceptWorkResult" />
+  </wsdl:message>
+  <wsdl:message name="ExportInfoAcceptWorkResultSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportInfoAcceptWorkResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportInfoCompletionOfWorkResultSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportInfoCompletionOfWorkResult" />
+  </wsdl:message>
+  <wsdl:message name="ExportInfoCompletionOfWorkResultSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportInfoCompletionOfWorkResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportInfoCitizensAppealCancelResultSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportInfoCitizensAppealCancelResult" />
+  </wsdl:message>
+  <wsdl:message name="ExportInfoCitizensAppealCancelResultSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportInfoCitizensAppealCancelResultResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CitizensAppealServiceSoap">
+    <wsdl:operation name="ExportInfoAcceptWorkResult">
+      <wsdl:input message="tns:ExportInfoAcceptWorkResultSoapIn" />
+      <wsdl:output message="tns:ExportInfoAcceptWorkResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportInfoCompletionOfWorkResult">
+      <wsdl:input message="tns:ExportInfoCompletionOfWorkResultSoapIn" />
+      <wsdl:output message="tns:ExportInfoCompletionOfWorkResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportInfoCitizensAppealCancelResult">
+      <wsdl:input message="tns:ExportInfoCitizensAppealCancelResultSoapIn" />
+      <wsdl:output message="tns:ExportInfoCitizensAppealCancelResultSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CitizensAppealServiceSoap" type="tns:CitizensAppealServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExportInfoAcceptWorkResult">
+      <soap:operation soapAction="http://tempuri.org/ExportInfoAcceptWorkResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportInfoCompletionOfWorkResult">
+      <soap:operation soapAction="http://tempuri.org/ExportInfoCompletionOfWorkResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportInfoCitizensAppealCancelResult">
+      <soap:operation soapAction="http://tempuri.org/ExportInfoCitizensAppealCancelResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CitizensAppealServiceSoap12" type="tns:CitizensAppealServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExportInfoAcceptWorkResult">
+      <soap12:operation soapAction="http://tempuri.org/ExportInfoAcceptWorkResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportInfoCompletionOfWorkResult">
+      <soap12:operation soapAction="http://tempuri.org/ExportInfoCompletionOfWorkResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportInfoCitizensAppealCancelResult">
+      <soap12:operation soapAction="http://tempuri.org/ExportInfoCitizensAppealCancelResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CitizensAppealService">
+    <wsdl:port name="CitizensAppealServiceSoap" binding="tns:CitizensAppealServiceSoap">
+      <soap:address location="http://intranet.kbspro.ru:7777/CitizensAppealService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CitizensAppealServiceSoap12" binding="tns:CitizensAppealServiceSoap12">
+      <soap12:address location="http://intranet.kbspro.ru:7777/CitizensAppealService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

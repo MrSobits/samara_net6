@@ -1,0 +1,1727 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{60C505D9-8591-447B-B2AF-26028956C4F1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bars.GkhGji.Regions.Tula</RootNamespace>
+    <AssemblyName>Bars.GkhGji.Regions.Tula</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="paket.references">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\ModuleAssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModuleAssemblyInfo.cs</LastGenOutput>
+    </None>
+    <None Include="ResourceManifest.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ResourceManifest.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\ActCheckNotification.mrt" />
+    <None Include="Resources\ActCheck_1House.mrt" />
+    <None Include="Resources\ActCheck_Common.mrt" />
+    <None Include="Resources\ActRemovalNotification.mrt" />
+    <None Include="Resources\ActView.mrt" />
+    <None Include="Resources\AdministrativeOffensesJurnalReport.xls" />
+    <None Include="Resources\AdministrativeOffensesJurnalReport.xlsx" />
+    <None Include="Resources\AdministrativeOffensesResolution.xls" />
+    <None Include="Resources\AppealCitsJurnalAccounting.xls" />
+    <None Include="Resources\BlockGJI_ActSurveyVis.xlsx" />
+    <None Include="Resources\BlockGJI_ActSurvey_5001.xls" />
+    <None Include="Resources\BlockGJI_ActSurvey_5001_3.xls" />
+    <None Include="Resources\BlockGJI_ActSurvey_5001_all.xls" />
+    <None Include="Resources\BlockGJI_ActSurvey_5002.xls" />
+    <None Include="Resources\BlockGJI_ActSurvey_5002_all.xls" />
+    <None Include="Resources\BlockGJI_ActSurvey_Prescription.mrt" />
+    <None Include="Resources\BlockGJI_Definition_3.xlsx" />
+    <None Include="Resources\BlockGJI_Definition_8.xlsx" />
+    <None Include="Resources\BlockGJI_ExecutiveDocPrescription_5001.xls" />
+    <None Include="Resources\BlockGJI_ExecutiveDocPrescription_5003.xls" />
+    <None Include="Resources\BlockGJI_Instruction_5001.doc" />
+    <None Include="Resources\BlockGJI_Instruction_5002.doc" />
+    <None Include="Resources\BlockGJI_Instruction_5003.doc" />
+    <None Include="Resources\BlockGJI_Instruction_5004_PP.doc" />
+    <None Include="Resources\BlockGJI_Instruction_5005_PP.doc" />
+    <None Include="Resources\Disposal.mrt" />
+    <None Include="Resources\DisposalNotification.mrt" />
+    <None Include="Resources\NotificationOfVerificationStimulReport.mrt" />
+    <None Include="Resources\NotificationProtocolStimulReport.mrt" />
+    <None Include="Resources\PrescriptionRegistrationJournal.xls" />
+    <None Include="Resources\ProtocolGjiStimulReport.mrt" />
+    <None Include="Resources\RegistrationOutgoingDocuments.xls" />
+    <None Include="Resources\ResolutionNotificationGjiStimulReport.mrt" />
+    <None Include="Resources\TulaPrescription.mrt" />
+    <None Include="Resources\TulaProtocol_Definition.mrt" />
+    <None Include="Resources\TulaResolution.mrt" />
+    <None Include="Resources\TulaResolution_Definition.mrt" />
+    <None Include="Resources\ScheduledInspectionSurveysJournal.xls" />
+    <None Include="Resources\ActSurvey.mrt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Bars.GkhCalendar\Bars.GkhCalendar.csproj">
+      <Project>{9de7e6ba-32cd-452f-828b-5ef9007a16f2}</Project>
+      <Name>Bars.GkhCalendar</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.GkhGji.Contracts\Bars.GkhGji.Contracts.csproj">
+      <Project>{e100e48a-f0e2-4ec2-9d85-9f3ee4525e4b}</Project>
+      <Name>Bars.GkhGji.Contracts</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.GkhGJI\Bars.GkhGji.csproj">
+      <Project>{0e792744-cc64-41c1-a5f2-3f6e3c00470c}</Project>
+      <Name>Bars.GkhGji</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.Gkh\Bars.Gkh.csproj">
+      <Project>{2495a42b-7ec1-44d3-b7a7-1f90a2c44c85}</Project>
+      <Name>Bars.Gkh</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="ClientRouteMapRegistrar.cs" />
+    <Compile Include="Controllers\ActCheck\ActCheckController.cs" />
+    <Compile Include="Controllers\ActCheck\ActCheckRealityObjectController.cs" />
+    <Compile Include="Controllers\ActSurvey\TulaActSurveyController.cs" />
+    <Compile Include="Controllers\AppealCits\AppealCitsExecutantController.cs" />
+    <Compile Include="Controllers\Disposal\DisposalControlMeasuresController.cs" />
+    <Compile Include="Controllers\Disposal\DisposalSurveySubjectController.cs" />
+    <Compile Include="Controllers\Protocol\TulaProtocolController.cs" />
+    <Compile Include="Controllers\Protocol\TulaProtocolDefinitionController.cs" />
+    <Compile Include="Controllers\Resolution\TulaResolutionController.cs" />
+    <Compile Include="Entities\Resolution\ResolutionLongDescription.cs" />
+    <Compile Include="Controllers\Resolution\TulaResolutionDefinitionController.cs" />
+    <Compile Include="DomainService\ActCheck\Impl\TulaAchtCheckService.cs" />
+    <Compile Include="DomainService\ActCheck\ITulaAchtCheckService.cs" />
+    <Compile Include="Controllers\ViolationGroup\DocumentViolGroupController.cs" />
+    <Compile Include="DomainService\ActCheck\Impl\ActCheckRealityObjectService.cs" />
+    <Compile Include="DomainService\ActSurvey\ActSurveyDomainService.cs" />
+    <Compile Include="DomainService\ActSurvey\Impl\TulaActSurveyService.cs" />
+    <Compile Include="DomainService\AppealCits\IAppealCitsExecutantService.cs" />
+    <Compile Include="DomainService\AppealCits\Impl\AppealCitsExecutantService.cs" />
+    <Compile Include="DomainService\AppealCits\Impl\AppealCitsService.cs" />
+    <Compile Include="DomainService\Definition\Impl\DefinitionService.cs" />
+    <Compile Include="DomainService\Disposal\IDisposalControlMeasuresService.cs" />
+    <Compile Include="DomainService\Disposal\IDisposalSurveySubjectService.cs" />
+    <Compile Include="DomainService\Disposal\Impl\DisposalControlMeasuresService.cs" />
+    <Compile Include="DomainService\Disposal\Impl\DisposalService.cs" />
+    <Compile Include="DomainService\Definition\IDefinitionService.cs" />
+    <Compile Include="DomainService\Disposal\Impl\DisposalSurveySubjectService.cs" />
+    <Compile Include="DomainService\Inspection\Impl\BaseStatementService.cs" />
+    <Compile Include="DomainService\JurPersonService.cs" />
+    <Compile Include="DomainService\PersonInspectionService.cs" />
+    <Compile Include="DomainService\Protocol\ProtocolDefinitionDomainService.cs" />
+    <Compile Include="DomainService\Protocol\TulaProtocolDefinitionService.cs" />
+    <Compile Include="DomainService\Protocol\ProtocolDomainService.cs" />
+    <Compile Include="DomainService\Reminder\Impl\ReminderService.cs" />
+    <Compile Include="DomainService\Resolution\ResolutionDefinitionDomainService.cs" />
+    <Compile Include="DomainService\Resolution\ResolutionDomainService.cs" />
+    <Compile Include="DomainService\Resolution\TulaResolutionDefinitionService.cs" />
+    <Compile Include="DomainService\ViolationGroup\Impl\ViolationGroupService.cs" />
+    <Compile Include="DomainService\ViolationGroup\IViolationGroupService.cs" />
+    <Compile Include="Entities\ActCheck\ActCheckRoLongDescription.cs" />
+    <Compile Include="Entities\ActSurvey\ActSyrveyLongDescription.cs" />
+    <Compile Include="Entities\ActSurvey\ActSurveyConclusion.cs" />
+    <Compile Include="Entities\ActSurvey\TulaActSurvey.cs" />
+    <Compile Include="Entities\AppealCits\AppealCitsExecutant.cs" />
+    <Compile Include="Entities\AppealCits\CheckTimeChange.cs" />
+    <Compile Include="Entities\Disposal\DisposalControlMeasures.cs" />
+    <Compile Include="Entities\Disposal\DisposalSurveySubject.cs" />
+    <Compile Include="Entities\DocumentGJIPhysPersonInfo.cs" />
+    <Compile Include="Entities\Inspection\InspectionGjiViolWording.cs" />
+    <Compile Include="Entities\Protocol\ProtocolLongDescription.cs" />
+    <Compile Include="Entities\Protocol\TulaProtocolDefinition.cs" />
+    <Compile Include="Entities\ResolPros\ResolProsDefinition.cs" />
+    <Compile Include="Entities\Resolution\TulaResolutionDefinition.cs" />
+    <Compile Include="Entities\ViolationGroup\DocumentViolGroupLongText.cs" />
+    <Compile Include="Entities\ViolationGroup\DocumentViolGroupPoint.cs" />
+    <Compile Include="Entities\ViolationGroup\DocumentViolGroup.cs" />
+    <Compile Include="Enums\TypeDefinitionResolPros.cs" />
+    <Compile Include="Enums\TypeDefinitionResolution.cs" />
+    <Compile Include="Enums\TypeSurveySubject.cs" />
+    <Compile Include="ExecutionAction\ClearFinalStateDocRemindersAction.cs" />
+    <Compile Include="ExecutionAction\SetFixedForDpkrStatusAction.cs" />
+    <Compile Include="Import\AnswersImport.cs" />
+    <Compile Include="Import\AppealsImport.cs" />
+    <Compile Include="InspectionRules\DocumentRules\TulaPrescriptionToProtocolRule.cs" />
+    <Compile Include="InspectionRules\DocumentRules\TulaDisposalToActCheckPrescriptionRule.cs" />
+    <Compile Include="InspectionRules\DocumentRules\TulaActRemovalToPrescriptionRule.cs" />
+    <Compile Include="InspectionRules\DocumentRules\TulaActRemovalToProtocolRule.cs" />
+    <Compile Include="InspectionRules\DocumentRules\TulaActCheckToProtocolRule.cs" />
+    <Compile Include="InspectionRules\DocumentRules\TulaActCheckToPrescriptionRule.cs" />
+    <Compile Include="InspectionRules\DocumentRules\TulaDisposalToActCheckByRoRule.cs" />
+    <Compile Include="InspectionRules\DocumentRules\TulaDisposalToActCheckRule.cs" />
+    <Compile Include="InspectionRules\DocumentRules\TulaDisposalToActViewRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InspectionRules\DocumentRules\TulaProtocolToResolutionRule.cs" />
+    <Compile Include="InspectionRules\DocumentRules\TulaResolutionToProtocolRule.cs" />
+    <Compile Include="InspectionRules\InspectionRules\TulaBasePlanActionToActCheckRule.cs" />
+    <Compile Include="InspectionRules\InspectionRules\TulaBaseDispHeadToDisposalRule.cs" />
+    <Compile Include="InspectionRules\InspectionRules\TulaBaseJurPersonToDisposalRule.cs" />
+    <Compile Include="InspectionRules\InspectionRules\TulaBaseProsClaimToDisposalRule.cs" />
+    <Compile Include="InspectionRules\InspectionRules\TulaBaseStatementToDisposalRule.cs" />
+    <Compile Include="Interceptors\ActCheck\ActCheckRealityObjectInterceptor.cs" />
+    <Compile Include="Interceptors\ActCheck\ActCheckServiceInterceptor.cs" />
+    <Compile Include="Interceptors\ActRemoval\ActRemovalServiceInterceptor.cs" />
+    <Compile Include="Interceptors\ActSurvey\TulaActSurveyInterceptor.cs" />
+    <Compile Include="Interceptors\AppealCits\AppealCitsExecutantInterceptor.cs" />
+    <Compile Include="Interceptors\AppealCits\AppealCitsServiceInterceptor.cs" />
+    <Compile Include="Interceptors\Definition\ActCheckDefInterceptor.cs" />
+    <Compile Include="Interceptors\Definition\ResolutionDefInterceptor.cs" />
+    <Compile Include="Interceptors\Definition\ProtocolMhcDefInterceptor.cs" />
+    <Compile Include="Interceptors\Definition\ProtocolDefInterceptor.cs" />
+    <Compile Include="Interceptors\Definition\ResolProsDefInterceptor.cs" />
+    <Compile Include="Interceptors\Dict\TypeSurveyGjiInterceptor.cs" />
+    <Compile Include="Interceptors\Disposal\DisposalServiceInterceptor.cs" />
+    <Compile Include="Interceptors\Disposal\DisposalTypeSurveyInterceptor.cs" />
+    <Compile Include="Interceptors\Inspection\InspectionGjiViolInterceptor.cs" />
+    <Compile Include="Interceptors\Prescription\PrescriptionServiceInterceptor.cs" />
+    <Compile Include="Interceptors\Protocol\ProtocolArticleLawInterceptor.cs" />
+    <Compile Include="Interceptors\Protocol\ProtocolServiceInterceptor.cs" />
+    <Compile Include="Interceptors\Resolution\ResolutionServiceInterceptor.cs" />
+    <Compile Include="Interceptors\ViolationGroup\DocumentViolGroupInterceptor.cs" />
+    <Compile Include="Map\ActCheck\ActCheckRoLongDecriptionMap.cs" />
+    <Compile Include="Map\ActSurvey\ActSurveyLongDecriptionMap.cs" />
+    <Compile Include="Map\ActSurvey\ActSurveyConclusionMap.cs" />
+    <Compile Include="Map\ActSurvey\TulaActSurveyMap.cs" />
+    <Compile Include="Map\AppealCits\AppealCitsExecutantMap.cs" />
+    <Compile Include="Map\AppealCits\CheckTimeChangeMap.cs" />
+    <Compile Include="Map\Disposal\DisposalControlMeasuresMap.cs" />
+    <Compile Include="Map\Disposal\DisposalSurveySubjectMap.cs" />
+    <Compile Include="Map\DocumentGJIPhysPersonInfoMap.cs" />
+    <Compile Include="Map\Inspection\InspectionGjiViolWordingMap.cs" />
+    <Compile Include="Map\Protocol\ProtocolLongDescriptionMap.cs" />
+    <Compile Include="Map\Protocol\TulaProtocolDefinitionMap.cs" />
+    <Compile Include="Map\ResolPros\ResolProsDefinitionMap.cs" />
+    <Compile Include="Map\Resolution\ResolutionLongDescriptionMap.cs" />
+    <Compile Include="Map\Resolution\TulaResolutionDefinitionMap.cs" />
+    <Compile Include="Map\ViolationGroup\DocumentViolGroupPointMap.cs" />
+    <Compile Include="Map\ViolationGroup\DocumentViolGroupMap.cs" />
+    <Compile Include="Map\ViolationGroup\DocumentViolGroupLongTextMap.cs" />
+    <Compile Include="Migrations\Version_2014071700\UpdateSchema.cs" />
+    <Compile Include="Migrations\MigrationInfo.cs" />
+    <Compile Include="Migrations\Version_1\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2014061000\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2014061100\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2014061101\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2014071800\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2014071801\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2014073100\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2014073101\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2014080400\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2014080600\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2014080601\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2014082801\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2014090901\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2014090902\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2014092900\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2014112000\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2014120500\UpdateSchema.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="NavigationProvider.cs" />
+    <Compile Include="Navigation\TulaDocGjiRegisterMenuProvider.cs" />
+    <Compile Include="NumberValidation\TulaValidationRule.cs" />
+    <Compile Include="Permissions\GkhGjiActSurveyOwnerPermissionMap.cs" />
+    <Compile Include="Permissions\GkhGJIPermissionMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\Main\AssemblyInfoVersion.cs">
+      <Link>Properties\AssemblyInfoVersion.cs</Link>
+    </Compile>
+    <Compile Include="Properties\ModuleAssemblyInfo.cs">
+      <DependentUpon>ModuleAssemblyInfo.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReminderRule\ApealCitsReminderRule.cs" />
+    <Compile Include="ReminderRule\InspectionReminderRule.cs" />
+    <Compile Include="Report\ActCheckGji\ActCheckGjiDefinitionReport.cs" />
+    <Compile Include="Report\ActCheckGji\ActCheckGjiReport.cs" />
+    <Compile Include="Report\ActCheckGji\ActCheckNotificationReport.cs" />
+    <Compile Include="Report\ActRemovalGji\ActRemovalGjiStimulReport.cs" />
+    <Compile Include="Report\ActRemovalGji\ActRemovalNotificationReport.cs" />
+    <Compile Include="Report\ActSurveyGJI\ActSurveyGJIReport.cs" />
+    <Compile Include="Report\ActViewGji\ActViewGjiReport.cs" />
+    <Compile Include="Report\AdministrativeOffensesJurnalReport.cs" />
+    <Compile Include="Report\AdministrativeOffensesResolution.cs" />
+    <Compile Include="Report\AppealCitsJurnalAccounting.cs" />
+    <Compile Include="Report\DisposalGji\DisposalGjiStimulReport.cs" />
+    <Compile Include="Report\DisposalGji\DisposalGjiNotificationStimulReport.cs" />
+    <Compile Include="Report\PrescriptionGjiStimulReport.cs" />
+    <Compile Include="Report\PrescriptionGji\PrescriptionGjiNotificationReport.cs" />
+    <Compile Include="Report\PrescriptionGji\PrescriptionGjiReport.cs" />
+    <Compile Include="Report\PrescriptionRegistrationJournal.cs" />
+    <Compile Include="Report\ProtocolGji\ProtocolGjiDefinitionStimulReport.cs" />
+    <Compile Include="Report\ProtocolGji\NotificationOfVerificationStimulReport.cs" />
+    <Compile Include="Report\ProtocolGji\NotificationProtocolStimulReport.cs" />
+    <Compile Include="Report\ProtocolGji\ProtocolGjiStimulReport.cs" />
+    <Compile Include="Report\ResolPros\ResolProsDefinitionReport.cs" />
+    <Compile Include="Report\ProtocolGji\ProtocolGjiReport.cs" />
+    <Compile Include="Report\RegistrationOutgoingDocuments.cs" />
+    <Compile Include="Report\ResolutionGji\ResolutionGjiDefinitionStimulReport.cs" />
+    <Compile Include="Report\ResolutionGji\ResolutionNotificationGjiStimulReport.cs" />
+    <Compile Include="Report\ResolutionGji\ResolutionGjiStimulReport.cs" />
+    <Compile Include="Report\ScheduledInspectionSurveysJournal.cs" />
+    <Compile Include="ResourceManifest.cs">
+      <DependentUpon>ResourceManifest.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ResourceManifest.Part.cs" />
+    <Compile Include="StateChange\ActCheckValidationNumberRule.cs" />
+    <Compile Include="StateChange\ActRemovalValidationNumberRule.cs" />
+    <Compile Include="StateChange\ActSurveyValidationNumberRule.cs" />
+    <Compile Include="StateChange\AppealCitsValidationRule.cs" />
+    <Compile Include="StateChange\BaseDocValidationNumberRule.cs" />
+    <Compile Include="StateChange\DisposalValidationNumberRule.cs" />
+    <Compile Include="StateChange\DocumentGjiStateChangeHandler.cs" />
+    <Compile Include="StateChange\PrescriptionValidationNumberRule.cs" />
+    <Compile Include="StateChange\PresentationValidationNumberRule.cs" />
+    <Compile Include="StateChange\ProtocolValidationNumberRule.cs" />
+    <Compile Include="StateChange\ResolProsValidationNumberRule.cs" />
+    <Compile Include="StateChange\ResolutionValidationNumberRule.cs" />
+    <Compile Include="StatefulEntityManifest.cs" />
+    <Compile Include="TextValues\DisposalText.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="ViewModel\ActCheck\ActCheckViolationViewModel.cs" />
+    <Compile Include="ViewModel\ActRemoval\ActRemovalViolationViewModel.cs" />
+    <Compile Include="ViewModel\ActSurvey\ActSurveyConclusionViewModel.cs" />
+    <Compile Include="ViewModel\ActSurvey\TulaActSurveyViewModel.cs" />
+    <Compile Include="ViewModel\AppealCits\AppealCitsExecutantViewModel.cs" />
+    <Compile Include="ViewModel\AppealCits\CheckTimeChangeViewModel.cs" />
+    <Compile Include="ViewModel\Dict\TypeSurveyGjiViewModel.cs" />
+    <Compile Include="ViewModel\Dict\TypeSurveyGoalInspGjiViewModel.cs" />
+    <Compile Include="ViewModel\Dict\TypeSurveyInspFoundationGjiViewModel.cs" />
+    <Compile Include="ViewModel\Dict\TypeSurveyKindInspGjiViewModel.cs" />
+    <Compile Include="ViewModel\Dict\TypeSurveyTaskInspGjiViewModel.cs" />
+    <Compile Include="ViewModel\Disposal\DisposalControlMeasuresViewModel.cs" />
+    <Compile Include="ViewModel\Disposal\DisposalSurveySubjectViewModel.cs" />
+    <Compile Include="ViewModel\Prescription\PrescriptionViolViewModel.cs" />
+    <Compile Include="ViewModel\Protocol\TulaProtocolDefinitionViewModel.cs" />
+    <Compile Include="ViewModel\ResolPros\ResolProsDefinitionViewModel.cs" />
+    <Compile Include="ViewModel\Protocol\ProtocolViewModel.cs" />
+    <Compile Include="ViewModel\Protocol\ProtocolViolationViewModel.cs" />
+    <Compile Include="ViewModel\Resolution\TulaResolutionDefinitionViewModel.cs" />
+    <Compile Include="ViewModel\Resolution\ResolutionViewModel.cs" />
+    <Compile Include="ViewModel\ViolationGroup\ViolationGroupViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel.Discovery" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\aspects\permission\ActCheck.js" />
+    <EmbeddedResource Include="libs\B4\aspects\permission\Resolution.js" />
+    <EmbeddedResource Include="libs\B4\GjiTextValuesOverride.js" />
+    <EmbeddedResource Include="libs\B4\DisposalTextValues.js" />
+    <EmbeddedResource Include="libs\B4\store\disposal\DisposalControlMeasures.js" />
+    <EmbeddedResource Include="libs\B4\model\actremoval\Violation.js" />
+    <EmbeddedResource Include="libs\B4\model\ProtocolGji.js" />
+    <EmbeddedResource Include="libs\B4\model\Resolution.js" />
+    <EmbeddedResource Include="libs\B4\model\actcheck\Violation.js" />
+    <EmbeddedResource Include="libs\B4\model\prescription\Violation.js" />
+    <EmbeddedResource Include="libs\B4\model\protocolgji\Violation.js" />
+    <EmbeddedResource Include="libs\B4\model\disposal\DisposalControlMeasures.js" />
+    <EmbeddedResource Include="libs\B4\model\ActCheck.js" />
+    <EmbeddedResource Include="libs\B4\controller\report\AdministrativeOffensesResolution.js" />
+    <EmbeddedResource Include="libs\B4\controller\report\PrescriptionRegistrationJournal.js" />
+    <EmbeddedResource Include="libs\B4\controller\baseprosclaim\Edit.js" />
+    <EmbeddedResource Include="libs\B4\controller\basedefault\Edit.js" />
+    <EmbeddedResource Include="libs\B4\controller\basedisphead\Edit.js" />
+    <EmbeddedResource Include="libs\B4\controller\baseinscheck\Edit.js" />
+    <EmbeddedResource Include="libs\B4\controller\basejurperson\Edit.js" />
+    <EmbeddedResource Include="libs\B4\controller\ProtocolGji.js" />
+    <EmbeddedResource Include="libs\B4\controller\Resolution.js" />
+    <EmbeddedResource Include="libs\B4\controller\report\ScheduledInspectionSurveysJournal.js" />
+    <EmbeddedResource Include="libs\B4\controller\report\AdministrativeOffensesJurnalReport.js" />
+    <EmbeddedResource Include="libs\B4\controller\report\AppealCitsJurnalAccounting.js" />
+    <EmbeddedResource Include="libs\B4\controller\report\RegistrationOutgoingDocuments.js" />
+    <EmbeddedResource Include="libs\B4\controller\Disposal.js" />
+    <EmbeddedResource Include="libs\B4\controller\basestatement\Edit.js" />
+    <EmbeddedResource Include="libs\B4\controller\ActCheck.js" />
+    <EmbeddedResource Include="libs\B4\controller\dict\TypeSurveyGji.js" />
+    <EmbeddedResource Include="libs\B4\controller\Prescription.js" />
+    <EmbeddedResource Include="libs\B4\view\documentsgjiregister\ResolutionGrid.js" />
+    <EmbeddedResource Include="libs\B4\view\baseprosclaim\EditPanel.js" />
+    <EmbeddedResource Include="libs\B4\view\basedefault\EditPanel.js" />
+    <EmbeddedResource Include="libs\B4\view\basedisphead\EditPanel.js" />
+    <EmbeddedResource Include="libs\B4\view\basejurperson\EditPanel.js" />
+    <EmbeddedResource Include="libs\B4\view\basestatement\EditPanel.js" />
+    <EmbeddedResource Include="libs\B4\view\baseinscheck\EditPanel.js" />
+    <EmbeddedResource Include="libs\B4\view\report\RegistrationOutgoingDocumentsPanel.js" />
+    <EmbeddedResource Include="libs\B4\view\report\AdministrativeOffensesResolutionPanel.js" />
+    <EmbeddedResource Include="libs\B4\view\report\PrescriptionRegistrationJournalPanel.js" />
+    <EmbeddedResource Include="libs\B4\view\disposal\EditPanel.js" />
+    <EmbeddedResource Include="libs\B4\view\actcheck\EditPanel.js" />
+    <EmbeddedResource Include="libs\B4\view\resolution\EditPanel.js" />
+    <EmbeddedResource Include="libs\B4\view\actcheck\ViolationGrid.js" />
+    <EmbeddedResource Include="libs\B4\view\desktop\portlet\tasktable.js" />
+    <EmbeddedResource Include="libs\B4\view\prescription\ViolationGrid.js" />
+    <EmbeddedResource Include="libs\B4\view\dict\typesurveygji\GoalInspGjiGrid.js" />
+    <EmbeddedResource Include="libs\B4\view\dict\typesurveygji\InspFoundationGjiGrid.js" />
+    <EmbeddedResource Include="libs\B4\view\dict\typesurveygji\KindInspGjiGrid.js" />
+    <EmbeddedResource Include="libs\B4\view\dict\typesurveygji\TaskInspGjiGrid.js" />
+    <EmbeddedResource Include="libs\B4\view\dict\typesurveygji\KindInspGjiEditWindow.js" />
+    <EmbeddedResource Include="libs\B4\view\protocolgji\RequisitePanel.js" />
+    <EmbeddedResource Include="libs\B4\view\protocolgji\ViolationGrid.js" />
+    <EmbeddedResource Include="libs\B4\view\resolution\RequisitePanel.js" />
+    <EmbeddedResource Include="libs\B4\view\actremoval\ViolationGrid.js" />
+    <EmbeddedResource Include="libs\B4\view\report\AppealCitsJurnalAccountingPanel.js" />
+    <EmbeddedResource Include="libs\B4\view\actcheck\RealityObjectEditPanel.js" />
+    <EmbeddedResource Include="libs\B4\view\actcheck\RealityObjectEditWindow.js" />
+    <EmbeddedResource Include="libs\B4\view\report\AdministrativeOffensesJurnalReportPanel.js" />
+    <EmbeddedResource Include="libs\B4\view\report\ScheduledInspectionSurveysJournalPanel.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\appealcits\AppealCitsExecutant.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\appealcits\AppealCitsExecutantGrid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\appealcits\ExecutantEditWindow.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\appealcits\MultiSelectWindowExecutant.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\appealcits\AppealCitsExecutant.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\appealcits\EditWindow.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\controller\AppealCits.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\appealcits\Grid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\resolpros\Definition.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\resolpros\Definition.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\resolpros\DefinitionEditWindow.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\resolpros\DefinitionGrid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\resolpros\EditPanel.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\controller\resolpros\Edit.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\appealcits\CheckTimeChange.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\appealcits\CheckTimeChange.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\appealcits\CheckTimeHistory.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\aspects\permission\AppealCits.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\actcheck\DefinitionEditWindow.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\protocolgji\DefinitionEditWindow.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\ActSurvey.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\protocolmhc\DefinitionEditWindow.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\resolution\DefinitionEditWindow.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\controller\ActSurvey.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\actsurvey\EditPanel.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\actsurvey\OwnerGrid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\documentsgjiregister\ActSurveyGrid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\actsurvey\Conclusion.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\actsurvey\Conclusion.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\actsurvey\ConclusionEditWindow.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\actsurvey\ConclusionGrid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\aspects\permission\TulaActSurvey.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\controller\BaseProsClaim.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\controller\BaseStatement.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\controller\BaseDispHead.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\dict\typesurveygji\EditWindow.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\dict\typesurveygji\Grid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\dict\LegalReason.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\dict\TypeSurveyLegalReason.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\dict\TypeSurveyContragentType.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\dict\LegalReason.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\dict\TypeSurveyLegalReason.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\dict\TypeSurveyContragentType.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\appealcits\FilterPanel.js" />
+    <EmbeddedResource Include="libs\B4\controller\dict\LegalReason.js" />
+    <EmbeddedResource Include="libs\B4\view\disposal\ProvidedDocGrid.js" />
+    <EmbeddedResource Include="libs\B4\view\disposal\DisposalControlMeasuresGrid.js" />
+    <EmbeddedResource Include="libs\B4\store\dict\LegalReasonForSelected.js" />
+    <EmbeddedResource Include="libs\B4\store\dict\LegalReasonForSelect.js" />
+    <EmbeddedResource Include="libs\B4\view\dict\legalreason\Grid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\dict\typesurveygji\ContragentTypeGrid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\dict\TypeSurveyGJI.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\disposal\DisposalSurveySubject.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\disposal\DisposalSurveySubject.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\disposal\DisposalSurveySubjectGrid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\dict\SurveySubject.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\dict\SurveySubject.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\dict\SurveySubjectForSelected.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\dict\SurveySubjectForSelect.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\controller\dict\SurveySubject.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\dict\surveysubject\Grid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\aspects\permission\Disposal.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\actcheck\RealObjForSelect.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\controller\documentsgjiregister\ActCheck.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\controller\documentsgjiregister\ActView.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\documentsgjiregister\ActViewGrid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\view\ActView.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\dict\violationgji\Grid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\dict\violationgji\EditWindow.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\actcheck\ViolationGroupGrid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\violationgroup\ViolationGroup.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\violationgroup\ViolationGroup.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\actcheck\ViolationGroupEditWindow.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\actcheck\ViolationGroup.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\prescription\ViolationGroupEditWindow.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\prescription\ViolationGroupGrid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\prescription\ViolationGroup.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\prescription\RealityObjListPanel.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\violationgroup\ViolationGroupForSelect.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\violationgroup\ViolationGroupForSelected.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\actremoval\ViolationGroup.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\actremoval\ViolationGroupEditWindow.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\actremoval\ViolationGroupGrid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\controller\ActRemoval.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\actremoval\EditPanel.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\protocolgji\ViolationGroup.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\protocolgji\ViolationGroupEditWindow.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\protocolgji\ViolationGroupGrid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\protocolgji\RealityObjListPanel.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\protocolgji\Definition.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\resolution\Definition.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\protocolgji\DefinitionGrid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\resolution\DefinitionGrid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\appealcits\AnswerGrid.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="..\..\.paket\paket.targets" />
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Antlr3.Runtime">
+          <HintPath>..\..\packages\Antlr\lib\Antlr3.Runtime.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="Antlr3.Runtime">
+          <HintPath>..\..\packages\Antlr3.Runtime\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Core">
+          <HintPath>..\..\packages\Bars.B4.Core\lib\net40\Bars.B4.Core.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Icons">
+          <HintPath>..\..\packages\Bars.B4.Icons\lib\net40\Bars.B4.Icons.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.ECM7">
+          <HintPath>..\..\packages\Bars.B4.Modules.ECM7\lib\net40\Bars.B4.Modules.ECM7.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Ecm7.Framework">
+          <HintPath>..\..\packages\Bars.B4.Modules.Ecm7.Framework\lib\net40\Bars.B4.Modules.Ecm7.Framework.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Ecm7.Migrator">
+          <HintPath>..\..\packages\Bars.B4.Modules.Ecm7.Migrator\lib\net40\Bars.B4.Modules.Ecm7.Migrator.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.ExtJs">
+          <HintPath>..\..\packages\Bars.B4.Modules.ExtJs\lib\net40\Bars.B4.Modules.ExtJs.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.FIAS">
+          <HintPath>..\..\packages\Bars.B4.Modules.FIAS\lib\net40\Bars.B4.Modules.FIAS.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.FileStorage">
+          <HintPath>..\..\packages\Bars.B4.Modules.FileStorage\lib\net40\Bars.B4.Modules.FileStorage.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.JSDeferred">
+          <HintPath>..\..\packages\Bars.B4.Modules.JSDeferred\lib\net40\Bars.B4.Modules.JSDeferred.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Mapping">
+          <HintPath>..\..\packages\Bars.B4.Modules.Mapping\lib\net40\Bars.B4.Modules.Mapping.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.NH">
+          <HintPath>..\..\packages\Bars.B4.Modules.NH\lib\net461\Bars.B4.Modules.NH.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.NH.Migrations">
+          <HintPath>..\..\packages\Bars.B4.Modules.NH.Migrations\lib\net40\Bars.B4.Modules.NH.Migrations.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Pivot">
+          <HintPath>..\..\packages\Bars.B4.Modules.Pivot\lib\net40\Bars.B4.Modules.Pivot.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Queue">
+          <HintPath>..\..\packages\Bars.B4.Modules.Queue\lib\net40\Bars.B4.Modules.Queue.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Reports">
+          <HintPath>..\..\packages\Bars.B4.Modules.Reports\lib\net40\Bars.B4.Modules.Reports.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.RequireJS">
+          <HintPath>..\..\packages\Bars.B4.Modules.RequireJS\lib\net40\Bars.B4.Modules.RequireJS.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Security">
+          <HintPath>..\..\packages\Bars.B4.Modules.Security\lib\net40\Bars.B4.Modules.Security.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Security.ExtJS4">
+          <HintPath>..\..\packages\Bars.B4.Modules.Security.ExtJS4\lib\net40\Bars.B4.Modules.Security.ExtJS4.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Security.Web">
+          <HintPath>..\..\packages\Bars.B4.Modules.Security.Web\lib\net40\Bars.B4.Modules.Security.Web.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Setup">
+          <HintPath>..\..\packages\Bars.B4.Modules.Setup\lib\net40\Bars.B4.Modules.Setup.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.States">
+          <HintPath>..\..\packages\Bars.B4.Modules.States\lib\net40\Bars.B4.Modules.States.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.StimulReportGenerator">
+          <HintPath>..\..\packages\Bars.B4.Modules.StimulReportGenerator\lib\net40\Bars.B4.Modules.StimulReportGenerator.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.TaskManager.Contracts">
+          <HintPath>..\..\packages\Bars.B4.Modules.TaskManager.Contracts\lib\net40\Bars.B4.Modules.TaskManager.Contracts.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Tasks.Common">
+          <HintPath>..\..\packages\Bars.B4.Modules.Tasks.Common\lib\net40\Bars.B4.Modules.Tasks.Common.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Utils">
+          <HintPath>..\..\packages\Bars.B4.Utils\lib\net40\Bars.B4.Utils.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Utils.Web">
+          <HintPath>..\..\packages\Bars.B4.Utils.Web\lib\net40\Bars.B4.Utils.Web.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.B4.Web">
+          <HintPath>..\..\packages\Bars.B4.Web\lib\net40\Bars.B4.Web.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Bars.Security">
+          <HintPath>..\..\packages\Bars.Security\lib\net461\Bars.Security.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3')">
+      <ItemGroup>
+        <Reference Include="Castle.Core">
+          <HintPath>..\..\packages\Castle.Core\lib\net40-client\Castle.Core.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Castle.Core">
+          <HintPath>..\..\packages\Castle.Core\lib\net45\Castle.Core.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3')">
+      <ItemGroup>
+        <Reference Include="System.Configuration">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Xml">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Castle.Facilities.WcfIntegration">
+          <HintPath>..\..\packages\Castle.WcfIntegrationFacility\lib\net40\Castle.Facilities.WcfIntegration.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="System.Configuration">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Xml">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Castle.Facilities.WcfIntegration">
+          <HintPath>..\..\packages\Castle.WcfIntegrationFacility\lib\net45\Castle.Facilities.WcfIntegration.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3')">
+      <ItemGroup>
+        <Reference Include="Castle.Windsor">
+          <HintPath>..\..\packages\Castle.Windsor\lib\net40\Castle.Windsor.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Castle.Windsor">
+          <HintPath>..\..\packages\Castle.Windsor\lib\net45\Castle.Windsor.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="DotNetZip">
+          <HintPath>..\..\packages\DotNetZip\lib\net20\DotNetZip.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="EcmaScript.NET">
+          <HintPath>..\..\packages\EcmaScript.NET\lib\net45\EcmaScript.NET.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Elmah">
+          <HintPath>..\..\packages\elmah.corelibrary\lib\Elmah.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Fasterflect">
+          <HintPath>..\..\packages\fasterflect\lib\net40\Fasterflect.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Iesi.Collections">
+          <HintPath>..\..\packages\Iesi.Collections\lib\net40\Iesi.Collections.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="Iesi.Collections">
+          <HintPath>..\..\packages\Iesi.Collections\lib\net461\Iesi.Collections.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Morpher">
+          <HintPath>..\..\packages\Morpher\lib\Morpher.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Microsoft.Web.Infrastructure">
+          <HintPath>..\..\packages\Mvc3-Base\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web">
+          <HintPath>..\..\packages\Mvc3-Base\lib\net40\System.Web.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.Helpers">
+          <HintPath>..\..\packages\Mvc3-Base\lib\net40\System.Web.Helpers.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.Mvc">
+          <HintPath>..\..\packages\Mvc3-Base\lib\net40\System.Web.Mvc.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.Razor">
+          <HintPath>..\..\packages\Mvc3-Base\lib\net40\System.Web.Razor.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.Services">
+          <HintPath>..\..\packages\Mvc3-Base\lib\net40\System.Web.Services.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.WebPages">
+          <HintPath>..\..\packages\Mvc3-Base\lib\net40\System.Web.WebPages.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.WebPages.Deployment">
+          <HintPath>..\..\packages\Mvc3-Base\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.WebPages.Razor">
+          <HintPath>..\..\packages\Mvc3-Base\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3')">
+      <ItemGroup>
+        <Reference Include="Newtonsoft.Json">
+          <HintPath>..\..\packages\Newtonsoft.Json\lib\net40\Newtonsoft.Json.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Newtonsoft.Json">
+          <HintPath>..\..\packages\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="System.Transactions">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="NHibernate">
+          <HintPath>..\..\packages\NHibernate\lib\net461\NHibernate.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3')">
+      <ItemGroup>
+        <Reference Include="System.Transactions">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="NLog">
+          <HintPath>..\..\packages\NLog\lib\net40-client\NLog.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="System.IO.Compression">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="NLog">
+          <HintPath>..\..\packages\NLog\lib\net45\NLog.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.5'">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Npgsql">
+          <HintPath>..\..\packages\Npgsql\lib\net45\Npgsql.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Npgsql">
+          <HintPath>..\..\packages\Npgsql\lib\net451\Npgsql.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="QuickGraph">
+          <HintPath>..\..\packages\QuickGraph\lib\net4\QuickGraph.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="QuickGraph.Data">
+          <HintPath>..\..\packages\QuickGraph\lib\net4\QuickGraph.Data.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="QuickGraph.Graphviz">
+          <HintPath>..\..\packages\QuickGraph\lib\net4\QuickGraph.Graphviz.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="QuickGraph.Serialization">
+          <HintPath>..\..\packages\QuickGraph\lib\net4\QuickGraph.Serialization.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="Remotion.Linq">
+          <HintPath>..\..\packages\Remotion.Linq\lib\net45\Remotion.Linq.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="Remotion.Linq.EagerFetching">
+          <HintPath>..\..\packages\Remotion.Linq.EagerFetching\lib\net45\Remotion.Linq.EagerFetching.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.0'">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Stimulsoft.Base">
+          <HintPath>..\..\packages\StimulReport.Base\lib\net40\Stimulsoft.Base.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Stimulsoft.Report">
+          <HintPath>..\..\packages\StimulReport.Base\lib\net40\Stimulsoft.Report.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Stimulsoft.Base">
+          <HintPath>..\..\packages\StimulReport.Base\lib\net45\Stimulsoft.Base.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Stimulsoft.Report">
+          <HintPath>..\..\packages\StimulReport.Base\lib\net45\Stimulsoft.Report.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+<<<<<<< HEAD
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.0.3' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+=======
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="mscorlib">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Buffers">
+          <HintPath>..\..\packages\System.Buffers\lib\net461\System.Buffers.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2')">
+      <ItemGroup>
+        <Reference Include="mscorlib">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Buffers">
+          <HintPath>..\..\packages\System.Buffers\lib\netstandard1.1\System.Buffers.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="System.Memory">
+          <HintPath>..\..\packages\System.Memory\lib\net461\System.Memory.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2')">
+      <ItemGroup>
+        <Reference Include="System.Memory">
+          <HintPath>..\..\packages\System.Memory\lib\netstandard1.1\System.Memory.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="System.Numerics">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Numerics.Vectors">
+          <HintPath>..\..\packages\System.Numerics.Vectors\lib\net46\System.Numerics.Vectors.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="System.Runtime.CompilerServices.Unsafe">
+          <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="System.Threading.Tasks.Extensions">
+          <HintPath>..\..\packages\System.Threading.Tasks.Extensions\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2')">
+      <ItemGroup>
+        <Reference Include="System.Threading.Tasks.Extensions">
+          <HintPath>..\..\packages\System.Threading.Tasks.Extensions\lib\netstandard1.0\System.Threading.Tasks.Extensions.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="System.ValueTuple">
+          <HintPath>..\..\packages\System.ValueTuple\lib\net461\System.ValueTuple.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2')">
+      <ItemGroup>
+        <Reference Include="System.ValueTuple">
+          <HintPath>..\..\packages\System.ValueTuple\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+>>>>>>> net6
+      <ItemGroup>
+        <Reference Include="Yahoo.Yui.Compressor">
+          <HintPath>..\..\packages\YUICompressor.NET\lib\NET20\Yahoo.Yui.Compressor.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+</Project>

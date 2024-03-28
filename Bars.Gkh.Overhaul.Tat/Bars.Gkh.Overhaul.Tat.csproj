@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <SccProjectName></SccProjectName>
+    <SccLocalPath></SccLocalPath>
+    <SccAuxPath></SccAuxPath>
+    <SccProvider></SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(SolutionDir)CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\AssemblyInfo.cs">
+      <SubType></SubType>
+    </Compile>
+    <Compile Update="Properties\ModuleAssemblyInfo.cs">
+      <DependentUpon>ModuleAssemblyInfo.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Properties\ModuleAssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModuleAssemblyInfo.cs</LastGenOutput>
+    </None>
+    <None Update="ResourceManifest.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ResourceManifest.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bars.Gkh.Overhaul\Bars.Gkh.Overhaul.csproj" />
+    <ProjectReference Include="..\Bars.Gkh.RegOperator\Bars.Gkh.RegOperator.csproj" />
+    <ProjectReference Include="..\Bars.GkhCr\Bars.GkhCR.csproj" />
+    <ProjectReference Include="..\Bars.GkhDI\Bars.GkhDI.csproj" />
+    <ProjectReference Include="..\Bars.GkhExcel\Bars.GkhExcel.csproj" />
+    <ProjectReference Include="..\Bars.GkhRf\Bars.GkhRF.csproj" />
+    <ProjectReference Include="..\Bars.Gkh\Bars.Gkh.csproj" />
+    <ProjectReference Include="..\Modules\Analytics\Bars.B4.Modules.Analytics.Reports\Bars.B4.Modules.Analytics.Reports.csproj" />
+    <ProjectReference Include="..\Tatarstan\Bars.Gkh.Regions.Tatarstan\Bars.Gkh.Regions.Tatarstan.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\**\*" />
+    <EmbeddedResource Include="content\**\*" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FormatDataExport\ExportableEntities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+</Project>

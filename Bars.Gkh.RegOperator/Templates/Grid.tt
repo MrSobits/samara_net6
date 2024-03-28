@@ -1,0 +1,94 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+<#@ assembly Name="C:\_TFS\GKH.GKH.CMMI\Sources\Bars.Gkh.RegOperator\bin\Debug\Bars.Gkh.dll" #>
+<#@ assembly Name="C:\_TFS\GKH.GKH.CMMI\Sources\Bars.Gkh.RegOperator\bin\Debug\Newtonsoft.Json.dll" #>
+<#@ assembly Name="C:\_TFS\GKH.GKH.CMMI\Sources\Bars.Gkh.RegOperator\bin\Debug\Bars.B4.Core.dll" #>
+<#@ assembly Name="C:\_TFS\GKH.GKH.CMMI\Sources\Bars.Gkh.RegOperator\bin\Debug\Bars.Gkh.RegOperator.dll" #>
+<#@ import namespace="Newtonsoft.Json" #>
+<#@ import namespace="Bars.Gkh.RegOperator.Entities" #>
+<#@ output extension=".js" #>
+Ext.define('B4.view.<#= entityName #>Grid', {
+    extend: 'B4.ux.grid.Panel',
+
+    requires: [
+        'B4.ux.grid.column.Delete',
+        'B4.ux.grid.column.Edit',
+        'B4.ux.grid.toolbar.Paging',
+        'B4.ux.grid.plugin.HeaderFilters',
+
+        'B4.form.ComboBox',
+
+        'B4.ux.button.Add',
+        'B4.ux.button.Update',
+
+        'B4.store.<#= entityName #>'
+    ],
+
+    title: '',
+
+    alias: 'widget.<#= widget #>',
+
+    store: '<#= entityName #>',
+
+    initComponent: function () {
+        var me = this;
+
+        Ext.apply(me, {
+				columns: [
+				{
+					xtype: 'b4editcolumn',
+					scope: me
+				},
+				<#= t.GetProperties().Where(x =>
+					!x.GetCustomAttributes(true).Any(o=> o.ToString().Contains("JsonIgnore")))
+					.Select(x => "{ text: '', dataIndex: '"+x.Name+"', flex: 1, filter: { xtype: 'textfield' }}").Aggregate((i, j) => i + ",\n\t\t\t\t" + j) #>,
+				{
+					xtype: 'b4deletecolumn',
+					scope: me
+				}
+            ],
+
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    dock: 'top',
+                    items: [
+                        {
+                            xtype: 'buttongroup',
+                            columns: 2,
+                            items: [
+                                {
+                                    xtype: 'b4addbutton'
+                                },
+                                {
+                                    xtype: 'b4updatebutton'
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    xtype: 'b4pagingtoolbar',
+                    displayInfo: true,
+                    store: me.store,
+                    dock: 'bottom'
+                }
+            ],
+            plugins: [Ext.create('B4.ux.grid.plugin.HeaderFilters')],
+            viewConfig: {
+                loadMask: true
+            }
+
+        });
+
+        me.callParent(arguments);
+    }
+});
+
+<#+ string entityName="regop.personal_account.PersonalAccount"; #>
+<#+ string widget=""; #>
+<#+ Type t = typeof(PersonalAccount); #>

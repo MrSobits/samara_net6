@@ -1,0 +1,558 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <Соединение Ref="2" type="Stimulsoft.Report.Dictionary.StiPostgreSQLDatabase" isKey="true">
+        <Alias>Соединение</Alias>
+        <ConnectionStringEncrypted>48jd60ZXSzVrEynMSQi1TtV4cylhXJOQ4U2xje5xd3eBcPuDYl+p8WIaecDnXKRnjXjNCUhWadVDRaTsdw3iF99Wm4lhTnPpQlv99GpMJ3qe8ruiRgoxgeJFPaVy</ConnectionStringEncrypted>
+        <Name>Соединение</Name>
+      </Соединение>
+    </Databases>
+    <DataSources isList="true" count="1">
+      <ИсточникДанных1 Ref="3" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ИсточникДанных1</Alias>
+        <Columns isList="true" count="20">
+          <value>short_name,System.String</value>
+          <value>address,System.String</value>
+          <value>document_number,System.String</value>
+          <value>document_date,System.String</value>
+          <value>tvs,System.String</value>
+          <value>tve,System.String</value>
+          <value>dt,System.String</value>
+          <value>fact_address,System.String</value>
+          <value>gdi1sf,System.String</value>
+          <value>position,System.String</value>
+          <value>gdssname,System.String</value>
+          <value>type_disposal,System.Int32</value>
+          <value>gdcdn,System.String</value>
+          <value>gdcdd,System.String</value>
+          <value>licorno,System.Int32</value>
+          <value>ssname,System.String</value>
+          <value>tstart,System.String</value>
+          <value>tend,System.String</value>
+          <value>nc_num,System.String</value>
+          <value>asnc_date,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ИсточникДанных1</Name>
+        <NameInSource>Соединение</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>DROP TABLE IF EXISTS temp_sub_tem;
+CREATE TEMP TABLE temp_sub_tem as
+select gas.appcit_id,
+	gdss.name
+	
+	from  gji_appcit_statsubj gas
+left join gji_dict_statement_subj gdss on gas.statement_subject_id = gdss.id
+left join gji_dict_stat_sub_subject gdsss on gdsss.id = gas.subsubject_id
+group by 1,2;
+
+select gc.short_name,
+	gid.address,
+	gd1.document_number,
+	to_char(gd1.document_date, 'dd.mm.yyyy') as document_date,
+	to_char(gd.object_visit_start, 'dd.mm.yyyy') as tvs,
+	to_char(gd.object_visit_end, 'dd.mm.yyyy') as tve,
+	string_agg(gac.num || ' от ' || to_char(gac.date_from, 'dd.mm.yyyy'), '; ') as dt,
+       gc.fact_address,
+      coalesce(gdi1.shortfio) as gdi1sf,
+       gdi1.position,
+       string_agg(ss.name, '; ') as ssname,
+       gd.type_disposal,
+       gi.id,
+       gdc.document_number as gdcdn,
+       gdc.dd as gdcdd,
+       case when gml.contragent_id is not null then '1' else '0' end as licorno,
+       to_char(gd.time_visit_sart, 'HH24:MI') as tstart,
+	to_char(gd.time_visit_end, 'HH24:MI') as tend,
+nc_num,
+	to_char(nc_date, 'dd.mm.yyyy') asnc_date
+
+
+from GJI_DICISION gd
+inner join gji_document gd1 on gd1.id = gd.id
+left join(select gdc.children_id,
+	gd.document_number,
+	to_char(gd.document_date, 'dd.mm.yyyy') as dd
+	from gji_document_children gdc
+           inner join gji_document gd on gd.id = gdc.parent_id
+) gdc on gdc.children_id = gd1.id
+left join gji_inspection gi on gi.id = gd1.inspection_id
+left join gkh_contragent gc on gc.id = gi.contragent_id
+join (select gir.room_nums, gir.inspection_id, gro.address from gji_inspection_robject gir
+left join gkh_reality_object gro on gro.id = gir.reality_object_id) gid on gid.inspection_id = gi.id
+left join gji_basestat_appcit gda on gda.inspection_id = gi.id
+left join gji_appeal_citizens gac on gac.id = gda.gji_appcit_id
+left join gji_document_inspector gdi on gdi.document_id = gd1.id
+left join gkh_dict_inspector gdi1 on gdi1.id = gdi.inspector_id
+left join (select appcit_id,
+	string_agg(name, '; ') as name
+	from  temp_sub_tem
+
+	group by 1) ss on ss.appcit_id = gac.id
+left join gkh_manorg_license gml on gml.contragent_id = gc.id
+where gd.id::text = {DispId}::text
+group by 1,2,3,4,5,6,8,9,10,12,13,14,15,16,17,18,19,20</SqlCommand>
+        <Type>StoredProcedure</Type>
+      </ИсточникДанных1>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="5">
+      <value>,ПровЛК,ПровЛК,System.Boolean,_x0028_ИсточникДанных1.licorno_x003E_0_x0026__x0026_ИсточникДанных1.type_disposal_x003D__x003D_10_x0029__x0020__x003F__x0020_false_x0020_:_x0020_true_x003B_,True,True</value>
+      <value>,ПредЛК,ПредЛК,System.Boolean,_x0028_ИсточникДанных1.licorno_x003E_0_x0026__x0026_ИсточникДанных1.type_disposal_x003D__x003D_20_x0029__x0020__x003F__x0020_false_x0020_:_x0020_true_x003B_,True,True</value>
+      <value>,ПредЖН,ПредЖН,System.Boolean,_x0028_ИсточникДанных1.licorno_x003C_1_x0026__x0026_ИсточникДанных1.type_disposal_x003D__x003D_20_x0029__x0020__x003F__x0020_false_x0020_:_x0020_true_x003B_,True,True</value>
+      <value>,ПровЖН,ПровЖН,System.Boolean,_x0028_ИсточникДанных1.type_disposal_x003D__x003D_10_x0026__x0026_ИсточникДанных1.licorno_x003C_1_x0029__x0020__x003F__x0020_false_x0020_:_x0020_true_x003B_,True,True</value>
+      <value>,DispId,DispId,System.Int64,_x0031_93,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="2">
+    <Page1 Ref="4" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="4">
+        <DataBand1 Ref="5" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,17,2.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text1 Ref="6" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,17,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14,Bold</Font>
+              <Guid>e3ec158a32714606accb84f5d16bd79d</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>ГОСУДАРСТВЕННАЯ ЖИЛИЩНАЯ ИНСПЕЦИЯ
+ВОРОНЕЖСКОЙ ОБЛАСТИ</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text1>
+            <Text2 Ref="7" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.4,17,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>56c6052dbd634b138044cd4cd63b3852</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>ул. Кирова, 6А, г. Воронеж, 394018, тел.8(473)212-76-26</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>6c311c1eb35045d697565432d379a288</Guid>
+          <Name>DataBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+        <DataBand2 Ref="8" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,3.4,17,3.8</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text3 Ref="9" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,1.4,8.6,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14,Bold</Font>
+              <Guid>c8d30c3107d347efa82b12a13c074ccf</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="4" />
+              <Parent isRef="8" />
+              <Text>{ИсточникДанных1.type_disposal == 10 ? "Уведомление о проведении проверки" : "Уведомление о проверке исполнения предписания"}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
+            <Text4 Ref="10" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>8.6,0,8.4,3.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14</Font>
+              <Guid>f444df8c33f74f4f929ed2e0b90e8a7d</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="4" />
+              <Parent isRef="8" />
+              <Text>&lt;p&gt;{ИсточникДанных1.short_name}&lt;/p&gt;
+&lt;p&gt;{ИсточникДанных1.fact_address}&lt;/p&gt;
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text4>
+            <Text6 Ref="11" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,8.6,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14,Bold</Font>
+              <Guid>9cd24a0830d14c7fa8bc4abfe0524f53</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="4" />
+              <Parent isRef="8" />
+              <Text>от {ИсточникДанных1.asnc_date} № {ИсточникДанных1.nc_num}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text6>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>bebd152f20a944f88120dd3963dea404</Guid>
+          <Name>DataBand2</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </DataBand2>
+        <DataBand3 Ref="12" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,8,17,2</ClientRectangle>
+          <Components isList="true" count="1">
+            <SubReport1 Ref="13" type="SubReport" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,17,1.2</ClientRectangle>
+              <Components isList="true" count="0" />
+              <Name>SubReport1</Name>
+              <Page isRef="4" />
+              <Parent isRef="12" />
+              <SubReportPageGuid>6b1297b9c5bc4427a3ac4c2847b3d3ca</SubReportPageGuid>
+            </SubReport1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand3</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </DataBand3>
+        <DataBand4 Ref="14" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,10.8,17,5.6</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text8 Ref="15" type="Text" isKey="true">
+              <Border>None;White;1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.4,0.2,3.6,3.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>1b95af509451494583a2b48e6b08334c</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="4" />
+              <Parent isRef="14" />
+              <Text>{ИсточникДанных1.gdi1sf}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text8>
+            <Text12 Ref="16" type="Text" isKey="true">
+              <Border>None;White;1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.2,0.2,8.2,3.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>9616ab543e6b4b3aa9947e8be0b70c0c</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="4" />
+              <Parent isRef="14" />
+              <Text>$_ЭП_$</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text12>
+            <Text11 Ref="17" type="Text" isKey="true">
+              <Border>None;White;1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.2,5.2,3.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>25f86b85e876422fbd24938a921b39c6</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="4" />
+              <Parent isRef="14" />
+              <Text>{ИсточникДанных1.position} государственной жилищной инспекции Воронежской области</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text11>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand4</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </DataBand4>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>b2dc8e976a8041139009fdcf95bcbe10</Guid>
+      <Margins>3,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+      <Watermark Ref="18" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+    <subReport_1 Ref="19" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="4">
+        <ПростоПроверкаЛиц Ref="20" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,0.4,17,11.2</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text9 Ref="21" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,17,11.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14</Font>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="19" />
+              <Parent isRef="20" />
+              <Text>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;В связи с рассмотрением обращения (-ий)№ {ИсточникДанных1.dt} г. по вопросу  {ИсточникДанных1.ssname == "" ? "" : ToLowerCase(morpher.Проанализировать(ИсточникДанных1.ssname).Родительный)}, с {ИсточникДанных1.tvs} {ИсточникДанных1.tstart} по {ИсточникДанных1.tve} {ИсточникДанных1.tend} по адресу: {ИсточникДанных1.address}, будет проведена выездная внеплановая проверка {ИсточникДанных1.short_name}.&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;В соответствии с Федеральным законом от 31.07.2020г. № 248-ФЗ «О государственном контроле (надзоре) и муниципальном контроле в Российской Федерации» требую:&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;-  обеспечить присутствие при проверке руководителя или уполномоченного представителя юридического лица с доверенностью на право участия в проверке, подписания документов и получения их на руки;&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;-  предоставить инспектору документы, в соответствии с пунктом № 13 приказа о проведении внеплановой выездной проверки от {ИсточникДанных1.document_date} №{ИсточникДанных1.document_number}&lt;br&gt;&lt;br&gt;&lt;br&gt;.
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Приложение: копия приказа от {ИсточникДанных1.document_date} № {ИсточникДанных1.document_number} на __ л. в 1 экз., копия решения о согласовании проведения внеплановой проверки на __ л. в 1 экз.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text9>
+          </Components>
+          <Conditions isList="true" count="1">
+            <value>_x007B_ПровЛК_x007D_,Red,Transparent,Arial_x002C_8,False,False,,,None</value>
+          </Conditions>
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>ПростоПроверкаЛиц</Name>
+          <Page isRef="19" />
+          <Parent isRef="19" />
+          <PrintOn>OnlyFirstPage</PrintOn>
+          <Sort isList="true" count="0" />
+        </ПростоПроверкаЛиц>
+        <ПредпЛиц Ref="22" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,12.4,17,16</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text10 Ref="23" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,17,16</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14</Font>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="19" />
+              <Parent isRef="22" />
+              <Text>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;{ИсточникДанных1.tvs} {ИсточникДанных1.tstart} по {ИсточникДанных1.tve} {ИсточникДанных1.tend} по адресу: {ИсточникДанных1.address}, на основании пункта 1 части 2 статьи 10 Федерального закона от 31.07.2020 № 248-ФЗ “О государственном контроле (надзоре) и муниципальном контроле в Российской Федерации” будет проведена внеплановая выездная проверка {ИсточникДанных1.short_name} на предмет исполнения ранее выданного обществу предписания от {ИсточникДанных1.gdcdd} № {ИсточникДанных1.gdcdn} об устранении выявленных нарушений обязательных требований.&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Руководствуясь частью 1 статьи 25 вышеназванного закона, требую обеспечить присутствие при проведении проверки руководителя либо иного уполномоченного представителя общества с надлежащим образом оформленной доверенностью на участие в проверке, подписание документов и получение их на руки.&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;В случае неисполнения предписания в отношении общества будет оформлен протокол об административном правонарушении, предусмотренном частью 24 статьи 19.5 КоАП РФ, для чего руководителю либо иному законному представителю общества необходимо {ИсточникДанных1.tve} прибыть в жилищную инспекцию по адресу: г. Воронеж, ул. Кирова, д. 6А к {ToLowerCase(morpher.Проанализировать(ИсточникДанных1.position).Дательный)} {ИсточникДанных1.gdi1sf}.&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Обращаю внимание на то, что за неповиновение законному требованию должностного лица органа, осуществляющего государственный контроль, а равно за воспрепятствование осуществлению этим должностным лицом служебных обязанностей предусмотрена административная ответственность в соответствии с частью 2 статьи 19.4.1 Кодекса РФ об административных правонарушениях.&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Приложение: копия приказа от {ИсточникДанных1.document_date} № {ИсточникДанных1.document_number} на __ л. в 1 экз., копия решения о согласовании проведения внеплановой проверки на __ л. в 1 экз.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text10>
+          </Components>
+          <Conditions isList="true" count="1">
+            <value>_x007B_ПредЛК_x007D_,Red,Transparent,Arial_x002C_8,False,False,,,None</value>
+          </Conditions>
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>ПредпЛиц</Name>
+          <Page isRef="19" />
+          <Parent isRef="19" />
+          <Sort isList="true" count="0" />
+        </ПредпЛиц>
+        <ПредпЖил Ref="24" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,29.2,17,16.2</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text5 Ref="25" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,17,16.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14</Font>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="19" />
+              <Parent isRef="24" />
+              <Text>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;{ИсточникДанных1.tvs} {ИсточникДанных1.tstart} по {ИсточникДанных1.tve} {ИсточникДанных1.tend} по адресу: {ИсточникДанных1.address}, на основании пункта 1 части 2 статьи 10 Федерального закона от 31.07.2020 № 248-ФЗ “О государственном контроле (надзоре) и муниципальном контроле в Российской Федерации” будет проведена внеплановая выездная проверка {ИсточникДанных1.short_name} на предмет исполнения ранее выданного обществу предписания от {ИсточникДанных1.gdcdd} № {ИсточникДанных1.gdcdn} об устранении выявленных нарушений обязательных требований.&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Руководствуясь частью 1 статьи 25 вышеназванного закона, требую обеспечить присутствие при проведении проверки руководителя либо иного уполномоченного представителя общества с надлежащим образом оформленной доверенностью на участие в проверке, подписание документов и получение их на руки.&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;В случае неисполнения предписания в отношении общества будет оформлен протокол об административном правонарушении, предусмотренном частью 1 статьи 19.5 КоАП РФ, для чего руководителю либо иному законному представителю общества необходимо {ИсточникДанных1.tve} прибыть в жилищную инспекцию по адресу: г. Воронеж, ул. Кирова, д. 6А к {ToLowerCase(morpher.Проанализировать(ИсточникДанных1.position).Дательный)}  {ИсточникДанных1.gdi1sf}.&lt;br&gt; 
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Обращаю внимание на то, что за неповиновение законному требованию должностного лица органа, осуществляющего государственный контроль, а равно за воспрепятствование осуществлению этим должностным лицом служебных обязанностей предусмотрена административная ответственность в соответствии с частью 2 статьи 19.4.1 Кодекса РФ об административных правонарушениях.&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Приложение: копия приказа от {ИсточникДанных1.document_date} № {ИсточникДанных1.document_number} на __ л. в 1 экз., копия решения о согласовании проведения внеплановой проверки на __ л. в 1 экз.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text5>
+          </Components>
+          <Conditions isList="true" count="1">
+            <value>_x007B_ПредЖН_x007D_,Red,Transparent,Arial_x002C_8,False,False,,,None</value>
+          </Conditions>
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>ПредпЖил</Name>
+          <Page isRef="19" />
+          <Parent isRef="19" />
+          <Sort isList="true" count="0" />
+        </ПредпЖил>
+        <ПровЖил Ref="26" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,46.2,17,11</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text13 Ref="27" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,17,11</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14</Font>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="19" />
+              <Parent isRef="26" />
+              <Text>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;В связи с рассмотрением обращения (-ий)№ {ИсточникДанных1.dt} г. по вопросу  {ИсточникДанных1.ssname == "" ? "" : ToLowerCase(morpher.Проанализировать(ИсточникДанных1.ssname).Родительный)}, с {ИсточникДанных1.tvs} {ИсточникДанных1.tstart} по {ИсточникДанных1.tve} {ИсточникДанных1.tend} по адресу: {ИсточникДанных1.address}, будет проведена выездная внеплановая проверка {ИсточникДанных1.short_name}.&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;В соответствии с Федеральным законом от 31.07.2020 № 248-ФЗ “О государственном контроле (надзоре) и муниципальном контроле в Российской Федерации” требую:&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;-  обеспечить присутствие при проверке руководителя или уполномоченного представителя юридического лица с доверенностью на право участия в проверке, подписания документов и получения их на руки;&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;-  предоставить инспектору документы, в соответствии с пунктом № 13 приказа о проведении внеплановой выездной проверки от {ИсточникДанных1.document_date} №{ИсточникДанных1.document_number}.&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Приложение: копия приказа от {ИсточникДанных1.document_date} № {ИсточникДанных1.document_number} на __ л. в 1 экз., копия решения о согласовании проведения внеплановой проверки на __ л. в 1 экз.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text13>
+          </Components>
+          <Conditions isList="true" count="1">
+            <value>_x007B_ПровЖН_x007D_,Red,Transparent,Arial_x002C_8,False,False,,,None</value>
+          </Conditions>
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>ПровЖил</Name>
+          <Page isRef="19" />
+          <Parent isRef="19" />
+          <Sort isList="true" count="0" />
+        </ПровЖил>
+      </Components>
+      <Conditions isList="true" count="1">
+        <value>_x007B_ИсточникДанных1.type_disposal_x003D__x003D_10_x0026__x0026_ИсточникДанных1.licorno_x003C_1_x007D_,Red,Transparent,Arial_x002C_8,True,False,,,None</value>
+      </Conditions>
+      <Guid>6b1297b9c5bc4427a3ac4c2847b3d3ca</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>subReport_1</Name>
+      <PageHeight>70</PageHeight>
+      <PageWidth>19</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="28" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </subReport_1>
+  </Pages>
+  <PrinterSettings Ref="29" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="9">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+    <value>Morpher.dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>12/23/2021 12:20:19 PM</ReportChanged>
+  <ReportCreated>12/8/2020 11:10:16 AM</ReportCreated>
+  <ReportFile>D:\FileStore\Voronej\DecisionNotification.mrt</ReportFile>
+  <ReportGuid>32832c4800994fb196220faaeb07d5d1</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+using Slepov.Russian.Morpher;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+		public Склонятель morpher = new Склонятель("SonFhyB1DbaxkkAQ4tfrhQ==");
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

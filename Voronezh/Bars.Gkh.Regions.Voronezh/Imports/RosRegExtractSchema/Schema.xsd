@@ -1,0 +1,1012 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Extract">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="eDocument">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Sender">
+								<xs:complexType>
+									<xs:attribute name="Kod" type="xs:unsignedByte" use="required" />
+									<xs:attribute name="Name" type="xs:string" use="required" />
+									<xs:attribute name="Region" type="xs:unsignedByte" use="required" />
+									<xs:attribute name="Date_Upload" type="xs:date" use="required" />
+									<xs:attribute name="Appointment" type="xs:string" use="required" />
+									<xs:attribute name="FIO" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Recipient">
+								<xs:complexType>
+									<xs:attribute name="Kod" type="xs:unsignedLong" use="required" />
+									<xs:attribute name="Name" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="CodeType" type="xs:unsignedByte" use="required" />
+						<xs:attribute name="Version" type="xs:unsignedByte" use="required" />
+						<xs:attribute name="Scope" type="xs:string" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ReestrExtract">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DeclarAttribute">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ReceivName" type="xs:string" />
+										<xs:element name="ReceivAdress" type="xs:string" />
+									</xs:sequence>
+									<xs:attribute name="ID_KUVI" type="xs:unsignedLong" use="required" />
+									<xs:attribute name="ExtractTypeCode" type="xs:unsignedShort" use="required" />
+									<xs:attribute name="ExtractTypeText" type="xs:string" use="required" />
+									<xs:attribute name="ExtractNumber" type="xs:string" use="required" />
+									<xs:attribute name="ExtractDate" type="xs:string" use="required" />
+									<xs:attribute name="RequeryNumber" type="xs:string" use="required" />
+									<xs:attribute name="RequeryDate" type="xs:string" use="required" />
+									<xs:attribute name="ExtractCount" type="xs:unsignedByte" use="required" />
+									<xs:attribute name="NoticeCount" type="xs:unsignedByte" use="required" />
+									<xs:attribute name="RefuseCount" type="xs:unsignedByte" use="required" />
+									<xs:attribute name="Registrator" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ExtractObjectRight">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="HeadContent">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="ID_REC_KUVI" type="xs:unsignedLong" />
+													<xs:element name="Title" type="xs:string" />
+													<xs:element name="DeptName" type="xs:string" />
+													<xs:element name="ExtractTitle" type="xs:string" />
+													<xs:element name="Content" type="xs:string" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="ExtractObject">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="ObjectRight">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="ObjectDesc">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="ID_Object" type="xs:unsignedLong" />
+																			<xs:element name="CadastralNumber" type="xs:string" />
+																			<xs:element name="ObjectType" type="xs:unsignedInt" />
+																			<xs:element name="ObjectTypeText" type="xs:string" />
+																			<xs:element name="Name" type="xs:string" />
+																			<xs:element minOccurs="0" name="GroundCategory" type="xs:unsignedInt" />
+																			<xs:element minOccurs="0" name="GroundCategoryText" type="xs:string" />
+																			<xs:element minOccurs="0" name="Assignation_Code" type="xs:unsignedLong" />
+																			<xs:element minOccurs="0" name="Assignation_Code_Text" type="xs:string" />
+																			<xs:element name="Area">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element minOccurs="0" name="Area" type="xs:decimal" />
+																						<xs:element name="AreaText" type="xs:string" />
+																						<xs:element minOccurs="0" name="Unit" type="xs:unsignedLong" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element minOccurs="0" name="Inv_No" type="xs:string" />
+																			<xs:element minOccurs="0" name="Floor" type="xs:string" />
+																			<xs:element minOccurs="0" name="FloorPlan_No">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="Explication" type="xs:string" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="Address">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="ID_Address" type="xs:unsignedInt" />
+																						<xs:element name="Content" type="xs:string" />
+																						<xs:element name="Region">
+																							<xs:complexType>
+																								<xs:attribute name="Code" type="xs:unsignedByte" use="required" />
+																								<xs:attribute name="Name" type="xs:string" use="required" />
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="Code_OKATO" type="xs:unsignedLong" />
+																						<xs:element name="Code_KLADR" type="xs:unsignedLong" />
+																						<xs:element minOccurs="0" name="District">
+																							<xs:complexType>
+																								<xs:attribute name="Name" type="xs:string" use="required" />
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element minOccurs="0" name="City">
+																							<xs:complexType>
+																								<xs:attribute name="Name" type="xs:string" use="required" />
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element minOccurs="0" name="Urban_District">
+																							<xs:complexType>
+																								<xs:attribute name="Name" type="xs:string" use="required" />
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element minOccurs="0" name="Locality">
+																							<xs:complexType>
+																								<xs:attribute name="Name" type="xs:string" use="required" />
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element minOccurs="0" name="Street">
+																							<xs:complexType>
+																								<xs:attribute name="Name" type="xs:string" use="required" />
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element minOccurs="0" name="Level1">
+																							<xs:complexType>
+																								<xs:attribute name="Name" type="xs:string" use="required" />
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element minOccurs="0" name="Level2">
+																							<xs:complexType>
+																								<xs:attribute name="Name" type="xs:string" use="required" />
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element minOccurs="0" name="Level3">
+																							<xs:complexType>
+																								<xs:attribute name="Name" type="xs:string" use="required" />
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element minOccurs="0" name="Apartment">
+																							<xs:complexType>
+																								<xs:attribute name="Name" type="xs:string" use="required" />
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element minOccurs="0" name="Other" type="xs:string" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element maxOccurs="unbounded" name="Right">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element minOccurs="0" name="NoOwner" type="xs:string" />
+																			<xs:element minOccurs="0" name="NoRegistration" type="xs:string" />
+																			<xs:element minOccurs="0" maxOccurs="unbounded" name="Owner">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="ID_Subject" type="xs:unsignedLong" />
+																						<xs:element minOccurs="0" name="Governance">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="Code_SP" type="xs:unsignedLong" />
+																									<xs:element name="Content" type="xs:string" />
+																									<xs:element name="Name" type="xs:string" />
+																									<xs:element minOccurs="0" name="RegDate" type="xs:string" />
+																									<xs:element minOccurs="0" name="OKATO_Code" type="xs:unsignedLong" />
+																									<xs:element minOccurs="0" name="Country" type="xs:string" />
+																									<xs:element minOccurs="0" name="Address" type="xs:string" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element minOccurs="0" name="Organization">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="Code_SP" type="xs:unsignedLong" />
+																									<xs:element name="Content" type="xs:string" />
+																									<xs:element minOccurs="0" name="Code_OPF" type="xs:unsignedLong" />
+																									<xs:element name="Name" type="xs:string" />
+																									<xs:element name="INN" type="xs:unsignedLong" />
+																									<xs:element minOccurs="0" name="Code_OGRN" type="xs:unsignedLong" />
+																									<xs:element minOccurs="0" name="RegDate" type="xs:string" />
+																									<xs:element minOccurs="0" name="AgencyRegistration" type="xs:string" />
+																									<xs:element minOccurs="0" name="Code_CPP" type="xs:unsignedInt" />
+																									<xs:element minOccurs="0" name="Location">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:choice maxOccurs="unbounded">
+																													<xs:element name="ID_Address" type="xs:unsignedLong" />
+																													<xs:element name="Content" type="xs:string" />
+																													<xs:element name="Region">
+																														<xs:complexType>
+																															<xs:attribute name="Code" type="xs:unsignedByte" use="required" />
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																													<xs:element name="Code_OKATO" type="xs:unsignedLong" />
+																													<xs:element name="Code_KLADR" type="xs:unsignedLong" />
+																													<xs:element name="District">
+																														<xs:complexType>
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																													<xs:element name="Postal_Code" type="xs:unsignedInt" />
+																													<xs:element name="City">
+																														<xs:complexType>
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																													<xs:element name="Locality">
+																														<xs:complexType>
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																													<xs:element name="Urban_District">
+																														<xs:complexType>
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																													<xs:element name="Street">
+																														<xs:complexType>
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																													<xs:element name="Level1">
+																														<xs:complexType>
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																													<xs:element name="Apartment">
+																														<xs:complexType>
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																													<xs:element name="Level2">
+																														<xs:complexType>
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																												</xs:choice>
+																											</xs:sequence>
+																										</xs:complexType>
+																									</xs:element>
+																									<xs:element minOccurs="0" name="FactLocation">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element name="ID_Address" type="xs:unsignedLong" />
+																												<xs:element name="Content" type="xs:string" />
+																												<xs:element name="Region">
+																													<xs:complexType>
+																														<xs:attribute name="Code" type="xs:unsignedByte" use="required" />
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element name="Code_OKATO" type="xs:unsignedLong" />
+																												<xs:element name="Code_KLADR" type="xs:unsignedLong" />
+																												<xs:element minOccurs="0" name="Locality">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="District">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="City">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="Street">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="Level1">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="Level2">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="Level3">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="Apartment">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																											</xs:sequence>
+																										</xs:complexType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element minOccurs="0" name="Person">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="Code_SP" type="xs:unsignedLong" />
+																									<xs:element name="Content" type="xs:string" />
+																									<xs:element name="FIO">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element name="Surname" type="xs:string" />
+																												<xs:element name="First" type="xs:string" />
+																												<xs:element minOccurs="0" name="Patronymic" type="xs:string" />
+																											</xs:sequence>
+																										</xs:complexType>
+																									</xs:element>
+																									<xs:element minOccurs="0" name="DateBirth" type="xs:string" />
+																									<xs:element minOccurs="0" name="Place_Birth" type="xs:string" />
+																									<xs:element minOccurs="0" name="Citizen" type="xs:string" />
+																									<xs:element minOccurs="0" name="Sex" type="xs:string" />
+																									<xs:element name="Document">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element name="Content" type="xs:string" />
+																												<xs:element name="Type_Document" type="xs:unsignedLong" />
+																												<xs:element name="Name" type="xs:string" />
+																												<xs:element minOccurs="0" name="Series" type="xs:string" />
+																												<xs:element name="Number" type="xs:string" />
+																												<xs:element name="Date" type="xs:string" />
+																												<xs:element name="IssueOrgan" type="xs:string" />
+																												<xs:element minOccurs="0" name="DeptCode" type="xs:string" />
+																											</xs:sequence>
+																										</xs:complexType>
+																									</xs:element>
+																									<xs:element minOccurs="0" name="INN" type="xs:unsignedLong" />
+																									<xs:element minOccurs="0" name="Location">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element minOccurs="0" name="ID_Address" type="xs:unsignedLong" />
+																												<xs:element name="Content" type="xs:string" />
+																												<xs:element minOccurs="0" name="Country">
+																													<xs:complexType>
+																														<xs:attribute name="Code" type="xs:unsignedShort" use="required" />
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="Region">
+																													<xs:complexType>
+																														<xs:attribute name="Code" type="xs:unsignedByte" use="optional" />
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="Code_OKATO" type="xs:unsignedLong" />
+																												<xs:element minOccurs="0" name="Code_KLADR" type="xs:unsignedLong" />
+																												<xs:element minOccurs="0" name="District">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="City">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="Urban_District">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="Locality">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="Street">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="Level1">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="Level2">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="Level3">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="Apartment">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="Other" type="xs:string" />
+																											</xs:sequence>
+																										</xs:complexType>
+																									</xs:element>
+																									<xs:element minOccurs="0" name="FactLocation">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:choice maxOccurs="unbounded">
+																													<xs:element name="ID_Address" type="xs:unsignedLong" />
+																													<xs:element name="Content" type="xs:string" />
+																													<xs:element name="Region">
+																														<xs:complexType>
+																															<xs:attribute name="Code" type="xs:unsignedByte" use="required" />
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																													<xs:element name="Code_OKATO" type="xs:unsignedLong" />
+																													<xs:element name="Code_KLADR" type="xs:unsignedLong" />
+																													<xs:element name="City">
+																														<xs:complexType>
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																													<xs:element name="District">
+																														<xs:complexType>
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																													<xs:element name="Locality">
+																														<xs:complexType>
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																													<xs:element name="Street">
+																														<xs:complexType>
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																													<xs:element name="Level1">
+																														<xs:complexType>
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																													<xs:element name="Apartment">
+																														<xs:complexType>
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																													<xs:element name="Level2">
+																														<xs:complexType>
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																													<xs:element name="Other" type="xs:string" />
+																													<xs:element name="Country">
+																														<xs:complexType>
+																															<xs:attribute name="Code" type="xs:unsignedShort" use="required" />
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																													<xs:element name="Urban_District">
+																														<xs:complexType>
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																													<xs:element name="Level3">
+																														<xs:complexType>
+																															<xs:attribute name="Name" type="xs:string" use="required" />
+																														</xs:complexType>
+																													</xs:element>
+																												</xs:choice>
+																											</xs:sequence>
+																										</xs:complexType>
+																									</xs:element>
+																									<xs:element minOccurs="0" name="SNILS" type="xs:string" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element minOccurs="0" name="Registration">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="ID_Record" type="xs:unsignedLong" />
+																						<xs:element name="RegNumber" type="xs:string" />
+																						<xs:element name="Type" type="xs:unsignedInt" />
+																						<xs:element name="Name" type="xs:string" />
+																						<xs:element name="RegDate" type="xs:string" />
+																						<xs:element name="RestorCourt" />
+																						<xs:element minOccurs="0" name="ShareText" type="xs:string" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element minOccurs="0" maxOccurs="unbounded" name="Encumbrance">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="ID_Record" type="xs:unsignedLong" />
+																						<xs:element name="RegNumber" type="xs:string" />
+																						<xs:element name="Type" type="xs:unsignedLong" />
+																						<xs:element name="Name" type="xs:string" />
+																						<xs:element minOccurs="0" name="ShareText" type="xs:string" />
+																						<xs:element name="RegDate" type="xs:string" />
+																						<xs:element minOccurs="0" name="Duration">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element minOccurs="0" name="Started" type="xs:string" />
+																									<xs:element minOccurs="0" name="Stopped" type="xs:string" />
+																									<xs:element name="Term" type="xs:string" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element minOccurs="0" name="AllShareOwner" type="xs:string" />
+																						<xs:element minOccurs="0" maxOccurs="unbounded" name="Owner">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="ID_Subject" type="xs:unsignedLong" />
+																									<xs:element minOccurs="0" name="Person">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element name="Code_SP" type="xs:unsignedLong" />
+																												<xs:element name="Content" type="xs:string" />
+																												<xs:element name="FIO">
+																													<xs:complexType>
+																														<xs:sequence>
+																															<xs:element name="Surname" type="xs:string" />
+																															<xs:element name="First" type="xs:string" />
+																															<xs:element minOccurs="0" name="Patronymic" type="xs:string" />
+																														</xs:sequence>
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="DateBirth" type="xs:string" />
+																												<xs:element minOccurs="0" name="Place_Birth" type="xs:string" />
+																												<xs:element minOccurs="0" name="Citizen" type="xs:string" />
+																												<xs:element minOccurs="0" name="Sex" type="xs:string" />
+																												<xs:element name="Document">
+																													<xs:complexType>
+																														<xs:sequence>
+																															<xs:element name="Content" type="xs:string" />
+																															<xs:element name="Type_Document" type="xs:unsignedLong" />
+																															<xs:element name="Name" type="xs:string" />
+																															<xs:element minOccurs="0" name="Series" type="xs:string" />
+																															<xs:element name="Number" type="xs:string" />
+																															<xs:element name="Date" type="xs:string" />
+																															<xs:element name="IssueOrgan" type="xs:string" />
+																															<xs:element minOccurs="0" name="DeptCode" type="xs:string" />
+																														</xs:sequence>
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="INN" type="xs:unsignedLong" />
+																												<xs:element minOccurs="0" name="Location">
+																													<xs:complexType>
+																														<xs:sequence>
+																															<xs:choice maxOccurs="unbounded">
+																																<xs:element name="ID_Address" type="xs:unsignedLong" />
+																																<xs:element name="Content" type="xs:string" />
+																																<xs:element name="Region">
+																																	<xs:complexType>
+																																		<xs:attribute name="Code" type="xs:unsignedByte" use="required" />
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Code_OKATO" type="xs:unsignedLong" />
+																																<xs:element name="Code_KLADR" type="xs:unsignedLong" />
+																																<xs:element name="District">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Locality">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="City">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Street">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Level1">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Level2">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Apartment">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Other" type="xs:string" />
+																																<xs:element name="Urban_District">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																															</xs:choice>
+																														</xs:sequence>
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="FactLocation">
+																													<xs:complexType>
+																														<xs:sequence>
+																															<xs:element name="ID_Address" type="xs:unsignedLong" />
+																															<xs:element name="Content" type="xs:string" />
+																															<xs:element name="Region">
+																																<xs:complexType>
+																																	<xs:attribute name="Code" type="xs:unsignedByte" use="required" />
+																																	<xs:attribute name="Name" type="xs:string" use="required" />
+																																</xs:complexType>
+																															</xs:element>
+																															<xs:element name="Code_OKATO" type="xs:unsignedLong" />
+																															<xs:element name="Code_KLADR" type="xs:unsignedLong" />
+																															<xs:element minOccurs="0" name="District">
+																																<xs:complexType>
+																																	<xs:attribute name="Name" type="xs:string" use="required" />
+																																</xs:complexType>
+																															</xs:element>
+																															<xs:element minOccurs="0" name="City">
+																																<xs:complexType>
+																																	<xs:attribute name="Name" type="xs:string" use="required" />
+																																</xs:complexType>
+																															</xs:element>
+																															<xs:element minOccurs="0" name="Locality">
+																																<xs:complexType>
+																																	<xs:attribute name="Name" type="xs:string" use="required" />
+																																</xs:complexType>
+																															</xs:element>
+																															<xs:element minOccurs="0" name="Street">
+																																<xs:complexType>
+																																	<xs:attribute name="Name" type="xs:string" use="required" />
+																																</xs:complexType>
+																															</xs:element>
+																															<xs:element minOccurs="0" name="Level1">
+																																<xs:complexType>
+																																	<xs:attribute name="Name" type="xs:string" use="required" />
+																																</xs:complexType>
+																															</xs:element>
+																															<xs:element minOccurs="0" name="Level2">
+																																<xs:complexType>
+																																	<xs:attribute name="Name" type="xs:string" use="required" />
+																																</xs:complexType>
+																															</xs:element>
+																															<xs:element minOccurs="0" name="Apartment">
+																																<xs:complexType>
+																																	<xs:attribute name="Name" type="xs:string" use="required" />
+																																</xs:complexType>
+																															</xs:element>
+																															<xs:element minOccurs="0" name="Other" type="xs:string" />
+																														</xs:sequence>
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="SNILS" type="xs:string" />
+																											</xs:sequence>
+																										</xs:complexType>
+																									</xs:element>
+																									<xs:element minOccurs="0" name="Governance">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element name="Code_SP" type="xs:unsignedLong" />
+																												<xs:element name="Content" type="xs:string" />
+																												<xs:element name="Name" type="xs:string" />
+																												<xs:element minOccurs="0" name="RegDate" type="xs:string" />
+																												<xs:element minOccurs="0" name="OKATO_Code" type="xs:unsignedLong" />
+																												<xs:element name="Country" type="xs:string" />
+																												<xs:element minOccurs="0" name="Address" type="xs:string" />
+																											</xs:sequence>
+																										</xs:complexType>
+																									</xs:element>
+																									<xs:element minOccurs="0" name="Organization">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element name="Code_SP" type="xs:unsignedLong" />
+																												<xs:element name="Content" type="xs:string" />
+																												<xs:element name="Code_OPF" type="xs:unsignedLong" />
+																												<xs:element name="Name" type="xs:string" />
+																												<xs:element name="INN" type="xs:unsignedLong" />
+																												<xs:element name="Code_OGRN" type="xs:unsignedLong" />
+																												<xs:element minOccurs="0" name="RegDate" type="xs:string" />
+																												<xs:element minOccurs="0" name="AgencyRegistration" type="xs:string" />
+																												<xs:element minOccurs="0" name="Code_CPP" type="xs:unsignedInt" />
+																												<xs:element minOccurs="0" name="Location">
+																													<xs:complexType>
+																														<xs:sequence>
+																															<xs:choice maxOccurs="unbounded">
+																																<xs:element name="ID_Address" type="xs:unsignedLong" />
+																																<xs:element name="Content" type="xs:string" />
+																																<xs:element name="Region">
+																																	<xs:complexType>
+																																		<xs:attribute name="Code" type="xs:unsignedByte" use="required" />
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Code_OKATO" type="xs:unsignedLong" />
+																																<xs:element name="Code_KLADR" type="xs:unsignedLong" />
+																																<xs:element name="Postal_Code" type="xs:unsignedInt" />
+																																<xs:element name="District">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Locality">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="City">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Street">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Level1">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Apartment">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Level2">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Urban_District">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																															</xs:choice>
+																														</xs:sequence>
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element minOccurs="0" name="FactLocation">
+																													<xs:complexType>
+																														<xs:sequence>
+																															<xs:choice maxOccurs="unbounded">
+																																<xs:element name="ID_Address" type="xs:unsignedLong" />
+																																<xs:element name="Content" type="xs:string" />
+																																<xs:element name="Region">
+																																	<xs:complexType>
+																																		<xs:attribute name="Code" type="xs:unsignedByte" use="required" />
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Code_OKATO" type="xs:unsignedLong" />
+																																<xs:element name="Code_KLADR" type="xs:unsignedLong" />
+																																<xs:element name="City">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Street">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Apartment">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Level1">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Level2">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Postal_Code" type="xs:unsignedInt" />
+																																<xs:element name="District">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Locality">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																																<xs:element name="Level3">
+																																	<xs:complexType>
+																																		<xs:attribute name="Name" type="xs:string" use="required" />
+																																	</xs:complexType>
+																																</xs:element>
+																															</xs:choice>
+																														</xs:sequence>
+																													</xs:complexType>
+																												</xs:element>
+																											</xs:sequence>
+																										</xs:complexType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element maxOccurs="unbounded" name="DocFound">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="ID_Document" type="xs:unsignedLong" />
+																									<xs:element name="Content" type="xs:string" />
+																									<xs:element name="Type_Document" type="xs:unsignedLong" />
+																									<xs:element name="Name" type="xs:string" />
+																									<xs:element minOccurs="0" name="Series" type="xs:string" />
+																									<xs:element minOccurs="0" name="Number" type="xs:string" />
+																									<xs:element name="Date" type="xs:string" />
+																									<xs:element minOccurs="0" name="IssueOrgan" type="xs:string" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																					<xs:attribute name="EncumbNumber" type="xs:unsignedByte" use="required" />
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element minOccurs="0" name="NoEncumbrance" type="xs:string" />
+																		</xs:sequence>
+																		<xs:attribute name="RightNumber" type="xs:unsignedByte" use="required" />
+																	</xs:complexType>
+																</xs:element>
+																<xs:element minOccurs="0" name="ShareHolding">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="ID_DDU" type="xs:unsignedLong" />
+																			<xs:element name="ShareHolding">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="ShareObjects" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element maxOccurs="unbounded" name="Owner">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="ID_Subject" type="xs:unsignedLong" />
+																						<xs:element name="Person">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="Code_SP" type="xs:unsignedLong" />
+																									<xs:element name="Content" type="xs:string" />
+																									<xs:element name="FIO">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element name="Surname" type="xs:string" />
+																												<xs:element name="First" type="xs:string" />
+																												<xs:element name="Patronymic" type="xs:string" />
+																											</xs:sequence>
+																										</xs:complexType>
+																									</xs:element>
+																									<xs:element name="DateBirth" type="xs:string" />
+																									<xs:element name="Place_Birth" type="xs:string" />
+																									<xs:element name="Citizen" type="xs:string" />
+																									<xs:element name="Sex" type="xs:string" />
+																									<xs:element name="Document">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element name="Content" type="xs:string" />
+																												<xs:element name="Type_Document" type="xs:unsignedLong" />
+																												<xs:element name="Name" type="xs:string" />
+																												<xs:element name="Series" type="xs:string" />
+																												<xs:element name="Number" type="xs:unsignedInt" />
+																												<xs:element name="Date" type="xs:string" />
+																												<xs:element name="IssueOrgan" type="xs:string" />
+																												<xs:element name="DeptCode" type="xs:string" />
+																											</xs:sequence>
+																										</xs:complexType>
+																									</xs:element>
+																									<xs:element name="Location">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element name="ID_Address" type="xs:unsignedInt" />
+																												<xs:element name="Content" type="xs:string" />
+																												<xs:element name="Region">
+																													<xs:complexType>
+																														<xs:attribute name="Code" type="xs:unsignedByte" use="required" />
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element name="Code_OKATO" type="xs:unsignedLong" />
+																												<xs:element name="Code_KLADR" type="xs:unsignedLong" />
+																												<xs:element name="City">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element name="Street">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element name="Level1">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element name="Apartment">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																											</xs:sequence>
+																										</xs:complexType>
+																									</xs:element>
+																									<xs:element minOccurs="0" name="FactLocation">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element name="ID_Address" type="xs:unsignedInt" />
+																												<xs:element name="Content" type="xs:string" />
+																												<xs:element name="Region">
+																													<xs:complexType>
+																														<xs:attribute name="Code" type="xs:unsignedByte" use="required" />
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element name="Code_OKATO" type="xs:unsignedLong" />
+																												<xs:element name="Code_KLADR" type="xs:unsignedLong" />
+																												<xs:element name="City">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element name="Street">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element name="Level1">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																												<xs:element name="Apartment">
+																													<xs:complexType>
+																														<xs:attribute name="Name" type="xs:string" use="required" />
+																													</xs:complexType>
+																												</xs:element>
+																											</xs:sequence>
+																										</xs:complexType>
+																									</xs:element>
+																									<xs:element name="SNILS" type="xs:string" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element minOccurs="0" name="NoShareHolding" type="xs:string" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="RightAssert" type="xs:string" />
+													<xs:element name="RightClaim" type="xs:string" />
+													<xs:element name="RightAgainst" type="xs:string" />
+													<xs:element name="RightSteal" type="xs:string" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="FootContent">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Recipient" type="xs:string" />
+													<xs:element name="ExtractDate" type="xs:string" />
+													<xs:element name="Content" type="xs:string" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

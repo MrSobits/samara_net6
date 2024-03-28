@@ -1,0 +1,724 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <BeginRenderEvent>((StiPostgreSQLDatabase)this.Dictionary.Databases["Connection"]).ConnectionString = СтрокаПодключениякБД;</BeginRenderEvent>
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <Connection Ref="2" type="Stimulsoft.Report.Dictionary.StiPostgreSQLDatabase" isKey="true">
+        <Alias>Connection</Alias>
+        <ConnectionStringEncrypted>48jR60ZaS91reKWRyuzkbtU62c1nWbO8bFqxhGopdXuL0mkC5gOrpMJczZRhJSIjw/JPCEYLqYDAbKD0+S0yP8Jw+wlJV/uF6RntmGRMJUaB0nsCUG0=</ConnectionStringEncrypted>
+        <Name>Connection</Name>
+      </Connection>
+    </Databases>
+    <DataSources isList="true" count="3">
+      <Уведомление Ref="3" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>Уведомление</Alias>
+        <Columns isList="true" count="8">
+          <value>Дата,System.DateTime</value>
+          <value>НомерДокумента,System.String</value>
+          <value>ДатаПисьма,System.DateTime</value>
+          <value>НомерПисьма,System.String</value>
+          <value>ДатаСоставленияПротокола,System.DateTime</value>
+          <value>ВремяСоставленияПротокола,System.DateTime</value>
+          <value>МестоСоставленияПротокола,System.String</value>
+          <value>МестоВремяСбора,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>Уведомление</Name>
+        <NameInSource>Connection</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select 
+nd.nc_date "Дата",
+nd.nc_num "НомерДокумента",
+nd.nc_date_letter "ДатаПисьма",
+nd.nc_num_letter "НомерПисьма",
+nd.notice_date_protocol "ДатаСоставленияПротокола",
+nd.notice_time_protocol "ВремяСоставленияПротокола",
+nd.notice_place_creation "МестоСоставленияПротокола",
+nd.notice_description "МестоВремяСбора"
+from gji_nso_disposal nd
+where nd.id= {ИдентификаторДокументаГЖИ}</SqlCommand>
+      </Уведомление>
+      <ОтветственныйЗаИсполнение Ref="4" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ОтветственныйЗаИсполнение</Alias>
+        <Columns isList="true" count="4">
+          <value>ДолжностьОтветственного,System.String</value>
+          <value>ФИО,System.String</value>
+          <value>ТелефонОтветственного,System.String</value>
+          <value>НаименованиеОтдела,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ОтветственныйЗаИсполнение</Name>
+        <NameInSource>Connection</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select 
+	i."position" "ДолжностьОтветственного",
+i.fio "ФИО", 
+i.phone "ТелефонОтветственного",
+z.short_name "НаименованиеОтдела"
+from gji_disposal d
+left join gkh_dict_inspector i on d.responsible_execut_id=i.id
+left join gkh_dict_zonainsp_inspect zi on zi.inspector_id=i.id
+left join gkh_dict_zonainsp z on z.id=zi.zonal_inspection_id
+where d.id={ИдентификаторДокументаГЖИ}
+</SqlCommand>
+      </ОтветственныйЗаИсполнение>
+      <УправляющаяОрганизация Ref="5" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>УправляющаяОрганизация</Alias>
+        <Columns isList="true" count="5">
+          <value>Наименование,System.String</value>
+          <value>ИНН,System.String</value>
+          <value>ЮридическийАдрес,System.String</value>
+          <value>ФИОРуководителяДП,System.String</value>
+          <value>ДолжностьРуководителяДП,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>УправляющаяОрганизация</Name>
+        <NameInSource>Connection</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select 
+	distinct on (1,2,3,4)
+c.name "Наименование",
+c.inn "ИНН",
+c.juridical_address "ЮридическийАдрес",
+case when nullif(trim(cc.surname_dative),'') is null
+	then cc.full_name
+	else array_to_string(array[cc.surname_dative, cc.name_dative, cc.patronymic_dative], ' ')
+	end "ФИОРуководителяДП",
+upper(substring(coalesce(nullif(trim(p.name_dative),''), p.name)  from '^.')) || substring(coalesce(nullif(trim(p.name_dative),''), p.name)  from '^.(.*)$') "ДолжностьРуководителяДП"
+from gji_document d
+left join gji_inspection i on i.id=d.inspection_id
+left join gkh_contragent c on c.id=i.contragent_id
+left join gkh_contragent_contact cc on cc.contragent_id=c.id
+left join gkh_dict_position p on p.id=cc.position_id
+where d.id={ИдентификаторДокументаГЖИ}
+order by 1,2,3,4,p.code asc</SqlCommand>
+      </УправляющаяОрганизация>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="2">
+      <value>,СтрокаПодключениякБД,СтрокаПодключениякБД,System.String,Server_x003D_192.168.222.143_x003B_CommandTimeout_x003D_600_x003B_Database_x003D_stable_nso_x003B_User_x0020_ID_x003D_bars_x003B_Password_x003D_123_x003B_,False,False</value>
+      <value>,ИдентификаторДокументаГЖИ,ИдентификаторДокументаГЖИ,System.String,_x0033_5376,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="6" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="3">
+        <ReportTitleBand1 Ref="7" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,19,8.4</ClientRectangle>
+          <Components isList="true" count="7">
+            <Text1 Ref="8" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Bottom;Black;2;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0.2,0.25,18.6,1.63</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>dfe157a336c64b33b4663c390ee320f9</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>ГОСУДАРСТВЕННАЯ ЖИЛИЩНАЯ ИНСПЕКЦИЯ &lt;br&gt;
+НОВОСИБИРСКОЙ  ОБЛАСТИ &lt;br&gt;
+{ОтветственныйЗаИсполнение.НаименованиеОтдела}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text1>
+            <Text9 Ref="9" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0.2,2.03,18.6,0.56</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>3700d89e0d6a4f1cb26f3f59f62a317a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>630011, г. Новосибирск, Красный проспект, 18, тел. 202-07-57 / факс: 203-59-00</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text9>
+            <Text2 Ref="10" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>8.6,3.05,10.2,0.61</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>35646c9d3faf4caf922ae13fab9d8ac2</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>{УправляющаяОрганизация.ДолжностьРуководителяДП}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="11" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text2>
+            <Text3 Ref="12" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>8.6,3.81,10.2,0.61</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>08aba5d876114671b98d08d7a1b3403f</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>{УправляющаяОрганизация.Наименование}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="13" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text3>
+            <Text4 Ref="14" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>8.6,4.57,10.2,0.61</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>a6f8a960fe924af98148292028627d8f</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>ИНН: {УправляющаяОрганизация.ИНН}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="15" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text4>
+            <Text5 Ref="16" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>8.6,5.33,10.2,0.61</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>2339fda0a5bd4dfda9e29ef3a71e3c85</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>{УправляющаяОрганизация.ФИОРуководителяДП}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="17" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text5>
+            <Text6 Ref="18" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>8.6,7.11,10.2,1.01</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>e6fd24e5475b4b1f8e6002db34e1873b</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>Юридический адрес: {УправляющаяОрганизация.ЮридическийАдрес}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="19" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text6>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>3b6a6b9d0b254bb49ba510eb69637d56</Guid>
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+        </ReportTitleBand1>
+        <DataBand1 Ref="20" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,9.6,19,12</ClientRectangle>
+          <Components isList="true" count="11">
+            <Text7 Ref="21" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0.25,19,1.12</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>2ce79e93585c4785b781fb92e1c480c6</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="6" />
+              <Parent isRef="20" />
+              <Text>&lt;b&gt; УВЕДОМЛЕНИЕ &lt;/b&gt; &lt;br&gt;
+о проведении проверки № {Уведомление.НомерДокумента} от {Format("{0:MM.dd.yyyy}", Уведомление.Дата)}
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="22" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text7>
+            <Text8 Ref="23" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Bottom;Black;1;Solid;False;1;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,1.52,19,0.86</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>88281c92b7c549e4918229c0f1efbe36</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="6" />
+              <Parent isRef="20" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="24" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text8>
+            <Text10 Ref="25" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Bottom;Black;1;Solid;False;1;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,2.6,19,0.86</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>283ba48bf0784bc0ba7928efc1c27f74</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="6" />
+              <Parent isRef="20" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="26" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text10>
+            <Text11 Ref="27" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Bottom;Black;1;Solid;False;1;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,3.6,19,0.86</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>8eb544fee923485f8f893713a04337d7</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="6" />
+              <Parent isRef="20" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="28" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text11>
+            <Text12 Ref="29" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Bottom;Black;1;Solid;False;1;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,4.6,19,0.86</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>4925ff2337b8499e8c11890942f9457b</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="6" />
+              <Parent isRef="20" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="30" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text12>
+            <Text13 Ref="31" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Bottom;Black;1;Solid;False;1;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,5.6,19,0.86</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>7db95cf7a4e240d99ae33ceb46d17def</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="6" />
+              <Parent isRef="20" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="32" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text13>
+            <Text14 Ref="33" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Bottom;Black;1;Solid;False;1;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,6.6,19,0.86</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>ebd4ccdfbbdd42aeb297efc949e809ac</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="6" />
+              <Parent isRef="20" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="34" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text14>
+            <Text15 Ref="35" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Bottom;Black;1;Solid;False;1;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,7.6,19,0.86</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>d6c6b4b1e0f64de1af218b49aeca9dd6</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="6" />
+              <Parent isRef="20" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="36" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text15>
+            <Text16 Ref="37" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Bottom;Black;1;Solid;False;1;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,8.6,19,0.86</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>1034131f07404433b390585b30ef6b42</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text16</Name>
+              <Page isRef="6" />
+              <Parent isRef="20" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="38" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text16>
+            <Text17 Ref="39" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Bottom;Black;1;Solid;False;1;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,9.6,19,0.86</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>e654733b3fce4a6895f5c97dd1309a86</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text17</Name>
+              <Page isRef="6" />
+              <Parent isRef="20" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="40" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text17>
+            <Text18 Ref="41" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Bottom;Black;1;Solid;False;1;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,10.6,19,0.86</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>8acf5bd5d03440a198c1eb384f8cc1d5</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text18</Name>
+              <Page isRef="6" />
+              <Parent isRef="20" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="42" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text18>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Filters isList="true" count="0" />
+          <Guid>f58a0f0f8c794e67a2fa16799bc6a228</Guid>
+          <Name>DataBand1</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+        <DataBand2 Ref="43" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,22.4,19,1.6</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text21 Ref="44" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0.25,10.62,0.61</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>5ad25f6312694c1bafd2e5f3059c278c</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text21</Name>
+              <Page isRef="6" />
+              <Parent isRef="43" />
+              <Text>{ОтветственныйЗаИсполнение.ДолжностьОтветственного} ГЖИ НСО</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="45" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text21>
+            <Text22 Ref="46" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>10.6,0.25,7.06,0.61</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>f0a361f5113b4cdea211e92e173b96de</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text22</Name>
+              <Page isRef="6" />
+              <Parent isRef="43" />
+              <Text>{ОтветственныйЗаИсполнение.ФИО}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="47" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text22>
+            <Text23 Ref="48" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,1.02,8.84,0.61</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>25cb4685c0ed4b248a27b7dfb825d9e2</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text23</Name>
+              <Page isRef="6" />
+              <Parent isRef="43" />
+              <Text>т. {ОтветственныйЗаИсполнение.ТелефонОтветственного}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="49" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text23>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>4b5d1b03c9a94f66885933bae9c69e4c</Guid>
+          <Name>DataBand2</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <Sort isList="true" count="0" />
+        </DataBand2>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>34d1534977ca4369bad973fdffc13d84</Guid>
+      <LargeHeightFactor>1</LargeHeightFactor>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+      <Watermark Ref="50" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="51" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>7/22/2015 12:06:03 PM</ReportChanged>
+  <ReportCreated>12/17/2014 10:15:19 AM</ReportCreated>
+  <ReportFile>\\tsclient\________\gkh-templates\GJI\Новосибирск\Уведомление о проверке.mrt</ReportFile>
+  <ReportGuid>c786ffd916ed42c9b4bd3e7aa155d868</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+using Stimulsoft.Report.Dictionary;
+using System.Text;
+
+namespace Reports
+{
+	public class Report : Stimulsoft.Report.StiReport
+	{
+		public Report(){
+			
+			StiFunctions.AddFunction(
+				"Bars", 
+				"ConcatDataSource",
+				"Возвращает скомбинированный в строку источник данных.",
+				typeof(Report), 
+				typeof(string), 
+				"Скомбинированный в строку источник данных.");
+			
+			StiFunctions.AddFunction(
+				"Bars", 
+				"CreateArray",
+				"Coздает массив строк из переданных параметров",
+				typeof(Report), 
+				typeof(string[]), 
+				"массив строк из переданных параметров");
+			
+			this.InitializeComponent();
+		}
+
+		#region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    
+		
+		public static string ConcatDataSource(StiDataSource dataSource, string separator, string[] colNames, string[] colSeparators){
+			if(dataSource.Count == 0)
+			{
+				return string.Empty;
+			}
+			
+			var result = new StringBuilder(ConcatDataSourceRow(dataSource, 0, colNames, colSeparators));
+			
+			for(var i=1; i&lt;dataSource.Count; i++)
+			{
+				result.Append(separator);
+				result.Append(ConcatDataSourceRow(dataSource, i, colNames, colSeparators));
+			}
+			
+			return result.ToString();
+		}
+		
+		public static string[] CreateArray(params string[] arr){
+			return arr;
+		}
+		
+		private static string ConcatDataSourceRow(StiDataSource dataSource, int rowNum, string[] colNames, string[] colSeparators)
+		{
+			if(colNames.Length == 0){
+				return string.Empty;
+			}
+			var result = new StringBuilder(dataSource.GetData(colNames[0], rowNum).ToString());
+			for(var i=1; i&lt;colNames.Length; i++)
+			{
+				result.Append(colSeparators[i-1]);
+				result.Append(dataSource.GetData(colNames[i], rowNum));
+			}
+			
+			return result.ToString();
+		}
+	}
+	
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

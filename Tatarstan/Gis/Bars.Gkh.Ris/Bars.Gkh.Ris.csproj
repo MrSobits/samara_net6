@@ -1,0 +1,81 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <SccProjectName></SccProjectName>
+    <SccLocalPath></SccLocalPath>
+    <SccAuxPath></SccAuxPath>
+    <SccProvider></SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Update="ResourceManifest.cs">
+      <DependentUpon>ResourceManifest.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Properties\ModuleAssemblyInfo.cs">
+      <DependentUpon>ModuleAssemblyInfo.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="ResourceManifest.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ResourceManifest.cs</LastGenOutput>
+    </None>
+    <None Update="paket.references">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Properties\ModuleAssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModuleAssemblyInfo.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Bars.GisIntegration.Base\Bars.GisIntegration.Base.csproj" />
+    <ProjectReference Include="..\..\..\Bars.GisIntegration.CapitalRepair\Bars.GisIntegration.CapitalRepair.csproj" />
+    <ProjectReference Include="..\..\..\Bars.GisIntegration.Inspection\Bars.GisIntegration.Inspection.csproj" />
+    <ProjectReference Include="..\..\..\Bars.GisIntegration.UI\Bars.GisIntegration.UI.csproj" />
+    <ProjectReference Include="..\..\..\Bars.Gkh.Decisions.Nso\Bars.Gkh.Decisions.Nso.csproj" />
+    <ProjectReference Include="..\..\..\Bars.Gkh.Overhaul.Tat\Bars.Gkh.Overhaul.Tat.csproj" />
+    <ProjectReference Include="..\..\..\Bars.Gkh.Repair\Bars.Gkh.Repair.csproj" />
+    <ProjectReference Include="..\..\..\Bars.Gkh1468\Bars.Gkh1468.csproj" />
+    <ProjectReference Include="..\..\..\Bars.GkhCR\Bars.GkhCR.csproj" />
+    <ProjectReference Include="..\..\..\Bars.GkhDI\Bars.GkhDI.csproj" />
+    <ProjectReference Include="..\..\..\Bars.GkhExcel\Bars.GkhExcel.csproj" />
+    <ProjectReference Include="..\..\..\Bars.GkhGJI\Bars.GkhGji.csproj" />
+    <ProjectReference Include="..\..\..\Bars.Gkh\Bars.Gkh.csproj" />
+    <ProjectReference Include="..\Bars.Gkh.Gis\Bars.Gkh.Gis.csproj" />
+    <ProjectReference Include="..\..\..\Bars.Gkh.Quartz.Scheduler\Bars.Gkh.Quartz.Scheduler.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="libs\B4\model\" />
+    <Folder Include="libs\B4\store\" />
+  </ItemGroup>
+</Project>

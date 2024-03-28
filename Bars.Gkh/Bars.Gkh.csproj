@@ -1,0 +1,206 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <DocumentationFile>bin\Debug\Bars.Gkh.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Bars.Gkh.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Update="Properties\ModuleAssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModuleAssemblyInfo.cs</LastGenOutput>
+    </None>
+    <None Update="ResourceManifest.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ResourceManifest.cs</LastGenOutput>
+    </None>
+    <None Include="resources\ManagementSysReport.xlsx" />
+    <None Include="resources\NotificationAboutResultsQualificationExaminationReport.mrt" />
+    <EmbeddedResource Include="Views\shared\B4.ExtJs.Layout.cshtml" />
+    <None Include="Properties\ModuleAssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModuleAssemblyInfo.cs</LastGenOutput>
+    </None>
+    <None Include="ResourceManifest.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ResourceManifest.cs</LastGenOutput>
+    </None>
+    <None Include="resources\AdviceMKDReport.xlsx" />
+    <None Include="resources\CitizenSuggestion.xlsx" />
+    <None Include="resources\CitizenSuggestionPortalReport.mrt" />
+    <None Include="resources\ContragentsReport.xlsx" />
+    <None Include="resources\ControlActivityDatOfContractByUK.xlsx" />
+    <None Include="resources\DevicesByRealityObject.xlsx" />
+    <None Include="resources\FormGovernmentServiceReport.mrt" />
+    <None Include="resources\HouseTechPassportReport.xlsx" />
+    <None Include="resources\HousingFundMonitoringInfoReport.mrt" />
+    <None Include="resources\InformationByEmergencyObjects.xlsx" />
+    <None Include="resources\InformationByFloors.xlsx" />
+    <None Include="resources\InformationOnApartments.xlsx" />
+    <None Include="resources\InformationOnUseBuildings.xlsx" />
+    <None Include="resources\LicenseApplicationJurPerson.mrt" />
+    <None Include="resources\LicenseApplicationPrimary.mrt" />
+    <None Include="resources\LicenseDuplicateApplication.mrt" />
+    <None Include="resources\LicenseRenewalApplication.mrt" />
+    <None Include="resources\MakingProtocolsOwnersControl.xlsx" />
+    <None Include="resources\ManagementSysReport.xlsx" />
+    <None Include="resources\ManOrgLicenseReport.mrt" />
+    <None Include="resources\ManOrgLicenseRequestMvdReport.mrt" />
+    <None Include="resources\ManOrgLicenseRequestOrderReport.mrt" />
+    <None Include="resources\ManOrgLicenseRequestTaxReport.mrt" />
+    <None Include="resources\ManOrgLicenseRequestTreasuryReport.mrt" />
+    <None Include="resources\MotivatedProposalForLicensing.mrt" />
+    <None Include="resources\NoteByReestrHouses.xlsx" />
+    <None Include="resources\NotificationAboutResultsQualificationExamination.mrt" />
+    <None Include="resources\NotificationAboutResultsQualificationExaminationReport.mrt" />
+    <None Include="resources\NotificationOfAdmissionExam.mrt" />
+    <None Include="resources\NotificationRefusalToIssueLicense.mrt" />
+    <None Include="resources\PersonAgreementDataReport.mrt" />
+    <None Include="resources\PersonRequestToExamReport.mrt" />
+    <None Include="resources\ProtocolMeetingLicensingCommission.mrt" />
+    <None Include="resources\QualificationCertificate.mrt" />
+    <None Include="resources\QualificationExaminationResults.mrt" />
+    <None Include="resources\ReferenceByYearConstruction.xlsx" />
+    <None Include="resources\ReferenceOnGroundsAccident.xlsx" />
+    <None Include="resources\ReferenceWallMaterial.xlsx" />
+    <None Include="resources\RoomAreaControl.xlsx" />
+    <None Include="resources\RoTechPassportExport.xlsx" />
+    <EmbeddedResource Include="Views\Registration\Index.cshtml" />
+    <EmbeddedResource Include="Views\login\index.cshtml" />
+    <Compile Update="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GisGkhLibrary\GisGkhLibrary.csproj">
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Analytics\Bars.B4.Modules.Analytics.Reports\Bars.B4.Modules.Analytics.Reports.csproj" />
+    <ProjectReference Include="..\Modules\Analytics\Bars.B4.Modules.Analytics\Bars.B4.Modules.Analytics.csproj" />
+    <ProjectReference Include="..\Bars.GkhExcel\Bars.GkhExcel.csproj" />
+    <PackageReference Include="Bars.B4.Modules.Desktop">
+      <Version>3.2.0-dev.202312131620</Version>
+    </PackageReference>
+    <PackageReference Include="Bars.B4.Modules.FileSystemStorage">
+      <Version>3.2.0-dev.202312131620</Version>
+    </PackageReference>
+    <PackageReference Include="Bars.B4.Modules.jQuery">
+      <Version>3.2.0-dev.202312131620</Version>
+    </PackageReference>
+    <PackageReference Include="Bars.B4.Modules.Messenger">
+      <Version>3.2.0-dev.202312131620</Version>
+    </PackageReference>
+    <PackageReference Include="Bars.B4.Modules.News">
+      <Version>3.2.0-dev.202312131620</Version>
+    </PackageReference>
+    <PackageReference Include="Bars.B4.Modules.QueryDesigner">
+      <Version>3.2.0-dev.202312131620</Version>
+    </PackageReference>
+    <PackageReference Include="Bars.B4.Modules.Queue">
+      <Version>3.2.0-dev.202312131620</Version>
+    </PackageReference>
+    <PackageReference Include="Bars.B4.Modules.States">
+      <Version>3.2.0-dev.202312131620</Version>
+    </PackageReference>
+    <PackageReference Include="Bars.B4.Modules.Tasks.Web">
+      <Version>3.2.0-dev.202312131620</Version>
+    </PackageReference>
+    <PackageReference Include="Bars.B4.UI.ExtJs4">
+      <Version>3.2.0-dev.202312131620</Version>
+    </PackageReference>
+    <PackageReference Include="CoreWCF.ConfigurationManager">
+      <Version>1.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="FastMember">
+      <Version>1.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="Morpher.Russian">
+      <Version>2.14.8</Version>
+    </PackageReference> 
+    <PackageReference Include="NCalc.NetCore">
+      <Version>1.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="RabbitMQ.Client">
+      <Version>6.8.1</Version>
+    </PackageReference>
+    <PackageReference Include="Refit">
+      <Version>7.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="SharpCompress">
+      <Version>0.36.0</Version>
+    </PackageReference>
+    <PackageReference Include="Bars.B4.Modules.DataExport">
+      <Version>3.2.0-dev.202312131620</Version>
+    </PackageReference>
+    <PackageReference Include="Bars.B4.Modules.FIAS">
+      <Version>3.2.0-dev.202312131620</Version>
+    </PackageReference>
+    <PackageReference Include="Bars.B4.Modules.NHibernateChangeLog">
+      <Version>3.2.0-dev.202312131620</Version>
+    </PackageReference>
+    <PackageReference Include="Bars.B4.Modules.Quartz">
+      <Version>3.2.0-dev.202312131620</Version>
+    </PackageReference>
+    <PackageReference Include="Bars.B4.Modules.Security.Web">
+      <Version>3.2.0-dev.202312131620</Version>
+    </PackageReference>
+    <PackageReference Include="Dapper">
+      <Version>2.0.123</Version>
+    </PackageReference>
+    <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="5.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MetaValueConstructor\Impl\" />
+    <Folder Include="Migrations\2013\Version_2013012300\" />
+    <Folder Include="Migrations\2013\Version_2013013001\" />
+    <Folder Include="Migrations\2017\Version_2017040600\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="CodeGenerators\MapGenerator.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MapGenerator.cs.txt</LastGenOutput>
+    </None>
+    <Content Include="CodeGenerators\MapGenerator.cs.txt">
+      <DependentUpon>MapGenerator.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Content>
+    <Content Include="CodeGenerators\LogMapGenerator.cs.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogMapGenerator.tt</DependentUpon>
+    </Content>
+    <Content Include="content\css\registration.css" />
+    <EmbeddedResource Include="libs\**\*" />
+    <EmbeddedResource Include="content\**\*" />
+    <None Update="CodeGenerators\LogMapGenerator.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <Parameters>&lt;%3fxml version="1.0" encoding="utf-16"%3f&gt;
+        &lt;ArrayOfParameterStorage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Parameters>
+      <LastGenOutput>LogMapGenerator.cs.txt</LastGenOutput>
+    </None>
+    <None Include="resources\GkhConfigTemplate.js" />
+    <Content Include="content\mailTemplates\DebtSubRequestMailTemplate.html" />
+    <Content Include="libs\B4\ux\Highchart\highstock.js.map" />
+    <Content Include="Scripts\jquery-1.9.0.intellisense.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+</Project>

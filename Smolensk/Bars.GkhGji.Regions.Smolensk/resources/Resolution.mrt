@@ -1,0 +1,2134 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="1">
+      <Нарушения Ref="2" type="DataTableSource" isKey="true">
+        <Alias>Нарушения</Alias>
+        <Columns isList="true" count="4">
+          <value>Подробнее,System.String</value>
+          <value>Мероприятия,System.String</value>
+          <value>СрокИсполнения,System.String</value>
+          <value>НомерПП,System.Int32</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Нарушения</Name>
+        <NameInSource>Нарушения</NameInSource>
+      </Нарушения>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="44">
+      <value>,НомерПостановления,НомерПостановления,System.String,,False,False</value>
+      <value>,ОбластьПравонарушения,ОбластьПравонарушения,System.String,,False,False</value>
+      <value>,ДатаПостановления,ДатаПостановления,System.String,,False,False</value>
+      <value>,НаселенныйПункт,НаселенныйПункт,System.String,,False,False</value>
+      <value>,КодДлВынесшегоПостановление,КодДлВынесшегоПостановление,System.String,,False,False</value>
+      <value>,ФИОДлВынесшегоПостановление,ФИОДлВынесшегоПостановление,System.String,,False,False</value>
+      <value>,ФИОРуководителя,ФИОРуководителя,System.String,,False,False</value>
+      <value>,ИсполнительныйДокумент,ИсполнительныйДокумент,System.String,,False,False</value>
+      <value>,Вотношении,Вотношении,,System.String,,False,False,True</value>
+      <value>,СтатьяИсполнительногоДокумента,СтатьяИсполнительногоДокумента,System.String,,False,False</value>
+      <value>,ОписаниеСтатьи,ОписаниеСтатьи,System.String,,False,False</value>
+      <value>ЮР. лицо</value>
+      <value>ЮР._x0020_лицо,Наименование,Наименование,System.String,,False,False</value>
+      <value>ЮР._x0020_лицо,КонтрагентСокр,КонтрагентСокр,System.String,,False,False</value>
+      <value>ЮР._x0020_лицо,ДолжностьКонтр,ДолжностьКонтр,System.String,,False,False</value>
+      <value>ЮР._x0020_лицо,ФИО,ФИО,System.String,,False,False</value>
+      <value>ЮР._x0020_лицо,АдресЮР,АдресЮР,System.String,,False,False</value>
+      <value>ЮР._x0020_лицо,АдресФакт,АдресФакт,System.String,,False,False</value>
+      <value>ЮР._x0020_лицо,РасСчет,РасСчет,System.String,,False,False</value>
+      <value>ЮР._x0020_лицо,КорСчет,КорСчет,System.String,,False,False</value>
+      <value>ЮР._x0020_лицо,Банк,Банк,System.String,,False,False</value>
+      <value>ЮР._x0020_лицо,БИК,БИК,System.String,,False,False</value>
+      <value>ЮР._x0020_лицо,ИНН,ИНН,System.String,,False,False</value>
+      <value>ЮР._x0020_лицо,КПП,КПП,System.String,,False,False</value>
+      <value>ЮР._x0020_лицо,ОГРН,ОГРН,System.String,,False,False</value>
+      <value>ЮР._x0020_лицо,СуммаШтрафа,СуммаШтрафа,System.String,,False,False</value>
+      <value>ФИЗ\ДЛ лица</value>
+      <value>ФИЗ_x005C_ДЛ_x0020_лица,ФизЛицо,ФизЛицо,System.String,,False,False</value>
+      <value>ФИЗ_x005C_ДЛ_x0020_лица,ФизЛицоРП,ФизЛицоРП,System.String,,False,False</value>
+      <value>ФИЗ_x005C_ДЛ_x0020_лица,ФизЛицоДП,ФизЛицоДП,System.String,,False,False</value>
+      <value>ЮР._x0020_лицо,Определение,Определение,System.String,,False,False</value>
+      <value>ФИЗ_x005C_ДЛ_x0020_лица,АдресТелефон,АдресТелефон,System.String,,False,False</value>
+      <value>ФИЗ_x005C_ДЛ_x0020_лица,МестоРаботы,МестоРаботы,System.String,,False,False</value>
+      <value>ФИЗ_x005C_ДЛ_x0020_лица,Должность,Должность,System.String,,False,False</value>
+      <value>ФИЗ_x005C_ДЛ_x0020_лица,ДатаМестоРождения,ДатаМестоРождения,System.String,,False,False</value>
+      <value>ФИЗ_x005C_ДЛ_x0020_лица,ДокументУдостовЛичность,ДокументУдостовЛичность,System.String,,False,False</value>
+      <value>ФИЗ_x005C_ДЛ_x0020_лица,ДолжностьРП,ДолжностьРП,System.String,,False,False</value>
+      <value>,ДатаВручения,ДатаВручения,System.String,,False,False</value>
+      <value>,ВидПроверки,ВидПроверки,System.String,,False,False</value>
+      <value>,ДатаПриказа,ДатаПриказа,System.String,,False,False</value>
+      <value>,НомерПриказа,НомерПриказа,System.String,,False,False</value>
+      <value>,ПериодОбследования,ПериодОбследования,System.String,,False,False</value>
+      <value>,СоставАП,СоставАП,System.String,,False,False</value>
+      <value>,ВидСанкции,ВидСанкции,,System.String,,False,False,True</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="3" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="26">
+        <PageFooterBand1 Ref="4" type="PageFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,113,17.5,0.8</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Name>PageFooterBand1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+        </PageFooterBand1>
+        <ReportTitleBand1 Ref="5" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <CanGrow>False</CanGrow>
+          <CanShrink>True</CanShrink>
+          <ClientRectangle>0,0.4,17.5,8.4</ClientRectangle>
+          <Components isList="true" count="7">
+            <RichText1 Ref="6" type="Stimulsoft.Report.Components.StiRichText" isKey="true">
+              <BackColor>Transparent</BackColor>
+              <Border>None;Black;1;Double;False;4;Black</Border>
+              <ClientRectangle>0,0,17.4,3.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <DataColumn />
+              <Margins>0,0,0,0</Margins>
+              <Name>RichText1</Name>
+              <Page isRef="3" />
+              <Parent isRef="5" />
+              <Text>__LP___x005C_rtf1_x005C_fbidis_x005C_ansi_x005C_ansicpg1251_x005C_deff0_x005C_deflang1049__LP___x005C_fonttbl__LP___x005C_f0_x005C_fnil_x005C_fcharset204_x0020_Microsoft_x0020_Sans_x0020_Serif_x003B___RP____LP___x005C_f1_x005C_froman_x005C_fprq2_x005C_fcharset204__LP___x005C__x002A__x005C_fname_x0020_Times_x0020_New_x0020_Roman_x003B___RP__Times_x0020_New_x0020_Roman_x0020_CYR_x003B___RP____LP___x005C_f2_x005C_fnil_x005C_fcharset204__LP___x005C__x002A__x005C_fname_x0020_Times_x0020_New_x0020_Roman_x003B___RP__Times_x0020_New_x0020_Roman_x0020_CYR_x003B___RP____RP___x000D__x000A___LP___x005C_stylesheet__LP___x0020_Normal_x003B___RP____LP___x005C_s1_x0020_heading_x0020_1_x003B___RP____LP___x005C_s2_x0020_heading_x0020_2_x003B___RP____RP___x000D__x000A__x005C_viewkind4_x005C_uc1_x005C_pard_x005C_ltrpar_x005C_keepn_x005C_s2_x005C_qc_x005C_f0_x005C_fs17__LP___x005C_pict_x005C_wmetafile8_x005C_picw1963_x005C_pich2235_x005C_picwgoal901_x005C_pichgoal1014_x0020__x000D__x000A_010009000003ce1000000000a510000000000400000003010800050000000b0200000000050000_x000D__x000A_000c0255004b00030000001e0004000000070104000400000007010400a5100000410b2000cc00_x000D__x000A_0801e8000000000054004a000000000028000000e8000000080100000100010000000000000000_x000D__x000A_000000000000000000000000000000000000000000ffffff00ffffffffffffffffffffffffffff_x000D__x000A_ffffffffffffffffffffffffffffff010101ffffffffffffffffffffffffffffffffffffffffe7_x000D__x000A_1fffffffffffffff010101fffffffffffffffffffffffffffffffffffffffb83cfff0fffffffff_x000D__x000A_ff010101ffffffffffffffffffffffffffffffffffffffc7f3fffe0fffffffffff010101ffffff_x000D__x000A_ffffffffffffffffffffffffffffffffcff03ffc1fffffffffff010101ffffffffffffffffffff_x000D__x000A_ffffffffffffffffffcff0bff81e3fffffffff010101ffffffffffffffff0fffffffffffffffff_x000D__x000A_ffffcff0bbf87e3fffff9fff010101ffffffffffffffde3f7fffffffffffffffffffe32039f07e_x000D__x000A_7c7fbf1fff010101ffffffffffffffdf7f3fffffffffffffffff04fb0078f1fef87f0f1fff0101_x000D__x000A_01ffffffffffffffbf7fbffffffcfffff8fffe40ffcff0e3fff4fc0c1fff010101ffffffffffff_x000D__x000A_ffbf7fbcfffff87fffe07ffe66ffefe081fa63f0001fff010101fffffffffe3fffbf3ffc07fff0_x000D__x000A_3fffc07ffe66ffefe0008187f0003fff010101fffffffffc007ff33ff807fff00fff807ffc76fd_x000D__x000A_efc001038ff8003fff010101fffffffffc007ffa1ff003fff007fc007ffcc679e7c007030ff000_x000D__x000A_1fff010101fffffffffc003fffdff003fff801f800fffdc771e7c00f830fc00007ff010101ffff_x000D__x000A_fffffc0007ffdfe003fffe004003fffd8f61e780ff800f800007ff010101fffffc7ffe0003ff9f_x000D__x000A_e0001fff000007fffc1863c307ff801f0000078f010101ffff001fff0001fe67f0001fff80001f_x000D__x000A_fffe11c3800fff803e0807ff0f010101fffe0001ff00033ef3f0001fffe0001fffff83c7001fff_x000D__x000A_807e1c0ffe0f010101fffc0000ff80001ff1f0001fffe0001fffff03c0001fff20fe1c07fe0f01_x000D__x000A_0101fffe00000f90000ff1e0000fffc00003ffc4fffc763efc70f61003fc0f010101fffe000003_x000D__x000A_f00007e1f40007ff000001fe0ffffffffe78ffe40003fc07010101ffff000003f0000781fc0007_x000D__x000A_f8005000781ffffffffe10ffe0000ffc00010101ffff800001f8000781fc00000003f800001f7f_x000D__x000A_7e7fffffffc0007ff800010101ffff8000003880009cfee0400007fe00001f773e7eff1fff8100_x000D__x000A_7ff800010101ffffc000001f800018ffffe0001fffe0001f772e7efe1fbf81c0ff0003010101ff_x000D__x000A_fff000000fc00005fffff000fffffc000f777e7e1dcfdff0fffe0003000101fffff800000fc000_x000D__x000A_7ffffff007ffffffc1e7672e7ebdcfdff81ffc0003010101fffff8000007c07ffffffff03fffff_x000D__x000A_fff9f3071e3ffdcf1fff87fc0003010101fffffc000001e3fffffff7f07ffffffffde1fffffebe_x000D__x000A_1f3bffe1fc0003010101fff06f000000fffff3fffbcf7ffffffffcc0ffffffff3f380c3c780007_x000D__x000A_010101ffe7c7800007fefcd3bfffcf3ffffc00fc0007180ffffc38099f18000f010101ffe7c7c0_x000D__x000A_003ffefc7bffffdf3ff000000000ffcbe867dfff99d9c0000f010101ffe7c3f000fece7cffffff_x000D__x000A_9f9f603ffff001ffe3f07e01ffd9d9f00003010101fff781ff87fe0e7efffffa5f81ffffbf3ef9_x000D__x000A_fff9807f000ff898380003010101fffb01ff9ff60f7ffff8e07f01f67e0e3879fffc00ff0000f8_x000D__x000A_183e0003010101fff800ffbff70f3e7e7861dff8607e0479f9ffec047f000008f00f8007010101_x000D__x000A_fffe001fff679ff03e3863c9cc30fe00f8f81064007f0000107c3ff007010101fffffe07e71fff_x000D__x000A_3a3f0823cd8c38fe0078f8107880ff20001e3ffc7007010101fff0fe1fc31fc47fff0023cc0c38_x000D__x000A_fe0418fe0078f0fe30000f8ff83807010101fc60003e038fc27ffe0033cc0c387e6f38fa01f7b0_x000D__x000A_3e380c0f03f87c07010101f800007f03ff837ffc0017ee49b93ffffbf803ffb40e3e0fe010f87e_x000D__x000A_0f000000f80000ff1ff083fffc001fef09bbfffffff007ffc0003f8ff19c79ff9f010101f00003_x000D__x000A_dfbfc00377f8000fef0fff8002e1f00727c1c11f97e18e39fbcf010101e0000fcffe000363f800_x000D__x000A_0fe79ffc000000040705ecc1cf93e60b8fe1e7010101c00011c1e0000763f8081fe7f00002f3f0_x000D__x000A_0e030cfc038701e48bc383ff010101800073f1c60007207800fff1c07fffebffff0f21fe079f04_x000D__x000A_e0c3f1c3ef0101018000f7f10e0007003803fff002fe80003fffbf37fe079d04e083f0e7cf0101_x000D__x000A_01c001f7fa1e000f003807fff8ffe0000000ffffb7ff379c00f333e03f8f000101e003f37c3e00_x000D__x000A_0f003f17ffffff007ff0003fffffff7f9c00f3b8878f0f010101f80e78603e000f1fbffffffff8_x000D__x000A_0fffffff21ffcfc67f1c47f90007c23f010101fdde5fc01e003f7fbfffffffe0fffffffffc0800_x000D__x000A_003f8043ff8003e07f010101ff9e1fc03e003f7fbffffff807ffffffffff00782b3fc003ff8001_x000D__x000A_e0ff010101ff3e1e003e007f7fffffff003fffffffffffe07fff1fc781ffc001c1ff010101fe7b_x000D__x000A_84007e007f7fffffc000fffffffffffff87fff9fe60c7fc01f1fff010101fc79c8007e007f3fbf_x000D__x000A_ff8007fffffffffffffe1fff9fe60c0fc0063fff000000fcf9f0003f00ff7f9e3ff81fffffffff_x000D__x000A_ffffff0fff8fe00067c000ffff010000f8c3f0003f07fe3f9ffff07fffffffffffffffe3ffcfe0_x000D__x000A_40010181ffff010101f8e3e0007f8ff03f3fffc1fffffffffffffffff0ffcff310001f80ffff01_x000D__x000A_0101fc7380007f8f003f3fff83fffffffffffffffff87feff7c8019f80ffff010101fe3f0000ff_x000D__x000A_fc107f3fff07fffffffffffffffffe3fefffe4000fb07fff010101ff0e0001ffe0387f3ffe1fff_x000D__x000A_ffffffffffffffff9fe7fbf2000078ffff010101ff800001ffc0307f7ffc3fffffffffffffffff_x000D__x000A_ff87e7f9f90000ffffff000101ffe00001fff0607f7ff87fffffffffffffffffffc047fcf8c000_x000D__x000A_7fffff010100fff800013fc0e67e7ff0fffffffffffef47011ffe1f3fc1000003fffff010101ff_x000D__x000A_ffc0000f012e7e7fe1fffe007ffff0047fc0fff8f3fe7c10019fffff010101ffffe00c0e071e7e_x000D__x000A_7fe7fff0000ffff1fe7fc03ffc79fe7e08009fffff010101ffffe00c1c061e7e7fcfffc1f80bff_x000D__x000A_f3f81fc007fe7dfe7e4c004fffff010101ffffe00c30043cfe7e0fffbc081c7fe3f9c1c007fe3c_x000D__x000A_ff7ee40007ffff010101ffffffc020103efe7c1ffef8f8001fe7f3e38007ff3eff3dfa0003ffff_x000D__x000A_000000ffffffe0403039fe3f3ffdd9ff000fc7e1e3800fff9e7f99f90001ffff000101fffffff1_x000D__x000A_803011feff7ff3dc983c478463e3801fffcf3f83f98000ffff010000fffffff100607dfcfe7ff7_x000D__x000A_7c007e238e7fe3003fffe73fc7f80000ffff010101fffffff30041fdfcfeffe67f01ff111e3fc3_x000D__x000A_003ffff3bfc7f800027fff010101ffffffe200c1f9fcfcffcc7f89ff083e3f8f003ffff1dfe3f4_x000D__x000A_40007fff010000ffffffe40081f9f8f9ff987f89ff0c7c1f9f003ffff9cff3ee00007fff010101_x000D__x000A_ffffffc4018cfbf8f3fffe7f98fe267187ff003ffff8cff9cf20013fff010100ffffffc8031e7b_x000D__x000A_f9f3fffe3f98fe3263c3ff007ffffc67fc9f80003fff000000ffffff88031f33fbf7fffe3f98fc_x000D__x000A_3823c38f007ffffe73fc1f90003fff000000ffffff98033f87fbe7fefc3f80f81933e19e007fff_x000D__x000A_fe3bfc3fc0009fff010101ffffff10073fc7f3cffcfdc380c19913f11e007fffff39fc3fc0001f_x000D__x000A_ff010100ffffff00073fcff7cffdbdf9800f8483c1fc007fffff1cc0ffc0001fff010101ffffff_x000D__x000A_00061fdff7dffdb8fc000f0083cff0007fffff9c0fffc8001fff000000fffffe000c9fdfe7dffd_x000D__x000A_b19c7f0e6081ffe000ffffff8fffffc0009fff010101fffffe000ce7dfe7bffd03c0ff80e001ff_x000D__x000A_0000ffffffcfffffc0000fff010101fffffe000df3bfcfbffd0fe0e3c7e60e0e0001ffffffc7ff_x000D__x000A_ffc0000fff010101fffffc0009f83fdf3ff93ff9c1cfc64f1c0003ffffffc7ffffc0004fff0101_x000D__x000A_01fffffc0009f83f9f7ff97ff9c1cfc6063c0007ffffffe7ffffc0004fff010101fffffc4019fc_x000D__x000A_003f7ff9fff1c3c3c64018001fffffffe7ffffc0004fff000101fffffc801bfe007e7ffcbfc0f3_x000D__x000A_8180003800ffffffffe7ffffc0000fff010101fffffc861bfffffe7ffc0780ff80000f1801ffff_x000D__x000A_fffff3ffff80001fff000000fffffc841ffffffc7ffc83087f0f040f3801fffffffff3ffff8000_x000D__x000A_1fff010001fffffc041bfffffcfffc801c080f840e3001fffffffff1ffff00009fff000101ffff_x000D__x000A_fc0419fffffcfffc983000010c9c7003fffffffff1ffff00009fff010101fffffc000bfffffcff_x000D__x000A_fed80000000c106003fffffffff1ffff00009fff010101fffffc0009fffffcfffedc0000001913_x000D__x000A_e007fffffffff8fffe40003fff010101fffffc0001fffff8fffe4e100c383901c007fffffffff9_x000D__x000A_fffe40003fff000101fffffc0005fffffcffff26338cc13a01c007fffffffff8fffc00003fff01_x000D__x000A_0000fffffc8004fffffcffff13330cc1360fc00fffff1ffff8fffc80003fff010100fffffc4006_x000D__x000A_fffffcffff99330c000c0b800ffff80ffff8fffc00007fff010101fffffc40067ffffcffffc833_x000D__x000A_0c001cc3800f0d800ffff8fff900027fff000000fffffe00077ffffcffffe632002218fb000000_x000D__x000A_0007fff8fff800007fff010101fffffe00037ffffcffffe30000006060000002c003fff8fff100_x000D__x000A_047fff000000fffffe00013ffffcfe2b81c07000c0000000c7c01007f8fff30004ffff000000ff_x000D__x000A_fffe0000bffffcfc000060ffc700000000c0061003f8fff20004ffff000001fffffe00009ffffc_x000D__x000A_f8c0201fe07e00000001c0060023f8ffe60000ffff010001ffffff00009ffffcf8c07007f0f800_x000D__x000A_002ff0cfc63033f8ffc40000ffff000000ffffff10004ffffcf8c06001a00003fffff0cf863007_x000D__x000A_f8ffc00001ffff000000ffffff800007fffcf9c0e00001fffffffff0c30631bff8ffc00003ffff_x000D__x000A_010101ffffff800027fffcf1c0e00003ffffffffe0e38713fff8ff800013ffff010000ffffffc0_x000D__x000A_0033fffcf1c0600000000000000063c303fff8ff800037ffff010101ffffffc40013fffcf1c070_x000D__x000A_00000000000000000007fff8ff800067ffff010100ffffffe0001bfffcf1c07000000000000000_x000D__x000A_000007fffcff000067ffff010101ffffffe00009fffcf1c03000000000de0007fffe07fffcff00_x000D__x000A_004fffff010101fffffff0000cfffcf9c0100013fffffff0e7ffff87fffcfe40004fffff010101_x000D__x000A_fffffff00006fffcf8c003fffffffffff8e7ffffcffffcfe40001fffff010101fffffff800067f_x000D__x000A_fcf803f7fffffffffffce3fffffffffcfe00001fffff010101fffffff800027ffcfc1fffffffff_x000D__x000A_fffffc007ffffffffcfe80001fffff010101fffffffc00003ffcfe7ffffffffffffff80007ffff_x000D__x000A_fffcfe80003fffff010101fffffffc20001ffcfffffffffffffffff00003fffffffc7c80003fff_x000D__x000A_ff010101fffffffe20009ffcffffffffffffffffe03fc1fffffffc7c00023fffff000101ffffff_x000D__x000A_fe00000ffcffffffffffffffffc0ffe0fffffffc7c00007fffff000000ffffffff000047fcffff_x000D__x000A_ffffffffffff81fff87ffffffc7900007fffff010101ffffffff880007fcffffffffffffffff83_x000D__x000A_fffc3ffffffc780000ffffff000000ffffffffc80003fcffffffffffffffff07ffff1ffffffc79_x000D__x000A_0000ffffff000001ffffffffc40003fcffffffffffffffff0fffff8ffffffc790009ffffff0000_x000D__x000A_00ffffffffe40011fcffffffffffffffff1fffff8ffffffc7b0009ffffff000000ffffffffe200_x000D__x000A_11fcffffffffffffffff1fce7ec7fffffc7b0001ffffff000001fffffffff20009fcffffffffff_x000D__x000A_ffffff1fc63e73fffffc7a0003ffffff010101fffffffff10000fcffffffffffffffff1f879f33_x000D__x000A_fffffc7a0003ffffff010101fffffffff80000fcffffffffffffffff3e03cf39fffffe720003ff_x000D__x000A_ffff010100fffffffffc0002fcffffffffffffffff3c73049cfffffe760023ffffff000000ffff_x000D__x000A_fffffc0003fcffffffffffffffff3cf3040e7ffffe740007ffffff000000fffffffffc40037cff_x000D__x000A_ffffffffffffff3df186067ffffe740007ffffff000000fffffffffe00037c7fffffffffffffff_x000D__x000A_39f382033ffffe340007ffffff010101ffffffffff20013c7fffffffffffffff39f302019ffffe_x000D__x000A_340007ffffff010101ffffffffff0001bc7fffffffffffffff1be38b009ffc7e20004fffffff01_x000D__x000A_0000ffffffffff8001be7fffffffffffffff13c7cc000fe03e20004fffffff010101ffffffffff_x000D__x000A_80009c7fffffffffffffff93cfec0b13c3fe20004fffffff010101ffffffffff80009c7fffffff_x000D__x000A_ffffffffb38f6c09980ffe00000fffffff000001ffffffffffc0008e7fffffffffffffff331f0c_x000D__x000A_09e01ffe20000fffffff010101ffffffffffc000ce7fffffffffffffff130f8684f07fff00000f_x000D__x000A_ffffff010101ffffffffffc0000e7fffffffffffffff138fc704ffffff20000fffffff000000ff_x000D__x000A_ffffffffc000467fffffffffffffff338ec7027fffff20000fffffff010100ffffffffffe00066_x000D__x000A_7fffffffffffffff3bce67013fffff00000fffffff010101ffffffffffe200667fffffffffffff_x000D__x000A_fe7be72f049fffff20004fffffff000000fffffffffff200367ffffffffffffffcf3f38f8c8fe1_x000D__x000A_ff2000cfffffff010101fffffffffff000327ffffffffffffff0f3f387aecf81ff30004fffffff_x000D__x000A_010101fffffffffff100027fffffffffffffc187f9c787400fff10004fffffff000101ffffffff_x000D__x000A_fff900027fffffffffffff8007f9c787b83fff10000fffffff010000fffffffffff900027fffff_x000D__x000A_ffffffff8007fcc7d3807fff10000fcfffff000000fffffffffff900127ffffffffffffffe0ffe_x000D__x000A_6fd3e07fff12000f07ffff010000fffffffffff800127ffffffffffffff807fe0fc9ffffff1200_x000D__x000A_0e01ffff000000fffffffffffc00127ffffffffffffff023ff0fe9ffffff10000e00ffff000000_x000D__x000A_fffffffffffc00067ffffffffffffff031ff0fedffffff19000e007fff000000fffffffffffc00_x000D__x000A_027ffffffffffffff031ff0fecffc3ff19000e003fff000000fffffffffffc00027fffffffffff_x000D__x000A_fff011ff8fe67f83ff99000e000fff010101fffffffffffc00023ffffffffffffff81fff8ff37f_x000D__x000A_1fff9800270007ff000000fffffffffffc80027ffffffffffffffe1fff8ff9803fff9c002fc001_x000D__x000A_ff000101fffffffffffc80023fffffffffffffff1fff8ff8c07fff9c002fe000ff010101ffffff_x000D__x000A_fffffc80063fffffffffffffffffff9ffcf07fff9e0037f0003f000000fffffffffe7c80373fff_x000D__x000A_ffffffffffffffff9ffc20ffff9e4033f8001f010000fffffffff83c80373fffffffffffffffff_x000D__x000A_ffffff07ffff9f0003f8001f000000fffffffff01c803f3fffffffffffffffffffffffffffff9f_x000D__x000A_0019f8000f010101ffffffffe00c803e3fffffffffffffffffffffffffffff8f8000f0000f0101_x000D__x000A_00ffffffffc00c802e3fffffffffffffffffffffffffffff8f800000000f000000ffffffff800c_x000D__x000A_00263ffffffffffffffffffffffffc1fff9fc80400000f010101fffffffe001c000e3fffffffff_x000D__x000A_ffffffe000fff8000fff9fc00000000f000001fffffffc003c000e3fffffffff0007ffc0007ff8_x000D__x000A_000fff9fe00000000f000001fffffff000fc004e3fffea1ffe0003ffc0007ff8340fff9fe00000_x000D__x000A_000f000000ffffffc003f8005e3ffc000ffe0003ffc1fc7ff9ff8fff9ff00200000f000000ffff_x000D__x000A_ff8003f8009f3ffc001ffe3fe3ffc7fc7ff9ff8fffdff80100001f010101ffffff8003f1809f3f_x000D__x000A_fcff1ffe7ff3ffc7fc7ff9ff8fff9ffe0080001f000000ffffff8003c1009e3ffcff9ffe7ff3ff_x000D__x000A_c7fc7ff9ff8fff9fff0040007f000000ffffff000001001e3ff8ff9ffe7ff3ffc7fc7ff9ff8f8f_x000D__x000A_1fff8240007f000000ffffff000000003e3ff9ff9ffe7ff3ffc7fc7cf9ff8f071fffc3f000ff00_x000D__x000A_0000ffffff000000003e3efdff9ffe7f03f7e6087879ff8e039ffff03003ff000000ffffff0000_x000D__x000A_00007e3c7dff9f3e0003c1e040f039ffc0711ffffe000fff000000ffffff000000007e383cff9e_x000D__x000A_0e0003c0e3e0c311ffc1f81fffff807fff010100ffffff00000000fe301cff9c06010380600000_x000D__x000A_01ffc3fc0fffffffffff010101ffffff00000401ff038cff80c000010000000001ff87fe0fffff_x000D__x000A_ffffff000000ffffff80000403fe03c0ff808000000000000001ffc7ff0fffffffffff000000ff_x000D__x000A_ffff80000c07fe07e0ff800000000000000001ffffffdfffffffffff000000ffffffc0000c1ffe_x000D__x000A_0ff0ff800000000000000007ffffffffffffffffff010101ffffffe000007ffe1ff8ffc0000000_x000D__x000A_0000000073ffffffffffffffffff010101fffffff80000fffe3ffdffc00000000000000ff9ffff_x000D__x000A_ffffffffffffff010101fffffffc000fffffffffffc00000000000001ffcffffffffffffffffff_x000D__x000A_010101ffffffff83ffffffffffffc40000000000007ffc7fffffffffffffffff010101ffffffff_x000D__x000A_ffffffffffffffcfc00000000007ff3e7fffffffffffffffff010101ffffffffffffffffffffff_x000D__x000A_8ff0000000007fff1e3fffffffffffffffff010101ffffffffffffffffffffff9ff7fc00003fff_x000D__x000A_ff0f9fffffffffffffffff010101ffffffffffffffffffffff1fe3fffbffffffff0f8fffffffff_x000D__x000A_ffffffff010101ffffffffffffffffffffff3fe3fffdffffcfff0ecfffffffffffffffff010101_x000D__x000A_fffffffffffffffffffffe3fc3fff8ffffc7ff2e07ffffffffffffffff010001ffffffffffffff_x000D__x000A_fffffffc7f83fff8ffffc7efbf03ffffffffffffffff010101fffffffffffffffffffffc7f83ff_x000D__x000A_f87fff87e7ff11ffffffffffffffff010101fffffffffffffffffffffcff83fff07fff87f3ff98_x000D__x000A_ffffffffffffffff000000fffffffffffffffffffff8ff83fff07fff87f1ffbe7fffffffffffff_x000D__x000A_ff010101fffffffffffffffffffff99fd3fff0ffff87e1ffff3fffffffffffffff010101ffffff_x000D__x000A_fffffffffffffff01fffbff0fcff87e1ff7f1fffffffffffffff000001ffffffffffffffffffff_x000D__x000A_e21fffbff4fcffffe1fe003fffffffffffffff010100ffffffffffffffffffffe61fff1ff7fc7f_x000D__x000A_ffe0fc007fffffffffffffff000000ffffffffffffffffffffcf9ffe1ffff87ffff3fc00ffffff_x000D__x000A_ffffffffff000101ffffffffffffffffffff8fbffe1ffff07ffffbf804ffffffffffffffff0000_x000D__x000A_00ffffffffffffffffffff9ffffe9ffff07ffffff00661ffffffffffffff010101ffffffffffff_x000D__x000A_ffffffff8ffffefffff07fffffe00701ffffffffffffff000000ffffffffffffffffffff8ff07f_x000D__x000A_fffff07fe1ffc00300ffffffffffffff010101ffffffffffffffffffff80007fff9ff27f80ff80_x000D__x000A_0009ffffffffffffff010100fffffffffffffffffffff0003fff0ffeff800c000001ffffffffff_x000D__x000A_ffff010101ffffffffffffffffffe7f0003ffe0fffff0000000043ffffffffffffff000000ffff_x000D__x000A_ffffffffffffff80c0001ffc03fff80000000067ffffffffffffff010000ffffffffffffffffff_x000D__x000A_98c0000700003ff000000000361fffffffffffff000101ffffffffffffffffff99800000000000_x000D__x000A_0000000000300fffffffffffff010101ffffffffffffffffffc1000000000000000000000010cf_x000D__x000A_ffffffffffff010101ffffffffffffffffffe3000000000000800000000018c7ffffffffffff01_x000D__x000A_0101fffffffffffffffffff2000000000040c0000020000c0fffffffffffff010101ffffffffff_x000D__x000A_fffffffe02000000000040c0000000000c0fffffffffffff010000fffffffffffffffffcc40000_x000D__x000A_0000004880000000000cffffffffffffff000000fffffffffffffffffcc40000000000c8d00000_x000D__x000A_000006e7ffffffffffff000000fffffffffffffffffc040000000000c8d8000000000203ffffff_x000D__x000A_ffffff010101fffffffffffffffffe2c0000000000c858000000000201ffffffffffff010101ff_x000D__x000A_ffffffffffffffffec00000000009848000000000219ffffffffffff000000ffffffffffffffff_x000D__x000A_ffcc00000000009848000000000211ffffffffffff010101fffffffffffffffffc0c0000000000_x000D__x000A_9864000000000201ffffffffffff010000fffffffffffffffff98c000000000198660000000003_x000D__x000A_77ffffffffffff010101fffffffffffffffff98c0000000001186600000000027fffffffffffff_x000D__x000A_000000fffffffffffffffff80c00000000011877000000000003ffffffffffff000101ffffffff_x000D__x000A_fffffffffc0e00000000033873000000000203ffffffffffff010101ffffffffffffffffffe600_x000D__x000A_0000000338338000c0000603ffffffffffff010000ffffffffffffffffff060000000003783bc0_x000D__x000A_0000000c03ffffffffffff010101fffffffffffffffffe0700000000077839e00000000803ffff_x000D__x000A_ffffffff000001fffffffffffffffffe030000000006783cf00000000007ffffffffffff010101_x000D__x000A_fffffffffffffffffe03800000000ef83c70000000203fffffffffffff000000ffffffffffffff_x000D__x000A_fffe21c00000004ef83c71800000e03fffffffffffff010000fffffffffffffffffe00e0000001_x000D__x000A_9cf01c30800001e03fffffffffffff010101ffffffffffffffffff806000000f1cc00000000000_x000D__x000A_303fffffffffffff000000fffffffffffffffffff01800007300000000000000103fffffffffff_x000D__x000A_ff000101fffffffffffffffffff100000183c082e181000000987fffffffffffff010101ffffff_x000D__x000A_fffffffffffff300000f87ff83fdf3000001cfffffffffffffff000000fffffffffffffffffff0_x000D__x000A_00030387ff166cff000000cfffffffffffffff000101fffffffffffffffffff800000383ff0000_x000D__x000A_7f0068000fffffffffffffff010100ffffffffffffffffffff89818183ff00007f0608481fffff_x000D__x000A_ffffffffff010101ffffffffffffffffffff8981c987fe00007f8e0c0e3fffffffffffffff0101_x000D__x000A_01ffffffffffffffffffff8181c1ffff1ff07ffe1c1fffffffffffffffff010101ffffffffffff_x000D__x000A_ffffffffc381c3ffff00e07ffffe3fffffffffffffffff000001ffffffffffffffffffffffc1e3_x000D__x000A_ffff18c87fffffffffffffffffffffff000000fffffffffffffffffffffff7ffffff9cc8ffffff_x000D__x000A_ffffffffffffffffff010101ffffffffffffffffffffffffffffff9cc0ffffffffffffffffffff_x000D__x000A_ffff010100ffffffffffffffffffffffffffffffc881ffffffffffffffffffffffff010101ffff_x000D__x000A_ffffffffffffffffffffffffffe003ffffffffffffffffffffffff010101ffffffffffffffffff_x000D__x000A_fffffffffffff807ffffffffffffffffffffffff000001fffffffffffffffffffffffffffffffc_x000D__x000A_cfffffffffffffffffffffffff010101ffffffffffffffffffffffffffffffe0c1ffffffffffff_x000D__x000A_ffffffffffff000000ffffffffffffffffffffffffffffffc0c1ffffffffffffffffffffffff01_x000D__x000A_0101ffffffffffffffffffffffffffffffc0c1ffffffffffffffffffffffff010101ffffffffff_x000D__x000A_ffffffffffffffffffffc0c1ffffffffffffffffffffffff010101ffffffffffffffffffffffff_x000D__x000A_ffffffc0c1ffffffffffffffffffffffff000001ffffffffffffffffffffffffffffffe001ffff_x000D__x000A_ffffffffffffffffffff000000fffffffffffffffffffffffffffffffe0fffffffffffffffffff_x000D__x000A_ffffff000000fffffffffffffffffffffffffffffffc0fffffffffffffffffffffffff000000ff_x000D__x000A_fffffffffffffffffffffffffffffc07ffffffffffffffffffffffff000101ffffffffffffffff_x000D__x000A_fffffffffffffffc07ffffffffffffffffffffffff010101ffffffffffffffffffffffffffffff_x000D__x000A_fe1fffffffffffffffffffffffff010100ffffffffffffffffffffffffffffffffffffffffffff_x000D__x000A_ffffffffffffff010101040000002701ffff030000000000_x000D__x000A___RP___x005C_b_x005C_f1_x005C_fs24_x005C_par_x000D__x000A__x005C__x0027_c0_x005C__x0027_c4_x005C__x0027_cc_x005C__x0027_c8_x005C__x0027_cd_x005C__x0027_c8_x005C__x0027_d1_x005C__x0027_d2_x005C__x0027_d0_x005C__x0027_c0_x005C__x0027_d6_x005C__x0027_c8_x005C__x0027_df_x0020__x005C__x0027_d1_x005C__x0027_cc_x005C__x0027_ce_x005C__x0027_cb_x005C__x0027_c5_x005C__x0027_cd_x005C__x0027_d1_x005C__x0027_ca_x005C__x0027_ce_x005C__x0027_c9_x0020__x005C__x0027_ce_x005C__x0027_c1_x005C__x0027_cb_x005C__x0027_c0_x005C__x0027_d1_x005C__x0027_d2_x005C__x0027_c8_x0020__x005C_par_x000D__x000A__x005C__x0027_c3_x005C__x0027_cb_x005C__x0027_c0_x005C__x0027_c2_x005C__x0027_cd_x005C__x0027_ce_x005C__x0027_c5_x0020__x005C__x0027_d3_x005C__x0027_cf_x005C__x0027_d0_x005C__x0027_c0_x005C__x0027_c2_x005C__x0027_cb_x005C__x0027_c5_x005C__x0027_cd_x005C__x0027_c8_x005C__x0027_c5_x0020__x005C_par_x000D__x000A__x005C__x0027_ab_x005C__x0027_c3_x005C__x0027_ce_x005C__x0027_d1_x005C__x0027_d3_x005C__x0027_c4_x005C__x0027_c0_x005C__x0027_d0_x005C__x0027_d1_x005C__x0027_d2_x005C__x0027_c2_x005C__x0027_c5_x005C__x0027_cd_x005C__x0027_cd_x005C__x0027_c0_x005C__x0027_df_x0020__x005C__x0027_c6_x005C__x0027_c8_x005C__x0027_cb_x005C__x0027_c8_x005C__x0027_d9_x005C__x0027_cd_x005C__x0027_c0_x005C__x0027_df_x0020__x005C__x0027_c8_x005C__x0027_cd_x005C__x0027_d1_x005C__x0027_cf_x005C__x0027_c5_x005C__x0027_ca_x005C__x0027_d6_x005C__x0027_c8_x005C__x0027_df_x0020__x005C__x0027_d1_x005C__x0027_cc_x005C__x0027_ce_x005C__x0027_cb_x005C__x0027_c5_x005C__x0027_cd_x005C__x0027_d1_x005C__x0027_ca_x005C__x0027_ce_x005C__x0027_c9_x0020__x005C__x0027_ce_x005C__x0027_c1_x005C__x0027_cb_x005C__x0027_c0_x005C__x0027_d1_x005C__x0027_d2_x005C__x0027_c8_x005C__x0027_bb_x005C_par_x000D__x000A__x005C_b0_x005C_fs18_x0020_214014_x002C__x005C_b_x0020__x0020__x005C_b0_x005C__x0027_e3._x0020__x005C__x0027_d1_x005C__x0027_ec_x005C__x0027_ee_x005C__x0027_eb_x005C__x0027_e5_x005C__x0027_ed_x005C__x0027_f1_x005C__x0027_ea_x002C__x0020__x005C__x0027_f3_x005C__x0027_eb._x0020__x005C__x0027_dd_x005C__x0027_ed_x005C__x0027_e3_x005C__x0027_e5_x005C__x0027_eb_x005C__x0027_fc_x005C__x0027_f1_x005C__x0027_e0_x002C__x0020__x005C__x0027_e4.23_x0020__x005C__x0027_f2_x005C__x0027_e5_x005C__x0027_eb._x0020__x002F__x0020__x005C__x0027_f4_x005C__x0027_e0_x005C__x0027_ea_x005C__x0027_f1_x0020__x0028_4812_x0029__x0020_29-11-70_x002F_38-10-41_x005C_b_x005C_fs24_x005C_par_x000D__x000A__x005C_pard_x005C_ltrpar_x005C_f2_x005C_fs32_x005C_par_x000D__x000A___RP___x000D__x000A_</Text>
+            </RichText1>
+            <Text1 Ref="7" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>13.4,5.6,4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>673647bd47ce4c5dae1cd9afa6dac8f6</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="3" />
+              <Parent isRef="5" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>{НаселенныйПункт}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text1>
+            <Text19 Ref="8" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,6.6,17.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>9d9a4645b9b04f74a832fe0a05d41c9f</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text19</Name>
+              <Page isRef="3" />
+              <Parent isRef="5" />
+              <Text>{ФИОДлВынесшегоПостановление}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text19>
+            <Text11 Ref="9" type="Text" isKey="true">
+              <Border>None;Black;1;Double;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,3.8,17.4,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="3" />
+              <Parent isRef="5" />
+              <Text>ПОСТАНОВЛЕНИЕ № {НомерПостановления}
+о назначении административного наказания</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text11>
+            <Text4 Ref="10" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,5.6,4.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>71e90d74221b4f6fb9864083f9f174cf</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="3" />
+              <Parent isRef="5" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>{ДатаПостановления}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text4>
+            <Text21 Ref="11" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,7.2,17.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text21</Name>
+              <Page isRef="3" />
+              <Parent isRef="5" />
+              <Text>{КодДлВынесшегоПостановление}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text21>
+            <Text22 Ref="12" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,7.8,17.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,6,Bold</Font>
+              <Guid>fe26c42d196d45129c8c307a4f23387c</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text22</Name>
+              <Page isRef="3" />
+              <Parent isRef="5" />
+              <Text>(фамилия, инициалы должностного лица)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text22>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>1543a3b91eaa4f2a8bc6c842a42acf46</Guid>
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+        </ReportTitleBand1>
+        <DataBand1 Ref="13" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,9.6,17.5,1.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text2 Ref="14" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,17.4,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>3a74d751435a49f2ac4eaa57d72455e2</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="3" />
+              <Parent isRef="13" />
+              <Text>рассмотрев материалы дела  &lt;b&gt;об административном правонарушении предусмотренном {СтатьяИсполнительногоДокумента} Кодекса Российской Федерации об административных правонарушениях  возбужденного в отношении {Наименование} ({КонтрагентСокр}),&lt;/b&gt;</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text2>
+          </Components>
+          <Conditions isList="true" count="1">
+            <value>Multi&lt;?xml version="1.0" encoding="utf-16" standalone="yes"?&gt;&lt;StiSerializer version="1.02" type="Net" application="State"&gt;&lt;Filters isList="true" count="8"&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_17_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_4_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_18_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_15_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_8_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_11_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_9_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_0_x0022__x007D_&lt;/value&gt;&lt;/Filters&gt;&lt;Enabled&gt;False&lt;/Enabled&gt;&lt;TextColor&gt;Black&lt;/TextColor&gt;&lt;BackColor&gt;Transparent&lt;/BackColor&gt;&lt;Font&gt;Times New Roman, 12pt&lt;/Font&gt;&lt;BorderSides&gt;None&lt;/BorderSides&gt;&lt;/StiSerializer&gt;</value>
+          </Conditions>
+          <Filters isList="true" count="0" />
+          <Name>DataBand1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+        <DataBand2 Ref="15" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,12,17.5,1.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text10 Ref="16" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,17.4,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>1fb0fa9dfd504432b0ab8d693a1809ce</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="3" />
+              <Parent isRef="15" />
+              <Text>рассмотрев материалы дела  &lt;b&gt;об административном правонарушении предусмотренном {СтатьяИсполнительногоДокумента} Кодекса Российской Федерации об административных правонарушениях  возбужденного в отношении физического лица:&lt;/b&gt;</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text10>
+          </Components>
+          <Conditions isList="true" count="1">
+            <value>Multi&lt;?xml version="1.0" encoding="utf-16" standalone="yes"?&gt;&lt;StiSerializer version="1.02" type="Net" application="State"&gt;&lt;Filters isList="true" count="6"&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_3_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_2_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_20_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_14_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_7_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_6_x0022__x007D_&lt;/value&gt;&lt;/Filters&gt;&lt;Enabled&gt;False&lt;/Enabled&gt;&lt;TextColor&gt;Black&lt;/TextColor&gt;&lt;BackColor&gt;Transparent&lt;/BackColor&gt;&lt;Font&gt;Times New Roman, 12pt&lt;/Font&gt;&lt;BorderSides&gt;None&lt;/BorderSides&gt;&lt;/StiSerializer&gt;</value>
+          </Conditions>
+          <Filters isList="true" count="0" />
+          <Name>DataBand2</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand2>
+        <DataBand3 Ref="17" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,14.4,17.5,1.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text55 Ref="18" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,17.4,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>d498ab9a3f5440359c988247e5d7ef5a</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text55</Name>
+              <Page isRef="3" />
+              <Parent isRef="17" />
+              <Text>рассмотрев материалы дела  &lt;b&gt;об административном правонарушении предусмотренном {СтатьяИсполнительногоДокумента} Кодекса Российской Федерации об административных правонарушениях  возбужденного в отношении должностного лица:&lt;/b&gt;</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text55>
+          </Components>
+          <Conditions isList="true" count="1">
+            <value>Multi&lt;?xml version="1.0" encoding="utf-16" standalone="yes"?&gt;&lt;StiSerializer version="1.02" type="Net" application="State"&gt;&lt;Filters isList="true" count="7"&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_5_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_19_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_16_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_13_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_12_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_10_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_1_x0022__x007D_&lt;/value&gt;&lt;/Filters&gt;&lt;Enabled&gt;False&lt;/Enabled&gt;&lt;TextColor&gt;Black&lt;/TextColor&gt;&lt;BackColor&gt;Transparent&lt;/BackColor&gt;&lt;Font&gt;Times New Roman, 8.25pt&lt;/Font&gt;&lt;BorderSides&gt;None&lt;/BorderSides&gt;&lt;/StiSerializer&gt;</value>
+          </Conditions>
+          <Filters isList="true" count="0" />
+          <Name>DataBand3</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand3>
+        <DataBand4 Ref="19" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,16.8,17.5,0.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text28 Ref="20" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,17.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>3a18ed8e277d4b79924542ca67487854</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text28</Name>
+              <Page isRef="3" />
+              <Parent isRef="19" />
+              <Text>УСТАНОВИЛ:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text28>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand4</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand4>
+        <DataBand15 Ref="21" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,18.2,17.5,4</ClientRectangle>
+          <Components isList="true" count="5">
+            <Text23 Ref="22" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,17.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,11</Font>
+              <Guid>d7155b8bd261404c8f7588a21f30cc89</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text23</Name>
+              <Page isRef="3" />
+              <Parent isRef="21" />
+              <Text>{КонтрагентСокр}), ИНН:{ИНН}, КПП:{КПП}. {ДолжностьКонтр} {КонтрагентСокр} - {ФИО}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text23>
+            <Text18 Ref="23" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,1,17.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text18</Name>
+              <Page isRef="3" />
+              <Parent isRef="21" />
+              <Text>Адрес организации - {АдресЮР}. Фактический адрес: {АдресФакт}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text18>
+            <Text24 Ref="24" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.6,17.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,6,Bold</Font>
+              <Guid>dc398400fa394da98c86c02f9bea0ba1</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text24</Name>
+              <Page isRef="3" />
+              <Parent isRef="21" />
+              <Text>(для  юридического лица – наименование; для физического лица – дата и место рождения,</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text24>
+            <Text25 Ref="25" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.6,17.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,6,Bold</Font>
+              <Guid>40f31f57ae0d4f25a86d1fed2de38907</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text25</Name>
+              <Page isRef="3" />
+              <Parent isRef="21" />
+              <Text>адрес места жительства/регистрации, должность, место и адрес работы)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text25>
+            <Text62 Ref="26" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,2,17.4,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>b2c3f205226645dab78ddc3e5dc7c5c2</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text62</Name>
+              <Page isRef="3" />
+              <Parent isRef="21" />
+              <Text>В рамках проведения {ВидПроверки} проверки в соответствии с приказом от {ДатаПриказа} № {НомерПриказа} в период с {ПериодОбследования} Главным управлением «Государственная жилищная инспекция Смоленской области» проведена проверка деятельности {КонтрагентСокр}, связанная с {СоставАП}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text62>
+          </Components>
+          <Conditions isList="true" count="1">
+            <value>Multi&lt;?xml version="1.0" encoding="utf-16" standalone="yes"?&gt;&lt;StiSerializer version="1.02" type="Net" application="State"&gt;&lt;Filters isList="true" count="8"&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_17_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_4_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_18_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_15_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_8_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_11_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_9_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_0_x0022__x007D_&lt;/value&gt;&lt;/Filters&gt;&lt;Enabled&gt;False&lt;/Enabled&gt;&lt;TextColor&gt;Black&lt;/TextColor&gt;&lt;BackColor&gt;Transparent&lt;/BackColor&gt;&lt;Font&gt;Times New Roman, 12pt&lt;/Font&gt;&lt;BorderSides&gt;None&lt;/BorderSides&gt;&lt;/StiSerializer&gt;</value>
+          </Conditions>
+          <Filters isList="true" count="0" />
+          <Guid>784db9ac48484ef68f307fff8c842d39</Guid>
+          <Name>DataBand15</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand15>
+        <DataBand17 Ref="27" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,23,17.5,5.4</ClientRectangle>
+          <Components isList="true" count="5">
+            <Text49 Ref="28" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,17.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>672cba5b5c0b485d98be3062d7b98148</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text49</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>Ф.И.О. физического лица: {ФизЛицо}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text49>
+            <Text50 Ref="29" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,1,17.4,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>54205cdd6d93403eb5c22927a10cc611</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text50</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>Дата и место рождения: {ДатаМестоРождения}
+&lt;br&gt;Адрес места жительства: {АдресТелефон}
+&lt;br&gt;Паспортные данные: {ДокументУдостовЛичность}
+&lt;br&gt;Место и адрес работы, занимаемая должность: {Должность}, {МестоРаботы}
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text50>
+            <Text51 Ref="30" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.6,17.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,6,Bold</Font>
+              <Guid>54561767df7b4850b68154fab28a38a8</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text51</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>(для  юридического лица – наименование; для физического лица – дата и место рождения,</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text51>
+            <Text52 Ref="31" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,3,17.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,6,Bold</Font>
+              <Guid>49747dc8b37944f5aa234b60d7323d13</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text52</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>адрес места жительства/регистрации, должность, место и адрес работы)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text52>
+            <Text61 Ref="32" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,3.4,17.4,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>b79e237a5e39444588d09b64b4a3603c</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text61</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>В рамках проведения {ВидПроверки} проверки в соответствии с приказом от {ДатаПриказа} № {НомерПриказа} в период с {ПериодОбследования} Главным управлением «Государственная жилищная инспекция Смоленской области» проведена проверка в отношении {ФизЛицоРП}, связанная с {СоставАП}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text61>
+          </Components>
+          <Conditions isList="true" count="1">
+            <value>Multi&lt;?xml version="1.0" encoding="utf-16" standalone="yes"?&gt;&lt;StiSerializer version="1.02" type="Net" application="State"&gt;&lt;Filters isList="true" count="6"&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_3_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_2_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_20_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_14_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_7_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_6_x0022__x007D_&lt;/value&gt;&lt;/Filters&gt;&lt;Enabled&gt;False&lt;/Enabled&gt;&lt;TextColor&gt;Black&lt;/TextColor&gt;&lt;BackColor&gt;Transparent&lt;/BackColor&gt;&lt;Font&gt;Times New Roman, 12pt&lt;/Font&gt;&lt;BorderSides&gt;None&lt;/BorderSides&gt;&lt;/StiSerializer&gt;</value>
+          </Conditions>
+          <Filters isList="true" count="0" />
+          <Guid>32b45f1511ba49b2a6063603503cad61</Guid>
+          <Name>DataBand17</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand17>
+        <DataBand18 Ref="33" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,29.2,17.5,5.4</ClientRectangle>
+          <Components isList="true" count="5">
+            <Text56 Ref="34" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,1,17.4,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>0566dbe9fe9e40a88350ddcd89587bc9</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text56</Name>
+              <Page isRef="3" />
+              <Parent isRef="33" />
+              <Text>Дата и место рождения:&lt;/b&gt; {ДатаМестоРождения}
+&lt;br&gt;Адрес места жительства:&lt;/b&gt; {АдресТелефон}
+&lt;br&gt;Паспортные данные:&lt;/b&gt; {ДокументУдостовЛичность}
+&lt;br&gt;Место и адрес работы, занимаемая должность:&lt;/b&gt; {Должность}, {МестоРаботы}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text56>
+            <Text58 Ref="35" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,17.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,11</Font>
+              <Guid>ae669561d8b14641a09a404fd9faa4f7</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text58</Name>
+              <Page isRef="3" />
+              <Parent isRef="33" />
+              <Text>{КонтрагентСокр}), ИНН:{ИНН}, КПП:{КПП}. Ф.И.О. должностного лица: {ФизЛицо}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text58>
+            <Text57 Ref="36" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.6,17.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,6,Bold</Font>
+              <Guid>bed505ebbfec49d585b0d95f232708c6</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text57</Name>
+              <Page isRef="3" />
+              <Parent isRef="33" />
+              <Text>(для  юридического лица – наименование; для физического лица – дата и место рождения,</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text57>
+            <Text59 Ref="37" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,3,17.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,6,Bold</Font>
+              <Guid>70385d5504dc47259503ab90a84ea60a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text59</Name>
+              <Page isRef="3" />
+              <Parent isRef="33" />
+              <Text>адрес места жительства/регистрации, должность, место и адрес работы)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text59>
+            <Text63 Ref="38" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,3.4,17.4,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>abb95911e67f4291951ea2adeba1f0eb</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text63</Name>
+              <Page isRef="3" />
+              <Parent isRef="33" />
+              <Text>В рамках проведения {ВидПроверки} проверки в соответствии с приказом от {ДатаПриказа} № {НомерПриказа} в период с {ПериодОбследования} Главным управлением «Государственная жилищная инспекция Смоленской области» проведена проверка в отношении должностного лица {КонтрагентСокр} {ФизЛицоРП}, связанная с {СоставАП}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text63>
+          </Components>
+          <Conditions isList="true" count="1">
+            <value>Multi&lt;?xml version="1.0" encoding="utf-16" standalone="yes"?&gt;&lt;StiSerializer version="1.02" type="Net" application="State"&gt;&lt;Filters isList="true" count="7"&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_5_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_19_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_16_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_13_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_12_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_10_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_1_x0022__x007D_&lt;/value&gt;&lt;/Filters&gt;&lt;Enabled&gt;False&lt;/Enabled&gt;&lt;TextColor&gt;Black&lt;/TextColor&gt;&lt;BackColor&gt;Transparent&lt;/BackColor&gt;&lt;Font&gt;Times New Roman, 8.25pt&lt;/Font&gt;&lt;BorderSides&gt;None&lt;/BorderSides&gt;&lt;/StiSerializer&gt;</value>
+          </Conditions>
+          <Filters isList="true" count="0" />
+          <Guid>832b69f8eb6f4228aac5698ef17a6eac</Guid>
+          <Name>DataBand18</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand18>
+        <DataBand5 Ref="39" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,35.4,17.5,2.4</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text3 Ref="40" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,17.4,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>8ac8a4a23a3649d9a7d0a7a73e363bc0</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="3" />
+              <Parent isRef="39" />
+              <Text>В указанных действиях {КонтрагентСокр} усматриваются признаки состава правонарушения, предусмотренного {СтатьяИсполнительногоДокумента} Кодекса Российской Федерации об административных правонарушениях.
+&lt;br&gt;На основании изложенного и руководствуясь ст.ст. 29.9 ч. 1, 29.10, 29.11 – Кодекса Российской Федерации об административных правонарушениях</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text3>
+          </Components>
+          <Conditions isList="true" count="1">
+            <value>Multi&lt;?xml version="1.0" encoding="utf-16" standalone="yes"?&gt;&lt;StiSerializer version="1.02" type="Net" application="State"&gt;&lt;Filters isList="true" count="8"&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_17_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_4_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_18_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_15_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_8_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_11_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_9_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_0_x0022__x007D_&lt;/value&gt;&lt;/Filters&gt;&lt;Enabled&gt;False&lt;/Enabled&gt;&lt;TextColor&gt;Black&lt;/TextColor&gt;&lt;BackColor&gt;Transparent&lt;/BackColor&gt;&lt;Font&gt;Times New Roman, 12pt&lt;/Font&gt;&lt;BorderSides&gt;None&lt;/BorderSides&gt;&lt;/StiSerializer&gt;</value>
+          </Conditions>
+          <Filters isList="true" count="0" />
+          <Guid>1fe5b445a2a54b369ccd919e15c2a117</Guid>
+          <Name>DataBand5</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand5>
+        <DataBand11 Ref="41" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,38.6,17.5,2.4</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text13 Ref="42" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,17.4,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>1047a617e8e243ffb98483b5b86604ca</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="3" />
+              <Parent isRef="41" />
+              <Text>В указанных действиях {ФизЛицоРП} усматриваются признаки состава правонарушения, предусмотренного {СтатьяИсполнительногоДокумента} Кодекса Российской Федерации об административных правонарушениях.
+&lt;br&gt;На основании изложенного и руководствуясь ст. 29.9 ч. 1, 29.10, 29.11 – Кодекса Российской Федерации об административных правонарушениях</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text13>
+          </Components>
+          <Conditions isList="true" count="1">
+            <value>Multi&lt;?xml version="1.0" encoding="utf-16" standalone="yes"?&gt;&lt;StiSerializer version="1.02" type="Net" application="State"&gt;&lt;Filters isList="true" count="6"&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_3_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_2_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_20_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_14_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_7_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_6_x0022__x007D_&lt;/value&gt;&lt;/Filters&gt;&lt;Enabled&gt;False&lt;/Enabled&gt;&lt;TextColor&gt;Black&lt;/TextColor&gt;&lt;BackColor&gt;Transparent&lt;/BackColor&gt;&lt;Font&gt;Times New Roman, 12pt&lt;/Font&gt;&lt;BorderSides&gt;None&lt;/BorderSides&gt;&lt;/StiSerializer&gt;</value>
+          </Conditions>
+          <Filters isList="true" count="0" />
+          <Guid>66d231b75c73450483715f8c3a1862ec</Guid>
+          <Name>DataBand11</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand11>
+        <DataBand13 Ref="43" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,41.8,17.5,2.4</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text12 Ref="44" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,17.4,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>9995c7b8571444bc9f28c0bcd3ee8852</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="3" />
+              <Parent isRef="43" />
+              <Text>В указанных действиях должностного лица {ФизЛицоРП} усматриваются признаки состава правонарушения, предусмотренного {СтатьяИсполнительногоДокумента} Кодекса Российской Федерации об административных правонарушениях.
+&lt;br&gt;На основании изложенного и руководствуясь ст. 29.9 ч. 1, 29.10, 29.11 – Кодекса Российской Федерации об административных правонарушениях</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text12>
+          </Components>
+          <Conditions isList="true" count="1">
+            <value>Multi&lt;?xml version="1.0" encoding="utf-16" standalone="yes"?&gt;&lt;StiSerializer version="1.02" type="Net" application="State"&gt;&lt;Filters isList="true" count="7"&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_5_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_19_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_16_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_13_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_12_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_10_x0022__x007D_&lt;/value&gt;&lt;value&gt;_x007B_Вотношении_x0021__x003D__x0022_1_x0022__x007D_&lt;/value&gt;&lt;/Filters&gt;&lt;Enabled&gt;False&lt;/Enabled&gt;&lt;TextColor&gt;Black&lt;/TextColor&gt;&lt;BackColor&gt;Transparent&lt;/BackColor&gt;&lt;Font&gt;Times New Roman, 8.25pt&lt;/Font&gt;&lt;BorderSides&gt;None&lt;/BorderSides&gt;&lt;/StiSerializer&gt;</value>
+          </Conditions>
+          <Filters isList="true" count="0" />
+          <Guid>6e3e557e4986410bafc4a10380731de9</Guid>
+          <Name>DataBand13</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand13>
+        <DataBand6 Ref="45" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,45,17.5,0.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text5 Ref="46" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,17.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>8ef0e11372e543ddb61467b58287a375</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="3" />
+              <Parent isRef="45" />
+              <Text>ПОСТАНОВИЛ:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text5>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Filters isList="true" count="0" />
+          <Guid>7fe3ed5462744a82b62f990634ec50dd</Guid>
+          <Name>DataBand6</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand6>
+        <DataBand7 Ref="47" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,46.4,17.5,3.8</ClientRectangle>
+          <Components isList="true" count="8">
+            <Text6 Ref="48" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,2.2,17.4,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>79e319281fbf444a820bd47c6b249d6e</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="3" />
+              <Parent isRef="47" />
+              <Text>- виновным в совершении административного правонарушения, предусмотренного {СтатьяИсполнительногоДокумента} Кодекса Российской Федерации об административных правонарушениях, и наложить наказание в виде штрафа в размере:  &lt;u&gt;&lt;i&gt;&lt;b&gt;{СуммаШтрафа}&lt;/b&gt;&lt;/i&gt;&lt;/u&gt; рублей.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text6>
+            <Text20 Ref="49" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text20</Name>
+              <Page isRef="3" />
+              <Parent isRef="47" />
+              <Text>Признать</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text20>
+            <Text26 Ref="50" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.6,2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>8c579566ecdb4c1bacad035100194935</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text26</Name>
+              <Page isRef="3" />
+              <Parent isRef="47" />
+              <Text>ИНН</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text26>
+            <Text27 Ref="51" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.2,2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>1dd05ec2526e414aae65a60712070469</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text27</Name>
+              <Page isRef="3" />
+              <Parent isRef="47" />
+              <Text>Адрес</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text27>
+            <Text29 Ref="52" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,0,15.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>218642c0eda54f73b9609bed9cd290f1</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text29</Name>
+              <Page isRef="3" />
+              <Parent isRef="47" />
+              <Text>{КонтрагентСокр}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text29>
+            <Text30 Ref="53" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,0.6,15.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>1ea17bfb151b452f99ef420b001ee9c0</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text30</Name>
+              <Page isRef="3" />
+              <Parent isRef="47" />
+              <Text>{ИНН}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text30>
+            <Text31 Ref="54" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,1.2,15.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>ec9be37a4ab946bcba6031fcadb80353</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text31</Name>
+              <Page isRef="3" />
+              <Parent isRef="47" />
+              <Text>{АдресФакт}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text31>
+            <Text32 Ref="55" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.8,17.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,6,Bold</Font>
+              <Guid>de1c60e7c4b7411b818276c23dcc1845</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text32</Name>
+              <Page isRef="3" />
+              <Parent isRef="47" />
+              <Text>(для юридического лица – юридический (если имеется – фактический)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text32>
+          </Components>
+          <Conditions isList="true" count="2">
+            <value>_x007B__x0028_ВидСанкции_x003D__x003D__x0022_5_x0022__x0020__x007C__x007C__x0020_ВидСанкции_x003D__x003D__x0022_0_x0022__x0020__x007C__x007C__x0020_ВидСанкции_x003D__x003D__x0022_1_x0022__x0029__x000D__x000A__x0026__x0026__x0020__x0028_Вотношении_x0020__x003D__x003D__x0020__x0022_0_x0022__x0020__x007C__x007C__x0020__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_9_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_11_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_8_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_15_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_18_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_4_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_17_x0022__x0029__x007D_,Red,Transparent,Arial_x002C_8,True,False,,,None</value>
+            <value>_x007B__x0028_ВидСанкции_x0021__x003D__x0022_5_x0022__x0020__x0026__x0026__x0020_ВидСанкции_x0021__x003D__x0022_0_x0022__x0020__x0026__x0026__x0020_ВидСанкции_x0021__x003D__x0022_1_x0022__x0029__x000D__x000A__x007C__x007C__x0020__x0028_Вотношении_x0020__x0021__x003D__x0020__x0022_0_x0022__x0020__x0026__x0026__x0020__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_9_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_11_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_8_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_15_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_18_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_4_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_17_x0022__x0029__x007D_,Red,Transparent,Arial_x002C_8,False,False,,,None</value>
+          </Conditions>
+          <Filters isList="true" count="0" />
+          <Guid>d662ae72f75741a48a27aa54a00a3d22</Guid>
+          <Name>DataBand7</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand7>
+        <DataBand19 Ref="56" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,51,17.5,3.8</ClientRectangle>
+          <Components isList="true" count="8">
+            <Text64 Ref="57" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,2.2,17.4,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>246d7bca6e0b481bb96e1d22e2eb9d6c</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text64</Name>
+              <Page isRef="3" />
+              <Parent isRef="56" />
+              <Text>- виновным в совершении административного правонарушения, предусмотренного {СтатьяИсполнительногоДокумента} Кодекса Российской Федерации об административных правонарушениях, и наложить наказание в виде устного замечания</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text64>
+            <Text65 Ref="58" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>e1447e3a027d4272afc7acd3b3f1df63</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text65</Name>
+              <Page isRef="3" />
+              <Parent isRef="56" />
+              <Text>Признать</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text65>
+            <Text66 Ref="59" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.6,2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>279ba1d24cb044d694cfde01eb3d8176</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text66</Name>
+              <Page isRef="3" />
+              <Parent isRef="56" />
+              <Text>ИНН</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text66>
+            <Text67 Ref="60" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.2,2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>c2236ad4376543f1ad8f289a0b122b12</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text67</Name>
+              <Page isRef="3" />
+              <Parent isRef="56" />
+              <Text>Адрес</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text67>
+            <Text68 Ref="61" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,0,15.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>42bd73d96f6843bfb1e1d1dc284da598</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text68</Name>
+              <Page isRef="3" />
+              <Parent isRef="56" />
+              <Text>{КонтрагентСокр}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text68>
+            <Text69 Ref="62" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,0.6,15.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>256ed14be2914d7c9480dcc2aaca1942</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text69</Name>
+              <Page isRef="3" />
+              <Parent isRef="56" />
+              <Text>{ИНН}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text69>
+            <Text70 Ref="63" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,1.2,15.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>91b7ed175f9147b8b3d1171060907555</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text70</Name>
+              <Page isRef="3" />
+              <Parent isRef="56" />
+              <Text>{АдресФакт}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text70>
+            <Text71 Ref="64" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.8,17.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,6,Bold</Font>
+              <Guid>9180c6b66e9d4ac2876f9e378ed801e0</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text71</Name>
+              <Page isRef="3" />
+              <Parent isRef="56" />
+              <Text>(для юридического лица – юридический (если имеется – фактический)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text71>
+          </Components>
+          <Conditions isList="true" count="2">
+            <value>_x007B__x0028_ВидСанкции_x003D__x003D__x0022_3_x0022__x0029__x000D__x000A__x0026__x0026__x0020__x0028_Вотношении_x0020__x003D__x003D__x0020__x0022_0_x0022__x0020__x007C__x007C__x0020__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_9_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_11_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_8_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_15_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_18_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_4_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_17_x0022__x0029__x007D_,Red,Transparent,Arial_x002C_8,True,False,,,None</value>
+            <value>_x007B__x0028_ВидСанкции_x0021__x003D__x0022_3_x0022__x0029__x000D__x000A__x007C__x007C__x0020__x0028_Вотношении_x0020__x0021__x003D__x0020__x0022_0_x0022__x0020__x0026__x0026__x0020__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_9_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_11_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_8_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_15_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_18_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_4_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_17_x0022__x0029__x007D_,Red,Transparent,Arial_x002C_8,False,False,,,None</value>
+          </Conditions>
+          <Filters isList="true" count="0" />
+          <Guid>d55194c608b044d793ceda66b24ef8a0</Guid>
+          <Name>DataBand19</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand19>
+        <DataBand20 Ref="65" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,55.6,17.5,3.8</ClientRectangle>
+          <Components isList="true" count="8">
+            <Text72 Ref="66" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,2.2,17.4,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>aa918dbfc49445999edd71ef78b079ce</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text72</Name>
+              <Page isRef="3" />
+              <Parent isRef="65" />
+              <Text>- виновным в совершении административного правонарушения, предусмотренного {СтатьяИсполнительногоДокумента} Кодекса Российской Федерации об административных правонарушениях, и наложить наказание в виде предупреждения</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text72>
+            <Text73 Ref="67" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>eca6896cc2414bc4be8ec07a289a805f</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text73</Name>
+              <Page isRef="3" />
+              <Parent isRef="65" />
+              <Text>Признать</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text73>
+            <Text74 Ref="68" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.6,2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>30f37b5e4f054c4c91d58c9b192122c3</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text74</Name>
+              <Page isRef="3" />
+              <Parent isRef="65" />
+              <Text>ИНН</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text74>
+            <Text75 Ref="69" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.2,2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>c653c7b65a91400a8cc4906cecc2a13e</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text75</Name>
+              <Page isRef="3" />
+              <Parent isRef="65" />
+              <Text>Адрес</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text75>
+            <Text76 Ref="70" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,0,15.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>df34c12770154623a2bfcf899afaef4c</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text76</Name>
+              <Page isRef="3" />
+              <Parent isRef="65" />
+              <Text>{КонтрагентСокр}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text76>
+            <Text77 Ref="71" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,0.6,15.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>f479a9e40aab4f06bcf2060e2ee930ff</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text77</Name>
+              <Page isRef="3" />
+              <Parent isRef="65" />
+              <Text>{ИНН}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text77>
+            <Text78 Ref="72" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,1.2,15.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>4a1ce0cc9e2a4528b520090512413a22</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text78</Name>
+              <Page isRef="3" />
+              <Parent isRef="65" />
+              <Text>{АдресФакт}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text78>
+            <Text79 Ref="73" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.8,17.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,6,Bold</Font>
+              <Guid>fce28936fd9c4bd38da4b33359181465</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text79</Name>
+              <Page isRef="3" />
+              <Parent isRef="65" />
+              <Text>(для юридического лица – юридический (если имеется – фактический)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text79>
+          </Components>
+          <Conditions isList="true" count="2">
+            <value>_x007B__x0028_ВидСанкции_x003D__x003D__x0022_4_x0022__x0029__x000D__x000A__x0026__x0026__x0020__x0028_Вотношении_x0020__x003D__x003D__x0020__x0022_0_x0022__x0020__x007C__x007C__x0020__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_9_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_11_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_8_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_15_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_18_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_4_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_17_x0022__x0029__x007D_,Red,Transparent,Arial_x002C_8,True,False,,,None</value>
+            <value>_x007B__x0028_ВидСанкции_x0021__x003D__x0022_4_x0022__x0029__x000D__x000A__x007C__x007C__x0020__x0028_Вотношении_x0020__x0021__x003D__x0020__x0022_0_x0022__x0020__x0026__x0026__x0020__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_9_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_11_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_8_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_15_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_18_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_4_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_17_x0022__x0029__x007D_,Red,Transparent,Arial_x002C_8,False,False,,,None</value>
+          </Conditions>
+          <Filters isList="true" count="0" />
+          <Guid>0e08b0a7e9ae4184a967d1e3ced99bda</Guid>
+          <Name>DataBand20</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand20>
+        <DataBand21 Ref="74" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,60.2,17.5,2.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text80 Ref="75" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>8d38fdda2d8443b29d089c80d3287576</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text80</Name>
+              <Page isRef="3" />
+              <Parent isRef="74" />
+              <Text>Признать</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text80>
+            <Text81 Ref="76" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,0,15.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>5d50ffa1e639468a842e6bb3b8bdbb0c</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text81</Name>
+              <Page isRef="3" />
+              <Parent isRef="74" />
+              <Text>{ФизЛицоРП}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text81>
+            <Text82 Ref="77" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0.6,17.4,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>68041e202ac04c57ade7f708c4f14f99</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text82</Name>
+              <Page isRef="3" />
+              <Parent isRef="74" />
+              <Text>- виновным в совершении административного правонарушения, предусмотренного {СтатьяИсполнительногоДокумента} Кодекса Российской Федерации об административных правонарушениях, и наложить наказание в виде штрафа в размере:   &lt;u&gt;&lt;i&gt;&lt;b&gt;{СуммаШтрафа}&lt;/b&gt;&lt;/i&gt;&lt;/u&gt; рублей.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text82>
+          </Components>
+          <Conditions isList="true" count="2">
+            <value>_x007B__x0028_ВидСанкции_x003D__x003D__x0022_5_x0022__x0020__x007C__x007C__x0020_ВидСанкции_x003D__x003D__x0022_0_x0022__x0020__x007C__x007C__x0020_ВидСанкции_x003D__x003D__x0022_1_x0022__x0029__x000D__x000A__x0026__x0026__x0020__x0028_Вотношении_x0020__x003D__x003D__x0020__x0022_6_x0022__x0020__x007C__x007C__x0020__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_7_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_14_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_20_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_2_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_3_x0022__x0020__x0029__x007D_,Red,Transparent,Arial_x002C_8,True,False,,,None</value>
+            <value>_x007B__x0028_ВидСанкции_x0021__x003D__x0022_5_x0022__x0020__x0026__x0026__x0020_ВидСанкции_x0021__x003D__x0022_0_x0022__x0020__x0026__x0026__x0020_ВидСанкции_x0021__x003D__x0022_1_x0022__x0029__x000D__x000A__x007C__x007C__x0020__x0028_Вотношении_x0020__x0021__x003D__x0020__x0022_6_x0022__x0020__x0026__x0026__x0020__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_7_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_14_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_20_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_2_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_3_x0022__x0029__x007D_,Red,Transparent,Arial_x002C_8,False,False,,,None</value>
+          </Conditions>
+          <Filters isList="true" count="0" />
+          <Guid>e3a8181db18f4457b9aa78ff08bf0568</Guid>
+          <Name>DataBand21</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand21>
+        <DataBand12 Ref="78" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,63.2,17.5,2.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text53 Ref="79" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>290eea11a49a49e9be29d9c66a06d26e</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text53</Name>
+              <Page isRef="3" />
+              <Parent isRef="78" />
+              <Text>Признать</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text53>
+            <Text54 Ref="80" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,0,15.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>244b16dd869e4933be2bda927f14a2c1</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text54</Name>
+              <Page isRef="3" />
+              <Parent isRef="78" />
+              <Text>{ФизЛицоРП}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text54>
+            <Text14 Ref="81" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0.6,17.4,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>5298b1c3e48c4aaa8d224105d0725b19</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="3" />
+              <Parent isRef="78" />
+              <Text>- виновным в совершении административного правонарушения, предусмотренного {СтатьяИсполнительногоДокумента} Кодекса Российской Федерации об административных правонарушениях, и наложить наказание в виде устного замечания</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text14>
+          </Components>
+          <Conditions isList="true" count="2">
+            <value>_x007B__x0028_ВидСанкции_x003D__x003D__x0022_3_x0022__x0020__x0029__x000D__x000A__x0026__x0026__x0020__x0028_Вотношении_x0020__x003D__x003D__x0020__x0022_6_x0022__x0020__x007C__x007C__x0020__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_7_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_14_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_20_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_2_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_3_x0022__x0020__x0029__x007D_,Red,Transparent,Arial_x002C_8,True,False,,,None</value>
+            <value>_x007B__x0028_ВидСанкции_x0021__x003D__x0022_3_x0022__x0029__x000D__x000A__x007C__x007C__x0020__x0028_Вотношении_x0020__x0021__x003D__x0020__x0022_6_x0022__x0020__x0026__x0026__x0020__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_7_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_14_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_20_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_2_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_3_x0022__x0029__x007D_,Red,Transparent,Arial_x002C_8,False,False,,,None</value>
+          </Conditions>
+          <Filters isList="true" count="0" />
+          <Guid>4d86231434254651854fded06f426925</Guid>
+          <Name>DataBand12</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand12>
+        <DataBand22 Ref="82" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,66.2,17.5,2.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text83 Ref="83" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>ec53148ea6a64e5ea8e5aceb73f8a0f2</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text83</Name>
+              <Page isRef="3" />
+              <Parent isRef="82" />
+              <Text>Признать</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text83>
+            <Text84 Ref="84" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,0,15.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>631665acd8a1489c93181d8d073811ab</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text84</Name>
+              <Page isRef="3" />
+              <Parent isRef="82" />
+              <Text>{ФизЛицоРП}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text84>
+            <Text85 Ref="85" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0.6,17.4,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>dd99429a85064292b570fc96ceb26fdb</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text85</Name>
+              <Page isRef="3" />
+              <Parent isRef="82" />
+              <Text>- виновным в совершении административного правонарушения, предусмотренного {СтатьяИсполнительногоДокумента} Кодекса Российской Федерации об административных правонарушениях, и наложить наказание в виде предупреждения</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text85>
+          </Components>
+          <Conditions isList="true" count="2">
+            <value>_x007B__x0028_ВидСанкции_x003D__x003D__x0022_4_x0022__x0020__x0029__x000D__x000A__x0026__x0026__x0020__x0028_Вотношении_x0020__x003D__x003D__x0020__x0022_6_x0022__x0020__x007C__x007C__x0020__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_7_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_14_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_20_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_2_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_3_x0022__x0020__x0029__x007D_,Red,Transparent,Arial_x002C_8,True,False,,,None</value>
+            <value>_x007B__x0028_ВидСанкции_x0021__x003D__x0022_4_x0022__x0029__x000D__x000A__x007C__x007C__x0020__x0028_Вотношении_x0020__x0021__x003D__x0020__x0022_6_x0022__x0020__x0026__x0026__x0020__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_7_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_14_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_20_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_2_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_3_x0022__x0029__x007D_,Red,Transparent,Arial_x002C_8,False,False,,,None</value>
+          </Conditions>
+          <Filters isList="true" count="0" />
+          <Guid>290b9ef85d1648d2b7ca5e5f595200d4</Guid>
+          <Name>DataBand22</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand22>
+        <DataBand14 Ref="86" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,69.2,17.5,2.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text15 Ref="87" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>ace20cc4cedd4d99b76550667345257c</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="3" />
+              <Parent isRef="86" />
+              <Text>Признать</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text15>
+            <Text16 Ref="88" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,0,15.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>7912dd7674ce40738eb1c9aee475282b</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text16</Name>
+              <Page isRef="3" />
+              <Parent isRef="86" />
+              <Text>должностное лицо {КонтрагентСокр} {ФизЛицоРП}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text16>
+            <Text60 Ref="89" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0.6,17.4,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>be4dd1cca53c4da3b4c75696dfde162f</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text60</Name>
+              <Page isRef="3" />
+              <Parent isRef="86" />
+              <Text>- виновным в совершении административного правонарушения, предусмотренного {СтатьяИсполнительногоДокумента} Кодекса Российской Федерации об административных правонарушениях, и наложить наказание в виде штрафа в размере:  &lt;u&gt;&lt;i&gt;&lt;b&gt;{СуммаШтрафа}&lt;/b&gt;&lt;/i&gt;&lt;/u&gt; рублей.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text60>
+          </Components>
+          <Conditions isList="true" count="2">
+            <value>_x007B__x0028_ВидСанкции_x003D__x003D__x0022_5_x0022__x0020__x007C__x007C__x0020_ВидСанкции_x003D__x003D__x0022_0_x0022__x0020__x007C__x007C__x0020_ВидСанкции_x003D__x003D__x0022_1_x0022__x0029__x000D__x000A__x0026__x0026__x0020__x0028_Вотношении_x0020__x003D__x003D__x0020__x0022_1_x0022__x0020__x007C__x007C__x0020__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_10_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_12_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_13_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_16_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_19_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_5_x0022__x0020__x0029__x007D_,Red,Transparent,Arial_x002C_8,True,False,,,None</value>
+            <value>_x007B__x0028_ВидСанкции_x0021__x003D__x0022_5_x0022__x0020__x0026__x0026__x0020_ВидСанкции_x0021__x003D__x0022_0_x0022__x0020__x0026__x0026__x0020_ВидСанкции_x0021__x003D__x0022_1_x0022__x0029__x000D__x000A__x007C__x007C__x0020__x0028_Вотношении_x0020__x0021__x003D__x0020__x0022_1_x0022__x0020__x0026__x0026__x0020__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_10_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_12_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_13_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_16_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_19_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_5_x0022__x0029__x007D_,Red,Transparent,Arial_x002C_8,False,False,,,None</value>
+          </Conditions>
+          <Filters isList="true" count="0" />
+          <Guid>7f91152267cd46488d35f139f7e812cb</Guid>
+          <Name>DataBand14</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand14>
+        <DataBand23 Ref="90" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,72.2,17.5,2.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text86 Ref="91" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>5ca11ddf446144aba724f64954571f56</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text86</Name>
+              <Page isRef="3" />
+              <Parent isRef="90" />
+              <Text>Признать</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text86>
+            <Text87 Ref="92" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,0,15.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>9deb62628c7a444e82c9958813be8535</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text87</Name>
+              <Page isRef="3" />
+              <Parent isRef="90" />
+              <Text>должностное лицо {КонтрагентСокр} {ФизЛицоРП}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text87>
+            <Text88 Ref="93" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0.6,17.4,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>9aeb75c88d68471d8ae195dd25e87bdf</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text88</Name>
+              <Page isRef="3" />
+              <Parent isRef="90" />
+              <Text>- виновным в совершении административного правонарушения, предусмотренного {СтатьяИсполнительногоДокумента} Кодекса Российской Федерации об административных правонарушениях, и наложить наказание в виде устного замечания</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text88>
+          </Components>
+          <Conditions isList="true" count="2">
+            <value>_x007B__x0028_ВидСанкции_x003D__x003D__x0022_3_x0022__x0029__x000D__x000A__x0026__x0026__x0020__x0028_Вотношении_x0020__x003D__x003D__x0020__x0022_1_x0022__x0020__x007C__x007C__x0020__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_10_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_12_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_13_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_16_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_19_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_5_x0022__x0020__x0029__x007D_,Red,Transparent,Arial_x002C_8,True,False,,,None</value>
+            <value>_x007B__x0028_ВидСанкции_x0021__x003D__x0022_3_x0022__x0029__x000D__x000A__x007C__x007C__x0020__x0028_Вотношении_x0020__x0021__x003D__x0020__x0022_1_x0022__x0020__x0026__x0026__x0020__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_10_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_12_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_13_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_16_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_19_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_5_x0022__x0029__x007D_,Red,Transparent,Arial_x002C_8,False,False,,,None</value>
+          </Conditions>
+          <Filters isList="true" count="0" />
+          <Guid>e8e8dbbb3db645da8e988646271c225e</Guid>
+          <Name>DataBand23</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand23>
+        <DataBand24 Ref="94" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,75.2,17.5,2.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text89 Ref="95" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>da9913710ccb4d7bbbdced3eb328e882</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text89</Name>
+              <Page isRef="3" />
+              <Parent isRef="94" />
+              <Text>Признать</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text89>
+            <Text90 Ref="96" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,0,15.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>447a1e956b6f4572b0eb53545f7b933e</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text90</Name>
+              <Page isRef="3" />
+              <Parent isRef="94" />
+              <Text>должностное лицо {КонтрагентСокр} {ФизЛицоРП}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text90>
+            <Text91 Ref="97" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0.6,17.4,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>ce056a246ea549a1bf723fe88b08417b</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text91</Name>
+              <Page isRef="3" />
+              <Parent isRef="94" />
+              <Text>- виновным в совершении административного правонарушения, предусмотренного {СтатьяИсполнительногоДокумента} Кодекса Российской Федерации об административных правонарушениях, и наложить наказание в виде предупреждения</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text91>
+          </Components>
+          <Conditions isList="true" count="2">
+            <value>_x007B__x0028_ВидСанкции_x003D__x003D__x0022_4_x0022__x0029__x000D__x000A__x0026__x0026__x0020__x0028_Вотношении_x0020__x003D__x003D__x0020__x0022_1_x0022__x0020__x007C__x007C__x0020__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_10_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_12_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_13_x0022__x0020__x007C__x007C__x0020_Вотношении_x0020__x003D__x003D__x0020__x0022_16_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_19_x0022__x0020__x007C__x007C__x000D__x000A_Вотношении_x0020__x003D__x003D__x0020__x0022_5_x0022__x0020__x0029__x007D_,Red,Transparent,Arial_x002C_8,True,False,,,None</value>
+            <value>_x007B__x0028_ВидСанкции_x0021__x003D__x0022_4_x0022__x0029__x000D__x000A__x007C__x007C__x0020__x0028_Вотношении_x0020__x0021__x003D__x0020__x0022_1_x0022__x0020__x0026__x0026__x0020__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_10_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_12_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_13_x0022__x0020__x0026__x0026__x0020_Вотношении_x0020__x0021__x003D__x0020__x0022_16_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_19_x0022__x0020__x0026__x0026__x000D__x000A_Вотношении_x0020__x0021__x003D__x0020__x0022_5_x0022__x0029__x007D_,Red,Transparent,Arial_x002C_8,False,False,,,None</value>
+          </Conditions>
+          <Filters isList="true" count="0" />
+          <Guid>74a5810b44c94d5b839a1ce9ef385ab1</Guid>
+          <Name>DataBand24</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand24>
+        <DataBand9 Ref="98" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,78.2,17.5,2</ClientRectangle>
+          <Components isList="true" count="5">
+            <Text17 Ref="99" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0.6,8.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>7d2ddd7e13284865a52ccecdb081d2e5</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text17</Name>
+              <Page isRef="3" />
+              <Parent isRef="98" />
+              <Text>{КодДлВынесшегоПостановление}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text17>
+            <Text9 Ref="100" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>11.8,0.6,5.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>7d439c15683e4875af38f4f1c9c9c26d</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="3" />
+              <Parent isRef="98" />
+              <Text>{ФИОРуководителя}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text9>
+            <Text33 Ref="101" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>8.8,0.6,3,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>11dab059a5ee480da4731ccf94e74321</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text33</Name>
+              <Page isRef="3" />
+              <Parent isRef="98" />
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text33>
+            <Text34 Ref="102" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.8,1.4,3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,6,Bold</Font>
+              <Guid>b79b10e785ab4b90bd985d00098bd838</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text34</Name>
+              <Page isRef="3" />
+              <Parent isRef="98" />
+              <Text>(подпись)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text34>
+            <Text35 Ref="103" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.8,1.4,5.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,6,Bold</Font>
+              <Guid>1675bb1661d84bf58ff51ef7b9362d12</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text35</Name>
+              <Page isRef="3" />
+              <Parent isRef="98" />
+              <Text>(ФИО)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text35>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Filters isList="true" count="0" />
+          <Guid>43238ebabdbc4b6f90382e52937f1568</Guid>
+          <Name>DataBand9</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand9>
+        <DataBand8 Ref="104" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,81,17.5,8.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text43 Ref="105" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0.4,17.4,7.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,7</Font>
+              <Guid>b861a8cf12fc478481594b957f8160a4</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text43</Name>
+              <Page isRef="3" />
+              <Parent isRef="104" />
+              <Text>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Статья 30.2. Порядок подачи жалобы на постановление по делу об административном правонарушении
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. Жалоба на постановление по делу об административном правонарушении подается судье, в орган, должностному лицу, которыми вынесено постановление по делу и которые обязаны в течение трех суток со дня поступления жалобы направить ее со всеми материалами дела в соответствующий суд, вышестоящий орган, вышестоящему должностному лицу.
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Жалоба на постановление судьи о назначении административного наказания в виде административного ареста либо административного выдворения подлежит направлению в вышестоящий суд в день получения жалобы.
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. Жалоба может быть подана непосредственно в суд, вышестоящий орган, вышестоящему должностному лицу, уполномоченным ее рассматривать.
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;4. В случае если рассмотрение жалобы не относится к компетенции судьи, должностного лица, которым обжаловано постановление по делу об административном правонарушении, жалоба направляется на рассмотрение по подведомственности в течение трех суток.
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;5. Жалоба на постановление по делу об административном правонарушении государственной пошлиной не облагается.
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;6. Жалоба на постановление судьи о назначении административного наказания в виде административного приостановления деятельности подлежит направлению в вышестоящий суд в день получения жалобы.
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Статья 30.3. Срок обжалования постановления по делу об административном правонарушении
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. Жалоба на постановление по делу об административном правонарушении может быть подана в течение десяти суток со дня вручения или получения копии постановления.
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. В случае пропуска срока, предусмотренного частью 1 настоящей статьи, указанный срок по ходатайству лица, подающего жалобу, может быть восстановлен судьей или должностным лицом, правомочными рассматривать жалобу.
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. Жалобы на постановления по делам об административных правонарушениях, предусмотренных статьями 5.1 - 5.25, 5.45 - 5.52, 5.56 настоящего Кодекса, могут быть поданы в пятидневный срок со дня вручения или получения копий постановлений.
+(часть третья введена Федеральным законом от 04.07.2003 N 94-ФЗ, в ред. Федерального закона от 21.07.2005 N 93-ФЗ)
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;4. Об отклонении ходатайства о восстановлении срока обжалования постановления по делу об административном правонарушении выносится определение.
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Статья 32.2. Исполнение постановления о наложении административного штрафа
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. Административный штраф должен быть уплачен лицом, привлеченным к административной ответственности, не позднее шестидесяти дней со дня вступления постановления о наложении административного штрафа в законную силу либо со дня истечения срока отсрочки или срока рассрочки, предусмотренных статьей 31.5 настоящего Кодекса.
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. При отсутствии самостоятельного заработка у несовершеннолетнего административный штраф взыскивается с его родителей или иных законных представителей.
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. Сумма административного штрафа вносится или перечисляется лицом, привлеченным к административной ответственности, в банк или в иную кредитную организацию, за исключением случаев, предусмотренных частью 1 статьи 32.3 настоящего Кодекса
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text43>
+            <Text36 Ref="106" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,17.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,6,Bold</Font>
+              <Guid>424b792dd8bd422aa142282927eb51f1</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text36</Name>
+              <Page isRef="3" />
+              <Parent isRef="104" />
+              <Text>КОДЕКС РОССИЙСКОЙ ФЕДЕРАЦИИ  ОБ АДМИНИСТРАТИВНЫХ ПРАВОНАРУШЕНИЯХ (извлечение)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text36>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Filters isList="true" count="0" />
+          <Guid>176aa8b7cc014cecaa465d984a2d9d36</Guid>
+          <Name>DataBand8</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand8>
+        <DataBand16 Ref="107" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,90,17.5,3.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text37 Ref="108" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,17.4,3.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10,Bold</Font>
+              <Guid>a76907a46488439fa8cf4aea12d08389</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text37</Name>
+              <Page isRef="3" />
+              <Parent isRef="107" />
+              <Text>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;В случае отсутствия у Главного управления «Государственная жилищная инспекция Смоленской области» сведений о добровольной уплате административного штрафа в соответствии с ч. 5 ст. 32.2 Кодекса Российской Федерации об административных правонарушениях составляется протокол об административном правонарушении, предусмотренном частью 1 статьи 20.25 кодекса, в отношении лица, не уплатившего административный штраф. 
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;В соответствии с ч. 1 ст. 20.25 неуплата административного штрафа в срок влечет наложение административного штрафа в двукратном размере суммы неуплаченного административного штрафа, но не менее одной тысячи рублей, либо административный арест на срок до пятнадцати суток, либо обязательные работы на срок до пятидесяти часов.
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text37>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Filters isList="true" count="0" />
+          <Guid>05f02b056ad04023abb57c3d97484e8b</Guid>
+          <Name>DataBand16</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand16>
+        <DataBand10 Ref="109" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,94.4,17.5,6.2</ClientRectangle>
+          <Components isList="true" count="12">
+            <Text8 Ref="110" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,17.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,9,Bold</Font>
+              <Guid>9c8da4bd104749fab3a15399c7574921</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="3" />
+              <Parent isRef="109" />
+              <Text>Копия постановления рвучена (направлена)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text8>
+            <Text38 Ref="111" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0.6,2.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,9</Font>
+              <Guid>b967d3996ce54bffb0b6fa51d3ab434e</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text38</Name>
+              <Page isRef="3" />
+              <Parent isRef="109" />
+              <Text>1. Нарушителю</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text38>
+            <Text39 Ref="112" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5,0.6,12.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,9</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text39</Name>
+              <Page isRef="3" />
+              <Parent isRef="109" />
+              <Text>«_______»_____________________20_____ г.___________________/___________________/</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text39>
+            <Text40 Ref="113" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,2,4.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,7,Bold</Font>
+              <Guid>06965e348ab64a97b243904b06dadada</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text40</Name>
+              <Page isRef="3" />
+              <Parent isRef="109" />
+              <Text>Постановление вступает в законную силу</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text40>
+            <Text41 Ref="114" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5,1.2,12.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,9</Font>
+              <Guid>7bb8852321b241fa86856059d9d991aa</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text41</Name>
+              <Page isRef="3" />
+              <Parent isRef="109" />
+              <Text>«_______»_____________________20_____ г.___________________/___________________/</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text41>
+            <Text42 Ref="115" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,1.2,2.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,9</Font>
+              <Guid>c0b2460972c945b8b3c28c0c748a6a75</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text42</Name>
+              <Page isRef="3" />
+              <Parent isRef="109" />
+              <Text>2. Потерпевшему</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text42>
+            <Text44 Ref="116" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11,2,6.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,9</Font>
+              <Guid>245d1ba466cd4143b72fb733c6ca09f1</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text44</Name>
+              <Page isRef="3" />
+              <Parent isRef="109" />
+              <Text>«_______»_____________________20_____ г.</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text44>
+            <Text45 Ref="117" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,2.6,4.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,7,Bold</Font>
+              <Guid>41a3b415381b45abb506ef7331892603</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text45</Name>
+              <Page isRef="3" />
+              <Parent isRef="109" />
+              <Text>Срок предъявления к исполнению один год.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text45>
+            <Text46 Ref="118" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,3.2,10.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,7,Bold</Font>
+              <Guid>e346a8c94f214e72b70c94a33eee4c7a</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text46</Name>
+              <Page isRef="3" />
+              <Parent isRef="109" />
+              <Text>Ссылка на дату вынесения постановления и номер дела в платежном документе обязательна</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text46>
+            <Text7 Ref="119" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,3.8,8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,7,Bold</Font>
+              <Guid>3c87ba6b0ac84478b1c8c8513254cc8f</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="3" />
+              <Parent isRef="109" />
+              <Text>Данные об уплате административного штрафа в срок, 
+установленный для добровольного исполнения, отсутствуют
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text7>
+            <Text47 Ref="120" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.8,3.8,6.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,9</Font>
+              <Guid>73764e702e6445ea9c2b9a01b23a4577</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text47</Name>
+              <Page isRef="3" />
+              <Parent isRef="109" />
+              <Text>«_______»_____________________20_____ г.</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text47>
+            <Text48 Ref="121" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,4.4,17.4,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,7,Bold</Font>
+              <Guid>dc161e767b524f5a88bfccea95eeaef2</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text48</Name>
+              <Page isRef="3" />
+              <Parent isRef="109" />
+              <Text>Реквизиты для оплаты штрафа:
+&lt;br&gt;УФК по Смоленской области (Главное управление «Государственная жилищная инспекция Смоленской области»)
+&lt;br&gt;Л/С   04632000640         Р/С  40101810200000010001      Банк:  Отделение Смоленск  г. Смоленск 
+&lt;br&gt;БИК  046614001       ИНН  6730067200          КПП  673001001           ОКТМО 66701000001
+&lt;br&gt;КБК административного штрафа     83211690020020401140 «Штраф за административное правонарушение»
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text48>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Filters isList="true" count="0" />
+          <Guid>89eda837767443a3b41163e965228ac3</Guid>
+          <Name>DataBand10</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand10>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>3719af0d49ac489ea54d4d0310c0d9d4</Guid>
+      <LargeHeight>True</LargeHeight>
+      <Margins>2.2,1.3,0.75,0.5</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="122" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="123" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>10/8/2014 7:29:38 PM</ReportChanged>
+  <ReportCreated>9/1/2013 1:25:03 PM</ReportCreated>
+  <ReportFile>C:\projects\GKH.GKH.CMMI\Dev\Smolensk\Bars.GkhGji.Regions.Smolensk\Resources\Resolution.mrt</ReportFile>
+  <ReportGuid>c064f5a6077240599ae9262a97d2ed94</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

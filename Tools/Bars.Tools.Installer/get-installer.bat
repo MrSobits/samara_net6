@@ -1,0 +1,1 @@
+msbuild "Bars.Tools.Installer.wixproj"

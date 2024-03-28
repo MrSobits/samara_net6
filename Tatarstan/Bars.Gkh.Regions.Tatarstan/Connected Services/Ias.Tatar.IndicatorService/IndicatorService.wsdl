@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://open.tatarstan.ru" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="IndicatorService" targetNamespace="http://open.tatarstan.ru" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://open.tatarstan.ru" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="import_indicator">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="request" type="tns:indicator" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ArrayOfIndicator">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="indicator" type="tns:indicator" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="indicator">
+        <xs:sequence>
+          <xs:element name="indicator_passport" type="tns:indicator_passport" />
+          <xs:element name="indicator_values" type="tns:ArrayOfItem" />
+        </xs:sequence>
+        <xs:attribute name="agent" type="xs:string" />
+      </xs:complexType>
+      <xs:complexType name="indicator_passport">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="description" type="xs:string" />
+          <xs:element minOccurs="0" name="responsible_name" type="xs:string" />
+          <xs:element minOccurs="0" name="responsible_organizations" type="tns:ArrayOfOrganization" />
+          <xs:element minOccurs="0" name="category" type="xs:string" />
+          <xs:element name="active" type="xs:boolean" />
+          <xs:element minOccurs="0" name="increscent_total" type="xs:boolean" />
+          <xs:element name="ranks" type="tns:ArrayOfDimension" />
+          <xs:element name="reglament" type="tns:reglament" />
+          <xs:element name="activity_periods" type="tns:ArrayOfPeriod" />
+          <xs:element minOccurs="0" name="last_modified_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="is_indicator_text_data" type="xs:boolean" />
+        </xs:sequence>
+        <xs:attribute name="frequencyId" type="xs:string" />
+        <xs:attribute name="groupId" type="xs:string" />
+        <xs:attribute name="id" type="xs:string" />
+        <xs:attribute name="measureId" type="xs:string" />
+      </xs:complexType>
+      <xs:complexType name="ArrayOfDimension">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="dimension" type="tns:dimension" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="dimension">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="rank" type="tns:rank" />
+        </xs:sequence>
+        <xs:attribute name="n" type="xs:integer" />
+      </xs:complexType>
+      <xs:complexType name="rank">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="rank" type="tns:rank" />
+        </xs:sequence>
+        <xs:attribute name="code" type="xs:string" use="required" />
+        <xs:attribute name="dimension" type="xs:integer" use="required" />
+        <xs:attribute name="key" type="xs:string" use="required" />
+        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="type" type="xs:string" use="required" />
+      </xs:complexType>
+      <xs:complexType name="reglament">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="begin_period" type="xs:integer" />
+          <xs:element minOccurs="0" maxOccurs="1" name="last_enter_date" type="xs:integer" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPeriod">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="unbounded" name="period" type="tns:period" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="period">
+        <xs:sequence>
+          <xs:element name="start" type="xs:date" />
+          <xs:element name="end" type="xs:date" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfItem">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="item" type="tns:item" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfOrganization">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="item" type="tns:organization" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfRankReference">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="rank" type="tns:RankReference" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RankReference">
+        <xs:attribute name="dimension" type="xs:integer" use="required" />
+        <xs:attribute name="key" type="xs:string" use="required" />
+      </xs:complexType>
+      <xs:complexType name="organization">
+        <xs:attribute name="name" type="xs:string" />
+      </xs:complexType>
+      <xs:complexType name="item">
+        <xs:sequence>
+          <xs:element name="ranks" type="tns:ArrayOfRankReference" />
+          <xs:element minOccurs="0" name="value" type="xs:decimal" />
+          <xs:element minOccurs="0" name="text_value" type="xs:string" />
+          <xs:element name="start_date" type="xs:date" />
+          <xs:element name="end_date" type="xs:date" />
+          <xs:element name="input_date" type="xs:string" />
+          <xs:element name="comment" type="xs:string" />
+          <xs:element minOccurs="0" name="user" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="import_indicatorResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="import_indicatorResult">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="error_code" type="xs:string" />
+                  <xs:element minOccurs="0" name="error_name" type="xs:string" />
+                  <xs:element minOccurs="0" name="error_details" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="export_indicator">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="request" type="tns:indicator_filter" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="indicator_filter">
+        <xs:sequence>
+          <xs:element name="id" type="xs:string" />
+          <xs:element name="agent" type="xs:string" />
+          <xs:element minOccurs="0" name="last_modified_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="report_date">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="start_date" type="xs:date" />
+                <xs:element name="end_date" type="xs:date" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="start_after" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="export_indicatorResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="export_indicatorResult">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="start_after" type="xs:string" />
+                  <xs:element name="error_code" type="xs:string" />
+                  <xs:element minOccurs="0" name="error_name" type="xs:string" />
+                  <xs:element minOccurs="0" name="error_details" type="xs:string" />
+                  <xs:element minOccurs="0" name="indicator" type="tns:indicator" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_modified_indicator">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="last_date" type="xs:dateTime" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_modified_indicatorResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="get_modified_indicatorResult">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" name="arrayOfIndicatorIds" type="tns:indicatorId" />
+                  <xs:element name="error_code" type="xs:string" />
+                  <xs:element minOccurs="0" name="error_name" type="xs:string" />
+                  <xs:element minOccurs="0" name="error_details" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="request_result">
+        <xs:sequence>
+          <xs:element name="error_code" type="xs:string" />
+          <xs:element minOccurs="0" name="error_name" type="xs:string" />
+          <xs:element minOccurs="0" name="error_details" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="indicatorId">
+        <xs:sequence>
+          <xs:element name="id" type="xs:string" />
+          <xs:element name="agent" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="subscribe_indicator">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="arrayOfIndicatorIds" type="tns:indicatorId" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="subscribe_indicatorResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="subscribe_indicatorResult" type="tns:request_result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="unsubscribe_indicator">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="arrayOfIndicatorIds" type="tns:indicatorId" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="unsubscribe_indicatorResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="unsubscribe_indicatorResult" type="tns:request_result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="import_report_file">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="id" type="xs:string" />
+            <xs:element name="agent" type="xs:string" />
+            <xs:element name="last_modified_date" type="xs:dateTime" />
+            <xs:element name="report_date">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="validity_date" type="xs:dateTime" />
+                  <xs:element minOccurs="0" name="af_months" type="xs:integer" />
+                  <xs:element minOccurs="0" name="af_minutes" type="xs:integer" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="periodicity">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="dr_frequency" type="xs:string" />
+                  <xs:element minOccurs="0" name="dr_additive" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="last_period" type="xs:string" />
+            <xs:element name="file" type="xs:base64Binary" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="import_report_fileResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="import_report_fileResult" type="tns:request_result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IIndicator_import_indicator_InputMessage">
+    <wsdl:part name="parameters" element="tns:import_indicator" />
+  </wsdl:message>
+  <wsdl:message name="IIndicator_import_indicator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:import_indicatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIndicator_export_indicator_InputMessage">
+    <wsdl:part name="parameters" element="tns:export_indicator" />
+  </wsdl:message>
+  <wsdl:message name="IIndicator_export_indicator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:export_indicatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIndicator_get_modified_indicator_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_modified_indicator" />
+  </wsdl:message>
+  <wsdl:message name="IIndicator_get_modified_indicator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_modified_indicatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIndicator_subscribe_indicator_InputMessage">
+    <wsdl:part name="parameters" element="tns:subscribe_indicator" />
+  </wsdl:message>
+  <wsdl:message name="IIndicator_subscribe_indicator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:subscribe_indicatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIndicator_unsubscribe_indicator_InputMessage">
+    <wsdl:part name="parameters" element="tns:unsubscribe_indicator" />
+  </wsdl:message>
+  <wsdl:message name="IIndicator_unsubscribe_indicator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:unsubscribe_indicatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIndicator_import_report_file_InputMessage">
+    <wsdl:part name="parameters" element="tns:import_report_file" />
+  </wsdl:message>
+  <wsdl:message name="IIndicator_import_report_file_OutputMessage">
+    <wsdl:part name="parameters" element="tns:import_report_fileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IIndicator">
+    <wsdl:operation name="import_indicator">
+      <wsdl:input wsaw:Action="http://open.tatarstan.ru/IIndicator/import_indicator" message="tns:IIndicator_import_indicator_InputMessage" />
+      <wsdl:output wsaw:Action="http://open.tatarstan.ru/IIndicator/import_indicatorResponse" message="tns:IIndicator_import_indicator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="export_indicator">
+      <wsdl:input wsaw:Action="http://open.tatarstan.ru/IIndicator/export_indicator" message="tns:IIndicator_export_indicator_InputMessage" />
+      <wsdl:output wsaw:Action="http://open.tatarstan.ru/IIndicator/export_indicatorResponse" message="tns:IIndicator_export_indicator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_modified_indicator">
+      <wsdl:input wsaw:Action="http://open.tatarstan.ru/IIndicator/get_modified_indicator" message="tns:IIndicator_get_modified_indicator_InputMessage" />
+      <wsdl:output wsaw:Action="http://open.tatarstan.ru/IIndicator/get_modified_indicatorResponse" message="tns:IIndicator_get_modified_indicator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="subscribe_indicator">
+      <wsdl:input wsaw:Action="http://open.tatarstan.ru/IIndicator/subscribe_indicator" message="tns:IIndicator_subscribe_indicator_InputMessage" />
+      <wsdl:output wsaw:Action="http://open.tatarstan.ru/IIndicator/subscribe_indicatorResponse" message="tns:IIndicator_subscribe_indicator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="unsubscribe_indicator">
+      <wsdl:input wsaw:Action="http://open.tatarstan.ru/IIndicator/unsubscribe_indicator" message="tns:IIndicator_unsubscribe_indicator_InputMessage" />
+      <wsdl:output wsaw:Action="http://open.tatarstan.ru/IIndicator/unsubscribe_indicatorResponse" message="tns:IIndicator_unsubscribe_indicator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="import_report_file">
+      <wsdl:input wsaw:Action="http://open.tatarstan.ru/IIndicator/import_report_file" message="tns:IIndicator_import_report_file_InputMessage" />
+      <wsdl:output wsaw:Action="http://open.tatarstan.ru/IIndicator/import_report_fileResponse" message="tns:IIndicator_import_report_file_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IIndicator" type="tns:IIndicator">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="import_indicator">
+      <soap:operation soapAction="http://open.tatarstan.ru/IIndicator/import_indicator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="export_indicator">
+      <soap:operation soapAction="http://open.tatarstan.ru/IIndicator/export_indicator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_modified_indicator">
+      <soap:operation soapAction="http://open.tatarstan.ru/IIndicator/get_modified_indicator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="subscribe_indicator">
+      <soap:operation soapAction="http://open.tatarstan.ru/IIndicator/subscribe_indicator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="unsubscribe_indicator">
+      <soap:operation soapAction="http://open.tatarstan.ru/IIndicator/subscription_indicator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="import_report_file">
+      <soap:operation soapAction="http://open.tatarstan.ru/IIndicator/import_report_file" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IndicatorService">
+    <wsdl:port name="BasicHttpBinding_IIndicator" binding="tns:BasicHttpBinding_IIndicator">
+      <soap:address location="https://ias.tatar.ru/service/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

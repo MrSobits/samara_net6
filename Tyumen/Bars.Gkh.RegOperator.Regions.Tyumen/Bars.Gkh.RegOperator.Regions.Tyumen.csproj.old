@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{90A849CD-280D-4127-A4D1-7AFD749E3B9E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Bars.Gkh.RegOperator.Regions.Tyumen</RootNamespace>
+    <AssemblyName>Bars.Gkh.RegOperator.Regions.Tyumen</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ClientRouteMapRegistrar.cs" />
+    <Compile Include="Controllers\RealityObject\RequestStateContoller.cs" />
+    <Compile Include="Entities\RequestStatePerson.cs" />
+    <Compile Include="Entities\RequestState.cs" />
+    <Compile Include="Enums\RequestStatePersonEnum.cs" />
+    <Compile Include="Migrations\2018\Version_2018082101\UpdateSchema.cs" />
+    <Compile Include="NavigationProvider.cs" />
+    <Compile Include="Permissoins\GkhTyumenPermissionMap.cs" />
+    <Compile Include="Map\RequestStatePersonMap.cs" />
+    <Compile Include="Map\RequestStateMap.cs" />
+    <Compile Include="Migrations\2018\Version_2018082100\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_1\UpdateSchema.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="Module.ResourcePart.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceManifest.cs">
+      <DependentUpon>ResourceManifest.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ResourceManifest.Part.cs" />
+    <Compile Include="Services\ESIAEMailSender.cs" />
+    <Compile Include="StateChanges\RealityObjectSendPersonStateRule.cs" />
+    <Compile Include="StateChanges\RealityObjectSendStateRule.cs" />
+    <Compile Include="ViewModel\RequestStateViewModel.cs" />
+    <Compile Include="ViewModel\RequestStatePersonViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\**\*" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="paket.references" />
+    <None Include="ResourceManifest.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ResourceManifest.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Bars.Gkh.Overhaul.Hmao\Bars.Gkh.Overhaul.Hmao.csproj">
+      <Project>{390E291F-C1CF-4BF8-A205-4E78B40618B6}</Project>
+      <Name>Bars.Gkh.Overhaul.Hmao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.GkhCR\Bars.GkhCR.csproj">
+      <Project>{16841fbf-162a-4641-9a52-a8975fe6bae3}</Project>
+      <Name>Bars.GkhCR</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.Gkh\Bars.Gkh.csproj">
+      <Project>{2495A42B-7EC1-44D3-B7A7-1F90A2C44C85}</Project>
+      <Name>Bars.Gkh</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

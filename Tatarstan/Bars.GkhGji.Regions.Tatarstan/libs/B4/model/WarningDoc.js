@@ -1,0 +1,48 @@
+Ext.define('B4.model.WarningDoc', {
+    extend: 'B4.model.DocumentGji',
+    idProperty: 'Id',
+
+    proxy: {
+        type: 'b4proxy',
+        controllerName: 'WarningDoc'
+    },
+    fields: [
+        { name: 'TakingDate' },
+        { name: 'ResultText' },
+        { name: 'BaseWarning' },
+        { name: 'NcOutDate' },
+        { name: 'NcOutNum' },
+        { name: 'NcOutDateLatter' },
+        { name: 'NcOutNumLatter' },
+        { name: 'NcOutSent' },
+        { name: 'NcInDate' },
+        { name: 'NcInNum' },
+        { name: 'NcInDateLatter' },
+        { name: 'NcInNumLatter' },
+        { name: 'NcInRecived' },
+        { name: 'Autor' },
+        { name: 'Executant' },
+        { name: 'File' },
+        { name: 'State' },
+        { name: 'MunicipalityId' },
+        { name: 'MunicipalityName' },
+        { name: 'InspectionBasis' },
+        { name: 'ContragentName' },
+        { name: 'PersonInspection' },
+        { name: 'PersonInspectionName' },
+        { name: 'RealityObjectCount' },
+        { name: 'RealityObjectIds' },
+        { name: 'Inspectors' },
+        { name: 'InspectionId' },
+        { name: 'TypeBase' },
+        { name: 'CompilationPlace' },
+        { name: 'ObjectionReceived', defaultValue: 20},
+        { name: 'ActionStartDate' },
+        { name: 'ActionEndDate' },
+        { name: 'SendToErknm' },
+        { name: 'ErknmRegistrationNumber' },
+        { name: 'ErknmId' },
+        { name: 'ErknmRegistrationDate' },
+        { name: 'PhysicalPerson' }
+    ]
+});

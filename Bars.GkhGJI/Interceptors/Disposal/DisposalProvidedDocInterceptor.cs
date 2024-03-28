@@ -1,0 +1,64 @@
+﻿namespace Bars.GkhGji.Interceptors
+{
+    using System.Collections.Generic;
+
+    using Bars.B4;
+    using Bars.GkhGji.DomainService;
+    using Bars.GkhGji.Entities;
+    using Bars.GkhGji.Enums;
+
+    public class DisposalProvidedDocInterceptor : EmptyDomainInterceptor<DisposalProvidedDoc>
+    {
+        public override IDataResult AfterCreateAction(IDomainService<DisposalProvidedDoc> service, DisposalProvidedDoc entity)
+        {
+            var logEntityHistoryService = this.Container.Resolve<ILogEntityHistoryService>();
+            try
+            {
+                logEntityHistoryService.UpdateLog(entity, TypeEntityLogging.DocumentGjiProvidedDoc, entity.Id, entity.GetType(), GetPropertyValues(), entity.Disposal.Id.ToString() + " " + entity.ProvidedDoc.Name);
+            }
+            catch
+            {
+
+            }
+            return this.Success();
+        }
+        public override IDataResult AfterUpdateAction(IDomainService<DisposalProvidedDoc> service, DisposalProvidedDoc entity)
+        {
+            var logEntityHistoryService = this.Container.Resolve<ILogEntityHistoryService>();
+            try
+            {
+                logEntityHistoryService.UpdateLog(entity, TypeEntityLogging.DocumentGjiProvidedDoc, entity.Id, entity.GetType(), GetPropertyValues(), entity.Disposal.DocumentNumber + " " + entity.ProvidedDoc.Name);
+            }
+            catch
+            {
+
+            }
+            return this.Success();
+        }
+
+        public override IDataResult AfterDeleteAction(IDomainService<DisposalProvidedDoc> service, DisposalProvidedDoc entity)
+        {
+            var logEntityHistoryService = this.Container.Resolve<ILogEntityHistoryService>();
+            try
+            {
+                logEntityHistoryService.UpdateLog(null, TypeEntityLogging.DocumentGjiProvidedDoc, entity.Id, entity.GetType(), GetPropertyValues(), entity.Disposal.DocumentNumber + " " + entity.ProvidedDoc.Name);
+            }
+            catch
+            {
+
+            }
+            return this.Success();
+        }
+
+        private Dictionary<string, string> GetPropertyValues()
+        {
+            var result = new Dictionary<string, string>
+            {
+                { "ProvidedDoc", "Предоставляемый документа" },
+                { "Description", "Примечание" },
+                { "Disposal", "Распоряжение" }
+            };
+            return result;
+        }
+    }
+}

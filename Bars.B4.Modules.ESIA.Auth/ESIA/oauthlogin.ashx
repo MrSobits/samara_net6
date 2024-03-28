@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Class="Bars.B4.Modules.ESIA.Auth.Handlers.OAuthLogInHandler, Bars.B4.Modules.ESIA.Auth" %>

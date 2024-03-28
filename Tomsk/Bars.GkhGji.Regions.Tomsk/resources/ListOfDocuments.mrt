@@ -1,0 +1,628 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <Соединение Ref="2" type="Stimulsoft.Report.Dictionary.StiPostgreSQLDatabase" isKey="true">
+        <Alias>Соединение</Alias>
+        <ConnectionStringEncrypted>48j160ZZS4VrEymJyuykTtVazUhnXLO8YRmxgXwpdXLDOvsCSlmppGJK3YlhJaAjjfJ360YKUd1tRdD0YwH1Z95W/S/GC9OZaQaw9Olc4EaNYNEjXm0BWQ==</ConnectionStringEncrypted>
+        <Name>Соединение</Name>
+      </Соединение>
+    </Databases>
+    <DataSources isList="true" count="1">
+      <ИсточникДанных1 Ref="3" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ИсточникДанных1</Alias>
+        <Columns isList="true" count="9">
+          <value>НаимОрг,System.String</value>
+          <value>ОГРН,System.String</value>
+          <value>ИНН,System.String</value>
+          <value>lic_provdoc_date,System.DateTime</value>
+          <value>НаимДокумента,System.String</value>
+          <value>НаимДок1,System.String</value>
+          <value>День,System.String</value>
+          <value>Месяц,System.String</value>
+          <value>Год,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ИсточникДанных1</Name>
+        <NameInSource>Соединение</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select c.name "НаимОрг", c.ogrn "ОГРН", c.inn "ИНН",  
+	p.lic_provdoc_date, lp.name "НаимДокумента",
+	first_value(lp.name) over (ORDER BY p.lic_provdoc_date desc) "НаимДок1", 
+	first_value(to_char (p.lic_provdoc_date,'DD')) over (ORDER BY p.lic_provdoc_date desc) "День",
+	first_value(case date_part ('month',p.lic_provdoc_date) when 1 then 'января'
+						    when 2 then 'февряля'
+						    when 3 then 'марта'
+						    when 4 then 'апреля'
+						    when 5 then 'мая'
+						    when 6 then 'июня'
+						    when 7 then 'июля'
+						    when 8 then 'августа'
+						    when 9 then 'сентября'
+						    when 10 then 'октября'
+						    when 11 then 'ноября'
+						    when 12 then 'декабря'
+		   end) over (ORDER BY p.lic_provdoc_date desc) "Месяц",
+	first_value (date_part ('year',p.lic_provdoc_date)::text) over (ORDER BY p.lic_provdoc_date desc) "Год"
+from gkh_manorg_lic_request r
+left join gkh_contragent c on c.id=r.contragent_id
+left join gkh_manorg_req_provdoc p on p.lic_request_id=r.id
+left join gkh_dict_lic_provdoc lp on lp.id=p.lic_provdoc_id
+
+where r.contragent_id={ИдентификаторДокументаГЖИ}
+
+order by p.lic_provdoc_date desc</SqlCommand>
+      </ИсточникДанных1>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="32">
+      <value>,Номер,Номер,System.String,_x0033_17564,False,False</value>
+      <value>,ДатаПротокола,ДатаПротокола,System.String,_x00AB_27_x00BB__x0020_декабря_x0020__x0020_2013,False,False</value>
+      <value>,Инспектор,Инспектор,System.String,_x000D__x000A_,False,False</value>
+      <value>,АдресОбъектаПравонарушения,АдресОбъектаПравонарушения,System.String,,False,False</value>
+      <value>,УстановилПост,УстановилПост,System.String,,False,False</value>
+      <value>,УстановилПодр,УстановилПодр,System.String,,False,False</value>
+      <value>,НарушенныеТребования,НарушенныеТребования,System.String,,False,False</value>
+      <value>,Вотношении,Вотношении,,System.String,,False,False,True</value>
+      <value>,Контрагент,Контрагент,System.String,,False,False</value>
+      <value>,ЮрАдрес,ЮрАдрес,System.String,,False,False</value>
+      <value>,ФактАдрес,ФактАдрес,System.String,,False,False</value>
+      <value>,ОГРН,ОГРН,System.String,,False,False</value>
+      <value>,ИНН,ИНН,System.String,,False,False</value>
+      <value>,КПП,КПП,System.String,,False,False</value>
+      <value>,ФизЛицо,ФизЛицо,System.String,,False,False</value>
+      <value>,Должность,Должность,System.String,,False,False</value>
+      <value>,ДатаРождения,ДатаРождения,System.String,,False,False</value>
+      <value>,МестоРаботы,МестоРаботы,System.String,,False,False</value>
+      <value>,ДУЛ,ДУЛ,System.String,,False,False</value>
+      <value>,Статьи,Статьи,System.String,,False,False</value>
+      <value>,СтатьяЗакона,СтатьяЗакона,,System.String,ч.1_x0020_ст.19.4_x0020_КоАП_x0020_РФ,False,False,True</value>
+      <value>,Описание,Описание,System.String,,False,False</value>
+      <value>,ДатаРассмотренияДела,ДатаРассмотренияДела,System.String,,False,False</value>
+      <value>,ВремяРассмотренияДела,ВремяРассмотренияДела,System.String,,False,False</value>
+      <value>,МестоРассмотренияДела,МестоРассмотренияДела,System.String,,False,False</value>
+      <value>,ОтветственностьДЛ,ОтветственностьДЛ,System.String,,False,False</value>
+      <value>,ОтветственностьЮР,ОтветственностьЮР,System.String,,False,False</value>
+      <value>,ОтветственностьФиз,ОтветственностьФиз,System.String,,False,False</value>
+      <value>,ДолжностьИнспектора,ДолжностьИнспектора,System.String,,False,False</value>
+      <value>,ИнспекторФамИО,ИнспекторФамИО,System.String,,False,False</value>
+      <value>,АдресОбъектаПравонарушенияПолный,АдресОбъектаПравонарушенияПолный,System.String,,False,False</value>
+      <value>,ИдентификаторДокументаГЖИ,ИдентификаторДокументаГЖИ,System.String,,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="4" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="9">
+        <ReportTitleBand1 Ref="5" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,18,2.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text1 Ref="6" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.4,18,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <Guid>f63d80f53948428bb0de8a5e60ebe194</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>ОПИСЬ 
+ДОКУМЕНТОВ
+</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>4467a85be3804e03b3163893e0f7846f</Guid>
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </ReportTitleBand1>
+        <DataBand1 Ref="7" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,4,18,2.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text2 Ref="8" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,18,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>	Настоящим удостоверяется, что соискатель лицензии/лицензиат
+</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+            <Text3 Ref="9" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0.8,18,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{ИсточникДанных1.НаимОрг}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text3>
+            <Text4 Ref="10" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.4,18,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10,Italic</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>(наименование соискателя лицензии/лицензиата)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text4>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+        <DataBand2 Ref="11" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,7,18,1.8</ClientRectangle>
+          <Components isList="true" count="4">
+            <Text5 Ref="12" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.2,3,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="4" />
+              <Parent isRef="11" />
+              <Text>ОГРН/ОГРИП</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text5>
+            <TextInCells1 Ref="13" type="Stimulsoft.Report.Components.StiTextInCells" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CellHeight>0.61</CellHeight>
+              <ClientRectangle>3,0.18,11.6,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>TextInCells1</Name>
+              <Page isRef="4" />
+              <Parent isRef="11" />
+              <Text>{ИсточникДанных1.ОГРН}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+            </TextInCells1>
+            <Text6 Ref="14" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,3,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <Guid>d46a2d213d54413a816dd376c841e1e4</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="4" />
+              <Parent isRef="11" />
+              <Text>ИНН</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text6>
+            <TextInCells2 Ref="15" type="Stimulsoft.Report.Components.StiTextInCells" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CellHeight>0.6</CellHeight>
+              <ClientRectangle>3,0.78,9.4,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <Guid>193eab9d7d7649e7b55b59a3b683ef45</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>TextInCells2</Name>
+              <Page isRef="4" />
+              <Parent isRef="11" />
+              <Text>{ИсточникДанных1.ИНН}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+            </TextInCells2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand2</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </DataBand2>
+        <DataBand3 Ref="16" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,9.6,18,1.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text7 Ref="17" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,18,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="4" />
+              <Parent isRef="16" />
+              <Text>	представил "{ИсточникДанных1.День}" {ИсточникДанных1.Месяц} {ИсточникДанных1.Год} г.  в Департамент ЖКХ и государственного жилищного надзора Томской области следующие документы для предоставления (переоформления) лицензии на осуществление предпринимательской деятельности по управлению многоквартирными домами</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text7>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand3</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </DataBand3>
+        <Table1 Ref="18" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,12,18,0.8</ClientRectangle>
+          <ColumnCount>3</ColumnCount>
+          <Components isList="true" count="3">
+            <Table1_Cell1 Ref="19" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,1.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Center</HorAlignment>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Table1_Cell1</Name>
+              <Page isRef="4" />
+              <Parent isRef="18" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>п/п</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Table1_Cell1>
+            <Table1_Cell2 Ref="20" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.2,0,14.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Center</HorAlignment>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Table1_Cell2</Name>
+              <Page isRef="4" />
+              <Parent isRef="18" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Наименование документа</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Table1_Cell2>
+            <Table1_Cell3 Ref="21" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>16,0,2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Center</HorAlignment>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Table1_Cell3</Name>
+              <Page isRef="4" />
+              <Parent isRef="18" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Кол-во листов</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Table1_Cell3>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <MinHeight>0.2</MinHeight>
+          <Name>Table1</Name>
+          <NumberID>25</NumberID>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <RowCount>1</RowCount>
+          <Sort isList="true" count="0" />
+        </Table1>
+        <Table2 Ref="22" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,13.6,18,0.8</ClientRectangle>
+          <ColumnCount>3</ColumnCount>
+          <Components isList="true" count="3">
+            <Table2_Cell1 Ref="23" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,1.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Center</HorAlignment>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Table2_Cell1</Name>
+              <Page isRef="4" />
+              <Parent isRef="22" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Line}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Table2_Cell1>
+            <Table2_Cell2 Ref="24" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>1.2,0,14.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Center</HorAlignment>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Table2_Cell2</Name>
+              <Page isRef="4" />
+              <Parent isRef="22" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ИсточникДанных1.НаимДокумента}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Table2_Cell2>
+            <Table2_Cell3 Ref="25" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,0,2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Table2_Cell3</Name>
+              <Page isRef="4" />
+              <Parent isRef="22" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <TextBrush>Black</TextBrush>
+            </Table2_Cell3>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>ИсточникДанных1</DataSourceName>
+          <Filters isList="true" count="0" />
+          <MinHeight>0.2</MinHeight>
+          <Name>Table2</Name>
+          <NumberID>25</NumberID>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <RowCount>1</RowCount>
+          <Sort isList="true" count="0" />
+        </Table2>
+        <Table3 Ref="26" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,15.2,18,0.8</ClientRectangle>
+          <ColumnCount>2</ColumnCount>
+          <Components isList="true" count="2">
+            <Table3_Cell1 Ref="27" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,16,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Table3_Cell1</Name>
+              <Page isRef="4" />
+              <Parent isRef="26" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>			Всего</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Table3_Cell1>
+            <Table3_Cell2 Ref="28" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,0,2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Table3_Cell2</Name>
+              <Page isRef="4" />
+              <Parent isRef="26" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <TextBrush>Black</TextBrush>
+            </Table3_Cell2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <MinHeight>0.2</MinHeight>
+          <Name>Table3</Name>
+          <NumberID>25</NumberID>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <RowCount>1</RowCount>
+          <Sort isList="true" count="0" />
+        </Table3>
+        <DataBand4 Ref="29" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,16.8,18,2.4</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text8 Ref="30" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.6,18,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="4" />
+              <Parent isRef="29" />
+              <Text>	Документы сданы соискателем   лицензии/лицензиатом:_____________________________________________________________</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text8>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand4</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </DataBand4>
+        <DataBand5 Ref="31" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,20,18,2.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text9 Ref="32" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,18,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>	Документы приняты должностным лицом Департамента ЖКХ и государственного жилищного надзора Томской области ____________________________________________</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text9>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand5</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </DataBand5>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>7889dfb2ae15419f9325b0ce84894def</Guid>
+      <LargeHeight>True</LargeHeight>
+      <LargeHeightFactor>5</LargeHeightFactor>
+      <Margins>2,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+      <Watermark Ref="33" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="34" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>10/14/2015 3:58:08 PM</ReportChanged>
+  <ReportCreated>5/20/2014 3:47:13 PM</ReportCreated>
+  <ReportFile>C:\Users\123\Documents\templates\GJI\Tomsk\Опись документов.mrt</ReportFile>
+  <ReportGuid>248f9fd8619f4a19ac8111a8ce37a69e</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

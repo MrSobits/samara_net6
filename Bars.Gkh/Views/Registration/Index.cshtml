@@ -1,0 +1,83 @@
+﻿@* TODO @using Bars.B4.Modules.RegistrationRequest.Entities *@
+@using Bars.Gkh.Entities
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >        
+        <title>@ViewData["Title"]</title>
+        <link rel="shortcut icon" href="@Url.Content("~/content/favicon.ico")" />
+        <link href='@Url.Content("~/content/css/registration.css")' rel="stylesheet" type="text/css" />
+    </head>
+    @{
+        // TODO
+        // var result = (RegistrationRequestResult) ViewData["Result"] ?? new RegistrationRequestResult();
+        // var regData = result.RegistrationData ?? new Bars.Gkh.RegistrationData();
+    }
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="header">
+                <span class="logo"></span>
+                <span class="title"></span>
+                <span data-title="@ViewData["Title"]"></span>
+            </div>
+            <form id="onboard_form" method="post" action="">
+                <div class="content">
+                    <div class="input-holder">
+                        <label for="login">Логин</label>
+                        @* TODO <input id="login" name="login" value="@(regData.Data.GetAs<string>("Login", ignoreCase:true))" type="text" /> *@
+                    </div>
+                    <div class="input-holder">
+                        <label for="password">Пароль</label>
+                        <input id="password" name="password" value="" type="password" />
+                    </div>
+                    <div class="input-holder">
+                        <label for="retypePassword">Подтверждение пароля</label>
+                        <input id="retypePassword" name="retypePassword" value="" type="password" />
+                    </div>
+                    <div class="input-holder">
+                        <label for="municipal_object">Муниципальное образование</label>
+                        <select id="municipal_object" name="municipal_object">
+                            
+                        </select>
+                    </div>
+                    <div class="input-holder">
+                        <label for="name">Имя пользователя</label>
+                        @* TODO <input id="name" name="name" value="@(regData.Data.GetAs<string>("Name", ignoreCase:true))" type="text" /> *@
+                    </div>
+                    <div class="input-holder">
+                        <label for="organization">Организация</label>
+                        @* TODO <input id="organization" name="organization" value="@(regData.Data.GetAs<string>("Organization", ignoreCase:true))" type="text" /> *@
+                    </div>
+                    <div class="input-holder">
+                        <label for="position">Должность</label>
+                        @* TODO <input id="position" name="position" value="@(regData.Data.GetAs<string>("Position", ignoreCase:true))" type="text" /> *@
+                    </div>
+                    <div class="input-holder">
+                        <label for="email">Email</label>
+                        @* TODO <input id="email" name="email" value="@(regData.Data.GetAs<string>("Email", ignoreCase:true))" type="text" /> *@
+                    </div>
+                    <div class="input-holder">
+                        <label for="phone">Телефон</label>
+                        @* TODO <input id="phone" name="phone" value="@(regData.Data.GetAs<string>("Phone", ignoreCase:true))" type="text" /> *@
+                    </div>
+                </div>
+@* TODO                  <div class="errorMessage" @if (string.IsNullOrEmpty(result.Message)) { *@
+@*  @:style="visibility: hidden" *@
+@* }> *@
+@*                     @(string.IsNullOrEmpty(result.Message) ? "-" : result.Message) *@
+@*                 </div> *@
+                <div class="footer">
+                    <input name="commit" value="" type="submit" class="submit"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

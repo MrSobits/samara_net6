@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <UI Id="UIFlow">
+      <?include Variables.wxi ?>
+
+      <!-- Injection of custom UI. -->
+      <DialogRef Id="WelcomeDlg" />
+      <DialogRef Id="LicenseValidationDlg" />
+      <DialogRef Id="IisSetupDlg" />
+      <DialogRef Id="DbSettingsDlg" />
+
+      <?if $(var.TEST_MODE) = "1" ?>
+        <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="CustomizeDlg" Order="10">1</Publish>
+        <!--<Publish Dialog="LicenseAgreementDlg" Control="Next" Event="NewDialog" Value="CustomizeDlg" Order="10">LicenseAccepted = "1"</Publish>-->
+        <Publish Dialog="CustomizeDlg" Control="Back" Event="NewDialog" Value="DbSettingsDlg">1</Publish>
+      <?else ?>
+          <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="CustomizeDlg" Order="10">
+            PREVIOUSVERSIONSINSTALLED
+          </Publish>
+          <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="LicenseValidationDlg" Order="10">
+            NOT PREVIOUSVERSIONSINSTALLED
+          </Publish>
+          <!--<Publish Dialog="LicenseAgreementDlg" Control="Next" Event="NewDialog" Value="LicenseValidationDlg" Order="10">LicenseAccepted = "1"</Publish>-->
+          <Publish Dialog="CustomizeDlg" Control="Back" Event="NewDialog" Value="DbSettingsDlg">Installed</Publish>
+      <?endif ?>
+    </UI>
+  </Fragment>
+</Wix>

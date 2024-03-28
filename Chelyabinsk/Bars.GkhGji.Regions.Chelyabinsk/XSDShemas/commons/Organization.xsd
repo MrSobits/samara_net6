@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:com="http://roskazna.ru/gisgmp/xsd/Common/2.0.1"
+            xmlns:org="http://roskazna.ru/gisgmp/xsd/Organization/2.0.1"
+            targetNamespace="http://roskazna.ru/gisgmp/xsd/Organization/2.0.1" elementFormDefault="qualified">
+    <xsd:import namespace="http://roskazna.ru/gisgmp/xsd/Common/2.0.1" schemaLocation="Common.xsd"/>
+    <xsd:complexType name="OrganizationType">
+        <xsd:annotation>
+            <xsd:documentation>Данные организации</xsd:documentation>
+        </xsd:annotation>
+        <xsd:attribute name="name" use="required" type="org:OrgNameType">
+            <xsd:annotation>
+                <xsd:documentation>Наименование организации</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="inn" type="com:INNType" use="required">
+            <xsd:annotation>
+                <xsd:documentation>ИНН организации</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="kpp" type="com:KPPType" use="required">
+            <xsd:annotation>
+                <xsd:documentation>КПП организации</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="ogrn" type="com:OGRNType">
+            <xsd:annotation>
+                <xsd:documentation>ОГРН организации</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    <xsd:complexType name="PaymentOrgType">
+        <xsd:annotation>
+            <xsd:documentation>Организация принявшая платеж</xsd:documentation>
+        </xsd:annotation>
+        <xsd:choice>
+            <xsd:element name="Bank" type="com:BankType">
+                <xsd:annotation>
+                    <xsd:documentation>Реквизиты структурного подразделения кредитной организации, принявшего платеж, организации
+                        почтовой связи
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="UFK">
+                <xsd:annotation>
+                    <xsd:documentation>Код ТОФК/УРН ТОФК.
+                        Если платеж принят ТОФК, то тег должен быть заполнен значением четырехсимвольного кода ТОФК.
+                        Если платеж принят Банком России или иной организацией, не являющейся кредитной организацией и не являющейся
+                        ТОФК, указывается УРН организации.
+                    </xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="1"/>
+                        <xsd:maxLength value="36"/>
+                        <xsd:whiteSpace value="preserve"/>
+                        <xsd:pattern value="\d{4}"/>
+                        <xsd:pattern value="[a-zA-Z0-9]{6}"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Признак иного способа проведения платежа.
+                        В случае приема в кассу получателя платежа наличных денежных средств от плательщика, тег должен быть
+                        заполнен значением «CASH».
+                    </xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="CASH">
+                            <xsd:annotation>
+                                <xsd:documentation>Прием в кассу наличных денежных
+                                    средств
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:choice>
+    </xsd:complexType>
+    <xsd:element name="Payee">
+        <xsd:annotation>
+            <xsd:documentation>Сведения о получателе средств</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:extension base="org:OrganizationType">
+                    <xsd:sequence>
+                        <xsd:element ref="com:OrgAccount">
+                            <xsd:annotation>
+                                <xsd:documentation>Реквизиты счета организации</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:extension>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="RefundPayer" type="org:UBPOrganizationType"/>
+    <xsd:complexType name="LsvTOFKType">
+        <xsd:attribute name="nameTOFK" use="required">
+            <xsd:annotation>
+                <xsd:documentation>Сокращенное наименование ТОФК</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="255"/>
+                    <xsd:pattern value="\S+[\S\s]*\S+"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute name="codeTOFK" use="required">
+            <xsd:annotation>
+                <xsd:documentation>Код ТОФК, в котором открыт лицевой счет
+                    получателю средств
+                </xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:pattern value="\d{4}"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute name="accountNumberTOFK" use="required">
+            <xsd:annotation>
+                <xsd:documentation>Номер лицевого счета в ТОФК</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:pattern value="[\d\w]{11}"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+    </xsd:complexType>
+    <xsd:complexType name="LsvFOType">
+        <xsd:attribute name="nameFO" use="required">
+            <xsd:annotation>
+                <xsd:documentation>Сокращенное наименование финансового
+                    органа
+                </xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="255"/>
+                    <xsd:pattern value="\S+[\S\s]*\S+"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute name="accountNumberFO" use="required">
+            <xsd:annotation>
+                <xsd:documentation>Номер лицевого счета в финансовом
+                    органе
+                </xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="20"/>
+                    <xsd:pattern value="\S+[\S\s]*\S+"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+    </xsd:complexType>
+    <xsd:simpleType name="kodUBPType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{5}"/>
+            <xsd:pattern value="\d{8}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="OrgNameType">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="160"/>
+            <xsd:pattern value="\S+[\S\s]*\S+"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="UBPOrganizationType">
+        <xsd:complexContent>
+            <xsd:extension base="org:OrganizationType">
+                <xsd:attribute form="unqualified" name="codeUBP" type="org:kodUBPType" use="required">
+                    <xsd:annotation>
+                        <xsd:documentation>Код организации.
+                            Особенности заполнения:
+                            - для организаций, отсутствующих в Сводном реестре, указывается код органа в соответствии с
+                            регистрационными данными, присвоенными органами ФК, равный 5 знакам.
+                            - для остальных клиентов указывается уникальный код организации по Сводному реестру, равный 8 знакам;
+                            - для налоговых органов указывается код УФНС России, передающего информацию в ТОФК.
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+</xsd:schema>

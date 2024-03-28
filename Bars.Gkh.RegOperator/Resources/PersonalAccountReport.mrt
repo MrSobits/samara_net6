@@ -1,0 +1,1116 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="2">
+      <Справка Ref="2" type="DataTableSource" isKey="true">
+        <Alias>Справка</Alias>
+        <Columns isList="true" count="21">
+          <value>НомерСчета,System.String</value>
+          <value>Абонент,System.String</value>
+          <value>ДатаОтчета,System.String</value>
+          <value>Адрес,System.String</value>
+          <value>Площадь,System.String</value>
+          <value>Доля,System.String</value>
+          <value>Тариф,System.String</value>
+          <value>ДатаОткрытия,System.String</value>
+          <value>ДатаЗакрытия,System.String</value>
+          <value>НачисленоПоМинимальному,System.Decimal</value>
+          <value>НачисленоРешение,System.Decimal</value>
+          <value>НачисленоПени,System.Decimal</value>
+          <value>ИтогоНачислено,System.Decimal</value>
+          <value>УплаченоПоМинимальному,System.Decimal</value>
+          <value>УплаченоРешение,System.Decimal</value>
+          <value>УплаченоПени,System.Decimal</value>
+          <value>ИтогоУплачено,System.Decimal</value>
+          <value>ЗадолженностьПоМинимальному,System.Decimal</value>
+          <value>ЗадолженностьРешение,System.Decimal</value>
+          <value>ЗадолженностьПени,System.Decimal</value>
+          <value>ИтогоЗадолженность,System.Decimal</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Справка</Name>
+        <NameInSource>Справка</NameInSource>
+      </Справка>
+      <Операции Ref="3" type="DataTableSource" isKey="true">
+        <Alias>Операции</Alias>
+        <Columns isList="true" count="10">
+          <value>Период,System.String</value>
+          <value>ORIGINAL,ВходящееСальдо,Входящее_x0020_Сальдо,Входящее_x0020_Сальдо,System.Decimal</value>
+          <value>ORIGINAL,НачисленоВзносов,Начислено_x0020_Взносов,Начислено_x0020_Взносов,System.Decimal</value>
+          <value>ORIGINAL,НачисленоПени,Начислено_x0020_Пени,Начислено_x0020_Пени,System.Decimal</value>
+          <value>Перерасчет,System.Decimal</value>
+          <value>ORIGINAL,УплаченоВзносов,Уплачено_x0020_Взносов,Уплачено_x0020_Взносов,System.Decimal</value>
+          <value>ORIGINAL,УплаченоПени,Уплачено_x0020_Пени,Уплачено_x0020_Пени,System.Decimal</value>
+          <value>ORIGINAL,УстановкаИзменениеСальдо,Установка_x0020_и_x0020_изменение_x0020_сальдо,Установка_x0020_и_x0020_изменение_x0020_сальдо,System.Decimal</value>
+          <value>ORIGINAL,ИсходящееСальдо,Исходящее_x0020_Сальдо,Исходящее_x0020_Сальдо,System.Decimal</value>
+          <value>ORIGINAL,ДатаОплаты,Дата_x0020_Оплаты,Дата_x0020_Оплаты,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Операции</Name>
+        <NameInSource>Операции</NameInSource>
+      </Операции>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="2">
+    <Общие_x0020_сведения Ref="4" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="39">
+        <Text1 Ref="5" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,0.2,19,1.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Tahoma,12,Bold</Font>
+          <Guid>8548a95aa53b430abed8eb292e63867d</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>Справка по лицевому счету № {Справка.НомерСчета} от {Справка.ДатаОтчета}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text1>
+        <Text2 Ref="6" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,2.4,6.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text2</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>ФИО/Наименование абонента</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text2>
+        <Text3 Ref="7" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,3.2,6.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8,Bold</Font>
+          <Guid>412be59017f84f789e897577fa308ea0</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text3</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>Адрес</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text3>
+        <Text4 Ref="8" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,3.8,6.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8,Bold</Font>
+          <Guid>2e5c24c07bed4cf1a99a98f32e38b744</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text4</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>Площадь</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text4>
+        <Text5 Ref="9" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,4.4,6.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8,Bold</Font>
+          <Guid>b6e6f68181a34091ac86912481b3be8c</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text5</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>Доля собственности</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text5>
+        <Text6 Ref="10" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,5.2,6.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8,Bold</Font>
+          <Guid>e195c027bfd44629ba1ebf6c97b63d76</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text6</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>Тариф</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text6>
+        <Text7 Ref="11" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,6.4,6.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8,Bold</Font>
+          <Guid>60e2c0006cf9408cb9e31f85fa2cbced</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text7</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>Дата открытия</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text7>
+        <Text8 Ref="12" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,7.2,6.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8,Bold</Font>
+          <Guid>1b0e0c22eac343278860edda2719ecd1</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text8</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>Дата закрытия</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text8>
+        <Text9 Ref="13" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,8.2,6.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8,Bold</Font>
+          <Guid>79d1f173e5084d5486f4acdb87a7d761</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text9</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>Начислено взносов по минимальному тарифу</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text9>
+        <Text10 Ref="14" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,2.4,7.2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>2cd90a6dee604f858d87028dbe43a63c</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text10</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{Справка.Абонент}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text10>
+        <Text11 Ref="15" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,3.2,7.2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>2d19f6a384344273a1ef2a215d9d8859</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text11</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{Справка.Адрес}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text11>
+        <Text12 Ref="16" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,3.8,7.2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>107120e426fe477f9594e0a0ce2f1f71</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text12</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{Справка.Площадь}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text12>
+        <Text13 Ref="17" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,4.4,7.2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>1a625fa1afaf4b9795d487b415c9df75</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text13</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{Справка.Доля}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text13>
+        <Text14 Ref="18" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,5.2,7.2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>c460a5606974442cba6314a5e39cc7fe</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text14</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{Справка.Тариф}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text14>
+        <Text15 Ref="19" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,6.4,7.2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>5a3f1d2bb7e14444a8917fa499a4fdd2</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text15</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{Справка.ДатаОткрытия}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text15>
+        <Text16 Ref="20" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,7.2,7.2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>e9b5f3c008f349688c726f192e616ada</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text16</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{Справка.ДатаЗакрытия}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text16>
+        <Text19 Ref="21" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,9,6.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8,Bold</Font>
+          <Guid>441841828abd45bd8cf1f584a3a63f43</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text19</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>Начислено взносов по тарифу решения</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text19>
+        <Text20 Ref="22" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,9.8,6.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8,Bold</Font>
+          <Guid>5bd3492031014c428047b7590537c9eb</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text20</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>Начислено пени всего</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text20>
+        <Text21 Ref="23" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,10.4,6.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8,Bold</Font>
+          <Guid>4da3416f97d347a2af0ac368da95c2cc</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text21</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>Итого начислено</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text21>
+        <Text22 Ref="24" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,11.8,6.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8,Bold</Font>
+          <Guid>ef6db31a3eb84a2ab944ada25c9c4da7</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text22</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>Уплачено взносов по минимальному тарифу</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text22>
+        <Text23 Ref="25" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,12.4,6.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8,Bold</Font>
+          <Guid>2d67613c9fe045e084c5fbe989422781</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text23</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>Уплачено взносов по тарифу решения</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text23>
+        <Text24 Ref="26" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,13,6.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8,Bold</Font>
+          <Guid>0524e40bc8b94bd8a79164a024b66fa8</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text24</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>Уплачено пени всего</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text24>
+        <Text25 Ref="27" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,13.8,6.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8,Bold</Font>
+          <Guid>3648716dc2d4403b88b75b9cb6b9b600</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text25</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>Итого уплачено</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text25>
+        <Text26 Ref="28" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,15,6.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8,Bold</Font>
+          <Guid>194f5c7be1894d67b44cfcde6be85768</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text26</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>Задолженность по взносам всего</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text26>
+        <Text27 Ref="29" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,15.6,6.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8,Bold</Font>
+          <Guid>ae37c2b714ec489c88d63c7b9636c1d6</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text27</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>Задолженность по взносам по тарифу решения всего</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text27>
+        <Text28 Ref="30" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,16.4,6.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8,Bold</Font>
+          <Guid>070104dedbc546be98b1f51020f2ee0a</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text28</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>Задолженность пени всего</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text28>
+        <Text29 Ref="31" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,17.2,6.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8,Bold</Font>
+          <Guid>bf3a6c955ee949068ae9a25d611d4bff</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text29</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>Итого задолженность</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text29>
+        <Text30 Ref="32" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,8.2,7.2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>71893912df154db3a704549a686a485f</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text30</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{Справка.НачисленоПоМинимальному}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text30>
+        <Text31 Ref="33" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,9,7.2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>3c5caf37909544c4aaaa7625355f2828</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text31</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{Справка.НачисленоРешение}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text31>
+        <Text32 Ref="34" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,9.8,7.2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>5b6183a146874dde98fac6fa4dbab244</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text32</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{Справка.НачисленоПени}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text32>
+        <Text33 Ref="35" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,10.4,7.2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>e8d1d7c43b21472fbe700ec489fab742</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text33</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{Справка.ИтогоНачислено}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text33>
+        <Text34 Ref="36" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,11.8,7.2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>d88cf1972e084d4594192d151a4653c3</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text34</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{Справка.УплаченоПоМинимальному}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text34>
+        <Text35 Ref="37" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,12.4,7.2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>e140d7258c48450cb3fcdb5f4bfb0b78</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text35</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{Справка.УплаченоРешение}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text35>
+        <Text36 Ref="38" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,13,7.2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>2d221bd6b38d4870bd0ec36435470071</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text36</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{Справка.УплаченоПени}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text36>
+        <Text37 Ref="39" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,13.8,7.2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>9c98502aa69b4d5a8756e6ca28cdf31f</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text37</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{Справка.ИтогоУплачено}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text37>
+        <Text38 Ref="40" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,15,7.2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>8d8ceb36ea2646a1b9041e4dbf22abb6</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text38</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{Справка.ЗадолженностьПоМинимальному}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text38>
+        <Text39 Ref="41" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,15.6,7.2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>65077b0d455c4271b563a59ae503a31c</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text39</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{Справка.ЗадолженностьРешение}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text39>
+        <Text40 Ref="42" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,16.4,7.2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>1c548d2f4d4749b481f22e970ac8219e</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text40</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{Справка.ЗадолженностьПени}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text40>
+        <Text41 Ref="43" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,17.2,7.2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>7b2a9f3d68014be1ad811ce8047682eb</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text41</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{Справка.ИтогоЗадолженность}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text41>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <ExcelSheet>Общие сведения</ExcelSheet>
+      <Guid>455f4dcab45d4aac9d143e6431b2dc4f</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Общие сведения</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>21</PageHeight>
+      <PageWidth>29.7</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="44" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Общие_x0020_сведения>
+    <Опeрации Ref="45" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="3">
+        <ReportTitleBand1 Ref="46" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,27.7,1.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text61 Ref="47" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,27.6,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,12,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text61</Name>
+              <Page isRef="45" />
+              <Parent isRef="46" />
+              <Text>Операции по лицевому счету № {Справка.НомерСчета} от {Справка.ДатаОтчета}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text61>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="45" />
+          <Parent isRef="45" />
+        </ReportTitleBand1>
+        <Table1 Ref="48" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,2.8,27.7,0.8</ClientRectangle>
+          <ColumnCount>10</ColumnCount>
+          <Components isList="true" count="10">
+            <Table1_Cell1 Ref="49" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Table1_Cell1</Name>
+              <Page isRef="45" />
+              <Parent isRef="48" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Период</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Table1_Cell1>
+            <Table1_Cell2 Ref="50" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.8,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Table1_Cell2</Name>
+              <Page isRef="45" />
+              <Parent isRef="48" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Входящее 
+сальдо</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Table1_Cell2>
+            <Table1_Cell3 Ref="51" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.6,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Table1_Cell3</Name>
+              <Page isRef="45" />
+              <Parent isRef="48" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Начислено 
+взносов</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Table1_Cell3>
+            <Table1_Cell4 Ref="52" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.4,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Table1_Cell4</Name>
+              <Page isRef="45" />
+              <Parent isRef="48" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Начислено 
+пени</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Table1_Cell4>
+            <Table1_Cell5 Ref="53" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.2,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>4</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Table1_Cell5</Name>
+              <Page isRef="45" />
+              <Parent isRef="48" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Перерасчет</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Table1_Cell5>
+            <Table1_Cell6 Ref="54" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>25</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Table1_Cell6</Name>
+              <Page isRef="45" />
+              <Parent isRef="48" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Уплачено 
+взносов</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Table1_Cell6>
+            <Table1_Cell7 Ref="55" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16.8,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>26</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Table1_Cell7</Name>
+              <Page isRef="45" />
+              <Parent isRef="48" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Дата оплаты</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Table1_Cell7>
+            <Table1_Cell8 Ref="56" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>19.6,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>27</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Table1_Cell8</Name>
+              <Page isRef="45" />
+              <Parent isRef="48" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Уплачено 
+пени</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Table1_Cell8>
+            <Table1_Cell9 Ref="57" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>22.4,0,2.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>28</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Table1_Cell9</Name>
+              <Page isRef="45" />
+              <Parent isRef="48" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Установка 
+и изменение 
+сальдо</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Table1_Cell9>
+            <Table1_Cell10 Ref="58" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>25,0,2.7,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>29</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Table1_Cell10</Name>
+              <Page isRef="45" />
+              <Parent isRef="48" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Исходящее 
+сальдо</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Table1_Cell10>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <MinHeight>0.2</MinHeight>
+          <Name>Table1</Name>
+          <NumberID>50</NumberID>
+          <Page isRef="45" />
+          <Parent isRef="45" />
+          <RowCount>1</RowCount>
+          <Sort isList="true" count="0" />
+        </Table1>
+        <TableОперации Ref="59" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,4.4,27.7,0.8</ClientRectangle>
+          <ColumnCount>10</ColumnCount>
+          <Components isList="true" count="10">
+            <TableОперации_Cell1 Ref="60" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableОперации_Cell1</Name>
+              <Page isRef="45" />
+              <Parent isRef="59" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Операции.Период}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableОперации_Cell1>
+            <TableОперации_Cell2 Ref="61" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.8,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableОперации_Cell2</Name>
+              <Page isRef="45" />
+              <Parent isRef="59" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Операции.Входящее_Сальдо}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableОперации_Cell2>
+            <TableОперации_Cell3 Ref="62" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.6,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableОперации_Cell3</Name>
+              <Page isRef="45" />
+              <Parent isRef="59" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Операции.Начислено_Взносов}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableОперации_Cell3>
+            <TableОперации_Cell4 Ref="63" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.4,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableОперации_Cell4</Name>
+              <Page isRef="45" />
+              <Parent isRef="59" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Операции.Начислено_Пени}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableОперации_Cell4>
+            <TableОперации_Cell5 Ref="64" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.2,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>4</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableОперации_Cell5</Name>
+              <Page isRef="45" />
+              <Parent isRef="59" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Операции.Перерасчет}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableОперации_Cell5>
+            <TableОперации_Cell6 Ref="65" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>5</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableОперации_Cell6</Name>
+              <Page isRef="45" />
+              <Parent isRef="59" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Операции.Уплачено_Взносов}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableОперации_Cell6>
+            <TableОперации_Cell7 Ref="66" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16.8,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>6</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableОперации_Cell7</Name>
+              <Page isRef="45" />
+              <Parent isRef="59" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Операции.Дата_Оплаты}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </TableОперации_Cell7>
+            <TableОперации_Cell8 Ref="67" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>19.6,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>7</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableОперации_Cell8</Name>
+              <Page isRef="45" />
+              <Parent isRef="59" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Операции.Уплачено_Пени}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </TableОперации_Cell8>
+            <TableОперации_Cell9 Ref="68" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>22.4,0,2.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>8</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableОперации_Cell9</Name>
+              <Page isRef="45" />
+              <Parent isRef="59" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Операции.Установка_и_изменение_сальдо}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </TableОперации_Cell9>
+            <TableОперации_Cell10 Ref="69" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>25,0,2.7,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>9</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableОперации_Cell10</Name>
+              <Page isRef="45" />
+              <Parent isRef="59" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Операции.Исходящее_Сальдо}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </TableОперации_Cell10>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Операции</DataSourceName>
+          <Filters isList="true" count="0" />
+          <MinHeight>0.2</MinHeight>
+          <Name>TableОперации</Name>
+          <NumberID>10</NumberID>
+          <Page isRef="45" />
+          <Parent isRef="45" />
+          <RowCount>1</RowCount>
+          <Sort isList="true" count="0" />
+        </TableОперации>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <ExcelSheet>Операции</ExcelSheet>
+      <Guid>a3ef3661aa534ca0a0d95c9df1dbc6b0</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Опeрации</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>21</PageHeight>
+      <PageWidth>29.7</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="70" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Опeрации>
+  </Pages>
+  <PrinterSettings Ref="71" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>11/25/2015 3:04:08 PM</ReportChanged>
+  <ReportCreated>4/28/2014 10:38:43 AM</ReportCreated>
+  <ReportFile>C:\gkh\Bars.Gkh.RegOperator\Resources\PersonalAccountReport.mrt</ReportFile>
+  <ReportGuid>38c5a78f907f40fb9b470303ac9f38e3</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

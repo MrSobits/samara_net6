@@ -1,0 +1,1884 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="1">
+      <Записи Ref="2" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>Записи</Alias>
+        <Columns isList="true" count="53">
+          <value>ЛицевойСчет,System.String</value>
+          <value>МесяцГодНачисления,System.String</value>
+          <value>ФИОСобственника,System.String</value>
+          <value>АдресКвартиры,System.String</value>
+          <value>Тариф,System.Decimal</value>
+          <value>ОбщаяПлощадь,System.Decimal</value>
+          <value>Итого,System.Decimal</value>
+          <value>Пени,System.Decimal</value>
+          <value>ПереплатаНаНачало,System.Decimal</value>
+          <value>ПереплатаНаКонец,System.Decimal</value>
+          <value>ДолгНаНачало,System.Decimal</value>
+          <value>Перерасчет,System.Decimal</value>
+          <value>Оплачено,System.Decimal</value>
+          <value>ОплаченоПени,System.Decimal</value>
+          <value>ПереплатаПениНаКонец,System.Decimal</value>
+          <value>ДолгПениНаКонец,System.Decimal</value>
+          <value>СуммаВсего,System.Decimal</value>
+          <value>Начислено,System.Decimal</value>
+          <value>ДолгНаКонец,System.Decimal</value>
+          <value>ОплатитьДо,System.String</value>
+          <value>НаименованиеПолучателя,System.String</value>
+          <value>ИннПолучателя,System.String</value>
+          <value>КппПолучателя,System.String</value>
+          <value>ОргнПолучателя,System.String</value>
+          <value>РсчетПолучателя,System.String</value>
+          <value>АдресБанка,System.String</value>
+          <value>НаименованиеБанка,System.String</value>
+          <value>БикБанка,System.String</value>
+          <value>КсБанка,System.String</value>
+          <value>ТелефоныПолучателя,System.String</value>
+          <value>АдресПолучателя,System.String</value>
+          <value>EmailПолучателя,System.String</value>
+          <value>WebSiteПолучателя,System.String</value>
+          <value>ИтогоКОплате,System.Decimal</value>
+          <value>Информация,System.String</value>
+          <value>ПереплатаПениНаНачало,System.Decimal</value>
+          <value>ДолгПениНаНачало,System.Decimal</value>
+          <value>НачисленоПени,System.Decimal</value>
+          <value>ЗначениеQRКода,System.String</value>
+          <value>СоцПоддержка,System.Decimal</value>
+          <value>ПредоставленнаяМСП,System.Decimal</value>
+          <value>ФондСпецСчет,System.String</value>
+          <value>УплаченоФКР,System.Decimal</value>
+          <value>ПотраченоНаКР,System.Decimal</value>
+          <value>ШтрихКод,System.String</value>
+          <value>Счетчик,System.Int32</value>
+          <value>ЕдиницаПериодаПросрочки,System.String</value>
+          <value>ПериодПросрочки,System.Int32</value>
+          <value>ПечататьУведомление,System.String</value>
+          <value>УчитыватьСумму,System.String</value>
+          <value>СтатусЗадолженности,System.String</value>
+          <value>КоличествоДнейПросрочки,System.Int32</value>
+          <value>КоличествоМесяцевПросрочки,System.Int32</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <IsCloud>False</IsCloud>
+        <Name>Записи</Name>
+        <NameInSource>Записи</NameInSource>
+      </Записи>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="3" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="5">
+        <Text16 Ref="4" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>21.4,0.4,2.4,15.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text16</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Text>{Записи.СуммаВсего}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>DataColumn</Type>
+        </Text16>
+        <Text88 Ref="5" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>21.4,0.4,2.4,27.2</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text88</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Text>{Записи.СоцПоддержка}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>DataColumn</Type>
+        </Text88>
+        <Text92 Ref="6" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>21.4,0.4,2.4,27.2</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text92</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Text>{Записи.Тариф}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>DataColumn</Type>
+        </Text92>
+        <Text93 Ref="7" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>23.8,0.4,2.4,27.2</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text93</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Text>{Записи.Оплачено}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>DataColumn</Type>
+        </Text93>
+        <DataBand1 Ref="8" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,0.4,19,27.2</ClientRectangle>
+          <Components isList="true" count="5">
+            <Panel1 Ref="9" type="Panel" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,4.4,7.4</ClientRectangle>
+              <Components isList="true" count="4">
+                <Text27 Ref="10" type="Text" isKey="true">
+                  <Brush>White</Brush>
+                  <ClientRectangle>0.4,2.7,4.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,5</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text27</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="9" />
+                  <Text>(месяц, за который выставлено извещение)</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                </Text27>
+                <Text1 Ref="11" type="Text" isKey="true">
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>1.4,0.2,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,8</Font>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text1</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="9" />
+                  <Text>Извещение</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                </Text1>
+                <Text2 Ref="12" type="Text" isKey="true">
+                  <Brush>White</Brush>
+                  <ClientRectangle>0.2,2.4,4.4,0.32</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,8,Underline</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text2</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="9" />
+                  <Text>{Записи.МесяцГодНачисления}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                </Text2>
+                <BarCode1 Ref="13" type="Stimulsoft.Report.BarCodes.StiBarCode" isKey="true">
+                  <BackColor>Transparent</BackColor>
+                  <BarCodeType Ref="14" type="Stimulsoft.Report.BarCodes.StiQRCodeBarCodeType" isKey="true" />
+                  <Border>None;DimGray;1;Solid;False;4;DimGray</Border>
+                  <ClientRectangle>0.8,3.8,3.2,3.2</ClientRectangle>
+                  <Code>{Записи.ЗначениеQRКода}</Code>
+                  <Conditions isList="true" count="1">
+                    <value>Записи.ЗначениеQRКода,EqualTo,,,String,Red,Transparent,Arial_x002C_8,False,False,,,None</value>
+                  </Conditions>
+                  <Font>Arial,8,Bold,Pixel</Font>
+                  <ForeColor>Black</ForeColor>
+                  <HorAlignment>Center</HorAlignment>
+                  <Name>BarCode1</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="9" />
+                  <VertAlignment>Center</VertAlignment>
+                </BarCode1>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <Name>Panel1</Name>
+              <Page isRef="3" />
+              <Parent isRef="8" />
+            </Panel1>
+            <Panel2 Ref="15" type="Panel" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,7.4,4.4,7.6</ClientRectangle>
+              <Components isList="true" count="4">
+                <Text28 Ref="16" type="Text" isKey="true">
+                  <Brush>White</Brush>
+                  <ClientRectangle>0.4,2.9,4.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,5</Font>
+                  <Guid>2fe3e0291c504a45ae1ca30f71b9422f</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text28</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="15" />
+                  <Text>(месяц, за который выставлено извещение)</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                </Text28>
+                <Text29 Ref="17" type="Text" isKey="true">
+                  <Brush>White</Brush>
+                  <ClientRectangle>0.2,2.6,4.4,0.32</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8,Underline</Font>
+                  <Guid>7e036786ed7146e4b9b96c5f51b3581c</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text29</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="15" />
+                  <Text>{Записи.МесяцГодНачисления}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                </Text29>
+                <Text30 Ref="18" type="Text" isKey="true">
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>1.6,0.2,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,8</Font>
+                  <Guid>ea102d3c02364723bafdf499f53af6b4</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text30</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="15" />
+                  <Text>Квитанция</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                </Text30>
+                <Text31 Ref="19" type="Text" isKey="true">
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0.4,5.2,3.6,1</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,8</Font>
+                  <Guid>129d820c29f14d45b02c127c649d0fa5</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text31</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="15" />
+                  <Text>Благодарим за своевременную оплату!</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text31>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <Name>Panel2</Name>
+              <Page isRef="3" />
+              <Parent isRef="8" />
+            </Panel2>
+            <Panel4 Ref="20" type="Panel" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.4,0,14.6,7.4</ClientRectangle>
+              <Components isList="true" count="25">
+                <Text91 Ref="21" type="Text" isKey="true">
+                  <Border>All;Black;1;None;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>7,3.8,7.4,0.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,7,Bold| Underline</Font>
+                  <Guid>041222063b2340108b9d9aa93af7b677</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text91</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>{Записи.ФондСпецСчет}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text91>
+                <Text35 Ref="22" type="Text" isKey="true">
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,0,8.2,0.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,7,Bold</Font>
+                  <Guid>19faa1a887ff4d00843ad1e6569c67c4</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text35</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>СЧЁТ-ИЗВЕЩЕНИЕ на оплату взноса на капитальный ремонт
+за {Записи.МесяцГодНачисления} года</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text35>
+                <Text37 Ref="23" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>4.2,2.4,2.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,9,Bold</Font>
+                  <Guid>9aaddd3c0c2e45d48895c2d9032116af</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text37</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>{Записи.ИтогоКОплате}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="24" type="NumberFormat" isKey="true">
+                    <DecimalSeparator>,</DecimalSeparator>
+                    <GroupSeparator> </GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text37>
+                <Text38 Ref="25" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>0,2.8,4.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6,Bold</Font>
+                  <Guid>e60af26f6a734cacb8796b42a6720acf</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text38</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>Взносы</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text38>
+                <Text39 Ref="26" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>0,3.2,4.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6,Bold</Font>
+                  <Guid>9f2e5210b3434c1aa06ba2cb84988998</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text39</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>Пени</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text39>
+                <Text40 Ref="27" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>4.2,2.8,2.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>1332d73aa5ad4552861387f2d3e8d26f</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text40</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>{Записи.Итого}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="28" type="NumberFormat" isKey="true">
+                    <DecimalSeparator>,</DecimalSeparator>
+                    <GroupSeparator> </GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text40>
+                <Text41 Ref="29" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>4.2,3.2,2.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>cf54b2f91db948e49c5974130ed95e34</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text41</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>{Записи.Пени}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="30" type="NumberFormat" isKey="true">
+                    <DecimalSeparator>,</DecimalSeparator>
+                    <GroupSeparator> </GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text41>
+                <Text43 Ref="31" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>0,5.2,3,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6,Bold</Font>
+                  <Guid>ecdb967c38a14a3792752e6f51998c82</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text43</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>Адрес помещения</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text43>
+                <Text44 Ref="32" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>3,5.2,6,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>f323fe2742aa429aa35e2d63429b9807</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text44</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>{Записи.АдресКвартиры}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text44>
+                <Text49 Ref="33" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>0,4.6,3,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6,Bold</Font>
+                  <Guid>e01c90f071b64781a9685446d5423831</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text49</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>ФИО собственника</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text49>
+                <Text50 Ref="34" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>3,4.6,6,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,7</Font>
+                  <Guid>3e7b30d93e3a4d428b202753b414f038</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text50</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>{Записи.ФИОСобственника}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text50>
+                <Text51 Ref="35" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>0,2.4,4.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,8,Bold</Font>
+                  <Guid>f0415de2cd0843dfae4a0376c14717c3</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text51</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>К оплате всего, в том числе:</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text51>
+                <Text52 Ref="36" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>0,5.8,3,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6,Bold</Font>
+                  <Guid>c2fc70e0091d46f8a95690144756a38a</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text52</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>Тариф, руб.</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text52>
+                <Text53 Ref="37" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>3,5.8,6,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>068e90b2fd604420bddda938718ae51d</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text53</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>{Записи.Тариф}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="38" type="NumberFormat" isKey="true">
+                    <DecimalSeparator>,</DecimalSeparator>
+                    <GroupSeparator> </GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text53>
+                <Text54 Ref="39" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>0,6.4,3,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6,Bold</Font>
+                  <Guid>48cd1252d734435d87165dc336c75571</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text54</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>Общая площадь, м. кв.</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text54>
+                <Text55 Ref="40" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>3,6.4,6,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>edb2164830d94f94b2b91e9921e0ccd9</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text55</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>{Записи.ОбщаяПлощадь}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="41" type="NumberFormat" isKey="true">
+                    <DecimalSeparator>,</DecimalSeparator>
+                    <GroupSeparator> </GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text55>
+                <Text3 Ref="42" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>10,3,4.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,10,Bold</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text3</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>{Записи.ЛицевойСчет}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text3>
+                <Text5 Ref="43" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>0,0.8,14.6,1.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,7</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text5</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>Получатель платежа:  {Записи.НаименованиеПолучателя}, 
+ИНН/КПП {Записи.ИннПолучателя}/{Записи.КппПолучателя}, ОРГН {Записи.ОргнПолучателя}, Р/сч. {Записи.РсчетПолучателя} В {Записи.НаименованиеБанка}, {Записи.АдресБанка} 
+БИК {Записи.БикБанка}, к/с {Записи.КсБанка} Адрес: {Записи.АдресПолучателя}, 
+{Записи.ТелефоныПолучателя}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text5>
+                <Text12 Ref="44" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>10,2.4,4.6,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6,Bold</Font>
+                  <Guid>dfb17f4f2fb5420a908ac504a23c0719</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text12</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>ЛИЦЕВОЙ СЧЁТ</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text12>
+                <Text10 Ref="45" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>10,5.8,4.6,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6,Bold</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text10</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>Адрес интернет сайта
+{Записи.WebSiteПолучателя}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text10>
+                <Text11 Ref="46" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>10,6.4,4.6,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6,Bold</Font>
+                  <Guid>71ce3c01c4c34ba0b92b7736724754d9</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text11</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>E-mail: {Записи.EmailПолучателя}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text11>
+                <Text4 Ref="47" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>10,4.6,1.8,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6,Bold</Font>
+                  <Guid>433a53a4e1ad477e887013c9cb70c51b</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text4</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>Оплатить до:</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text4>
+                <Text17 Ref="48" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>11.8,4.6,2.8,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>e4670650356e407aa0852e97e58ec1e9</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text17</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>{Записи.ОплатитьДо}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text17>
+                <Text47 Ref="49" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>0,3.6,4.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6,Bold</Font>
+                  <Guid>6b86854b46d6455c8278ee3a75e32826</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text47</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>Мера социальной поддержки</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text47>
+                <Text48 Ref="50" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>4.2,3.6,2.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>894fa227f57246d188e0c288ffb67f16</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text48</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="20" />
+                  <Text>{Записи.СоцПоддержка}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="51" type="NumberFormat" isKey="true">
+                    <DecimalSeparator>,</DecimalSeparator>
+                    <GroupSeparator> </GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text48>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <Guid>00d00f02a783487683daa42658651931</Guid>
+              <Name>Panel4</Name>
+              <Page isRef="3" />
+              <Parent isRef="8" />
+            </Panel4>
+            <Panel3 Ref="52" type="Panel" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.4,7.4,14.6,7.6</ClientRectangle>
+              <Components isList="true" count="55">
+                <Text59 Ref="53" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,2.4,3.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,10,Bold</Font>
+                  <Guid>f8af47aa191148399b81cd339df5d288</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text59</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.ЛицевойСчет}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text59>
+                <Text60 Ref="54" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>0,2,3.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6,Bold</Font>
+                  <Guid>293a99e5c629462d9304ed205ff76716</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text60</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>ЛИЦЕВОЙ СЧЁТ</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text60>
+                <Text19 Ref="55" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>12.6,2,2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,9,Bold</Font>
+                  <Guid>8e0cec2fff2248a794995f9606be4b33</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text19</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.ИтогоКОплате}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="56" type="NumberFormat" isKey="true">
+                    <DecimalSeparator>,</DecimalSeparator>
+                    <GroupSeparator> </GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text19>
+                <Text20 Ref="57" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>8,2.4,4.8,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6,Bold</Font>
+                  <Guid>b97ed3090cec4dd5878ad767a34ca8e7</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text20</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Взносы</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text20>
+                <Text21 Ref="58" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>8,2.8,4.8,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6,Bold</Font>
+                  <Guid>b88c8afd75de40b4a26bce83d4d61ec9</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text21</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Пени</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text21>
+                <Text22 Ref="59" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>12.6,2.4,2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>4396f7de09df4d5ab92a97c65f0c3b30</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text22</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.Итого}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="60" type="NumberFormat" isKey="true">
+                    <DecimalSeparator>,</DecimalSeparator>
+                    <GroupSeparator> </GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text22>
+                <Text23 Ref="61" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>12.6,2.8,2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>ac3b08ec6a5f4a9d9d7af0efb612a438</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text23</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.Пени}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="62" type="NumberFormat" isKey="true">
+                    <DecimalSeparator>,</DecimalSeparator>
+                    <GroupSeparator> </GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text23>
+                <Text18 Ref="63" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>8,2,4.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,8,Bold</Font>
+                  <Guid>4a47252453544e389bb38e353f3ca0c5</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text18</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>К оплате всего, в том числе:</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text18>
+                <Text25 Ref="64" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>5,3.8,5.4,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>e9072d3e7d564cb7ac4f41c0dc660f43</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text25</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Адрес помещения</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text25>
+                <Text6 Ref="65" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>10.4,3.8,2.4,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>cb4e96c704fb44709fa9f58a9af4fa5b</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text6</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Тариф, руб.</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text6>
+                <Text8 Ref="66" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>12.8,3.8,1.8,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>b589cf7f3c084dfab68f798de4e1e4c7</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text8</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Общая площадь, м. кв.</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text8>
+                <Text26 Ref="67" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>5,4.4,5.4,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>bd47ba323c1c4d8787791f9f182b263b</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text26</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.АдресКвартиры}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text26>
+                <Text7 Ref="68" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>10.4,4.4,2.4,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>b195e389b5c04f4494798ca8a7c70678</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text7</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.Тариф}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="69" type="NumberFormat" isKey="true">
+                    <DecimalSeparator>,</DecimalSeparator>
+                    <GroupSeparator> </GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text7>
+                <Text9 Ref="70" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>12.8,4.4,1.8,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>7fca6a42b74c4d40a34d698fa58889be</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text9</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.ОбщаяПлощадь}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="71" type="NumberFormat" isKey="true">
+                    <DecimalSeparator>,</DecimalSeparator>
+                    <GroupSeparator> </GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text9>
+                <Text33 Ref="72" type="Text" isKey="true">
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,0,14.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,7,Bold</Font>
+                  <Guid>8fc677735ab34453a2a26317d9b92666</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text33</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>КВИТАНЦИЯ на оплату взноса на капитальный ремонт за {Записи.МесяцГодНачисления} года</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text33>
+                <Text13 Ref="73" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>0,3.8,5,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>e6f3b9f7f39a4974886dae19cb91ef2d</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text13</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>ФИО собственника</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text13>
+                <Text14 Ref="74" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>0,4.4,5,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>1693bc9b9642497898e2de3d84b9601e</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text14</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.ФИОСобственника}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text14>
+                <Text15 Ref="75" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>0,5.2,1.2,0.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>f2520b8899854751b62ddedb25c2f3bd</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text15</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Вид платежа (признак)</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text15>
+                <Text34 Ref="76" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>1.2,5.2,1.6,0.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>e03bbcda466e4a009b37e1cde6920acf</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text34</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Наименование</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text34>
+                <Text45 Ref="77" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>2.8,5.2,2.8,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>6cb8a82d8d564933a74e1afc704a5693</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text45</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>На начало периода, руб.</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text45>
+                <Text58 Ref="78" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>2.8,5.6,1.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>717b4751a59d43e2a0a54c5903264546</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text58</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Переплата</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text58>
+                <Text61 Ref="79" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>4,5.6,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>53e5229b6c694140b24571461cdf77f7</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text61</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Задолженность</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text61>
+                <Text62 Ref="80" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>5.6,5.2,1.2,0.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>9f59cfea668044829a8f7cdfe2dfdecb</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text62</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Начислено за месяц, руб.</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text62>
+                <Text63 Ref="81" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>6.8,5.2,1.4,0.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>2b66c06964cc4d0b887edea550083cd1</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text63</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Перерасчёт, руб. </Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text63>
+                <Text64 Ref="82" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>8.2,5.2,1.4,0.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>17c5226da1c94f1f9cb73de0816fc4ee</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text64</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Оплачено за период, руб.</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text64>
+                <Text65 Ref="83" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>11.4,5.2,3.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>ec636e14cd2d4884a8f9643bc7c4fa61</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text65</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Итого на конец периода, руб.</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text65>
+                <Text66 Ref="84" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>11.4,5.6,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>36a8d13097614d35a1ba7d37efb7e61b</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text66</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Переплата</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text66>
+                <Text67 Ref="85" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>13,5.6,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>eda9e756896341a2b742f14477a75fbc</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text67</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Задолженность</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text67>
+                <Text68 Ref="86" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>0,6,1.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text68</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>01</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text68>
+                <Text69 Ref="87" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>0,6.4,1.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>da0230b5d0f84c1f8942a2a04740310a</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text69</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>02</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text69>
+                <Text70 Ref="88" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>1.2,6,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>cce1a3a7287748fdae65725ed67e0346</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text70</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Взносы</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text70>
+                <Text71 Ref="89" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>1.2,6.4,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>68bb3d5305214d03b2a50604b7b35491</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text71</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Пени</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text71>
+                <Text72 Ref="90" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>2.8,6,1.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>42570ad3c3f647d782b9291305947320</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text72</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.ПереплатаНаНачало}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="91" type="NumberFormat" isKey="true">
+                    <GroupSeparator>,</GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text72>
+                <Text73 Ref="92" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>2.8,6.4,1.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>c60dc20cd78840cbbeac16e694a9bdb1</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text73</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.ПереплатаПениНаНачало}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="93" type="NumberFormat" isKey="true">
+                    <GroupSeparator>,</GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text73>
+                <Text74 Ref="94" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>4,6,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>9cff047ddcdc4bfe8651996e7f0a0352</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text74</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.ДолгНаНачало}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="95" type="NumberFormat" isKey="true">
+                    <GroupSeparator>,</GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text74>
+                <Text75 Ref="96" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>4,6.4,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>d82f444aa0e446c69bbb9e7523a09ce6</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text75</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.ДолгПениНаНачало}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="97" type="NumberFormat" isKey="true">
+                    <GroupSeparator>,</GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text75>
+                <Text76 Ref="98" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>5.6,6,1.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>0ba1befa64b347d1bfb712397e8594c2</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text76</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.Начислено}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="99" type="NumberFormat" isKey="true">
+                    <GroupSeparator>,</GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text76>
+                <Text77 Ref="100" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>5.6,6.4,1.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>44aa4549ebc942eca7d84fed4d775247</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text77</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.НачисленоПени}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="101" type="NumberFormat" isKey="true">
+                    <GroupSeparator>,</GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text77>
+                <Text78 Ref="102" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>6.8,6,1.4,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>14cc9831175742209c5b634e721aed6c</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text78</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.Перерасчет}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="103" type="NumberFormat" isKey="true">
+                    <GroupSeparator>,</GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text78>
+                <Text79 Ref="104" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>6.8,6.4,1.4,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>5751c84ab4614c4eaed76a8c51b54df2</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text79</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>0,00</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="105" type="NumberFormat" isKey="true">
+                    <GroupSeparator>,</GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text79>
+                <Text80 Ref="106" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>8.2,6,1.4,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>afe74776fa2c4d83a77608189cd782e2</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text80</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.Оплачено}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="107" type="NumberFormat" isKey="true">
+                    <GroupSeparator>,</GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text80>
+                <Text81 Ref="108" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>8.2,6.4,1.4,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>190c14b589bf491980c073f4ef9c5dcb</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text81</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.ОплаченоПени}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="109" type="NumberFormat" isKey="true">
+                    <GroupSeparator>,</GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text81>
+                <Text82 Ref="110" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>11.4,6,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>7b2635b0c01c4b5fa9375771fec3de27</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text82</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.ПереплатаНаКонец}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="111" type="NumberFormat" isKey="true">
+                    <GroupSeparator>,</GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text82>
+                <Text83 Ref="112" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>11.4,6.4,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>4bc4c48bfbf548a1880c2ca5789d2612</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text83</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.ПереплатаПениНаКонец}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="113" type="NumberFormat" isKey="true">
+                    <GroupSeparator>,</GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text83>
+                <Text84 Ref="114" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>13,6,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>d6fa2fbedfb040deb82d7eedec249c7a</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text84</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.ДолгНаКонец}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="115" type="NumberFormat" isKey="true">
+                    <GroupSeparator>,</GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text84>
+                <Text85 Ref="116" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>13,6.4,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>58b2211322ce4698bd705dfd370530eb</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text85</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.ДолгПениНаКонец}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="117" type="NumberFormat" isKey="true">
+                    <GroupSeparator>,</GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text85>
+                <Text86 Ref="118" type="Text" isKey="true">
+                  <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>0,6.8,1.4,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,6,Bold</Font>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text86</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>ВСЕГО, РУБ.</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text86>
+                <Text46 Ref="119" type="Text" isKey="true">
+                  <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>1.4,6.8,13.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,6</Font>
+                  <Guid>36901ac27f0b48bda359d25aa36d8229</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text46</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.СуммаВсего}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="120" type="NumberFormat" isKey="true">
+                    <GroupSeparator>,</GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text46>
+                <Text32 Ref="121" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>3.6,2,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,5,Bold</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text32</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Оплатить до:</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text32>
+                <Text36 Ref="122" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>3.6,2.4,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,5</Font>
+                  <Guid>352e28d615494795848341c5a90a38bd</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text36</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.ОплатитьДо}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text36>
+                <Text24 Ref="123" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>0,0.4,14.6,1.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,7</Font>
+                  <Guid>25c548ea71ce4c1991c3837010b5ef9d</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text24</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Получатель платежа:  {Записи.НаименованиеПолучателя}, 
+ИНН/КПП {Записи.ИннПолучателя}/{Записи.КппПолучателя}, ОРГН {Записи.ОргнПолучателя}, Р/сч. {Записи.РсчетПолучателя} В {Записи.НаименованиеБанка}, {Записи.АдресБанка} 
+БИК {Записи.БикБанка}, к/с {Записи.КсБанка} Адрес: {Записи.АдресПолучателя}, 
+{Записи.ТелефоныПолучателя}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text24>
+                <Text87 Ref="124" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>[191:191:191]</Brush>
+                  <ClientRectangle>9.6,5.2,1.8,0.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>2a01bef6894b4a5e966e7810b510205b</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text87</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>Предоставленная МСП, руб</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text87>
+                <Text89 Ref="125" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>9.6,6,1.8,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>e2c20b6b05de4623bc4613feff7f9aba</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text89</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.ПредоставленнаяМСП}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="126" type="NumberFormat" isKey="true">
+                    <GroupSeparator>,</GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text89>
+                <Text90 Ref="127" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>White</Brush>
+                  <ClientRectangle>9.6,6.4,1.8,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,6</Font>
+                  <Guid>7a1c052bf52846a1b6b0cfe4daeb1e3b</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text90</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>0,00</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="128" type="NumberFormat" isKey="true">
+                    <GroupSeparator>,</GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text90>
+                <Text56 Ref="129" type="Text" isKey="true">
+                  <Border>All;Black;1;None;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0.2,3,7.4,0.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,7,Bold| Underline</Font>
+                  <Guid>bad1cb807bae4c438f7840dce4f9fc9a</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text56</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="52" />
+                  <Text>{Записи.ФондСпецСчет}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text56>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <Guid>10ec471c554d45e7b48177a5c12e6a6c</Guid>
+              <Name>Panel3</Name>
+              <Page isRef="3" />
+              <Parent isRef="8" />
+            </Panel3>
+            <Text42 Ref="130" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,15.2,19,12.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9.5</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text42</Name>
+              <Page isRef="3" />
+              <Parent isRef="8" />
+              <Text>{Записи.Информация}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text42>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>Записи</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>0a779097f2f5483fa42246d767bf6482</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+      <Watermark Ref="131" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="132" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>5/6/2015 11:40:38 AM</ReportChanged>
+  <ReportCreated>3/13/2014 2:45:29 PM</ReportCreated>
+  <ReportFile>C:\GIT\GKH\Bars.Gkh.RegOperator\Resources\PaymentDocumentReceipt.mrt</ReportFile>
+  <ReportGuid>29a3ff0ade4945a0b41b127d534a1353</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.3.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

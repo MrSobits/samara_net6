@@ -1,0 +1,41 @@
+﻿<#@ template debug="true" hostSpecific="true" #>
+<#@ output extension=".cs" #>
+<#@ Assembly Name="System.Core.dll" #>
+<#@ Assembly Name="System.Xml.dll" #>
+<#@ Assembly Name="System.Xml.Linq.dll" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+namespace Bars.Gkh.InspectorMobile
+{
+    using Bars.B4;
+
+    public partial class ResourceManifest : ResourceManifestBase
+    {
+        protected override void BaseInit(IResourceManifestContainer container)
+        {
+<#          this.GenerateAllResources("libs");#>
+        }
+
+        private void AddResource(IResourceManifestContainer container, string path)
+        {
+            container.Add(path, string.Format("Bars.Gkh.InspectorMobile.dll/Bars.Gkh.InspectorMobile.{0}", path.Replace("/", ".")));
+        }
+    }
+}
+<#+
+    private void GenerateAllResources(string directoryName) 
+  {
+        string content = Host.ResolvePath(directoryName);
+
+        if(!string.IsNullOrEmpty(content))
+        {
+        foreach(var file in System.IO.Directory.GetFiles(content, "*.*", SearchOption.AllDirectories).Where(x => !x.EndsWith(".orig")))
+        {
+            var resourcePath = string.Format("{0}{1}", directoryName, file.Replace(content, string.Empty).Replace("\\","/"));
+#>
+            this.AddResource(container, "<#= resourcePath #>");
+<#+
+            }
+        }
+  }
+#>

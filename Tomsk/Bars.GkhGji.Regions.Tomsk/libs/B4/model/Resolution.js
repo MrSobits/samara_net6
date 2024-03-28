@@ -1,0 +1,46 @@
+Ext.define('B4.model.Resolution', {
+    extend: 'B4.model.DocumentGji',
+    idProperty: 'Id',
+
+    proxy: {
+        type: 'b4proxy',
+        controllerName: 'Resolution'
+    },
+    fields: [
+        { name: 'Inspection', defaultValue: null },
+        { name: 'Executant', defaultValue: null },
+        { name: 'Municipality', defaultValue: null },
+        { name: 'Contragent', defaultValue: null },
+        { name: 'Sanction', defaultValue: null },
+        { name: 'Official', defaultValue: null },
+        { name: 'PhysicalPerson' },
+        { name: 'PhysicalPersonInfo' },
+        { name: 'DeliveryDate' },
+        { name: 'TypeInitiativeOrg', defaultValue: 10 },
+        { name: 'SectorNumber' },
+        { name: 'PenaltyAmount' },
+        { name: 'ParentDocumentsList' },
+        { name: 'TypeDocumentGji', defaultValue: 70 },
+        { name: 'Paided', defaultValue: 30 },
+        { name: 'DateTransferSsp' },
+        { name: 'DocumentNumSsp' },
+        { name: 'ContragentName' },
+        { name: 'TypeExecutant' },
+        { name: 'MunicipalityNames' },
+        { name: 'DocumentDate' },
+        { name: 'DateWriteOut' },
+        { name: 'OfficialName' },
+        { name: 'ResolutionText' },
+        { name: 'SumPays' },
+        { name: 'DocumentTime', type: 'date', format: 'MS' },
+        { name: 'CreationTime' },
+        { name: 'InspectionId', defaultValue: null },
+        { name: 'TypeBase', defaultValue: null },
+        { name: 'TypeTerminationBasement', defaultValue: null },
+        { name: 'PhysicalPersonGender', defaultValue: 0 },
+        { name: 'HasPetition', defaultValue: 0 },
+        { name: 'PetitionText' },
+        { name: 'FioAttend' },
+        { name: 'ExplanationText' }
+    ]
+});

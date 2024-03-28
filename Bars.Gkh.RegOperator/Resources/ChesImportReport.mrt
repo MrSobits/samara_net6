@@ -1,0 +1,1861 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="4">
+      <ChargeSummaryData Ref="2" type="DataTableSource" isKey="true">
+        <Alias>ChargeSummaryData</Alias>
+        <Columns isList="true" count="25">
+          <value>ВходящееСальдо,System.Decimal</value>
+          <value>ВходящееСальдоПоБазовомуТарифу,System.Decimal</value>
+          <value>ВходящееСальдоПоПени,System.Decimal</value>
+          <value>ВходящееСальдоПоТарифуРешения,System.Decimal</value>
+          <value>НачисленоВсего,System.Decimal</value>
+          <value>НачисленоПоБазовомуТарифу,System.Decimal</value>
+          <value>НачисленоПоПени,System.Decimal</value>
+          <value>НачисленоПоТарифуРешения,System.Decimal</value>
+          <value>ОплаченоВсего,System.Decimal</value>
+          <value>ОплаченоПоБазовомуТарифу,System.Decimal</value>
+          <value>ОплаченоПоПени,System.Decimal</value>
+          <value>ОплаченоПоТарифуРешения,System.Decimal</value>
+          <value>ИзменениеСальдоВсего,System.Decimal</value>
+          <value>ИзменениеСальдоПоБазовомуТарифу,System.Decimal</value>
+          <value>ИзменениеСальдоПоПени,System.Decimal</value>
+          <value>ИзменениеСальдоПоТарифуРешения,System.Decimal</value>
+          <value>ПерерасчетВсего,System.Decimal</value>
+          <value>ПерерасчетПоБазовому,System.Decimal</value>
+          <value>тарифу,System.Decimal</value>
+          <value>ПерерасчетПоПени,System.Decimal</value>
+          <value>ПерерасчетПоТарифуРешения,System.Decimal</value>
+          <value>ИсходящееСальдо,System.Decimal</value>
+          <value>ИсходящееСальдоПоБазовомуТарифу,System.Decimal</value>
+          <value>ИсходящееСальдоПоПени,System.Decimal</value>
+          <value>ИсходящееСальдоПоТарифуРешения,System.Decimal</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ChargeSummaryData</Name>
+        <NameInSource>ChargeSummaryData</NameInSource>
+      </ChargeSummaryData>
+      <PaymentSummaryData Ref="3" type="DataTableSource" isKey="true">
+        <Alias>PaymentSummaryData</Alias>
+        <Columns isList="true" count="16">
+          <value>ОплаченоВсего,System.Decimal</value>
+          <value>ОплаченоПоБазовомуТарифу,System.Decimal</value>
+          <value>ОплаченоПени,System.Decimal</value>
+          <value>ОплаченоПоТарифуРешения,System.Decimal</value>
+          <value>ОтменаОплатВсего,System.Decimal</value>
+          <value>ОтменаОплатПоБазовомуТарифу,System.Decimal</value>
+          <value>ОтменаОплатПени,System.Decimal</value>
+          <value>ОтменаОплатПоТарифуРешения,System.Decimal</value>
+          <value>ВозвратОплатВсего,System.Decimal</value>
+          <value>ВозвратОплатПоБазовомуТарифу,System.Decimal</value>
+          <value>ВозвратОплатПени,System.Decimal</value>
+          <value>ВозвратОплатПоТарифуРешения,System.Decimal</value>
+          <value>ИтогоОплатВсего,System.Decimal</value>
+          <value>ИтогоОплатПоБазовомуИарифу,System.Decimal</value>
+          <value>ИтогоОплатПени,System.Decimal</value>
+          <value>ИтогоОплатПоТарифуРешения,System.Decimal</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>PaymentSummaryData</Name>
+        <NameInSource>PaymentSummaryData</NameInSource>
+      </PaymentSummaryData>
+      <SaldoChangeSummaryData Ref="4" type="DataTableSource" isKey="true">
+        <Alias>SaldoChangeSummaryData</Alias>
+        <Columns isList="true" count="4">
+          <value>ИзменениеСальдоВсего,System.Decimal</value>
+          <value>ИзменениеСальдоПоБазовомуТарифу,System.Decimal</value>
+          <value>ИзменениеСальдоПоПени,System.Decimal</value>
+          <value>ИзменениеСальдоПоТарифуРешения,System.Decimal</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>SaldoChangeSummaryData</Name>
+        <NameInSource>SaldoChangeSummaryData</NameInSource>
+      </SaldoChangeSummaryData>
+      <RecalcSummaryData Ref="5" type="DataTableSource" isKey="true">
+        <Alias>RecalcSummaryData</Alias>
+        <Columns isList="true" count="4">
+          <value>ПерерасчетВсего,System.Decimal</value>
+          <value>ПерерасчетПоБазовомуТарифу,System.Decimal</value>
+          <value>ПерерасчетПоПени,System.Decimal</value>
+          <value>ПерерасчетПоТарифуРешения,System.Decimal</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>RecalcSummaryData</Name>
+        <NameInSource>RecalcSummaryData</NameInSource>
+      </RecalcSummaryData>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="4">
+    <Page1 Ref="6" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="1">
+        <TableChargeSummaryData Ref="7" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,0.4,27.7,1.6</ClientRectangle>
+          <ColumnCount>25</ColumnCount>
+          <Components isList="true" count="50">
+            <TableChargeSummaryData_Cell1 Ref="8" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell1</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ВходящееСальдо</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell1>
+            <TableChargeSummaryData_Cell2 Ref="9" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell2</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ВходящееСальдоПоБазовомуТарифу</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell2>
+            <TableChargeSummaryData_Cell3 Ref="10" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell3</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ВходящееСальдоПоПени</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell3>
+            <TableChargeSummaryData_Cell4 Ref="11" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell4</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ВходящееСальдоПоТарифуРешения</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell4>
+            <TableChargeSummaryData_Cell5 Ref="12" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>4</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell5</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>НачисленоВсего</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell5>
+            <TableChargeSummaryData_Cell6 Ref="13" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>5</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell6</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>НачисленоПоБазовомуТарифу</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell6>
+            <TableChargeSummaryData_Cell7 Ref="14" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>6</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell7</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>НачисленоПоПени</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell7>
+            <TableChargeSummaryData_Cell8 Ref="15" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>7</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell8</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>НачисленоПоТарифуРешения</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell8>
+            <TableChargeSummaryData_Cell9 Ref="16" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>8</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell9</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ОплаченоВсего</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell9>
+            <TableChargeSummaryData_Cell10 Ref="17" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>9</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell10</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ОплаченоПоБазовомуТарифу</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell10>
+            <TableChargeSummaryData_Cell11 Ref="18" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>10,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>10</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell11</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ОплаченоПоПени</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell11>
+            <TableChargeSummaryData_Cell12 Ref="19" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>11</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell12</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ОплаченоПоТарифуРешения</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell12>
+            <TableChargeSummaryData_Cell13 Ref="20" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>12</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell13</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ИзменениеСальдоВсего</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell13>
+            <TableChargeSummaryData_Cell14 Ref="21" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>13</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell14</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ИзменениеСальдоПоБазовомуТарифу</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell14>
+            <TableChargeSummaryData_Cell15 Ref="22" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>14</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell15</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ИзменениеСальдоПоПени</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell15>
+            <TableChargeSummaryData_Cell16 Ref="23" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>15</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell16</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ИзменениеСальдоПоТарифуРешения</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell16>
+            <TableChargeSummaryData_Cell17 Ref="24" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>16</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell17</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ПерерасчетВсего</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell17>
+            <TableChargeSummaryData_Cell18 Ref="25" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>17</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell18</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ПерерасчетПоБазовому</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell18>
+            <TableChargeSummaryData_Cell19 Ref="26" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>18,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>18</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell19</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>тарифу</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell19>
+            <TableChargeSummaryData_Cell20 Ref="27" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>19,0,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>19</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell20</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ПерерасчетПоПени</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell20>
+            <TableChargeSummaryData_Cell21 Ref="28" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20,0,0.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>20</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell21</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ПерерасчетПоТарифуРешения</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell21>
+            <TableChargeSummaryData_Cell22 Ref="29" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.8,0,0.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>21</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell22</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ИсходящееСальдо</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell22>
+            <TableChargeSummaryData_Cell23 Ref="30" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>21.6,0,0.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>22</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell23</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ИсходящееСальдоПоБазовомуТарифу</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell23>
+            <TableChargeSummaryData_Cell24 Ref="31" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>22.4,0,0.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>23</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell24</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ИсходящееСальдоПоПени</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell24>
+            <TableChargeSummaryData_Cell25 Ref="32" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.2,0,4.5,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>24</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell25</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ИсходящееСальдоПоТарифуРешения</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell25>
+            <TableChargeSummaryData_Cell26 Ref="33" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>25</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell26</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ВходящееСальдо}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell26>
+            <TableChargeSummaryData_Cell27 Ref="34" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>26</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell27</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ВходящееСальдоПоБазовомуТарифу}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell27>
+            <TableChargeSummaryData_Cell28 Ref="35" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>27</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell28</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ВходящееСальдоПоПени}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell28>
+            <TableChargeSummaryData_Cell29 Ref="36" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>28</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell29</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ВходящееСальдоПоТарифуРешения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell29>
+            <TableChargeSummaryData_Cell30 Ref="37" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>29</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell30</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.НачисленоВсего}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell30>
+            <TableChargeSummaryData_Cell31 Ref="38" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>30</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell31</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.НачисленоПоБазовомуТарифу}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell31>
+            <TableChargeSummaryData_Cell32 Ref="39" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>31</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell32</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.НачисленоПоПени}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell32>
+            <TableChargeSummaryData_Cell33 Ref="40" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>32</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell33</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.НачисленоПоТарифуРешения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell33>
+            <TableChargeSummaryData_Cell34 Ref="41" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>33</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell34</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ОплаченоВсего}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell34>
+            <TableChargeSummaryData_Cell35 Ref="42" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>34</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell35</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ОплаченоПоБазовомуТарифу}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell35>
+            <TableChargeSummaryData_Cell36 Ref="43" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>10,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>35</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell36</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ОплаченоПоПени}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell36>
+            <TableChargeSummaryData_Cell37 Ref="44" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>36</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell37</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ОплаченоПоТарифуРешения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell37>
+            <TableChargeSummaryData_Cell38 Ref="45" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>37</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell38</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ИзменениеСальдоВсего}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell38>
+            <TableChargeSummaryData_Cell39 Ref="46" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>38</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell39</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ИзменениеСальдоПоБазовомуТарифу}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell39>
+            <TableChargeSummaryData_Cell40 Ref="47" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>39</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell40</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ИзменениеСальдоПоПени}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell40>
+            <TableChargeSummaryData_Cell41 Ref="48" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>40</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell41</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ИзменениеСальдоПоТарифуРешения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell41>
+            <TableChargeSummaryData_Cell42 Ref="49" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>41</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell42</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ПерерасчетВсего}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell42>
+            <TableChargeSummaryData_Cell43 Ref="50" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>42</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell43</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ПерерасчетПоБазовому}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell43>
+            <TableChargeSummaryData_Cell44 Ref="51" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>18,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>43</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell44</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.тарифу}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell44>
+            <TableChargeSummaryData_Cell45 Ref="52" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>19,0.8,1,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>44</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell45</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ПерерасчетПоПени}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell45>
+            <TableChargeSummaryData_Cell46 Ref="53" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20,0.8,0.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>45</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell46</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ПерерасчетПоТарифуРешения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell46>
+            <TableChargeSummaryData_Cell47 Ref="54" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.8,0.8,0.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>46</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell47</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ИсходящееСальдо}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell47>
+            <TableChargeSummaryData_Cell48 Ref="55" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>21.6,0.8,0.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>47</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell48</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ИсходящееСальдоПоБазовомуТарифу}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell48>
+            <TableChargeSummaryData_Cell49 Ref="56" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>22.4,0.8,0.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>48</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell49</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ИсходящееСальдоПоПени}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell49>
+            <TableChargeSummaryData_Cell50 Ref="57" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.2,0.8,4.5,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>49</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableChargeSummaryData_Cell50</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ChargeSummaryData.ИсходящееСальдоПоТарифуРешения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableChargeSummaryData_Cell50>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>ChargeSummaryData</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableChargeSummaryData</Name>
+          <NumberID>50</NumberID>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableChargeSummaryData>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <ExcelSheet>Начисления</ExcelSheet>
+      <Guid>1d26565de392464abdf1c718812b5ff6</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>21</PageHeight>
+      <PageWidth>29.7</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="58" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+    <Page2 Ref="59" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="1">
+        <TablePaymentSummaryData Ref="60" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,0.4,27.7,1.6</ClientRectangle>
+          <ColumnCount>16</ColumnCount>
+          <Components isList="true" count="32">
+            <TablePaymentSummaryData_Cell1 Ref="61" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell1</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ОплаченоВсего</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell1>
+            <TablePaymentSummaryData_Cell2 Ref="62" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell2</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ОплаченоПоБазовомуТарифу</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell2>
+            <TablePaymentSummaryData_Cell3 Ref="63" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell3</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ОплаченоПени</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell3>
+            <TablePaymentSummaryData_Cell4 Ref="64" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.8,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell4</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ОплаченоПоТарифуРешения</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell4>
+            <TablePaymentSummaryData_Cell5 Ref="65" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.4,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>4</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell5</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ОтменаОплатВсего</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell5>
+            <TablePaymentSummaryData_Cell6 Ref="66" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>5</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell6</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ОтменаОплатПоБазовомуТарифу</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell6>
+            <TablePaymentSummaryData_Cell7 Ref="67" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>6</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell7</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ОтменаОплатПени</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell7>
+            <TablePaymentSummaryData_Cell8 Ref="68" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.2,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>7</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell8</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ОтменаОплатПоТарифуРешения</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell8>
+            <TablePaymentSummaryData_Cell9 Ref="69" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>8</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell9</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ВозвратОплатВсего</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell9>
+            <TablePaymentSummaryData_Cell10 Ref="70" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.4,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>9</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell10</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ВозвратОплатПоБазовомуТарифу</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell10>
+            <TablePaymentSummaryData_Cell11 Ref="71" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>10</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell11</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ВозвратОплатПени</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell11>
+            <TablePaymentSummaryData_Cell12 Ref="72" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.6,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>11</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell12</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ВозвратОплатПоТарифуРешения</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell12>
+            <TablePaymentSummaryData_Cell13 Ref="73" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>19.2,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>12</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell13</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ИтогоОплатВсего</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell13>
+            <TablePaymentSummaryData_Cell14 Ref="74" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.8,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>13</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell14</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ИтогоОплатПоБазовомуИарифу</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell14>
+            <TablePaymentSummaryData_Cell15 Ref="75" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>22.4,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>14</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell15</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ИтогоОплатПени</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell15>
+            <TablePaymentSummaryData_Cell16 Ref="76" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>24,0,3.7,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>15</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell16</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ИтогоОплатПоТарифуРешения</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell16>
+            <TablePaymentSummaryData_Cell17 Ref="77" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>16</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell17</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{PaymentSummaryData.ОплаченоВсего}</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell17>
+            <TablePaymentSummaryData_Cell18 Ref="78" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,0.8,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>17</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell18</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{PaymentSummaryData.ОплаченоПоБазовомуТарифу}</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell18>
+            <TablePaymentSummaryData_Cell19 Ref="79" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,0.8,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>18</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell19</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{PaymentSummaryData.ОплаченоПени}</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell19>
+            <TablePaymentSummaryData_Cell20 Ref="80" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.8,0.8,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>19</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell20</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{PaymentSummaryData.ОплаченоПоТарифуРешения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell20>
+            <TablePaymentSummaryData_Cell21 Ref="81" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.4,0.8,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>20</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell21</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{PaymentSummaryData.ОтменаОплатВсего}</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell21>
+            <TablePaymentSummaryData_Cell22 Ref="82" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8,0.8,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>21</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell22</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{PaymentSummaryData.ОтменаОплатПоБазовомуТарифу}</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell22>
+            <TablePaymentSummaryData_Cell23 Ref="83" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0.8,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>22</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell23</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{PaymentSummaryData.ОтменаОплатПени}</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell23>
+            <TablePaymentSummaryData_Cell24 Ref="84" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.2,0.8,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>23</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell24</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{PaymentSummaryData.ОтменаОплатПоТарифуРешения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell24>
+            <TablePaymentSummaryData_Cell25 Ref="85" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0.8,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>24</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell25</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{PaymentSummaryData.ВозвратОплатВсего}</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell25>
+            <TablePaymentSummaryData_Cell26 Ref="86" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.4,0.8,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>25</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell26</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{PaymentSummaryData.ВозвратОплатПоБазовомуТарифу}</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell26>
+            <TablePaymentSummaryData_Cell27 Ref="87" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,0.8,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>26</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell27</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{PaymentSummaryData.ВозвратОплатПени}</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell27>
+            <TablePaymentSummaryData_Cell28 Ref="88" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.6,0.8,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>27</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell28</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{PaymentSummaryData.ВозвратОплатПоТарифуРешения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell28>
+            <TablePaymentSummaryData_Cell29 Ref="89" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>19.2,0.8,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>28</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell29</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{PaymentSummaryData.ИтогоОплатВсего}</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell29>
+            <TablePaymentSummaryData_Cell30 Ref="90" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.8,0.8,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>29</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell30</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{PaymentSummaryData.ИтогоОплатПоБазовомуИарифу}</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell30>
+            <TablePaymentSummaryData_Cell31 Ref="91" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>22.4,0.8,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>30</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell31</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{PaymentSummaryData.ИтогоОплатПени}</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell31>
+            <TablePaymentSummaryData_Cell32 Ref="92" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>24,0.8,3.7,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>31</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TablePaymentSummaryData_Cell32</Name>
+              <Page isRef="59" />
+              <Parent isRef="60" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{PaymentSummaryData.ИтогоОплатПоТарифуРешения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TablePaymentSummaryData_Cell32>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>PaymentSummaryData</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TablePaymentSummaryData</Name>
+          <NumberID>32</NumberID>
+          <Page isRef="59" />
+          <Parent isRef="59" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TablePaymentSummaryData>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <ExcelSheet>Оплаты (детализация)</ExcelSheet>
+      <Guid>c803d89146644058aa062f4840229f3f</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page2</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>21</PageHeight>
+      <PageWidth>29.7</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="93" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page2>
+    <Page3 Ref="94" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="1">
+        <TableSaldoChangeSummaryData Ref="95" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,0.4,19,1.6</ClientRectangle>
+          <ColumnCount>4</ColumnCount>
+          <Components isList="true" count="8">
+            <TableSaldoChangeSummaryData_Cell1 Ref="96" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSaldoChangeSummaryData_Cell1</Name>
+              <Page isRef="94" />
+              <Parent isRef="95" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ИзменениеСальдоВсего</Text>
+              <TextBrush>Black</TextBrush>
+            </TableSaldoChangeSummaryData_Cell1>
+            <TableSaldoChangeSummaryData_Cell2 Ref="97" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.8,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSaldoChangeSummaryData_Cell2</Name>
+              <Page isRef="94" />
+              <Parent isRef="95" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ИзменениеСальдоПоБазовомуТарифу</Text>
+              <TextBrush>Black</TextBrush>
+            </TableSaldoChangeSummaryData_Cell2>
+            <TableSaldoChangeSummaryData_Cell3 Ref="98" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSaldoChangeSummaryData_Cell3</Name>
+              <Page isRef="94" />
+              <Parent isRef="95" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ИзменениеСальдоПоПени</Text>
+              <TextBrush>Black</TextBrush>
+            </TableSaldoChangeSummaryData_Cell3>
+            <TableSaldoChangeSummaryData_Cell4 Ref="99" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.4,0,4.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSaldoChangeSummaryData_Cell4</Name>
+              <Page isRef="94" />
+              <Parent isRef="95" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ИзменениеСальдоПоТарифуРешения</Text>
+              <TextBrush>Black</TextBrush>
+            </TableSaldoChangeSummaryData_Cell4>
+            <TableSaldoChangeSummaryData_Cell5 Ref="100" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>4</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSaldoChangeSummaryData_Cell5</Name>
+              <Page isRef="94" />
+              <Parent isRef="95" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{SaldoChangeSummaryData.ИзменениеСальдоВсего}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableSaldoChangeSummaryData_Cell5>
+            <TableSaldoChangeSummaryData_Cell6 Ref="101" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.8,0.8,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>5</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSaldoChangeSummaryData_Cell6</Name>
+              <Page isRef="94" />
+              <Parent isRef="95" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{SaldoChangeSummaryData.ИзменениеСальдоПоБазовомуТарифу}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableSaldoChangeSummaryData_Cell6>
+            <TableSaldoChangeSummaryData_Cell7 Ref="102" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0.8,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>6</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSaldoChangeSummaryData_Cell7</Name>
+              <Page isRef="94" />
+              <Parent isRef="95" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{SaldoChangeSummaryData.ИзменениеСальдоПоПени}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableSaldoChangeSummaryData_Cell7>
+            <TableSaldoChangeSummaryData_Cell8 Ref="103" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.4,0.8,4.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>7</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSaldoChangeSummaryData_Cell8</Name>
+              <Page isRef="94" />
+              <Parent isRef="95" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{SaldoChangeSummaryData.ИзменениеСальдоПоТарифуРешения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableSaldoChangeSummaryData_Cell8>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>SaldoChangeSummaryData</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableSaldoChangeSummaryData</Name>
+          <NumberID>8</NumberID>
+          <Page isRef="94" />
+          <Parent isRef="94" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableSaldoChangeSummaryData>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <ExcelSheet>Изменение сальдо (детализация)</ExcelSheet>
+      <Guid>fb1b07df5f5b43288492983dbf5f40b0</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page3</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="104" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page3>
+    <Page4 Ref="105" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="1">
+        <TableRecalcSummaryData Ref="106" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,0.4,27.7,1.6</ClientRectangle>
+          <ColumnCount>4</ColumnCount>
+          <Components isList="true" count="8">
+            <TableRecalcSummaryData_Cell1 Ref="107" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,6.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableRecalcSummaryData_Cell1</Name>
+              <Page isRef="105" />
+              <Parent isRef="106" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ПерерасчетВсего</Text>
+              <TextBrush>Black</TextBrush>
+            </TableRecalcSummaryData_Cell1>
+            <TableRecalcSummaryData_Cell2 Ref="108" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.8,0,6.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableRecalcSummaryData_Cell2</Name>
+              <Page isRef="105" />
+              <Parent isRef="106" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ПерерасчетПоБазовомуТарифу</Text>
+              <TextBrush>Black</TextBrush>
+            </TableRecalcSummaryData_Cell2>
+            <TableRecalcSummaryData_Cell3 Ref="109" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.6,0,6.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableRecalcSummaryData_Cell3</Name>
+              <Page isRef="105" />
+              <Parent isRef="106" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ПерерасчетПоПени</Text>
+              <TextBrush>Black</TextBrush>
+            </TableRecalcSummaryData_Cell3>
+            <TableRecalcSummaryData_Cell4 Ref="110" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.4,0,7.3,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableRecalcSummaryData_Cell4</Name>
+              <Page isRef="105" />
+              <Parent isRef="106" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ПерерасчетПоТарифуРешения</Text>
+              <TextBrush>Black</TextBrush>
+            </TableRecalcSummaryData_Cell4>
+            <TableRecalcSummaryData_Cell5 Ref="111" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,6.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>4</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableRecalcSummaryData_Cell5</Name>
+              <Page isRef="105" />
+              <Parent isRef="106" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{RecalcSummaryData.ПерерасчетВсего}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableRecalcSummaryData_Cell5>
+            <TableRecalcSummaryData_Cell6 Ref="112" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.8,0.8,6.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>5</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableRecalcSummaryData_Cell6</Name>
+              <Page isRef="105" />
+              <Parent isRef="106" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{RecalcSummaryData.ПерерасчетПоБазовомуТарифу}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableRecalcSummaryData_Cell6>
+            <TableRecalcSummaryData_Cell7 Ref="113" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.6,0.8,6.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>6</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableRecalcSummaryData_Cell7</Name>
+              <Page isRef="105" />
+              <Parent isRef="106" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{RecalcSummaryData.ПерерасчетПоПени}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableRecalcSummaryData_Cell7>
+            <TableRecalcSummaryData_Cell8 Ref="114" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.4,0.8,7.3,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>7</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableRecalcSummaryData_Cell8</Name>
+              <Page isRef="105" />
+              <Parent isRef="106" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{RecalcSummaryData.ПерерасчетПоТарифуРешения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableRecalcSummaryData_Cell8>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>RecalcSummaryData</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableRecalcSummaryData</Name>
+          <NumberID>8</NumberID>
+          <Page isRef="105" />
+          <Parent isRef="105" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableRecalcSummaryData>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <ExcelSheet>Перерасчет (детализация)</ExcelSheet>
+      <Guid>a063b380975e455b9fd4aace017f0e0a</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page4</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>21</PageHeight>
+      <PageWidth>29.7</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="115" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page4>
+  </Pages>
+  <PrinterSettings Ref="116" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>6/23/2017 2:37:00 PM</ReportChanged>
+  <ReportCreated>6/21/2017 6:35:41 PM</ReportCreated>
+  <ReportFile>C:\Repos\gkh\Bars.Gkh.RegOperator\Resources\ChesImportReport.mrt</ReportFile>
+  <ReportGuid>352da178a27047098d68d6b4aabd1f0b</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

@@ -1,0 +1,843 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="0" />
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="16">
+      <value>,НаименованиеЛицОргана,НаименованиеЛицОргана,System.String,,False,False</value>
+      <value>,СоискательЛицензииПолн,СоискательЛицензииПолн,System.String,,False,False</value>
+      <value>,ОПФ,ОПФ,System.String,,False,False</value>
+      <value>,ФактАдрес,ФактАдрес,System.String,,False,False</value>
+      <value>,ОГРН,ОГРН,System.String,,False,False</value>
+      <value>,СоискательЛицензииСокр,СоискательЛицензииСокр,System.String,,False,False</value>
+      <value>,РеквизитыЕГРЮЛ,РеквизитыЕГРЮЛ,System.String,,False,False</value>
+      <value>,ИНН,ИНН,System.String,,False,False</value>
+      <value>,Сайт,Сайт,System.String,,False,False</value>
+      <value>,КвалАттестат,КвалАттестат,System.String,,False,False</value>
+      <value>,УплатаГосПошлины,УплатаГосПошлины,System.String,,False,False</value>
+      <value>,Телефон,Телефон,System.String,,False,False</value>
+      <value>,ЭлПочта,ЭлПочта,System.String,,False,False</value>
+      <value>,ФИОСоискателя,ФИОСоискателя,System.String,,False,False</value>
+      <value>,ДолжностьСоискателя,ДолжностьСоискателя,System.String,,False,False</value>
+      <value>,РеквизитыДокументаОПостановкеНаУчет,РеквизитыДокументаОПостановкеНаУчет,System.String,,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="2" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="6">
+        <ReportTitleBand1 Ref="3" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,19,1.6</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text1 Ref="4" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="2" />
+              <Parent isRef="3" />
+              <Text>614000 г. Пермь, ул. Екатерининская, д. 78. Тел./факс (342) 236-21-31</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text1>
+            <Text2 Ref="5" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,19,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="2" />
+              <Parent isRef="3" />
+              <Text>ИНСПЕКЦИЯ ГОСУДАРСТВЕННОГО ЖИЛИЩНОГО НАДЗОРА
+ПЕРМСКОГО КРАЯ
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+        </ReportTitleBand1>
+        <ReportTitleBand2 Ref="6" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,2.8,19,3</ClientRectangle>
+          <Components isList="true" count="4">
+            <Text3 Ref="7" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.2,0,4.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="2" />
+              <Parent isRef="6" />
+              <Text>РЕКОМЕНДАЦИЯ </Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
+            <Text4 Ref="8" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,19,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="2" />
+              <Parent isRef="6" />
+              <Text>о предоставлении (отказе в предоставлении) лицензии на осуществление
+предпринимательской деятельности по управлению многоквартирными домами</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text4>
+            <Text38 Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,2.2,1.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text38</Name>
+              <Page isRef="2" />
+              <Parent isRef="6" />
+              <Text>№ _____</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text38>
+            <Text39 Ref="10" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.2,2.2,3.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text39</Name>
+              <Page isRef="2" />
+              <Parent isRef="6" />
+              <Text>{Format("{0:dd.MM.yyyy}", Today)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text39>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitleBand2</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+        </ReportTitleBand2>
+        <DataBand1 Ref="11" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,6.6,19,4</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text5 Ref="12" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,3.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="2" />
+              <Parent isRef="11" />
+              <Text>Наименование управляющей организации (фамилия, имя, отчество индивидуального предпринимателя)  соискателя лицензии: &lt;u&gt;{СоискательЛицензииПолн}&lt;/u&gt;&lt;br&gt; 
+ИНН соискателя лицензии: &lt;u&gt;{ИНН}&lt;/u&gt;&lt;br&gt;
+Место осуществления деятельности (указать наименование района, города, поселка): &lt;u&gt;{ФактАдрес}&lt;/u&gt;&lt;br&gt;
+&lt;br&gt;
+Лицо, имеющее право действовать от имени юридического лица без доверенности:&lt;br&gt; 
+&lt;u&gt;{ФИОСоискателя}&lt;/u&gt;
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text5>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand1</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+        <DataBand2 Ref="13" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <CanShrink>True</CanShrink>
+          <ClientRectangle>0,11.4,19,28</ClientRectangle>
+          <Components isList="true" count="1">
+            <Table1 Ref="14" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.4,19,27.2</ClientRectangle>
+              <ColumnCount>4</ColumnCount>
+              <Components isList="true" count="24">
+                <Table1_Cell1 Ref="15" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,0,2.2,2.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>0</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell1</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>№</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell1>
+                <Table1_Cell2 Ref="16" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>2.2,0,7.8,2.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>1</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell2</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>Лицензионное требование</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell2>
+                <Table1_Cell3 Ref="17" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>10,0,5.4,2.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>2</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell3</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>Результат проведенной проверки</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell3>
+                <Table1_Cell4 Ref="18" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>15.4,0,3.6,2.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>3</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell4</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>Орган, сведения которого учтены при проведении проверки</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell4>
+                <Table1_Cell5 Ref="19" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,2.4,2.2,3.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>5</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell5</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>1.</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell5>
+                <Table1_Cell6 Ref="20" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>2.2,2.4,7.8,3.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>6</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell6</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>Регистрация соискателя лицензии в качестве юридического лица или индивидуального предпринимателя на территории Российской Федерации.</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell6>
+                <Table1_Cell7 Ref="21" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>10,2.4,5.4,3.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>7</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell7</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>Соответствует.
+Дата регистрации {РеквизитыДокументаОПостановкеНаУчет}
+ОГРН № {ОГРН}
+МРИ ФНС № 17 по Пермскому краю
+</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell7>
+                <Table1_Cell8 Ref="22" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>15.4,2.4,3.6,3.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>8</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell8</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>ФНС России</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell8>
+                <Table1_Cell9 Ref="23" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,6.2,2.2,4.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>10</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell9</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>2.</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell9>
+                <Table1_Cell10 Ref="24" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>2.2,6.2,7.8,4.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>11</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell10</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>Наличие у должностного лица соискателя лицензии квалификационного аттестата.</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell10>
+                <Table1_Cell11 Ref="25" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>10,6.2,5.4,4.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>12</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell11</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>Соответствует.
+Квалификационный аттестат 
+№ {КвалАттестат} выдан ИГЖН ПК на основании протокола квалификационного экзамена 
+№ 00 от 01.01.2016 г. {ФИОСоискателя}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell11>
+                <Table1_Cell12 Ref="26" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>15.4,6.2,3.6,4.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>13</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell12</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>Инспекция государственного жилищного надзора Пермского края</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell12>
+                <Table1_Cell13 Ref="27" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,11,2.2,3.2</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>15</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell13</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>3.</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell13>
+                <Table1_Cell14 Ref="28" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>2.2,11,7.8,3.2</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>16</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell14</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>Отсутствие у должностного лица соискателя лицензии неснятой или непогашенной судимости за преступления в сфере экономики, за преступления средней тяжести, тяжкие и особо тяжкие преступления.</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell14>
+                <Table1_Cell15 Ref="29" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>10,11,5.4,3.2</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>17</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell15</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>Соответствует.
+По состоянию на {Format("{0:dd.MM.yyyy}", Today)} года запрашиваемые сведения не найдены
+</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell15>
+                <Table1_Cell16 Ref="30" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>15.4,11,3.6,3.2</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>18</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell16</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>МВД России</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell16>
+                <Table1_Cell17 Ref="31" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,14.2,2.2,9.2</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>20</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell17</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>4.
+</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell17>
+                <Table1_Cell18 Ref="32" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>2.2,14.2,7.8,9.2</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>21</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell18</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>Отсутствие в реестре лиц, осуществлявших функции единоличного исполнительного органа лицензиата, лицензия которого аннулирована, а также лиц, на которых уставом или иными документами лицензиата возложена ответственность за соблюдение требований к обеспечению надлежащего содержания общего имущества в многоквартирном доме и в отношении которых применено административное наказание в виде дисквалификации, индивидуальных предпринимателей, лицензия которых аннулирована и (или) в отношении которых применено административное наказание в виде дисквалификации, информации о должностном лице соискателя лицензии</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell18>
+                <Table1_Cell19 Ref="33" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>10,14.2,5.4,9.2</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>22</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell19</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>Соответствует.
+В реестре дисквалифицированных лиц не содержится информация о {ФИОСоискателя}
+</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell19>
+                <Table1_Cell20 Ref="34" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>15.4,14.2,3.6,9.2</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>23</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell20</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>Минстрой России</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell20>
+                <Table1_Cell21 Ref="35" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,23.4,2.2,3.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>25</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell21</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>5.</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell21>
+                <Table1_Cell22 Ref="36" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>2.2,23.4,7.8,3.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>26</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell22</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>Отсутствие в сводном федеральном реестре лицензий на осуществление предпринимательской деятельности по управлению многоквартирными домами информации об аннулировании лицензии, ранее выданной лицензиату, соискателю лицензии.</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell22>
+                <Table1_Cell23 Ref="37" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>10,23.4,5.4,3.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>27</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell23</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>Соответствует.
+В сводном федеральном реестре лицензий отсутствует информация об аннулировании лицензий
+</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell23>
+                <Table1_Cell24 Ref="38" type="TableCell" isKey="true">
+                  <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>15.4,23.4,3.6,3.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,12</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <ID>28</ID>
+                  <JoinCells isList="true" count="0" />
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Table1_Cell24</Name>
+                  <Page isRef="2" />
+                  <Parent isRef="14" />
+                  <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+                  <Text>Минстрой России</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Table1_Cell24>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <Filters isList="true" count="0" />
+              <MinHeight>1.2000000000000002</MinHeight>
+              <Name>Table1</Name>
+              <NumberID>29</NumberID>
+              <Page isRef="2" />
+              <Parent isRef="13" />
+              <RowCount>6</RowCount>
+              <Sort isList="true" count="0" />
+            </Table1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand2</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <Sort isList="true" count="0" />
+        </DataBand2>
+        <DataBand3 Ref="39" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,40.2,19,5.2</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text24 Ref="40" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,19,4.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text24</Name>
+              <Page isRef="2" />
+              <Parent isRef="39" />
+              <Text>По результатам проведенной проверки установлено следующее:&lt;br&gt; 
+сведения представлены в объеме, соответствующему действующему законодательству;&lt;br&gt; 
+наличие в представленных соискателем лицензии заявлении о предоставлении лицензии на осуществление предпринимательской деятельности по управлению многоквартирными домами и (или) прилагаемых к нему документах недостоверной или искаженной информации не выявлено.&lt;br&gt; &lt;br&gt; 
+&lt;u&gt;Мотивированное предложение:&lt;/u&gt; Инспекция государственного жилищного надзора Пермского края считает возможным предоставить лицензию на осуществление предпринимательской деятельности по управлению многоквартирными домами &lt;u&gt;{СоискательЛицензииПолн}&lt;/u&gt; (ИНН &lt;u&gt;{ИНН}&lt;/u&gt;).
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text24>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand3</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <Sort isList="true" count="0" />
+        </DataBand3>
+        <DataBand10 Ref="41" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,46.2,19,1.4</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text34 Ref="42" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text34</Name>
+              <Page isRef="2" />
+              <Parent isRef="41" />
+              <Text>Начальник Инспекции</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text34>
+            <Text35 Ref="43" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>15.6,0,3.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text35</Name>
+              <Page isRef="2" />
+              <Parent isRef="41" />
+              <Text>В.И. Толстой</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text35>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand10</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <Sort isList="true" count="0" />
+        </DataBand10>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>93cabbdecb884691999f0bb8db06ad3d</Guid>
+      <LargeHeight>True</LargeHeight>
+      <LargeHeightFactor>3</LargeHeightFactor>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="44" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <Text>(фамилия, имя, отчество должностного лица соискателя лицензии полностью)</Text>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="45" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>4/27/2017 7:47:28 AM</ReportChanged>
+  <ReportCreated>1/22/2015 1:49:24 PM</ReportCreated>
+  <ReportFile>C:\Users\a.romanov\Downloads\LicenseApplicationJurPerson реорганизация.mrt</ReportFile>
+  <ReportGuid>4441863358f141b6b434880d3129b393</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

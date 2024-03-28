@@ -1,0 +1,127 @@
+source https://nexus.bars.group/repository/nuget.org-proxy/index.json
+nuget Quartz = 2.6.2
+nuget Microsoft.AspNet.Cors ~> 5.0.0
+nuget Microsoft.AspNet.WebApi.Client ~> 5.2.3
+nuget Microsoft.AspNet.WebApi.Core ~> 5.2.3
+nuget Microsoft.AspNet.WebApi.Owin ~> 5.2.2
+nuget Microsoft.AspNet.WebApi.WebHost ~> 5.2.3
+nuget Microsoft.Net.Http ~> 2.0.20710.0
+nuget Microsoft.Owin ~> 3.0.1
+nuget Microsoft.Owin.Cors ~> 3.0.1
+nuget Microsoft.Web.Infrastructure
+nuget Owin
+nuget Swashbuckle = 5.6.0
+nuget Swashbuckle.Core = 5.6.0
+nuget WebActivatorEx ~> 2.0
+nuget NHibernate 5.3.12
+nuget Npgsql 4.0.13
+nuget NLog ~> 4.5.11
+nuget Refit 4.6.58
+nuget iTextSharp 5.4.4
+
+source https://nexus.bars.group/repository/b4/index.json
+source https://nexus.bars.group/repository/common/index.json
+source https://nexus.bars.group/repository/certifed/index.json
+source https://nexus.bars.group/repository/gkh/index.json
+source https://nexus.bars.group/repository/paid/index.json
+source https://nexus.bars.group/repository/gkh-common/index.json
+source https://nexus.bars.group/repository/gkhsz/index.json
+
+copy_local: false
+content: none
+redirects: on
+framework: net40, net45, net451, net452, net461
+
+nuget Bars.B4.Core ~> 3
+nuget Bars.B4.Modules.Caching.Redis ~> 3
+nuget Bars.B4.Modules.Dapper ~> 3
+nuget Bars.B4.Modules.DataExport = 3.1.11980.1
+nuget Bars.B4.Modules.Desktop ~> 3
+nuget Bars.B4.Modules.ESIA ~> 3
+nuget Bars.B4.Modules.Ecm7.Framework
+nuget Bars.B4.Modules.Ecm7.Providers.Oracle.System
+nuget Bars.B4.Modules.ESIA ~> 3
+nuget Bars.B4.Modules.FIAS
+nuget Bars.B4.Modules.FileSystemStorage ~> 3
+nuget Bars.B4.Modules.LicenseProvider ~> 3
+nuget Bars.B4.Modules.Messenger ~> 3
+nuget Bars.B4.Modules.NHibernateChangeLog.ExtJS4 ~> 3
+nuget Bars.B4.Modules.News ~> 3
+nuget Bars.B4.Modules.NlogLogger ~> 3
+nuget Bars.B4.Modules.Pivot.DX ~> 3
+nuget Bars.B4.Modules.QueryDesigner ~> 3
+nuget Bars.B4.Modules.QueryDesigner.ExtJS4 ~> 3
+nuget Bars.B4.Modules.Queue.RabbitMQ.Web ~> 3
+nuget Bars.B4.Modules.ReportDesigner ~> 3
+nuget Bars.B4.Modules.Security.Web ~> 3
+nuget Bars.B4.Modules.Setup ~> 3
+nuget Bars.B4.Modules.States ~> 3
+nuget Bars.B4.Modules.StimulReportGenerator ~> 3
+nuget Bars.B4.Modules.TaskManager ~> 3
+nuget Bars.B4.Modules.Tasks.Executor ~> 3
+nuget Bars.B4.Modules.Tasks.MasterApp ~> 3
+nuget Bars.B4.Modules.Tasks.Web ~> 3
+nuget Bars.B4.Modules.UserActivity ~> 3
+nuget Bars.B4.Modules.XlsIO ~> 3
+nuget Bars.B4.Modules.jQuery ~> 3
+nuget Bars.B4.Modules.ExtJs3 3.1.11980
+nuget Bars.B4.Modules.JSDeferred 3.1.11980
+nuget Bars.B4.Modules.RequireJS 3.1.11980
+nuget Bars.B4.TestToolkit.Integrational ~> 3
+nuget Bars.B4.Utils ~> 3
+nuget Bars.Security >= 1.1.29 < 85
+nuget B4.Ecm7Migrator-Migrator
+nuget B4.Ecm7Migrator-Oracle
+nuget B4.Ecm7Migrator-PostgreSQL
+
+nuget Bars.Billing.Core
+nuget Bars.KP60.Protocol
+nuget CryptoPro.Sharpei.Base ~> 1.4.6397
+nuget CryptoPro.Sharpei.ServiceModel
+nuget CsvHelper
+nuget EsiaNET
+nuget EsiaNET.Identity
+nuget MSBuild.Microsoft.VisualStudio.Web.targets
+nuget Microsoft.AspNet.SignalR
+nuget Microsoft.AspNet.SignalR.Core
+nuget Microsoft.AspNet.SignalR.SystemWeb
+nuget Microsoft.Owin.Host.SystemWeb
+nuget Microsoft.Tpl.Dataflow
+nuget Moq
+nuget NLog.Targets.Sentry
+nuget Nuget.CommandLine
+nuget SpecFlow.NUnit
+nuget sharpcompress
+nuget Newtonsoft.Json
+nuget FastMember 1.0.0.11
+nuget NLog.Targets.GelfStandard
+
+nuget CommandLineParser ~> 1
+nuget FastDBF >= 1.0.0
+nuget Morpher ~> 1.0.0
+nuget NHibernate ~> 4.0.3.0
+nuget Npgsql ~> 2
+
+source https://api.nuget.org/v3/index.json
+nuget System.Net.Http.Formatting.Extension
+nuget System.Net.Http.Formatting
+nuget Mvc3-Base ~> 3
+nuget NDbfReaderEx >= 1.1.0.0
+nuget RabbitMQ.Client >= 3.3.0
+nuget SlowCheetah >= 2.5.12
+nuget Stimulsoft.Report.PostgreSQL >= 2015.1.1.0
+nuget Syncfusion.DocIO.Base >= 8.403.0.10
+nuget System.Linq.Dynamic >= 1.0.2
+nuget YUICompressor.NET ~> 2
+nuget ncalc >= 1.3.8
+nuget nunrar >= 1.0.1
+
+source https://nexus.bars.group/repository/gkhsz/index.json
+nuget Bars.B4.Modules.NHibernateChangeLog 3.1.11980.1
+nuget Bars.B4.Modules.Mapping.NHibernate 3.1.11980.1
+nuget Bars.B4.Modules.Audit 3.1.11980.1
+nuget Bars.B4.Modules.Caching 3.1.11980.1
+nuget Bars.B4.Modules.NH 3.1.11980.1
+nuget Bars.B4.Modules.NH.Postgres 3.1.11980.1
+nuget Microsoft.Office.Interop.Word 15.0.4797.1003
+nuget Microsoft.Office.Interop.Excel

@@ -1,0 +1,649 @@
+﻿namespace Bars.GisIntegration.Base.Tasks.PrepareData.HouseManagement
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Entities.HouseManagement;
+    using HouseManagementAsync;
+    using B4.Utils;
+    using Bars.GisIntegration.Base.Enums;
+
+    /// <summary>
+    /// Задача подготовки данных по домам для органов местного самоуправления
+    /// Методы создания запроса по многоквартирным домам
+    /// </summary>
+    public partial class HouseOMSPrepareDataTask
+    {
+        /// <summary>
+        /// Получить объект importHouseOMSRequestApartmentHouse
+        /// </summary>
+        /// <param name="house">Дом</param>
+        /// <param name="transportGuidDictionary">Словарь транспортных идентификаторов</param>
+        /// <returns>Объект importHouseOMSRequestApartmentHouse</returns>
+        private importHouseOMSRequestApartmentHouse CreateApartmentHouseRequest(
+            RisHouse house,
+            Dictionary<Type, Dictionary<string, long>> transportGuidDictionary)
+        {
+            if (!transportGuidDictionary.ContainsKey(typeof(RisHouse)))
+            {
+                transportGuidDictionary.Add(typeof(RisHouse), new Dictionary<string, long>());
+            }
+
+            var houseTransportGuid = Guid.NewGuid().ToString();
+            object houseData;
+
+            if (house.Operation == RisEntityOperation.Create)
+            {
+                houseData = new importHouseOMSRequestApartmentHouseApartmentHouseToCreate
+                {
+                    BasicCharacteristicts = this.GetBasicCharacteristictsToCreate(house),
+
+                    //BuiltUpArea = Decimal.Round(house.BuiltUpArea.GetValueOrDefault(), 2),
+                    UndergroundFloorCount = house.UndergroundFloorCount,
+                    MinFloorCount = (sbyte) house.MinFloorCount.GetValueOrDefault(),
+                    MinFloorCountSpecified = house.MinFloorCount != null,
+
+                    //OverhaulYear = house.OverhaulYear.GetValueOrDefault(),
+                    //OverhaulFormingKind = !house.OverhaulFormingKindCode.IsEmpty() && !house.OverhaulFormingKindGuid.IsEmpty() ?
+                    //    new nsiRef
+                    //    {
+                    //        Code = house.OverhaulFormingKindCode,
+                    //        GUID = house.OverhaulFormingKindGuid
+                    //    } : null,
+                    //NonResidentialSquare = Decimal.Round(house.NonResidentialSquare, 2),
+                    HouseManagementType = !house.HouseManagementTypeCode.IsEmpty() && !house.HouseManagementTypeGuid.IsEmpty()
+                        ? new nsiRef
+                        {
+                            Code = house.HouseManagementTypeCode,
+                            GUID = house.HouseManagementTypeGuid
+                        }
+                        : null,
+                    TransportGUID = houseTransportGuid
+                };
+            }
+            else
+            {
+                houseData = new importHouseOMSRequestApartmentHouseApartmentHouseToUpdate
+                {
+                    BasicCharacteristicts = this.GetBasicCharacteristictsToUpdate(house),
+
+                    //BuiltUpArea = Decimal.Round(house.BuiltUpArea.GetValueOrDefault(), 2),
+                    UndergroundFloorCount = house.UndergroundFloorCount,
+                    MinFloorCount = (sbyte) house.MinFloorCount.GetValueOrDefault(),
+                    MinFloorCountSpecified = house.MinFloorCount != null,
+
+                    //OverhaulYear = house.OverhaulYear.GetValueOrDefault(),
+                    //OverhaulFormingKind = !house.OverhaulFormingKindCode.IsEmpty() && !house.OverhaulFormingKindGuid.IsEmpty() ?
+                    //    new nsiRef
+                    //    {
+                    //        Code = house.OverhaulFormingKindCode,
+                    //        GUID = house.OverhaulFormingKindGuid
+                    //    } : null,
+                    //NonResidentialSquare = Decimal.Round(house.NonResidentialSquare, 2),
+                    HouseManagementType = !house.HouseManagementTypeCode.IsEmpty() && !house.HouseManagementTypeGuid.IsEmpty()
+                        ? new nsiRef
+                        {
+                            Code = house.HouseManagementTypeCode,
+                            GUID = house.HouseManagementTypeGuid
+                        }
+                        : null,
+                    TransportGUID = houseTransportGuid
+                };
+            }
+
+            transportGuidDictionary[typeof(RisHouse)].Add(houseTransportGuid, house.Id);
+
+            return new importHouseOMSRequestApartmentHouse
+            {
+                Item = houseData,
+                NonResidentialPremiseToCreate = this.CreateApartmentHouseNonResidentialPremiseToCreateRequests(house, transportGuidDictionary).ToArray(),
+                NonResidentialPremiseToUpdate = this.CreateApartmentHouseNonResidentialPremiseToUpdateRequests(house, transportGuidDictionary).ToArray(),
+                EntranceToCreate = this.CreateApartmentHouseEntranceToCreateRequests(house, transportGuidDictionary).ToArray(),
+                EntranceToUpdate = this.CreateApartmentHouseEntranceToUpdateRequests(house, transportGuidDictionary).ToArray(),
+                ResidentialPremises = this.CreateApartmentHouseResidentialPremisesRequests(house, transportGuidDictionary).ToArray(),
+                LiftToCreate = this.CreateApartmentHouseLiftToCreateRequests(this.LiftList, transportGuidDictionary).ToArray(),
+                LiftToUpdate = this.CreateApartmentHouseLiftToUpdateRequests(this.LiftList, transportGuidDictionary).ToArray()
+            };
+        }
+
+
+
+        /// <summary>
+        /// Получить раздел NonResidentialPremiseToCreate
+        /// </summary>
+        /// <param name="house">Дом</param>
+        /// <param name="transportGuidDictionary">Словарь транспортных идентификаторов</param>
+        /// <returns>Раздел NonResidentialPremiseToCreate</returns>
+        private List<importHouseOMSRequestApartmentHouseNonResidentialPremiseToCreate> CreateApartmentHouseNonResidentialPremiseToCreateRequests(
+            RisHouse house,
+            Dictionary<Type, Dictionary<string, long>> transportGuidDictionary)
+        {
+            if (!transportGuidDictionary.ContainsKey(typeof(NonResidentialPremises)))
+            {
+                transportGuidDictionary.Add(typeof(NonResidentialPremises), new Dictionary<string, long>());
+            }
+
+            var premisesToCreate = this.NonResidentialPremisesList
+                .Where(x => x.ApartmentHouse.Id == house.Id && x.Operation == RisEntityOperation.Create);
+
+            var result = new List<importHouseOMSRequestApartmentHouseNonResidentialPremiseToCreate>();
+
+            foreach (var premise in premisesToCreate)
+            {
+                var transportGuid = Guid.NewGuid().ToString();
+                var items = this.GetBasicCharacteristictsItem(premise.CadastralNumber);
+
+                result.Add(
+                    new importHouseOMSRequestApartmentHouseNonResidentialPremiseToCreate
+                    {
+                        Items = items,
+                        ItemsElementName = this.GetBasicCharacteristictsItemElementName(items),
+                        PremisesNum = premise.PremisesNum,
+
+                        //Purpose = !string.IsNullOrEmpty(premise.PurposeCode) || !string.IsNullOrEmpty(premise.PurposeGuid) ?
+                        //          new nsiRef
+                        //          {
+                        //              Code = premise.PurposeCode,
+                        //              GUID = premise.PurposeGuid
+                        //          } : null,
+                        //Position = !string.IsNullOrEmpty(premise.PositionCode) || !string.IsNullOrEmpty(premise.PositionGuid) ?
+                        //           new nsiRef
+                        //           {
+                        //               Code = premise.PositionCode,
+                        //               GUID = premise.PositionGuid
+                        //           } : null,
+                        TotalArea = decimal.Round(premise.TotalArea.GetValueOrDefault(), 2),
+                        IsCommonProperty = premise.IsCommonProperty,
+                        TransportGUID = transportGuid
+                    });
+
+                transportGuidDictionary[typeof(NonResidentialPremises)].Add(transportGuid, premise.Id);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Получить раздел NonResidentialPremiseToUpdate
+        /// </summary>
+        /// <param name="house">Дом</param>
+        /// <param name="transportGuidDictionary">Словарь транспортных идентификаторов</param>
+        /// <returns>Раздел NonResidentialPremiseToUpdate</returns>
+        private List<importHouseOMSRequestApartmentHouseNonResidentialPremiseToUpdate> CreateApartmentHouseNonResidentialPremiseToUpdateRequests(
+            RisHouse house,
+            Dictionary<Type, Dictionary<string, long>> transportGuidDictionary)
+        {
+            if (!transportGuidDictionary.ContainsKey(typeof(NonResidentialPremises)))
+            {
+                transportGuidDictionary.Add(typeof(NonResidentialPremises), new Dictionary<string, long>());
+            }
+
+            var premisesToUpdate = this.NonResidentialPremisesList
+                .Where(x => x.ApartmentHouse.Id == house.Id && x.Operation == RisEntityOperation.Update);
+
+            var result = new List<importHouseOMSRequestApartmentHouseNonResidentialPremiseToUpdate>();
+
+            foreach (var premise in premisesToUpdate)
+            {
+                var transportGuid = Guid.NewGuid().ToString();
+                var items = this.GetBasicCharacteristictsItem(premise.CadastralNumber);
+                result.Add(
+                    new importHouseOMSRequestApartmentHouseNonResidentialPremiseToUpdate
+                    {
+                        Items = items,
+                        ItemsElementName = this.GetBasicCharacteristictsItemElementName(items),
+                        PremisesNum = premise.PremisesNum,
+                        TerminationDate = DateTime.Now, //premise.TerminationDate.GetValueOrDefault(),
+                        TerminationDateSpecified = true, //premise.TerminationDate != null,
+                        //Purpose = !string.IsNullOrEmpty(premise.PurposeCode) || !string.IsNullOrEmpty(premise.PurposeGuid) ?
+                        //          new nsiRef
+                        //          {
+                        //              Code = premise.PurposeCode,
+                        //              GUID = premise.PurposeGuid
+                        //          } : null,
+                        //Position = !string.IsNullOrEmpty(premise.PositionCode) || !string.IsNullOrEmpty(premise.PositionGuid) ?
+                        //           new nsiRef
+                        //           {
+                        //               Code = premise.PositionCode,
+                        //               GUID = premise.PositionGuid
+                        //           } : null,
+                        TotalArea = decimal.Round(premise.TotalArea.GetValueOrDefault(), 2),
+                        TotalAreaSpecified = premise.TotalArea != null,
+                        IsCommonProperty = premise.IsCommonProperty,
+                        IsCommonPropertySpecified = true,
+                        PremisesGUID = premise.Guid,
+                        TransportGUID = transportGuid
+                    });
+
+                transportGuidDictionary[typeof(NonResidentialPremises)].Add(transportGuid, premise.Id);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Получить раздел EntranceToCreate
+        /// </summary>
+        /// <param name="house">Дом</param>
+        /// <param name="transportGuidDictionary">Словарь транспортных идентификаторов</param>
+        /// <returns>Раздел EntranceToCreate</returns>
+        private List<importHouseOMSRequestApartmentHouseEntranceToCreate> CreateApartmentHouseEntranceToCreateRequests(
+            RisHouse house,
+            Dictionary<Type, Dictionary<string, long>> transportGuidDictionary)
+        {
+            if (!transportGuidDictionary.ContainsKey(typeof(RisEntrance)))
+            {
+                transportGuidDictionary.Add(typeof(RisEntrance), new Dictionary<string, long>());
+            }
+
+            var entrancesToCreate = this.EntranceList
+                .Where(x => x.ApartmentHouse.Id == house.Id && x.Operation == RisEntityOperation.Create);
+
+            var result = new List<importHouseOMSRequestApartmentHouseEntranceToCreate>();
+
+            foreach (var entrance in entrancesToCreate)
+            {
+                var transportGuid = Guid.NewGuid().ToString();
+
+                result.Add(
+                    new importHouseOMSRequestApartmentHouseEntranceToCreate
+                    {
+                        EntranceNum = entrance.EntranceNum?.ToString(),
+                        StoreysCount = (sbyte) (entrance.StoreysCount ?? 0),
+                        StoreysCountSpecified = entrance.StoreysCount != null,
+                        CreationYear = (short)entrance.CreationDate.GetValueOrDefault().Year,
+                        CreationYearSpecified = entrance.CreationDate != null,
+                        TransportGUID = transportGuid
+                    });
+
+                transportGuidDictionary[typeof(RisEntrance)].Add(transportGuid, entrance.Id);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Получить раздел EntranceToUpdate
+        /// </summary>
+        /// <param name="house">Дом</param>
+        /// <param name="transportGuidDictionary">Словарь транспортных идентификаторов</param>
+        /// <returns>Раздел EntranceToUpdate</returns>
+        private List<importHouseOMSRequestApartmentHouseEntranceToUpdate> CreateApartmentHouseEntranceToUpdateRequests(
+            RisHouse house,
+            Dictionary<Type, Dictionary<string, long>> transportGuidDictionary)
+        {
+            if (!transportGuidDictionary.ContainsKey(typeof(RisEntrance)))
+            {
+                transportGuidDictionary.Add(typeof(RisEntrance), new Dictionary<string, long>());
+            }
+
+            var entrancesToUpdate = this.EntranceList
+                .Where(x => x.ApartmentHouse.Id == house.Id && x.Operation == RisEntityOperation.Update);
+
+            var result = new List<importHouseOMSRequestApartmentHouseEntranceToUpdate>();
+
+            foreach (var entrance in entrancesToUpdate)
+            {
+                var transportGuid = Guid.NewGuid().ToString();
+
+                result.Add(
+                    new importHouseOMSRequestApartmentHouseEntranceToUpdate
+                    {
+                        EntranceNum = entrance.EntranceNum?.ToString(),
+                        StoreysCount = (sbyte) (entrance.StoreysCount ?? 0),
+                        StoreysCountSpecified = entrance.StoreysCount != null,
+                        CreationYear = (short)entrance.CreationDate.GetValueOrDefault().Year,
+                        CreationYearSpecified = entrance.CreationDate != null,
+                        TerminationDate = entrance.TerminationDate.GetValueOrDefault(),
+                        TerminationDateSpecified = entrance.TerminationDate != null,
+                        EntranceGUID = entrance.Guid,
+                        TransportGUID = transportGuid
+                    });
+
+                transportGuidDictionary[typeof(RisEntrance)].Add(transportGuid, entrance.Id);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Получить раздел ResidentialPremises
+        /// </summary>
+        /// <param name="house">Дом</param>
+        /// <param name="transportGuidDictionary">Словарь транспортных идентификаторов</param>
+        /// <returns>Раздел ResidentialPremises</returns>
+        private List<importHouseOMSRequestApartmentHouseResidentialPremises> CreateApartmentHouseResidentialPremisesRequests(
+            RisHouse house,
+            Dictionary<Type, Dictionary<string, long>> transportGuidDictionary)
+        {
+            var residentialPremises = this.ResidentialPremisesList.Where(x => x.ApartmentHouse == house);
+            var result = new List<importHouseOMSRequestApartmentHouseResidentialPremises>();
+
+            if (!transportGuidDictionary.ContainsKey(typeof(ResidentialPremises)))
+            {
+                transportGuidDictionary.Add(typeof(ResidentialPremises), new Dictionary<string, long>());
+            }
+
+            foreach (var residentialPremise in residentialPremises)
+            {
+                GKN_EGRP_KeyType item;
+
+                if (residentialPremise.Operation == RisEntityOperation.Create)
+                {
+                    item = this.CreateApartmentHouseResidentialPremisesToCreateRequest(residentialPremise, transportGuidDictionary);
+                }
+                else
+                {
+                    item = this.CreateApartmentHouseResidentialPremisesToUpdateRequest(residentialPremise, transportGuidDictionary);
+                }
+
+                result.Add(
+                    new importHouseOMSRequestApartmentHouseResidentialPremises
+                    {
+                        Item = item,
+                        LivingRoomToCreate =
+                            this.CreateApartmentHouseResidentialPremisesLivingRoomToCreateRequest(residentialPremise, transportGuidDictionary).ToArray(),
+                        LivingRoomToUpdate =
+                            this.CreateApartmentHouseResidentialPremisesLivingRoomToUpdateRequest(residentialPremise, transportGuidDictionary).ToArray()
+                    });
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Получить раздел Item для новых комнат
+        /// </summary>
+        /// <param name="residentialPremise">Жилое помещение</param>
+        /// <param name="transportGuidDictionary">Словарь транспортных идентификаторов</param>
+        /// <returns>Раздел Item для новых комнат</returns>
+        private importHouseOMSRequestApartmentHouseResidentialPremisesResidentialPremisesToCreate CreateApartmentHouseResidentialPremisesToCreateRequest(
+            ResidentialPremises residentialPremise,
+            Dictionary<Type, Dictionary<string, long>> transportGuidDictionary)
+        {
+            var transportGuid = Guid.NewGuid().ToString();
+
+            transportGuidDictionary[typeof(ResidentialPremises)].Add(transportGuid, residentialPremise.Id);
+            var items = this.GetBasicCharacteristictsItem(residentialPremise.CadastralNumber);
+
+            object entrance;
+
+            if (residentialPremise.EntranceNum != null)
+            {
+                entrance = residentialPremise.EntranceNum.ToString();
+            }
+            else
+            {
+                entrance = false;
+            }
+
+			return new importHouseOMSRequestApartmentHouseResidentialPremisesResidentialPremisesToCreate
+            {
+                Item = entrance,
+                Items = items,
+				ItemsElementName = this.GetBasicCharacteristictsItemElementName(items),
+				Item1 = residentialPremise.GrossArea ?? (object)false,
+				PremisesNum = residentialPremise.PremisesNum,
+                PremisesCharacteristic =
+                    !residentialPremise.PremisesCharacteristicCode.IsEmpty() && !residentialPremise.PremisesCharacteristicGuid.IsEmpty()
+                        ? new nsiRef
+                        {
+                            Code = residentialPremise.PremisesCharacteristicCode,
+                            GUID = residentialPremise.PremisesCharacteristicGuid
+                        }
+                        : null,
+
+                //RoomsNum = !string.IsNullOrEmpty(residentialPremise.RoomsNumCode) || !string.IsNullOrEmpty(residentialPremise.RoomsNumGuid)
+                //        ? new nsiRef
+                //          {
+                //              Code = residentialPremise.RoomsNumCode,
+                //              GUID = residentialPremise.RoomsNumGuid
+                //          }
+                //        : null,
+                TotalArea = decimal.Round(residentialPremise.TotalArea.GetValueOrDefault(), 2),
+
+                //ResidentialHouseType = !string.IsNullOrEmpty(residentialPremise.ResidentialHouseTypeCode)
+                //        || !string.IsNullOrEmpty(residentialPremise.ResidentialHouseTypeGuid)
+                //        ? new nsiRef { Code = residentialPremise.ResidentialHouseTypeCode, GUID = residentialPremise.ResidentialHouseTypeGuid }
+                //        : null,
+                TransportGUID = transportGuid
+            };
+        }
+
+        /// <summary>
+        /// Получить раздел Item для обновляемых комнат
+        /// </summary>
+        /// <param name="residentialPremise">Жилое помещение</param>
+        /// <param name="transportGuidDictionary">Словарь транспортных идентификаторов</param>
+        /// <returns>Раздел Item для обновляемых комнат</returns>
+        private importHouseOMSRequestApartmentHouseResidentialPremisesResidentialPremisesToUpdate CreateApartmentHouseResidentialPremisesToUpdateRequest(
+            ResidentialPremises residentialPremise,
+            Dictionary<Type, Dictionary<string, long>> transportGuidDictionary)
+        {
+            var transportGuid = Guid.NewGuid().ToString();
+
+            transportGuidDictionary[typeof(ResidentialPremises)].Add(transportGuid, residentialPremise.Id);
+            var items = this.GetBasicCharacteristictsItem(residentialPremise.CadastralNumber);
+
+            object entrance;
+
+            if (residentialPremise.EntranceNum != null)
+            {
+                entrance = residentialPremise.EntranceNum.ToString();
+            }
+            else
+            {
+                entrance = false;
+			}
+
+			return new importHouseOMSRequestApartmentHouseResidentialPremisesResidentialPremisesToUpdate
+            {
+                Items = items,
+                Item = entrance,
+                ItemsElementName = this.GetBasicCharacteristictsItemElementName(items),
+				Item1 = residentialPremise.GrossArea ?? (object)false,
+				PremisesNum = residentialPremise.PremisesNum,
+                TerminationDate = DateTime.Now, //residentialPremise.TerminationDate.GetValueOrDefault(),
+                TerminationDateSpecified = true, //residentialPremise.TerminationDate != null,
+                PremisesCharacteristic =
+                    !residentialPremise.PremisesCharacteristicCode.IsEmpty() && !residentialPremise.PremisesCharacteristicGuid.IsEmpty()
+                        ? new nsiRef
+                        {
+                            Code = residentialPremise.PremisesCharacteristicCode,
+                            GUID = residentialPremise.PremisesCharacteristicGuid
+                        }
+                        : null,
+
+                //RoomsNum = !string.IsNullOrEmpty(residentialPremise.RoomsNumCode) || !string.IsNullOrEmpty(residentialPremise.RoomsNumGuid)
+                //               ? new nsiRef
+                //               {
+                //                   Code = residentialPremise.RoomsNumCode,
+                //                   GUID = residentialPremise.RoomsNumGuid
+                //               }
+                //               : null,
+                TotalArea = decimal.Round(residentialPremise.TotalArea.GetValueOrDefault(), 2),
+                TotalAreaSpecified = residentialPremise.TotalArea != null,
+
+                //ResidentialHouseType = !string.IsNullOrEmpty(residentialPremise.ResidentialHouseTypeCode)
+                //               || !string.IsNullOrEmpty(residentialPremise.ResidentialHouseTypeGuid)
+                //               ? new nsiRef { Code = residentialPremise.ResidentialHouseTypeCode, GUID = residentialPremise.ResidentialHouseTypeGuid }
+                //               : null,
+                TransportGUID = transportGuid,
+                PremisesGUID = residentialPremise.Guid
+            };
+        }
+
+        /// <summary>
+        /// Получить раздел LivingRoomToCreate
+        /// </summary>
+        /// <param name="premise">Жилое помещение</param>
+        /// <param name="transportGuidDictionary">Словарь транспортных идентификаторов</param>
+        /// <returns>Раздел LivingRoomToCreate</returns>
+        private List<importHouseOMSRequestApartmentHouseResidentialPremisesLivingRoomToCreate>
+            CreateApartmentHouseResidentialPremisesLivingRoomToCreateRequest(
+            ResidentialPremises premise,
+            Dictionary<Type, Dictionary<string, long>> transportGuidDictionary)
+        {
+            if (!transportGuidDictionary.ContainsKey(typeof(LivingRoom)))
+            {
+                transportGuidDictionary.Add(typeof(LivingRoom), new Dictionary<string, long>());
+            }
+
+            var livingRoomsToCreate = this.ResidentialPremiseLivingRooms
+                .Where(x => x.ResidentialPremises == premise && x.Operation == RisEntityOperation.Create);
+
+            var result = new List<importHouseOMSRequestApartmentHouseResidentialPremisesLivingRoomToCreate>();
+
+            foreach (var livingRoom in livingRoomsToCreate)
+            {
+                var transportGuid = Guid.NewGuid().ToString();
+                var items = this.GetBasicCharacteristictsItem(livingRoom.CadastralNumber);
+
+                result.Add(
+                    new importHouseOMSRequestApartmentHouseResidentialPremisesLivingRoomToCreate
+                    {
+                        Items = items,
+                        ItemsElementName = this.GetBasicCharacteristictsItemElementName(items),
+                        RoomNumber = livingRoom.RoomNumber,
+                        Square = livingRoom.Square.GetValueOrDefault(),
+                        TransportGUID = transportGuid
+                    });
+
+                transportGuidDictionary[typeof(LivingRoom)].Add(transportGuid, livingRoom.Id);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Получить раздел LivingRoomToUpdate
+        /// </summary>
+        /// <param name="premise">Жилое помещение</param>
+        /// <param name="transportGuidDictionary">Словарь транспортных идентификаторов</param>
+        /// <returns>Раздел LivingRoomToUpdate</returns>
+        private List<importHouseOMSRequestApartmentHouseResidentialPremisesLivingRoomToUpdate>
+            CreateApartmentHouseResidentialPremisesLivingRoomToUpdateRequest(
+            ResidentialPremises premise,
+            Dictionary<Type, Dictionary<string, long>> transportGuidDictionary)
+        {
+            if (!transportGuidDictionary.ContainsKey(typeof(LivingRoom)))
+            {
+                transportGuidDictionary.Add(typeof(LivingRoom), new Dictionary<string, long>());
+            }
+
+            var livingRoomsToUpdate = this.ResidentialPremiseLivingRooms
+                .Where(x => x.ResidentialPremises == premise && x.Operation == RisEntityOperation.Update);
+
+            var result = new List<importHouseOMSRequestApartmentHouseResidentialPremisesLivingRoomToUpdate>();
+
+            foreach (var livingRoom in livingRoomsToUpdate)
+            {
+                var transportGuid = Guid.NewGuid().ToString();
+                var items = this.GetBasicCharacteristictsItem(livingRoom.CadastralNumber);
+
+                result.Add(
+                    new importHouseOMSRequestApartmentHouseResidentialPremisesLivingRoomToUpdate
+                    {
+                        Items = items,
+                        ItemsElementName = this.GetBasicCharacteristictsItemElementName(items),
+                        RoomNumber = livingRoom.RoomNumber,
+                        Square = livingRoom.Square.GetValueOrDefault(),
+                        SquareSpecified = livingRoom.Square != null,
+                        TerminationDate = livingRoom.TerminationDate.GetValueOrDefault(),
+                        TerminationDateSpecified = livingRoom.TerminationDate != null,
+                        TransportGUID = transportGuid,
+                        LivingRoomGUID = livingRoom.Guid
+                    });
+
+                transportGuidDictionary[typeof(LivingRoom)].Add(transportGuid, livingRoom.Id);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Получить раздел LiftToCreate
+        /// </summary>
+        /// <param name="lifts">лифт для создания</param>
+        /// <param name="transportGuidDictionary">Словарь транспортных идентификаторов</param>
+        /// <returns>Раздел LiftToCreate</returns>
+        private List<importHouseOMSRequestApartmentHouseLiftToCreate> CreateApartmentHouseLiftToCreateRequests(
+            List<RisLift> lifts,
+            Dictionary<Type, Dictionary<string, long>> transportGuidDictionary)
+        {
+            if (!transportGuidDictionary.ContainsKey(typeof(RisLift)))
+            {
+                transportGuidDictionary.Add(typeof(RisLift), new Dictionary<string, long>());
+            }
+            var result = new List<importHouseOMSRequestApartmentHouseLiftToCreate>();
+            var liftToCreate = lifts.Where(x => x.Operation == RisEntityOperation.Create);
+
+            foreach (var lift in liftToCreate)
+            {
+                var transportGuid = Guid.NewGuid().ToString();
+
+                result.Add(
+                    new importHouseOMSRequestApartmentHouseLiftToCreate
+                    {
+                        EntranceNum = lift.EntranceNum,
+                        FactoryNum = lift.FactoryNum,
+                        Type = !lift.TypeCode.IsEmpty() && !lift.TypeGuid.IsEmpty()
+                            ? new nsiRef
+                            {
+                                Code = lift.TypeCode,
+                                GUID = lift.TypeGuid
+                            }
+                            : null,
+                        OperatingLimit = lift.OperatingLimit,
+                        TransportGUID = transportGuid
+                    });
+                transportGuidDictionary[typeof(RisLift)].Add(transportGuid, lift.Id);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Получить раздел LiftToUpdate
+        /// </summary>
+        /// <param name="lifts">лифты для обновления</param>
+        /// <param name="transportGuidDictionary">Словарь транспортных идентификаторов</param>
+        /// <returns>Раздел LiftToUpdate</returns>
+        private List<importHouseOMSRequestApartmentHouseLiftToUpdate> CreateApartmentHouseLiftToUpdateRequests(
+            List<RisLift> lifts,
+            Dictionary<Type, Dictionary<string, long>> transportGuidDictionary)
+        {
+            if (!transportGuidDictionary.ContainsKey(typeof(RisLift)))
+            {
+                transportGuidDictionary.Add(typeof(RisLift), new Dictionary<string, long>());
+            }
+
+            var result = new List<importHouseOMSRequestApartmentHouseLiftToUpdate>();
+            var liftToUpdate = lifts.Where(x => x.Operation == RisEntityOperation.Update);
+
+            foreach (var lift in liftToUpdate)
+            {
+                var transportGuid = Guid.NewGuid().ToString();
+
+                result.Add(
+                    new importHouseOMSRequestApartmentHouseLiftToUpdate
+                    {
+                        EntranceNum = lift.EntranceNum,
+                        FactoryNum = lift.FactoryNum,
+                        Type = !lift.TypeCode.IsEmpty() && !lift.TypeGuid.IsEmpty()
+                            ? new nsiRef
+                            {
+                                Code = lift.TypeCode,
+                                GUID = lift.TypeGuid
+                            }
+                            : null,
+                        OperatingLimit = lift.OperatingLimit,
+                        TransportGUID = transportGuid,
+                        TerminationDate = lift.TerminationDate.GetValueOrDefault(),
+                        LiftGUID = lift.Guid
+                    });
+                transportGuidDictionary[typeof(RisLift)].Add(transportGuid, lift.Id);
+            }
+            return result;
+        }
+    }
+}

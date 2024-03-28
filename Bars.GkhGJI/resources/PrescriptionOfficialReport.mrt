@@ -1,0 +1,1019 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <Соединение Ref="2" type="Stimulsoft.Report.Dictionary.StiPostgreSQLDatabase" isKey="true">
+        <Alias>Соединение</Alias>
+        <ConnectionStringEncrypted>49DLCdddQ+1iFaWYxNjgXot49SNmW9nNRVqhlOINZWP5cPXrSkGrqMBK7YHoJXcXwwzXYE0KUYBHGj2ZTljhL/R4aaFPULuZ4krQzM8=</ConnectionStringEncrypted>
+        <Name>Соединение</Name>
+      </Соединение>
+    </Databases>
+    <DataSources isList="true" count="8">
+      <ПредметПроверки Ref="3" type="DataTableSource" isKey="true">
+        <Alias>ПредметПроверки</Alias>
+        <Columns isList="true" count="1">
+          <value>Наименование,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ПредметПроверки</Name>
+        <NameInSource>ПредметПроверки</NameInSource>
+      </ПредметПроверки>
+      <ИсточникДанных1 Ref="4" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ИсточникДанных1</Alias>
+        <Columns isList="true" count="9">
+          <value>Кол-во,System.String</value>
+          <value>Эксперты,System.String</value>
+          <value>Предметы_проверки,System.String</value>
+          <value>Лицо,System.String</value>
+          <value>Мероприятия,System.String</value>
+          <value>Предоставляемые_документы,System.String</value>
+          <value>kind_check,System.String</value>
+          <value>type_base,System.Int32</value>
+          <value>Юрадрес,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ИсточникДанных1</Name>
+        <NameInSource>Соединение</NameInSource>
+        <Parameters isList="true" count="1">
+          <value>num,НомерПриказа,22,0</value>
+        </Parameters>
+        <SqlCommand>select
+	replace(age(date_end,date_start)::text,'days', 'рабочих дней') "Кол-во", 
+	(array_to_string
+(array (select de.name from gji_disposal_expert ex 
+join gji_dict_expert de on de.id = ex.expert_id
+where  ex.disposal_id = d.id
+),
+                                              ', 
+                                              ') 
+) as "Эксперты",
+	(array_to_string
+(array (select '- '||de.name from gji_disp_survsubj ex 
+join gji_dict_survey_subj de on de.id = ex.survey_subj_id
+where  ex.disposal_id = d.id
+),
+                                               ', 
+') 
+) as "Предметы_проверки"
+,
+
+(case when i.type_base=130 then (select c.name||', ИНН: '||c.inn from  GJI_INSPECTION_LIC_APP la
+				join gkh_manorg_lic_request ml on ml.id=man_org_lic_id
+				join gkh_contragent c on c.id=ml.contragent_id where la.id=i.id)
+else (select c.name||', ИНН: '||c.inn||', ОГРН: '||c.ogrn from gji_inspection n
+join gkh_contragent c on n.contragent_id = c. id
+where n.id = doc.inspection_id ) end )  as "Лицо",
+(case when i.type_base=135 then (select  replace(address_name, place_address_name,fa.place_name ) from  Gji_inspection_lic_reiss lr
+				join gji_ch_license_reissuance gclr on gclr.id=lr.lic_reissuance_id
+				join gkh_contragent c on c.id=gclr.contragent_id 
+				join b4_fias_address fa on fa.id=fias_jur_address_id where lr.id=i.id)
+when i.type_base=130 then (select  replace(address_name, place_address_name,fa.place_name ) from  GJI_INSPECTION_LIC_APP la
+				join gkh_manorg_lic_request ml on ml.id=man_org_lic_id
+				join gkh_contragent c on c.id=ml.contragent_id 
+				join b4_fias_address fa on fa.id=fias_jur_address_id where la.id=i.id)
+else (select c.juridical_address from gji_inspection n
+join gkh_contragent c on n.contragent_id = c. id
+where n.id = doc.inspection_id ) end )  as "Юрадрес",
+(array_to_string
+(array (select '- '||name from gji_disp_con_measure m
+join gji_dict_con_activity act on m.control_measures_id = act.id
+where m.disposal_id = d.id
+),
+                                               ', 
+') ) as "Мероприятия",
+(array_to_string
+(array (select '- '||name from gji_disposal_provdoc m
+join gji_dict_provideddocument act on m.provided_doc_id = act.id
+where m.disposal_id = d.id
+),
+                                               ', 
+') ) as "Предоставляемые_документы",
+
+(case when kind_check_id=1 then 'Плановая выездная'
+ when kind_check_id=2 then 'Внеплановая выездная'
+ when kind_check_id=3 then 'Плановая документарная'
+ when kind_check_id=4 then 'Внеплановая документарная'
+ when kind_check_id=5 then 'Инспекционная'
+ when kind_check_id=6 then 'Мониторинг'
+ when kind_check_id=7 then 'Плановая документарная и выездная'
+ when kind_check_id=8 then 'Визуальное обследование'
+ when kind_check_id=9 then 'Внеплановая документарная и выездная' end) kind_check, i.type_base
+from gji_disposal d
+join gji_document doc on doc.id=d.id 
+join gji_inspection i on i.id=doc.inspection_id
+where doc.document_number=:num</SqlCommand>
+      </ИсточникДанных1>
+      <ИсточникДанных2 Ref="5" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ИсточникДанных2</Alias>
+        <Columns isList="true" count="21">
+          <value>inspector,System.String</value>
+          <value>Эксперты,System.String</value>
+          <value>Цели,System.String</value>
+          <value>Задачи,System.String</value>
+          <value>Предметы_проверки,System.String</value>
+          <value>Кол-во,System.String</value>
+          <value>date_start,System.DateTime</value>
+          <value>date_end,System.DateTime</value>
+          <value>Датас,System.String</value>
+          <value>Датапо,System.String</value>
+          <value>Основания,System.String</value>
+          <value>Мероприятия,System.String</value>
+          <value>Регламенты,System.String</value>
+          <value>Предоставляемые_документы,System.String</value>
+          <value>Дата,System.String</value>
+          <value>time_start,System.String</value>
+          <value>time_end,System.String</value>
+          <value>СуперЦели,System.String</value>
+          <value>п5,System.String</value>
+          <value>нпа_x0020_проверки,System.String</value>
+          <value>object_visit_start,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ИсточникДанных2</Name>
+        <NameInSource>Соединение</NameInSource>
+        <Parameters isList="true" count="1">
+          <value>num,НомерПриказа,22,0</value>
+        </Parameters>
+        <SqlCommand>select 	array_to_string( array	(
+	select insp.fio_genitive||' - '||insp.position_genitive inspector
+from gji_inspection n 
+join gji_document_inspector di on di.document_id=doc."id"
+join gkh_dict_inspector insp on insp.id=di.inspector_id
+where n.id = doc.inspection_id 
+) ,', ') inspector,
+
+	(array_to_string
+(array (select de.name from gji_disposal_expert ex 
+join gji_dict_expert de on de.id = ex.expert_id
+where  ex.disposal_id = d.id
+),', ') 
+) as "Эксперты",
+
+array_to_string(array(select sp.name from   
+	gji_nso_disposal_survey_purp dsp 
+join  gji_dict_survey_purp sp on sp.id=dsp.survey_purp_id
+where dsp.disposal_id=d.id) ,', ') as "Цели"
+,
+array_to_string(array(select so.name --t.name
+	from  gji_nso_disposal_survey_obj dso
+join gji_dict_survey_obj so on so.id=dso.survey_obj_id
+--join gji_dict_tasks_inspection t on t.survey_objective_id=SO.id
+where dso.disposal_id=d.id
+),', ') as "Задачи"
+,
+	(array_to_string
+(array (select '     '||o.name from gji_dict_survey_subj o 
+join gji_nso_disp_verifsubj so  on o.id=so.survey_subject_id
+where  so.disposal_id = d.id
+),',   
+  ') 
+) as "Предметы_проверки"
+,
+case when d.date_end::date=d.date_start::date then '1 рабочий день' 
+else case when (extract(day from age(d.date_end,d.date_start))+1 - (select count(*) from gkh_calendar_day where day_type=20 and day_date between d.date_start::date and d.date_end::date))=1 then '1 рабочий день'
+else (extract(day from age(d.date_end,d.date_start))+1 - (select count(*) from gkh_calendar_day where day_type=20 and day_date between d.date_start::date and d.date_end::date))::text||' рабочих дней' end
+end "Кол-во", d.date_end::date,d.date_start::date
+,d.date_start,d.date_end
+
+,Replace(Replace(Replace(Replace(lower(TO_CHAR(d.date_start,  '«dd» TMMonth YYYY г.')), 'ь', 'я'), 'й', 'я'), 'т', 'та'), 'тая', 'тя') "Датас"
+,Replace(Replace(Replace(Replace(lower(TO_CHAR(d.date_end,  '«dd» TMMonth YYYY г.')), 'ь', 'я'), 'й', 'я'), 'т', 'та'), 'тая', 'тя') "Датапо",
+array_to_string
+(array(select nd.fullname from 
+	gji_nso_disposal_inspfoundcheck f --gji_nso_disposal_inspfound f 
+join gkh_dict_normative_doc nd on nd.id=f.inspfound_id
+where f.disposal_id=d.id ),', ') "Основания",
+/*
+(array_to_string
+(array (select '&lt;br&gt;- '||name from gji_disp_con_measure m
+join gji_dict_con_activity act on m.control_measures_id = act.id
+where m.disposal_id = d.id
+),',') 
+) as "Мероприятия",*/
+array_to_string(array(
+select '&lt;br&gt;'||'- '||name||
+(array_to_string
+(array (select (case when act.code='02' then ': '||coalesce(mo.name||', ','')||ro.address end )
+from gji_inspection ins 
+left join gji_basestat_appcit ap on ins.id=ap.inspection_id 
+left join gji_appcit_executant ex on ex.appcit_id=ap.gji_appcit_id
+left join gji_appeal_citizens cit on ex.appcit_id=cit.id
+left join gji_appcit_ro gro on gro.appcit_id  = cit.id
+left join gkh_reality_object ro on ro.id=gro.reality_object_id
+left join gkh_dict_municipality mo on mo.id=ro.stl_municipality_id
+where doc.inspection_id=ins.id
+),', ')||(case when act.code='02' then (case when d.time_visit_sart is not null then ' в '||to_char(d.time_visit_sart,'HH24:mi')||' часов ' else '' end)||(case when object_visit_start is not null then to_char(object_visit_start,'dd.mm.yyyy')||' года' else '' end) else '' end
+ )) 
+
+from gji_disp_con_measure m
+join gji_dict_con_activity act on m.control_measures_id = act.id
+where m.disposal_id = d.id
+),',') as "Мероприятия",
+
+array_to_string(array(select fullname from gkh_dict_normative_doc nd join gji_nso_disposal_admreg ar on ar.admreg_id=nd.id
+where ar.disposal_id=d.id),', ') as "Регламенты",
+
+(array_to_string
+(array (select '- '||name from gji_disposal_provdoc m
+join gji_dict_provideddocument act on m.provided_doc_id = act.id
+where m.disposal_id = d.id
+),
+                                               ', 
+') 
+) as "Предоставляемые_документы"
+,Replace(Replace(Replace(Replace(lower(TO_CHAR(doc.document_date,  '«dd» TMMonth YYYY г.')), 'ь', 'я'), 'й', 'я'), 'т', 'та'), 'тая', 'тя') "Дата"
+
+,to_char(nd.time_visit_sart,'HH24:mi') time_start, to_char(nd.time_visit_end,'HH24:mi') time_end
+,
+array_to_string(array(select case so.code when '10' then 'лицензионного контроля предпринимательской деятельности по управлению многоквартирными домами'
+when '20' then 'жилищного надзора' end 
+from  gji_nso_disposal_survey_obj dso
+join gji_dict_survey_obj so on so.id=dso.survey_obj_id
+where dso.disposal_id=d.id
+),', ') "п5"
+,
+ array_to_string( array(select fullname
+
+from gji_disposal_insp_found_check_norm_doc dd
+join GKH_DICT_NORMATIVE_DOC_ITEM it on it.id = dd.doc_item_id
+join gkh_dict_normative_doc nd on it.normative_doc_id = nd.id
+where disposal_id=d."id"),'; ') "нпа проверки"
+
+,to_char(object_visit_start,'dd.MM.yyyy') object_visit_start
+ from gji_document doc
+join gji_disposal d on doc.id=d.id
+join gji_nso_disposal nd on nd.id=d.id
+
+left join gji_inspection ins on doc.inspection_id=ins.id
+left join gji_basestat_appcit ap on ins.id=ap.inspection_id 
+left join gji_appcit_executant ex on ex.appcit_id=ap.gji_appcit_id
+left join gji_appeal_citizens cit on ex.appcit_id=cit.id
+left join gji_appcit_ro gro on gro.appcit_id  = cit.id
+left join gkh_reality_object ro on ro.id=gro.reality_object_id
+left join gkh_dict_municipality mo on mo.id=ro.stl_municipality_id
+
+where doc.document_number=:num</SqlCommand>
+      </ИсточникДанных2>
+      <Документы Ref="6" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>Документы</Alias>
+        <Columns isList="true" count="1">
+          <value>name,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>Документы</Name>
+        <NameInSource>Соединение</NameInSource>
+        <Parameters isList="true" count="1">
+          <value>num,НомерПриказа,22,0</value>
+        </Parameters>
+        <SqlCommand>select
+name from gji_disposal_provdoc m
+join gji_dict_provideddocument act on m.provided_doc_id = act.id
+join gji_disposal d on m.disposal_id = d.id
+join gji_document doc on doc.id=d.id
+
+where document_number=:num
+order by m.id</SqlCommand>
+      </Документы>
+      <ИсточникДанных3 Ref="7" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ИсточникДанных3</Alias>
+        <Columns isList="true" count="6">
+          <value>fio,System.String</value>
+          <value>position,System.String</value>
+          <value>name,System.String</value>
+          <value>vizit_date,System.String</value>
+          <value>vizit_time,System.String</value>
+          <value>code,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ИсточникДанных3</Name>
+        <NameInSource>Соединение</NameInSource>
+        <Parameters isList="true" count="1">
+          <value>num,НомерПриказа,22,0</value>
+        </Parameters>
+        <SqlCommand>
+select substring(trim(fio),0,position(' ' in trim(fio)))||' '||upper(substring(trim(substring(substring(trim(fio),position(' ' in trim(fio))),0,position(' ' in trim(fio)))),0,2))||'. '||upper(substring(trim(substring(trim(substring(trim(fio),position(' ' in trim(fio)))),position(' ' in trim(substring(trim(fio),position(' ' in trim(fio))))))),0,2))||'.' as name, 
+fio,position, to_char(object_visit_start::date, 'dd.MM.YYYY') as vizit_date , to_char(time_visit_sart::timestamp(0),'HH24:mi') as vizit_time,  act.code  from 
+	gkh_dict_inspector i
+join  gji_disposal d on i.id=d.issued_disposal_id 
+join gji_document doc on doc.id=d.id and document_number=:num
+left join gji_disp_con_measure m on m.disposal_id = d.id
+left join gji_dict_con_activity act on m.control_measures_id = act.id and act.code  = '02'
+limit 1</SqlCommand>
+      </ИсточникДанных3>
+      <ИсточникДанных4 Ref="8" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ИсточникДанных4</Alias>
+        <Columns isList="true" count="1">
+          <value>Цели,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ИсточникДанных4</Name>
+        <NameInSource>Соединение</NameInSource>
+        <Parameters isList="true" count="1">
+          <value>num,НомерПриказа,22,0</value>
+        </Parameters>
+        <SqlCommand>select case when insp.type_base=130 then sp.name 
+else (case when sp.code in ('10','20') then array_to_string(array(select sp.name ||' № '||ac.gji_number||' от '||to_char(ac.date_from,'dd.MM.YYYY')||', по адресу:'||
+array_to_string(array(select mu.name||', '||ro.address
+from GJI_APPCIT_RO apro 
+join gkh_reality_object ro on ro.id=apro.reality_object_id
+join gkh_dict_municipality mu on mu.id=ro.municipality_id
+where apro.appcit_id=ac.id),', ')
+from GJI_BASESTAT_APPCIT ba 
+join GJI_APPEAL_CITIZENS ac on ac.id=ba.GJI_APPCIT_ID 
+where ba.inspection_id=insp.id),'&lt;br&gt;') 
+when sp.code='30' then sp.name || ' №'||dt.document_number||' от '|| to_char(dt.document_date,'dd.MM.YYYY') || ' по адресу:'||
+array_to_string(array(select mu.name||', '||ro.address
+from GJI_INSPECTION_ROBJECT iro
+join gkh_reality_object ro on ro.id=iro.reality_object_id
+join gkh_dict_municipality mu on mu.id=ro.municipality_id where iro.inspection_id=insp.id),', ')
+when sp.code='40'and insp.type_base=30 and dp.id is not null then sp.name|| ' по плану: '|| dp.name||', согласованным с Прокуратурой Челябинской области'
+ else  sp.name end ) end as "Цели"
+
+from gji_nso_disposal_survey_purp dsp 
+join gji_dict_survey_purp sp on sp.id=dsp.survey_purp_id
+join gji_document doc on doc.id=dsp.disposal_id
+join GJI_INSPECTION insp on insp.id=doc.inspection_id
+join gji_disposal d on doc.id=d.id
+left join gji_document_children ch on ch.children_id = doc.id
+left join gji_document dt on dt.id = ch.parent_id
+join gji_nso_disposal nd on nd.id=d.id
+left join GJI_INSPECTION_JURPERSON ij on ij.id=insp.id
+left join GJI_DICT_PLANJURPERSON dp on dp.id=ij.plan_id
+where  doc.document_number=:num</SqlCommand>
+      </ИсточникДанных4>
+      <Инспектор Ref="9" type="DataTableSource" isKey="true">
+        <Alias>Инспектор</Alias>
+        <Columns isList="true" count="4">
+          <value>ДолжностьИнспектораОператора,System.String</value>
+          <value>ФИОИнспектораОператора,System.String</value>
+          <value>ТелефонИнспектораОператора,System.String</value>
+          <value>EmailИнспектораОператора,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Инспектор</Name>
+        <NameInSource>Инспектор</NameInSource>
+      </Инспектор>
+      <Документы1 Ref="10" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>Документы1</Alias>
+        <Columns isList="true" count="1">
+          <value>doc,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>Документы1</Name>
+        <NameInSource>Соединение</NameInSource>
+        <Parameters isList="true" count="1">
+          <value>num,НомерПриказа,22,0</value>
+        </Parameters>
+        <SqlCommand>select array_to_string(array(
+	select '&lt;br&gt;'||row_number() over (order by m.id)||'. '||name
+||(case when row_number() over (order by m.id)=count(m.id) over (partition by d.id) then '.' else ';' end) from gji_disposal_provdoc m
+join gji_dict_provideddocument act on m.provided_doc_id = act.id
+join gji_disposal d on m.disposal_id = d.id
+join gji_document doc on doc.id=d.id
+
+where document_number=:num
+order by m.id),' ') doc</SqlCommand>
+      </Документы1>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Resources isList="true" count="0" />
+    <Variables isList="true" count="31">
+      <value>,ЗональноеНаименование1ГосЯзык,ЗональноеНаименование1ГосЯзык,,System.String,,False,False,False,False</value>
+      <value>,Адрес1ГосЯзык,Адрес1ГосЯзык,,System.String,,False,False,False,False</value>
+      <value>,Телефон,Телефон,,System.String,,False,False,False,False</value>
+      <value>,Email,Email,,System.String,,False,False,False,False</value>
+      <value>,ВидПроверки,ВидПроверки,,System.String,,False,False,False,False</value>
+      <value>,Дата,Дата,,System.String,,False,False,False,False</value>
+      <value>,НомерПриказа,НомерПриказа,,System.String,,False,False,False,False</value>
+      <value>,Лицо,Лицо,,System.String,,False,False,True,False</value>
+      <value>,АдресОбр,АдресОбр,,System.String,,False,False,False,False</value>
+      <value>,ИнспекторыИКодыВинП,ИнспекторыИКодыВинП,,System.String,,False,False,False,False</value>
+      <value>,Эксперты,Эксперты,,System.String,,False,False,False,False</value>
+      <value>,НачалоПериода,НачалоПериода,,System.String,,False,False,False,False</value>
+      <value>,ОкончаниеПериода,ОкончаниеПериода,,System.String,,False,False,False,False</value>
+      <value>,ПравовоеОснованиеПроверки,ПравовоеОснованиеПроверки,,System.String,,False,False,False,False</value>
+      <value>,МероприятияПоКонтролю,МероприятияПоКонтролю,,System.String,,False,False,False,False</value>
+      <value>,ОтветственныйСокр,ОтветственныйСокр,,System.String,,False,False,False,False</value>
+      <value>,РуководительДолжность,РуководительДолжность,,System.String,,False,False,False,False</value>
+      <value>,КодРуководителя,КодРуководителя,,System.String,,False,False,False,False</value>
+      <value>,ТелефонРуковод,ТелефонРуковод,,System.String,,False,False,False,False</value>
+      <value>,ПредоставляемыеДокументы,ПредоставляемыеДокументы,,System.String,,False,False,False,False</value>
+      <value>,УправОрг,УправОрг,,System.String,,False,False,False,False</value>
+      <value>,ДолжностьОтветственныйРп,ДолжностьОтветственныйРп,,System.String,,False,False,False,False</value>
+      <value>,ФИООтветственныйСокрРп,ФИООтветственныйСокрРп,,System.String,,False,False,False,False</value>
+      <value>,АдресКонтрагента,АдресКонтрагента,,System.String,,False,False,False,False</value>
+      <value>,ДокументОснование,ДокументОснование,,System.String,,False,False,False,False</value>
+      <value>,ОтветственныйДолжность,ОтветственныйДолжность,,System.String,,False,False,False,False</value>
+      <value>,ОтветственныйТел,ОтветственныйТел,,System.String,,False,False,False,False</value>
+      <value>,ОснованиеПроверки,ОснованиеПроверки,,System.String,,False,False,True,False</value>
+      <value>,ОбъектПроверки,ОбъектПроверки,,System.String,,False,False,True,False</value>
+      <value>,ПроверяемыеДома,ПроверяемыеДома,,System.String,,False,False,False,False</value>
+      <value>,РуководительФИОСокр,РуководительФИОСокр_x0020_,,System.String,,False,False,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page2 Ref="11" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="5">
+        <ReportTitleBand2 Ref="12" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,18,6.8</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text34 Ref="13" type="Text" isKey="true">
+              <Border>None;Black;1;Double;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.4,18,1.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text34</Name>
+              <Page isRef="11" />
+              <Parent isRef="12" />
+              <Text>Приложение № 2
+к Порядку осуществления мероприятий 
+по проверки выданных предписаний
+об устранении выявленных нарушений
+</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text34>
+            <Text57 Ref="14" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>None;Black;1;Double;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,5.2,18,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>95519c6f6d454b948a96b8bbc17531c9</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text57</Name>
+              <Page isRef="11" />
+              <Parent isRef="12" />
+              <Text>Служебная записка № &lt;u&gt;{Номер??}&lt;/u&gt;&lt;br&gt;
+проверки исполнения мероприятий, предусмотренных&lt;br&gt;
+предписанием № &lt;u&gt;{Номер??}&lt;/u&gt; от &lt;u&gt;{ИсточникДанных??.Дата}&lt;/u&gt;
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text57>
+            <Text8 Ref="15" type="Text" isKey="true">
+              <Border>None;Black;1;Double;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,2.4,18,2.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>dd1172c276db4d53a597eec577df1801</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="11" />
+              <Parent isRef="12" />
+              <Text>Начальнику отдела________________________
+ ________________________________________
+ от______________________________________
+ ________________________________________
+
+
+
+</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text8>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitleBand2</Name>
+          <Page isRef="11" />
+          <Parent isRef="11" />
+        </ReportTitleBand2>
+        <DataBand17 Ref="16" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,8,18,0.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text62 Ref="17" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,18,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>fe956be5d0de4c86b535ded654ca61c7</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text62</Name>
+              <Page isRef="11" />
+              <Parent isRef="16" />
+              <Text>Адрес:&lt;u&gt;{Адрес??}&lt;/u&gt; / площадь дома S _________ м2 </Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text62>
+          </Components>
+          <Conditions isList="true" count="1">
+            <value>_x007B_Лицо_x003D__x003D__x0020__x0022_физического_x0020_лица_x0022__x007D_,Red,Transparent,Arial_x002C_8,False,False,,,None</value>
+          </Conditions>
+          <Filters isList="true" count="0" />
+          <Name>DataBand17</Name>
+          <Page isRef="11" />
+          <Parent isRef="11" />
+          <Sort isList="true" count="0" />
+        </DataBand17>
+        <DataBand19 Ref="18" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <CanBreak>True</CanBreak>
+          <CanShrink>True</CanShrink>
+          <ClientRectangle>0,9.6,18,8.4</ClientRectangle>
+          <Components isList="true" count="10">
+            <Text65 Ref="19" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,18,1.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>c2b8e06796494722af2eba9f3179ca0f</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text65</Name>
+              <Page isRef="11" />
+              <Parent isRef="18" />
+              <Text>1. Госжилинспектор&lt;br&gt;
+&lt;u&gt;{ИсточникДанных??.inspector??}&lt;/u&gt;_______________________________________________________</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text65>
+            <Text66 Ref="20" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,1,18,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8</Font>
+              <Guid>615a1cacf3ff41ae91dcccc940090695</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text66</Name>
+              <Page isRef="11" />
+              <Parent isRef="18" />
+              <Text>(Ф.И.О. госжилинспектора)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+            </Text66>
+            <Text67 Ref="21" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,1.6,18,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>dddd384d8dc0414dadb2355f0ed8b049</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text67</Name>
+              <Page isRef="11" />
+              <Parent isRef="18" />
+              <Text>Провела  проверку   исполнения  мероприятий,  предусмотренных  предписанием
+Главного управления «Государственная жилищная инспекция Челябинской области», выданного 
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text67>
+            <Text69 Ref="22" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,3.2,18,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8</Font>
+              <Guid>519606f3ec594a469c56426d94f62b9d</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text69</Name>
+              <Page isRef="11" />
+              <Parent isRef="18" />
+              <Text>(указать кому выдано предписание)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+            </Text69>
+            <Text15 Ref="23" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,2.6,18,0.6</ClientRectangle>
+              <Conditions isList="true" count="1">
+                <value>ИсточникДанных2.Эксперты,IsNull,_x0022__x0022_,,String,Black,Transparent,Times_x0020_New_x0020_Roman_x002C_12_x002C_Regular_x002C_Point_x002C_False_x002C_204,False,True,_x0022_не_x0020_требуется_x0022_,,None</value>
+              </Conditions>
+              <Font>Times New Roman,12</Font>
+              <Guid>161777bd680d4922a09f458e862ce8e0</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="11" />
+              <Parent isRef="18" />
+              <Text>___________________________________________________________________________________</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text15>
+            <Text1 Ref="24" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,3.6,18,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>6b934bd51fbc44e59f87f0d442f7549e</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="11" />
+              <Parent isRef="18" />
+              <Text>___________________________________________________________________________________</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text1>
+            <Text9 Ref="25" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,4.2,18,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8</Font>
+              <Guid>40ba8e0f50ba4acfbb4f2e61cf0a4f1f</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="11" />
+              <Parent isRef="18" />
+              <Text>(выполнено и (или) не выполнено)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+            </Text9>
+            <Text10 Ref="26" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,4.6,18,2.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>9dc6a3ba555544a099622e7e1e52acc9</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="11" />
+              <Parent isRef="18" />
+              <Text>___________________________________________________________________________________
+
+___________________________________________________________________________________
+
+___________________________________________________________________________________
+
+___________________________________________________________________________________</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text10>
+            <Text3 Ref="27" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,6.8,18,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Times New Roman,12</Font>
+              <Guid>da7cb7462f5343528b0932004d1b45ce</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="11" />
+              <Parent isRef="18" />
+              <Text>Указанные мероприятия снять с контроля в связи: ____________________________________
+___________________________________________________________________________________
+
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text3>
+            <Text11 Ref="28" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,7.8,18,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8</Font>
+              <Guid>f9248ffc3cef4682a0c0ad8cc314d6bf</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="11" />
+              <Parent isRef="18" />
+              <Text>(с их выполнением, оформлением протокола об АП, по другим причинам (указать по каким))
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+            </Text11>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand19</Name>
+          <Page isRef="11" />
+          <Parent isRef="11" />
+          <Sort isList="true" count="0" />
+        </DataBand19>
+        <DataBand6 Ref="29" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,18.8,18,0.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text6 Ref="30" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,18,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>2009c516e45449e2963055cd6202f5a6</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="11" />
+              <Parent isRef="29" />
+              <Text>Составлено в 2-х экземплярах.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text6>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand6</Name>
+          <Page isRef="11" />
+          <Parent isRef="11" />
+          <Sort isList="true" count="0" />
+        </DataBand6>
+        <DataBand1 Ref="31" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,20.4,18,6.2</ClientRectangle>
+          <Components isList="true" count="5">
+            <Text2 Ref="32" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,18,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>a3deeb19bc7e4586b2fe4d47d5dc45ad</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="11" />
+              <Parent isRef="31" />
+              <Text>Подписи: 1. Госжилинспектор ____________ /&lt;u&gt;{ИсточникДанных??.inspector??}&lt;/u&gt;/
+               
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text2>
+            <Text4 Ref="33" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0.6,13.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8</Font>
+              <Guid>c03f581f224a455a9f2ff1789dd640f9</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="11" />
+              <Parent isRef="31" />
+              <Text>Подпись</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+            </Text4>
+            <Text12 Ref="34" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,2,18,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14</Font>
+              <Guid>a6b273a1633846cb9f771601faf18ec8</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="11" />
+              <Parent isRef="31" />
+              <Text>Начальник отдела ___________/________________________ </Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text12>
+            <Text5 Ref="35" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,1.2,18,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14</Font>
+              <Guid>edaedc67aafa4f6d959f9a29a5c234e8</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="11" />
+              <Parent isRef="31" />
+              <Text>«СОГЛАСОВАНО»: Снять с контроля
+               
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text5>
+            <Text7 Ref="36" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,2.6,10.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8</Font>
+              <Guid>4943829a089f43fa8a9830e7ea2565d9</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="11" />
+              <Parent isRef="31" />
+              <Text>Подпись</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+            </Text7>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>dcaa4d3835744eb3b051d47dc72fb9ed</Guid>
+          <Name>DataBand1</Name>
+          <Page isRef="11" />
+          <Parent isRef="11" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>0f1ade4e564345f6bdb10f4dc5780aa9</Guid>
+      <LargeHeight>True</LargeHeight>
+      <Margins>2,1,1,1</Margins>
+      <Name>Page2</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="37" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page2>
+  </Pages>
+  <PrinterSettings Ref="38" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="9">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+    <value>Morpher.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>11/25/2019 1:51:11 PM</ReportChanged>
+  <ReportCreated>8/15/2014 5:39:56 PM</ReportCreated>
+  <ReportFile>C:\Users\SOBITS-Samsung\Documents\Служебная_записка.mrt</ReportFile>
+  <ReportGuid>d85cd9daa9c64220a406110395523e6b</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2018.1.6.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+using Stimulsoft.Report.Dictionary;
+using System.Text;
+using Slepov.Russian.Morpher;
+
+namespace Reports
+{
+	public class Report : Stimulsoft.Report.StiReport
+	{
+		public Report(){
+			
+			StiFunctions.AddFunction(
+				"Bars", 
+				"ConcatDataSource",
+				"Возвращает скомбинированный в строку источник данных.",
+				typeof(Report), 
+				typeof(string), 
+				"Скомбинированный в строку источник данных.");
+			
+			StiFunctions.AddFunction(
+				"Bars", 
+				"CreateArray",
+				"Coздает массив строк из переданных параметров",
+				typeof(Report), 
+				typeof(string[]), 
+				"массив строк из переданных параметров");
+			
+			this.InitializeComponent();
+		}
+
+		#region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+		public Склонятель morpher = new Склонятель("SonFhyB1DbaxkkAQ4tfrhQ==");
+    
+		
+		public static string ConcatDataSource(StiDataSource dataSource, string separator, string[] colNames, string[] colSeparators){
+			if(dataSource.Count == 0)
+			{
+				return string.Empty;
+			}
+			
+			var result = new StringBuilder(ConcatDataSourceRow(dataSource, 0, colNames, colSeparators));
+			
+			for(var i=0; i&lt;dataSource.Count; i++)
+			{
+				result.Append(separator);
+				result.Append(ConcatDataSourceRow(dataSource, i, colNames, colSeparators));
+			}
+			
+			return result.ToString();
+		}
+		
+		public static string[] CreateArray(params string[] arr){
+			return arr;
+		}
+		
+		private static string ConcatDataSourceRow(StiDataSource dataSource, int rowNum, string[] colNames, string[] colSeparators)
+		{
+			if(colNames.Length == 0){
+				return string.Empty;
+			}
+			var result = new StringBuilder(dataSource.GetData(colNames[0], rowNum).ToString());
+			for(var i=1; i&lt;colNames.Length; i++)
+			{
+				result.Append(colSeparators[i-1]);
+				result.Append(dataSource.GetData(colNames[i], rowNum));
+			}
+			
+			return result.ToString();
+		}
+	}
+	
+}
+
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

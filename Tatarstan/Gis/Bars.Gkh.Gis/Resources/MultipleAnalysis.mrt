@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="1">
+      <ПараметрыОтчета Ref="2" type="Stimulsoft.Report.Dictionary.StiBusinessObject" isKey="true">
+        <Alias>ПараметрыОтчета</Alias>
+        <BusinessObjects isList="true" count="0" />
+        <Category>ПараметрыОтчета</Category>
+        <Columns isList="true" count="1">
+          <value>totalHouseCount,System.Int32</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Guid>39ce7ad60305462abeba60fe45cf5927</Guid>
+        <Name>ПараметрыОтчета</Name>
+      </ПараметрыОтчета>
+    </BusinessObjects>
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="3">
+      <Columns Ref="3" type="DataTableSource" isKey="true">
+        <Alias>Columns</Alias>
+        <Columns isList="true" count="2">
+          <value>Id,System.Int32</value>
+          <value>Name,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <IsCloud>False</IsCloud>
+        <Name>Columns</Name>
+        <NameInSource>Data</NameInSource>
+      </Columns>
+      <Rows Ref="4" type="DataTableSource" isKey="true">
+        <Alias>Rows</Alias>
+        <Columns isList="true" count="2">
+          <value>Id,System.Int32</value>
+          <value>Name,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <IsCloud>False</IsCloud>
+        <Name>Rows</Name>
+        <NameInSource>Data</NameInSource>
+      </Rows>
+      <Data Ref="5" type="DataTableSource" isKey="true">
+        <Alias>Data</Alias>
+        <Columns isList="true" count="3">
+          <value>ColumnId,System.Int32</value>
+          <value>RowId,System.Int32</value>
+          <value>Value,System.Double</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <IsCloud>False</IsCloud>
+        <Name>Data</Name>
+        <NameInSource>Data</NameInSource>
+      </Data>
+    </DataSources>
+    <Relations isList="true" count="1">
+      <DataRow Ref="6" type="DataRelation" isKey="true">
+        <Alias>DataRow</Alias>
+        <ChildColumns isList="true" count="1">
+          <value>RowId</value>
+        </ChildColumns>
+        <ChildSource isRef="5" />
+        <Dictionary isRef="1" />
+        <Name>DataRow</Name>
+        <NameInSource>DataRow</NameInSource>
+        <ParentColumns isList="true" count="1">
+          <value>Id</value>
+        </ParentColumns>
+        <ParentSource isRef="4" />
+      </DataRow>
+    </Relations>
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="7" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="3">
+        <ReportTitleBand1 Ref="8" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,19,0.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text5 Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1,0,17.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Tahoma,9.75,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>Результат {Rows.Count}/{ПараметрыОтчета.totalHouseCount} (Найдено домов/Всего домов данного типа)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text5>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </ReportTitleBand1>
+        <HeaderBand1 Ref="10" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,2,19,1.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <CrossHeaderBand1 Ref="11" type="Stimulsoft.Report.Components.StiCrossHeaderBand" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,10.2,1.2</ClientRectangle>
+              <Components isList="true" count="1">
+                <Text1 Ref="12" type="Text" isKey="true">
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,0,10.2,1.2</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,8.25,Bold,Point,False,204</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text1</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="11" />
+                  <Text>Адрес</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text1>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <Name>CrossHeaderBand1</Name>
+              <Page isRef="7" />
+              <Parent isRef="10" />
+            </CrossHeaderBand1>
+            <CrossDataBand1 Ref="13" type="CrossDataBand" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>10.2,0,3.8,1.2</ClientRectangle>
+              <Components isList="true" count="1">
+                <Text2 Ref="14" type="Text" isKey="true">
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,0,3.8,1.2</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,8.25,Bold,Point,False,204</Font>
+                  <Guid>e64ac84685fc4386ad4d45c062737eab</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text2</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="13" />
+                  <Text>{Columns.Name}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text2>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <DataRelationName isNull="true" />
+              <DataSourceName>Columns</DataSourceName>
+              <Filters isList="true" count="0" />
+              <Name>CrossDataBand1</Name>
+              <Page isRef="7" />
+              <Parent isRef="10" />
+              <Sort isList="true" count="0" />
+            </CrossDataBand1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </HeaderBand1>
+        <DataBand1 Ref="15" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,4,19,0.4</ClientRectangle>
+          <Components isList="true" count="2">
+            <CrossHeaderBand2 Ref="16" type="Stimulsoft.Report.Components.StiCrossHeaderBand" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,10.2,0.4</ClientRectangle>
+              <Components isList="true" count="1">
+                <Text3 Ref="17" type="Text" isKey="true">
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,0,10.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,9.75,Regular,Point,False,204</Font>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text3</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="16" />
+                  <Text>{Rows.Name}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text3>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <Name>CrossHeaderBand2</Name>
+              <Page isRef="7" />
+              <Parent isRef="15" />
+            </CrossHeaderBand2>
+            <CrossDataBand2 Ref="18" type="CrossDataBand" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>10.2,0,3.8,0.4</ClientRectangle>
+              <Components isList="true" count="1">
+                <Text4 Ref="19" type="Text" isKey="true">
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,0,3.8,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Tahoma,9.75,Regular,Point,False,204</Font>
+                  <HideZeros>True</HideZeros>
+                  <HorAlignment>Right</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text4</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="18" />
+                  <Text>{Data.Value}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="20" type="NumberFormat" isKey="true">
+                    <DecimalSeparator>,</DecimalSeparator>
+                    <GroupSeparator> </GroupSeparator>
+                    <GroupSize>1</GroupSize>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text4>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <DataRelationName>DataRow</DataRelationName>
+              <DataSourceName>Data</DataSourceName>
+              <Filters isList="true" count="0" />
+              <MasterComponent isRef="15" />
+              <Name>CrossDataBand2</Name>
+              <Page isRef="7" />
+              <Parent isRef="15" />
+              <Sort isList="true" count="0" />
+            </CrossDataBand2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>Rows</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>82b7c488b02b43caa4432450f9e6f407</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <UnlimitedBreakable>False</UnlimitedBreakable>
+      <UnlimitedHeight>True</UnlimitedHeight>
+      <Watermark Ref="21" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="22" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>12/8/2014 10:21:58 AM</ReportChanged>
+  <ReportCreated>12/4/2014 5:51:54 PM</ReportCreated>
+  <ReportFile>C:\TFS\GKH.GIS\Dev\Bars.Gkh.Gis\Resources\MultipleAnalysis.mrt</ReportFile>
+  <ReportGuid>6c243fbc7e6746659fa599add448e5d7</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.3.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+        #endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

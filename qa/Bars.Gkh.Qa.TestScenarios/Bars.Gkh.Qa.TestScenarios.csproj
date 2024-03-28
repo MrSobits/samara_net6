@@ -1,0 +1,2245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD4CE439-C0A8-4FC5-9E5B-E7713C1F7766}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bars.Gkh.Qa.TestScenarios</RootNamespace>
+    <AssemblyName>Bars.Gkh.Qa.TestScenarios</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\App\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\App\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bars.B4.Modules.NHibernateChangeLog">
+      <HintPath>..\packages\Bars.B4.Modules.NHibernateChangeLog\lib\net40\Bars.B4.Modules.NHibernateChangeLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.Tasks.Common">
+      <HintPath>..\packages\Bars.B4.Modules.Tasks.Common\lib\net40\Bars.B4.Modules.Tasks.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.Gkh, Version=1.1.5819.24533, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\App\bin\Bars.Gkh.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.Gkh.Decisions.Nso, Version=1.1.5655.20046, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\App\bin\Bars.Gkh.Decisions.Nso.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Bars.Gkh.Overhaul, Version=1.1.5655.20011, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\App\bin\Bars.Gkh.Overhaul.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Bars.Gkh.RegOperator, Version=1.1.5655.20089, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\App\bin\Bars.Gkh.RegOperator.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Bars.Gkh.UserActionRetention, Version=1.1.5655.19881, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\App\bin\Bars.Gkh.UserActionRetention.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Bars.GkhCr, Version=1.1.5655.19977, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\App\bin\Bars.GkhCr.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Bars.GkhGji, Version=1.1.5655.19977, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\App\bin\Bars.GkhGji.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel.Discovery" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="accepting_charge.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>accepting_charge.feature</DependentUpon>
+    </Compile>
+    <Compile Include="actions_removeViol.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>actions_removeViol.feature</DependentUpon>
+    </Compile>
+    <Compile Include="actions_removeViol_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>actions_removeViol_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="add_buildContract_to_objectCr.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>add_buildContract_to_objectCr.feature</DependentUpon>
+    </Compile>
+    <Compile Include="add_checkReport_to_order.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>add_checkReport_to_order.feature</DependentUpon>
+    </Compile>
+    <Compile Include="add_exclusion_to_pay_penalties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>add_exclusion_to_pay_penalties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="add_financeSource_to_programCr.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>add_financeSource_to_programCr.feature</DependentUpon>
+    </Compile>
+    <Compile Include="add_kindWork_to_financeSource1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>add_kindWork_to_financeSource.feature</DependentUpon>
+    </Compile>
+    <Compile Include="add_order_to_base_jurPerson.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>add_order_to_base_jurPerson.feature</DependentUpon>
+    </Compile>
+    <Compile Include="add_privileged_category_to_persAcc.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>add_privileged_category_to_persAcc.feature</DependentUpon>
+    </Compile>
+    <Compile Include="bank_account_statement.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bank_account_statement.feature</DependentUpon>
+    </Compile>
+    <Compile Include="base_JurPerson.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>base_JurPerson.feature</DependentUpon>
+    </Compile>
+    <Compile Include="builder.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>builder.feature</DependentUpon>
+    </Compile>
+    <Compile Include="builder_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>builder_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="building_features.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>building_features.feature</DependentUpon>
+    </Compile>
+    <Compile Include="building_features_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>building_features_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="calculation_charges.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>calculation_charges.feature</DependentUpon>
+    </Compile>
+    <Compile Include="calculation_penalties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>calculation_penalties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="cancel_charges.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cancel_charges.feature</DependentUpon>
+    </Compile>
+    <Compile Include="cancel_penalties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cancel_penalties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="capital_groups.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>capital_groups.feature</DependentUpon>
+    </Compile>
+    <Compile Include="capital_groups_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>capital_groups_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="cash_payment_center.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cash_payment_center.feature</DependentUpon>
+    </Compile>
+    <Compile Include="change_balance.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>change_balance.feature</DependentUpon>
+    </Compile>
+    <Compile Include="change_penalties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>change_penalties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="citizensuggestion.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>citizensuggestion.feature</DependentUpon>
+    </Compile>
+    <Compile Include="citizensuggestion_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>citizensuggestion_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="close_account.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>close_account.feature</DependentUpon>
+    </Compile>
+    <Compile Include="close_period.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>close_period.feature</DependentUpon>
+    </Compile>
+    <Compile Include="constructive_elements.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>constructive_elements.feature</DependentUpon>
+    </Compile>
+    <Compile Include="constructive_elements_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>constructive_elements_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="constructive_elem_groups.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>constructive_elem_groups.feature</DependentUpon>
+    </Compile>
+    <Compile Include="constructive_elem_groups_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>constructive_elem_groups_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="contragent.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>contragent.feature</DependentUpon>
+    </Compile>
+    <Compile Include="contragent_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>contragent_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="court_verdict_gji.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>court_verdict_gji.feature</DependentUpon>
+    </Compile>
+    <Compile Include="court_verdict_gji_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>court_verdict_gji_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="credit_org.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>credit_org.feature</DependentUpon>
+    </Compile>
+    <Compile Include="credit_org_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>credit_org_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="deleteDocs_BasesPir.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>deleteDocs_BasesPir.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionsTests\gkh1765.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh1765.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionsTests\gkh2902.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh2902.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionsTests\gkh2932.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh2932.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionsTests\gkh3137.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3137.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionsTests\gkh3273.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3273.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionsTests\gkh3300.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3300.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionsTests\gkh3346.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3346.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionsTests\gkh3431.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3431.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionsTests\gkh3502.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3502.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionsTests\gkh3553.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3553.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionsTests\gkh3673.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3673.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionsTests\gkh3763.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3763.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionsTests\User_actions_log.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User_actions_log.feature</DependentUpon>
+    </Compile>
+    <Compile Include="featureViolGji.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>featureViolGji.feature</DependentUpon>
+    </Compile>
+    <Compile Include="finance_source.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>finance_source.feature</DependentUpon>
+    </Compile>
+    <Compile Include="finance_source_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>finance_source_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionsTests\gkh3216.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3216.feature</DependentUpon>
+    </Compile>
+    <Compile Include="inspectors.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>inspectors.feature</DependentUpon>
+    </Compile>
+    <Compile Include="inspectors_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>inspectors_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="kind_works.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kind_works.feature</DependentUpon>
+    </Compile>
+    <Compile Include="kind_works_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kind_works_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="kind_work_notif_gji.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kind_work_notif_gji.feature</DependentUpon>
+    </Compile>
+    <Compile Include="kind_work_notif_gji_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kind_work_notif_gji_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="license_provided_docs_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>license_provided_docs_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="license_provived_docs.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>license_provived_docs.feature</DependentUpon>
+    </Compile>
+    <Compile Include="loan.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>loan.feature</DependentUpon>
+    </Compile>
+    <Compile Include="login.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>login.feature</DependentUpon>
+    </Compile>
+    <Compile Include="managing_organization.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>managing_organization.feature</DependentUpon>
+    </Compile>
+    <Compile Include="merging_accounts.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>merging_accounts.feature</DependentUpon>
+    </Compile>
+    <Compile Include="metering_devices.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>metering_devices.feature</DependentUpon>
+    </Compile>
+    <Compile Include="metering_devices_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>metering_devices_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="municipality.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>municipality.feature</DependentUpon>
+    </Compile>
+    <Compile Include="municipality_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>municipality_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="normative_docs.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>normative_docs.feature</DependentUpon>
+    </Compile>
+    <Compile Include="normative_docs_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>normative_docs_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectCr.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ObjectCr.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectCr_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ObjectCr_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="organization_form.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>organization_form.feature</DependentUpon>
+    </Compile>
+    <Compile Include="organization_form_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>organization_form_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="individualAccountOwner.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>individualAccountOwner.feature</DependentUpon>
+    </Compile>
+    <Compile Include="payment_doc_info.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>payment_doc_info.feature</DependentUpon>
+    </Compile>
+    <Compile Include="payment_penalties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>payment_penalties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="payment_penalties_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>payment_penalties_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="performed_work_act_payment.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>performed_work_act_payment.feature</DependentUpon>
+    </Compile>
+    <Compile Include="periodicity_services.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>periodicity_services.feature</DependentUpon>
+    </Compile>
+    <Compile Include="periodicity_services_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>periodicity_services_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="period_di.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>period_di.feature</DependentUpon>
+    </Compile>
+    <Compile Include="period_di_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>period_di_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="period_program_cr.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>period_program_cr.feature</DependentUpon>
+    </Compile>
+    <Compile Include="period_program_cr_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>period_program_cr_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="petition_to_courtType.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>petition_to_courtType.feature</DependentUpon>
+    </Compile>
+    <Compile Include="petition_to_courtType_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>petition_to_courtType_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="plans_actionGji.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>plans_actionGji.feature</DependentUpon>
+    </Compile>
+    <Compile Include="plans_actionGji_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>plans_actionGji_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Plans_InsCheckGji.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Plans_InsCheckGji.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Plans_InsCheckGji_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Plans_InsCheckGji_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="plans_jurPersonGji.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>plans_jurPersonGji.feature</DependentUpon>
+    </Compile>
+    <Compile Include="positions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>positions.feature</DependentUpon>
+    </Compile>
+    <Compile Include="positions_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>positions_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="privileged_category_checks.feature.cs">
+      <DependentUpon>privileged_category_checks.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="privileged_category.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>privileged_category.feature</DependentUpon>
+    </Compile>
+    <Compile Include="privileged_category_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>privileged_category_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="problemplace1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>problemplace.feature</DependentUpon>
+    </Compile>
+    <Compile Include="problemplace_boundaries1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>problemplace_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="programCr.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>programCr.feature</DependentUpon>
+    </Compile>
+    <Compile Include="programCr_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>programCr_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="public_services.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>public_services.feature</DependentUpon>
+    </Compile>
+    <Compile Include="public_services_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>public_services_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="realityobjectedit_constructiveelement.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>realityobjectedit_constructiveelement.feature</DependentUpon>
+    </Compile>
+    <Compile Include="real_estate_type.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>real_estate_type.feature</DependentUpon>
+    </Compile>
+    <Compile Include="real_estate_type_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>real_estate_type_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="recalculation_charges.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>recalculation_charges.feature</DependentUpon>
+    </Compile>
+    <Compile Include="register_houses.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>register_houses.feature</DependentUpon>
+    </Compile>
+    <Compile Include="register_personal_acc_owner.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>register_personal_acc_owner.feature</DependentUpon>
+    </Compile>
+    <Compile Include="register_personal_acc_owner_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>register_personal_acc_owner_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="reopen_pers_account.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reopen_pers_account.feature</DependentUpon>
+    </Compile>
+    <Compile Include="role.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>role.feature</DependentUpon>
+    </Compile>
+    <Compile Include="role_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>role_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="roofing_materials.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>roofing_materials.feature</DependentUpon>
+    </Compile>
+    <Compile Include="roofing_materials_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>roofing_materials_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="rubric.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rubric.feature</DependentUpon>
+    </Compile>
+    <Compile Include="sanctions_gji.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sanctions_gji.feature</DependentUpon>
+    </Compile>
+    <Compile Include="sanctions_gji_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sanctions_gji_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="server_calculations.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>server_calculations.feature</DependentUpon>
+    </Compile>
+    <Compile Include="stage_work_cr.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stage_work_cr.feature</DependentUpon>
+    </Compile>
+    <Compile Include="stage_work_cr_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stage_work_cr_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="state_duty.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>state_duty.feature</DependentUpon>
+    </Compile>
+    <Compile Include="types_ownership_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>types_ownership_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="type_court_gji.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>type_court_gji.feature</DependentUpon>
+    </Compile>
+    <Compile Include="type_court_gji_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>type_court_gji_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="type_group_ooi.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>type_group_ooi.feature</DependentUpon>
+    </Compile>
+    <Compile Include="type_group_ooi_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>type_group_ooi_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="type_project.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>type_project.feature</DependentUpon>
+    </Compile>
+    <Compile Include="type_project_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>type_project_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="type_services.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>type_services.feature</DependentUpon>
+    </Compile>
+    <Compile Include="type_services_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>type_services_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="UnitMeasure.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnitMeasure.feature</DependentUpon>
+    </Compile>
+    <Compile Include="UnitMeasure_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnitMeasure_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="typeownership.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>typeownership.feature</DependentUpon>
+    </Compile>
+    <Compile Include="user_actions_lock.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>user_actions_lock.feature</DependentUpon>
+    </Compile>
+    <Compile Include="violationsGji.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>violationsGji.feature</DependentUpon>
+    </Compile>
+    <Compile Include="violationsGji_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>violationsGji_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="violations_claimWork.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>violations_claimWork.feature</DependentUpon>
+    </Compile>
+    <Compile Include="violations_claimWork_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>violations_claimWork_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="wall_materials.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>wall_materials.feature</DependentUpon>
+    </Compile>
+    <Compile Include="wall_materials_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>wall_materials_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="works.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>works.feature</DependentUpon>
+    </Compile>
+    <Compile Include="works_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>works_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="work_kinds_current_repair.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>work_kinds_current_repair.feature</DependentUpon>
+    </Compile>
+    <Compile Include="work_kinds_current_repair_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>work_kinds_current_repair_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="zonal_inspection.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>zonal_inspection.feature</DependentUpon>
+    </Compile>
+    <Compile Include="zonal_inspection_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>zonal_inspection_boundaries.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bars.Gkh.Qa.Steps\Bars.Gkh.Qa.Steps.csproj">
+      <Project>{a6fcfeca-aa62-4b98-8589-202f4b63cd43}</Project>
+      <Name>Bars.Gkh.Qa.Steps</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Bars.Gkh.Qa.Utils\Bars.Gkh.Qa.Utils.csproj">
+      <Project>{d0804935-1fc3-445f-843b-1275a1043464}</Project>
+      <Name>Bars.Gkh.Qa.Utils</Name>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="accepting_charge.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>accepting_charge.feature.cs</LastGenOutput>
+    </None>
+    <None Include="actions_removeViol.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>actions_removeViol.feature.cs</LastGenOutput>
+    </None>
+    <None Include="actions_removeViol_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>actions_removeViol_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="add_buildContract_to_objectCr.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>add_buildContract_to_objectCr.feature.cs</LastGenOutput>
+    </None>
+    <None Include="add_checkReport_to_order.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>add_checkReport_to_order.feature.cs</LastGenOutput>
+    </None>
+    <None Include="add_exclusion_to_pay_penalties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>add_exclusion_to_pay_penalties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="add_financeSource_to_programCr.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>add_financeSource_to_programCr.feature.cs</LastGenOutput>
+    </None>
+    <None Include="add_kindWork_to_financeSource.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>add_kindWork_to_financeSource1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="add_order_to_base_jurPerson.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>add_order_to_base_jurPerson.feature.cs</LastGenOutput>
+    </None>
+    <None Include="add_privileged_category_to_persAcc.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>add_privileged_category_to_persAcc.feature.cs</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bank_account_statement.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>bank_account_statement.feature.cs</LastGenOutput>
+    </None>
+    <None Include="base_JurPerson.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>base_JurPerson.feature.cs</LastGenOutput>
+    </None>
+    <None Include="builder.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>builder.feature.cs</LastGenOutput>
+    </None>
+    <None Include="builder_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>builder_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="building_features.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>building_features.feature.cs</LastGenOutput>
+    </None>
+    <None Include="building_features_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>building_features_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="calculation_charges.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>calculation_charges.feature.cs</LastGenOutput>
+    </None>
+    <None Include="calculation_penalties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>calculation_penalties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="cancel_charges.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>cancel_charges.feature.cs</LastGenOutput>
+    </None>
+    <None Include="cancel_penalties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>cancel_penalties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="capital_groups.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>capital_groups.feature.cs</LastGenOutput>
+    </None>
+    <None Include="capital_groups_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>capital_groups_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="cash_payment_center.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>cash_payment_center.feature.cs</LastGenOutput>
+    </None>
+    <None Include="change_balance.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>change_balance.feature.cs</LastGenOutput>
+    </None>
+    <None Include="change_penalties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>change_penalties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="citizensuggestion.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>citizensuggestion.feature.cs</LastGenOutput>
+    </None>
+    <None Include="citizensuggestion_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>citizensuggestion_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="close_account.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>close_account.feature.cs</LastGenOutput>
+    </None>
+    <None Include="close_period.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>close_period.feature.cs</LastGenOutput>
+    </None>
+    <None Include="constructive_elements.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>constructive_elements.feature.cs</LastGenOutput>
+    </None>
+    <None Include="constructive_elements_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>constructive_elements_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="constructive_elem_groups.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>constructive_elem_groups.feature.cs</LastGenOutput>
+    </None>
+    <None Include="constructive_elem_groups_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>constructive_elem_groups_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="contragent.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>contragent.feature.cs</LastGenOutput>
+    </None>
+    <None Include="contragent_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>contragent_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="court_verdict_gji.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>court_verdict_gji.feature.cs</LastGenOutput>
+    </None>
+    <None Include="court_verdict_gji_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>court_verdict_gji_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="credit_org.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>credit_org.feature.cs</LastGenOutput>
+    </None>
+    <None Include="credit_org_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>credit_org_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="deleteDocs_BasesPir.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>deleteDocs_BasesPir.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ExceptionsTests\gkh1765.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh1765.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ExceptionsTests\gkh2902.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh2902.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ExceptionsTests\gkh2932.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh2932.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ExceptionsTests\gkh3137.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3137.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ExceptionsTests\gkh3273.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3273.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ExceptionsTests\gkh3300.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3300.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ExceptionsTests\gkh3346.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3346.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ExceptionsTests\gkh3431.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3431.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ExceptionsTests\gkh3502.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3502.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ExceptionsTests\gkh3553.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3553.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ExceptionsTests\gkh3673.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3673.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ExceptionsTests\gkh3763.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3763.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ExceptionsTests\User_actions_log.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>User_actions_log.feature.cs</LastGenOutput>
+    </None>
+    <None Include="featureViolGji.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>featureViolGji.feature.cs</LastGenOutput>
+    </None>
+    <None Include="finance_source.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>finance_source.feature.cs</LastGenOutput>
+    </None>
+    <None Include="finance_source_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>finance_source_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ExceptionsTests\gkh3216.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3216.feature.cs</LastGenOutput>
+    </None>
+    <None Include="inspectors.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>inspectors.feature.cs</LastGenOutput>
+    </None>
+    <None Include="inspectors_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>inspectors_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="kind_works.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>kind_works.feature.cs</LastGenOutput>
+    </None>
+    <None Include="kind_works_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>kind_works_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="kind_work_notif_gji.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>kind_work_notif_gji.feature.cs</LastGenOutput>
+    </None>
+    <None Include="kind_work_notif_gji_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>kind_work_notif_gji_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="license_provided_docs_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>license_provided_docs_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="license_provived_docs.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>license_provived_docs.feature.cs</LastGenOutput>
+    </None>
+    <None Include="loan.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>loan.feature.cs</LastGenOutput>
+    </None>
+    <None Include="login.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>login.feature.cs</LastGenOutput>
+    </None>
+    <None Include="managing_organization.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>managing_organization.feature.cs</LastGenOutput>
+    </None>
+    <None Include="merging_accounts.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>merging_accounts.feature.cs</LastGenOutput>
+    </None>
+    <None Include="metering_devices.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>metering_devices.feature.cs</LastGenOutput>
+    </None>
+    <None Include="metering_devices_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>metering_devices_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="municipality.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>municipality.feature.cs</LastGenOutput>
+    </None>
+    <None Include="municipality_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>municipality_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="normative_docs.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>normative_docs.feature.cs</LastGenOutput>
+    </None>
+    <None Include="normative_docs_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>normative_docs_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ObjectCr.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ObjectCr.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ObjectCr_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ObjectCr_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="organization_form.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>organization_form.feature.cs</LastGenOutput>
+    </None>
+    <None Include="organization_form_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>organization_form_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="paket.references" />
+    <None Include="individualAccountOwner.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>individualAccountOwner.feature.cs</LastGenOutput>
+    </None>
+    <None Include="payment_doc_info.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>payment_doc_info.feature.cs</LastGenOutput>
+    </None>
+    <None Include="payment_penalties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>payment_penalties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="payment_penalties_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>payment_penalties_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="performed_work_act_payment.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>performed_work_act_payment.feature.cs</LastGenOutput>
+    </None>
+    <None Include="periodicity_services.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>periodicity_services.feature.cs</LastGenOutput>
+    </None>
+    <None Include="periodicity_services_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>periodicity_services_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="period_di.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>period_di.feature.cs</LastGenOutput>
+    </None>
+    <None Include="period_di_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>period_di_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="period_program_cr.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>period_program_cr.feature.cs</LastGenOutput>
+    </None>
+    <None Include="period_program_cr_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>period_program_cr_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="petition_to_courtType.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>petition_to_courtType.feature.cs</LastGenOutput>
+    </None>
+    <None Include="petition_to_courtType_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>petition_to_courtType_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="plans_actionGji.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>plans_actionGji.feature.cs</LastGenOutput>
+    </None>
+    <None Include="plans_actionGji_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>plans_actionGji_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Plans_InsCheckGji.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Plans_InsCheckGji.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Plans_InsCheckGji_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Plans_InsCheckGji_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="plans_jurPersonGji.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>plans_jurPersonGji.feature.cs</LastGenOutput>
+    </None>
+    <None Include="positions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>positions.feature.cs</LastGenOutput>
+    </None>
+    <None Include="positions_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>positions_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="privileged_category_checks.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>privileged_category_checks.feature.cs</LastGenOutput>
+    </None>
+    <None Include="privileged_category.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>privileged_category.feature.cs</LastGenOutput>
+    </None>
+    <None Include="privileged_category_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>privileged_category_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="problemplace.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>problemplace1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="problemplace_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>problemplace_boundaries1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="programCr.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>programCr.feature.cs</LastGenOutput>
+    </None>
+    <None Include="programCr_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>programCr_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="public_services.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>public_services.feature.cs</LastGenOutput>
+    </None>
+    <None Include="public_services_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>public_services_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="realityobjectedit_constructiveelement.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>realityobjectedit_constructiveelement.feature.cs</LastGenOutput>
+    </None>
+    <None Include="real_estate_type.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>real_estate_type.feature.cs</LastGenOutput>
+    </None>
+    <None Include="real_estate_type_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>real_estate_type_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="recalculation_charges.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>recalculation_charges.feature.cs</LastGenOutput>
+    </None>
+    <None Include="register_houses.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>register_houses.feature.cs</LastGenOutput>
+    </None>
+    <None Include="register_personal_acc_owner.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>register_personal_acc_owner.feature.cs</LastGenOutput>
+    </None>
+    <None Include="register_personal_acc_owner_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>register_personal_acc_owner_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="reopen_pers_account.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>reopen_pers_account.feature.cs</LastGenOutput>
+    </None>
+    <None Include="role.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>role.feature.cs</LastGenOutput>
+    </None>
+    <None Include="role_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>role_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="roofing_materials.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>roofing_materials.feature.cs</LastGenOutput>
+    </None>
+    <None Include="roofing_materials_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>roofing_materials_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="rubric.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>rubric.feature.cs</LastGenOutput>
+    </None>
+    <None Include="sanctions_gji.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>sanctions_gji.feature.cs</LastGenOutput>
+    </None>
+    <None Include="sanctions_gji_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>sanctions_gji_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="server_calculations.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>server_calculations.feature.cs</LastGenOutput>
+    </None>
+    <None Include="stage_work_cr.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>stage_work_cr.feature.cs</LastGenOutput>
+    </None>
+    <None Include="stage_work_cr_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>stage_work_cr_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="state_duty.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>state_duty.feature.cs</LastGenOutput>
+    </None>
+    <None Include="types_ownership_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>types_ownership_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="type_court_gji.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>type_court_gji.feature.cs</LastGenOutput>
+    </None>
+    <None Include="type_court_gji_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>type_court_gji_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="type_group_ooi.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>type_group_ooi.feature.cs</LastGenOutput>
+    </None>
+    <None Include="type_group_ooi_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>type_group_ooi_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="type_project.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>type_project.feature.cs</LastGenOutput>
+    </None>
+    <None Include="type_project_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>type_project_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="type_services.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>type_services.feature.cs</LastGenOutput>
+    </None>
+    <None Include="type_services_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>type_services_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="UnitMeasure.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UnitMeasure.feature.cs</LastGenOutput>
+    </None>
+    <None Include="UnitMeasure_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UnitMeasure_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="typeownership.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>typeownership.feature.cs</LastGenOutput>
+    </None>
+    <None Include="user_actions_lock.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>user_actions_lock.feature.cs</LastGenOutput>
+    </None>
+    <None Include="violationsGji.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>violationsGji.feature.cs</LastGenOutput>
+    </None>
+    <None Include="violationsGji_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>violationsGji_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="violations_claimWork.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>violations_claimWork.feature.cs</LastGenOutput>
+    </None>
+    <None Include="violations_claimWork_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>violations_claimWork_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="wall_materials.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>wall_materials.feature.cs</LastGenOutput>
+    </None>
+    <None Include="wall_materials_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>wall_materials_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="works.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>works.feature.cs</LastGenOutput>
+    </None>
+    <None Include="works_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>works_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="work_kinds_current_repair.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>work_kinds_current_repair.feature.cs</LastGenOutput>
+    </None>
+    <None Include="work_kinds_current_repair_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>work_kinds_current_repair_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="zonal_inspection.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>zonal_inspection.feature.cs</LastGenOutput>
+    </None>
+    <None Include="zonal_inspection_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>zonal_inspection_boundaries.feature.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <PropertyGroup>
+        <__paket__xunit_core_props>portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS\xunit.core</__paket__xunit_core_props>
+      </PropertyGroup>
+    </When>
+  </Choose>
+  <Import Project="..\packages\xunit.core\build\$(__paket__xunit_core_props).props" Condition="Exists('..\packages\xunit.core\build\$(__paket__xunit_core_props).props')" Label="Paket" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="..\..\.paket\paket.targets" />
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Antlr3.Runtime">
+          <HintPath>..\packages\Antlr\lib\Antlr3.Runtime.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="ECM7.Migrator.Framework">
+          <HintPath>..\packages\B4.Ecm7Migrator-Core\lib\net40\ECM7.Migrator.Framework.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="ECM7.Migrator">
+          <HintPath>..\packages\B4.Ecm7Migrator-Migrator\lib\net40\ECM7.Migrator.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="ECM7.Migrator.Providers.PostgreSQL">
+          <HintPath>..\packages\B4.Ecm7Migrator-PostgreSQL\lib\net40\ECM7.Migrator.Providers.PostgreSQL.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Core">
+          <HintPath>..\packages\Bars.B4.Core\lib\net40\Bars.B4.Core.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Icons">
+          <HintPath>..\packages\Bars.B4.Icons\lib\net40\Bars.B4.Icons.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.ECM7">
+          <HintPath>..\packages\Bars.B4.Modules.ECM7\lib\net40\Bars.B4.Modules.ECM7.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Ecm7.Framework">
+          <HintPath>..\packages\Bars.B4.Modules.Ecm7.Framework\lib\net40\Bars.B4.Modules.Ecm7.Framework.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Ecm7.Migrator">
+          <HintPath>..\packages\Bars.B4.Modules.Ecm7.Migrator\lib\net40\Bars.B4.Modules.Ecm7.Migrator.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Ecm7.Providers.PostgreSQL">
+          <HintPath>..\packages\Bars.B4.Modules.Ecm7.Providers.PostgreSQL\lib\net40\Bars.B4.Modules.Ecm7.Providers.PostgreSQL.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.ExtJs">
+          <HintPath>..\packages\Bars.B4.Modules.ExtJs\lib\net40\Bars.B4.Modules.ExtJs.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.FIAS">
+          <HintPath>..\packages\Bars.B4.Modules.FIAS\lib\net40\Bars.B4.Modules.FIAS.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.JSDeferred">
+          <HintPath>..\packages\Bars.B4.Modules.JSDeferred\lib\net40\Bars.B4.Modules.JSDeferred.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Mapping">
+          <HintPath>..\packages\Bars.B4.Modules.Mapping\lib\net40\Bars.B4.Modules.Mapping.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.NH">
+          <HintPath>..\packages\Bars.B4.Modules.NH\lib\net40\Bars.B4.Modules.NH.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.NH.Migrations">
+          <HintPath>..\packages\Bars.B4.Modules.NH.Migrations\lib\net40\Bars.B4.Modules.NH.Migrations.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.NH.Postgres">
+          <HintPath>..\packages\Bars.B4.Modules.NH.Postgres\lib\net40\Bars.B4.Modules.NH.Postgres.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.RequireJS">
+          <HintPath>..\packages\Bars.B4.Modules.RequireJS\lib\net40\Bars.B4.Modules.RequireJS.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Security">
+          <HintPath>..\packages\Bars.B4.Modules.Security\lib\net40\Bars.B4.Modules.Security.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Security.ExtJS4">
+          <HintPath>..\packages\Bars.B4.Modules.Security.ExtJS4\lib\net40\Bars.B4.Modules.Security.ExtJS4.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Security.Web">
+          <HintPath>..\packages\Bars.B4.Modules.Security.Web\lib\net40\Bars.B4.Modules.Security.Web.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Setup">
+          <HintPath>..\packages\Bars.B4.Modules.Setup\lib\net40\Bars.B4.Modules.Setup.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.States">
+          <HintPath>..\packages\Bars.B4.Modules.States\lib\net40\Bars.B4.Modules.States.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.TestToolkit">
+          <HintPath>..\packages\Bars.B4.TestToolkit\lib\net45\Bars.B4.TestToolkit.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.TestToolkit.Integrational">
+          <HintPath>..\packages\Bars.B4.TestToolkit.Integrational\lib\net45\Bars.B4.TestToolkit.Integrational.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Utils">
+          <HintPath>..\packages\Bars.B4.Utils\lib\net40\Bars.B4.Utils.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Utils.Web">
+          <HintPath>..\packages\Bars.B4.Utils.Web\lib\net40\Bars.B4.Utils.Web.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Web">
+          <HintPath>..\packages\Bars.B4.Web\lib\net40\Bars.B4.Web.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Bars.Security">
+          <HintPath>..\packages\Bars.Security\lib\net40\Bars.Security.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="Castle.Core">
+          <HintPath>..\packages\Castle.Core\lib\net40-client\Castle.Core.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Castle.Core">
+          <HintPath>..\packages\Castle.Core\lib\net45\Castle.Core.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="Castle.Facilities.WcfIntegration">
+          <HintPath>..\packages\Castle.WcfIntegrationFacility\lib\net40\Castle.Facilities.WcfIntegration.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Core">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Xml">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Xml.Linq">
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Castle.Facilities.WcfIntegration">
+          <HintPath>..\packages\Castle.WcfIntegrationFacility\lib\net45\Castle.Facilities.WcfIntegration.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Core">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Xml">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Xml.Linq">
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="Castle.Windsor">
+          <HintPath>..\packages\Castle.Windsor\lib\net40\Castle.Windsor.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Core">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Xml">
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Castle.Windsor">
+          <HintPath>..\packages\Castle.Windsor\lib\net45\Castle.Windsor.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Core">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Xml">
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Ionic.Zip">
+          <HintPath>..\packages\DotNetZip\lib\net20\Ionic.Zip.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="EcmaScript.NET">
+          <HintPath>..\packages\EcmaScript.Net\lib\net20\EcmaScript.NET.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Elmah">
+          <HintPath>..\packages\elmah.corelibrary\lib\Elmah.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Fasterflect">
+          <HintPath>..\packages\fasterflect\lib\net40\Fasterflect.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="FluentAssertions.Core">
+          <HintPath>..\packages\FluentAssertions\lib\net40\FluentAssertions.Core.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="FluentAssertions">
+          <HintPath>..\packages\FluentAssertions\lib\net40\FluentAssertions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Xml">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Xml.Linq">
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="FluentAssertions.Core">
+          <HintPath>..\packages\FluentAssertions\lib\net45\FluentAssertions.Core.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="FluentAssertions">
+          <HintPath>..\packages\FluentAssertions\lib\net45\FluentAssertions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Xml">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Xml.Linq">
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Iesi.Collections">
+          <HintPath>..\packages\Iesi.Collections\lib\net40\Iesi.Collections.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Microsoft.Web.Infrastructure">
+          <HintPath>..\packages\Mvc3-Base\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.Helpers">
+          <HintPath>..\packages\Mvc3-Base\lib\net40\System.Web.Helpers.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.Mvc">
+          <HintPath>..\packages\Mvc3-Base\lib\net40\System.Web.Mvc.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.Razor">
+          <HintPath>..\packages\Mvc3-Base\lib\net40\System.Web.Razor.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.Services">
+          <HintPath>..\packages\Mvc3-Base\lib\net40\System.Web.Services.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.WebPages.Deployment">
+          <HintPath>..\packages\Mvc3-Base\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.WebPages.Razor">
+          <HintPath>..\packages\Mvc3-Base\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.WebPages">
+          <HintPath>..\packages\Mvc3-Base\lib\net40\System.Web.WebPages.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web">
+          <HintPath>..\packages\Mvc3-Base\lib\net40\System.Web.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="Newtonsoft.Json">
+          <HintPath>..\packages\Newtonsoft.Json\lib\net40\Newtonsoft.Json.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Newtonsoft.Json">
+          <HintPath>..\packages\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="NHibernate">
+          <HintPath>..\packages\NHibernate\lib\net40\NHibernate.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="NLog">
+          <HintPath>..\packages\NLog\lib\net40\NLog.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="NLog">
+          <HintPath>..\packages\NLog\lib\net45\NLog.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="Mono.Security">
+          <HintPath>..\packages\Npgsql\lib\net40\Mono.Security.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Npgsql">
+          <HintPath>..\packages\Npgsql\lib\net40\Npgsql.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Mono.Security">
+          <HintPath>..\packages\Npgsql\lib\net45\Mono.Security.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Npgsql">
+          <HintPath>..\packages\Npgsql\lib\net45\Npgsql.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="nunit.framework">
+          <HintPath>..\packages\NUnit\lib\nunit.framework.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="QuickGraph.Data">
+          <HintPath>..\packages\QuickGraph\lib\net4\QuickGraph.Data.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="QuickGraph.Graphviz">
+          <HintPath>..\packages\QuickGraph\lib\net4\QuickGraph.Graphviz.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="QuickGraph.Serialization">
+          <HintPath>..\packages\QuickGraph\lib\net4\QuickGraph.Serialization.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="QuickGraph">
+          <HintPath>..\packages\QuickGraph\lib\net4\QuickGraph.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="ICSharpCode.SharpZipLib">
+          <HintPath>..\packages\SharpZipLib\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="TechTalk.SpecFlow">
+          <HintPath>..\packages\SpecFlow\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="xunit.abstractions">
+          <HintPath>..\packages\xunit.abstractions\lib\net35\xunit.abstractions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="xunit.assert">
+          <HintPath>..\packages\xunit.assert\lib\portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS\xunit.assert.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="xunit.core">
+          <HintPath>..\packages\xunit.extensibility.core\lib\portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS\xunit.core.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Yahoo.Yui.Compressor">
+          <HintPath>..\packages\YUICompressor.NET\lib\NET20\Yahoo.Yui.Compressor.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+</Project>

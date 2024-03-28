@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="5">
+      <Нарушения Ref="2" type="DataTableSource" isKey="true">
+        <Alias>Нарушения</Alias>
+        <Columns isList="true" count="3">
+          <value>Адрес,System.String</value>
+          <value>ПунктыНПА,System.String</value>
+          <value>СрокМероприятия,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Нарушения</Name>
+        <NameInSource>Нарушения</NameInSource>
+      </Нарушения>
+      <ПереченьНПА Ref="3" type="DataTableSource" isKey="true">
+        <Alias>ПереченьНПА</Alias>
+        <Columns isList="true" count="2">
+          <value>ПолноеНаименование,System.String</value>
+          <value>СокращенноеНаименование,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ПереченьНПА</Name>
+        <NameInSource>ПереченьНПА</NameInSource>
+      </ПереченьНПА>
+      <ПредметыПроверки Ref="4" type="DataTableSource" isKey="true">
+        <Alias>ПредметыПроверки</Alias>
+        <Columns isList="true" count="1">
+          <value>Наименование,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ПредметыПроверки</Name>
+        <NameInSource>ПредметыПроверки</NameInSource>
+      </ПредметыПроверки>
+      <НаправленияДеятельности Ref="5" type="DataTableSource" isKey="true">
+        <Alias>НаправленияДеятельности</Alias>
+        <Columns isList="true" count="1">
+          <value>Наименование,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>НаправленияДеятельности</Name>
+        <NameInSource>НаправленияДеятельности</NameInSource>
+      </НаправленияДеятельности>
+      <ДокументыОснования Ref="6" type="DataTableSource" isKey="true">
+        <Alias>ДокументыОснования</Alias>
+        <Columns isList="true" count="3">
+          <value>ДокументОснование,System.String</value>
+          <value>ДатаДокумента,System.String</value>
+          <value>НомерДокумента,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ДокументыОснования</Name>
+        <NameInSource>ДокументыОснования</NameInSource>
+      </ДокументыОснования>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="18">
+      <value>,НомерПредписания,НомерПредписания,System.String,,False,False</value>
+      <value>,ДатаПредписания,ДатаПредписания,System.String,,False,False</value>
+      <value>,КомуВыдано,КомуВыдано,System.String,,False,False</value>
+      <value>,КПП,КПП,System.String,,False,False</value>
+      <value>,ИНН,ИНН,System.String,,False,False</value>
+      <value>,АдресКонтрагента,АдресКонтрагента,System.String,,False,False</value>
+      <value>,ДолжностьИнспектора,ДолжностьИнспектора,System.String,,False,False</value>
+      <value>,ИнспекторФамИО,ИнспекторФамИО,System.String,,False,False</value>
+      <value>,ФизическоеЛицо,ФизическоеЛицо,System.String,,False,False</value>
+      <value>,НомерАктаПроверки,НомерАктаПроверки,System.String,,False,False</value>
+      <value>,ДатаАктаПроверки,ДатаАктаПроверки,System.String,,False,False</value>
+      <value>,РеквизитыФизлица,РеквизитыФизлица,System.String,,False,False</value>
+      <value>,НомерДома,НомерДома,System.String,,False,False</value>
+      <value>,НаселенныйПункт,НаселенныйПункт,System.String,,False,False</value>
+      <value>,МестоСоставления,МестоСоставления,System.String,,False,False</value>
+      <value>,Улица,Улица,System.String,,False,False</value>
+      <value>,ВремяCоставления,ВремяCоставления,ВремяCоставления,System.String,,False,False,False</value>
+      <value>,ТипИсполнителя,ТипИсполнителя,ТипИсполнителя,System.String,,False,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="7" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="3">
+        <ReportTitleBand1 Ref="8" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <CanShrink>True</CanShrink>
+          <ClientRectangle>0,0.4,17.5,7.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text1 Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,17.4,7.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{НомерПредписания} - номер предписания
+{ДатаПредписания} - дата предписания
+{КомуВыдано} - кому выдано
+{КПП} - кпп
+{ИНН} - инн
+{АдресКонтрагента} - адрес контрагента
+{ДолжностьИнспектора} - Должность инспектора
+{ИнспекторФамИО} - инспектор фам ио
+{ФизическоеЛицо} - физическое лицо
+{РеквизитыФизлица} - реквизиты физ лица
+{НомерАктаПроверки} - номер акта проверки
+{ДатаАктаПроверки} - дата акта проверки
+{НомерДома} номер дома
+{Улица} - улица
+{НаселенныйПункт} - нас пункт
+{МестоСоставления} место состявления</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>1543a3b91eaa4f2a8bc6c842a42acf46</Guid>
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </ReportTitleBand1>
+        <HeaderBand1 Ref="10" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,9,17.5,1.6</ClientRectangle>
+          <Components isList="true" count="5">
+            <Text7 Ref="11" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>All;Black;2;Solid;False;0;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,1.2,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>38cbc1cf4f014be493799cf095557f29</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="7" />
+              <Parent isRef="10" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>№&lt;br&gt;
+п/п</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text7>
+            <Text9 Ref="12" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>All;Black;2;Solid;False;0;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.4,0,5.6,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>72216026b4f6495db4c233f97e699342</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="7" />
+              <Parent isRef="10" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>Описание</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text9>
+            <Text10 Ref="13" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>All;Black;2;Solid;False;0;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15,0,2.4,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>c8addb2cac2145ceb06c5a7ad5774699</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="7" />
+              <Parent isRef="10" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>Дата выполнения</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text10>
+            <Text8 Ref="14" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>All;Black;2;Solid;False;0;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.2,0,8.2,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>a5f5957380d84ea68ffc9539488d5d93</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="7" />
+              <Parent isRef="10" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>Мероприятие</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text8>
+            <Text3 Ref="15" type="Text" isKey="true">
+              <Border>All;Black;2;Solid;False;0;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.4,0,2.2,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="7" />
+              <Parent isRef="10" />
+              <Text>Column</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </HeaderBand1>
+        <DataBand1 Ref="16" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,11.4,17.5,0.6</ClientRectangle>
+          <Components isList="true" count="5">
+            <Text11 Ref="17" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>All;Black;2;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>cd1744de03614164b2b4d3942910609e</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>3,3,3,3</Margins>
+              <Name>Text11</Name>
+              <Page isRef="7" />
+              <Parent isRef="16" />
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text11>
+            <Text12 Ref="18" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>All;Black;2;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.2,0,8.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>f8ded699e4a94e17952c894bf49219f4</Guid>
+              <Margins>3,3,3,3</Margins>
+              <Name>Text12</Name>
+              <Page isRef="7" />
+              <Parent isRef="16" />
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text12>
+            <Text13 Ref="19" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>All;Black;2;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>9.4,0,5.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>4286b4722cbd412eb7557828b5a364da</Guid>
+              <Margins>3,3,3,3</Margins>
+              <Name>Text13</Name>
+              <Page isRef="7" />
+              <Parent isRef="16" />
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text13>
+            <Text14 Ref="20" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>All;Black;2;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>15,0,2.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>63d7f5cd36884ec5b1d0a770283f2ce8</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>3,3,3,3</Margins>
+              <Name>Text14</Name>
+              <Page isRef="7" />
+              <Parent isRef="16" />
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text14>
+            <Text2 Ref="21" type="Text" isKey="true">
+              <Border>All;Black;2;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.4,0,2.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="7" />
+              <Parent isRef="16" />
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>Нарушения</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>3719af0d49ac489ea54d4d0310c0d9d4</Guid>
+      <Margins>2.2,1.3,0.75,0.5</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="22" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="23" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>12/17/2014 7:05:41 PM</ReportChanged>
+  <ReportCreated>9/1/2013 1:25:03 PM</ReportCreated>
+  <ReportFile>D:\TFS\GKH.GKH.CMMI\Dev\Chelyabinsk\Bars.GkhGji.Regions.Chelyabinsk\Resources\ChelyabinskPrescription.mrt</ReportFile>
+  <ReportGuid>d4c137125eb943b79a6366d423c6b74e</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

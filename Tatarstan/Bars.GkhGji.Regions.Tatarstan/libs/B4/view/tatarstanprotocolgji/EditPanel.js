@@ -1,0 +1,1616 @@
+﻿Ext.define('B4.view.tatarstanprotocolgji.EditPanel', {
+    extend: 'Ext.form.Panel',
+
+    closable: true,
+    layout: { type: 'vbox', align: 'stretch' },
+    alias: 'widget.tatarstanprotocolgjieditpanel',
+    title: 'Протокол ГЖИ РТ',
+    trackResetOnLoad: true,
+    autoScroll: true,
+
+    requires: [
+        'B4.form.ComboBox',
+        'B4.form.SelectField',
+        'B4.store.Contragent',
+        'B4.store.DocumentGji',
+        'B4.store.dict.Citizenship',
+        'B4.store.dict.Municipality',
+        'B4.store.dict.ZonalInspection',
+        'B4.store.dict.ExecutantDocGji',
+        'B4.ux.button.Save',
+        'B4.ux.button.Add',
+        'B4.view.Control.GkhIntField',
+        'B4.view.Control.GkhButtonPrint',
+        'B4.view.Control.GkhTriggerField',
+        'B4.view.tatarstanprotocolgji.AnnexGrid',
+        'B4.view.tatarstanprotocolgji.ArticleLawGrid',
+        'B4.view.tatarstanprotocolgji.RealityObjectGrid',
+        'B4.view.tatarstanprotocolgji.ViolationGrid',
+        'B4.view.tatarstanprotocolgji.EyewitnessGrid',
+        'B4.view.GjiDocumentCreateButton',
+        'B4.view.Control.GkhDecimalField',
+        'B4.enums.TypeTerminationBasement',
+        'B4.enums.TypeDocumentGji',
+        'B4.enums.YesNoNotSet',
+        'B4.enums.TypeExecutantProtocol',
+        'B4.enums.CitizenshipType'
+    ],
+
+    initComponent: function () {
+        var me = this;
+
+        Ext.applyIf(me, {
+            bodyStyle: Gkh.bodyStyle,
+            items: [
+                {
+                    xtype: 'panel',
+                    autoScroll: true,
+                    bodyStyle: Gkh.bodyStyle,
+                    border: false,
+                    defaults: {
+                        border: false,
+                        labelWidth: 160,
+                        xtype: 'panel',
+                        layout: 'hbox',
+                        shrinkWrap: true
+                    },
+                    items: [
+                        {
+                            bodyStyle: Gkh.bodyStyle,
+                            padding: '10px 15px 5px 15px',
+                            defaults: {
+                                labelAlign: 'right'
+                            },
+                            items: [
+                                {
+                                    xtype: 'datefield',
+                                    name: 'DocumentDate',
+                                    fieldLabel: 'Дата',
+                                    format: 'd.m.Y',
+                                    labelWidth: 80,
+                                    width: 200
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    name: 'DocumentNumber',
+                                    fieldLabel: 'Номер документа',
+                                    labelWidth: 140,
+                                    width: 295
+                                }
+                            ]
+                        },
+                        {
+                            bodyStyle: Gkh.bodyStyle,
+                            padding: '0 15px 20px 15px',
+                            defaults: {
+                                xtype: 'gkhintfield',
+                                hideTrigger: true
+                            },
+                            items: [
+                                {
+                                    name: 'DocumentYear',
+                                    fieldLabel: 'Год',
+                                    labelWidth: 80,
+                                    width: 200,
+                                    readOnly: true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    xtype: 'tabpanel',
+                    name: 'tatarstanProtocolGjiTabPanel',
+                    flex: 1,
+                    border: false,
+                    defaults: {
+                        autoScroll: true
+                    },
+                    items: [
+                        {
+                            layout: { type: 'vbox', align: 'stretch' },
+                            title: 'Реквизиты',
+                            bodyPadding: 5,
+                            border: false,
+                            frame: true,
+                            defaults: {
+                                labelWidth: 160,
+                                labelAlign: 'right',
+                                anchor: '100%'
+                            },
+                            items: [
+                                {
+                                    xtype: 'fieldset',
+                                    items: [
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                anchor: '100%',
+                                                editable: false,
+                                                labelWidth: 160,
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'b4selectfield',
+                                                            store: 'B4.store.dict.Municipality',
+                                                            name: 'Municipality',
+                                                            fieldLabel: 'Муниципальное образование',
+                                                            columns: [
+                                                                { text: 'Наименование', dataIndex: 'Name', flex: 1 }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'datefield',
+                                                            name: 'DateOffense',
+                                                            fieldLabel: 'Дата правонарушения',
+                                                            format: 'd.m.Y'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                anchor: '100%',
+                                                editable: false,
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'b4selectfield',
+                                                            store: 'B4.store.dict.ZonalInspection',
+                                                            name: 'ZonalInspection',
+                                                            fieldLabel: 'Орган ГЖИ, оформивший протокол',
+                                                            textProperty: 'ZoneName',
+                                                            columns: [
+                                                                { text: 'Наименование', dataIndex: 'ZoneName', flex: 1 }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'timefield',
+                                                            fieldLabel: 'Время правонарушения',
+                                                            format: 'H:i',
+                                                            submitFormat: 'Y-m-d H:i:s',
+                                                            minValue: '00:00',
+                                                            increment: 30,
+                                                            maxValue: '24:00',
+                                                            name: 'TimeOffense'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                editable: false,
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'gkhtriggerfield',
+                                                            name: 'CheckInspectors',
+                                                            fieldLabel: 'Инспекторы',
+                                                            flex: 1
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'datefield',
+                                                            name: 'DateSupply',
+                                                            fieldLabel: 'Дата поступления в ГЖИ',
+                                                            format: 'd.m.Y'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    defaults: {
+                                        anchor: '100%',
+                                        labelWidth: 160,
+                                        labelAlign: 'right'
+                                    },
+                                    title: 'ГИС ГМП',
+                                    items: [
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                anchor: '100%',
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'b4selectfield',
+                                                            store: 'B4.store.GisGmpPatternDict',
+                                                            name: 'Pattern',
+                                                            fieldLabel: 'Шаблон ГИС ГМП',
+                                                            editable: false,
+                                                            textProperty: 'PatternName',
+                                                            columns: [
+                                                                {
+                                                                    text: 'Наименование',
+                                                                    dataIndex: 'PatternName',
+                                                                    flex: 1
+                                                                },
+                                                                {
+                                                                    text: 'Код',
+                                                                    dataIndex: 'PatternCode',
+                                                                    flex: 1
+                                                                }
+                                                            ],
+                                                            listeners: {
+                                                                beforeload: function (field, options) {
+                                                                    options.params.relevanceFilter = true;
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'GisUin',
+                                                            fieldLabel: 'УИН',
+                                                            readOnly: true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'AnnulReason',
+                                                            fieldLabel: 'Причина аннулирования'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'UpdateReason',
+                                                            fieldLabel: 'Причина изменения'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    defaults: {
+                                        xtype: 'container',
+                                        anchor: '100%',
+                                        flex: 1,
+                                        padding: '0 0 7 0'
+                                    },
+                                    title: 'Санкция',
+                                    items: [
+                                        {
+                                            layout: 'hbox',
+                                            defaults: {
+                                                editable: false,
+                                                flex: 1,
+                                                labelAlign: 'right',
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'b4combobox',
+                                                            name: 'Sanction',
+                                                            fieldLabel: 'Вид санкции',
+                                                            fields: ['Id', 'Name', 'Code'],
+                                                            url: '/SanctionGji/List'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'combobox',
+                                                            name: 'Paided',
+                                                            fieldLabel: 'Штраф оплачен',
+                                                            displayField: 'Display',
+                                                            store: B4.enums.YesNoNotSet.getStore(),
+                                                            valueField: 'Value'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            layout: 'hbox',
+                                            defaults: {
+                                                flex: 1,
+                                                labelAlign: 'right',
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'gkhdecimalfield',
+                                                            name: 'PenaltyAmount',
+                                                            fieldLabel: 'Сумма штрафа'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'datefield',
+                                                            name: 'DateTransferSsp',
+                                                            fieldLabel: 'Дата передачи в ССП'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            layout: 'hbox',
+                                            defaults: {
+                                                flex: 1,
+                                                labelAlign: 'right',
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'combobox',
+                                                    name: 'TerminationBasement',
+                                                    fieldLabel: 'Основание прекращения',
+                                                    displayField: 'Display',
+                                                    store: B4.enums.TypeTerminationBasement.getStore(),
+                                                    valueField: 'Value'
+                                                },
+                                            ]
+                                        },
+                                        {
+                                            layout: 'hbox',
+                                            defaults: {
+                                                flex: 1,
+                                                labelAlign: 'right',
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'textfield',
+                                                    name: 'TerminationDocumentNum',
+                                                    fieldLabel: 'Номер документа',
+                                                },
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'combobox',
+                                    name: 'Executant',
+                                    editable: false,
+                                    fieldLabel: 'Тип исполнителя',
+                                    displayField: 'Display',
+                                    store: B4.enums.TypeExecutantProtocol.getStore(),
+                                    valueField: 'Value',
+                                    labelWidth: 170
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    name: 'ContragentInfoFieldSet',
+                                    defaults: {
+                                        anchor: '100%',
+                                        labelWidth: 160,
+                                        labelAlign: 'right'
+                                    },
+                                    title: 'Протокол составлен в отношении',
+                                    items: [
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                labelWidth: 160,
+                                                readOnly: true
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'b4selectfield',
+                                                            store: 'B4.store.Contragent',
+                                                            name: 'Contragent',
+                                                            fieldLabel: 'Контрагент',
+                                                            editable: false,
+                                                            readOnly: false,
+                                                            textProperty: 'Name',
+                                                            columns: [
+                                                                {
+                                                                    text: 'Наименование',
+                                                                    dataIndex: 'ShortName',
+                                                                    flex: 1,
+                                                                    filter: { xtype: 'textfield' }
+                                                                },
+                                                                {
+                                                                    text: 'Муниципальное образование',
+                                                                    dataIndex: 'Municipality',
+                                                                    flex: 1,
+                                                                    filter: {
+                                                                        xtype: 'b4combobox',
+                                                                        operand: CondExpr.operands.eq,
+                                                                        storeAutoLoad: false,
+                                                                        hideLabel: true,
+                                                                        editable: false,
+                                                                        valueField: 'Name',
+                                                                        emptyItem: { Name: '-' },
+                                                                        url: '/Municipality/ListMoAreaWithoutPaging'
+                                                                    }
+                                                                },
+                                                                {
+                                                                    text: 'ИНН',
+                                                                    dataIndex: 'Inn',
+                                                                    flex: 1,
+                                                                    filter: { xtype: 'textfield' }
+                                                                },
+                                                                {
+                                                                    text: 'КПП',
+                                                                    dataIndex: 'Kpp',
+                                                                    flex: 1,
+                                                                    filter: { xtype: 'textfield' }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160,
+                                                        readOnly: true
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'Ogrn',
+                                                            fieldLabel: 'ОГРН'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160,
+                                                        readOnly: true
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'Inn',
+                                                            fieldLabel: 'ИНН'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160,
+                                                        readOnly: true
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'Kpp',
+                                                            fieldLabel: 'КПП'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160,
+                                                        readOnly: true
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'SettlementAccount',
+                                                            fieldLabel: 'Расчетный счет'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160,
+                                                        readOnly: true
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'BankName',
+                                                            fieldLabel: 'Банк'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                labelWidth: 120,
+                                                readOnly: true
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'textfield',
+                                                    name: 'CorrAccount',
+                                                    fieldLabel: 'Корр. счет',
+                                                    labelWidth: 160,
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    name: 'Bik',
+                                                    fieldLabel: 'БИК'
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    name: 'Okpo',
+                                                    fieldLabel: 'ОКПО'
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    name: 'Okonh',
+                                                    fieldLabel: 'ОКОНХ'
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    name: 'Okved',
+                                                    fieldLabel: 'ОКВЭД'
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    name: 'PersonalInfoFieldSet',
+                                    defaults: {
+                                        anchor: '100%',
+                                        labelWidth: 160,
+                                        labelAlign: 'right'
+                                    },
+                                    title: 'Протокол составлен в отношении',
+                                    items: [
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'SurName',
+                                                            fieldLabel: 'Фамилия'
+    }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'combobox',
+                                                            name: 'CitizenshipType',
+                                                            fieldLabel: 'Гражданство',
+                                                            displayField: 'Display',
+                                                            flex: 2,
+                                                            store: B4.enums.CitizenshipType.getStore(),
+                                                            valueField: 'Value'
+                                                        },
+                                                        {
+                                                            xtype: 'b4selectfield',
+                                                            store: 'B4.store.dict.Citizenship',
+                                                            name: 'Citizenship',
+                                                            fieldLabel: 'Код страны',
+                                                            labelWidth: 80,
+                                                            flex: 3,
+                                                            editable: false,
+                                                            textProperty: 'Name',
+                                                            columns: [
+                                                                {
+                                                                    text: 'Наименование',
+                                                                    dataIndex: 'Name',
+                                                                    flex: 1
+                                                                },
+                                                                {
+                                                                    text: 'Код ОКСМ',
+                                                                    dataIndex: 'OksmCode',
+                                                                    flex: 1
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'Name',
+                                                            fieldLabel: 'Имя'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'b4selectfield',
+                                                            store: 'B4.store.dict.IdentityDocumentType',
+                                                            name: 'IdentityDocumentType',
+                                                            fieldLabel: 'Тип документа',
+                                                            editable: false,
+                                                            textProperty: 'Name',
+                                                            columns: [
+                                                                {
+                                                                    text: 'Наименование',
+                                                                    dataIndex: 'Name',
+                                                                    flex: 1
+                                                                },
+                                                                {
+                                                                    text: 'Код',
+                                                                    dataIndex: 'Code',
+                                                                    flex: 1
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'Patronymic',
+                                                            fieldLabel: 'Отчество'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'SerialAndNumberDocument',
+                                                            fieldLabel: 'Серия и номер документа'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'datefield',
+                                                            name: 'BirthDate',
+                                                            fieldLabel: 'Дата рождения'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'datefield',
+                                                            name: 'IssueDate',
+                                                            fieldLabel: 'Дата выдачи'
+                                                        },
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'BirthPlace',
+                                                            fieldLabel: 'Место рождения'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'IssuingAuthority',
+                                                            fieldLabel: 'Кем выдан'
+                                                        }
+                                                    ]
+                                                },
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'Address',
+                                                            fieldLabel: 'Фактический адрес проживания'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'Company',
+                                                            fieldLabel: 'Место работы, должность, адрес'
+                                                        }
+                                                    ]
+                                                },
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'MaritalStatus',
+                                                            fieldLabel: 'Семейное положение'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'RegistrationAddress',
+                                                            fieldLabel: 'Адрес регистрации'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'gkhintfield',
+                                                            name: 'DependentCount',
+                                                            fieldLabel: 'Количество иждивенцев'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'gkhdecimalfield',
+                                                            name: 'Salary',
+                                                            fieldLabel: 'Размер зарплаты (пенсии, стипендии) в руб.'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'checkbox',
+                                            name: 'ResponsibilityPunishment',
+                                            fieldLabel: 'Ранее к административной ответственности по ч.1 ст. 20.6 КоАП РФ привлекались',
+                                            margin: '5 20 0 0',
+                                            labelWidth: 500
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    defaults: {
+                                        anchor: '100%',
+                                        labelWidth: 160,
+                                        labelAlign: 'right'
+                                    },
+                                    title: 'Законный представитель',
+                                    items: [
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                labelWidth: 160,
+                                                border: false
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'DelegateFio',
+                                                            fieldLabel: 'ФИО'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'ProcurationNumber',
+                                                            fieldLabel: 'Доверенность номер',
+                                                            labelWidth: 160
+                                                        },
+                                                        {
+                                                            xtype: 'datefield',
+                                                            name: 'ProcurationDate',
+                                                            fieldLabel: 'от',
+                                                            format: 'd.m.Y',
+                                                            labelWidth: 40,
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'DelegateCompany',
+                                                            fieldLabel: 'Место работы, должность'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'checkbox',
+                                                            name: 'DelegateResponsibilityPunishment',
+                                                            fieldLabel: 'Ранее к административной ответственности по ч.1 ст. 20.6 КоАП РФ привлекались',
+                                                            labelWidth: 500
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    defaults: {
+                                        anchor: '100%',
+                                        labelWidth: 160,
+                                        labelAlign: 'right'
+                                    },
+                                    title: 'Сведения о правонарушении',
+                                    items: [
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textarea',
+                                                            name: 'ProtocolExplanation',
+                                                            fieldLabel: 'Объяснение и замечания по содержанию протокола',
+                                                            maxLength: 255
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textarea',
+                                                            name: 'AccusedExplanation',
+                                                            fieldLabel: 'Объяснение лица, в отношении которого возбуждено дело',
+                                                            maxLength: 255
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1,
+                                                labelWidth: 160
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'checkbox',
+                                                            name: 'IsInTribunal',
+                                                            fieldLabel: 'Рассмотрение дела состоится в суде',
+                                                            margin: '5 20 0 0'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'vbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 230
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'checkbox',
+                                                            name: 'RejectionSignature',
+                                                            fieldLabel: 'Отказ от подписания протокола',
+                                                        },
+                                                        {
+                                                            xtype: 'checkbox',
+                                                            name: 'ResidencePetition',
+                                                            fieldLabel: 'Ходатайство по месту жительства',
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            padding: '0 0 7 0',
+                                            border: false,
+                                            layout: 'hbox',
+                                            defaults: {
+                                                labelAlign: 'right',
+                                                flex: 1
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'TribunalName',
+                                                            fieldLabel: 'Суд',
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'fieldset',
+                                                    border: false,
+                                                    layout: 'hbox',
+                                                    padding: '0 0 7 0',
+                                                    defaults: {
+                                                        labelAlign: 'right',
+                                                        flex: 1,
+                                                        labelWidth: 160
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            name: 'OffenseAddress',
+                                                            fieldLabel: 'Адрес'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        { xtype: 'tatarstanprotocolgjiarticlelawgrid', flex: 1 },
+                        { xtype: 'tatarstanprotocolgjirealityobjectgrid', flex: 1 },
+                        { xtype: 'tatarstanprotocolgjiannexgrid', flex: 1, itemId: 'protocolAnnexGrid' },
+                        { xtype: 'tatarstanprotocolgjieyewitnessgrid', flex: 1 },
+                        { xtype: 'tatarstanprotocolgjiviolationgrid', flex: 1 }
+                    ]
+                }
+            ],
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    itemId: 'documentGJIToolBar',
+                    dock: 'top',
+                    items: [
+                        {
+                            xtype: 'buttongroup',
+                            items: [
+                                {
+                                    xtype: 'b4savebutton'
+                                },
+                                {
+                                    xtype: 'button',
+                                    iconCls: 'icon-accept',
+                                    text: 'Отменить',
+                                    textAlign: 'left',
+                                    name: 'btnCancel'
+                                },
+                                {
+                                    xtype: 'gjidocumentcreatebutton'
+                                },
+                                {
+                                    xtype: 'gkhbuttonprint'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'tbfill'
+                        },
+                        {
+                            xtype: 'buttongroup',
+                            itemId: 'statusButtonGroup',
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    iconCls: 'icon-accept',
+                                    name: 'btnState',
+                                    text: 'Статус',
+                                    menu: []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        });
+
+        me.callParent(arguments);
+    }
+});

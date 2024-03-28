@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="0" />
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="24">
+      <value>,Дата,Дата,System.String,,False,False</value>
+      <value>,Номер,Номер,System.String,,False,False</value>
+      <value>,КодДлВынесшегоПостановление,КодДлВынесшегоПостановление,System.String,,False,False</value>
+      <value>,ФИОДлВынесшегоПостановление,ФИОДлВынесшегоПостановление,System.String,,False,False</value>
+      <value>,СтатьяЗакона,СтатьяЗакона,System.String,,False,False</value>
+      <value>,ТипЛица,ТипЛица,System.String,,False,False</value>
+      <value>,ИНН,ИНН,System.String,,False,False</value>
+      <value>,ОГРН,ОГРН,System.String,,False,False</value>
+      <value>,Контрагент,Контрагент,System.String,,False,False</value>
+      <value>,КонтрагентСокр,КонтрагентСокр,System.String,,False,False</value>
+      <value>,ЮрАдрес,ЮрАдрес,System.String,,False,False</value>
+      <value>,АдресФакт,АдресФакт,System.String,,False,False</value>
+      <value>,КПП,КПП,System.String,,False,False</value>
+      <value>,РуководительКонтрагент,РуководительКонтрагент,System.String,,False,False</value>
+      <value>,Должность,Должность,System.String,,False,False</value>
+      <value>,ФизЛицо,ФизЛицо,System.String,,False,False</value>
+      <value>,ДатаМестоРожд,ДатаМестоРожд,System.String,,False,False</value>
+      <value>,АдресПрож,АдресПрож,System.String,,False,False</value>
+      <value>,ФИОДлВынесшегоПостановлениеСокр,ФИОДлВынесшегоПостановлениеСокр,System.String,,False,False</value>
+      <value>,ДатаПротокол,ДатаПротокол,System.String,,False,False</value>
+      <value>,НомерПротокол,НомерПротокол,System.String,,False,False</value>
+      <value>,Кого,Кого,Кого,System.String,,False,False,False</value>
+      <value>,Штраф,Штраф,Штраф,System.Decimal,,False,False,False</value>
+      <value>,ВидСанкции,ВидСанкции,System.String,,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="2" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="1">
+        <ReportTitleBand1 Ref="3" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,18,26.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text1 Ref="4" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,18,16.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Tahoma,11</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="2" />
+              <Parent isRef="3" />
+              <Text>{Дата}-Дата
+{Номер} - Номер
+{КодДлВынесшегоПостановление} - КодДлВынесшегоПостановление
+{ФИОДлВынесшегоПостановление} - ФИОДлВынесшегоПостановление
+{СтатьяЗакона} - СтатьяЗакона
+{ТипЛица} - ТипЛица
+{ИНН} - ИНН
+{ОГРН} - ОГРН
+{Контрагент} - Контрагент
+{КонтрагентСокр} - КонтрагентСокр
+{ЮрАдрес} - ЮрАдрес
+{АдресФакт} - АдресФакт
+{КПП} - КПП
+{РуководительКонтрагент} - РуководительКонтрагент
+{Должность} - Должность
+{ФизЛицо} - ФизЛицо
+{ДатаМестоРожд} - ДатаМестоРожд
+{АдресПрож} - АдресПрож
+{ФИОДлВынесшегоПостановлениеСокр} - ФИОДлВынесшегоПостановлениеСокр
+{ДатаПротокол} - ДатаПротокол
+{НомерПротокол} - НомерПротокол
+{Кого} - Кого
+{Штраф} - Штраф
+{ВидСанкции} - Код из справочника вид санкции</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+        </ReportTitleBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>b01e0473622a477db9be23667db3ad4b</Guid>
+      <LargeHeight>True</LargeHeight>
+      <Margins>2,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="5" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="6" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>8/18/2014 6:40:58 PM</ReportChanged>
+  <ReportCreated>6/4/2014 11:14:23 AM</ReportCreated>
+  <ReportFile>C:\_WORK\_REPOS\tfs\GKH.GKH.CMMI\Dev\Saha\Bars.GkhGji.Regions.Saha\Resources\SahaResolution.mrt</ReportFile>
+  <ReportGuid>34ee578249454becb028e998db1a98fc</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

@@ -1,0 +1,51 @@
+﻿@using Bars.B4
+@using Bars.B4.Application
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    @if (IsSectionDefined("Head"))
+    {
+        @RenderSection("Head", false)
+    }
+}
+
+@section HeadContent {
+    @{
+        @Html.IncludeCssBundle("external-libs")
+        @Html.IncludeCssBundle("b4-all")
+
+        bool isDebug = ApplicationContext.Current.IsDebug;
+
+        <script type="text/javascript">
+            rootUrl = '@(Context.Request.Path.Value.EndsWith("/") ? Context.Request.Path.Value : (Context.Request.Path.Value + "/"))';
+            isDebug = @isDebug.ToString().ToLower();
+        </script>
+    }
+
+    @RenderSection("HeadContent", false)
+}
+<div id="notify-body" class="gkh-notify">
+    <div id="notify-mask" class="b4-preloader gkh-notify-mask"></div>
+    <div id="notify-window" class="gkh-notify-window"></div>
+</div>
+
+<div id="b4-loading-mask" class="b4-preloader">
+    <div class="b4-preloder-inner">
+        <div class="b4-preloder-img"></div>
+        <div class="b4-preloder-text">Загрузка...</div>
+    </div>
+</div>
+@RenderBody()
+@{
+    @Html.IncludeScriptsBundle("external-libs")
+    @Html.IncludeScriptsBundle("b4-all")
+}
+
+@section Trail {
+    @if (IsSectionDefined("Trail"))
+    {
+        @RenderSection("Trail", false)
+    }
+}

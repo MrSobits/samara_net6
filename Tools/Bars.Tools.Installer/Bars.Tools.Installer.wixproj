@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.9</ProductVersion>
+    <ProjectGuid>26eaf630-41e3-4211-86d4-98b4d9c3242d</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>Setup</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug</DefineConstants>
+    <Cultures>ru-Ru</Cultures>
+    <SuppressAllWarnings>False</SuppressAllWarnings>
+    <Pedantic>True</Pedantic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ProductCalcComponents.wxs" />
+    <Compile Include="IisConfiguration.wxs" />
+    <Compile Include="Product.wxs" />
+    <Compile Include="ProductComponents.wxs" />
+    <Compile Include="UiDialogs.wxs" />
+    <Compile Include="UiFlow.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Files\" />
+    <Folder Include="Images\" />
+    <Folder Include="Localization\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuration.wxi" />
+    <Content Include="install-product-instances.bat" />
+    <Content Include="msi-install-update.bat" />
+    <Content Include="Files\license.rtf" />
+    <Content Include="get-files-for-install.bat" />
+    <Content Include="get-installer.bat" />
+    <Content Include="Images\Banner.jpg" />
+    <Content Include="Images\bars-icon.jpg" />
+    <Content Include="Images\Dialog.jpg" />
+    <Content Include="ProductTransformer.xslt" />
+    <Content Include="Variables.wxi" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\IIsExtension_Platform_ru-RU.wxl" />
+    <EmbeddedResource Include="Localization\IIsExtension_ru-RU.wxl" />
+    <EmbeddedResource Include="Localization\UtilExtension_ru-RU.wxl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUtilExtension">
+      <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
+      <Name>WixUtilExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixNetFxExtension">
+      <HintPath>$(WixExtDir)\WixNetFxExtension.dll</HintPath>
+      <Name>WixNetFxExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixIIsExtension">
+      <HintPath>$(WixExtDir)\WixIIsExtension.dll</HintPath>
+      <Name>WixIIsExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bars.Tools.Installer.SetupActions\Bars.Tools.Installer.SetupActions.csproj">
+      <Name>Bars.Tools.Installer.SetupActions</Name>
+      <Project>{a593f467-aab0-4c76-a2dd-c0d3ef2357c9}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+  </ItemGroup>
+  <!--<ItemGroup>
+    <BootstrapperFile Include=".NETFramework,Version=v4.0">
+      <ProductName>.NET Framework 4.0 Full</ProductName>
+    </BootstrapperFile>
+    <BootstrapperFile Include="Microsoft.Windows.Installer.3.9">
+      <ProductName>Windows Installer 3.9</ProductName>
+    </BootstrapperFile>
+  </ItemGroup>-->
+  <Import Project="$(WixTargetsPath)" />
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+  -->
+  <!--<Target Name="AfterBuild">
+    <GenerateBootstrapper ApplicationFile="ru-Ru\Setup.msi" ApplicationName="Bars Group Application"
+                          BootstrapperItems="@(BootstrapperFile)" ComponentsLocation="Relative"
+                          CopyComponents="True" OutputPath="$(OutputPath)" Path="C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\Bootstrapper\"
+                          />
+  </Target>-->
+</Project>

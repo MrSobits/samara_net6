@@ -1,0 +1,24 @@
+﻿namespace Bars.GkhGji.Regions.BaseChelyabinsk
+{
+    using System.Collections.Generic;
+
+    using Bars.B4.Modules.States;
+    using Bars.GkhGji.Regions.BaseChelyabinsk.Entities;
+    using Bars.GkhGji.Regions.BaseChelyabinsk.Entities.AppealCits;
+    using Bars.GkhGji.Regions.BaseChelyabinsk.Entities.Protocol197;
+
+    public class StatefulEntityManifest : IStatefulEntitiesManifest
+    {
+        public IEnumerable<StatefulEntityInfo> GetAllInfo()
+        {
+            return new[]
+            {
+                new StatefulEntityInfo("gji_appcits_executant", "Обращение граждан - Исполнитель", typeof(AppealCitsExecutant)),
+				new StatefulEntityInfo("gji_mkd_change_notification", "Уведомление о смене способа управления МКД", typeof (MkdChangeNotification)),
+                new StatefulEntityInfo("gji_license_action", "Аннулирование, предоставление сведений о лицензии", typeof (LicenseAction)),
+                new StatefulEntityInfo("gji_smev_complaints", "Досудебное обжалование", typeof (SMEVComplaints)),
+                new StatefulEntityInfo("gji_document_protocol197", "Документы ГЖИ - Протокол по ст.19.7 КоАП РФ", typeof(Protocol197))
+            };
+        }
+    }
+}

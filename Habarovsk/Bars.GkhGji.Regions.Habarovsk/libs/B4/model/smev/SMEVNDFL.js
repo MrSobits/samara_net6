@@ -1,0 +1,42 @@
+Ext.define('B4.model.smev.SMEVNDFL', {
+    extend: 'B4.base.Model',
+    idProperty: 'Id',
+    proxy: {
+        type: 'b4proxy',
+        controllerName: 'SMEVNDFL'
+    },
+    fields: [
+        { name: 'Inspector' },
+        { name: 'CalcDate' },
+        { name: 'BirthDate' },
+        { name: 'PeriodYear' },
+        { name: 'ServiceCode' },
+        { name: 'SNILS' },
+        { name: 'RegDate' },
+        { name: 'DocumentCode' },
+        { name: 'FamilyName' },
+        { name: 'FirstName' },
+        { name: 'Patronymic' },
+        { name: 'Answer' },
+        { name: 'RequestState' },
+        { name: 'RequestId' },
+        { name: 'SeriesNumber' },
+        { name: 'RegNumber' },
+        { name: 'INNUL' },
+        { name: 'KPP' },
+        { name: 'OrgName' },
+        { name: 'Rate' },
+        { name: 'RevenueCode' },
+        { name: 'Month' },
+        { name: 'RevenueSum' },
+        { name: 'RecoupmentCode' },
+        { name: 'RecoupmentSum' },
+        { name: 'DutyBase' },
+        { name: 'DutySum' },
+        { name: 'UnretentionSum' },
+        { name: 'RevenueTotalSum' },
+        { name: 'MessageId' },
+        { name: 'Fio' },
+        { name: 'ReqId' }
+    ]
+});

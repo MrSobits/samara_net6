@@ -1,0 +1,1893 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<techPassport>
+  <partitions>
+    <partition name="Паспорт технического объекта" order="1">
+      <items>
+        <partition name="1.Технический паспорт объекта" order="1" >
+          <items>
+            <partition name="Общие сведения о жилом доме" order="1">
+              <items>
+                <partition name="1. Общие сведения о жилом доме" order="1" formId="Form_1"/>
+                <partition name="1.1. Сведения о кап ремонте МКД" order="2" formId="" controllerName="realityobjectedit/{0}/objtypeworkcr"/>
+                <partition name="1.2. Характеристика жилых помещений и их заселения" order="3" formId="Form_1_2"/>
+                <partition name="1.3. Характеристика нежилых помещений" order="4" formId="Form_1_3"/>
+                <partition name="1.4. Эксплуатационные показатели общего имущества" order="5" formId="Form_1_4"/>
+              </items>
+            </partition>
+            <partition name="2. Экспликация земельного участка" order="2" formId="Form_2"/>
+            <partition name="3. Инженерное оборудование (инженерные сети)" order="3">
+              <items>
+                <partition name="3.1. Отопление (теплоснабжение)" order="1" formId="Form_3_1"/>
+                <partition name="3.2. Горячее водоснабжение (ГВС)" order="2" formId="Form_3_2"/>
+                <partition name="3.3. Холодное водоснабжение (ХВС)" order="3" formId="Form_3_2_CW"/>
+                <partition name="3.4. Водоотведение (канализация)" order="4" formId="Form_3_3_Water"/>
+                <partition name="3.5. Электроснабжение" order="5" formId="Form_3_3"/>
+                <partition name="3.6. Газоснабжение" order="6" formId="Form_3_4"/>
+                <partition name="3.7. Вентиляция" order="7" formId="Form_3_5"/>
+                <partition name="3.8. Водостоки" order="8" formId="Form_3_6"/>
+                <partition name="3.9. Мусоропроводы" order="9" formId="Form_3_7"/>
+                <partition name="3.10. Пожаротушение" order="10" formId="Form_3_8"/>
+              </items>
+            </partition>
+            <partition name="4. Специальное инженерное оборудование" order="4">
+              <items>
+                <partition name="4.1. Общие сведения" order="1" formId="Form_4_1"/>
+                <partition name="4.2. Общие сведения о лифтах" order="2" formId="Form_4_2"/>
+              </items>
+            </partition>
+            <partition name="5. Общие показатели конструктивных элементов" order="5">
+              <items>
+                <partition name="5.1. Фундаменты" order="1" formId="Form_5_1"/>
+                <partition name="5.2. Стены и перегородки" order="2" formId="Form_5_2"/>
+                <partition name="5.3. Перекрытия" order="3" formId="Form_5_3"/>
+                <partition name="5.4. Полы" order="4" formId="Form_5_4"/>
+                <partition name="5.5. Проемы" order="5" formId="Form_5_5"/>
+                <partition name="5.6. Крыша, кровля" order="6" formId="Form_5_6"/>
+                <partition name="5.7. Отделка внутренняя" order="7" formId="Form_5_7"/>
+                <partition name="5.8. Фасады" order="8" formId="Form_5_8"/>
+                <partition name="5.9. Благоустройство" order="9" formId="Form_5_9"/>
+                <partition name="5.10. Стоимостные характеристики" order="10" formId="Form_5_10"/>
+                <partition name="5.11. Иные конструктивные элементы" order="11" formId="Form_5_11"/>
+              </items>
+            </partition>
+            <partition name="6. Энергетические характеристики многоквартирного дома" order="6">
+              <items>
+                <partition name="6.1. Энергетический аудит" order="1" formId="Form_6_1"/>
+                <partition name="6.2. Температурные условия" order="2" formId="Form_6_2"/>
+                <partition name="6.3. Энергопотребление здания" order="3" formId="Form_6_3"/>
+                <partition name="6.4. Удельные расходы энергоносителей" order="4" formId="Form_6_4"/>
+                <partition name="6.5. Характеристики максимального энергопотребления зданием" order="5" formId="Form_6_5"/>
+                <partition name="6.6. Состояние приборного учета в здании" order="6" formId="Form_6_6"/>
+              </items>
+            </partition>
+          </items>
+        </partition>
+      </items>
+    </partition>
+  </partitions>
+  <forms>
+    <form id="Form_1">
+      <components>
+        <component id="Form_1" title="Общие сведения о жилом доме" labelWidth="120" type="PropertyGrid" order="1" columns="2">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Адрес многоквартирного дома" editor="Display" IsRequirement="true"/>
+            <element code="2:1" columnIndex="1" label="Год постройки" editor="Display" IsRequirement="true"/>
+            <element code="3:1" columnIndex="1" label="Год проведения реконструкции" editor="Int" minValue="1900" maxLength="4"/>
+            <element code="49:1" columnIndex="1" label="Номер документа, подтверждающего  соответствие параметров реконструированных домов проектной документации" editor="Text" RequirementOn="3:1" />
+            <element code="50:1" columnIndex="1" label="Дата документа, подтверждающего  соответствие параметров  реконструированных домов проектной документации" editor="Date" RequirementOn="3:1"/>
+            <element code="4:1" columnIndex="1" label="Год проведения капитального ремонта" editor="Int" minValue="0" IsRequirement="true" />
+            <element code="5:1" columnIndex="1" label="Общий строительный объем (куб.м)" editor="Double" minValue="0" />
+            <element code="6:1" columnIndex="1" label="Площадь здания всего (кв.м)" editor="Display" IsRequirement="true" />
+            <element code="7:1" columnIndex="1" label="в том числе: жилой части здания (кв.м), в т.ч." editor="Display" IsRequirement="true"/>
+            <element code="16:1" columnIndex="1" label="Местоположение" editor="Text"/>
+            <element code="19:1" columnIndex="1" label="Конструктивные особенности"  editor="Text" />
+            <element code="17:1" columnIndex="1" label="Индивидуальное наименование дома"  editor="Text" />
+            <element code="18:1" columnIndex="1" label="Инвентарный номер" editor="Text" />
+            <element code="28:1" columnIndex="1" label="Серия, тип проекта" editor="Display" IsRequirement="true"/>
+            <element code="24:1" columnIndex="1" label="частная собственность (кв.м.)" editor="Display" />
+            <element code="25:1" columnIndex="1" label="муниципальная собственность (кв.м)" editor="Display" />
+            <element code="26:1" columnIndex="2" label="государственная собственность (кв.м.)" editor="Display" />
+            <element code="8:1" columnIndex="2" label="нежилых помещений функционального назначения (кв.м)" editor="Display"/>
+            <element code="9:1" columnIndex="2" label="Количество лестниц (ед.)" editor="Int" minValue="0"/>
+            <element code="10:1" columnIndex="2" label="Количество этажей, наименьшее (ед.)" editor="Int" minValue="0" IsRequirement="true"/>
+            <element code="11:1" columnIndex="2" label="Количество этажей, наибольшее (ед.)" editor="Int" minValue="1" IsRequirement="true"/>
+            <element code="27:1" columnIndex="1" label="Количество подземных этажей (ед.)" editor="Int" minValue="0" IsRequirement="true"/>
+            <element code="48:1" columnIndex="1" label="Наличие подземного паркинга" editor="Bool" IsRequirement="true"/>
+            <element code="12:1" columnIndex="2" label="Количество подъездов (ед.)" editor="Int" minValue="0" IsRequirement="true"/>
+            <element code="13:1" columnIndex="2" label="Количество проживающих или зарегистрированных (чел.)" editor="Int" minValue="0"/>
+            <element code="14:1" columnIndex="2" label="Количество лицевых счетов (ед.)" editor="Int" minValue="0" />
+            <element code="15:1" columnIndex="2" label="Мансарды (ед.)" editor="Int" minValue="0" />
+            <element code="20:1" columnIndex="2" label="Степень износа здания (%)" maxValue="100" editor="Display" IsRequirement="true"/>
+            <element code="21:1" columnIndex="2" label="Степень износа фундамента (%)" maxValue="100" editor="Double" minValue="0"/>
+            <element code="22:1" columnIndex="2" label="Степень износа несущих стен (%)" maxValue="100" editor="Double" minValue="0"/>
+            <element code="23:1" columnIndex="2" label="Степень износа перекрытий (%)" maxValue="100" editor="Double" minValue="0"/>
+            <element code="51:1" columnIndex="2" label="Степень износа лестниц (%)" maxValue="100" editor="Double" minValue="0"/>
+            <element code="29:1" columnIndex="1" label="Кадастровый номер дома" editor="Display" IsRequirement="true" />
+            <element code="30:1" columnIndex="1" label="Кадастровый номер земельного участка" editor="Display" IsRequirement="true"/>
+            <element code="47:1" columnIndex="1" label="Год ввода в эксплуатацию" editor="Display" IsRequirement="true"/>
+            <element code="31:1" columnIndex="1" label="Дата приватизации первого жилого помещения" editor="Display" IsRequirement="true"/>
+            <element code="32:1" columnIndex="1" label="Стадия жизненного цикла дома" editor="Text" />
+            <element code="33:1" columnIndex="1" label="Наличие приспособлений в подъездах для нужд маломобильных групп населения" editor="Text" />
+            <element code="34:1" columnIndex="1" label="Количество лифтов" editor="Int" minValue="0" IsRequirement="true"/>
+            <element code="35:1" columnIndex="1" label="Количество жилых помещений (квартир)" editor="Int" minValue="0" IsRequirement="true"/>
+            <element code="36:1" columnIndex="1" label="Количество нежилых помещений" editor="Int" minValue="0" IsRequirement="true"/>
+            <element code="37:1" columnIndex="1" label="Количество балконов (ед)" editor="Int" minValue="0" IsRequirement="true"/>
+            <element code="38:1" columnIndex="1" label="Количество лоджий (ед)" editor="Int" minValue="0" IsRequirement="true"/>
+            <element code="39:1" columnIndex="1" label="Физический износ балконов, лоджий (%)" editor="Double" minValue="0" IsRequirement="true"/>
+            <element code="40:1" columnIndex="1" label="Наличие статуса объекта культурного наследия" editor="Display" IsRequirement="true" />
+            <element code="41:1" columnIndex="1" label="Наличие факта признания дома аварийным" editor="Display" IsRequirement="true"/>
+            <element code="42:1" columnIndex="1" label="Основание признания многоквартирного дома аварийным" editor="Text" />
+            <element code="43:1" columnIndex="1" label="Дата документа, содержащего решение о признании многоквартирного дома аварийным" editor="Date" RequirementOn="41:1=Да" />
+            <element code="44:1" columnIndex="1" label="Номер документа, содержащего решение о признании многоквартирного дома аварийным" editor="Text" RequirementOn="41:1=Да" />
+            <element code="45:1" columnIndex="1" label="Дата, на которую установлен износ здания" editor="Date" IsRequirement="true"/>
+            <element code="46:1" columnIndex="1" label="Ранее присвоенный государственный учетный номер" editor="Text" />
+          </elements>
+        </component>
+        <component id="Form_1_1" title="Информация для заполнения в ГИС ЖКХ" labelWidth="120" type="PropertyGrid" order="2" columns="1">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Стадия жизненного цикла дома" editor="Enum" editorCode="340" IsRequirement="true" />
+            <element code="2:1" columnIndex="1" label="Наличие приспособлений в многоквартирном доме в подъезде для нужд маломобильных групп населения" editor="Bool" IsRequirement="true"/>
+            <element code="3:1" columnIndex="1" label="Основание признания многоквартирного дома аварийным" editor="MultiDict" editorCode="350" RequirementOn="Form_1|41:1=Да"/>
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_1_2">
+      <components>
+        <component id="Form_1_2_1" title="Вид благоустройства жилых помещений" labelWidth="200" type="Panel" order="1" columns="1">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Вид благоустройства" editor="Enum" editorCode="370" IsRequirement="true"/>
+          </elements>
+        </component>
+        <component id="Form_1_2" title="Отдельные квартиры" type="Grid" order="1" columns="5">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Наименование" editable="false"/>
+            <column code="3" title="Количество квартир" editable="true" editor="Int" minValue="0"/>
+            <column code="4" title="Общая площадь квартир (кв.м)" editable="true" editor="Double" minValue="0"/>
+            <column code="5" title="Жилая площадь квартир (кв.м)" editable="true" editor="Double" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+            <row code="2"/>
+            <row code="3"/>
+            <row code="4"/>
+            <row code="5"/>
+            <row code="6"/>
+            <row code="7"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="1 комнатные"/>
+            <cell code="2:2" value="2 комнатные"/>
+            <cell code="3:2" value="3 комнатные"/>
+            <cell code="4:2" value="4 комнатные"/>
+            <cell code="5:2" value="5 комнатные"/>
+            <cell code="6:2" value="6 комнатные"/>
+            <cell code="7:2" value="7 и более"/>
+          </cells>
+        </component>
+        <component id="Form_1_2_2" title="Коммунальные квартиры" type="Grid" order="2" columns="6">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true" />
+            <column code="2" title="Наименование" editable="false"/>
+            <column code="3" title="Количество квартир" editable="true" editor="Int" minValue="0"/>
+            <column code="4" title="Количество коммунальных комнат в квартире" editable="true" editor="Int" minValue="0"/>
+            <column code="5" title="Жилая площадь квартир (коммунальных комнат) (кв.м.)" editable="true" editor="Double" minValue="0"/>
+            <column code="6" title="Общая площадь квартир (кв.м)" editable="true" editor="Double" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+            <row code="2"/>
+            <row code="3"/>
+            <row code="4"/>
+            <row code="5"/>
+            <row code="6"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="2 комнатные"/>
+            <cell code="2:2" value="3 комнатные"/>
+            <cell code="3:2" value="4 комнатные"/>
+            <cell code="4:2" value="5 комнатные"/>
+            <cell code="5:2" value="6 комнатные"/>
+            <cell code="6:2" value="7 и более"/>
+          </cells>
+        </component>
+        <component id="Form_1_2_3" title="Общежития" type="PropertyGrid" order="3" columns="1">
+          <elements>
+            <element code="7:1" columnIndex="1" label="Тип дома" editor="Display" IsRequirement="true"/>
+            <element code="4:1" columnIndex="1" label="Тип общежития" editor="Enum" editorCode="360" RequirementOn="7:1=Общежитие"/>
+            <element code="5:1" columnIndex="1" label="Наличие общей кухни на этажах" editor="Bool" RequirementOn="7:1=Общежитие"/>
+            <element code="6:1" columnIndex="1" label="Наличие блоков душевых на этажах" editor="Bool" RequirementOn="7:1=Общежитие"/>
+            <element code="1:1" columnIndex="1" label="Количество комнат в общежитии(шт)" editor="Int" minValue="0" />
+            <element code="2:1" columnIndex="1" label="Общая площадь общежитий(кв.м)"  editor="Double" minValue="0" />
+            <element code="3:1" columnIndex="1" label="Жилая площадь общежитий(кв.м)"  editor="Double" minValue="0" />
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_1_3">
+      <components>
+        <component id="Form_1_3" title="Характеристика нежилых помещений" labelWidth="120" type="PropertyGrid" order="1" columns="2">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Количество встроенных нежилых помещений (шт)" editor="Int" minValue="0" />
+            <element code="2:1" columnIndex="1" label="Общая площадь встроенных нежилых помещений (кв.м)"  editor="Double" minValue="0" />
+            <element code="3:1" columnIndex="2" label="Площадь помещений общего пользования (кв.м.)"  editor="Double" minValue="0" />
+            <element code="4:1" columnIndex="2" label="Год последнего кап. ремонта помещений общего пользования" editor="Date" />
+            <element code="5:1" columnIndex="1" label="Общая площадь нежилых помещений, за исключением помещений общего пользования (кв.м)" editor="Double" minValue="0" IsRequirement="true"/>
+          </elements>
+        </component>
+        <component id="Form_1_3_2" title="Нежилые помещения и места общего пользования" labelWidth="120" type="Grid" order="2" columns="4">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Наименование показателя" editable="false"/>
+            <column code="3" title="Ед. измерения" editable="false"/>
+            <column code="4" title="Показатель" editable="true" editor="Double" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+            <row code="2"/>
+            <row code="3"/>
+            <row code="4"/>
+            <row code="5"/>
+            <row code="6"/>
+            <row code="7"/>
+            <row code="8" RequirementOn="8:4"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Места общего пользования: Лестничные марши и площадки"/>
+            <cell code="2:2" value="Места общего пользования: Коридоры мест общего пользования"/>
+            <cell code="3:2" value="Служебные помещения: Площадь офисных помещений"/>
+            <cell code="4:2" value="Служебные помещения: Площадь технических помещений ( теплоцентры, водомерные узлы,электрощитовые, мусороприемные камеры и т.п.)"/>
+            <cell code="5:2" value="Другие помещения: Площадь, прочих помещений (красные уголки, клубы, детские комнаты, помещения консьержей и т.д.)"/>
+            <cell code="6:2" value="Площадь, лифтов, лифтовых и иных шахт (кв.м)"/>
+            <cell code="7:2" value="Площадь чердаков (кв.м)"/>
+            <cell code="8:2" value="Общая площадь балконов и лоджий (кв.м)"/>
+
+            <cell code="1:3" value="кв.м"/>
+            <cell code="2:3" value="кв.м"/>
+            <cell code="3:3" value="кв.м"/>
+            <cell code="4:3" value="кв.м"/>
+            <cell code="5:3" value="кв.м"/>
+            <cell code="6:3" value="кв.м"/>
+            <cell code="7:3" value="кв.м"/>
+            <cell code="8:3" value="кв.м"/>
+          </cells>
+        </component>
+        <component id="Form_1_3_3" title="Помещения специального назначения" labelWidth="120" type="PropertyGrid" order="3" columns="1">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Площадь убежищ (кв.м)" editor="Double" minValue="0" />
+            <element code="2:1" columnIndex="1" label="Площадь подвалов (кв.м)"  editor="Double" minValue="0" />
+            <element code="3:1" columnIndex="1" label="Количество металлических дверей в убежища (шт)"  editor="Double" minValue="0" />
+            <element code="4:1" columnIndex="1" label="Тип подвала"  editor="TypeBasement" />
+            <element code="5:1" columnIndex="1" label="Год последнего кап. ремонта подвала"  editor="Date" />
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_1_4">
+      <components>
+        <component id="Form_1_4" title="Эксплуатационные показатели общего имущества" labelWidth="120" type="Grid" noSort="true" order="1" columns="4">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Наименование общего имущества" editable="false"/>
+            <column code="3" title="Ед. измерения" editable="false"/>
+            <column code="4" title="Показатель" editable="true" editor="Double" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+            <row code="2"/>
+            <row code="3"/>
+            <row code="4"/>
+            <row code="5"/>
+            <row code="6"/>
+            <row code="7"/>
+            <row code="8"/>
+            <row code="9"/>
+            <row code="10"/>
+            <row code="11"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Придомовая территория, всего: в том числе"/>
+            <cell code="2:2" value="С усовершенствованным покрытием, всего"/>
+            <cell code="3:2" value="Механизированная уборка"/>
+            <cell code="4:2" value="Ручная уборка"/>
+            <cell code="5:2" value="С неусовершенствованным покрытием, всего"/>
+            <cell code="6:2" value="Механизированная уборка"/>
+            <cell code="7:2" value="Ручная уборка"/>
+            <cell code="8:2" value="Без покрытия, всего"/>
+            <cell code="9:2" value="Механизированная уборка"/>
+            <cell code="10:2" value="Ручная уборка"/>
+            <cell code="11:2" value="Газоны"/>
+
+
+            <cell code="1:3" value="кв.м"/>
+            <cell code="2:3" value="кв.м"/>
+            <cell code="3:3" value="кв.м"/>
+            <cell code="4:3" value="кв.м"/>
+            <cell code="5:3" value="кв.м"/>
+            <cell code="6:3" value="кв.м"/>
+            <cell code="7:3" value="кв.м"/>
+            <cell code="8:3" value="кв.м"/>
+            <cell code="9:3" value="кв.м"/>
+            <cell code="10:3" value="кв.м"/>
+            <cell code="11:3" value="кв.м"/>
+          </cells>
+        </component>
+      </components>
+    </form>
+    <form id="Form_2">
+      <components>
+        <component id="Form_2_1" title="Разновидность территорий" labelWidth="120" type="Panel" order="1" columns="1">
+          <elements>
+            <element code="1:3" columnIndex="1" label="Территория" editor="Enum" editorCode="371" IsRequirement="true"/>
+          </elements>
+        </component>
+        <component id="Form_2" title="Экспликация земельного участка" labelWidth="120" type="Grid" noSort="true" order="1" columns="3">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Наименование общего имущества" editable="false"/>
+            <column code="3" title="Площадь" editable="true" editor="Double" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1" RequirementOn="1:3"/>
+            <row code="16"/>
+            <row code="2"/>
+            <row code="3"/>
+            <row code="4"/>
+            <row code="5"/>
+            <row code="6"/>
+            <row code="7"/>
+            <row code="8"/>
+            <row code="9"/>
+            <row code="10"/>
+            <row code="11"/>
+            <row code="12"/>
+            <row code="13"/>
+            <row code="14"/>
+            <row code="15"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Общая площадь земельного участка по документам (кв.м)"/>
+            <cell code="16:2" value="Площадь парковки в границах земельного участка (кв.м)"/>
+            <cell code="2:2" value="Общая площадь земельного участка по фактическому пользованию, всего в том числе (кв.м)"/>
+            <cell code="3:2" value="Застроенная, всего (кв.м)"/>
+            <cell code="4:2" value="Незастроенная, всего в том числе (кв.м)"/>
+            <cell code="5:2" value="Твердые покрытия, всего (кв.м)"/>
+            <cell code="6:2" value="в том числе: проезды (кв.м)"/>
+            <cell code="7:2" value="в том числе: тротуары (кв.м)"/>
+            <cell code="8:2" value="в том числе: прочие (кв.м)"/>
+            <cell code="9:2" value="Площадки детские (кв.м)"/>
+            <cell code="10:2" value="Площадки спортивные (кв.м)"/>
+            <cell code="11:2" value="Площадки прочие (кв.м)"/>
+            <cell code="12:2" value="Зеленные насаждения, всего (кв.м)"/>
+            <cell code="13:2" value="в том числе: сквер (кв.м)"/>
+            <cell code="14:2" value="в том числе: газон с деревьями (кв.м)"/>
+            <cell code="15:2" value="в том числе: прочее (кв.м)"/>
+          </cells>
+        </component>
+      </components>
+    </form>
+    <form id="Form_3_1">
+      <components>
+        <component id="Form_3_1" title="Отопление (теплоснабжение)" labelWidth="120" type="Panel" order="1" columns="1">
+          <elements>
+            <element code="1:3" columnIndex="1" label="Отопление" editor="TypeHeating" IsRequirement="true"/>
+          </elements>
+        </component>
+        <component id="Form_3_1_2" title="Коллективные приборы учета и узлы управления" labelWidth="120" type="Grid" order="2" columns="4">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Наименование" editable="false"/>
+            <column code="3" title="Показатель" editable="true" editor="Bool"/>
+            <column code="4" title="Количество (ед.)" editable="true" editor="Int" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+            <row code="2"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Установлен прибор коллективного учета"/>
+            <cell code="2:2" value="Установлен узел управления"/>
+          </cells>
+        </component>
+        <component id="Form_3_1_3" title="Система отопления" type="PropertyGrid" order="3" columns="1">
+          <elements>
+            <element code="18:1" columnIndex="1" label="Длина трубопроводов (м)" editor="Double" minValue="0" />
+            <element code="19:1" columnIndex="1" label="Год последнего кап.ремонт системы" editor="Date" IsRequirement="true"/>
+            <element code="20:1" columnIndex="1" label="Количество точек ввода (ед.)" editor="Int" minValue="0" IsRequirement="true"/>
+            <element code="21:1" columnIndex="1" label="Отпуск ресурсов" editor="TransferResource" />
+            <element code="1:1" columnIndex="1" label="Длина розлива (м)" editor="Double" minValue="0" />
+            <element code="2:1" columnIndex="1" label="Количество стояков (ед.)" editor="Int" minValue="0" />
+            <element code="3:1" columnIndex="1" label="Длина стояков в подвалах (м)" editor="Double" minValue="0" />
+            <element code="4:1" columnIndex="1" label="Длина стояков в квартирах (м)" editor="Double" minValue="0" />
+            <element code="5:1" columnIndex="1" label="Длина разводки в квартирах (м)" editor="Double" minValue="0" />
+            <element code="6:1" columnIndex="1" label="Количество отопительных приборов на лестничных клетках (ед.)" editor="Int" minValue="0" />
+            <element code="7:1" columnIndex="1" label="Количество отопительных приборов в квартирах (ед.)" editor="Int" minValue="0" />
+            <element code="8:1" columnIndex="1" label="Запорно-регулирующая арматура (ед.)" editor="Int" minValue="0" />
+            <element code="9:1" columnIndex="1" label="Теплоизоляция (кв.м)" editor="Double" minValue="0" />
+            <element code="10:1" columnIndex="1" label="Калориферы стальные  (ед.)" editor="Int" minValue="0" />
+            <element code="11:1" columnIndex="1" label="Конвекторы (ед.)" editor="Int" minValue="0" />
+            <element code="12:1" columnIndex="1" label="Задвижки (ед.)" editor="Int" minValue="0" />
+            <element code="13:1" columnIndex="1" label="Вентили (ед.)" editor="Int" minValue="0" />
+            <element code="14:1" columnIndex="1" label="Трехходовые краны (ед.)" editor="Int" minValue="0" />
+            <element code="15:1" columnIndex="1" label="Элеваторы (ед.)" editor="Int" minValue="0" />
+            <element code="16:1" columnIndex="1" label="Короба (ед.)" editor="Int" minValue="0" />
+            <element code="17:1" columnIndex="1" label="Количество теплоцентров (ед.)" editor="Int" minValue="0" />
+            <element code="22:1" columnIndex="1" label="Физический износ системы отопления (%)" editor="Double" minValue="0" IsRequirement="true"/>
+            <element code="23:1" columnIndex="1" label="Тип теплоисточника (теплоносителя)" editor="Text" />
+            <element code="24:1" columnIndex="1" label="Физический износ сети внутридомовой системы отопления (%)" editor="Double" minValue="0" IsRequirement="true"/>
+            <element code="25:1" columnIndex="1" label="Материал сети внутридомовой системы отопления" editor="Text" />
+            <element code="26:1" columnIndex="1" label="Материал теплоизоляции сети внутридомовой системы отопления" editor="Text" />
+            <element code="27:1" columnIndex="1" label="Тип поквартирной разводки внутридомовой системы отопления" editor="Text" />
+            <element code="28:1" columnIndex="1" label="Материал стояков" editor="Text" />
+            <element code="29:1" columnIndex="1" label="Физический износ стояков (%)" editor="Double" minValue="0" IsRequirement="true"/>
+            <element code="30:1" columnIndex="1" label="Физический износ запорно-регулирующей арматуры (%)" editor="Double" minValue="0" IsRequirement="true"/>
+            <element code="31:1" columnIndex="1" label="Тип отопительных приборов" editor="Text" />
+            <element code="32:1" columnIndex="1" label="Физический износ отопительных приборов (%)" editor="Double" minValue="0" IsRequirement="true"/>
+            <element code="33:1" columnIndex="1" label="Физический износ печей, каминов (%)" editor="Double" minValue="0" IsRequirement="true"/>
+            <element code="34:1" columnIndex="1" label="Год проведения последнего капитального ремонта печей, каминов" editor="Int" minValue="0" validationTemplate="^\d{4}$" validationErrorMessage="Корректный формат: ГГГГ" RequirementOn="Form_3_1|1:3=30"/>
+          </elements>
+        </component>
+        <component id="Form_3_1_4" title="Информация для заполнения в ГИС ЖКХ" type="PropertyGrid" order="3" columns="1">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Тип теплоисточника (теплоносителя)" editor="MultiDict" editorCode="351" IsRequirement="true"/>
+            <element code="2:1" columnIndex="1" label="Материал сети внутридомовой системы отопления" editor="MultiDict" editorCode="352" IsRequirement="true"/>
+            <element code="3:1" columnIndex="1" label="Материал теплоизоляции сети внутридомовой системы отопления" editor="MultiDict" editorCode="353" IsRequirement="true"/>
+            <element code="4:1" columnIndex="1" label="Тип поквартирной разводки внутридомовых систем отопления" editor="MultiDict" editorCode="354" IsRequirement="true"/>
+            <element code="5:1" columnIndex="1" label="Материал стояков" editor="MultiDict" editorCode="352" IsRequirement="true"/>
+            <element code="6:1" columnIndex="1" label="Тип отопительных приборов" editor="MultiDict" editorCode="355" IsRequirement="true"/>
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_3_2">
+      <components>
+        <component id="Form_3_2" title="Горячее водоснабжение (ГВС)" labelWidth="120" type="Panel" order="1" columns="1">
+          <elements>
+            <element code="1:3" columnIndex="1" label="Горячее водоснабжение" editor="TypeHotWater" IsRequirement="true" />
+          </elements>
+        </component>
+        <component id="Form_3_2_2" title="Коллективные приборы учета и узлы управления" labelWidth="120" type="Grid" order="2" columns="3">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Наименование" editable="false"/>
+            <column code="3" title="Показатель" editable="true" editor="Bool"/>
+            <column code="4" title="Количество (ед.)" editable="true" editor="Int" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+            <row code="2"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Установлен прибор коллективного учета"/>
+            <cell code="2:2" value="Установлен узел управления"/>
+          </cells>
+        </component>
+        <component id="Form_3_2_3" title="Количественные характеристики" type="PropertyGrid" order="3" columns="1">
+          <elements>
+            <element code="9:1" columnIndex="1" label="Длина трубопроводов (м)" editor="Double" minValue="0" />
+            <element code="10:1" columnIndex="1" label="Год последнего кап.ремонта системы" editor="Date" RequirementOn="Form_3_2|1:3=1,Form_3_2|1:3=2,Form_3_2|1:3=3,Form_3_2|1:3=5"/>
+            <element code="11:1" columnIndex="1" label="Количество точек ввода (ед.)" editor="Int" minValue="0" RequirementOn="Form_3_2|1:3=1,Form_3_2|1:3=2,Form_3_2|1:3=3,Form_3_2|1:3=5"/>
+            <element code="12:1" columnIndex="1" label="Отпуск ресурсов" editor="TransferResource" />
+            <element code="1:1" columnIndex="1" label="Длина розлива (м)" editor="Double" minValue="0" />
+            <element code="2:1" columnIndex="1" label="Количество стояков (ед.)" editor="Int" minValue="0" />
+            <element code="3:1" columnIndex="1" label="Длина стояков в подвалах (м)" editor="Double" minValue="0" />
+            <element code="4:1" columnIndex="1" label="Длина стояков в квартирах (м)" editor="Double" minValue="0" />
+            <element code="5:1" columnIndex="1" label="Длина разводки в квартирах (м)" editor="Double" minValue="0" />
+            <element code="6:1" columnIndex="1" label="Количество задвижек(ед.)" editor="Int" minValue="0" />
+            <element code="7:1" columnIndex="1" label="Количество вентилей в подвалах(ед.)" editor="Int" minValue="0" />
+            <element code="8:1" columnIndex="1" label="Количество пробковых кранов в подвалах(ед.)" editor="Int" minValue="0" />
+            <element code="13:1" columnIndex="1" label="Физический износ системы водоснабжения (%)" editor="Double" minValue="0" RequirementOn="Form_3_2|1:3=1,Form_3_2|1:3=2,Form_3_2|1:3=3,Form_3_2|1:3=5"/>
+            <element code="14:1" columnIndex="1" label="Материал сети" editor="Text" />
+            <element code="15:1" columnIndex="1" label="Материал теплоизоляции сети" editor="Text" />
+            <element code="16:1" columnIndex="1" label="Физический износ сети (%)" editor="Double" minValue="0" RequirementOn="Form_3_2|1:3=1,Form_3_2|1:3=2,Form_3_2|1:3=3,Form_3_2|1:3=5"/>
+            <element code="17:1" columnIndex="1" label="Материал стояков" editor="Text" />
+            <element code="20:1" columnIndex="1" label="Изолированность стояков" editor="Enum" editorCode="380" RequirementOn="Form_3_2|1:3=1,Form_3_2|1:3=2,Form_3_2|1:3=3,Form_3_2|1:3=5"/>
+            <element code="18:1" columnIndex="1" label="Физический износ стояков (%)" editor="Double" minValue="0" RequirementOn="Form_3_2|1:3=1,Form_3_2|1:3=2,Form_3_2|1:3=3,Form_3_2|1:3=5"/>
+            <element code="19:1" columnIndex="1" label="Физический износ запорной армаратуры (%)" editor="Double" minValue="0" RequirementOn="Form_3_2|1:3=1,Form_3_2|1:3=2,Form_3_2|1:3=3,Form_3_2|1:3=5"/>
+            <element code="21:1" columnIndex="1" label="Наличие полотенцесушителей" editor="Bool" RequirementOn="Form_3_2|1:3=1,Form_3_2|1:3=2,Form_3_2|1:3=3,Form_3_2|1:3=4,Form_3_2|1:3=5" />
+            <element code="22:1" columnIndex="1" label="Оборудован электроводонагревателями" editor="Bool" RequirementOn="Form_3_2|1:3=1,Form_3_2|1:3=2,Form_3_2|1:3=3,Form_3_2|1:3=4,Form_3_2|1:3=5"/>
+            <element code="23:1" columnIndex="1" label="Оборудован электроотопительными установками" editor="Bool" RequirementOn="Form_3_2|1:3=1,Form_3_2|1:3=2,Form_3_2|1:3=3,Form_3_2|1:3=4,Form_3_2|1:3=5"/>
+          </elements>
+        </component>
+        <component id="Form_3_2_4" title="Информация для заполнения в ГИС ЖКХ" type="PropertyGrid" order="3" columns="1">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Материал сети" editor="MultiDict" editorCode="352" RequirementOn="Form_3_2|1:3=1,Form_3_2|1:3=2,Form_3_2|1:3=3,Form_3_2|1:3=5"/>
+            <element code="2:1" columnIndex="1" label="Материал стояков" editor="MultiDict" editorCode="352" RequirementOn="Form_3_2|1:3=1,Form_3_2|1:3=2,Form_3_2|1:3=3,Form_3_2|1:3=5"/>
+            <element code="3:1" columnIndex="1" label="Материал теплоизоляции сети" editor="MultiDict" editorCode="353" RequirementOn="Form_3_2|1:3=1,Form_3_2|1:3=2,Form_3_2|1:3=3,Form_3_2|1:3=5"/>
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_3_2_CW">
+      <components>
+        <component id="Form_3_2_CW" title="Холодное водоснабжение (ХВС)" labelWidth="120" type="Panel" order="1" columns="1">
+          <elements>
+            <element code="1:3" columnIndex="1" label="Холодное водоснабжение" editor="TypeColdWater" IsRequirement="true" />
+          </elements>
+        </component>
+        <component id="Form_3_2CW_2" title="Коллективные приборы учета" labelWidth="120" type="Grid" order="2" columns="3">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Наименование" editable="false"/>
+            <column code="3" title="Показатель" editable="true" editor="Bool"/>
+            <column code="4" title="Количество (ед.)" editable="true" editor="Int" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+            <row code="2"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Установлен прибор коллективного учета"/>
+          </cells>
+        </component>
+        <component id="Form_3_2CW_3" title="Количественные показатели" type="PropertyGrid" order="3">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Длина трубопроводов (м)" editor="Double" minValue="0" />
+            <element code="10:1" columnIndex="1" label="Физический износ запорной армаратуры (%)" editor="Double" minValue="0" RequirementOn="Form_3_2_CW|1:3=1,Form_3_2_CW|1:3=2" />
+            <element code="2:1" columnIndex="1" label="Год последнего кап.ремонта системы" editor="Date" RequirementOn="Form_3_2_CW|1:3=1,Form_3_2_CW|1:3=2" />
+            <element code="3:1" columnIndex="1" label="Количество точек ввода (ед.)" editor="Int" minValue="0" RequirementOn="Form_3_2_CW|1:3=1,Form_3_2_CW|1:3=2" />
+            <element code="4:1" columnIndex="1" label="Отпуск ресурсов" editor="TransferResource" />
+            <element code="5:1" columnIndex="1" label="Физический износ системы (%)" editor="Double" minValue="0" RequirementOn="Form_3_2_CW|1:3=1,Form_3_2_CW|1:3=2" />
+            <element code="6:1" columnIndex="1" label="Материал сети" editor="Text" />
+            <element code="7:1" columnIndex="1" label="Физический износ сети (%)" editor="Double" minValue="0" RequirementOn="Form_3_2_CW|1:3=1,Form_3_2_CW|1:3=2" />
+            <element code="8:1" columnIndex="1" label="Материал стояков" editor="Text" />
+            <element code="9:1" columnIndex="1" label="Физический износ стояков (%)" editor="Double" minValue="0" RequirementOn="Form_3_2_CW|1:3=1,Form_3_2_CW|1:3=2" />
+            <element code="11:1" columnIndex="1" label="Изолированность стояков" editor="Enum" editorCode="380" RequirementOn="Form_3_2_CW|1:3=1,Form_3_2_CW|1:3=2" />
+          </elements>
+        </component>
+        <component id="Form_3_2CW_4" title="Информация для заполнения в ГИС ЖКХ" type="PropertyGrid" order="3">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Материал сети" editor="MultiDict" editorCode="352" RequirementOn="Form_3_2_CW|1:3=1,Form_3_2_CW|1:3=2" />
+            <element code="2:1" columnIndex="1" label="Материал стояков" editor="MultiDict" editorCode="352" RequirementOn="Form_3_2_CW|1:3=1,Form_3_2_CW|1:3=2" />
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_3_3_Water">
+      <components>
+        <component id="Form_3_3_Water" title="Водоотведение (канализация)" labelWidth="120" type="Panel" order="1" columns="1">
+          <elements>
+            <element code="1:3" columnIndex="1" label="Водоотведение" editor="TypeSewage" IsRequirement="true" />
+          </elements>
+        </component>
+        <component id="Form_3_3_Water_2" title="Количественные показатели" type="PropertyGrid" order="2" columns="1">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Длина трубопроводов (м)" editor="Double" minValue="0" />
+            <element code="2:1" columnIndex="1" label="Год последнего кап.ремонт системы"  editor="Date" RequirementOn="Form_3_3_Water|1:3=1,Form_3_3_Water|1:3=2" />
+            <element code="3:1" columnIndex="1" label="Объем выгребных ям (куб. м.)"  editor="Double" />
+            <element code="4:1" columnIndex="1" label="Физический износ системы водоотведения (%)" editor="Double" minValue="0" RequirementOn="Form_3_3_Water|1:3=1,Form_3_3_Water|1:3=2" />
+            <element code="5:1" columnIndex="1" label="Материал сети" editor="Text" />
+          </elements>
+        </component>
+        <component id="Form_3_3_Water_3" title="Информация для заполнения в ГИС ЖКХ" type="PropertyGrid" order="3">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Материал сети" editor="MultiDict" editorCode="381" RequirementOn="Form_3_3_Water|1:3=1,Form_3_3_Water|1:3=2" />
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_3_3">
+      <components>
+        <component id="Form_3_3" title="Электроснабжение" labelWidth="120" type="Panel" order="1" columns="1">
+          <elements>
+            <element code="1:3" columnIndex="1" label="Электроснабжение" editor="TypePower" IsRequirement="true" />
+          </elements>
+        </component>
+        <component id="Form_3_3_2" title="Коллективные приборы учета и узлы управления" labelWidth="120" type="Grid" order="2" columns="4">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Наименование" editable="false"/>
+            <column code="3" title="Показатель" editable="true" editor="Bool"/>
+            <column code="4" title="Количество (ед.)" editable="true" editor="Int" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Установлен прибор коллективного учета"/>
+          </cells>
+        </component>
+        <component id="Form_3_3_3" title="Система электроснабжения" type="PropertyGrid" order="3" columns="1">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Вводно-распределительное устройство(шт.)" editor="Int" minValue="0" />
+            <element code="10:1" columnIndex="1" label="Количество светильников с лампами накаливания(ед.)" editor="Int" minValue="0" />
+            <element code="11:1" columnIndex="1" label="Количество светильников с лампами ДРЛ(ед.)" editor="Int" minValue="0" />
+            <element code="12:1" columnIndex="1" label="Количество выключателей(ед.)" editor="Int" minValue="0" />
+            <element code="13:1" columnIndex="1" label="Длина сетей в местах общего пользования (м)" editor="Double" minValue="0" />
+            <element code="14:1" columnIndex="1" label="Год последнего кап.ремонт системы" editor="Date" RequirementOn="Form_3_3|1:3=1,Form_3_3|1:3=3" />
+            <element code="15:1" columnIndex="1" label="Количество точек ввода (ед.)" editor="Int" minValue="0" RequirementOn="Form_3_3|1:3=1,Form_3_3|1:3=3" />
+            <element code="16:1" columnIndex="1" label="Отпуск ресурсов" editor="TransferResource" />
+            <element code="17:1" columnIndex="1" label="Физический износ системы (%)" editor="Double" minValue="0" RequirementOn="Form_3_3|1:3=1,Form_3_3|1:3=3" />
+            <element code="2:1" columnIndex="1" label="Количество групповых щитков в подвале и на л/к(ед.)" editor="Int" minValue="0" />
+            <element code="3:1" columnIndex="1" label="Количество силовых щитов(ед.)" editor="Int" minValue="0" />
+            <element code="4:1" columnIndex="1" label="Длина сетей коммунального освещения(м)" editor="Double" minValue="0" />
+            <element code="5:1" columnIndex="1" label="Длина сетей питания лифтов и электронасосов(м)" editor="Double" minValue="0" />
+            <element code="6:1" columnIndex="1" label="Количество счетчиков, всего(шт.)" editor="Int" minValue="0" />
+            <element code="7:1" columnIndex="1" label="в т.ч. двухтарифных(шт.)" editor="Int" minValue="0" />
+            <element code="8:1" columnIndex="1" label="Количество номерных знаков(ед.)" editor="Int" minValue="0" />
+            <element code="9:1" columnIndex="1" label="Количество светильников дневного света(ед.)" editor="Int" minValue="0" />
+            <element code="18:1" columnIndex="1" label="Оборудован стационарными электроплитами для приготовления пищи" editor="Bool" RequirementOn="Form_3_3|1:3=1,Form_3_3|1:3=3" />
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_3_4">
+      <components>
+        <component id="Form_3_4" title="Газоснабжение" labelWidth="120" type="Panel" order="1" columns="1">
+          <elements>
+            <element code="1:3" columnIndex="1" label="Газоснабжение" editor="TypeGas" IsRequirement="true" />
+          </elements>
+        </component>
+        <component id="Form_3_4_3" title="Коллективные приборы учета и узлы управления" labelWidth="120" type="Grid" order="2" columns="4">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Наименование" editable="false"/>
+            <column code="3" title="Показатель" editable="true" editor="Bool"/>
+            <column code="4" title="Количество (ед.)" editable="true" editor="Int" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Установлен прибор коллективного учета"/>
+          </cells>
+        </component>
+        <component id="Form_3_4_2" title="Система газоснабжения" type="PropertyGrid" order="3" columns="1">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Длина сетей газоснабжения(м)" editor="Double" minValue="0" />
+            <element code="2:1" columnIndex="1" label="Количество счетчиков, всего(шт.)" editor="Int" minValue="0" />
+            <element code="3:1" columnIndex="1" label="Длина сетей соответствующих требования (м)" editor="Int" minValue="0" />
+            <element code="4:1" columnIndex="1" label="Длина сетей не соответствующих требованиям (м)" editor="Double" minValue="0" />
+            <element code="5:1" columnIndex="1" label="Год последнего кап.ремонт системы" editor="Date" RequirementOn="Form_3_4|1:3=1,Form_3_4|1:3=2" />
+            <element code="6:1" columnIndex="1" label="Отпуск ресурсов" editor="TransferResource" />
+            <element code="7:1" columnIndex="1" label="Количество точек ввода (шт.)" editor="Int" minValue="0" RequirementOn="Form_3_4|1:3=1,Form_3_4|1:3=2" />
+            <element code="8:1" columnIndex="1" label="Физический износ %" editor="Int" minValue="0" maxValue="100" RequirementOn="Form_3_4|1:3=1,Form_3_4|1:3=2" />
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_3_5">
+      <components>
+        <component id="Form_3_5" title="Вентиляция" labelWidth="120" type="Panel" order="1" columns="1">
+          <elements>
+            <element code="1:3" columnIndex="1" label="Вентиляция" editor="TypeVentilation" />
+          </elements>
+        </component>
+        <component id="Form_3_5_2" title="Количественные показатели" type="PropertyGrid" order="2" columns="1">
+          <elements>
+            <element code="1:3" columnIndex="1" label="Количество вентиляционных каналов" editor="Int" minValue="0"/>
+            <element code="2:3" columnIndex="1" label="Количество дымоходов" editor="Int" minValue="0"/>
+            <element code="3:3" columnIndex="1" label="Кол-во систем ДУ и ППА" editor="Int" minValue="0"/>
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_3_6">
+      <components>
+        <component id="Form_3_6" title="Водостоки" labelWidth="120" type="Panel" order="1" columns="1">
+          <elements>
+            <element code="1:3" columnIndex="1" label="Водостоки" editor="TypeDrainage" />
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_3_7">
+      <components>
+        <component id="Form_3_7" title="Мусоропроводы" labelWidth="120" type="PropertyGrid" order="1" columns="1">
+          <elements>
+            <element code="1:3" columnIndex="1" label="Мусоропроводы" editor="Bool" />
+          </elements>
+        </component>
+        <component id="Form_3_7_2" title="Конструкция мусоропровода" labelWidth="120" type="Panel" order="2" columns="1">
+          <elements>
+            <element code="1:3" columnIndex="1" label="Конструкция мусоропровода" editor="ConstructionChute" />
+          </elements>
+        </component>
+        <component id="Form_3_7_3" title="Характеристики мусоропроводов" type="PropertyGrid" order="3" columns="1">
+          <elements>
+            <element code="5:1" columnIndex="1" label="Количество мусоропроводов(шт.)" editor="Int" minValue="0" />
+            <element code="6:1" columnIndex="1" label="Год последнего кап.ремонта мусоропроводов" editor="Date" />
+            <element code="1:1" columnIndex="1" label="Количество стволов(ед.)" editor="Int" minValue="0" />
+            <element code="2:1" columnIndex="1" label="Количество приемо-загрузочных камер(ед.)" editor="Int" minValue="0" />
+            <element code="3:1" columnIndex="1" label="Площадь мусороприемных камер(кв.м)" editor="Double" minValue="0" />
+            <element code="4:1" columnIndex="1" label="Объем мусороприемных камер(куб.м)" editor="Double" minValue="0" />
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_3_8">
+      <components>
+        <component id="Form_3_8" title="Пожаротушение" labelWidth="120" type="Panel" order="1" columns="1">
+          <elements>
+            <element code="1:3" columnIndex="1" label="Пожаротушение" editor="FirefightingType" />
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_4_1">
+      <components>
+        <component id="Form_4_1" title="Специальное инженерное оборудование" type="Grid" order="1" columns="4">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true" />
+            <column code="2" title="Наименование показателя" editable="false"/>
+            <column code="3" title="Единица измерения" editable="false"/>
+            <column code="4" title="Показатель" editable="true" editor="Int" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+            <row code="2"/>
+            <row code="3"/>
+            <row code="4"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Лифты"/>
+            <cell code="2:2" value="в том числе с раздвижными дверями"/>
+            <cell code="3:2" value="в том числе с открывающими дверями"/>
+            <cell code="4:2" value="ПЗУ (переговорно-замочное устройство) или кодовый замок"/>
+
+            <cell code="1:3" value="шт."/>
+            <cell code="2:3" value="шт."/>
+            <cell code="3:3" value="шт."/>
+            <cell code="4:3" value="шт."/>
+          </cells>
+        </component>
+        <component id="Form_4_1_1" title="Общие сведения" type="Grid" order="2" columns="3">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true" />
+            <column code="2" title="Наименование показателя" editable="false"/>
+            <column code="3" title="Показатель" editable="true" editor="Bool"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+            <row code="2"/>
+            <row code="3"/>
+            <row code="4"/>
+            <row code="5"/>
+            <row code="6"/>
+            <row code="7"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="АППЗ (система автоматической противопожарной защиты дома)"/>
+            <cell code="2:2" value="Объединенные диспетчерские системы"/>
+            <cell code="3:2" value="Телефон (общедомовые распределительные сети и устройства)"/>
+            <cell code="4:2" value="Радио (общедомовые распределительные сети и устройства)"/>
+            <cell code="5:2" value="Антенны коллективного пользования"/>
+            <cell code="6:2" value="Кабельное ТВ"/>
+            <cell code="7:2" value="Подключение к компьютерным сетям"/>
+          </cells>
+        </component>
+      </components>
+    </form>
+    <form id="Form_4_2">
+      <components>
+        <component id="Form_4_2" title="Общие сведения о лифтах" type="PropertyGrid" order="1" columns="1">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Количество лифтов(шт.)" editor="Int" minValue="0" IsRequirement="true" />
+            <element code="2:1" columnIndex="1" label="Адрес, номер диспетчерской" editor="Text" />
+            <element code="3:1" columnIndex="1" label="Физический износ (%)" editor="Double" minValue="0" RequirementOn="1:1!=0" />
+            <element code="4:1" columnIndex="1" label="Год проведения последнего капитального ремонта" editor="Int" minValue="0" RequirementOn="1:1!=0"/>
+          </elements>
+        </component>
+        <component id="Form_4_2_1" title="" type="InlineGrid" order="2" columns="19" flex="1">
+          <columns>
+            <column code="1" title="Номер подъезда" width="95" editable="true" editor="Int" minValue="0" IsRequirement="true" />
+            <column code="10" title="Год последней модернизации/капитально-восстановительного ремонта(год)" width="140"  editable="true" editor="Int" minValue="0"/>
+            <column code="11" title="Проведение экспертной диагностики(год)"  width="130" editable="true" editor="Int" minValue="0"/>
+            <column code="12" title="Предельный срок эксплуатации(год)"  width="130" editable="true" editor="Int" minValue="0" IsRequirement="true"/>
+            <column code="13" title="Плановый срок замены (вывод из эксплуатации)" width="130"  editable="true" editor="Date"/>
+            <column code="14" title="Наличие ПСД"  width="90" editable="true" editor="Bool"/>
+            <column code="17" title="Срок эксплуатации" width="130" editable="true" editor="Date" hidden="true"/>
+            <column code="18" title="Период замены" width="130" editable="true" editor="Text" hidden="true"/>
+            <column code="19" title="Тип лифта" width="130" editable="true" editor="TypeLift" IsRequirement="true"/>
+            <column code="2" title="Номер лифта (заводской)" width="130"  editable="true" editor="Text" IsRequirement="true"/>
+            <column code="21" title="Инвентарный номер" width="130" editable="true" editor="Text" IsRequirement="true" />
+            <column code="22" title="Нормативный срок службы" width="130" editable="true" editor="Int" minValue="0" IsRequirement="true" />
+            <column code="4" title="Наличие частотного регулирования дверей/привода" width="130"  editable="true" editor="Bool"/>
+            <column code="5" title="Грузоподъемность(кг)" width="130"  editable="true" editor="Double" minValue="0" IsRequirement="true"/>
+            <column code="6" title="Скорость подъема(м/сек)"  width="130" editable="true" editor="Double" minValue="0"/>
+            <column code="7" title="Количество остановок(ед.)"  width="125" editable="true" editor="Int" minValue="0"/>
+            <column code="9" title="Год ввода лифта в эксплуатацию(год)" width="140"  editable="true" editor="Int" minValue="0" IsRequirement="true"/>
+            <column code="3" title="Изготовитель" editable="true" width="85"  editor="Text"/>
+            <column code="8" title="Шахта лифта приставная / встроенная" width="140"  editable="true" editor="TypeLiftShaft"/>
+            <column code="15" title="Стоимость работ по замене/модернизации лифтового оборудования"  width="120" editable="true" editor="Decimal" minValue="0"/>
+            <column code="16" title="Стоимость СМР(руб.)"  width="120" editable="true" editor="Decimal" minValue="0"/>
+            <column code="20" title="Лифт(ООИ)" width="130" editor="RealityObjectStructuralElementLift" editable="true" order="-1"/>
+          </columns>
+        </component>
+      </components>
+    </form>
+    <form id="Form_5_1">
+      <components>
+        <component id="Form_5_1" title="Фундаменты" labelWidth="120" type="Grid" order="2" columns="3">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Наименование" editable="false"/>
+            <column code="3" title="Показатель" editable="true" editor="Bool"/>
+          </columns>
+          <rows>
+            <row code="1" RequirementOn="1:3"/>
+            <row code="2" RequirementOn="2:3"/>
+            <row code="3" RequirementOn="3:3"/>
+            <row code="4" RequirementOn="4:3"/>
+            <row code="5" RequirementOn="5:3"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Ленточный"/>
+            <cell code="2:2" value="Столбчатый"/>
+            <cell code="3:2" value="Сплошной"/>
+            <cell code="4:2" value="Сборный"/>
+            <cell code="5:2" value="Отсутствует"/>
+          </cells>
+        </component>
+        <component id="Form_5_1_1" title="Общие сведения" type="PropertyGrid" >
+          <elements>
+            <element code="1:4" columnIndex="1" label="Площадь цоколя (кв.м)" editor="Decimal" />
+            <element code="2:4" columnIndex="1" label="Площадь отмостки (кв.м)" editor="Decimal" IsRequirement="true" />
+            <element code="3:4" columnIndex="1" label="Объем фундамента (куб.м)" editor="Decimal" />
+            <element code="4:4" columnIndex="1" label="Материал фундамента" editor="Text" />
+            <element code="5:4" columnIndex="1" label="Физический износ (%)" editor="Decimal" IsRequirement="true" />
+            <element code="6:4" columnIndex="1" label="Год проведения последнего капитального ремонта" editor="Int" minValue="1900" sRequirement="true" />
+          </elements>
+        </component>
+        <component id="Form_5_1_2" title="Информация для заполнения в ГИС ЖКХ" type="PropertyGrid" >
+          <elements>
+            <element code="1:1" columnIndex="1" label="Материалы фундамента" editor="MultiDict" editorCode="366" IsRequirement="true" />
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_5_2">
+      <components>
+        <component id="Form_5_2" title="Тип стен" labelWidth="120" type="Panel" order="1" columns="1">
+          <elements>
+            <element code="1:3" columnIndex="1" label="Тип стен" editor="Dict" editorCode="220" IsRequirement="true"/>
+          </elements>
+        </component>
+
+        <component id="Form_5_2_2" title="Характеристики стен и перегородок" labelWidth="120" type="Grid" order="2" columns="4">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Наименование" editable="false"/>
+            <column code="3" title="Единица измерения" editable="false"/>
+            <column code="4" title="Показатель" editable="true" editor="Double" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+            <row code="2"/>
+            <row code="3" RequirementOn="3:4"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Площадь стен"/>
+            <cell code="2:2" value="Площадь перегородок"/>
+            <cell code="3:2" value="Физический износ (%)"/>
+            
+            <cell code="1:3" value="кв.м"/>
+            <cell code="2:3" value="кв.м"/>
+            <cell code="3:3" value="%"/>
+          </cells>
+        </component>
+
+        <component id="Form_5_2_3" title="" labelWidth="120" type="PropertyGrid" order="1" columns="1">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Год последнего кап.ремонта стен" editor="Date" IsRequirement="true" />
+          </elements>
+        </component>
+
+      </components>
+    </form>
+    <form id="Form_5_3">
+      <components>
+
+        <component id="Form_5_3" title="Тип перекрытий" labelWidth="120" type="PropertyGrid" order="1" columns="1">
+          <elements>
+            <element code="1:3" columnIndex="1" label="Тип перекрытий" editor="MultiDict" editorCode="230" IsRequirement="true"/>
+          </elements>
+        </component>
+
+        <component id="Form_5_3_2" title="Характеристики перекрытий" labelWidth="120" type="Grid" order="2" columns="4">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Наименование" editable="false"/>
+            <column code="3" title="Единица измерения" editable="false"/>
+            <column code="4" title="Показатель" editable="true" editor="Double" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+            <row code="2"/>
+            <row code="3"/>
+            <row code="4" RequirementOn="4:4"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Площадь междуэтажных"/>
+            <cell code="2:2" value="Площадь подвальных"/>
+            <cell code="3:2" value="Площадь чердачных"/>
+            <cell code="4:2" value="Физический износ (%)"/>
+
+            <cell code="1:3" value="кв.м"/>
+            <cell code="2:3" value="кв.м"/>
+            <cell code="3:3" value="кв.м"/>
+            <cell code="4:3" value="%"/>
+          </cells>
+        </component>
+
+      </components>
+    </form>
+    <form id="Form_5_4">
+      <components>
+        <component id="Form_5_4" title="Полы" labelWidth="120" type="Grid" order="1" columns="4">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Наименование показателя" editable="false"/>
+            <column code="3" title="Единица измерения" editable="false"/>
+            <column code="4" title="Показатель" editable="true" editor="Double" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+            <row code="2"/>
+            <row code="3"/>
+            <row code="4"/>
+            <row code="5"/>
+            <row code="6"/>
+            <row code="7"/>
+            <row code="8"/>
+            <row code="9"/>
+            <row code="10" RequirementOn="10:4"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Площадь цементных полов на лестничных клетках"/>
+            <cell code="2:2" value="Площадь плитки ПХВ на л/к"/>
+            <cell code="3:2" value="Площадь полов из керамической плитки"/>
+            <cell code="4:2" value="Площадь полов гранитных, мраморных"/>
+            <cell code="5:2" value="Площадь цементных полов в теплоцентрах, водомерных узлах и щитовых"/>
+            <cell code="6:2" value="Площадь цементных полов в мусоросборных камерах"/>
+            <cell code="7:2" value="Площадь цементных полов в приямках"/>
+            <cell code="8:2" value="Площадь цементных полов в машинных отделениях"/>
+            <cell code="9:2" value="Площадь подвала по полу"/>
+            <cell code="10:2" value="Физический износ"/>
+
+            <cell code="1:3" value="кв.м"/>
+            <cell code="2:3" value="кв.м"/>
+            <cell code="3:3" value="кв.м"/>
+            <cell code="4:3" value="кв.м"/>
+            <cell code="5:3" value="кв.м"/>
+            <cell code="6:3" value="кв.м"/>
+            <cell code="7:3" value="кв.м"/>
+            <cell code="8:3" value="кв.м"/>
+            <cell code="9:3" value="кв.м"/>
+            <cell code="10:3" value="%"/>
+          </cells>
+        </component>
+        <component id="Form_5_4_2" title="" labelWidth="120" type="PropertyGrid" order="1" columns="1">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Год проведения последнего капитального ремонта" editor="Date" IsRequirement="true"/>
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_5_5">
+      <components>
+        <component id="Form_5_5" title="Проемы" labelWidth="250" type="PropertyGrid" order="1" columns="1">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Количество оконных проемов (с учетом балконных дверей)(шт)" editor="Int" minValue="0" />
+            <element code="2:1" columnIndex="1" label="Площадь оконных проемов(кв.м)" editor="Double" minValue="0" />
+            <element code="3:1" columnIndex="1" label="Количество дверных проемов(шт)" editor="Int" minValue="0" />
+            <element code="4:1" columnIndex="1" label="в т.ч., металлические(шт)" editor="Int" minValue="0" />
+            <element code="5:1" columnIndex="1" label="Площадь дверных проемов(кв.м)" editor="Double" minValue="0" />
+
+            <element code="6:1" columnIndex="1" label="в т.ч., металлические(кв.м)" editor="Double" minValue="0" />
+            <element code="7:1" columnIndex="1" label="Площадь остекления(кв.м)" editor="Double" minValue="0" />
+            <element code="8:1" columnIndex="1" label="Площадь подоконных досок(кв.м)" editor="Double" minValue="0" />
+
+            <element code="9:1" columnIndex="1" label="Скобяные изделия(шт)" editor="Int" minValue="0" />
+            <element code="10:1" columnIndex="1" label="Количество подвальных окон(шт)" editor="Int" minValue="0" />
+            <element code="11:1" columnIndex="1" label="Площадь подвальных окон, в том числе(кв.м)" editor="Double" minValue="0" />
+            <element code="12:1" columnIndex="1" label="слуховые окна(кв.м)" editor="Double" minValue="0" />
+
+            <element code="13:1" columnIndex="1" label="вентиляционные окна(кв.м)" editor="Double" minValue="0" />
+            <element code="14:1" columnIndex="1" label="Другое(кв.м)" editor="Double" minValue="0" />
+            
+            <element code="15:1" columnIndex="1" label="Физический износ окон (%)" editor="Double" minValue="0" IsRequirement="true"/>
+            <element code="16:1" columnIndex="1" label="Материал окон" editor="Text" />
+            <element code="17:1" columnIndex="1" label="Физический износ дверей (%)" editor="Double" minValue="0" IsRequirement="true"/>
+          </elements>
+        </component>
+        <component id="Form_5_5_2" title="Информация для заполнения в ГИС ЖКХ" type="PropertyGrid" >
+          <elements>
+            <element code="1:1" columnIndex="1" label="Материал окон" editor="MultiDict" editorCode="365" IsRequirement="true" />
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_5_6">
+      <components>
+        <component id="Form_5_6" title="Общие сведения о конструкции крыши" labelWidth="120" type="Panel" order="1" columns="1">
+          <elements>
+            <element code="1:3" columnIndex="1" label="Конструкция крыши" editor="TypeRoof" IsRequirement="true"/>
+            <element code="2:3" columnIndex="1" label="Физический износ крыши (%)" editor="Double" minValue="0" IsRequirement="true"/>
+            <element code="3:3" columnIndex="1" label="Год проведения последнего капитального ремонта крыши" editor="Int" minValue="0" IsRequirement="true"/>
+            <element code="4:3" columnIndex="1" label="Вид несущей части крыши" editor="Text" />
+            <element code="5:3" columnIndex="1" label="Утепляющие слои чердачных перекрытий" editor="Text" />
+          </elements>
+        </component>
+        <component id="Form_5_6_2" title="" labelWidth="120" type="PropertyGrid" order="2" columns="1">
+          <elements>
+            <element code="22:1" columnIndex="1" label="Общая площадь кровли (кв.м.)" editor="Double" minValue="0" />
+            <element code="23:1" columnIndex="1" label="в т.ч. шиферная скатная (кв.м.)" editor="Double" minValue="0" />
+            <element code="24:1" columnIndex="1" label="в т.ч. металлическая скатная (кв.м.)" editor="Double" minValue="0" />
+            <element code="25:1" columnIndex="1" label="в т.ч. иная скатная (кв.м.)" editor="Double" minValue="0" />
+            <element code="26:1" columnIndex="1" label="в т.ч. плоская (кв.м.)" editor="Double" minValue="0" />
+            <element code="27:1" columnIndex="1" label="Год последнего кап. ремонта кровли" editor="Date" IsRequirement="true"/>
+            <element code="1:1" columnIndex="1" label="Площадь кровли металлической(кв.м)" editor="Double" minValue="0" />
+            <element code="2:1" columnIndex="1" label="Площадь кровли из рулонных материалов(кв.м)" editor="Double" minValue="0" />
+            <element code="3:1" columnIndex="1" label="Площадь кровли из штучных материалов(кв.м)" editor="Double" minValue="0" />
+            <element code="4:1" columnIndex="1" label="Площадь обрешетки кровли(кв.м)" editor="Double" minValue="0" />
+            <element code="5:1" columnIndex="1" label="Количество стропильных ног(шт.)" editor="Int" minValue="0" />
+            <element code="6:1" columnIndex="1" label="Длина металлического открытия парапета(м)" editor="Double" minValue="0" />
+            <element code="7:1" columnIndex="1" label="Количество колпаков на вентканалах(ед.)" editor="Int" minValue="0" />
+            <element code="8:1" columnIndex="1" label="Количество вентканалов(ед.)" editor="Int" minValue="0" />
+            <element code="9:1" columnIndex="1" label="Количество флюгарок на канализационных стояках(ед.)" editor="Int" minValue="0" />
+            <element code="10:1" columnIndex="1" label="Количество лазов на кровлю(ед.)" editor="Int" minValue="0" />
+            <element code="11:1" columnIndex="1" label="Количество выходов на чердак(ед.)" editor="Int" minValue="0" />
+            <element code="12:1" columnIndex="1" label="Количество продухов на чердаке(ед.)" editor="Int" minValue="0" />
+            <element code="13:1" columnIndex="1" label="Количество козырьков(ед.)" editor="Int" minValue="0" />
+            <element code="14:1" columnIndex="1" label="Площадь козырьков(кв.м)" editor="Double" minValue="0" />
+            <element code="15:1" columnIndex="1" label="Желоба(м)" editor="Double" minValue="0" />
+            <element code="16:1" columnIndex="1" label="Количество водосточных труб(ед.)" editor="Int" minValue="0" />
+            <element code="17:1" columnIndex="1" label="Водосточные трубы(м)" editor="Double" minValue="0" />
+            <element code="18:1" columnIndex="1" label="Свесы(м)" editor="Double" minValue="0" />
+            <element code="19:1" columnIndex="1" label="Водоотводящие стояки(м)" editor="Double" minValue="0" />
+            <element code="20:1" columnIndex="1" label="Водоотводящие лотки и отводы от здания(ед.)" editor="Int" minValue="0" />
+            <element code="21:1" columnIndex="1" label="Защитные ограждения(м)" editor="Double" minValue="0" />
+            <element code="29:1" columnIndex="1" label="Материал кровли" editor="Dict" editorCode="330" />
+            <element code="30:1" columnIndex="1" label="Физический износ кровли (%)" editor="Double" minValue="0" IsRequirement="true"/>
+          </elements>
+        </component>
+        <component id="Form_5_6_3" title="Информация для заполнения в ГИС ЖКХ" type="PropertyGrid" >
+          <elements>
+            <element code="1:1" columnIndex="1" label="Вид несущей части крыши" editor="MultiDict" editorCode="364" IsRequirement="true" />
+            <element code="2:1" columnIndex="1" label="Утепляющие слои чердачных перекрытий" editor="MultiDict" editorCode="363" IsRequirement="true" />
+            <element code="3:1" columnIndex="1" label="Материал кровли" editor="MultiDict" editorCode="331" IsRequirement="true" />
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_5_7">
+      <components>
+        <component id="Form_5_7" title="Отделка внутренняя" labelWidth="120" type="Grid" order="1" columns="4">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Наименование" editable="false"/>
+            <column code="3" title="Единица измерения" editable="false"/>
+            <column code="4" title="Показатель" editable="true" editor="Double" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+            <row code="2"/>
+            <row code="3"/>
+            <row code="4"/>
+            <row code="5"/>
+            <row code="6"/>
+            <row code="7"/>
+            <row code="8"/>
+            <row code="9"/>
+            <row code="10"/>
+            <row code="11"/>
+            <row code="12" RequirementOn="12:4"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Площадь стен для клеевой окраски мест общего пользования"/>
+            <cell code="2:2" value="Площадь стен для масляной окраски мест общего пользования"/>
+            <cell code="3:2" value="Площадь поверхности труб"/>
+            <cell code="4:2" value="Площадь поверхности радиаторов в местах общего пользования"/>
+            <cell code="5:2" value="Площадь решеток на лестничных маршах"/>
+            <cell code="6:2" value="Площадь решеток оконных ограждений"/>
+            <cell code="7:2" value="Площадь сетки шахт лифтов"/>
+            <cell code="8:2" value="Площадь почтовых ящиков"/>
+            <cell code="9:2" value="Площадь торцов на лестничных маршах"/>
+            <cell code="10:2" value="Площадь нижней поверхности лестничных маршей"/>
+            <cell code="11:2" value="Площадь других поверхностей в местах общего пользования"/>
+            <cell code="12:2" value="Физический износ (%)"/>
+
+
+            <cell code="1:3" value="кв.м"/>
+            <cell code="2:3" value="кв.м"/>
+            <cell code="3:3" value="кв.м"/>
+            <cell code="4:3" value="кв.м"/>
+            <cell code="5:3" value="кв.м"/>
+            <cell code="6:3" value="кв.м"/>
+            <cell code="7:3" value="кв.м"/>
+            <cell code="8:3" value="кв.м"/>
+            <cell code="9:3" value="кв.м"/>
+            <cell code="10:3" value="кв.м"/>
+            <cell code="11:3" value="кв.м"/>
+            <cell code="12:3" value="%"/>
+          </cells>
+        </component>
+      </components>
+    </form>
+    <form id="Form_5_8">
+      <components>
+        <component id="Form_5_8" title="Фасады" labelWidth="120" type="PropertyGrid" order="1" columns="1">
+          <elements>
+            <element code="22:1" columnIndex="1" label="Общая площадь фасада (кв.м)" editor="Double" minValue="0" />
+            <element code="23:1" columnIndex="1" label="в т.ч. оштукатуренная (кв.м.)" editor="Double" minValue="0" />
+            <element code="24:1" columnIndex="1" label="в т.ч. неоштукатуренная (кв.м.)" editor="Double" minValue="0" />
+            <element code="25:1" columnIndex="1" label="в т.ч. панельная (кв.м.)" editor="Double" minValue="0" />
+            <element code="26:1" columnIndex="1" label="в т.ч. облицованная плиткой (кв.м.)" editor="Double" minValue="0" />
+            <element code="27:1" columnIndex="1" label="в т.ч. облицованная сайдингом (кв.м.)" editor="Double" minValue="0" />
+            <element code="28:1" columnIndex="1" label="в т.ч. деревянная (кв.м.)" editor="Double" minValue="0" />
+            <element code="29:1" columnIndex="1" label="в т.ч. утепленного фасада с отделкой декоративной штукатуркой (кв.м.)" editor="Double" minValue="0" />
+            <element code="30:1" columnIndex="1" label="в т.ч. утепленного фасада с отделкой плиткой (кв.м.)" editor="Double" minValue="0" />
+            <element code="31:1" columnIndex="1" label="в т.ч. утепленного фасада с отделкой сайдингом (кв.м.)" editor="Double" minValue="0" />
+            <element code="32:1" columnIndex="1" label="Площадь отмостки (кв.м.)" editor="Double" minValue="0" />
+            <element code="33:1" columnIndex="1" label="Площадь остекления мест общего пользования (дерево) (кв.м.)" editor="Double" minValue="0" />
+            <element code="34:1" columnIndex="1" label="Площадь остекления мест общего пользования (пластик) (кв.м.)" editor="Double" minValue="0" />
+            <element code="35:1" columnIndex="1" label="Площадь индивидуального остекления (дерево) (кв.м.)" editor="Double" minValue="0" />
+            <element code="36:1" columnIndex="1" label="Площадь индивидуального остекления (пластик) (кв.м.)" editor="Double" minValue="0" />
+            <element code="37:1" columnIndex="1" label="Площадь металлических дверных заполнений (кв.м.)" editor="Double" minValue="0" />
+            <element code="38:1" columnIndex="1" label="Площадь иных дверных заполнений (кв.м.)" editor="Double" minValue="0" />
+
+            <element code="1:1" columnIndex="2" label="Площадь штукатурки(кв.м)" editor="Double" minValue="0" />
+            <element code="2:1" columnIndex="2" label="в т.ч. лицевой фасад(кв.м)" editor="Double" minValue="0" />
+            <element code="3:1" columnIndex="2" label="в т.ч. дворовый фасад(кв.м)" editor="Double" minValue="0" />
+            <element code="4:1" columnIndex="2" label="в т.ч. торцовая часть(кв.м)" editor="Double" minValue="0" />
+            <element code="5:1" columnIndex="2" label="Площадь облицовки(кв.м)" editor="Double" minValue="0" />
+            <element code="6:1" columnIndex="2" label="в т.ч. лицевой фасад(кв.м)" editor="Double" minValue="0" />
+            <element code="7:1" columnIndex="2" label="в т.ч. дворовый фасад(кв.м)" editor="Double" minValue="0" />
+            <element code="8:1" columnIndex="2" label="в т.ч. торцовая часть(кв.м)" editor="Double" minValue="0" />
+            <element code="9:1" columnIndex="2" label="Фактурный и окрасочные слои(кв.м)" editor="Double" minValue="0" />
+            <element code="10:1" columnIndex="2" label="в т.ч. лицевой фасад(кв.м)" editor="Double" minValue="0" />
+            <element code="11:1" columnIndex="2" label="в т.ч. дворовый фасад(кв.м)" editor="Double" minValue="0" />
+            <element code="12:1" columnIndex="2" label="в т.ч. торцовая часть(кв.м)" editor="Double" minValue="0" />
+            <element code="13:1" columnIndex="2" label="Балконы, лоджии, эркеры, крыльца(шт)" editor="Int" minValue="0" />
+            <element code="14:1" columnIndex="2" label="Металлические покрытия на выступающих частях стен(кв.м)" editor="Double" minValue="0" />
+            <element code="15:1" columnIndex="2" label="Парапеты(м)" editor="Double" minValue="0" />
+            <element code="16:1" columnIndex="2" label="Карнизы(м)" editor="Double" minValue="0" />
+            <element code="17:1" columnIndex="2" label="Пояса(м)" editor="Double" minValue="0" />
+            <element code="18:1" columnIndex="2" label="Тяги(м)" editor="Double" minValue="0" />
+            <element code="19:1" columnIndex="2" label="Окрытия окон(м)" editor="Double" minValue="0" />
+            <element code="20:1" columnIndex="2" label="Ограждения(м))" editor="Double" minValue="0" />
+            <element code="21:1" columnIndex="2" label="Длина стыков стеновых панелей(м)" editor="Double" minValue="0" />
+            <element code="39:1" columnIndex="2" label="Год последнего кап.ремонта стен" editor="Date" IsRequirement="true"/>
+            
+            <element code="40:1" columnIndex="1" label="Физический износ (%)" editor="Double" minValue="0" />
+            <element code="41:1" columnIndex="1" label="Тип наружных стен" editor="Text" />
+            <element code="42:1" columnIndex="1" label="Тип наружного утепления фасада" editor="Text"/>
+            <element code="43:1" columnIndex="1" label="Материал отделки фасада" editor="Text"/>
+          </elements>
+        </component>
+        <component id="Form_5_8_2" title="Информация для заполнения в ГИС ЖКХ" type="PropertyGrid" order="3">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Материал отделки фасада" editor="MultiDict" editorCode="359" IsRequirement="true" />
+            <element code="2:1" columnIndex="1" label="Тип наружного утепления фасада" editor="MultiDict" editorCode="361" IsRequirement="true" />
+            <element code="3:1" columnIndex="1" label="Тип наружных стен" editor="MultiDict" editorCode="362" IsRequirement="true" />
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_5_9">
+      <components>
+        <component id="Form_5_9" title="Благоустройство" labelWidth="120" type="PropertyGrid" order="1" columns="1">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Асфальтобетонные покрытия(кв.м)" editor="Double" minValue="0" />
+            <element code="2:1" columnIndex="1" label="в т.ч. внутридворовые проезды(кв.м)" editor="Double" minValue="0" />
+            <element code="3:1" columnIndex="1" label="в т.ч. тротуары(кв.м)" editor="Double" minValue="0" />
+            <element code="4:1" columnIndex="1" label="Покрытия замощенные(кв.м)" editor="Double" minValue="0" />
+            <element code="5:1" columnIndex="1" label="Количество лестничных указателей(ед.)" editor="Int" minValue="0" />
+            <element code="6:1" columnIndex="1" label="Количество скамеек(ед.)" editor="Int" minValue="0" />
+            <element code="7:1" columnIndex="1" label="Ограждения газонов(кв.м)" editor="Double" minValue="0" />
+          </elements>
+        </component>
+        <component id="Form_5_9_1" title="Детское оборудование" labelWidth="120" type="PropertyGrid" order="1" columns="1">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Буны (шт.)" editor="Int" minValue="0" />
+            <element code="2:1" columnIndex="1" label="Домики (шт.)" editor="Int" minValue="0" />
+            <element code="3:1" columnIndex="1" label="Качели (шт.)" editor="Int" minValue="0" />
+            <element code="4:1" columnIndex="1" label="Песочницы (шт.)" editor="Int" minValue="0" />
+            <element code="5:1" columnIndex="1" label="Скамейки (шт.)" editor="Int" minValue="0" />
+            <element code="6:1" columnIndex="1" label="Шведские стенки (шт.)" editor="Int" minValue="0" />
+            <element code="7:1" columnIndex="1" label="Ограждение газонов детских площадок (м.кв.)" editor="Double" minValue="0" />
+            <element code="8:1" columnIndex="1" label="Прочее (шт.)" editor="Int" minValue="0" />
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_5_10">
+      <components>
+        <component id="Form_5_10" title="Стоимостные характеристики" labelWidth="120" type="Grid" order="1" columns="4">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Наименование" editable="false"/>
+            <column code="3" title="Единица измерения" editable="false"/>
+            <column code="4" title="Показатель" editable="true" editor="Double" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Балансовая восстановительная стоимость"/>
+            <cell code="1:3" value="руб."/>
+          </cells>
+        </component>
+      </components>
+    </form>
+    <form id="Form_5_11">
+      <components>
+        <component id="Form_5_11" title="Общие сведения" labelWidth="120" type="PropertyGrid" order="1" columns="1">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Наименование конструктивного элемента" editor="Text"/>
+            <element code="2:1" columnIndex="1" label="Физический износ (%)" editor="Double" minValue="0"/>
+            <element code="3:1" columnIndex="1" label="Оснащенность водоразборными устройствами и санитарно-техническим оборудованием" editor="MultiDict" editorCode="357"/>
+            <element code="4:1" columnIndex="1" label="Категория потребителей, приравненных к населению" editor="MultiDict" editorCode="358"/>
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_6_1">
+      <components>
+        <component id="Form_6_1_1" title="Общие сведения" labelWidth="250" type="PropertyGrid" order="1" columns="1">
+          <elements>
+            <element code="5:1" columnIndex="1" label="Наличие факта проведения энергетического обследования" editor="Bool" IsRequirement="true"/>
+            <element code="1:1" columnIndex="1" label="Класс энергоэффективности здания" editor="Dict" editorCode="367" RequirementOn="5:1=1"/>
+            <element code="6:1" columnIndex="1" label="Дата документа, подтверждающего класс энергетической эффективности" editor="Date" RequirementOn="5:1=1"/>
+            <element code="7:1" columnIndex="1" label="Номер документа, подтверждающего класс энергетической эффективности" editor="Text" RequirementOn="5:1=1"/>
+            <element code="2:1" columnIndex="1" label="Дата проведения энергетического аудита" editor="Date" RequirementOn="5:1=1"/>
+            <element code="3:1" columnIndex="1" label="Предыдущий класс энергоэффективности здания" editor="Dict" editorCode="367" />
+            <element code="4:1" columnIndex="1" label="Класс изменен в связи с КР" editor="YesNoNotSet" />
+          </elements>
+        </component>
+        <component id="Form_6_1_2" title="Удельная тепловая характеристика здания" labelWidth="200" type="PropertyGrid" order="1" columns="1">
+          <elements>
+            <element code="1:1" columnIndex="1" label="Фактический удельный расход (Вт/М3Сград)" editor="Double" minValue="0" />
+            <element code="2:1" columnIndex="1" label="Нормативный удельный расход (Вт/М3Сград)" editor="Double" minValue="0" />
+          </elements>
+        </component>
+      </components>
+    </form>
+    <form id="Form_6_2">
+      <components>
+        <component id="Form_6_1" title="Температурные условия" type="Grid" order="1" columns="4">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Параметры" editable="false"/>
+            <column code="3" title="Единица измерения" editable="false"/>
+            <column code="4" title="Величина" editable="true" editor="Double"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+            <row code="2"/>
+            <row code="3"/>
+            <row code="4"/>
+            <row code="5"/>
+            <row code="6"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Температура внутренняя расчетная для проектирования систем отопления"/>
+            <cell code="2:2" value="Расчётная температура внутри отапливаемого помещения для расчёта теплозащиты"/>
+            <cell code="3:2" value="Расчётная температура наружного воздуха"/>
+            <cell code="4:2" value="Средняя многолетняя температура наружного воздуха за отопительный период"/>
+            <cell code="5:2" value="Средняя многолетняя продолжительность отопительного периода"/>
+            <cell code="6:2" value="Градусо-сутки отопительного периода по средней многолетней продолжительности отопительного периода"/>
+            
+            <cell code="1:3" value="С"/>
+            <cell code="2:3" value="С"/>
+            <cell code="3:3" value="С"/>
+            <cell code="4:3" value="С"/>
+            <cell code="5:3" value="сут"/>
+            <cell code="6:3" value="С-сут"/>
+          </cells>
+        </component>
+      </components>
+    </form>
+    <form id="Form_6_3">
+      <components>
+        <component id="Form_6_2" title="Энергопотребление здания" type="Grid" order="1" columns="4">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Параметры" editable="false"/>
+            <column code="3" title="Единица измерения" editable="false"/>
+            <column code="4" title="Фактическое потребление в базовом году" editable="true" editor="Decimal" minValue="0"/>
+            <column code="5" title="Нормативное потребление" editable="true" editor="Double" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+            <row code="2"/>
+            <row code="3"/>
+            <row code="4"/>
+            <row code="5"/>
+            <row code="6"/>
+            <row code="7"/>
+            <row code="8"/>
+            <row code="9"/>
+            <row code="10"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Тепловая энергия"/>
+            <cell code="2:2" value="в т.ч. на отопление и вентиляцию за отопительный период"/>
+            <cell code="3:2" value="в т.ч. на горячее водоснабжение"/>
+            <cell code="4:2" value="Электрическая энергия"/>
+            <cell code="5:2" value="в т.ч. на общедомовое освещение"/>
+            <cell code="6:2" value="в т.ч. на лифтовое оборудование"/>
+            <cell code="7:2" value="в т.ч. на отопление и вентиляцию"/>
+            <cell code="8:2" value="в т.ч. на водоснабжение и канализацию"/>
+            <cell code="9:2" value="Природный газ"/>
+            <cell code="10:2" value="Водопроводная вода"/>
+
+            <cell code="1:3" value="МВт*ч/год"/>
+            <cell code="2:3" value="МВт*ч/год"/>
+            <cell code="3:3" value="МВт*ч/год"/>
+            <cell code="4:3" value="МВт*ч/год"/>
+            <cell code="5:3" value="МВт*ч/год"/>
+            <cell code="6:3" value="МВт*ч/год"/>
+            <cell code="7:3" value="МВт*ч/год"/>
+            <cell code="8:3" value="МВт*ч/год"/>
+            <cell code="9:3" value="тыс. куб.м/год"/>
+            <cell code="10:3" value="тыс. куб.м/год"/>
+          </cells>
+        </component>
+      </components>
+    </form>
+    <form id="Form_6_4">
+      <components>
+        <component id="Form_6_3" title="Удельные расходы энергоносителей" type="Grid" order="1" columns="5">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Параметры" editable="false"/>
+            <column code="3" title="Единица измерения" editable="false"/>
+            <column code="4" title="Фактическое потребление в базовом году" editable="true" editor="Decimal" minValue="0"/>
+            <column code="5" title="Нормативное потребление" editable="true" editor="Double" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1" />
+            <row code="2"/>
+            <row code="3"/>
+            <row code="4"/>
+            <row code="5"/>
+            <row code="6"/>
+            <row code="7"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Тепловая энергия на отопление и вентиляцию за отопительный период"/>
+            <cell code="2:2" value="Тепловая энергия на горячее водоснабжение"/>
+            <cell code="3:2" value="Электрическая энергия"/>
+            <cell code="4:2" value="Природный газ"/>
+            <cell code="5:2" value="Водопроводная вода"/>
+            <cell code="6:2" value="Удельная эксплуатационная энергоёмкость"/>
+            <cell code="7:2" value="Удельная тепловая характеристика здания"/>
+
+            <cell code="1:3" value="кВт*ч/кв.м"/>
+            <cell code="2:3" value="кВт*ч/кв.м"/>
+            <cell code="3:3" value="кВт*ч/кв.м"/>
+            <cell code="4:3" value="куб.м/кв.м"/>
+            <cell code="5:3" value="куб.м/кв.м"/>
+            <cell code="6:3" value="кВт*ч/кв.м (кг у.т./кв.м)"/>
+            <cell code="7:3" value="Вт/(куб.м*С)"/>
+          </cells>
+        </component>
+      </components>
+    </form>
+    <form id="Form_6_5">
+      <components>
+        <component id="Form_6_4" title="Характеристики максимального энергопотребления зданием" type="Grid" order="1" columns="5">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Параметры" editable="false"/>
+            <column code="3" title="Единица измерения" editable="false"/>
+            <column code="4" title="Значение фактическое" editable="true" editor="Double" minValue="0"/>
+            <column code="5" title="Значение нормативное" editable="true" editor="Double" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+            <row code="2"/>
+            <row code="3"/>
+            <row code="4"/>
+            <row code="5"/>
+            <row code="6"/>
+            <row code="7"/>
+            <row code="8"/>
+            <row code="9"/>
+            <row code="10"/>
+            <row code="11"/>
+            <row code="12"/>
+            <row code="13"/>
+            <row code="14"/>
+            <row code="15"/>
+            <row code="16"/>
+            <row code="17"/>
+            <row code="18"/>
+            <row code="19"/>
+            <row code="20"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Установленная тепловая мощность систем инженерного оборудования"/>
+            <cell code="2:2" value="в т.ч. отопление"/>
+            <cell code="3:2" value="в т.ч. горячее водоснабжение"/>
+            <cell code="4:2" value="в т.ч. принудительная вентиляция"/>
+            <cell code="5:2" value="в т.ч. воздушно тепловые завесы"/>
+            <cell code="6:2" value="Установленная электрическая мощность систем инженерного оборудования"/>
+            <cell code="7:2" value="в т.ч. общедомовое освещение"/>
+            <cell code="8:2" value="в т.ч. лифтовое оборудование"/>
+            <cell code="9:2" value="в т.ч. вентиляция"/>
+            <cell code="10:2" value="в т.ч. прочее (насосы систем отопления, водоснабжения, др.)"/>
+            <cell code="11:2" value="Среднечасовой за отопительный период расход тепла на ГВС"/>
+            <cell code="12:2" value="Средние суточные расходы"/>
+            <cell code="13:2" value="в т.ч. природного газа"/>
+            <cell code="14:2" value="в т.ч. холодной воды"/>
+            <cell code="15:2" value="в т.ч. горячей воды"/>
+            <cell code="16:2" value="в т.ч. электроэнергии"/>
+            <cell code="17:2" value="Удельный максимальный часовой расход тепловой энергии"/>
+            <cell code="18:2" value="в т.ч. на отопление"/>
+            <cell code="19:2" value="в т.ч. на вентиляцию"/>
+            <cell code="20:2" value="Удельная тепловая характеристика здания"/>
+
+            <cell code="1:3" value="кВт (Гкал/час)"/>
+            <cell code="2:3" value="кВт (Гкал/час)"/>
+            <cell code="3:3" value="кВт (Гкал/час)"/>
+            <cell code="4:3" value="кВт (Гкал/час)"/>
+            <cell code="5:3" value="кВт (Гкал/час)"/>
+            <cell code="6:3" value="кВт"/>
+            <cell code="7:3" value="кВт"/>
+            <cell code="8:3" value="кВт"/>
+            <cell code="9:3" value="кВт"/>
+            <cell code="10:3" value="кВт"/>
+            <cell code="11:3" value="кВт (Гкал/ч)"/>
+            <cell code="12:3" value="куб.м/сут"/>
+            <cell code="13:3" value="куб.м/сут"/>
+            <cell code="14:3" value="куб.м/сут"/>
+            <cell code="15:3" value="куб.м/сут"/>
+            <cell code="16:3" value="кВт*ч/сут"/>
+            <cell code="17:3" value="Вт/кв.м"/>
+            <cell code="18:3" value="Вт/кв.м"/>
+            <cell code="19:3" value="Вт/кв.м"/>
+            <cell code="20:3" value="Вт/(куб.м*С)"/>
+          </cells>
+        </component>
+      </components>
+    </form>
+    <form id="Form_6_6">
+      <components>
+        <component id="Form_6_6_1" title="Состояние приборного учета в здании" type="Grid" order="1" columns="6" height="700">
+          <columns>
+            <column code="1" editable="false" hidden="true" isId="true"/>
+            <column code="2" title="Вид энергоносителя или ресурса" width="210" editable="false"/>
+            <column code="3" title="Количество вводов в здание" width="170" editable="true" editor="Int" minValue="0"/>
+            <column code="4" title="Тип (марка) прибора" width="140" editable="true" editor="Text"/>
+            <column code="5" title="Количество приборов" width="130" editable="true" editor="Int" minValue="0"/>
+            <column code="6" title="Балансодержатель прибора" width="165" editable="true" editor="Text"/>
+            <column code="7" title="Количество жилых помещений, оснащенных индивидуальными приборами учета (ед.)" width="435" editable="true" editor="Int" minValue="0"/>
+            <column code="8" title="Количество жилых помещений, оснащенных общими (квартирными) приборами учета (ед.)" width="450" editable="true" editor="Int" minValue="0"/>
+            <column code="9" title="Количество нежилых помещений, оснащенных индивидуальными приборами учета (ед.)" width="435" editable="true" editor="Int" minValue="0"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+            <row code="2"/>
+            <row code="3"/>
+            <row code="4"/>
+            <row code="5"/>
+            <row code="6"/>
+            <row code="7"/>
+            <row code="8"/>
+            <row code="9"/>
+          </rows>
+          <cells>
+            <cell code="1:2" value="Электроэнергия"/>
+            <cell code="2:2" value="освещение"/>
+            <cell code="3:2" value="силовая нагрузка"/>
+            <cell code="4:2" value="Тепловая энергия, в т.ч.:"/>
+            <cell code="5:2" value="ГВС"/>
+            <cell code="6:2" value="отопление и вентиляция"/>
+            <cell code="7:2" value="Вода холодная"/>
+            <cell code="8:2" value="Водоотведение"/>
+            <cell code="9:2" value="Природный газ"/>
+          </cells>
+        </component>
+        <component id="Form_6_6_2" title="Общедомовые приборы учета (обязательные для заполнения)" type="Grid" order="2" columns="6" height="700">
+          <columns>
+            <column code="7" title="Номер прибора учета" width="120" editable="true" editor="Text" minValue="1" />
+            <column code="1" title="Вид коммунального ресурса" width="190" editable="false" editor="TypeCommResourse"/>
+            <column code="2" title="Наличие прибора учета" width="215" editable="true" editor="ExistMeterDevice"/>
+            <column code="3" title="Тип интерфейса" width="110" editable="true" editor="InterfaceType"/>
+            <column code="4" title="Единица измерения" width="110" editable="true" editor="UnutOfMeasure"/>
+            <column code="5" title="Дата ввода в эксплуатацию" width="150"  editable="true" editor="Date"/>
+            <column code="6" title="Даты поверки/замены"  width="130" editable="true" editor="Date"/>
+            <column code="8" title="Марка прибора учета" width="120" editable="true" editor="Text"/>
+            <column code="9" title="Заводской номер (серийный)" width="160" editable="true" editor="Text"/>
+            <column code="10" title="Исправность" editable="true" width="100" editor="Text"/>
+            <column code="11" title="Межповерочный интервал" width="160" editable="true" editor="Int" minValue="0"/>
+            <column code="12" title="Вид прибора учета в зависимости от тарифных зон суток" width="315" editable="true" editor="Text"/>
+            <column code="13" title="Наличие возможности дистанционного снятия показаний прибора учета" width="390" editable="true" editor="Text"/>
+          </columns>
+          <rows>
+            <row code="1"/>
+            <row code="2"/>
+            <row code="3"/>
+            <row code="4"/>
+            <row code="5"/>
+            <row code="6"/>
+          </rows>
+          <cells>
+            <cell code="1:1" value="Газоснабжение"/>
+            <cell code="2:1" value="Отопление"/>
+            <cell code="3:1" value="Электроснабжение"/>
+            <cell code="4:1" value="Водоотведение"/>
+            <cell code="5:1" value="Горячее водоснабжение"/>
+            <cell code="6:1" value="Холодное водоснабжение"/>
+          </cells>
+        </component>
+        <component id="Form_6_6_3" title="Общедомовые приборы учета (заполняется для каждого дополнительного прибора)" type="InlineGrid" order="1" columns="6" height="700">
+          <columns>
+            <column code="7" title="Номер прибора учета" width="120" editable="true" editor="Int" minValue="1" />
+            <column code="1" title="Вид коммунального ресурса" width="190" editable="true" editor="TypeCommResourse" />
+            <column code="2" title="Наличие прибора учета" width="320" editable="true" editor="ExistMeterDevice"/>
+            <column code="3" title="Тип интерфейса" editable="true" editor="InterfaceType"/>
+            <column code="4" title="Единица измерения" width="100"  editable="true" editor="UnutOfMeasure"/>
+            <column code="5" title="Дата ввода в эксплуатацию" width="130"  editable="true" editor="Date"/>
+            <column code="6" title="Даты поверки/замены"  width="130" editable="true" editor="Date"/>
+          </columns>
+        </component>
+      </components>
+    </form>
+  </forms>
+  <editors>
+    <editor code="90" type="TypeLiftShaft">
+      <values>
+        <value code="0" name="Не задано" />
+        <value code="1" name="Встроенная"/>
+        <value code="2" name="Прикладная" />
+      </values>
+    </editor>
+    <editor code="100" type="TypeBasement">
+      <values>
+        <value code="0" name="Не задано" />
+        <value code="1" name="Эксплуатируемый"/>
+        <value code="2" name="Неэксплуатируемый" />
+        <value code="3" name="Отсутствует" />
+      </values>
+    </editor>
+    <editor code="110" type="TransferResource">
+      <values>
+        <value code="0" name="Не задано"/>
+        <value code="1" name="По нормативам или квартирным ПУ" />
+        <value code="2" name="По показаниям общедомовых ПУ" />
+      </values>
+    </editor>
+    <editor code="120" type="ChooseEnergy">
+      <values>
+        <value code="0" name="не присвоен"/>
+        <value code="8" name="A++" />
+        <value code="9" name="A+" />
+        <value code="1" name="A" />
+        <value code="2" name="B++" />
+        <value code="3" name="B+" />
+        <value code="4" name="B" />
+        <value code="5" name="C" />
+        <value code="6" name="D" />
+        <value code="7" name="E" />
+        <value code="10" name="F" />
+      </values>
+    </editor>
+    <editor code="130" type="TypeHeating">
+      <values>
+        <value code="10" name="Индивидуальное"/>
+        <value code="20" name="Централизованное"/>
+        <value code="30" name="Печное"/>
+        <value code="40" name="Электрическое"/>
+        <value code="50" name="Домовая котельная"/>
+        <value code="60" name="Квартирное отопление (котел)"/>
+        <value code="70" name="Независимое (через теплообменники), двухтрубное, вертикальное, с нижней разводкой магистралей"/>
+      </values>
+    </editor>
+    <editor code="140" type="TypeHotWater">
+      <values>
+        <value code="6" name="Отсутствует"/>
+        <value code="1" name="Центральное" />
+        <value code="2" name="Автономная котельная (крышная, встроенно-пристроенная)" />
+        <value code="3" name="Квартирное отопление (квартирный котел)" />
+        <value code="4" name="Индивидуальный водонагреватель"/>
+        <value code="5" name="Печное"/>
+        <value code="7" name="Индивидуальный котел"/>
+        <value code="8" name="П-образное, с нижней разводкой магистралей"/>
+        <value code="9" name="Кольцевое или с закольцованными вводами"/>
+        <value code="10" name="Газовые колонки (ВДГО)"/>
+        <value code="11" name="Электроводонагреватели"/>
+        <value code="12" name="Дровяная колонка"/>
+        <value code="13" name="Тупиковое"/>
+        <value code="14" name="Теплообменник"/>
+      </values>
+    </editor>
+    <editor code="150" type="TypeColdWater">
+      <values>
+        <value code="3" name="Отсутствует"/>
+        <value code="1" name="Центральное" />
+        <value code="2" name="Автономное" />
+        <value code="4" name="Кольцевое или с закольцованными вводами" />
+        <value code="5" name="Тупиковое" />
+      </values>
+    </editor>
+    <editor code="160"  type="TypeSewage">
+      <values>
+        <value code="3" name="Отсутствует" />
+        <value code="1" name="Центральное"/>
+        <value code="2" name="Автономное" />
+        <value code="4" name="Локальная канализация (септик)" />
+        <value code="5" name="Выгребная яма" />
+      </values>
+    </editor>
+    <editor code="170" type="TypePower">
+      <values>
+        <value code="2" name="Отсутствует" />
+        <value code="1" name="Центральное"/>
+        <value code="3" name="Комбинированное" />
+      </values>
+    </editor>
+    <editor code="180" type="TypeGas">
+      <values>
+        <value code="3" name="Отсутствует" />
+        <value code="1" name="Центральное"/>
+        <value code="2" name="Нецентральное" />
+        <value code="4" name="Баллонный газ" />
+        <value code="5" name="От накопителей (дворовые)" />
+        <value code="6" name="Газопровод низкого давления – подача природного газа в крышную котельную" />
+      </values>
+    </editor>
+    <editor code="190" type="TypeVentilation">
+      <values>
+        <value code="1" name="Приточная вентиляция" />
+        <value code="2" name="Вытяжная вентиляция"/>
+        <value code="3" name="Приточно-вытяжная вентиляция" />
+        <value code="4" name="Отсутствует" />
+      </values>
+    </editor>
+    <editor code="200" type="TypeDrainage">
+      <values>
+        <value code="1" name="Наружные водостоки" />
+        <value code="2" name="Внутренние водостоки"/>
+        <value code="3" name="Отсутствует" />
+      </values>
+    </editor>
+    <editor code="210" type="ConstructionChute">
+      <values>
+        <value code="1" name="Квартирные" />
+        <value code="2" name="Обособленные помещения на лесничной клетке"/>
+        <value code="3" name="Лестничная клетка" />
+      </values>
+    </editor>
+    <editor code="220" type="Dict" store="B4.store.dict.WallMaterial" textProperty="Name" entityType="Bars.Gkh.Entities.Dicts.WallMaterial" >
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+    <editor code="230" type="MultiDict" controllerName="TypeFloor" textProperty="Name" entityType="Bars.Gkh.Entities.Dicts.TypeFloor" >
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+    <editor code="240" type="TypeRoof">
+      <values>
+        <value code="10" name="Плоская" />
+        <value code="20" name="Скатная"/>
+        <value code="30" name="Односкатная"/>
+        <value code="40" name="Двускатная"/>
+        <value code="50" name="Вальмовая"/>
+        <value code="60" name="Полувальмовая"/>
+        <value code="70" name="Вальмовая сложной формы"/>
+        <value code="80" name="Шатровая"/>
+      </values>
+    </editor>
+    <editor code="250" type="TypeLift">
+      <values>
+        <value code="0" name="Не заполнено"/>
+        <value code="1" name="Пассажирский"/>
+        <value code="2" name="Грузовой"/>
+        <value code="3" name="Грузо-пассажирский"/>
+      </values>
+    </editor>
+    <editor code="260" type="TypeCommResourse">
+      <values>
+        <value code="1" name="Газоснабжение"/>
+        <value code="2" name="Отопление"/>
+        <value code="3" name="Электроснабжение"/>
+        <value code="4" name="Водоотведение"/>
+        <value code="5" name="Горячее водоснабжение"/>
+        <value code="6" name="Холодное водоснабжение"/>
+        <value code="7" name="Холодная вода для нужд ГВС"/>
+        <value code="8" name="Тепловая энергия для подогрева холодной воды для нужд ГВС"/>
+        <value code="9" name="Газоснабжение для подогрева холодной воды для нужд ГВС"/>
+      </values>
+    </editor>
+    <editor code="270" type="ExistMeterDevice">
+      <values>
+        <value code="0" name="Не заполнено" />
+        <value code="1" name="Отсутствует, установка не требуется"/>
+        <value code="2" name="Отсутствует, требуется установка"/>
+        <value code="3" name="Установлен"/>
+      </values>
+    </editor>
+    <editor code="280" type="InterfaceType">
+      <values>
+        <value code="0" name="Не заполнено" />
+        <value code="1" name="Без интерфейса передачи данных"/>
+        <value code="2" name="С интерфейсом передачи данных"/>
+      </values>
+    </editor>
+    <editor code="290" type="UnutOfMeasure">
+      <values>
+        <value code="0" name="Не заполнено"/>
+        <value code="1" name="кВт*ч/сут"/>
+        <value code="2" name="кВт"/>
+        <value code="3" name="м/с"/>
+        <value code="4" name="кг."/>
+        <value code="5" name="м."/>
+        <value code="6" name="МВт*ч/год"/>
+        <value code="7" name="тыс.руб."/>
+        <value code="8" name="дн."/>
+        <value code="9"  name="час"/>
+        <value code="10" name="Вт/(м3*°С)"/>
+        <value code="12" name="г."/>
+        <value code="13" name="Вт/м2"/>
+        <value code="14" name="м3/сут."/>
+        <value code="15" name="°С*сут"/>
+        <value code="16" name="%"/>
+        <value code="17" name="руб."/>
+        <value code="18" name="ед."/>
+        <value code="19" name="чел."/>
+        <value code="20" name="Гкал"/>
+        <value code="21" name="Гкал/кв.м"/>
+        <value code="22" name="Квт/час"/>
+        <value code="23" name="куб.метр"/>
+        <value code="24" name="шт."/>
+        <value code="25" name="пог.м."/>
+        <value code="26" name="кв.м"/>
+        <value code="27" name="услуга"/>
+      </values>
+    </editor>
+    <editor code="300" type="FirefightingType">
+      <values>
+        <value code="0" name="Не заполнено" />
+        <value code="1" name="Отсутствует"/>
+        <value code="2" name="Автоматическая"/>
+        <value code="3" name="Пожарные гидранты"/>
+      </values>
+    </editor>
+  <editor code="310" type="YesNoNotSet">
+    <values>
+      <value code="0" name="Не задано"/>
+      <value code="1" name="Да" />
+      <value code="2" name="Нет" />
+    </values>
+  </editor>
+    <editor code="320" type="RealityObjectStructuralElementLift"/>
+    <editor code="330" type="Dict" store="B4.store.dict.RoofingMaterial" textProperty="Name" entityType="Bars.Gkh.Entities.RoofingMaterial" >
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+    <editor code="331" type="MultiDict" store="B4.store.dict.MaterialRoof" textProperty="Name" entityType="Bars.Gkh.Entities.Dicts.MaterialRoof" >
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+    <editor code="340" type="StageLifeCicleHouse">
+      <values>
+        <value code="1" name="Строящийся"/>
+        <value code="2" name="Эксплуатируемый"/>
+        <value code="3" name="Выведен из эксплуатации"/>
+        <value code="4" name="Снесенный"/>
+      </values>
+    </editor>
+    <editor code="350" type="MultiDict" store="B4.store.dict.BaseHouseEmergency" textProperty="Name" entityType="Bars.Gkh.Entities.Dicts.BaseHouseEmergency">
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+    <editor code="360" type="Enum">
+      <values>
+        <value code="1" name="Общежитие квартирного типа"/>
+        <value code="2" name="Общежитие коридорного типа"/>
+        <value code="3" name="Общежитие гостиничного типа"/>
+        <value code="4" name="Общежитие секционного типа"/>
+      </values>
+    </editor>
+    <editor code="351" type="MultiDict" store="B4.store.dict.TypesHeatSource" textProperty="Name" entityType="Bars.Gkh.Entities.Dicts.TypesHeatSource">
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+    <editor code="352" type="MultiDict" store="B4.store.dict.NetworkAndRiserMaterials" textProperty="Name" entityType="Bars.Gkh.Entities.Dicts.NetworkAndRiserMaterials">
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+    <editor code="353" type="MultiDict" store="B4.store.dict.NetworkInsulationMaterials" textProperty="Name" entityType="Bars.Gkh.Entities.Dicts.NetworkInsulationMaterials">
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+    <editor code="354" type="MultiDict" store="B4.store.dict.TypeInterHouseHeatingSystem" textProperty="Name" entityType="Bars.Gkh.Entities.Dicts.TypeInterHouseHeatingSystem">
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+    <editor code="355" type="MultiDict" store="B4.store.dict.TypesHeatedAppliances" textProperty="Name" entityType="Bars.Gkh.Entities.Dicts.TypesHeatedAppliances">
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+    <editor code="357" type="MultiDict" store="B4.store.dict.WaterDispensers" textProperty="Name" entityType="Bars.Gkh.Entities.Dicts.WaterDispensers">
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+    <editor code="358" type="Dict" store="B4.store.dict.CategoryConsumersEqualPopulation" textProperty="Name" entityType="Bars.Gkh.Entities.Dicts.CategoryConsumersEqualPopulation">
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+    <editor code="359" type="MultiDict" store="B4.store.dict.FacadeDecorationMaterials" textProperty="Name" entityType="Bars.Gkh.Entities.Dicts.FacadeDecorationMaterials">
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+    <editor code="361" type="MultiDict" store="B4.store.dict.TypesExternalFacadeInsulation" textProperty="Name" entityType="Bars.Gkh.Entities.Dicts.TypesExternalFacadeInsulation">
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+    <editor code="362" type="MultiDict" store="B4.store.dict.TypesExteriorWalls" textProperty="Name" entityType="Bars.Gkh.Entities.Dicts.TypesExteriorWalls">
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+    <editor code="363" type="MultiDict" store="B4.store.dict.WarmingLayersAttics" textProperty="Name" entityType="Bars.Gkh.Entities.Dicts.WarmingLayersAttics">
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+    <editor code="364" type="MultiDict" store="B4.store.dict.TypesBearingPartRoof" textProperty="Name" entityType="Bars.Gkh.Entities.Dicts.TypesBearingPartRoof">
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+    <editor code="365" type="MultiDict" store="B4.store.dict.TypesWindowMaterials" textProperty="Name" entityType="Bars.Gkh.Entities.Dicts.TypesWindowMaterials">
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+    <editor code="366" type="MultiDict" store="B4.store.dict.FoundationMaterials" textProperty="Name" entityType="Bars.Gkh.Entities.Dicts.FoundationMaterials">
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+    <editor code="367" type="MultiDict" store="B4.store.dict.EnergyEfficiencyClasses" textProperty="Designation" entityType="Bars.Gkh.Entities.Dicts.EnergyEfficiencyClasses">
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Designation"/>
+      </columnEditors>
+    </editor>
+    <editor code="370" type="Enum">
+      <values>
+        <value code="1" name="Жилые помещения со всеми видами благоустройства"/>
+        <value code="2" name="Жилые помещения с частичными видами благоустройства"/>
+        <value code="3" name="Жилые помещения без благоустройства"/>
+      </values>
+    </editor>
+    <editor code="371" type="Enum">
+      <values>
+        <value code="1" name="Сельские территории"/>
+        <value code="2" name="Иные территории"/>
+        <value code="3" name="Городские населенные пункты"/>
+      </values>
+    </editor>
+      <editor code="380" type="Enum">
+          <values>
+              <value code="1" name="Изолированные"/>
+              <value code="2" name="Неизолированные"/>
+          </values>
+      </editor>
+    <editor code="381" type="MultiDict" store="B4.store.dict.TypesWaterDisposalMaterial" textProperty="Name"  entityType="Bars.Gkh.Entities.Dicts.TypesWaterDisposalMaterial">
+      <columnEditors>
+        <columnEditor text="Наименование" dataIndex="Name"/>
+      </columnEditors>
+    </editor>
+ </editors>
+</techPassport>

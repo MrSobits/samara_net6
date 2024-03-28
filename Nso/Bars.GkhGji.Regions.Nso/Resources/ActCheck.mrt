@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="8">
+      <ПредоставляемыеДокументы Ref="2" type="DataTableSource" isKey="true">
+        <Alias>ПредоставляемыеДокументы</Alias>
+        <Columns isList="true" count="1">
+          <value>Наименование,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ПредоставляемыеДокументы</Name>
+        <NameInSource>ПредоставляемыеДокументы</NameInSource>
+      </ПредоставляемыеДокументы>
+      <ПредоставленныеДокументы Ref="3" type="DataTableSource" isKey="true">
+        <Alias>ПредоставленныеДокументы</Alias>
+        <Columns isList="true" count="1">
+          <value>Наименование,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ПредоставленныеДокументы</Name>
+        <NameInSource>ПредоставленныеДокументы</NameInSource>
+      </ПредоставленныеДокументы>
+      <ДопПредоставленныеДокументы Ref="4" type="DataTableSource" isKey="true">
+        <Alias>ДопПредоставленныеДокументы</Alias>
+        <Columns isList="true" count="1">
+          <value>Наименование,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ДопПредоставленныеДокументы</Name>
+        <NameInSource>ДопПредоставленныеДокументы</NameInSource>
+      </ДопПредоставленныеДокументы>
+      <ДатаИВремяПроведенияПроверки Ref="5" type="DataTableSource" isKey="true">
+        <Alias>ДатаИВремяПроведенияПроверки</Alias>
+        <Columns isList="true" count="4">
+          <value>Дата,System.String</value>
+          <value>ВремяНачала,System.String</value>
+          <value>ВремяОкончания,System.String</value>
+          <value>Продолжительность,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ДатаИВремяПроведенияПроверки</Name>
+        <NameInSource>ДатаИВремяПроведенияПроверки</NameInSource>
+      </ДатаИВремяПроведенияПроверки>
+      <ПредметыПроверки Ref="6" type="DataTableSource" isKey="true">
+        <Alias>ПредметыПроверки</Alias>
+        <Columns isList="true" count="1">
+          <value>Наименование,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ПредметыПроверки</Name>
+        <NameInSource>ПредметыПроверки</NameInSource>
+      </ПредметыПроверки>
+      <ВыполнениеПредписания Ref="7" type="DataTableSource" isKey="true">
+        <Alias>ВыполнениеПредписания</Alias>
+        <Columns isList="true" count="4">
+          <value>Мероприятие,System.String</value>
+          <value>ОписаниеОбстоятельств,System.String</value>
+          <value>ДатаФактИсполнения,System.String</value>
+          <value>НомерПункта,System.Int32</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ВыполнениеПредписания</Name>
+        <NameInSource>ВыполнениеПредписания</NameInSource>
+      </ВыполнениеПредписания>
+      <Нарушения Ref="8" type="DataTableSource" isKey="true">
+        <Alias>Нарушения</Alias>
+        <Columns isList="true" count="5">
+          <value>ТекстНарушения,System.String</value>
+          <value>АдресаДомов,System.String</value>
+          <value>ПунктНПД,System.String</value>
+          <value>СокращенноеНаименованиеНПД,System.String</value>
+          <value>Описание,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Нарушения</Name>
+        <NameInSource>Нарушения</NameInSource>
+      </Нарушения>
+      <ДомаПроверки Ref="9" type="DataTableSource" isKey="true">
+        <Alias>ДомаПроверки</Alias>
+        <Columns isList="true" count="3">
+          <value>Адрес,System.String</value>
+          <value>ХарактеристикиТП,System.String</value>
+          <value>ДопХарактеристики,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ДомаПроверки</Name>
+        <NameInSource>ДомаПроверки</NameInSource>
+      </ДомаПроверки>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="69">
+      <value>,ДатаАкта,ДатаАкта,System.String,,False,False</value>
+      <value>,НомерАкта,НомерАкта,System.String,,False,False</value>
+      <value>,ПроверПлощадь,ПроверПлощадь,System.String,,False,False</value>
+      <value>,ВремяСоставленияАкта,ВремяСоставленияАкта,System.String,,False,False</value>
+      <value>,УправОрг,УправОрг,System.String,,False,False</value>
+      <value>,ИННУправОрг,ИННУправОрг,System.String,,False,False</value>
+      <value>,ТипЛица,ТипЛица,System.String,,False,False</value>
+      <value>,УправОргРП,УправОргРП,System.String,,False,False</value>
+      <value>,СокрУправОрг,СокрУправОрг,System.String,,False,False</value>
+      <value>,РуководительЮЛ,РуководительЮЛ,System.String,,False,False</value>
+      <value>,АдресКонтрагентаФакт,АдресКонтрагентаФакт,System.String,,False,False</value>
+      <value>,НеВыявлено,НеВыявлено,System.String,,False,False</value>
+      <value>,ПрилагаемыеДокументы,ПрилагаемыеДокументы,System.String,,False,False</value>
+      <value>,НомерДома,НомерДома,System.String,,False,False</value>
+      <value>,АдресДома,АдресДома,System.String,,False,False</value>
+      <value>,НаселенныйПункт,НаселенныйПункт,System.String,,False,False</value>
+      <value>,УлицаДом,УлицаДом,System.String,,False,False</value>
+      <value>,Описание,Описание,System.String,,False,False</value>
+      <value>,ДомаИАдреса,ДомаИАдреса,System.String,,False,False</value>
+      <value>,НевыявленныеНарушения,НевыявленныеНарушения,System.String,,False,False</value>
+      <value>,ОбщаяПлощадьСумма,ОбщаяПлощадьСумма,System.String,,False,False</value>
+      <value>,ДатаРаспоряжения,ДатаРаспоряжения,System.String,,False,False</value>
+      <value>,НомерРаспоряжения,НомерРаспоряжения,System.String,,False,False</value>
+      <value>,ВидПроверки,ВидПроверки,System.String,,False,False</value>
+      <value>,ВидОбследования,ВидОбследования,System.String,,False,False</value>
+      <value>,КодИнспектораРП,КодИнспектораРП,System.String,,False,False</value>
+      <value>,КодИнспектораТП,КодИнспектораТП,System.String,,False,False</value>
+      <value>,РуководительРП,РуководительРП,System.String,,False,False</value>
+      <value>,РуководительТП,РуководительТП,System.String,,False,False</value>
+      <value>,ВидОбследованияРП,ВидОбследованияРП,System.String,,False,False</value>
+      <value>,ПродолжительностьПроверки,ПродолжительностьПроверки,System.String,,False,False</value>
+      <value>,Эксперты,Эксперты,System.String,,False,False</value>
+      <value>,КодРуководителяФИО,КодРуководителяФИО,System.String,,False,False</value>
+      <value>,НачалоПериода,НачалоПериода,System.String,,False,False</value>
+      <value>,ОкончаниеПериода,ОкончаниеПериода,System.String,,False,False</value>
+      <value>,ПредоставляемыеДокументыСтрокой,ПредоставляемыеДокументыСтрокой,System.String,,False,False</value>
+      <value>,ДЛприПроверке,ДЛприПроверке,System.String,,False,False</value>
+      <value>,Ознакомлен,Ознакомлен,System.String,,False,False</value>
+      <value>,ЧислоЛицПривлеченныеЛица,ЧислоЛицПривлеченныеЛица,System.String,,False,False</value>
+      <value>,РуководительЮЛДолжность,РуководительЮЛДолжность,System.String,,False,False</value>
+      <value>,ПредоставленныеДокументыСтрокой,ПредоставленныеДокументыСтрокой,System.String,,False,False</value>
+      <value>,ФактПредоставленныйДокумент,ФактПредоставленныйДокумент,System.String,,False,False</value>
+      <value>,ДопПредоставленныеДокументыСтрокой,ДопПредоставленныеДокументыСтрокой,System.String,,False,False</value>
+      <value>,ДатаИНомерРешенияПрокурора,ДатаИНомерРешенияПрокурора,System.String,,False,False</value>
+      <value>,СсылкиНаПунктыНормативныхАктов,СсылкиНаПунктыНормативныхАктов,System.String,,False,False</value>
+      <value>,ДатаВремяПроверки,ДатаВремяПроверки,System.String,,False,False</value>
+      <value>,ИнспекторыИКоды,ИнспекторыИКоды,System.String,,False,False</value>
+      <value>,ЮрАдресКонтрагента,ЮрАдресКонтрагента,System.String,,False,False</value>
+      <value>,Отдел,Отдел,System.String,,False,False</value>
+      <value>,ИнспекторыАкта,ИнспекторыАкта,System.String,,False,False</value>
+      <value>,ПродолжительностьПроверкиДЧ,ПродолжительностьПроверкиДЧ,System.String,,False,False</value>
+      <value>,ТекстНарушения,ТекстНарушения,System.String,,False,False</value>
+      <value>,НарушенияВыявлены,НарушенияВыявлены,System.String,,False,False</value>
+      <value>,ОбщаяПродолжительностьРабДни,ОбщаяПродолжительностьРабДни,ОбщаяПродолжительностьРабДни,System.String,,False,False,False</value>
+      <value>,СКопиейПриказаОзнакомлен,СКопиейПриказаОзнакомлен,СКопиейПриказаОзнакомлен,System.String,,False,False,False</value>
+      <value>,МестоСоставления,МестоСоставления,System.String,,False,False</value>
+      <value>,МестаПроведенияПроверки,МестаПроведенияПроверки,System.String,,False,False</value>
+      <value>,ОбъектПроверки,ОбъектПроверки,System.String,,False,False</value>
+      <value>,ФИОФизлицаРП,ФИОФизлицаРП,System.String,,False,False</value>
+      <value>,НомерРешенияПрокурора,НомерРешенияПрокурора,System.String,,False,False</value>
+      <value>,ДатаРешенияПрокурора,ДатаРешенияПрокурора,System.String,,False,False</value>
+      <value>,СогласованиеСПрокуратурой,СогласованиеСПрокуратурой,System.String,,False,False</value>
+      <value>,ОснованиеОбследования,ОснованиеОбследования,System.String,,False,False</value>
+      <value>,НомераНевыполненныхПунктовПредписания,НомераНевыполненныхПунктовПредписания,System.String,,False,False</value>
+      <value>,НомерПредписания,НомерПредписания,System.String,,False,False</value>
+      <value>,ДатаПредписания,ДатаПредписания,System.String,,False,False</value>
+      <value>,СведенияОЛицахДопустившихНарушения,СведенияОЛицахДопустившихНарушения,System.String,,False,False</value>
+      <value>,СведенияСвидетельствующие,СведенияСвидетельствующие,System.String,,False,False</value>
+      <value>,ПереченьНПД,ПереченьНПД,System.String,,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="2">
+    <Page1 Ref="10" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="1">
+        <ReportTitleBand1 Ref="11" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,19,26.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text1 Ref="12" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,19,26.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="10" />
+              <Parent isRef="11" />
+              <Text>{ДатаАкта} - ДатаАкта
+{НомерАкта} - НомерАкта
+{ПроверПлощадь} - ПроверПлощадь
+{ВремяСоставленияАкта} - ВремяСоставленияАкта
+{УправОрг} - УправОрг
+{ИННУправОрг} - ИННУправОрг
+{ТипЛица} - ТипЛица
+{УправОргРП} - УправОргРП
+{СокрУправОрг} - СокрУправОрг
+{РуководительЮЛ} - РуководительЮЛ
+{АдресКонтрагентаФакт} - АдресКонтрагентаФакт
+{НеВыявлено} - НеВыявлено
+{ПрилагаемыеДокументы} - ПрилагаемыеДокументы
+{НомерДома} - НомерДома
+{АдресДома} - АдресДома
+{НаселенныйПункт} - НаселенныйПункт
+{УлицаДом} - УлицаДом
+{Описание} - Описание
+{ДомаИАдреса} - ДомаИАдреса
+{НевыявленныеНарушения} - НевыявленныеНарушения
+{ОбщаяПлощадьСумма} - ОбщаяПлощадьСумма
+{ДатаРаспоряжения} - ДатаРаспоряжения
+{НомерРаспоряжения} - НомерРаспоряжения
+{ВидПроверки} - ВидПроверки
+{ВидОбследования} - ВидОбследования
+{КодИнспектораРП} - КодИнспектораРП
+{КодИнспектораТП} - КодИнспектораТП
+{РуководительРП} - РуководительРП
+{РуководительТП} - РуководительТП
+{ВидОбследованияРП} - ВидОбследованияРП
+{ПродолжительностьПроверки} - ПродолжительностьПроверки
+{Эксперты} - Эксперты
+{КодРуководителяФИО} - КодРуководителяФИО
+{НачалоПериода} - НачалоПериода
+{ОкончаниеПериода} - ОкончаниеПериода
+{ПредоставляемыеДокументыСтрокой} - ПредоставляемыеДокументыСтрокой
+{ДЛприПроверке} - ДЛприПроверке
+{Ознакомлен} - Ознакомлен
+{ЧислоЛицПривлеченныеЛица} - ЧислоЛицПривлеченныеЛица
+{РуководительЮЛДолжность} - РуководительЮЛДолжность
+{ПредоставленныеДокументыСтрокой} - ПредоставленныеДокументыСтрокой
+{ДопПредоставленныеДокументыСтрокой} - ДопПредоставленныеДокументыСтрокой
+{ДатаИНомерРешенияПрокурора} - ДатаИНомерРешенияПрокурора
+{ДатаВремяПроверки} - ДатаВремяПроверки
+{ИнспекторыИКоды} - ИнспекторыИКоды
+{ЮрАдресКонтрагента} - Юридический адрес контрагента из основания проверки
+{Отдел} - наименование отдела инспектора (любого) из акта (спр-к Инспекторы – Отдел)
+{ИнспекторыАкта} - Должность- ФИО инспекторов через тире и запятую из акта
+{ПродолжительностьПроверкиДЧ} - Общая продолжительность проверки из грида «Дата и время проведения проверки» в днях и часах
+{ТекстНарушения} - из вкладки "Результаты проверки", грид "Нарушения", поле "Текст нарушения" (через запятую все нарушения)
+{НарушенияВыявлены} - брать из вкладки "Результаты проверки", Значение поля "Нарушения выявлены:"
+{СсылкиНаПунктыНормативныхАктов} - Берутся нарушения из акта и берутся из справочника нарушения ППр25, ППР170, ... и формируется стркоа через запятую
+{ОбщаяПродолжительностьРабДни} - ОбщаяПродолжительностьРабДни
+{СКопиейПриказаОзнакомлен} - СКопиейПриказаОзнакомлен
+{МестоСоставления} - МестоСоставления
+{МестаПроведенияПроверки} - МестаПроведенияПроверки
+{ОбъектПроверки} - ОбъектПроверки
+{ФИОФизлицаРП} - ФИОФизлицаРП
+{НомерРешенияПрокурора} - НомерРешенияПрокурора
+{ДатаРешенияПрокурора} - ДатаРешенияПрокурора
+{СогласованиеСПрокуратурой} - СогласованиеСПрокуратурой
+{ОснованиеОбследования} - ОснованиеОбследования
+{НомераНевыполненныхПунктовПредписания} - НомераНевыполненныхПунктовПредписания
+{НомерПредписания} - НомерПредписания
+{ДатаПредписания} - ДатаПредписания
+{СведенияОЛицахДопустившихНарушения} - СведенияОЛицахДопустившихНарушения
+{СведенияСвидетельствующие} - СведенияСвидетельствующие
+{ПереченьНПД} - ПереченьНПД
+
+</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </ReportTitleBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>58aa7ab28c9040fb8b5cf3c87cd8f3b8</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>50</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="13" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+    <Page2 Ref="14" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="5">
+        <HeaderBand4 Ref="15" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,19,0.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text14 Ref="16" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>9a5bb68fac9648d9bed546439bf74dde</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="14" />
+              <Parent isRef="15" />
+              <Text>Таблица предоставленные документы:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text14>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>aeeea5f896c642868f034317724c51a1</Guid>
+          <Name>HeaderBand4</Name>
+          <Page isRef="14" />
+          <Parent isRef="14" />
+        </HeaderBand4>
+        <DataBand4 Ref="17" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,1.8,19,0.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text15 Ref="18" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>5548d51e50e44325a9320b63b766e87d</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="14" />
+              <Parent isRef="17" />
+              <Text>{ПредоставленныеДокументы.Наименование}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+            </Text15>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>ПредоставленныеДокументы</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Guid>d09002bce3454b01a60d758e44d68b85</Guid>
+          <Name>DataBand4</Name>
+          <Page isRef="14" />
+          <Parent isRef="14" />
+          <Sort isList="true" count="0" />
+        </DataBand4>
+        <HeaderBand5 Ref="19" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,3.2,19,0.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text16 Ref="20" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,11.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>97efd667abbc40bebdcab86a4c7d86ee</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text16</Name>
+              <Page isRef="14" />
+              <Parent isRef="19" />
+              <Text>Таблица доп. предоставляемых документов</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text16>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>c3b43412c1d84c1da2532d0cf1a586da</Guid>
+          <Name>HeaderBand5</Name>
+          <Page isRef="14" />
+          <Parent isRef="14" />
+        </HeaderBand5>
+        <DataBand5 Ref="21" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,4.6,19,0.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text17 Ref="22" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>3121215166954689be661c8e337ce313</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text17</Name>
+              <Page isRef="14" />
+              <Parent isRef="21" />
+              <Text>{ДопПредоставленныеДокументы.Наименование}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+            </Text17>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>ДопПредоставленныеДокументы</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Guid>82fb344c743e4d1b9dbfad338395c12d</Guid>
+          <Name>DataBand5</Name>
+          <Page isRef="14" />
+          <Parent isRef="14" />
+          <Sort isList="true" count="0" />
+        </DataBand5>
+        <HeaderBand6 Ref="23" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,6,19,1</ClientRectangle>
+          <Components isList="true" count="4">
+            <Text18 Ref="24" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>All;Black;2;Solid;False;0;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,1.2,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>90d0d537297f46e7bcd2df082d02faf0</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text18</Name>
+              <Page isRef="14" />
+              <Parent isRef="23" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>№&lt;br&gt;
+п/п</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text18>
+            <Text19 Ref="25" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>All;Black;2;Solid;False;0;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.2,0,8.2,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>5fc28fbd7a044bed82bd6b8ec293b221</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text19</Name>
+              <Page isRef="14" />
+              <Parent isRef="23" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>Мероприятия и работы,&lt;br&gt; подлежащие к выполнению</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text19>
+            <Text20 Ref="26" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>All;Black;2;Solid;False;0;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.4,0,5.6,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>b938bf2bbfcb48d683dc13235589b19f</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text20</Name>
+              <Page isRef="14" />
+              <Parent isRef="23" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>Основание</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text20>
+            <Text21 Ref="27" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>All;Black;2;Solid;False;0;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15,0,4,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>b61a80d042d4428894f61a7575922c33</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text21</Name>
+              <Page isRef="14" />
+              <Parent isRef="23" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>Дата&lt;br&gt;
+выполнения
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text21>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>80d868de426947e3b486c0f8ac6cb943</Guid>
+          <Name>HeaderBand6</Name>
+          <Page isRef="14" />
+          <Parent isRef="14" />
+        </HeaderBand6>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>07b2b81eb0284edaa7ce0b9d81c0581b</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page2</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="28" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page2>
+  </Pages>
+  <PrinterSettings Ref="29" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>4/22/2015 6:35:43 PM</ReportChanged>
+  <ReportCreated>5/28/2014 3:38:42 PM</ReportCreated>
+  <ReportFile>C:\_Sources\gkh\Nso\Bars.GkhGji.Regions.Nso\Resources\ActCheck.mrt</ReportFile>
+  <ReportGuid>6809403e32b949b98438dfac273b558a</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

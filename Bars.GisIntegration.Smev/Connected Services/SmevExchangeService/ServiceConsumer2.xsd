@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://sz.service.bars-open.ru/smev3.0/v1.1" elementFormDefault="qualified" targetNamespace="http://sz.service.bars-open.ru/smev3.0/v1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://93.170.52.172/ServiceConsumer?xsd=xsd1" namespace="urn://x-artefacts-smev-gov-ru/services/message-exchange/types/1.1" />
+  <xs:import schemaLocation="http://93.170.52.172/ServiceConsumer?xsd=xsd2" namespace="urn://x-artefacts-smev-gov-ru/services/message-exchange/types/basic/1.1" />
+  <xs:element name="SendRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="request" type="tns:ServiceRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ServiceRequestType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="base64Request" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="isTestMessage" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="isOnlySign" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="SendRequestResult" type="tns:ServiceResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ServiceResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="resultCode" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="resultMessage" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="messageId" type="xs:string" />
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="FaultResponse">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element xmlns:q1="urn://x-artefacts-smev-gov-ru/services/message-exchange/types/1.1" minOccurs="0" maxOccurs="1" name="RequestRejected" type="q1:SenderProvidedResponseDataRequestRejected" />
+        <xs:element minOccurs="0" maxOccurs="1" name="None" />
+        <xs:element xmlns:q2="urn://x-artefacts-smev-gov-ru/services/message-exchange/types/basic/1.1" minOccurs="0" maxOccurs="1" ref="q2:MessagePrimaryContent" />
+        <xs:element minOccurs="0" maxOccurs="1" name="SignedRequest">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="1" name="DeliveryTimestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ackResultCode" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendDataRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="request" type="tns:ServiceDataRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ServiceDataRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequestType">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="base64AttachmentHeaders" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SendDataRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="SendDataRequestResult" type="tns:ServiceResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AckRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="message_id" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AckRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="AckRequestResult" type="tns:ServiceResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResponseRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="message_id" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="rootElement" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="namespaceUri" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResponseRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetResponseRequestResult" type="tns:ServiceResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRequestRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="message_id" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="rootElement" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="namespaceUri" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRequestRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetRequestRequestResult" type="tns:ServiceResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResponseRequestById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="message_id" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="isManualAck" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResponseRequestByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetResponseRequestByIdResult" type="tns:ServiceResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

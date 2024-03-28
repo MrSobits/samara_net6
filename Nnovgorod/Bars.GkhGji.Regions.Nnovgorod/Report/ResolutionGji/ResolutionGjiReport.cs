@@ -1,0 +1,41 @@
+﻿namespace Bars.GkhGji.Regions.Nnovgorod.Report.ResolutionGji
+{
+    using System.Linq;
+    using B4.Modules.Reports;
+    using Bars.B4;
+    using Bars.GkhGji.Entities;
+    using Bars.GkhGji.Regions.Nnovgorod.Entities;
+
+    public class ResolutionGjiReport : GkhGji.Report.ResolutionGjiReport
+    {
+        protected override void FillRegionParams(ReportParams reportParams, DocumentGji doc)
+        {
+            var resolution = (Resolution)doc;
+
+            var firstPhysPersonInfo = Container.Resolve<IDomainService<DocumentGJIPhysPersonInfo>>().GetAll()
+                            .Where(x => x.Document.Id == resolution.Id)
+                            .Select(x => new
+                                            {
+                                                x.PhysPersonAddress,
+                                                x.PhysPersonJob,
+                                                x.PhysPersonPosition,
+                                                x.PhysPersonBirthdayAndPlace,
+                                                x.PhysPersonDocument,
+                                                x.PhysPersonSalary,
+                                                x.PhysPersonMaritalStatus
+                                            })
+                            .FirstOrDefault();
+
+            if (firstPhysPersonInfo != null)
+            {
+                reportParams.SimpleReportParams["АдресТелефон"] = firstPhysPersonInfo.PhysPersonAddress;
+                reportParams.SimpleReportParams["МестоРаботы"] = firstPhysPersonInfo.PhysPersonJob;
+                reportParams.SimpleReportParams["Должность"] = firstPhysPersonInfo.PhysPersonPosition;
+                reportParams.SimpleReportParams["ДатаМестоРождения"] = firstPhysPersonInfo.PhysPersonBirthdayAndPlace;
+                reportParams.SimpleReportParams["ДокументУдостовЛичность"] = firstPhysPersonInfo.PhysPersonDocument;
+                reportParams.SimpleReportParams["Зарплата"] = firstPhysPersonInfo.PhysPersonSalary;
+                reportParams.SimpleReportParams["СемейноеПоложение"] = firstPhysPersonInfo.PhysPersonMaritalStatus;
+            }
+        }
+    }
+}

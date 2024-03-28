@@ -1,0 +1,38 @@
+﻿Ext.define('B4.model.SubProgramCriterias', {
+    extend: 'B4.base.Model',
+    idProperty: 'Id',
+    proxy: {
+        type: 'b4proxy',
+        controllerName: 'SubProgramCriterias'
+    },
+    fields: [
+        { name: 'Operator'},
+        { name: 'Name'},
+        { name: 'Description'},
+        { name: 'IsStatusUsed'},
+        { name: 'Status'},
+        { name: 'IsTypeHouseUsed'},
+        { name: 'TypeHouse'},
+        { name: 'IsConditionHouseUsed'},
+        { name: 'ConditionHouse'},
+        { name: 'IsNumberApartmentsUsed'},
+        { name: 'NumberApartmentsCondition'},
+        { name: 'NumberApartments'},
+        { name: 'IsYearRepairUsed'},
+        { name: 'YearRepairCondition'},
+        { name: 'YearRepair'},
+        { name: 'IsRepairNotAdvisableUsed'},
+        { name: 'RepairNotAdvisable'},
+        { name: 'IsNotInvolvedCrUsed'},
+        { name: 'NotInvolvedCr'},
+        { name: 'IsStructuralElementCountUsed'},
+        { name: 'StructuralElementCountCondition'},
+        { name: 'StructuralElementCount'},
+        { name: 'IsFloorCountUsed'},
+        { name: 'FloorCountCondition'},
+        { name: 'FloorCount'},
+        { name: 'IsLifetimeUsed'},
+        { name: 'LifetimeCondition'},
+        { name: 'Lifetime'},
+    ]
+});

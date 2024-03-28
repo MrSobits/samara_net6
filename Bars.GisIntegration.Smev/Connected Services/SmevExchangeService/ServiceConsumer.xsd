@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="urn://x-artefacts-smev-gov-ru/services/message-exchange/types/1.1" elementFormDefault="qualified" targetNamespace="urn://x-artefacts-smev-gov-ru/services/message-exchange/types/1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SenderProvidedResponseDataRequestRejected">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="RejectionReasonCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RejectionReason" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RejectionReasonDescription" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

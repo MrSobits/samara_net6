@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <BeginRenderEvent>((StiPostgreSQLDatabase)this.Dictionary.Databases["Connection"]).ConnectionString = СтрокаПодключениякБД;</BeginRenderEvent>
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <Connection Ref="2" type="Stimulsoft.Report.Dictionary.StiPostgreSQLDatabase" isKey="true">
+        <Alias>Connection</Alias>
+        <ConnectionStringEncrypted>48jR60ZaS91reKWRyuzkbtU62c1nWbO8bFqxhGopdXuL0mkC5gOrpMJczZRhJSIjw/JPCEYLqYDAbKD0+S0yP8Jw+wlJV/uF6RntmGRMJUaB0nsCUG0=</ConnectionStringEncrypted>
+        <Name>Connection</Name>
+      </Connection>
+    </Databases>
+    <DataSources isList="true" count="1">
+      <МотивированноеПредложение Ref="3" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>МотивированноеПредложение</Alias>
+        <Columns isList="true" count="21">
+          <value>НаименованиеОрганизацииДП,System.String</value>
+          <value>СокращенноеНаименование,System.String</value>
+          <value>ИНН,System.String</value>
+          <value>ДатаПроверкиС,System.String</value>
+          <value>ДатаПроверкиПО,System.String</value>
+          <value>ДолжностьРП,System.String</value>
+          <value>ФИОРП,System.String</value>
+          <value>ВыпискаИзЕГРЮЛ,System.String</value>
+          <value>НаименованиеОрганизации,System.String</value>
+          <value>МестоНахождения,System.String</value>
+          <value>ОГРН,System.String</value>
+          <value>Должность,System.String</value>
+          <value>ФИО,System.String</value>
+          <value>СвидетельствоОПостановке,System.String</value>
+          <value>НомерАттестата,System.String</value>
+          <value>ДатаВыдачиАттестата,System.String</value>
+          <value>ПлатежноеПоручение,System.String</value>
+          <value>ДатаСУФД,System.String</value>
+          <value>ОснованиеПредложения,System.String</value>
+          <value>НаименованиеОрганизацииТП,System.String</value>
+          <value>ДатаПрисвоенияОГРН,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>МотивированноеПредложение</Name>
+        <NameInSource>Connection</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand />
+      </МотивированноеПредложение>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="2">
+      <value>,СтрокаПодключениякБД,СтрокаПодключениякБД,System.String,,False,False</value>
+      <value>,ИдентификаторДокументаГЖИ,ИдентификаторДокументаГЖИ,System.String,,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="4" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="3">
+        <ReportTitleBand1 Ref="5" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.2,7.72,3.4</ClientRectangle>
+          <Components isList="true" count="11">
+            <Image1 Ref="6" type="Image" isKey="true">
+              <Border>None;[0:0:0:0];1;Solid;True;4;White</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.1,0.1,1.2,1.1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Guid>ef2b6cc37bcb4cf694192460241f33a5</Guid>
+              <Image>iVBORw0KGgoAAAANSUhEUgAAAHAAAABsCAYAAACy9DarAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOvAAADrwBlbxySQAAMn5JREFUeF7t3XnYblP5B/Bz6Q8VJSqiFJISKmToRKFCSRNFqUhUpiJDVBKlyVgUomRsRJQmYzSJojI2SANppFSotH4+6zrf0z773c/wPs9zzuu6/NZ1Lc+099pr3d/7+73ve+39HrPKfGx33313ff3jH/9YLrnkknLbbbfVz/e3dsMNN5SvfvWr5S9/+cucbybXJgbgnXfeWe655576HnC//OUvy9e//vVy8803lwsvvLB87nOfKz/72c/q7/eXxh7/+c9/yne+851y8sknV1tMuk0EwDvuuKN84xvfKOedd179fN1115UvfOEL5fjjjy9XXHFFOfHEE+f+dn9qP/3pT8u1115b2ffZz362/PznPy+XXnppufrqq+ccMX6bGIDHHntsed/73lffX3TRRRW8j3/842WvvfYq73//+8u3v/3t8qlPfap897vfnXPWgml/+tOfyhve8IbyxS9+cc4387/997//Lb/4xS/KZz7zmerYp59+en3PLocddlg57bTTJhZOJgLgXXfdVc4666zy3ve+t3z+858vp556ajnhhBPKl7/85fKsZz2r7L333hVMQGImWVkQ7Z///GfZbrvtymMe85g6jyOPPHLOL/OnuR7ZvP3228tXvvKV8olPfKKu1xye9rSnlaOOOqq8/OUvr98ffvjhNexo49hjbAD//e9/1wQFu/bdd9/yox/9qBxxxBFl6623rot4xjOeUd7+9rfX77D0Yx/7WJWSBdF4+axZs8qTnvSkstxyy5VXvOIVc36ZfPvVr35VbUBpXJdNPvjBD1abUKb11luvOtGHPvShysgPfOAD5Q9/+EP5yU9+Ui677LIK/ihtbADJBUDOPPPM8u53v7vq/SmnnFLWXHPNcuihh5Y11lijLkAc/PSnP11ZkGTGufOz8WwMeOYzn1ml69Zbb53zy+Tbb3/72/LhD3+4XofjCiGbbLJJdViMe+ITn1ie8pSnlHPOOadKKHsJJ5/85Cerev31r3+dM9L02kQkVJyRZX7ve9+rEgqo1772tWXttdcuL3jBC8oBBxxQ3va2t5VjjjmmXHzxxTWxueCCCxYIE//xj3+UPfbYo5x99tlzvpl/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</Image>
+              <Name>Image1</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+            </Image1>
+            <Text1 Ref="7" type="Text" isKey="true">
+              <Border>None;[0:0:0:0];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.12,1.3,3.04,0.9</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14,Bold</Font>
+              <Guid>d1dda61d1c824f7db5c38f981ef3a327</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>ДЕПАРТАМЕНТ
+ЖКХ И ГОСУДАРСТВЕННОГО
+ЖИЛИЩНОГО НАДЗОРА
+ТОМСКОЙ ОБЛАСТИ
+</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text1>
+            <Text2 Ref="8" type="Text" isKey="true">
+              <Border>None;[0:0:0:0];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.7,1.19,3,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <Guid>b9093a383ba54971a6fba136a5a04578</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Председателю
+Лицензионной комиссии Томской области по лицензированию деятельности по управлению многоквартирными домами
+
+И.Н. Шатурному
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text2>
+            <Text3 Ref="9" type="Text" isKey="true">
+              <Border>None;[0:0:0:0];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.28,2.19,2.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,7</Font>
+              <Guid>88f6d4f49a1d441c91f8b46b7ddea808</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Кирова пр., д. 41, г. Томск, 634041
+тел./факс(382-2) 90-55-70
+e-mail: dep-zkh@tomsk.gov.ru
+
+</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text3>
+            <Text6 Ref="10" type="Text" isKey="true">
+              <Border>AdvBlack;1;None;Black;1;Solid;Black;1;None;Black;1;None;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,2.82,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <Guid>1cfaf1bc456e403d938eb80f03b681e6</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <TextBrush>Black</TextBrush>
+            </Text6>
+            <Text7 Ref="11" type="Text" isKey="true">
+              <Border>AdvBlack;1;None;Black;1;Solid;Black;1;None;Black;1;None;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,2.82,0.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <Guid>2dc3a7e94a8046b9b175378931a4c7cd</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <TextBrush>Black</TextBrush>
+            </Text7>
+            <Text8 Ref="12" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.3,2.82,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,11</Font>
+              <Guid>5491ebb6acc647d6bdfc575c9bdda1c8</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>№</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text8>
+            <Text4 Ref="13" type="Text" isKey="true">
+              <Border>AdvBlack;1;None;Black;1;Solid;Black;1;None;Black;1;None;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.9,3.1,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <Guid>2b5c40a1c61147fc959d09b4be417c48</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <TextBrush>Black</TextBrush>
+            </Text4>
+            <Text5 Ref="14" type="Text" isKey="true">
+              <Border>AdvBlack;1;None;Black;1;Solid;Black;1;None;Black;1;None;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,3.1,0.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <Guid>e9426eed5d52436db1d491608f8c618a</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <TextBrush>Black</TextBrush>
+            </Text5>
+            <Text9 Ref="15" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.3,3.1,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,11</Font>
+              <Guid>6afb26adfa9a4ee5a8ddf7473404d205</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>от</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text9>
+            <Text10 Ref="16" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,3.1,0.5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,11</Font>
+              <Guid>92bcd21b41f8494da5bbba9526d67a47</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>на №</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text10>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </ReportTitleBand1>
+        <DataBand1 Ref="17" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,4,7.72,1</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text11 Ref="18" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0,0.1,7.7,0.9</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="4" />
+              <Parent isRef="17" />
+              <Text>Мотивированное предложение о предоставлении лицензии
+{МотивированноеПредложение.НаименованиеОрганизацииДП}
+(сокращенное наименование {МотивированноеПредложение.СокращенноеНаименование}, ИНН {МотивированноеПредложение.ИНН})	
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text11>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+        <DataBand2 Ref="19" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,5.4,7.72,20</ClientRectangle>
+          <Components isList="true" count="4">
+            <Text12 Ref="20" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0,0.1,7.7,17.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <Guid>5c52f1b1d50b49aba6d2989faec5f2da</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="4" />
+              <Parent isRef="19" />
+              <Text>	Департаментом ЖКХ и государственного жилищного надзора Томской области в период с {МотивированноеПредложение.ДатаПроверкиС} по {МотивированноеПредложение.ДатаПроверкиПО} в отношении {МотивированноеПредложение.СокращенноеНаименование} проведена проверка на основании заявления {МотивированноеПредложение.ДолжностьРП} {МотивированноеПредложение.ФИОРП} о предоставлении лицензии. Проверка проводилась в соответствии со статьями 13, 192 Жилищного кодекса Российской Федерации, Положением о лицензировании предпринимательской деятельности по управлению многоквартирными домами, утвержденным постановлением Правительства Российской Федерации от 28.10.2014 № 1110, Положением о Департаменте ЖКХ и государственного жилищного надзора Томской области, утверждённым постановлением Губернатора Томской области от 03.10.2012 № 117, с целью определения соответствия соискателя лицензии лицензионным требованиям.
+	Предметом проверки являлось соблюдение лицензионных требований, предъявляемых к соискателю лицензии на осуществление предпринимательской деятельности по управлению многоквартирными домами на основании договора управления, предусмотренных п.п.1-5 ч.1, п.6 ч.1 ст.193 Жилищного кодекса Российской Федерации.
+	В ходе проведения проверки соответствия соискателя лицензии лицензионным требованиям установлено следующее.
+	1. Юридическое лицо {МотивированноеПредложение.СокращенноеНаименование} зарегистрировано на территории Российской Федерации, что подтверждается выпиской из Единого государственного реестра юридических лиц (ЕГРЮЛ) {МотивированноеПредложение.ВыпискаИзЕГРЮЛ}, предоставленной на основании Решения Межрегиональной инспекции ФНС России по ЦОД № 5277 от 23.10.2009 о предоставлении ООО «Справочная служба юридических лиц» доступа к сведениям, содержащимся в ЕГРЮЛ, полученной по каналам СМЭВ.
+	Полное наименование юридического лица: {МотивированноеПредложение.НаименованиеОрганизации}.
+	Сокращенное наименование юридического лица: &lt;Сокращенное наименование&gt;.
+	Место нахождения: {МотивированноеПредложение.МестоНахождения}.
+	ОГРН {МотивированноеПредложение.ОГРН} (дата присвоения ОГРН {МотивированноеПредложение.ДатаПрисвоенияОГРН}),  ИНН {МотивированноеПредложение.ИНН}.
+	Сведения о физических лицах, имеющих право без доверенности действовать от имени юридического лица: {МотивированноеПредложение.Должность} {МотивированноеПредложение.ФИО}.
+	Свидетельство о постановке на учет в налоговом органе:  {МотивированноеПредложение.СвидетельствоОПостановке}.
+	2. Директор &lt;Сокращенное наименование&gt; &lt;ФИО&gt; имеет квалификационный аттестат № &lt;Номер аттестата&gt; от &lt;Дата выдачи аттестата&gt;, выданный Департаментом ЖКХ и государственного жилищного надзора Томской области. Сведения о квалификационном аттестате содержатся в реестре квалификационных аттестатов Томской области, размещенном на официальном сайте Департамента ЖКХ и государственного жилищного надзора Томской области (http://zhkh.tomsk.gov.ru/).
+	3. Должностное лицо соискателя лицензии {МотивированноеПредложение.СокращенноеНаименование} - {МотивированноеПредложение.ФИО} не судим, что подтверждается ответом из МВД России. 
+	4. В реестре дисквалифицированных лиц, расположенном на официальном сайте Минстроя России www.minstroyrf.ru, а также на сайте Федеральной налоговой службы www.nalog.ru (с учетом разъяснений  Минстроя России от 24.02.2015 исх. № 4745-АЧ/С4) информация о применении административного наказания в виде дисквалификации в отношении должностного лица соискателя лицензии {МотивированноеПредложение.ДолжностьРП} {МотивированноеПредложение.СокращенноеНаименование} {МотивированноеПредложение.ФИОРП} отсутствует.
+	В связи с тем, что юридическое лицо {МотивированноеПредложение.СокращенноеНаименование} обратилось в лицензирующий орган за получением лицензии впервые, в реестрах отсутствуют сведения об аннулировании лицензии. В соответствии с Федеральным законом от 04.05.2011 № 99-ФЗ «О лицензировании отдельных видов деятельности» деятельность по управлению многоквартирными домами подлежит лицензированию с 01.09.2014. На момент проверки отсутствуют реестры лиц, осуществлявших функции единоличного исполнительного органа лицензиата, лицензия которого аннулирована, а также лиц, на которых уставом или иными документами лицензиата возложена ответственность за соблюдение требований к обеспечению надлежащего содержания общего имущества в многоквартирном доме.
+	5. Сведения об аннулировании лицензии, ранее выданной соискателю лицензии {МотивированноеПредложение.СокращенноеНаименование}, отсутствуют также в сводном федеральном реестре лицензий на осуществление предпринимательской деятельности по управлению многоквартирными домами.
+	6. В соответствии с  п. 134  ч. 1 ст.  333.33 Налогового кодекса Российской Федерации  за   предоставление лицензии на осуществление предпринимательской деятельности по управлению многоквартирными домами предусмотрена  оплата государственной пошлины в размере 30 000 рублей.
+	{МотивированноеПредложение.ПлатежноеПоручение} и  сведениями,  содержащимися  в системе удаленного финансового документооборота УФК по Томской области СУФД от {МотивированноеПредложение.ДатаСУФД}, проверен  и установлен факт оплаты {МотивированноеПредложение.СокращенноеНаименование} государственной пошлины  в  размере 30000 рублей за предоставление лицензии.
+	7. Соблюдение соискателем лицензии требований к раскрытию информации, установленных постановлением Правительства Российской Федерации от 23.09.2010 № 731 «Об утверждении стандарта раскрытия информации организациями, осуществляющими деятельность в сфере управления многоквартирными домами» (далее – Стандарт раскрытия информации).
+	{МотивированноеПредложение.ОснованиеПредложения}.
+	Основания для отказа соискателю лицензии в предоставлении лицензии, предусмотренные ч. 2 ст. 194 Жилищного кодекса Российской Федерации, не установлены.
+	На основании вышеизложенного ПРЕДЛАГАЮ:
+	Принять решение о  предоставлении {МотивированноеПредложение.НаименованиеОрганизацииТП} ({МотивированноеПредложение.ИНН}) лицензии на осуществление предпринимательской деятельности по управлению многоквартирными домами на территории Томской области.
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text12>
+            <Text13 Ref="21" type="Text" isKey="true">
+              <Border>None;[0:0:0:0];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,17.9,2.1,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <Guid>2cb1102276184bda8faf03da78b1006f</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="4" />
+              <Parent isRef="19" />
+              <Text>Начальник Департамента </Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text13>
+            <Text14 Ref="22" type="Text" isKey="true">
+              <Border>None;[0:0:0:0];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.7,17.9,1,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <Guid>9563dc098f3f4e70ad0aee864258abbe</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="4" />
+              <Parent isRef="19" />
+              <Text>Ю.И. Баев</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text14>
+            <Text15 Ref="23" type="Text" isKey="true">
+              <Border>None;[0:0:0:0];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,19.2,1.54,0.58</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>2a58cb572cab453797a64bf6e5e287a0</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="4" />
+              <Parent isRef="19" />
+              <Text>Реука Юлия Сергеевна
+8 (3822) 905 530
+reukajs@tomsk.gov.ru
+</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text15>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Filters isList="true" count="0" />
+          <Guid>25be2b45ccfd418c965fd95f05abfa74</Guid>
+          <Name>DataBand2</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </DataBand2>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>fbea3a5d84d04d6f81e8fa7c34d746e2</Guid>
+      <LargeHeight>True</LargeHeight>
+      <LargeHeightFactor>3</LargeHeightFactor>
+      <Margins>0.39,0.39,0.39,0.39</Margins>
+      <Name>Page1</Name>
+      <PageHeight>11</PageHeight>
+      <PageWidth>8.5</PageWidth>
+      <PaperSize>Letter</PaperSize>
+      <Report isRef="0" />
+      <Watermark Ref="24" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="25" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>8/28/2015 4:25:54 PM</ReportChanged>
+  <ReportCreated>7/18/2014 9:26:54 AM</ReportCreated>
+  <ReportFile>C:\Users\1\Downloads\Пример_шаблона_.mrt</ReportFile>
+  <ReportGuid>2a06115907c44d31a4403f3f872d3dc6</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Inches</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+using Stimulsoft.Report.Dictionary;
+using System.Text;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

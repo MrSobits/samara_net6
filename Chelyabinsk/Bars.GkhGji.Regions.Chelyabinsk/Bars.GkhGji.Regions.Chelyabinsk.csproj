@@ -1,0 +1,140 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <SccProjectName></SccProjectName>
+    <SccLocalPath></SccLocalPath>
+    <SccAuxPath></SccAuxPath>
+    <SccProvider></SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <WarningLevel>4</WarningLevel>
+    <GenerateResourceUsePreserializedResources>false</GenerateResourceUsePreserializedResources>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Update="Connected Services\EaisCitizensAppealService\Reference1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\ModuleAssemblyInfo.cs">
+      <DependentUpon>ModuleAssemblyInfo.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourceManifest.cs">
+      <DependentUpon>ResourceManifest.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="Service References\SmevRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="paket.references">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Properties\ModuleAssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModuleAssemblyInfo.cs</LastGenOutput>
+    </None>
+    <None Update="ResourceManifest.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ResourceManifest.cs</LastGenOutput>
+    </None>
+    <None Update="Service References\SmevRef\Bars.GkhGji.Regions.Chelyabinsk.SmevRef.AckResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevRef\Bars.GkhGji.Regions.Chelyabinsk.SmevRef.GetIncomingQueueStatisticsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevRef\Bars.GkhGji.Regions.Chelyabinsk.SmevRef.GetIncomingQueueStatisticsResponseQueueStatistics.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevRef\Bars.GkhGji.Regions.Chelyabinsk.SmevRef.GetRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevRef\Bars.GkhGji.Regions.Chelyabinsk.SmevRef.GetRequestResponseRequestMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevRef\Bars.GkhGji.Regions.Chelyabinsk.SmevRef.GetResponseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevRef\Bars.GkhGji.Regions.Chelyabinsk.SmevRef.GetResponseResponseResponseMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevRef\Bars.GkhGji.Regions.Chelyabinsk.SmevRef.GetStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevRef\Bars.GkhGji.Regions.Chelyabinsk.SmevRef.MessageMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevRef\Bars.GkhGji.Regions.Chelyabinsk.SmevRef.SendRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevRef\Bars.GkhGji.Regions.Chelyabinsk.SmevRef.SendResponseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevRef\Bars.GkhGji.Regions.Chelyabinsk.SmevRef.SmevAsyncProcessingMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CryptoPro.Sharpei.Xml, Version=1.4.0.10, Culture=neutral, PublicKeyToken=473b8c5086e795f5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\CryptoPro.Sharpei.Xml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Bars.GkhGji.Contracts\Bars.GkhGji.Contracts.csproj" />
+    <ProjectReference Include="..\..\Bars.GkhGJI\Bars.GkhGji.csproj" />
+    <ProjectReference Include="..\..\Bars.Gkh\Bars.Gkh.csproj" />
+    <ProjectReference Include="..\..\Regions\Base\Bars.GkhGji.Regions.BaseChelyabinsk\Bars.GkhGji.Regions.BaseChelyabinsk.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SmevRef\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\**\*" />
+    <EmbeddedResource Include="content\**\*" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Service References\SmevRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Connected Services\EaisCitizensAppealService\configuration.svcinfo" />
+    <Content Include="Connected Services\EaisCitizensAppealService\configuration91.svcinfo" />
+    <Content Include="Connected Services\EaisCitizensAppealService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+</Project>

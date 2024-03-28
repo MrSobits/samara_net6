@@ -1,0 +1,548 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="0" />
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="11">
+      <value>,НаименованиеОтдела,НаименованиеОтдела,System.String,,False,False</value>
+      <value>,НомерЗапроса,НомерЗапроса,System.String,,False,False</value>
+      <value>,ДатаЗапроса,ДатаЗапроса,System.String,,False,False</value>
+      <value>,ДолжностьРуководителяДатПадеж,ДолжностьРуководителяДатПадеж,System.String,,False,False</value>
+      <value>,ДолжностьОтветственного,ДолжностьОтветственного,System.String,,False,False</value>
+      <value>,ТелефонОтветственного,ТелефонОтветственного,System.String,,False,False</value>
+      <value>,АдресОрганизации,АдресОрганизации,System.String,,False,False</value>
+      <value>,КраткоеНаименованиеОрганизации,КраткоеНаименованиеОрганизации,System.String,,False,False</value>
+      <value>,ИНН,ИНН,System.String,,False,False</value>
+      <value>,ФиоСокрДатПадеж,ФиоСокрДатПадеж,System.String,,False,False</value>
+      <value>,ФиоИнспектораСокр,ФиоИнспектораСокр,System.String,,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="2" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="21">
+        <Text11 Ref="3" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>1.2,21.6,8.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,12</Font>
+          <Guid>c2b94d10b91d4389861b960836859a6f</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text11</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <Text>{ДолжностьОтветственного}ГЖИ НСО</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text11>
+        <Text10 Ref="4" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>1.2,26.8,16.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,12</Font>
+          <Guid>a6de5ef0db3e44b899ade33c22d5d42a</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text10</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <Text>"__"____________ 2014 г.   ____________________________________________________</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text10>
+        <Text12 Ref="5" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>11.4,21.6,6.6,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,12</Font>
+          <Guid>42a2f9c79d1d43c9a3b9c5a613b401df</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text12</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <Text>{ФиоИнспектораСокр}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text12>
+        <Text13 Ref="6" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>1.2,22.6,6.6,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,12</Font>
+          <Guid>3959a4da51444ac9b66fdb96913d1e50</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text13</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <Text>т. {ТелефонОтветственного}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text13>
+        <Text15 Ref="7" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>1.2,25,13.6,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,12</Font>
+          <Guid>cfc64a9495ec4f18b13e0a6911e07142</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text15</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <Text>С уведомлением ознакомлен (копия вручена/отправлена почтой):</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text15>
+        <ReportTitleBand1 Ref="8" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,19,8</ClientRectangle>
+          <Components isList="true" count="11">
+            <Text2 Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <DockStyle>Top</DockStyle>
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>639d6bd545724a4a9ddeba7cc8e8ce34</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="2" />
+              <Parent isRef="8" />
+              <Text>ГОСУДАРСТВЕННАЯ ЖИЛИЩНАЯ ИНСПЕКЦИЯ
+НОВОСИБИРСКОЙ ОБЛАСТИ
+</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+            <Text4 Ref="10" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,1,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <DockStyle>Top</DockStyle>
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>62c04025fdca414384819032ecf4d49b</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="2" />
+              <Parent isRef="8" />
+              <Text>{НаименованиеОтдела}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text4>
+            <Text5 Ref="11" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,7,9.4,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>85ce63fb2467479fb247f19adc4b1988</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="2" />
+              <Parent isRef="8" />
+              <Text>Юридический адрес:
+{АдресОрганизации}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text5>
+            <Text14 Ref="12" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,2.4,10.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>cd2d4f1827c149d7bb4a4fcce149402a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="2" />
+              <Parent isRef="8" />
+              <Text>Мотивированный запрос № {НомерЗапроса}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text14>
+            <Text3 Ref="13" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.6,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <DockStyle>Top</DockStyle>
+              <Font>Times New Roman,9</Font>
+              <Guid>1891ebb87f87418684098b28a264b221</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="2" />
+              <Parent isRef="8" />
+              <Text>630011, г. Новосибирск, Красный проспект, 18, тел. 202-07-57</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text3>
+            <Text1 Ref="14" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.8,3.2,15.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>72fc90e5809045a99c3b19554dd7029e</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="2" />
+              <Parent isRef="8" />
+              <Text>от {ДатаЗапроса}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text1>
+            <Text6 Ref="15" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,4,9.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>d5ec8c6de0224ff39bb67f01f9fcb890</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="2" />
+              <Parent isRef="8" />
+              <Text>{ДолжностьРуководителяДатПадеж}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text6>
+            <Text7 Ref="16" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,4.6,9.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>aaeb2105f0714edd8f7e57f8c627b65a</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="2" />
+              <Parent isRef="8" />
+              <Text>{КраткоеНаименованиеОрганизации}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text7>
+            <Text8 Ref="17" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,5.2,9.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>79b944ba71c44b2d9b3d4362417061f0</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="2" />
+              <Parent isRef="8" />
+              <Text>ИНН {ИНН}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text8>
+            <Text9 Ref="18" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,5.8,9.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>1ac6df9b84934ecb9037d231de112aa7</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="2" />
+              <Parent isRef="8" />
+              <Text>{ФиоСокрДатПадеж}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text9>
+            <HorizontalLinePrimitive1 Ref="19" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>1.2,1.6,16.8,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="20" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLinePrimitive1</Name>
+              <Page isRef="2" />
+              <Parent isRef="8" />
+              <Size>2</Size>
+              <StartCap Ref="21" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>7238ac420a6c4500b7d847620be70c16</Guid>
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+        </ReportTitleBand1>
+        <HorizontalLinePrimitive3 Ref="22" type="HorizontalLinePrimitive" isKey="true">
+          <ClientRectangle>1.2,9.4,16.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="23" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>6b11ca2939d848f586e9dcb784c8ab02</Guid>
+          <Name>HorizontalLinePrimitive3</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <StartCap Ref="24" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive3>
+        <HorizontalLinePrimitive4 Ref="25" type="HorizontalLinePrimitive" isKey="true">
+          <ClientRectangle>1.2,13.4,16.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="26" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>a3c8cdf27c6f45e48aced4e322dae26e</Guid>
+          <Name>HorizontalLinePrimitive4</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <StartCap Ref="27" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive4>
+        <HorizontalLinePrimitive5 Ref="28" type="HorizontalLinePrimitive" isKey="true">
+          <ClientRectangle>1.2,10.2,16.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="29" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>e9a08ff432024640bee5b5792dcba497</Guid>
+          <Name>HorizontalLinePrimitive5</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <StartCap Ref="30" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive5>
+        <HorizontalLinePrimitive6 Ref="31" type="HorizontalLinePrimitive" isKey="true">
+          <ClientRectangle>1.2,14.2,16.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="32" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>a9541fc783834be5965f9dce03d27efa</Guid>
+          <Name>HorizontalLinePrimitive6</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <StartCap Ref="33" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive6>
+        <HorizontalLinePrimitive7 Ref="34" type="HorizontalLinePrimitive" isKey="true">
+          <ClientRectangle>1.2,11,16.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="35" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>cee6c8f3dc5a473f968915e718d5f3ae</Guid>
+          <Name>HorizontalLinePrimitive7</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <StartCap Ref="36" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive7>
+        <HorizontalLinePrimitive8 Ref="37" type="HorizontalLinePrimitive" isKey="true">
+          <ClientRectangle>1.2,11.8,16.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="38" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>dbc659d91ae642a98e2738a192c28a46</Guid>
+          <Name>HorizontalLinePrimitive8</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <StartCap Ref="39" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive8>
+        <HorizontalLinePrimitive9 Ref="40" type="HorizontalLinePrimitive" isKey="true">
+          <ClientRectangle>1.2,12.6,16.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="41" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>111e4bd5c883480bb70e58e7e79d30f9</Guid>
+          <Name>HorizontalLinePrimitive9</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <StartCap Ref="42" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive9>
+        <HorizontalLinePrimitive10 Ref="43" type="HorizontalLinePrimitive" isKey="true">
+          <ClientRectangle>1.2,15,16.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="44" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>8188860bcffb4bfd9e227822b59f05ed</Guid>
+          <Name>HorizontalLinePrimitive10</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <StartCap Ref="45" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive10>
+        <HorizontalLinePrimitive11 Ref="46" type="HorizontalLinePrimitive" isKey="true">
+          <ClientRectangle>1.2,15.8,16.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="47" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>4c74f7ec394747b6b8dab4a5be8a0666</Guid>
+          <Name>HorizontalLinePrimitive11</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <StartCap Ref="48" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive11>
+        <HorizontalLinePrimitive12 Ref="49" type="HorizontalLinePrimitive" isKey="true">
+          <ClientRectangle>1.2,19.8,16.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="50" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>42797f8352d04e97905b97aef9f9f0d9</Guid>
+          <Name>HorizontalLinePrimitive12</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <StartCap Ref="51" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive12>
+        <HorizontalLinePrimitive13 Ref="52" type="HorizontalLinePrimitive" isKey="true">
+          <ClientRectangle>1.2,16.6,16.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="53" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>cf12061db8ab440794ae4a8b816fc605</Guid>
+          <Name>HorizontalLinePrimitive13</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <StartCap Ref="54" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive13>
+        <HorizontalLinePrimitive14 Ref="55" type="HorizontalLinePrimitive" isKey="true">
+          <ClientRectangle>1.2,20.6,16.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="56" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>d725178102744bc2b35981696a04f6f8</Guid>
+          <Name>HorizontalLinePrimitive14</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <StartCap Ref="57" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive14>
+        <HorizontalLinePrimitive15 Ref="58" type="HorizontalLinePrimitive" isKey="true">
+          <ClientRectangle>1.2,17.4,16.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="59" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>947b42aa3a3c41a78ad830320e9a1bc5</Guid>
+          <Name>HorizontalLinePrimitive15</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <StartCap Ref="60" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive15>
+        <HorizontalLinePrimitive16 Ref="61" type="HorizontalLinePrimitive" isKey="true">
+          <ClientRectangle>1.2,18.2,16.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="62" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>ca5d1cf8c2df447c82d5c370b3c97def</Guid>
+          <Name>HorizontalLinePrimitive16</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <StartCap Ref="63" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive16>
+        <HorizontalLinePrimitive17 Ref="64" type="HorizontalLinePrimitive" isKey="true">
+          <ClientRectangle>1.2,19,16.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="65" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>0c28304c38a44f2a89300e3fae56302d</Guid>
+          <Name>HorizontalLinePrimitive17</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <StartCap Ref="66" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive17>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>9c30ebe1d1094d05b8131ec89f9af696</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="67" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="68" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>5/24/2014 3:22:35 PM</ReportChanged>
+  <ReportCreated>5/24/2014 1:36:10 PM</ReportCreated>
+  <ReportFile>C:\projects\GKH.GKH.CMMI\Dev\Nso\Bars.GkhGji.Regions.Nso\Resources\BlockGji_MotivatedRequest.mrt</ReportFile>
+  <ReportGuid>f92dec3381da4de1af9197a584384753</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2012.3.1500</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

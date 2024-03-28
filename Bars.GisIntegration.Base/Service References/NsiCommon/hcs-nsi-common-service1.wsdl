@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:nsi-common="http://dom.gosuslugi.ru/schema/integration/nsi-common/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:base="http://dom.gosuslugi.ru/schema/integration/base/" xmlns:tns="http://dom.gosuslugi.ru/schema/integration/nsi-common-service/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns="http://www.w3.org/2000/09/xmldsig#" xmlns:ns1="http://dom.gosuslugi.ru/schema/integration/nsi-base/" targetNamespace="http://dom.gosuslugi.ru/schema/integration/nsi-common-service/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" version="11.1.0.2">
+      <xs:import schemaLocation="../lib/hcs-base.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/base/" />
+      <xs:import schemaLocation="hcs-nsi-common-types.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/nsi-common/" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="Fault">
+    <wsdl:part name="Fault" element="base:Fault" />
+  </wsdl:message>
+  <wsdl:message name="exportNsiListRequest">
+    <wsdl:part name="exportNsiListRequest" element="nsi-common:exportNsiListRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportNsiListResult">
+    <wsdl:part name="exportNsiListResult" element="nsi-common:exportNsiListResult" />
+  </wsdl:message>
+  <wsdl:message name="exportNsiItemRequest">
+    <wsdl:part name="exportNsiItemRequest" element="nsi-common:exportNsiItemRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportNsiItemResult">
+    <wsdl:part name="exportNsiItemResult" element="nsi-common:exportNsiItemResult" />
+  </wsdl:message>
+  <wsdl:message name="exportNsiPagingItemRequest">
+    <wsdl:part name="exportNsiPagingItemRequest" element="nsi-common:exportNsiPagingItemRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportNsiPagingItemResult">
+    <wsdl:part name="exportNsiPagingItemResult" element="nsi-common:exportNsiPagingItemResult" />
+  </wsdl:message>
+  <wsdl:message name="ISRequestHeader">
+    <wsdl:part name="Header" element="base:ISRequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="ResultHeader">
+    <wsdl:part name="Header" element="base:ResultHeader" />
+  </wsdl:message>
+  <wsdl:portType name="NsiPortsType">
+    <wsdl:operation name="exportNsiList">
+      <wsdl:documentation>ВИ_НСИ_ППС. Получить перечень общесистемных справочников с указанием даты последнего изменения каждого из них.</wsdl:documentation>
+      <wsdl:input message="tns:exportNsiListRequest" />
+      <wsdl:output message="tns:exportNsiListResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="exportNsiItem">
+      <wsdl:documentation>ВИ_НСИ_ПДС. Получить данные общесистемного справочника.</wsdl:documentation>
+      <wsdl:input message="tns:exportNsiItemRequest" />
+      <wsdl:output message="tns:exportNsiItemResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="exportNsiPagingItem">
+      <wsdl:documentation>ВИ_НСИ_ПДС_ПОСТР. Получить данные общесистемного справочника.</wsdl:documentation>
+      <wsdl:input message="tns:exportNsiPagingItemRequest" />
+      <wsdl:output message="tns:exportNsiPagingItemResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NsiBinding" type="tns:NsiPortsType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="exportNsiList">
+      <wsdl:documentation>ВИ_НСИ_ППС. Получить перечень справочников с указанием даты последнего изменения каждого из них.</wsdl:documentation>
+      <soap:operation soapAction="urn:exportNsiList" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ISRequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportNsiItem">
+      <wsdl:documentation>ВИ_НСИ_ПДС. Получить данные справочника.</wsdl:documentation>
+      <soap:operation soapAction="urn:exportNsiItem" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ISRequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportNsiPagingItem">
+      <soap:operation soapAction="urn:exportNsiPagingItem" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ISRequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NsiService">
+    <wsdl:documentation>Сервис экспорта общих справочников подсистемы НСИ</wsdl:documentation>
+    <wsdl:port name="NsiPort" binding="tns:NsiBinding">
+      <soap:address location="https://api.dom.gosuslugi.ru/ext-bus-nsi-common-service/services/NsiCommon" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,50 @@
+Ext.define('B4.model.ManagingOrganization', {
+    extend: 'B4.base.Model',
+    idProperty: 'Id',
+    requires: [
+        'B4.enums.YesNoNotSet',
+        'B4.enums.OrgStateRole',
+        'B4.enums.TypeManagementManOrg',
+        'B4.enums.GroundsTermination'
+    ],
+    proxy: {
+        type: 'b4proxy',
+        controllerName: 'ManagingOrganization'
+    },
+    fields: [
+        { name: 'Id', useNull: true },
+        { name: 'Contragent', defaultValue: null },
+        { name: 'OrgStateRole', defaultValue: 10 },
+        { name: 'ContragentName' },
+        { name: 'ContragentShortName' },
+        { name: 'ContragentInn' },
+        { name: 'ContragentKpp' },
+        { name: 'ContragentOgrn' },
+        { name: 'ContragentMailingAddress' },
+        { name: 'ContragentJuridicalAddress' },
+        { name: 'ContragentPhone' },
+        { name: 'Description' },
+        { name: 'Municipality' },
+        { name: 'Settlement' },
+        { name: 'CountMo' },
+        { name: 'CountOffices' },
+        { name: 'CountSrf' },
+        { name: 'IsTransferredManagementTsj', defaultValue: false },
+        { name: 'MemberRanking', defaultValue: 30 },
+        { name: 'TypeManagement', defaultValue: 10 },
+        { name: 'NumberEmployees' },
+        { name: 'OfficialSite' },
+        { name: 'OfficialSite731' },
+        { name: 'ShareMo' },
+        { name: 'ShareSf' },
+        { name: 'ActivityDateEnd' },
+        { name: 'ActivityDescription' },
+        { name: 'ActivityGroundsTermination', defaultValue: 10 },
+        { name: 'CaseNumber' },
+        { name: 'TsjHead', defaultValue: null },
+        { name: 'IsDispatchCrrespondedFact', defaultValue: false },
+        { name: 'DispatchPhone'},
+        { name: 'DispatchAddress', defaultValue: null },
+        { name: 'DispatchFile', defaultValue: null }
+    ]
+});

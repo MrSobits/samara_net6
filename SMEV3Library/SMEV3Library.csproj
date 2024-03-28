@@ -1,0 +1,153 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CryptoPro.Sharpei.Base, Version=1.4.0.10, Culture=neutral, PublicKeyToken=473b8c5086e795f5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\CryptoPro\CryptoPro.Sharpei.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="CryptoPro.Sharpei.ServiceModel, Version=1.4.0.1, Culture=neutral, PublicKeyToken=473b8c5086e795f5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\CryptoPro\CryptoPro.Sharpei.ServiceModel.dll</HintPath>
+    </Reference>
+    <Reference Include="CryptoPro.Sharpei.ServiceModel45">
+      <HintPath>Libs\CryptoPro\CryptoPro.Sharpei.ServiceModel45.dll</HintPath>
+    </Reference>
+    <Reference Include="CryptoPro.Sharpei.Xml, Version=1.4.0.10, Culture=neutral, PublicKeyToken=473b8c5086e795f5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\CryptoPro\CryptoPro.Sharpei.Xml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Service References\SMEV3TestReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Update="Service References\SmevReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Service References\SMEV3TestReference\SMEV3Library.SMEV3TestReference.AckResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SMEV3TestReference\SMEV3Library.SMEV3TestReference.GetRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SMEV3TestReference\SMEV3Library.SMEV3TestReference.GetRequestResponseRequestMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SMEV3TestReference\SMEV3Library.SMEV3TestReference.GetResponseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SMEV3TestReference\SMEV3Library.SMEV3TestReference.GetResponseResponseResponseMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SMEV3TestReference\SMEV3Library.SMEV3TestReference.GetStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SMEV3TestReference\SMEV3Library.SMEV3TestReference.MessageMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SMEV3TestReference\SMEV3Library.SMEV3TestReference.SendRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SMEV3TestReference\SMEV3Library.SMEV3TestReference.SendResponseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SMEV3TestReference\SMEV3Library.SMEV3TestReference.SmevAsyncProcessingMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SMEV3TestReference\ws.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Service References\SMEV3TestReference\ws1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Service References\SMEV3TestReference\ws2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Service References\SmevReference\SMEV3Library.SmevReference.AckResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevReference\SMEV3Library.SmevReference.GetRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevReference\SMEV3Library.SmevReference.GetRequestResponseRequestMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevReference\SMEV3Library.SmevReference.GetResponseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevReference\SMEV3Library.SmevReference.GetResponseResponseResponseMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevReference\SMEV3Library.SmevReference.GetStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevReference\SMEV3Library.SmevReference.MessageMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevReference\SMEV3Library.SmevReference.SendRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevReference\SMEV3Library.SmevReference.SendResponseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevReference\SMEV3Library.SmevReference.SmevAsyncProcessingMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Service References\SmevReference\ws.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Service References\SmevReference\ws1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Service References\SmevReference\ws2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SMEV3TestReference\" />
+    <WCFMetadataStorage Include="Service References\SmevReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SmevReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Service References\SmevReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Service References\SMEV3TestReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Castle.Windsor">
+      <Version>5.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="6.0.4" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.8.1" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.8.1" />
+    <PackageReference Include="System.ServiceModel.Federation" Version="4.8.1" />
+    <PackageReference Include="Bars.B4.Core">
+      <Version>3.2.0-dev.202312131620</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+</Project>

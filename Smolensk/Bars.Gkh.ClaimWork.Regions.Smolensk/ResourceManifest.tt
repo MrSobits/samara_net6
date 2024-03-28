@@ -1,0 +1,58 @@
+﻿<#@ template debug="true" hostSpecific="true" #>
+<#@ output extension=".cs" #>
+<#@ Assembly Name="System.Core.dll" #>
+<#@ Assembly Name="System.Xml.dll" #>
+<#@ Assembly Name="System.Xml.Linq.dll" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<# 
+    string nameSpace = "Bars.Gkh.ClaimWork.Regions.Smolensk";	
+#>
+namespace <#= nameSpace #>
+{    
+    using Bars.B4;
+
+    public partial class ResourceManifest : ResourceManifestBase
+    {
+
+		protected override void BaseInit(IResourceManifestContainer container)
+        {  
+
+<#          GenereateAllResources("Views");#>
+<#          GenereateAllResources("libs");#>
+<#          GenereateAllResources("content");#>
+<#          GenereateAllResources("scripts");#>
+<#          GenereateAllResources("css");#>
+<#          GenereateAllResources("js");#>
+        }
+		        
+
+        private void AddResource(IResourceManifestContainer container, string path)
+		{
+
+            container.Add(path, $"Bars.Gkh.ClaimWork.Regions.Smolensk.dll/Bars.Gkh.ClaimWork.Regions.Smolensk.{path.Replace("/", ".")}");
+        }
+    }
+}
+<#+  
+  void GenereateAllResources(string localFolder)
+    {
+		var folders = new[]{localFolder, Path.Combine(Path.GetDirectoryName(Host.TemplateFile), localFolder)};
+		var directoryName = folders.FirstOrDefault(Directory.Exists);
+        if (string.IsNullOrEmpty(directoryName)) return;
+
+        foreach(var file in Directory.GetFiles(directoryName, "*.*", SearchOption.AllDirectories))
+        {
+			var resourcePath = string.Format("{0}{1}", localFolder, file.Replace(directoryName, string.Empty).Replace("\\","/"));
+#>
+            this.AddResource(container, "<#= resourcePath #>");
+<#+
+        }
+    }
+
+#>

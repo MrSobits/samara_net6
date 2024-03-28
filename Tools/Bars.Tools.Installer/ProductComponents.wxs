@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:iis="http://schemas.microsoft.com/wix/IIsExtension">
+	<?include Variables.wxi ?>
+
+		<Fragment>
+        <DirectoryRef Id="INSTALLLOCATION">
+            <Component Id="cmp3A0FE6057DF05FAB4630B0516717FABB" Guid="0567F809-1190-464C-A196-3A94BE7F5872">
+              <File Id="filE4B98E72D0AFD30578E2AE5EDC73D5F2" KeyPath="yes" Source="$(var.AppSourcePath)\b4.config" />
+            </Component>
+            <Component Id="cmp3BEF96A617998A57BE628F236D308CE4" Guid="05ED508D-5418-4231-B7D1-7587C96E8BCC">
+                <File Id="filF728383F837691AE9EE936907FDB7D55" KeyPath="yes" Source="$(var.AppSourcePath)\Bars.Gkh.App.csproj" />
+            </Component>
+            <Component Id="cmp93645FCD1A13835D0DFCD156CF2C6C64" Guid="3F6761D9-3A92-4119-83EF-7B701D725454">
+                <File Id="fil00A150C9AD477E1EE4E8CA4503876DA9" KeyPath="yes" Source="$(var.AppSourcePath)\Global.asax" />
+            </Component>
+            <Component Id="cmpD6698B52393031884963B84FDD839741" Guid="AE4C2D33-B318-4589-B72F-314D1E5D86D9">
+                <File Id="fil9DD0A840F6C735B5DEC126E8233FEA65" KeyPath="yes" Source="$(var.AppSourcePath)\Global.asax.cs" />
+            </Component>
+            <Component Id="cmp9439DAEF8D50BA60EA9465DA29C826FA" Guid="7047F781-95FC-40D8-BD69-D7179B90B6C4">
+                <File Id="filBE9F840142CD82287DCEBFE116147ABE" KeyPath="yes" Source="$(var.AppSourcePath)\job_scheduling_data_2_0.xsd" />
+            </Component>
+            <Component Id="cmpFED9CE4C040C6D017106CB6B92C2F157" Guid="02CE04C0-3F05-4394-B2EE-F8CA187FC624">
+                <File Id="fil43F031812C2D8647225696DDDF358FCA" KeyPath="yes" Source="$(var.AppSourcePath)\packages.config" />
+            </Component>
+            <Component Id="cmpFB33635B7D7AF5906B5DFB25D7E4F343" Guid="27D4F387-2A9B-4B61-92FD-83744E3D934F">
+                <File Id="fil0AB648957C4B57849C7F7229ADDD83F2" KeyPath="yes" Source="$(var.AppSourcePath)\Web.config" />
+            </Component>
+            <Directory Id="dir409FB0AE620C67D9B8AAF2C0279F7CD0" Name="7z">
+                <Component Id="cmp413566DC757875466CB603CD9DA6F32D" Guid="B9354D87-BB1E-4952-A4BC-8154E46998D1">
+                    <File Id="fil50971552FECD23F2103BB7C7696B8A10" KeyPath="yes" Source="$(var.AppSourcePath)\7z\7z.dll" />
+                </Component>
+                <Component Id="cmpE1A263A58E2C7FEABA10C8A0FB83C764" Guid="5C7702D6-FC5C-4528-A7FD-8338B432490E">
+                    <File Id="filDF4C466B4AB534C84DFC13E0A18D5C4D" KeyPath="yes" Source="$(var.AppSourcePath)\7z\7z64.dll" />
+                </Component>
+                <Component Id="cmp8780B6AF24F7810EF1C93AF6162BACF7" Guid="F7DA16E6-799B-4D28-A2F5-09520F92DE37">
+                    <File Id="fil7570819C13C6811CC99A8D8EB83EB3AF" KeyPath="yes" Source="$(var.AppSourcePath)\7z\SevenZipSharp.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dir27DC3FA4E32B0A15529DEBFE612E7D02" Name="Config">
+                <Component Id="cmpA24447D4B5EE3A9396DCBC166FBC857C" Guid="DD633EE2-B538-4DFF-BE3E-7594DCC13BB8">
+                    <File Id="fil545D779259CD72B6963E532075CE815F" KeyPath="yes" Source="$(var.AppSourcePath)\Config\log.config" />
+                </Component>
+                <Component Id="cmpC0C6B4E6C481C31CCF9354D6F06CEFFE" Guid="D6884260-EC44-4AC2-8C4D-5B0E2E1D53CE">
+                    <File Id="fil9EC72B6C24CCF56602C1ABE3DB9CF945" KeyPath="yes" Source="$(var.AppSourcePath)\Config\log.debug.config" />
+                </Component>
+            </Directory>
+            <Directory Id="dir3B24C977B030062216D87253D9E23E51" Name="Content">
+                <Component Id="cmp3F41F1A570289543E5C3A8977E57E0E5" Guid="EAB6A9D4-AB08-4FA2-A6E8-5043D4DD1DC3">
+                    <File Id="filBE300F6DBF44AEEE38E05384D4C6C56F" KeyPath="yes" Source="$(var.AppSourcePath)\Content\favicon.ico" />
+                </Component>
+            </Directory>
+            <Directory Id="dir5AF44D4C8DDE1FF795D27AB7490E4E05" Name="Controllers">
+                <Component Id="cmp4B0747E0B131CD46F1901BD4CCA9DA6A" Guid="030E6FAF-7003-4350-9063-7A248ACE14F6">
+                    <File Id="filEF71DFE860F0BCBB5A4406FC66767550" KeyPath="yes" Source="$(var.AppSourcePath)\Controllers\HomeController.cs" />
+                </Component>
+            </Directory>
+            <Directory Id="dir23A3189054C3F25860189BFFABAD824E" Name="Properties">
+                <Component Id="cmp2EE911193F67185503A27C479858EBD2" Guid="CF020ABC-09E1-487B-9F4E-7D7B023139B1">
+                    <File Id="filE42FBD59661BC53C83152C5992B120E7" KeyPath="yes" Source="$(var.AppSourcePath)\Properties\AssemblyInfo.cs" />
+                </Component>
+            </Directory>
+            <Directory Id="dirDB682B6153BD5D4BCAB78F336C5994F0" Name="Views">
+                <Component Id="cmp59C1AF38179F0401D56B6149279A915F" Guid="D02C61B6-0243-4419-87DE-F60D8D9CCA73">
+                    <File Id="fil3A514B317E9B870565A32DE0AD139B76" KeyPath="yes" Source="$(var.AppSourcePath)\Views\Web.config" />
+                </Component>
+                <Component Id="cmpF9782EDF7FCBE75A6E0DB0C1925F4EFE" Guid="BEF54C33-C4BD-4026-9364-6D1ED04BF556">
+                    <File Id="fil75BCE93515A854289DE71C049539BA4A" KeyPath="yes" Source="$(var.AppSourcePath)\Views\_ViewStart.cshtml" />
+                </Component>
+                <Directory Id="dir88934B450FA42841EF447477A73B0881" Name="Home">
+                    <Component Id="cmpBB670D49B6C07B3408B61268E27E33CA" Guid="4053B158-13F0-4D3F-AC78-D651EC2B65B2">
+                        <File Id="fil8B4C4B6A198E00B91FFFF18B03061AC1" KeyPath="yes" Source="$(var.AppSourcePath)\Views\Home\Index.cshtml" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir2246C77BF8248389596A421EDB0FFDEF" Name="Shared">
+                    <Component Id="cmp18A0B019648F1C23F8B63FE2967B5D65" Guid="853F1CD4-4E6E-4BB2-9122-4C8F5677144A">
+                        <File Id="fil33EF99CBAE3FC184EDB2BC8E688C8062" KeyPath="yes" Source="$(var.AppSourcePath)\Views\Shared\Error.cshtml" />
+                    </Component>
+                    <Component Id="cmpAE199113591C9A84FB87557594D8EDCB" Guid="F971E605-A08C-49C7-88F2-B0ACAB3D9643">
+                        <File Id="filE98CBFAC9E5BD051167AA52F84DD8011" KeyPath="yes" Source="$(var.AppSourcePath)\Views\Shared\_Layout.cshtml" />
+                    </Component>
+                </Directory>
+            </Directory>
+        </DirectoryRef>
+    </Fragment><Fragment>
+        <ComponentGroup Id="ProductComponents">
+            <ComponentRef Id="cmp3A0FE6057DF05FAB4630B0516717FABB" />
+            <ComponentRef Id="cmp3BEF96A617998A57BE628F236D308CE4" />
+            <ComponentRef Id="cmp93645FCD1A13835D0DFCD156CF2C6C64" />
+            <ComponentRef Id="cmpD6698B52393031884963B84FDD839741" />
+            <ComponentRef Id="cmp9439DAEF8D50BA60EA9465DA29C826FA" />
+            <ComponentRef Id="cmpFED9CE4C040C6D017106CB6B92C2F157" />
+            <ComponentRef Id="cmpFB33635B7D7AF5906B5DFB25D7E4F343" />
+            <ComponentRef Id="cmp413566DC757875466CB603CD9DA6F32D" />
+            <ComponentRef Id="cmpE1A263A58E2C7FEABA10C8A0FB83C764" />
+            <ComponentRef Id="cmp8780B6AF24F7810EF1C93AF6162BACF7" />
+            <ComponentRef Id="cmpA24447D4B5EE3A9396DCBC166FBC857C" />
+            <ComponentRef Id="cmpC0C6B4E6C481C31CCF9354D6F06CEFFE" />
+            <ComponentRef Id="cmp3F41F1A570289543E5C3A8977E57E0E5" />
+            <ComponentRef Id="cmp4B0747E0B131CD46F1901BD4CCA9DA6A" />
+            <ComponentRef Id="cmp2EE911193F67185503A27C479858EBD2" />
+            <ComponentRef Id="cmp59C1AF38179F0401D56B6149279A915F" />
+            <ComponentRef Id="cmpF9782EDF7FCBE75A6E0DB0C1925F4EFE" />
+            <ComponentRef Id="cmpBB670D49B6C07B3408B61268E27E33CA" />
+            <ComponentRef Id="cmp18A0B019648F1C23F8B63FE2967B5D65" />
+            <ComponentRef Id="cmpAE199113591C9A84FB87557594D8EDCB" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>

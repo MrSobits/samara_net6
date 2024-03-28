@@ -1,0 +1,112 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <SccProjectName></SccProjectName>
+    <SccLocalPath></SccLocalPath>
+    <SccAuxPath></SccAuxPath>
+    <SccProvider></SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Update="Connected Services\Ias.Tatar.IndicatorService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\ModuleAssemblyInfo.cs">
+      <DependentUpon>ModuleAssemblyInfo.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourceManifest.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceManifest.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Properties\ModuleAssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModuleAssemblyInfo.cs</LastGenOutput>
+    </None>
+    <None Update="ResourceManifest.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ResourceManifest.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <!-- TODO: Расскомментировать после перехода на .NET 6 <ProjectReference Include="..\..\Bars.GisIntegration.Gkh\Bars.GisIntegration.Gkh.csproj" /> -->
+    <ProjectReference Include="..\..\Bars.GkhCR\Bars.GkhCR.csproj" />
+    <ProjectReference Include="..\..\Bars.GkhExcel\Bars.GkhExcel.csproj" />
+    <ProjectReference Include="..\..\Bars.Gkh\Bars.Gkh.csproj" />
+    <ProjectReference Include="..\..\Modules\Analytics\Bars.B4.Modules.Analytics.Reports\Bars.B4.Modules.Analytics.Reports.csproj" />
+    <ProjectReference Include="..\..\Modules\Analytics\Bars.B4.Modules.Analytics\Bars.B4.Modules.Analytics.csproj" />
+    <ProjectReference Include="..\Gis\Bars.Gkh.Gis\Bars.Gkh.Gis.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\AssemblyInfo.cs">
+      <SubType></SubType>
+    </Compile>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\mailTemplates\DebtSubRequestWaitingForResponseMailTemplate.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\**\*" />
+    <EmbeddedResource Include="content\**\*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\RisDebtInfo\" />
+    <Folder Include="FormatDataExport\ProxyEntities\" />
+    <Folder Include="libs\B4\aspects\import\fssp\" />
+    <Folder Include="libs\B4\controller\chargessplitting\budgetorg\" />
+    <Folder Include="libs\B4\view\desktop\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\Ias.Tatar.IndicatorService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Connected Services\Ias.Tatar.IndicatorService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="resources\mailTemplates\DebtSubRequestNotSentQuantityLessThan50MailTemplate.html" />
+    <Content Include="resources\mailTemplates\DebtSubRequestNotSentQuantityMoreThan50MailTemplate.files\colorschememapping.xml" />
+    <Content Include="resources\mailTemplates\DebtSubRequestNotSentQuantityMoreThan50MailTemplate.files\filelist.xml" />
+    <Content Include="resources\mailTemplates\DebtSubRequestNotSentQuantityMoreThan50MailTemplate.files\image001.png" />
+    <Content Include="resources\mailTemplates\DebtSubRequestNotSentQuantityMoreThan50MailTemplate.files\themedata.thmx" />
+    <Content Include="resources\mailTemplates\DebtSubRequestNotSentQuantityMoreThan50MailTemplate.html" />
+  </ItemGroup>
+</Project>

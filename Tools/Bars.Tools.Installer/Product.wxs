@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:iis="http://schemas.microsoft.com/wix/IIsExtension"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+
+  <?include Variables.wxi ?>
+
+  <Product Id="*" Name="БАРС Груп" Language="1049" Version="$(var.INTERNAL_PRODUCT_VERSION)" Manufacturer="ОАО БАРС Груп" Codepage="1251"
+           UpgradeCode="B7CB3E74-1922-4913-B0E4-B148CEFA128C">
+
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" SummaryCodepage="1251"
+             Manufacturer="ОАО БАРС Груп" Description="Инсталляционный пакет продуктов БАРС Груп" />
+
+    <MajorUpgrade DowngradeErrorMessage="Наиболее свежая версия [ProductName] уже установлена."  MigrateFeatures="yes" />
+
+    <Property Id="PREVIOUSVERSIONSINSTALLED" Secure="yes" />
+    <Upgrade Id="B7CB3E74-1922-4913-B0E4-B148CEFA128C">
+      <UpgradeVersion
+         Minimum="1.0.0.0" Maximum="99.0.0.0"
+         Property="PREVIOUSVERSIONSINSTALLED"
+         IncludeMinimum="yes" IncludeMaximum="no" />
+    </Upgrade>
+    <Media Id="1" Cabinet="Bars.Setup.cab" EmbedCab="yes" />
+
+    <InstanceTransforms Property="INSTANCEID">
+      <Instance Id="InstArkhangelsk" ProductCode="CCE8AEB5-2BCF-4984-BD3C-0C492C1F7BB8"
+                UpgradeCode="C6712445-91B9-4986-A965-1254689B8469"
+                ProductName="Барс ЖКХ - Архангельск"/>
+      
+      <Instance Id="InstVolgograd" ProductCode="185788E4-0516-43F9-A966-236800D759D5"
+                UpgradeCode="B908872D-E3DA-450A-8965-C35EC597DFF3"
+                ProductName="Барс ЖКХ - Волгоград"/>
+
+      <Instance Id="InstVoronezh" ProductCode="96729E97-8643-4666-9ACB-CE902B44C3C1"
+                UpgradeCode="76BBD81D-CB9D-45A5-9DDA-AD107A7A34CF"
+                ProductName="Барс ЖКХ - Воронеж"/>
+
+      <Instance Id="InstDagestan" ProductCode="5A6EF7CF-9AD5-42D4-B5D3-D750FD17421E"
+                UpgradeCode="3B42EE1B-C9DF-4B00-B520-1E08BAD4C9B9"
+                ProductName="Барс ЖКХ - Дагестан"/>
+
+      <Instance Id="InstZabaykalye" ProductCode="377715CC-37FA-4806-BE43-DD206E41E8C0"
+                UpgradeCode="79C100AA-817B-4C90-A285-10454B49CD55"
+                ProductName="Барс ЖКХ - Забайкалье"/>
+
+      <Instance Id="InstKamchatka" ProductCode="2E0B5559-4868-40A1-B740-C4516EBDD4F3"
+                UpgradeCode="5D1E8A41-5B84-410B-A720-D990F46CF319"
+                ProductName="Барс ЖКХ - Камчатка"/>
+
+      <Instance Id="InstNAO" ProductCode="00002E47-8DC9-414E-9917-3614A6CBF51C"
+                UpgradeCode="E4FCBB44-7A4D-4736-8ED0-7E2481371A43"
+                ProductName="Барс ЖКХ - НАО"/>
+
+      <Instance Id="InstNNovgorod" ProductCode="111ABAAD-7634-4CAF-9AF4-B464B0DDF3BF"
+                UpgradeCode="2AA47DAD-785F-487E-8447-EB8C4B085137"
+                ProductName="Барс ЖКХ - Нижний Новгород"/>
+
+      <Instance Id="InstNSO" ProductCode="24355662-D669-42C7-9231-B30FD27B5743"
+                UpgradeCode="4F0EEDDB-881F-448B-9613-FF92BEBD8807"
+                ProductName="Барс ЖКХ - НСО"/>
+
+      <Instance Id="InstSamara" ProductCode="D9117713-368F-44A9-8F69-925AD9C3DEA5"
+                UpgradeCode="239B8F48-CA5F-4396-8653-65ECD76A6FED"
+                ProductName="Барс ЖКХ - Самара"/>
+
+      <Instance Id="InstSaratov" ProductCode="E99E613A-34A9-4239-94B6-B9EB63C7A7D7"
+                UpgradeCode="AD2ECFEF-6ADA-4422-A96C-10D4B65B10C7"
+                ProductName="Барс ЖКХ - Саратов"/>
+
+      <Instance Id="InstSaha" ProductCode="5C22DF23-D432-422F-8D6E-DB936E01183C"
+                UpgradeCode="5E658452-0E34-41D1-A1E2-B2DA7E181F21"
+                ProductName="Барс ЖКХ - Саха"/>
+
+      <Instance Id="InstSahalin" ProductCode="448A05A9-899E-4A97-9C18-4937EC9AD8E9"
+                UpgradeCode="3E492E68-E12C-41AE-88B4-C4CA7DAEF087"
+                ProductName="Барс ЖКХ - Сахалин"/>
+
+      <Instance Id="InstSmolensk" ProductCode="B32A757B-46EE-47DB-BA6F-111A528F04A1"
+                UpgradeCode="E0F09C5A-6E52-470A-B9AF-2CD1CBBCD3AA"
+                ProductName="Барс ЖКХ - Смоленск"/>
+      
+      <Instance Id="InstStavropol" ProductCode="4271610E-37F0-485B-957F-5A6C3BAA12A6"
+                UpgradeCode="E52BB45B-0FD0-4692-83D4-93E9A4B1CE8B"
+                ProductName="Барс ЖКХ - Ставрополь"/>
+
+      <Instance Id="InstTambov" ProductCode="6C077C89-1622-4EF7-A8F4-6E72406EB11C"
+                UpgradeCode="4242D1A4-8650-42F6-8E1C-C80F1C7F569A"
+                ProductName="Барс ЖКХ - Тамбов"/>
+
+      <Instance Id="InstTatarstan" ProductCode="27053071-A5F2-4D21-BBD3-5F1EB071B630"
+               UpgradeCode="2B1DB074-D784-4C31-B464-ACF07EBA8A9D"
+               ProductName="Барс ЖКХ - Татарстан"/>
+
+      <Instance Id="InstTver" ProductCode="753F5EB8-D0A3-4EE7-AA89-2D4273E3F035"
+                UpgradeCode="0DD8CDC6-E2B2-4E7F-9A02-28997D16C786"
+                ProductName="Барс ЖКХ - Тверь"/>
+
+      <Instance Id="InstTomsk" ProductCode="A7D74659-4AAE-4FF5-8551-69E5FD518DE5"
+                UpgradeCode="F894FC46-0F7D-4EF0-8211-67B706CFEAAC"
+                ProductName="Барс ЖКХ - Томск"/>
+
+      <Instance Id="InstTula" ProductCode="B91DEC76-4DF6-4146-87AD-E7184A5CA491"
+                UpgradeCode="05F210D8-C703-4E5B-A21E-8D9092747641"
+                ProductName="Барс ЖКХ - Тула"/>
+
+      <Instance Id="InstTyumen" ProductCode="BCE7D431-0303-4159-B3A0-2A7E66ACF1C0"
+                UpgradeCode="A499A025-9294-4E29-AF9A-74458AC9DFA2"
+                ProductName="Барс ЖКХ - Тюмень"/>
+
+      <Instance Id="InstKhakasia" ProductCode="9A3789FB-2232-4BEB-99AE-CE1998F94C53"
+                UpgradeCode="45063383-F8D7-4588-8EE3-8255DABCA7D5"
+                ProductName="Барс ЖКХ - Хакасия"/>
+
+      <Instance Id="InstHMAO" ProductCode="91E84EFF-C391-4CBC-8BF1-E39624A79D08"
+                UpgradeCode="DBB6B0C5-D1FB-4C37-9E13-B5698685D56E"
+                ProductName="Барс ЖКХ - ХМАО"/>
+
+      <Instance Id="InstChelyabinsk" ProductCode="B46BB270-C356-4EDA-B822-13EE811A42F3"
+                UpgradeCode="629EF4AE-393F-40F0-AC07-406F48B470A2"
+                ProductName="Барс ЖКХ - Челябинск"/>
+
+      <Instance Id="InstYANAO" ProductCode="B46BB270-C356-4EDA-B822-13EE811A42F3"
+                UpgradeCode="629EF4AE-393F-40F0-AC07-406F48B470A2"
+                ProductName="Барс ЖКХ - ЯНАО"/>
+    </InstanceTransforms>
+
+    <Feature Id="GkhAppFeature" Title="БАРС ЖКХ" Level="1" Description="Инсталляционный пакет продукта БАРС ЖКХ"
+             ConfigurableDirectory="INSTALLLOCATION">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="IssConfiguration" />
+    </Feature>
+
+    <Feature Id="GkhCalServerFeature" Title="Сервер расчетов" Level="2" Description="Инсталляционный пакет сервера расчетов БАРС ЖКХ"
+             ConfigurableDirectory="CALCSERVERFOLDER">
+      <ComponentGroupRef Id="ProductCalcComponents" />
+    </Feature>
+
+    <Binary Id="SetupActions.CA.dll"
+            src="$(var.Bars.Tools.Installer.SetupActions.TargetDir)Bars.Tools.Installer.SetupActions.CA.dll" />
+
+    <Property Id="INSTANCEID" Value="0" />
+
+    <Property Id="FRAMEWORKBASEPATH">
+      <RegistrySearch Id="FindFrameworkDir" Root="HKLM"
+        Key="SOFTWARE\Microsoft\.NETFramework"
+        Name="InstallRoot" Type="raw"/>
+    </Property>
+
+    <PropertyRef Id="NETFRAMEWORK40FULL"/>
+    <Condition Message="Для установки данного приложения необходимо сначала установить Microsoft .NET Framework 4.0">
+      <![CDATA[Installed OR NETFRAMEWORK40FULL]]>
+    </Condition>
+
+    <Property Id="ASPNETREGIIS" >
+      <DirectorySearch Path="[FRAMEWORKBASEPATH]"
+                  Depth="4" Id="FindAspNetRegIis">
+        <FileSearch Name="aspnet_regiis.exe" MinVersion="4.0"/>
+      </DirectorySearch>
+    </Property>
+
+    <CustomAction Id="RegisterIis" Directory="INSTALLLOCATION"
+      ExeCommand="[ASPNETREGIIS] -i"
+      Return="check"/>
+
+    <CustomAction Id="CreateAppAction" Directory="INSTALLLOCATION"
+      ExeCommand="[ASPNETREGIIS] -s W3SVC/1/ROOT/[VIRTUAL_APP_NAME]"
+      Return="check"/>
+
+    <CustomAction Id="ValidateLicenseAction"
+             Return="check"
+             Execute="immediate"
+             BinaryKey="SetupActions.CA.dll"
+             Impersonate="no"
+             DllEntry="ValidateLicense" />
+
+    <CustomAction Id="GetLicenseFileAction"
+             Return="check"
+             Execute="immediate"
+             BinaryKey="SetupActions.CA.dll"
+             Impersonate="no"
+             DllEntry="GetLicenseFile" />
+
+    <CustomAction Id="SaveLicenseAction"
+                 Return="check"
+                 Execute="immediate"
+                 BinaryKey="SetupActions.CA.dll"
+                 Impersonate="no"
+                 DllEntry="SaveLicense" />
+
+    <CustomAction Id="DeleteLicenseAction"
+                 Return="check"
+                 Execute="immediate"
+                 BinaryKey="SetupActions.CA.dll"
+                 DllEntry="DeleteLicense" />
+
+    <CustomAction Id="ChangeConnectionStringAction"
+             Return="check"
+             Execute="immediate"
+             BinaryKey="SetupActions.CA.dll"
+             DllEntry="ChangeConnectionString" />
+
+    <InstallExecuteSequence>
+      <Custom Action="RegisterIis" After="InstallFinalize">
+        <![CDATA[ASPNETREGIIS AND (NOT Installed OR REINSTALL) AND (&GkhAppFeature=3) AND (NOT PREVIOUSVERSIONSINSTALLED)]]>
+      </Custom>
+      <Custom Action="CreateAppAction" After="InstallFinalize">
+        <![CDATA[ASPNETREGIIS AND (NOT Installed OR REINSTALL) AND (&GkhAppFeature=3) AND (NOT PREVIOUSVERSIONSINSTALLED)]]>
+      </Custom>
+      <Custom Action="ChangeConnectionStringAction" After="InstallFinalize">
+        <![CDATA[(NOT Installed) AND (NOT PREVIOUSVERSIONSINSTALLED)]]>
+      </Custom>
+      <Custom Action="SaveLicenseAction" After="InstallFinalize">
+        <![CDATA[NOT Installed AND (&GkhAppFeature=3)]]>
+      </Custom>
+      <Custom Action="DeleteLicenseAction" After="InstallInitialize">
+        <![CDATA[(REMOVE="ALL") AND (&GkhAppFeature=3)]]>
+      </Custom>
+    </InstallExecuteSequence>
+
+    <UI>
+      <UIRef Id="UIFlow" />
+    </UI>
+
+    <UI Id="MyWixUI_Mondo">
+      <UIRef Id="WixUI_Mondo" />
+      <UIRef Id="WixUI_ErrorProgressText" />
+    </UI>
+
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)Files\license.rtf" />
+
+    <WixVariable Id="WixUIBannerBmp" Value="$(var.ProjectDir)Images\Banner.jpg" />
+    <WixVariable Id="WixUIDialogBmp" Value="$(var.ProjectDir)Images\Dialog.jpg" />
+
+    <Property Id="IIS_MAJOR_VERSION">
+      <RegistrySearch Id="CheckIISVersion" Root="HKLM" Key="SOFTWARE\Microsoft\InetStp" Name="MajorVersion" Type="raw" />
+    </Property>
+    <Condition Message="Служба серверов IIS не обнаружена. Для продолжения установки необходимо включить или установить службу серверов(IIS) на данный компьютер">
+      Installed OR IIS_MAJOR_VERSION
+    </Condition>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLLOCATION" Name="BARS Gkh">
+          <Directory Id="CALCSERVERFOLDER" Name="CalcServer" />
+        </Directory>
+      </Directory>
+    </Directory>
+  </Fragment>
+</Wix>

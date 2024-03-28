@@ -1,0 +1,64 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\..\packages\MSBuild.Microsoft.VisualStudio.Web.targets\build\MSBuild.Microsoft.VisualStudio.Web.targets.props" Condition="Exists('..\..\..\packages\MSBuild.Microsoft.VisualStudio.Web.targets\build\MSBuild.Microsoft.VisualStudio.Web.targets.props')" Label="Paket" />
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <SccProjectName></SccProjectName>
+        <SccLocalPath></SccLocalPath>
+        <SccAuxPath></SccAuxPath>
+        <SccProvider></SccProvider>
+        <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <OutputPath>bin\Debug</OutputPath>
+        <WarningLevel>4</WarningLevel>
+        <DocumentationFile>bin\Debug\Bars.B4.Modules.Analytics.Web.xml</DocumentationFile>
+        <NoWarn>1591</NoWarn>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <OutputPath>bin\Release</OutputPath>
+        <WarningLevel>4</WarningLevel>
+        <DocumentationFile>bin\Release\Bars.B4.Modules.Analytics.Web.xml</DocumentationFile>
+        <NoWarn>1591</NoWarn>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Update="Properties\ModuleAssemblyInfo.tt">
+            <Generator>TextTemplatingFileGenerator</Generator>
+            <LastGenOutput>ModuleAssemblyInfo.cs</LastGenOutput>
+        </None>
+        <None Update="ResourceManifest.tt">
+            <Generator>TextTemplatingFileGenerator</Generator>
+            <LastGenOutput>ResourceManifest.cs</LastGenOutput>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Bars.B4.Modules.ExtJs">
+            <Version>3.2.0-dev.202312131620</Version>
+        </PackageReference>
+        <ProjectReference Include="..\Bars.B4.Modules.Analytics\Bars.B4.Modules.Analytics.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Include="libs\**\*" />
+    </ItemGroup>
+    <ProjectExtensions>
+        <MonoDevelop>
+            <Properties VerifyCodeBehindFields="True" VerifyCodeBehindEvents="True">
+                <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+            </Properties>
+        </MonoDevelop>
+    </ProjectExtensions>
+    <Target Name="AfterBuild" Condition="'$(BuildingInsideVisualStudio)' == 'true'">
+        <ItemGroup>
+            <DllFiles Include="$(TargetDir)*.dll" />
+            <PdbFiles Include="$(TargetDir)*.pdb" />
+            <XmlFiles Include="$(TargetDir)*.xml" />
+        </ItemGroup>
+        <Copy SourceFiles="@(DllFiles)" DestinationFolder="$(SolutionDir).build\" OverwriteReadOnlyFiles="True" SkipUnchangedFiles="True" />
+        <Copy SourceFiles="@(PdbFiles)" DestinationFolder="$(SolutionDir).build\" OverwriteReadOnlyFiles="True" SkipUnchangedFiles="True" />
+        <Copy SourceFiles="@(XmlFiles)" DestinationFolder="$(SolutionDir).build\" OverwriteReadOnlyFiles="True" SkipUnchangedFiles="True" />
+    </Target>
+</Project>

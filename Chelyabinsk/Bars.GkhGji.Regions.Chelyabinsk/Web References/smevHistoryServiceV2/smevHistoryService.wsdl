@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:intf="http://history.smev.ru/v2/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://history.smev.ru/v2/" targetNamespace="http://history.smev.ru/v2/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://history.smev.ru/v2/">
+      <xsd:complexType name="actionFile">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="path" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="length" nillable="true" type="xsd:long" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="body" nillable="true" type="xsd:base64Binary" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="name" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+        <xsd:attribute name="fileRef" type="xsd:string" />
+      </xsd:complexType>
+      <xsd:complexType name="newActionRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="actionCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="addAppId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="addAppIdCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="addSocId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="addSocIdCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="applicantId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="date" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="empFio" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="empId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="empJob" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="finished" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="fromIS" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="innerId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="linkedAction" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="orgName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ownerOrg" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="rguId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="rguTargetId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="actionSoap" type="impl:actionFile" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="socId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="statusDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="toIS" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="uniqId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="endDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sendOrgCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sendOrgRGU" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sendOrgOffice" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sendOrgName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sendOrgOKTMO" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="recOrgCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="recOrgRGU" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="recOrgOffice" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="recOrgName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="recOrgOKTMO" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="newActionRequest" type="impl:newActionRequest" />
+      <xsd:complexType name="newActionResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="extActionId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="guid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="socId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="statusId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="uniqId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="newActionResponse" type="impl:newActionResponse" />
+      <xsd:complexType name="AddAppId">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfAddAppId">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="impl:AddAppId" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="getActionRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="action" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="addSocId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="elkOrderNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="addSocIdCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="applicantId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="arrayOfAddAppId" type="impl:ArrayOfAddAppId" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="changedAfter" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="from" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="guid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="isFinished" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="linkedAction" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="max" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="page" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="orderBy" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="descending" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="rguId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="rguTargetId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="socId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="arrayOfSocId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="to" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="uniqId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="extActionId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="endDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sendOrgCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sendOrgRGU" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sendOrgOffice" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sendOrgOKTMO" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="recOrgCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="recOrgRGU" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="recOrgOffice" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="recOrgOKTMO" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="statusTo" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="statusFrom" type="xsd:dateTime" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getActionRequest" type="impl:getActionRequest" />
+      <xsd:complexType name="ElkFile">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="name" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="url" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="mime" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="size" nillable="true" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfElkFile">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="impl:ElkFile" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ActionStatus">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="file" type="impl:actionFile" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="comment" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="date" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="empFio" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="empId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="empJob" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="is" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="isFinal" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="org" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="orgName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="orgOktmo" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="statusId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="arrayOfElkFiles" type="impl:ArrayOfElkFile" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfActionStatus">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="impl:ActionStatus" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ActionType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Action">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="action" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="addAppId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="elkOrderNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="elkOrderUrl" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="addAppIdCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="addSocId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="addSocIdCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="applicantId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="arrayOfActionStatuses" type="impl:ArrayOfActionStatus" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="date" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="finished" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="fromIS" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="guid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="innerId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="linkedAction" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="rguId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="rguTargetId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="actionSoap" type="impl:actionFile" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="socId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="toIS" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="type" type="impl:ActionType" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="uniqId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="endDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sendOrgCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sendOrgRGU" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sendOrgOffice" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sendOrgName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sendOrgOKTMO" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="recOrgCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="recOrgRGU" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="recOrgOffice" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="recOrgName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="recOrgOKTMO" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfAction">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="impl:Action" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="getActionResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="arrayOfActions" type="impl:ArrayOfAction" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="total" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getActionResponse" type="impl:getActionResponse" />
+      <xsd:complexType name="getActionWithoutAttachRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="impl:getActionRequest">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="getActionWithoutAttachRequest" type="impl:getActionWithoutAttachRequest" />
+      <xsd:complexType name="GetActionWithoutAttachResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="impl:getActionResponse">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="getActionWithoutAttachReturn" type="impl:GetActionWithoutAttachResponse" />
+      <xsd:complexType name="getExtActionWithoutAttachRequest">
+        <xsd:sequence>
+          <xsd:element name="extActionId" type="xsd:string" />
+          <xsd:element name="firstName" type="xsd:string" />
+          <xsd:element name="lastName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="middleName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getExtActionWithoutAttachRequest" type="impl:getExtActionWithoutAttachRequest" />
+      <xsd:simpleType name="Gender">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="male" />
+          <xsd:enumeration value="female" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="PhoneType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="home" />
+          <xsd:enumeration value="work" />
+          <xsd:enumeration value="mobile" />
+          <xsd:enumeration value="none" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="Phone">
+        <xsd:sequence>
+          <xsd:element name="phone" type="xsd:string" />
+          <xsd:element name="type" type="impl:PhoneType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfPhone">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="impl:Phone" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="EmailType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="unknown" />
+          <xsd:enumeration value="work" />
+          <xsd:enumeration value="private" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="Email">
+        <xsd:sequence>
+          <xsd:element name="email" type="xsd:string" />
+          <xsd:element name="type" type="impl:EmailType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfEmail">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="impl:Email" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="getExtActionWithoutAttachResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="action" type="impl:Action" />
+          <xsd:element name="firstName" type="xsd:string" />
+          <xsd:element name="lastName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="middleName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="gender" type="impl:Gender" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="birthDate" type="xsd:date" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="phones" type="impl:ArrayOfPhone" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="emails" type="impl:ArrayOfEmail" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getExtActionWithoutAttachReturn" type="impl:getExtActionWithoutAttachResponse" />
+      <xsd:complexType name="getActionWithAttachRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="impl:getActionRequest">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="getActionWithAttachRequest" type="impl:getActionWithAttachRequest" />
+      <xsd:complexType name="GetActionWithAttachResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="impl:getActionResponse">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="getActionWithAttachReturn" type="impl:GetActionWithAttachResponse" />
+      <xsd:complexType name="getActionByOrgRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="from" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="fromIs" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="max" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="org" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="page" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="to" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="toIs" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getActionByOrgRequest" type="impl:getActionByOrgRequest" />
+      <xsd:complexType name="getActionByOrgResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="arrayOfActions" type="impl:ArrayOfAction" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="total" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getActionByOrgResponse" type="impl:getActionByOrgResponse" />
+      <xsd:complexType name="getStatusesRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="uniqId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getStatusesRequest" type="impl:getStatusesRequest" />
+      <xsd:complexType name="getStatusesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="action" type="impl:Action" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getStatusesResponse" type="impl:getStatusesResponse" />
+      <xsd:complexType name="getExtStatusesRequest">
+        <xsd:sequence>
+          <xsd:element name="extActionId" type="xsd:string" />
+          <xsd:element name="firstName" type="xsd:string" />
+          <xsd:element name="lastName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="middleName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getExtStatusesRequest" type="impl:getExtStatusesRequest" />
+      <xsd:complexType name="getExtStatusesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="action" type="impl:Action" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getExtStatusesResponse" type="impl:getExtStatusesResponse" />
+      <xsd:complexType name="updateInnerIdRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="innerId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="uniqId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateInnerIdRequest" type="impl:updateInnerIdRequest" />
+      <xsd:complexType name="updateInnerIdResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="prevInnerId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="uniqId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateInnerIdResponse" type="impl:updateInnerIdResponse" />
+      <xsd:complexType name="updateStatusRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="file" nillable="true" type="impl:actionFile" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="comment" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="empFio" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="empId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="empJob" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="isFinal" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="org" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="orgName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="orgOktmo" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="statusDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="uniqId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="is" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateStatusRequest" type="impl:updateStatusRequest" />
+      <xsd:complexType name="updateStatusResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="socId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="statusId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="uniqId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateStatusResponse" type="impl:updateStatusResponse" />
+      <xsd:complexType name="updateStatusExtRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="file" nillable="true" type="impl:actionFile" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="comment" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="empFio" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="empId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="empJob" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="isFinal" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="org" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="orgName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="orgOktmo" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="statusDate" type="xsd:dateTime" />
+          <xsd:element name="extActionId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateStatusExtRequest" type="impl:updateStatusExtRequest" />
+      <xsd:complexType name="updateStatusExtResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="socId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="statusId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="uniqId" type="xsd:string" />
+          <xsd:element name="extActionId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateStatusExtResponse" type="impl:updateStatusExtResponse" />
+      <xsd:complexType name="getHistoryStatsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="action" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="addSocId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="elkOrderNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="addSocIdCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="applicantId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="arrayOfAddAppId" type="impl:ArrayOfAddAppId" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="changedAfter" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="from" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="guid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="isFinished" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="linkedAction" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="max" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="page" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="orderBy" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="descending" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="rguId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="rguTargetId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="socId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="arrayOfSocId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="to" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="uniqId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="extActionId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="endDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sendOrgCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sendOrgRGU" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sendOrgOffice" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sendOrgOKTMO" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="recOrgCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="recOrgRGU" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="recOrgOffice" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="recOrgOKTMO" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="statusTo" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="statusFrom" type="xsd:dateTime" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getHistoryStatsRequest" type="impl:getHistoryStatsRequest" />
+      <xsd:complexType name="StatsEntry">
+        <xsd:sequence>
+          <xsd:element name="code" type="xsd:string" />
+          <xsd:element name="count" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfStatsEntry">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="impl:StatsEntry" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="getHistoryStatsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="activeCount" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="finishedCount" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="activeEntries" type="impl:ArrayOfStatsEntry" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="finishedEntries" type="impl:ArrayOfStatsEntry" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getHistoryStatsResponse" type="impl:getHistoryStatsResponse" />
+      <xsd:complexType name="getStatusFileRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="statusId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getStatusFileRequest" type="impl:getStatusFileRequest" />
+      <xsd:complexType name="getStatusFileResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="statusFile" type="impl:actionFile" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getStatusFileResponse" type="impl:getStatusFileResponse" />
+      <xsd:complexType name="updatePersonalIdsRequest">
+        <xsd:sequence>
+          <xsd:element name="socId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="newSocId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="newApplicantId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updatePersonalIdsRequest" type="impl:updatePersonalIdsRequest" />
+      <xsd:complexType name="updatePersonalIdsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="total" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updatePersonalIdsResponse" type="impl:updatePersonalIdsResponse" />
+      <xsd:complexType name="newActionListRequest">
+        <xsd:sequence>
+          <xsd:element name="newActions" type="impl:ArrayOfAction" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="newActionListRequest" type="impl:newActionListRequest" />
+      <xsd:complexType name="newActionResult">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="impl:newActionResponse">
+            <xsd:sequence>
+              <xsd:element name="resultCode" type="xsd:int" />
+              <xsd:element name="resultMessage" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfnewActionResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="impl:newActionResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="newActionListResponse">
+        <xsd:sequence>
+          <xsd:element name="arrayOfNewActionResults" type="impl:ArrayOfnewActionResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="newActionListResponse" type="impl:newActionListResponse" />
+      <xsd:complexType name="updateStatusListRequest">
+        <xsd:sequence>
+          <xsd:element name="actionsForUpdate" type="impl:ArrayOfAction" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateStatusListRequest" type="impl:updateStatusListRequest" />
+      <xsd:complexType name="updateStatusListResult">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="impl:updateStatusResponse">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" maxOccurs="1" name="extActionId" type="xsd:string" />
+              <xsd:element name="resultCode" type="xsd:int" />
+              <xsd:element name="resultMessage" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfupdateStatusListResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="impl:updateStatusListResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="updateStatusListResponse">
+        <xsd:sequence>
+          <xsd:element name="arrayOfUpdateStatusListResults" type="impl:ArrayOfupdateStatusListResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateStatusListResponse" type="impl:updateStatusListResponse" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="updateStatusResponse">
+    <wsdl:part name="updateStatusResponse" element="impl:updateStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateStatusListRequest">
+    <wsdl:part name="updateStatusListRequest" element="impl:updateStatusListRequest" />
+  </wsdl:message>
+  <wsdl:message name="getActionResponse">
+    <wsdl:part name="getActionResponse" element="impl:getActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="updatePersonalIdsRequest">
+    <wsdl:part name="updatePersonalIdsRequest" element="impl:updatePersonalIdsRequest" />
+  </wsdl:message>
+  <wsdl:message name="getActionByOrgResponse">
+    <wsdl:part name="getActionByOrgResponse" element="impl:getActionByOrgResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateStatusRequest">
+    <wsdl:part name="updateStatusRequest" element="impl:updateStatusRequest" />
+  </wsdl:message>
+  <wsdl:message name="getActionRequest">
+    <wsdl:part name="getActionRequest" element="impl:getActionRequest" />
+  </wsdl:message>
+  <wsdl:message name="getHistoryStatsResponse">
+    <wsdl:part name="getHistoryStatsResponse" element="impl:getHistoryStatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateInnerIdRequest">
+    <wsdl:part name="updateInnerIdRequest" element="impl:updateInnerIdRequest" />
+  </wsdl:message>
+  <wsdl:message name="newActionResponse">
+    <wsdl:part name="newActionResponse" element="impl:newActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="newActionRequest">
+    <wsdl:part name="newActionRequest" element="impl:newActionRequest" />
+  </wsdl:message>
+  <wsdl:message name="getExtStatusesRequest">
+    <wsdl:part name="getExtStatusesRequest" element="impl:getExtStatusesRequest" />
+  </wsdl:message>
+  <wsdl:message name="getStatusFileRequest">
+    <wsdl:part name="getStatusFileRequest" element="impl:getStatusFileRequest" />
+  </wsdl:message>
+  <wsdl:message name="newActionListResponse">
+    <wsdl:part name="newActionListResponse" element="impl:newActionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SoapFault" />
+  <wsdl:message name="getActionWithoutAttachRequest">
+    <wsdl:part name="getActionWithoutAttachRequest" element="impl:getActionWithoutAttachRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateStatusExtRequest">
+    <wsdl:part name="updateStatusExtRequest" element="impl:updateStatusExtRequest" />
+  </wsdl:message>
+  <wsdl:message name="getActionWithoutAttachResponse">
+    <wsdl:part name="getActionWithoutAttachReturn" element="impl:getActionWithoutAttachReturn" />
+  </wsdl:message>
+  <wsdl:message name="getActionWithAttachResponse">
+    <wsdl:part name="getActionWithAttachReturn" element="impl:getActionWithAttachReturn" />
+  </wsdl:message>
+  <wsdl:message name="updateStatusExtResponse">
+    <wsdl:part name="updateStatusExtResponse" element="impl:updateStatusExtResponse" />
+  </wsdl:message>
+  <wsdl:message name="getActionByOrgRequest">
+    <wsdl:part name="getActionByOrgRequest" element="impl:getActionByOrgRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateStatusListResponse">
+    <wsdl:part name="updateStatusListResponse" element="impl:updateStatusListResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateInnerIdResponse">
+    <wsdl:part name="updateInnerIdResponse" element="impl:updateInnerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="newActionListRequest">
+    <wsdl:part name="newActionListRequest" element="impl:newActionListRequest" />
+  </wsdl:message>
+  <wsdl:message name="getExtActionWithoutAttachRequest">
+    <wsdl:part name="getExtActionWithoutAttachRequest" element="impl:getExtActionWithoutAttachRequest" />
+  </wsdl:message>
+  <wsdl:message name="getActionWithAttachRequest">
+    <wsdl:part name="getActionWithAttachRequest" element="impl:getActionWithAttachRequest" />
+  </wsdl:message>
+  <wsdl:message name="getStatusFileResponse">
+    <wsdl:part name="getStatusFileResponse" element="impl:getStatusFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStatusesRequest">
+    <wsdl:part name="getStatusesRequest" element="impl:getStatusesRequest" />
+  </wsdl:message>
+  <wsdl:message name="getExtStatusesResponse">
+    <wsdl:part name="getExtStatusesResponse" element="impl:getExtStatusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="updatePersonalIdsResponse">
+    <wsdl:part name="updatePersonalIdsResponse" element="impl:updatePersonalIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHistoryStatsRequest">
+    <wsdl:part name="getHistoryStatsRequest" element="impl:getHistoryStatsRequest" />
+  </wsdl:message>
+  <wsdl:message name="getStatusesResponse">
+    <wsdl:part name="getStatusesResponse" element="impl:getStatusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getExtActionWithoutAttachResponse">
+    <wsdl:part name="getExtActionWithoutAttachReturn" element="impl:getExtActionWithoutAttachReturn" />
+  </wsdl:message>
+  <wsdl:portType name="smevHistoryServiceV2PortType">
+    <wsdl:operation name="newAction" parameterOrder="newActionRequest">
+      <wsdl:input name="newActionRequest" message="impl:newActionRequest" />
+      <wsdl:output name="newActionResponse" message="impl:newActionResponse" />
+      <wsdl:fault name="SoapFault" message="impl:SoapFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getAction" parameterOrder="getActionRequest">
+      <wsdl:input name="getActionRequest" message="impl:getActionRequest" />
+      <wsdl:output name="getActionResponse" message="impl:getActionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getActionWithoutAttach" parameterOrder="getActionWithoutAttachRequest">
+      <wsdl:input name="getActionWithoutAttachRequest" message="impl:getActionWithoutAttachRequest" />
+      <wsdl:output name="getActionWithoutAttachResponse" message="impl:getActionWithoutAttachResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getExtActionWithoutAttach" parameterOrder="getExtActionWithoutAttachRequest">
+      <wsdl:input name="getExtActionWithoutAttachRequest" message="impl:getExtActionWithoutAttachRequest" />
+      <wsdl:output name="getExtActionWithoutAttachResponse" message="impl:getExtActionWithoutAttachResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getActionWithAttach" parameterOrder="getActionWithAttachRequest">
+      <wsdl:input name="getActionWithAttachRequest" message="impl:getActionWithAttachRequest" />
+      <wsdl:output name="getActionWithAttachResponse" message="impl:getActionWithAttachResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getActionByOrg" parameterOrder="getActionByOrgRequest">
+      <wsdl:input name="getActionByOrgRequest" message="impl:getActionByOrgRequest" />
+      <wsdl:output name="getActionByOrgResponse" message="impl:getActionByOrgResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getStatuses" parameterOrder="getStatusesRequest">
+      <wsdl:input name="getStatusesRequest" message="impl:getStatusesRequest" />
+      <wsdl:output name="getStatusesResponse" message="impl:getStatusesResponse" />
+      <wsdl:fault name="SoapFault" message="impl:SoapFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getExtStatuses" parameterOrder="getExtStatusesRequest">
+      <wsdl:input name="getExtStatusesRequest" message="impl:getExtStatusesRequest" />
+      <wsdl:output name="getExtStatusesResponse" message="impl:getExtStatusesResponse" />
+      <wsdl:fault name="SoapFault" message="impl:SoapFault" />
+    </wsdl:operation>
+    <wsdl:operation name="updateInnerId" parameterOrder="updateInnerIdRequest">
+      <wsdl:input name="updateInnerIdRequest" message="impl:updateInnerIdRequest" />
+      <wsdl:output name="updateInnerIdResponse" message="impl:updateInnerIdResponse" />
+      <wsdl:fault name="SoapFault" message="impl:SoapFault" />
+    </wsdl:operation>
+    <wsdl:operation name="updateStatus" parameterOrder="updateStatusRequest">
+      <wsdl:input name="updateStatusRequest" message="impl:updateStatusRequest" />
+      <wsdl:output name="updateStatusResponse" message="impl:updateStatusResponse" />
+      <wsdl:fault name="SoapFault" message="impl:SoapFault" />
+    </wsdl:operation>
+    <wsdl:operation name="updateStatusExt" parameterOrder="updateStatusExtRequest">
+      <wsdl:input name="updateStatusExtRequest" message="impl:updateStatusExtRequest" />
+      <wsdl:output name="updateStatusExtResponse" message="impl:updateStatusExtResponse" />
+      <wsdl:fault name="SoapFault" message="impl:SoapFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getHistoryStats" parameterOrder="getHistoryStatsRequest">
+      <wsdl:input name="getHistoryStatsRequest" message="impl:getHistoryStatsRequest" />
+      <wsdl:output name="getHistoryStatsResponse" message="impl:getHistoryStatsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getStatusFile" parameterOrder="getStatusFileRequest">
+      <wsdl:input name="getStatusFileRequest" message="impl:getStatusFileRequest" />
+      <wsdl:output name="getStatusFileResponse" message="impl:getStatusFileResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updatePersonalIds" parameterOrder="updatePersonalIdsRequest">
+      <wsdl:input name="updatePersonalIdsRequest" message="impl:updatePersonalIdsRequest" />
+      <wsdl:output name="updatePersonalIdsResponse" message="impl:updatePersonalIdsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="newActionList" parameterOrder="newActionListRequest">
+      <wsdl:input name="newActionListRequest" message="impl:newActionListRequest" />
+      <wsdl:output name="newActionListResponse" message="impl:newActionListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateStatusList" parameterOrder="updateStatusListRequest">
+      <wsdl:input name="updateStatusListRequest" message="impl:updateStatusListRequest" />
+      <wsdl:output name="updateStatusListResponse" message="impl:updateStatusListResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="servicePortSoapBinding" type="impl:smevHistoryServiceV2PortType">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="newAction">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="newActionRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="newActionResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SoapFault">
+        <wsdlsoap:fault use="literal" name="SoapFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAction">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getActionRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getActionResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActionWithoutAttach">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getActionWithoutAttachRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getActionWithoutAttachResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExtActionWithoutAttach">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getExtActionWithoutAttachRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getExtActionWithoutAttachResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActionWithAttach">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getActionWithAttachRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getActionWithAttachResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActionByOrg">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getActionByOrgRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getActionByOrgResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatuses">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getStatusesRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getStatusesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SoapFault">
+        <wsdlsoap:fault use="literal" name="SoapFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getExtStatuses">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getExtStatusesRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getExtStatusesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SoapFault">
+        <wsdlsoap:fault use="literal" name="SoapFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateInnerId">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateInnerIdRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateInnerIdResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SoapFault">
+        <wsdlsoap:fault use="literal" name="SoapFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateStatus">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateStatusRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateStatusResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SoapFault">
+        <wsdlsoap:fault use="literal" name="SoapFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateStatusExt">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateStatusExtRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateStatusExtResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SoapFault">
+        <wsdlsoap:fault use="literal" name="SoapFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getHistoryStats">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getHistoryStatsRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getHistoryStatsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatusFile">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getStatusFileRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getStatusFileResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePersonalIds">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updatePersonalIdsRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updatePersonalIdsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newActionList">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="newActionListRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="newActionListResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateStatusList">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateStatusListRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateStatusListResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="smevHistoryServiceV2">
+    <wsdl:port name="servicePort" binding="impl:servicePortSoapBinding">
+      <wsdlsoap:address location="http://172.153.155.30/service/smevHistoryService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,589 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <Соединение Ref="2" type="Stimulsoft.Report.Dictionary.StiXmlDatabase" isKey="true">
+        <Alias>Соединение</Alias>
+        <Name>Соединение</Name>
+        <PathData>D:\MKD.xml</PathData>
+        <PathSchema>D:\MKD.xsd</PathSchema>
+      </Соединение>
+    </Databases>
+    <DataSources isList="true" count="2">
+      <detail Ref="3" type="DataTableSource" isKey="true">
+        <Alias>detail</Alias>
+        <Columns isList="true" count="9">
+          <value>kod_raj,System.Int32</value>
+          <value>nzp_serv,System.Int32</value>
+          <value>cnt_dmx,System.Decimal</value>
+          <value>cnt_gil,System.Decimal</value>
+          <value>sq,System.Decimal</value>
+          <value>tarif,System.Decimal</value>
+          <value>c_calc,System.Decimal</value>
+          <value>sum_charge,System.Decimal</value>
+          <value>dat_calc,System.DateTime</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>detail</Name>
+        <NameInSource>Соединение.detail</NameInSource>
+      </detail>
+      <master Ref="4" type="DataTableSource" isKey="true">
+        <Alias>master</Alias>
+        <Columns isList="true" count="7">
+          <value>kod_raj_sort,System.Int32</value>
+          <value>rajon,System.String</value>
+          <value>nzp_serv_sort,System.Int32</value>
+          <value>service,System.String</value>
+          <value>measure,System.String</value>
+          <value>kod_raj,System.Int32</value>
+          <value>nzp_serv,System.Int32</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>master</Name>
+        <NameInSource>Соединение.master</NameInSource>
+      </master>
+    </DataSources>
+    <Relations isList="true" count="1">
+      <masterdetail Ref="5" type="DataRelation" isKey="true">
+        <Alias>masterdetail</Alias>
+        <ChildColumns isList="true" count="2">
+          <value>kod_raj</value>
+          <value>nzp_serv</value>
+        </ChildColumns>
+        <ChildSource isRef="3" />
+        <Dictionary isRef="1" />
+        <Name>masterdetail</Name>
+        <NameInSource>masterdetail</NameInSource>
+        <ParentColumns isList="true" count="2">
+          <value>kod_raj</value>
+          <value>nzp_serv</value>
+        </ParentColumns>
+        <ParentSource isRef="4" />
+      </masterdetail>
+    </Relations>
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="6" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="2">
+        <HeaderBand1 Ref="7" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,198,1.6</ClientRectangle>
+          <Components isList="true" count="2">
+            <CrossHeaderBand1 Ref="8" type="Stimulsoft.Report.Components.StiCrossHeaderBand" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,9.4,1.6</ClientRectangle>
+              <Components isList="true" count="3">
+                <Text1 Ref="9" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,0,3.6,1.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8.25,Bold,Point,False,204</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text1</Name>
+                  <Page isRef="6" />
+                  <Parent isRef="8" />
+                  <Text>Район</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text1>
+                <Text2 Ref="10" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>3.6,0,4.2,1.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8.25,Bold,Point,False,204</Font>
+                  <Guid>9bc918419275464b9f584959b541b685</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text2</Name>
+                  <Page isRef="6" />
+                  <Parent isRef="8" />
+                  <Text>Услуга</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text2>
+                <Text3 Ref="11" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>7.8,0,1.6,1.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8.25,Bold,Point,False,204</Font>
+                  <Guid>f1292deb11c540c283b7ff9965afdd0c</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text3</Name>
+                  <Page isRef="6" />
+                  <Parent isRef="8" />
+                  <Text>Единица измерения</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text3>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <Name>CrossHeaderBand1</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+            </CrossHeaderBand1>
+            <CrossDataBand1 Ref="12" type="CrossDataBand" isKey="true">
+              <Brush>Transparent</Brush>
+              <BusinessObjectGuid isNull="true" />
+              <ClientRectangle>9.4,0,11.2,1.6</ClientRectangle>
+              <Components isList="true" count="7">
+                <Text4 Ref="13" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,0.8,1.6,0.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8.25,Bold,Point,False,204</Font>
+                  <Guid>fa9eb6ac9ec745218418bafde1939f30</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text4</Name>
+                  <Page isRef="6" />
+                  <Parent isRef="12" />
+                  <Text>Кол-во ДХ</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text4>
+                <Text5 Ref="14" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>1.6,0.8,1.6,0.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8.25,Bold,Point,False,204</Font>
+                  <Guid>1359201caf34485ba8245a5b1fa2514a</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text5</Name>
+                  <Page isRef="6" />
+                  <Parent isRef="12" />
+                  <Text>Чел.</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text5>
+                <Text6 Ref="15" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>3.2,0.8,2.2,0.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8.25,Bold,Point,False,204</Font>
+                  <Guid>9bf2611d7c6c469eb0d5f562b06da98c</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text6</Name>
+                  <Page isRef="6" />
+                  <Parent isRef="12" />
+                  <Text>Площадь (кв.м.)</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text6>
+                <Text7 Ref="16" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>5.4,0.8,1.6,0.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8.25,Bold,Point,False,204</Font>
+                  <Guid>216d43c7e3524a7986b2f210faa60d1e</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text7</Name>
+                  <Page isRef="6" />
+                  <Parent isRef="12" />
+                  <Text>Тариф (руб.)</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text7>
+                <Text8 Ref="17" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>7,0.8,2.2,0.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8.25,Bold,Point,False,204</Font>
+                  <Guid>f09cb442337c4484b05f24d459aeee79</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text8</Name>
+                  <Page isRef="6" />
+                  <Parent isRef="12" />
+                  <Text>Объем</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text8>
+                <Text9 Ref="18" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>9.2,0.8,2,0.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8.25,Bold,Point,False,204</Font>
+                  <Guid>a0ad1b1cb2ae4a3bb2e4cb84e18a6ae8</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text9</Name>
+                  <Page isRef="6" />
+                  <Parent isRef="12" />
+                  <Text>Начислено (руб.)</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text9>
+                <Text10 Ref="19" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,0,11.2,0.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8.25,Bold,Point,False,204</Font>
+                  <Guid>31c0dda003b9450d84a3f15066dd5e70</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text10</Name>
+                  <Page isRef="6" />
+                  <Parent isRef="12" />
+                  <Text>{IIF(
+detail.dat_calc.Day == 31,
+"01.01." + detail.dat_calc.Year + " - 01.12." + detail.dat_calc.Year,
+detail.dat_calc.ToString("dd.MM.yyyy")
+)}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text10>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <DataRelationName>masterdetail</DataRelationName>
+              <DataSourceName>detail</DataSourceName>
+              <Filters isList="true" count="0" />
+              <MasterComponent isRef="20" />
+              <Name>CrossDataBand1</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Sort isList="true" count="0" />
+            </CrossDataBand1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand1</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+        </HeaderBand1>
+        <DataBand1 Ref="20" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,2.8,198,0.4</ClientRectangle>
+          <Components isList="true" count="2">
+            <CrossHeaderBand2 Ref="21" type="Stimulsoft.Report.Components.StiCrossHeaderBand" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,9.4,0.4</ClientRectangle>
+              <Components isList="true" count="3">
+                <Text95 Ref="22" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,0,3.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8.25,Regular,Point,False,204</Font>
+                  <Guid>dbf11ebdb34c45dba0bb7669ef092444</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text95</Name>
+                  <Page isRef="6" />
+                  <Parent isRef="21" />
+                  <Text>{master.rajon}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text95>
+                <Text96 Ref="23" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>3.6,0,4.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8.25,Regular,Point,False,204</Font>
+                  <Guid>9afac6466ea143eaa1ce9242db94c521</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text96</Name>
+                  <Page isRef="6" />
+                  <Parent isRef="21" />
+                  <Text>{master.service}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text96>
+                <Text97 Ref="24" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>7.8,0,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8.25,Regular,Point,False,204</Font>
+                  <Guid>7b821709a6154a6a879627e5608d9e35</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text97</Name>
+                  <Page isRef="6" />
+                  <Parent isRef="21" />
+                  <Text>{master.measure}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text97>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <Name>CrossHeaderBand2</Name>
+              <Page isRef="6" />
+              <Parent isRef="20" />
+            </CrossHeaderBand2>
+            <CrossDataBand2 Ref="25" type="CrossDataBand" isKey="true">
+              <Brush>Transparent</Brush>
+              <BusinessObjectGuid isNull="true" />
+              <ClientRectangle>9.4,0,11.2,0.4</ClientRectangle>
+              <Components isList="true" count="6">
+                <Text98 Ref="26" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,0,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8.25,Regular,Point,False,204</Font>
+                  <Guid>433c1ebad1d2451ea8d4bfa1043e678f</Guid>
+                  <HorAlignment>Right</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text98</Name>
+                  <Page isRef="6" />
+                  <Parent isRef="25" />
+                  <Text>{detail.cnt_dmx}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="27" type="NumberFormat" isKey="true">
+                    <DecimalDigits>0</DecimalDigits>
+                    <DecimalSeparator>,</DecimalSeparator>
+                    <GroupSeparator> </GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                    <UseLocalSetting>False</UseLocalSetting>
+                  </TextFormat>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text98>
+                <Text99 Ref="28" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>1.6,0,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8.25,Regular,Point,False,204</Font>
+                  <Guid>8957472247ce4f7e8a730a8dc901b204</Guid>
+                  <HorAlignment>Right</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text99</Name>
+                  <Page isRef="6" />
+                  <Parent isRef="25" />
+                  <Text>{detail.cnt_gil}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="29" type="NumberFormat" isKey="true">
+                    <DecimalDigits>0</DecimalDigits>
+                    <DecimalSeparator>,</DecimalSeparator>
+                    <GroupSeparator> </GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                    <UseLocalSetting>False</UseLocalSetting>
+                  </TextFormat>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text99>
+                <Text100 Ref="30" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>3.2,0,2.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8.25,Regular,Point,False,204</Font>
+                  <Guid>b1a76592a5374c5998fc4308753c51c4</Guid>
+                  <HorAlignment>Right</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text100</Name>
+                  <Page isRef="6" />
+                  <Parent isRef="25" />
+                  <Text>{detail.sq}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="31" type="NumberFormat" isKey="true">
+                    <DecimalSeparator>,</DecimalSeparator>
+                    <GroupSeparator> </GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text100>
+                <Text101 Ref="32" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>5.4,0,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8.25,Regular,Point,False,204</Font>
+                  <Guid>cae6664a88da4971b8c9ee1303b8ce3e</Guid>
+                  <HorAlignment>Right</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text101</Name>
+                  <Page isRef="6" />
+                  <Parent isRef="25" />
+                  <Text>{detail.tarif}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="33" type="NumberFormat" isKey="true">
+                    <DecimalSeparator>,</DecimalSeparator>
+                    <GroupSeparator> </GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text101>
+                <Text102 Ref="34" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>7,0,2.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8.25,Regular,Point,False,204</Font>
+                  <Guid>b7296b90be2d4768a64b7df656725801</Guid>
+                  <HorAlignment>Right</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text102</Name>
+                  <Page isRef="6" />
+                  <Parent isRef="25" />
+                  <Text>{detail.c_calc}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="35" type="NumberFormat" isKey="true">
+                    <DecimalSeparator>,</DecimalSeparator>
+                    <GroupSeparator> </GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text102>
+                <Text103 Ref="36" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>9.2,0,2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8.25,Regular,Point,False,204</Font>
+                  <Guid>5c5de34e727f441b9de92c061226c81d</Guid>
+                  <HorAlignment>Right</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text103</Name>
+                  <Page isRef="6" />
+                  <Parent isRef="25" />
+                  <Text>{detail.sum_charge}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextFormat Ref="37" type="NumberFormat" isKey="true">
+                    <DecimalSeparator>,</DecimalSeparator>
+                    <GroupSeparator> </GroupSeparator>
+                    <NegativePattern>1</NegativePattern>
+                  </TextFormat>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text103>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <DataRelationName>masterdetail</DataRelationName>
+              <DataSourceName>detail</DataSourceName>
+              <Filters isList="true" count="0" />
+              <MasterComponent isRef="20" />
+              <Name>CrossDataBand2</Name>
+              <Page isRef="6" />
+              <Parent isRef="20" />
+              <Sort isList="true" count="0" />
+            </CrossDataBand2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>master</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand1</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>ec826993ce264dc0bebe1d71427d2085</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>21</PageHeight>
+      <PageWidth>200</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+      <Watermark Ref="38" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="39" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>2/25/2014 5:06:22 PM</ReportChanged>
+  <ReportCreated>2/25/2014 10:13:58 AM</ReportCreated>
+  <ReportFile>C:\Users\tempuser\Documents\Visual Studio 2013\Projects\Bars.News\Bars.News\Resources\Report_MKD.mrt</ReportFile>
+  <ReportGuid>9d5f104aa3634da9bce2b74d8f7fc37f</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2013.3.1800</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

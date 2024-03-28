@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    @*<link rel="shortcut icon" href="@Url.Content("~/content/favicon.ico")" />*@
+
+    @if (IsSectionDefined("Head"))
+    {
+        @RenderSection("Head", false)
+    }
+    
+    @if (IsSectionDefined("HeadContent"))
+    {
+        @RenderSection("HeadContent", false)
+    }
+</head>
+<body>
+    @RenderBody()
+</body>
+    @if (IsSectionDefined("Trail"))
+    {
+        @RenderSection("Trail", false)
+    }
+</html>

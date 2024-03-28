@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="5">
+      <Шапка Ref="2" type="DataTableSource" isKey="true">
+        <Alias>Шапка</Alias>
+        <Columns isList="true" count="2">
+          <value>PeriodName,System.String</value>
+          <value>ServiceName,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Шапка</Name>
+        <NameInSource>Шапка</NameInSource>
+      </Шапка>
+      <Раздел1 Ref="3" type="DataTableSource" isKey="true">
+        <Alias>Раздел1</Alias>
+        <Columns isList="true" count="3">
+          <value>DisplayValue,System.String</value>
+          <value>RowNumber,System.Nullable`1[System.Int32]</value>
+          <value>Value,System.Nullable`1[System.Decimal]</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Раздел1</Name>
+        <NameInSource>Раздел1</NameInSource>
+      </Раздел1>
+      <Раздел3 Ref="4" type="DataTableSource" isKey="true">
+        <Alias>Раздел3</Alias>
+        <Columns isList="true" count="3">
+          <value>DisplayValue,System.String</value>
+          <value>RowNumber,System.Nullable`1[System.Int32]</value>
+          <value>Value,System.Nullable`1[System.Decimal]</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Раздел3</Name>
+        <NameInSource>Раздел3</NameInSource>
+      </Раздел3>
+      <Раздел4 Ref="5" type="DataTableSource" isKey="true">
+        <Alias>Раздел4</Alias>
+        <Columns isList="true" count="3">
+          <value>DisplayValue,System.String</value>
+          <value>RowNumber,System.Nullable`1[System.Int32]</value>
+          <value>Value,System.Nullable`1[System.Decimal]</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Раздел4</Name>
+        <NameInSource>Раздел4</NameInSource>
+      </Раздел4>
+      <Раздел2 Ref="6" type="DataTableSource" isKey="true">
+        <Alias>Раздел2</Alias>
+        <Columns isList="true" count="3">
+          <value>DisplayValue,System.String</value>
+          <value>RowNumber,System.Nullable`1[System.Int32]</value>
+          <value>Value,System.Nullable`1[System.Decimal]</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Раздел2</Name>
+        <NameInSource>Раздел2</NameInSource>
+      </Раздел2>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="7" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="10">
+        <HeaderШапка Ref="8" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,19,0.8</ClientRectangle>
+          <Components isList="true" count="2">
+            <HeaderШапка_PeriodName Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,9.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderШапка_PeriodName</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>PeriodName</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderШапка_PeriodName>
+            <HeaderШапка_ServiceName Ref="10" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0,9.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderШапка_ServiceName</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>ServiceName</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderШапка_ServiceName>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderШапка</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </HeaderШапка>
+        <DataШапка Ref="11" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,2,19,0.8</ClientRectangle>
+          <Components isList="true" count="2">
+            <DataШапка_PeriodName Ref="12" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,9.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataШапка_PeriodName</Name>
+              <Page isRef="7" />
+              <Parent isRef="11" />
+              <Text>{Шапка.PeriodName}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataШапка_PeriodName>
+            <DataШапка_ServiceName Ref="13" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>9.6,0,9.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataШапка_ServiceName</Name>
+              <Page isRef="7" />
+              <Parent isRef="11" />
+              <Text>{Шапка.ServiceName}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataШапка_ServiceName>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Шапка</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataШапка</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <Sort isList="true" count="0" />
+        </DataШапка>
+        <HeaderРаздел1 Ref="14" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,3.6,19,0.8</ClientRectangle>
+          <Components isList="true" count="3">
+            <HeaderРаздел1_DisplayValue Ref="15" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderРаздел1_DisplayValue</Name>
+              <Page isRef="7" />
+              <Parent isRef="14" />
+              <Text>DisplayValue</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderРаздел1_DisplayValue>
+            <HeaderРаздел1_RowNumber Ref="16" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.4,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderРаздел1_RowNumber</Name>
+              <Page isRef="7" />
+              <Parent isRef="14" />
+              <Text>RowNumber</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderРаздел1_RowNumber>
+            <HeaderРаздел1_Value Ref="17" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderРаздел1_Value</Name>
+              <Page isRef="7" />
+              <Parent isRef="14" />
+              <Text>Value</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderРаздел1_Value>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderРаздел1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </HeaderРаздел1>
+        <DataРаздел1 Ref="18" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,5.2,19,0.8</ClientRectangle>
+          <Components isList="true" count="3">
+            <DataРаздел1_DisplayValue Ref="19" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataРаздел1_DisplayValue</Name>
+              <Page isRef="7" />
+              <Parent isRef="18" />
+              <Text>{Раздел1.DisplayValue}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataРаздел1_DisplayValue>
+            <DataРаздел1_RowNumber Ref="20" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.4,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataРаздел1_RowNumber</Name>
+              <Page isRef="7" />
+              <Parent isRef="18" />
+              <Text>{Раздел1.RowNumber}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataРаздел1_RowNumber>
+            <DataРаздел1_Value Ref="21" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>12.8,0,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataРаздел1_Value</Name>
+              <Page isRef="7" />
+              <Parent isRef="18" />
+              <Text>{Раздел1.Value}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataРаздел1_Value>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Раздел1</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataРаздел1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <Sort isList="true" count="0" />
+        </DataРаздел1>
+        <HeaderРаздел2 Ref="22" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,6.8,19,0.8</ClientRectangle>
+          <Components isList="true" count="3">
+            <HeaderРаздел2_DisplayValue Ref="23" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderРаздел2_DisplayValue</Name>
+              <Page isRef="7" />
+              <Parent isRef="22" />
+              <Text>DisplayValue</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderРаздел2_DisplayValue>
+            <HeaderРаздел2_RowNumber Ref="24" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.4,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderРаздел2_RowNumber</Name>
+              <Page isRef="7" />
+              <Parent isRef="22" />
+              <Text>RowNumber</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderРаздел2_RowNumber>
+            <HeaderРаздел2_Value Ref="25" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderРаздел2_Value</Name>
+              <Page isRef="7" />
+              <Parent isRef="22" />
+              <Text>Value</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderРаздел2_Value>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderРаздел2</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </HeaderРаздел2>
+        <DataРаздел2 Ref="26" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,8.4,19,0.8</ClientRectangle>
+          <Components isList="true" count="3">
+            <DataРаздел2_DisplayValue Ref="27" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataРаздел2_DisplayValue</Name>
+              <Page isRef="7" />
+              <Parent isRef="26" />
+              <Text>{Раздел2.DisplayValue}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataРаздел2_DisplayValue>
+            <DataРаздел2_RowNumber Ref="28" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.4,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataРаздел2_RowNumber</Name>
+              <Page isRef="7" />
+              <Parent isRef="26" />
+              <Text>{Раздел2.RowNumber}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataРаздел2_RowNumber>
+            <DataРаздел2_Value Ref="29" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>12.8,0,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataРаздел2_Value</Name>
+              <Page isRef="7" />
+              <Parent isRef="26" />
+              <Text>{Раздел2.Value}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataРаздел2_Value>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Раздел2</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataРаздел2</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <Sort isList="true" count="0" />
+        </DataРаздел2>
+        <HeaderРаздел3 Ref="30" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,10,19,0.8</ClientRectangle>
+          <Components isList="true" count="3">
+            <HeaderРаздел3_DisplayValue Ref="31" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderРаздел3_DisplayValue</Name>
+              <Page isRef="7" />
+              <Parent isRef="30" />
+              <Text>DisplayValue</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderРаздел3_DisplayValue>
+            <HeaderРаздел3_RowNumber Ref="32" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.4,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderРаздел3_RowNumber</Name>
+              <Page isRef="7" />
+              <Parent isRef="30" />
+              <Text>RowNumber</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderРаздел3_RowNumber>
+            <HeaderРаздел3_Value Ref="33" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderРаздел3_Value</Name>
+              <Page isRef="7" />
+              <Parent isRef="30" />
+              <Text>Value</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderРаздел3_Value>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderРаздел3</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </HeaderРаздел3>
+        <DataРаздел3 Ref="34" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,11.6,19,0.8</ClientRectangle>
+          <Components isList="true" count="3">
+            <DataРаздел3_DisplayValue Ref="35" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataРаздел3_DisplayValue</Name>
+              <Page isRef="7" />
+              <Parent isRef="34" />
+              <Text>{Раздел3.DisplayValue}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataРаздел3_DisplayValue>
+            <DataРаздел3_RowNumber Ref="36" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.4,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataРаздел3_RowNumber</Name>
+              <Page isRef="7" />
+              <Parent isRef="34" />
+              <Text>{Раздел3.RowNumber}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataРаздел3_RowNumber>
+            <DataРаздел3_Value Ref="37" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>12.8,0,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataРаздел3_Value</Name>
+              <Page isRef="7" />
+              <Parent isRef="34" />
+              <Text>{Раздел3.Value}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataРаздел3_Value>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Раздел3</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataРаздел3</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <Sort isList="true" count="0" />
+        </DataРаздел3>
+        <HeaderРаздел4 Ref="38" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,13.2,19,0.8</ClientRectangle>
+          <Components isList="true" count="3">
+            <HeaderРаздел4_DisplayValue Ref="39" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderРаздел4_DisplayValue</Name>
+              <Page isRef="7" />
+              <Parent isRef="38" />
+              <Text>DisplayValue</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderРаздел4_DisplayValue>
+            <HeaderРаздел4_RowNumber Ref="40" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.4,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderРаздел4_RowNumber</Name>
+              <Page isRef="7" />
+              <Parent isRef="38" />
+              <Text>RowNumber</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderРаздел4_RowNumber>
+            <HeaderРаздел4_Value Ref="41" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderРаздел4_Value</Name>
+              <Page isRef="7" />
+              <Parent isRef="38" />
+              <Text>Value</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderРаздел4_Value>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderРаздел4</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </HeaderРаздел4>
+        <DataРаздел4 Ref="42" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,14.8,19,0.8</ClientRectangle>
+          <Components isList="true" count="3">
+            <DataРаздел4_DisplayValue Ref="43" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataРаздел4_DisplayValue</Name>
+              <Page isRef="7" />
+              <Parent isRef="42" />
+              <Text>{Раздел4.DisplayValue}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataРаздел4_DisplayValue>
+            <DataРаздел4_RowNumber Ref="44" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.4,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataРаздел4_RowNumber</Name>
+              <Page isRef="7" />
+              <Parent isRef="42" />
+              <Text>{Раздел4.RowNumber}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataРаздел4_RowNumber>
+            <DataРаздел4_Value Ref="45" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>12.8,0,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataРаздел4_Value</Name>
+              <Page isRef="7" />
+              <Parent isRef="42" />
+              <Text>{Раздел4.Value}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataРаздел4_Value>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Раздел4</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataРаздел4</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <Sort isList="true" count="0" />
+        </DataРаздел4>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>7d5b09835cd247358fff5db354e2676b</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="46" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="47" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>3/9/2017 3:27:18 PM</ReportChanged>
+  <ReportCreated>3/7/2017 4:22:57 PM</ReportCreated>
+  <ReportFile>C:\Users\a.nabiev\Downloads\FormGovernmentServiceReport (1).mrt</ReportFile>
+  <ReportGuid>9503262bdfeb4802afd4753713a8aea7</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+ using Bars.B4.Modules.Analytics.Reports.Enums;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

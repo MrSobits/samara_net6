@@ -1,0 +1,1291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1BE6E00E-B52E-401A-B3C3-EBDA4D275B9B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bars.GkhGji.Regions.Habarovsk</RootNamespace>
+    <AssemblyName>Bars.GkhGji.Regions.Habarovsk</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\**\*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\packages\Antlr\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Core">
+      <HintPath>..\..\packages\Bars.B4.Core\lib\net40\Bars.B4.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Icons">
+      <HintPath>..\..\packages\Bars.B4.Icons\lib\net40\Bars.B4.Icons.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.DataExport">
+      <HintPath>..\..\packages\Bars.B4.Modules.DataExport\lib\net40\Bars.B4.Modules.DataExport.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.ECM7">
+      <HintPath>..\..\packages\Bars.B4.Modules.ECM7\lib\net40\Bars.B4.Modules.ECM7.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.Ecm7.Framework">
+      <HintPath>..\..\packages\Bars.B4.Modules.Ecm7.Framework\lib\net40\Bars.B4.Modules.Ecm7.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.Ecm7.Migrator">
+      <HintPath>..\..\packages\Bars.B4.Modules.Ecm7.Migrator\lib\net40\Bars.B4.Modules.Ecm7.Migrator.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.ExtJs">
+      <HintPath>..\..\packages\Bars.B4.Modules.ExtJs\lib\net40\Bars.B4.Modules.ExtJs.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.FileStorage">
+      <HintPath>..\..\packages\Bars.B4.Modules.FileStorage\lib\net40\Bars.B4.Modules.FileStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.JSDeferred">
+      <HintPath>..\..\packages\Bars.B4.Modules.JSDeferred\lib\net40\Bars.B4.Modules.JSDeferred.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.Mapping">
+      <HintPath>..\..\packages\Bars.B4.Modules.Mapping\lib\net40\Bars.B4.Modules.Mapping.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.NH">
+      <HintPath>..\..\packages\Bars.B4.Modules.NH\lib\net40\Bars.B4.Modules.NH.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.NH.Migrations">
+      <HintPath>..\..\packages\Bars.B4.Modules.NH.Migrations\lib\net40\Bars.B4.Modules.NH.Migrations.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.Pivot">
+      <HintPath>..\..\packages\Bars.B4.Modules.Pivot\lib\net40\Bars.B4.Modules.Pivot.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.ReportPanel">
+      <HintPath>..\..\packages\Bars.B4.Modules.ReportPanel\lib\net40\Bars.B4.Modules.ReportPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.Reports">
+      <HintPath>..\..\packages\Bars.B4.Modules.Reports\lib\net40\Bars.B4.Modules.Reports.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.RequireJS">
+      <HintPath>..\..\packages\Bars.B4.Modules.RequireJS\lib\net40\Bars.B4.Modules.RequireJS.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.Security">
+      <HintPath>..\..\packages\Bars.B4.Modules.Security\lib\net40\Bars.B4.Modules.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.Security.ExtJS4">
+      <HintPath>..\..\packages\Bars.B4.Modules.Security.ExtJS4\lib\net40\Bars.B4.Modules.Security.ExtJS4.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.Security.Web">
+      <HintPath>..\..\packages\Bars.B4.Modules.Security.Web\lib\net40\Bars.B4.Modules.Security.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.Setup">
+      <HintPath>..\..\packages\Bars.B4.Modules.Setup\lib\net40\Bars.B4.Modules.Setup.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.States">
+      <HintPath>..\..\packages\Bars.B4.Modules.States\lib\net40\Bars.B4.Modules.States.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.TaskManager.Contracts">
+      <HintPath>..\..\packages\Bars.B4.Modules.TaskManager.Contracts\lib\net40\Bars.B4.Modules.TaskManager.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Modules.Tasks.Common">
+      <HintPath>..\..\packages\Bars.B4.Modules.Tasks.Common\lib\net40\Bars.B4.Modules.Tasks.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Utils">
+      <HintPath>..\..\packages\Bars.B4.Utils\lib\net40\Bars.B4.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Utils.Web">
+      <HintPath>..\..\packages\Bars.B4.Utils.Web\lib\net40\Bars.B4.Utils.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.B4.Web">
+      <HintPath>..\..\packages\Bars.B4.Web\lib\net40\Bars.B4.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Bars.Security">
+      <HintPath>..\..\packages\Bars.Security\lib\net40\Bars.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\packages\Castle.Core\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.WcfIntegration">
+      <HintPath>..\..\packages\Castle.WcfIntegrationFacility\lib\net45\Castle.Facilities.WcfIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\packages\Castle.Windsor\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="CryptoPro.Sharpei.Base, Version=1.4.0.10, Culture=neutral, PublicKeyToken=473b8c5086e795f5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Crypto Pro\.NET SDK\Assemblies\4.0\CryptoPro.Sharpei.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="CryptoPro.Sharpei.Xml, Version=1.4.0.10, Culture=neutral, PublicKeyToken=473b8c5086e795f5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\CryptoPro.Sharpei.Xml.1.4.6397\lib\CryptoPro.Sharpei.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper">
+      <HintPath>..\..\packages\Dapper\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetZip">
+      <HintPath>..\..\packages\DotNetZip\lib\net20\DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="EcmaScript.NET">
+      <HintPath>..\..\packages\EcmaScript.Net\lib\net20\EcmaScript.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\..\packages\elmah.corelibrary\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Fasterflect">
+      <HintPath>..\..\packages\fasterflect\lib\net40\Fasterflect.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\packages\Iesi.Collections\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Mvc3-Base\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\..\packages\Npgsql\lib\net45\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Morpher">
+      <HintPath>..\..\packages\Morpher\lib\Morpher.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.1.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Bson">
+      <HintPath>..\..\packages\Newtonsoft.Json.Bson.1.0.2\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\packages\NHibernate\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\..\packages\NLog\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\..\packages\Npgsql\lib\net45\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp">
+      <HintPath>..\..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting">
+      <HintPath>..\..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>..\..\packages\Quartz\lib\net40\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph">
+      <HintPath>..\..\packages\QuickGraph\lib\net4\QuickGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph.Data">
+      <HintPath>..\..\packages\QuickGraph\lib\net4\QuickGraph.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph.Graphviz">
+      <HintPath>..\..\packages\QuickGraph\lib\net4\QuickGraph.Graphviz.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph.Serialization">
+      <HintPath>..\..\packages\QuickGraph\lib\net4\QuickGraph.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2018.1.6.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\StimulReport.Base\lib\net45\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2018.1.6.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\StimulReport.Base\lib\net45\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DocIO.Base">
+      <HintPath>..\..\packages\Syncfusion.DocIO.Base\lib\Syncfusion.DocIO.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.6.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel.Discovery" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web">
+      <HintPath>..\..\packages\Mvc3-Base\lib\net40\System.Web.dll</HintPath>
+      <Private>False</Private>
+      <Paket>True</Paket>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Mvc3-Base\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.3.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Mvc3-Base\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Mvc3-Base\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Mvc3-Base\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Mvc3-Base\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Mvc3-Base\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Yahoo.Yui.Compressor">
+      <HintPath>..\..\packages\YUICompressor.NET\lib\NET20\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientRouteMapRegistrar.cs" />
+    <Compile Include="ConnectedServices\ExcerptService.cs" />
+    <Compile Include="ConnectedServices\RequestExecutionService.cs" />
+    <Compile Include="Controllers\ActCheck\ActCheckAnnexController.cs" />
+    <Compile Include="Controllers\ActRemoval\ActRemovalAnnexController.cs" />
+    <Compile Include="Controllers\ActSurvey\ActSurveyAnnexController.cs" />
+    <Compile Include="Controllers\AmirsImportController.cs" />
+    <Compile Include="Controllers\AppealCits\AdmonitionOperationsController.cs" />
+    <Compile Include="Controllers\AppealCits\AppCitPrFondOperationsController.cs" />
+    <Compile Include="Controllers\AppealCits\AppealCitsAdmonitionAnswerSignController.cs" />
+    <Compile Include="Controllers\AppealCits\AppealCitsAdmonitionSignController.cs" />
+    <Compile Include="Controllers\AppealCits\AppealCitsAnswerController.cs" />
+    <Compile Include="Controllers\AppealCits\AppealCitsExecutionTypeController.cs" />
+    <Compile Include="Controllers\AppealCits\AppealCitsRequestController.cs" />
+    <Compile Include="Controllers\AppealCits\SendEmailController.cs" />
+    <Compile Include="Controllers\CourtPractice\CourtPracticeOperationsController.cs" />
+    <Compile Include="Controllers\Disposal\DecisionAnnexController.cs" />
+    <Compile Include="Controllers\Disposal\DisposalAnnexController.cs" />
+    <Compile Include="Controllers\FileRegister\FileRegisterController.cs" />
+    <Compile Include="Controllers\FileTransport\FileTransport.cs" />
+    <Compile Include="Controllers\LicenseReisuuance\LicenseReissuancePersonController.cs" />
+    <Compile Include="Controllers\ManOrgLicense\ManOrgLicenseGisController.cs" />
+    <Compile Include="Controllers\ManOrgLicense\ManOrgLicenseRequestService.cs" />
+    <Compile Include="Controllers\MKDLicRequest\MKDLicRequestFileController.cs" />
+    <Compile Include="Controllers\MKDLicRequest\MKDLicRequestQueryController.cs" />
+    <Compile Include="Controllers\Prescription\PrescriptionAnnexController.cs" />
+    <Compile Include="Controllers\Presentation\PresentationAnnexController.cs" />
+    <Compile Include="Controllers\PreventiveVisit\PreventiveVisitOperationsController.cs" />
+    <Compile Include="Controllers\PreventiveVisit\PreventiveVisitResultViolationController.cs" />
+    <Compile Include="Controllers\Protocol197\Protocol197AnnexController.cs" />
+    <Compile Include="Controllers\ProtocolMhc\ProtocolMhcAnnexController.cs" />
+    <Compile Include="Controllers\ProtocolMvd\ProtocolMvdAnnexController.cs" />
+    <Compile Include="Controllers\ProtocolOSS\ProtocolOSPRequestOperationsController.cs" />
+    <Compile Include="Controllers\ProtocolRSO\ProtocolRSOAnnexController.cs" />
+    <Compile Include="Controllers\Protocol\ProtocolAnnexController.cs" />
+    <Compile Include="Controllers\Protocol\ResolutionArticleLawController.cs" />
+    <Compile Include="Controllers\ResolPros\ResolProsAnnexController.cs" />
+    <Compile Include="Controllers\ResolutionRospotrebnadzor\ResolutionRospotrebnadzorAnnexController.cs" />
+    <Compile Include="Controllers\Resolution\ResolutionAnnexController.cs" />
+    <Compile Include="Controllers\RiskOrientedMethod\KindKNDDictArtLawController.cs" />
+    <Compile Include="Controllers\RiskOrientedMethod\ROMCalculateController.cs" />
+    <Compile Include="Controllers\ROMCalcTask\ROMCalcTaskExecuteController.cs" />
+    <Compile Include="Controllers\ROMCalcTask\ROMCalcTaskManOrgController.cs" />
+    <Compile Include="Controllers\SMEVEmergencyHouse\SMEVEmergencyHouseExecuteController.cs" />
+    <Compile Include="Controllers\SMEVOwnershipProperty\SMEVOwnershipPropertyExecuteController.cs" />
+    <Compile Include="Controllers\SMEVPremises\SMEVPremisesExecuteController.cs" />
+    <Compile Include="Controllers\SMEVRedevelopment\SMEVRedevelopmentExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\DepartmentlRequestsDTOController.cs" />
+    <Compile Include="Controllers\SMEV\ERKNMExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\GASUExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\GISERPExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\GISGMPExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\MVDLivingPlaceRegistrationExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\MVDPassportExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\MVDStayingPlaceRegistrationExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\PAYREGExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\SMEVChangePremisesStateExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\SMEVComplaintsLTController.cs" />
+    <Compile Include="Controllers\SMEV\SMEVDISKVLICExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\SMEVDOExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\SMEVEGRIPExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\SMEVEGRNExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\SMEVEGRULExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\SMEVERULExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\SMEVExploitController.cs" />
+    <Compile Include="Controllers\SMEV\SMEVExploitResolutionExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\SMEVFNSLicRequestExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\SMEVMVDExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\SMEVNDFLExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\SMEVSNILSExecuteController.cs" />
+    <Compile Include="Controllers\SMEV\SMEVSocialHireExecuteController.cs" />
+    <Compile Include="Controllers\SSTUExportTask\SSTUExportTaskAppealController.cs" />
+    <Compile Include="Controllers\SSTUExportTask\SSTUExportTaskExecuteController.cs" />
+    <Compile Include="Controllers\VDGOViolators\VDGOViolatorsController.cs" />
+    <Compile Include="DomainService\AppealCits\ExportSuggestionService.cs" />
+    <Compile Include="DomainService\AppealCits\IAdmonitionOperationsService.cs" />
+    <Compile Include="DomainService\AppealCits\Impl\AdmonitionOperationsService.cs" />
+    <Compile Include="DomainService\Complaints\ComplaintsService.cs" />
+    <Compile Include="DomainService\Complaints\IComplaintsService.cs" />
+    <Compile Include="DomainService\CourtPractice\ICourtPracticeOperationsService.cs" />
+    <Compile Include="DomainService\CourtPractice\Impl\CourtPracticeOperationsService.cs" />
+    <Compile Include="DomainService\ERKNM\ERKNMService.cs" />
+    <Compile Include="DomainService\ERKNM\IERKNMService.cs" />
+    <Compile Include="DomainService\FileRegister\FileRegisterService.cs" />
+    <Compile Include="DomainService\FileRegister\IFileRegisterService.cs" />
+    <Compile Include="DomainService\GASU\GASUService.cs" />
+    <Compile Include="DomainService\GASU\IGASUService.cs" />
+    <Compile Include="DomainService\GISERP\GISERP401Service.cs" />
+    <Compile Include="DomainService\GISERP\GISERP502Service.cs" />
+    <Compile Include="DomainService\GISERP\GISERPService.cs" />
+    <Compile Include="DomainService\GISERP\IGISERPService.cs" />
+    <Compile Include="DomainService\GisGkhRegional\Impl\GisGkhRegionalService.cs" />
+    <Compile Include="DomainService\GISGMP\GISGMPService.cs" />
+    <Compile Include="DomainService\GISGMP\IGISGMPService.cs" />
+    <Compile Include="DomainService\GISGMP\Payee.cs" />
+    <Compile Include="DomainService\Impl\AppealCitsService.cs" />
+    <Compile Include="DomainService\Impl\Inspection\InspectionMenuService.cs" />
+    <Compile Include="DomainService\Impl\IRDTOService.cs" />
+    <Compile Include="DomainService\Impl\HabarovskReminderService.cs" />
+    <Compile Include="DomainService\InterdepartmentalRequests\IIRDTOService.cs" />
+    <Compile Include="DomainService\LicenseReissuance\ILicenseReissuancePersonService.cs" />
+    <Compile Include="DomainService\LicenseReissuance\Impl\LicenseReissuancePersonService.cs" />
+    <Compile Include="DomainService\ManOrgLicense\IManOrgLicenseGisService.cs" />
+    <Compile Include="DomainService\ManOrgLicense\Impl\ManOrgLicenseGisService.cs" />
+    <Compile Include="DomainService\MVDLivingPlaceRegistration\IMVDLivingPlaceRegistrationService.cs" />
+    <Compile Include="DomainService\MVDLivingPlaceRegistration\MVDLivingPlaceRegistrationService.cs" />
+    <Compile Include="DomainService\MVDPassport\IMVDPassportService.cs" />
+    <Compile Include="DomainService\MVDPassport\MVDPassportService.cs" />
+    <Compile Include="DomainService\MVDStayingPlaceRegistration\IMVDStayingPlaceRegistrationService.cs" />
+    <Compile Include="DomainService\MVDStayingPlaceRegistration\MVDStayingPlaceRegistrationService.cs" />
+    <Compile Include="DomainService\PAYREG\IPAYREGService.cs" />
+    <Compile Include="DomainService\PAYREG\PAYREGService.cs" />
+    <Compile Include="DomainService\PrescriptionFond\AppCitPrFondOperationsService.cs" />
+    <Compile Include="DomainService\PrescriptionFond\IAppCitPrFondOperationsService.cs" />
+    <Compile Include="DomainService\PreventiveVisit\Impl\PreventiveVisitService.cs" />
+    <Compile Include="DomainService\PreventiveVisit\IPreventiveVisitService.cs" />
+    <Compile Include="DomainService\ProtocolOSS\Impl\ProtocolOSPRequestOperationsService.cs" />
+    <Compile Include="DomainService\ProtocolOSS\IProtocolOSPRequestOperationsService.cs" />
+    <Compile Include="DomainService\Protocol\Impl\ResolutionArticleLawService.cs" />
+    <Compile Include="DomainService\Protocol\IResolutionArticleLawService.cs" />
+    <Compile Include="DomainService\RiskOrientedMethod\IKindKNDDictArtLawService.cs" />
+    <Compile Include="DomainService\RiskOrientedMethod\Impl\KindKNDDictArtLawService.cs" />
+    <Compile Include="DomainService\ROMCalcTask\Impl\ROMCalcTaskManOrgService.cs" />
+    <Compile Include="DomainService\ROMCalcTask\IROMCalcTaskManOrgService.cs" />
+    <Compile Include="DomainService\RPGUService\IRPGUService.cs" />
+    <Compile Include="DomainService\RPGUService\RPGUService.cs" />
+    <Compile Include="DomainService\SMEVChangePremisesState\ISMEVChangePremisesStateService.cs" />
+    <Compile Include="DomainService\SMEVChangePremisesState\SMEVChangePremisesStateService.cs" />
+    <Compile Include="DomainService\SMEVDISKVLIC\ISMEVDISKVLICService.cs" />
+    <Compile Include="DomainService\SMEVDISKVLIC\SMEVDISKVLICService.cs" />
+    <Compile Include="DomainService\SMEVEDO\ISMEVEDOService.cs" />
+    <Compile Include="DomainService\SMEVEDO\SMEVEDOService.cs" />
+    <Compile Include="DomainService\SMEVEGRIP\ISMEVEGRIPService.cs" />
+    <Compile Include="DomainService\SMEVEGRIP\SMEVEGRIPService.cs" />
+    <Compile Include="DomainService\SMEVEGRN\ISMEVEGRNService.cs" />
+    <Compile Include="DomainService\SMEVEGRN\SMEVEGRNService.cs" />
+    <Compile Include="DomainService\SMEVEGRUL\ISMEVEGRULService.cs" />
+    <Compile Include="DomainService\SMEVEGRUL\SMEVEGRULService.cs" />
+    <Compile Include="DomainService\SMEVEmergencyHouse\ISMEVEmergencyHouseService.cs" />
+    <Compile Include="DomainService\SMEVEmergencyHouse\SMEVEmergencyHouseService.cs" />
+    <Compile Include="DomainService\SMEVERUL\ISMEVERULService.cs" />
+    <Compile Include="DomainService\SMEVERUL\SMEVERUL105Service.cs" />
+    <Compile Include="DomainService\SMEVExploitResolution\ISMEVExploitResolutionService.cs" />
+    <Compile Include="DomainService\SMEVExploitResolution\SMEVExploitResolutionService.cs" />
+    <Compile Include="DomainService\SMEVFNSLicRequest\ISMEVFNSLicRequestService.cs" />
+    <Compile Include="DomainService\SMEVFNSLicRequest\SMEVFNSLicRequestService.cs" />
+    <Compile Include="DomainService\SMEVHelpers\SmevPdfHelperHabarovsk.cs" />
+    <Compile Include="DomainService\SMEVLivingPlace\ISMEVLivingPlaceService.cs" />
+    <Compile Include="DomainService\SMEVLivingPlace\SMEVLivingPlaceService.cs" />
+    <Compile Include="DomainService\SMEVMVD\ISMEVMVDService.cs" />
+    <Compile Include="DomainService\SMEVMVD\SMEVMVDService.cs" />
+    <Compile Include="DomainService\SMEVNDFL\ISMEVNDFLService.cs" />
+    <Compile Include="DomainService\SMEVNDFL\SMEVNDFLService.cs" />
+    <Compile Include="DomainService\SMEVOwnershipProperty\ISMEVOwnershipPropertyService.cs" />
+    <Compile Include="DomainService\SMEVOwnershipProperty\SMEVOwnershipPropertyService.cs" />
+    <Compile Include="DomainService\SMEVPremises\ISMEVPremisesService.cs" />
+    <Compile Include="DomainService\SMEVPremises\SMEVPremisesService.cs" />
+    <Compile Include="DomainService\SMEVPropertyType\HTTPResponse.cs" />
+    <Compile Include="DomainService\SMEVPropertyType\ISMEVPropertyTypeService.cs" />
+    <Compile Include="DomainService\SMEVPropertyType\SMEVPropertyTypeService.cs" />
+    <Compile Include="DomainService\SMEVPropertyType\SMEVPropertyTypeSoapClient.cs" />
+    <Compile Include="DomainService\SMEVPropertyType\WSSEcuritySign.cs" />
+    <Compile Include="DomainService\SMEVRedevelopment\ISMEVRedevelopmentService.cs" />
+    <Compile Include="DomainService\SMEVRedevelopment\SMEVRedevelopmentService.cs" />
+    <Compile Include="DomainService\SMEVSNILS\ISMEVSNILSService.cs" />
+    <Compile Include="DomainService\SMEVSNILS\SMEVSNILSService.cs" />
+    <Compile Include="DomainService\SMEVSocialHire\ISMEVSocialHireService.cs" />
+    <Compile Include="DomainService\SMEVSocialHire\SMEVSocialHireService.cs" />
+    <Compile Include="DomainService\SMEVStayingPlace\ISMEVStayingPlaceService.cs" />
+    <Compile Include="DomainService\SMEVStayingPlace\SMEVStayingPlaceService.cs" />
+    <Compile Include="DomainService\SMEVValidPassport\ISMEVValidPassportService.cs" />
+    <Compile Include="DomainService\SMEVValidPassport\SMEVValidPassportService.cs" />
+    <Compile Include="DomainService\SSTUExportTask\Impl\SSTUExportTaskAppealService.cs" />
+    <Compile Include="DomainService\SSTUExportTask\ISSTUExportTaskAppealService.cs" />
+    <Compile Include="DomainService\TaskCalendarService.cs" />
+    <Compile Include="DomainService\VDGOViolators\Impl\VDGOViolatorsService.cs" />
+    <Compile Include="DomainService\VDGOViolators\IVDGOViolatorsService.cs" />
+    <Compile Include="Entities\AppealCits\AppCitAdmonAnnex.cs" />
+    <Compile Include="Entities\AppealCits\AppCitAdmonAppeal.cs" />
+    <Compile Include="Entities\AppealCits\AppCitAdmonVoilation.cs" />
+    <Compile Include="Entities\AppealCits\AppCitPrFondObjectCr.cs" />
+    <Compile Include="Entities\AppealCits\AppCitPrFondVoilation.cs" />
+    <Compile Include="Entities\AppealCits\AppealAnswerExecutionType .cs" />
+    <Compile Include="Entities\AppealCits\AppealCitsAdmonition.cs" />
+    <Compile Include="Entities\AppealCits\AppealCitsAdmonitionLongText.cs" />
+    <Compile Include="Entities\AppealCits\AppealCitsExecutionType.cs" />
+    <Compile Include="Entities\AppealCits\AppealCitsPrescriptionFond.cs" />
+    <Compile Include="Entities\AppealCits\AppealCitsResolution.cs" />
+    <Compile Include="Entities\AppealCits\AppealCitsResolutionExecutor.cs" />
+    <Compile Include="Entities\BaseOMSU\BaseOMSU.cs" />
+    <Compile Include="Entities\BaseOMSU\BaseOMSUContragent.cs" />
+    <Compile Include="Entities\CourtPractice\CourtPractice.cs" />
+    <Compile Include="Entities\CourtPractice\CourtPracticeFile.cs" />
+    <Compile Include="Entities\CourtPractice\CourtPracticeInspector.cs" />
+    <Compile Include="Entities\CourtPractice\CourtPracticeRealityObject.cs" />
+    <Compile Include="Entities\Dict\Dict\AppealExecutionType.cs" />
+    <Compile Include="Entities\Dict\Dict\EGRNApplicantType.cs" />
+    <Compile Include="Entities\Dict\Dict\EGRNDocType.cs" />
+    <Compile Include="Entities\Dict\Dict\EGRNObjectType.cs" />
+    <Compile Include="Entities\Dict\Dict\FLDocType.cs" />
+    <Compile Include="Entities\Dict\Dict\GISGMPPayerStatus.cs" />
+    <Compile Include="Entities\Dict\Dict\RegionCodeMVD.cs" />
+    <Compile Include="Entities\EmailLists\EmailLists.cs" />
+    <Compile Include="Entities\EmailLists\EmailSender.cs" />
+    <Compile Include="Entities\EmailLists\EmailSenderTest.cs" />
+    <Compile Include="Entities\ERKNM\ERKNM.cs" />
+    <Compile Include="Entities\ERKNM\ERKNMFile.cs" />
+    <Compile Include="Entities\ERKNM\ERKNMResultViolations.cs" />
+    <Compile Include="Entities\FileRegister\FileRegister.cs" />
+    <Compile Include="Entities\GASU\gasu-publish-control-authority-indicator-root.cs" />
+    <Compile Include="Entities\GASU\GASU.cs" />
+    <Compile Include="Entities\GASU\GASUData.cs" />
+    <Compile Include="Entities\GASU\GASUFile.cs" />
+    <Compile Include="Entities\GISERP\GISERP.cs" />
+    <Compile Include="Entities\GISERP\GISERPFile.cs" />
+    <Compile Include="Entities\GISERP\GISERPResultViolations.cs" />
+    <Compile Include="Entities\GISGMP\GISGMP.cs" />
+    <Compile Include="Entities\GISGMP\GISGMPFile.cs" />
+    <Compile Include="Entities\GISGMP\GISGMPPayments.cs" />
+    <Compile Include="Entities\Inspection\BaseLicenseReissuance.cs" />
+    <Compile Include="Entities\LicenseReissuance\LicenseReissuance.cs" />
+    <Compile Include="Entities\LicenseReissuance\LicenseReissuancePerson.cs" />
+    <Compile Include="Entities\LicenseReissuance\LicenseReissuanceProvDoc.cs" />
+    <Compile Include="Entities\LicenseReissuance\LicenseReissuanceRPGU.cs" />
+    <Compile Include="Entities\PAYREG\PayReg.cs" />
+    <Compile Include="Entities\PAYREG\PAYREGPFile.cs" />
+    <Compile Include="Entities\PAYREG\PAYREGRequests.cs" />
+    <Compile Include="Entities\PreliminaryCheck.cs" />
+    <Compile Include="Entities\ProtocolOSPRequest\ProtocolOSPRequest.cs" />
+    <Compile Include="Entities\RiskOrientedMethod\EffectiveKNDIndex.cs" />
+    <Compile Include="Entities\RiskOrientedMethod\KindKNDDict.cs" />
+    <Compile Include="Entities\RiskOrientedMethod\KindKNDDictArtLaw.cs" />
+    <Compile Include="Entities\RiskOrientedMethod\ROMCategory.cs" />
+    <Compile Include="Entities\RiskOrientedMethod\ROMCategoryMKD.cs" />
+    <Compile Include="Entities\RiskOrientedMethod\VnResolution.cs" />
+    <Compile Include="Entities\RiskOrientedMethod\VpResolution.cs" />
+    <Compile Include="Entities\RiskOrientedMethod\VprPrescription.cs" />
+    <Compile Include="Entities\RiskOrientedMethod\VprResolution.cs" />
+    <Compile Include="Entities\ROMCalcTask\ROMCalcTask.cs" />
+    <Compile Include="Entities\ROMCalcTask\ROMCalcTaskManOrg.cs" />
+    <Compile Include="Entities\RPGU\CreateOrdersRequest.cs" />
+    <Compile Include="Entities\RPGU\LicenseInfoRequest.cs" />
+    <Compile Include="Entities\RPGU\LicenseUndoRequest.cs" />
+    <Compile Include="Entities\RPGU\OrderReissuanceRequest.cs" />
+    <Compile Include="Entities\RPGU\OrderRequest.cs" />
+    <Compile Include="Entities\RPGU\RPGUResponceLicRequest.cs" />
+    <Compile Include="Entities\RPGU\UpdateOrdersRequest.cs" />
+    <Compile Include="Entities\SMEV2\Proxy\ProcessTaskProxy.cs" />
+    <Compile Include="Entities\SMEV2\Proxy\SMEVLivingBookRequestProxy.cs" />
+    <Compile Include="Entities\SMEV2\Proxy\SMEVLivingGetResultProxy.cs" />
+    <Compile Include="Entities\SMEV2\SMEVLivingPlace.cs" />
+    <Compile Include="Entities\SMEV2\SMEVLivingPlaceFile.cs" />
+    <Compile Include="Entities\SMEV2\SMEVPropertyType.cs" />
+    <Compile Include="Entities\SMEV2\SMEVPropertyTypeFile.cs" />
+    <Compile Include="Entities\SMEV2\SMEVStayingPlace.cs" />
+    <Compile Include="Entities\SMEV2\SMEVStayingPlaceFile.cs" />
+    <Compile Include="Entities\SMEV2\SMEVValidPassport.cs" />
+    <Compile Include="Entities\SMEV2\SMEVValidPassportFile.cs" />
+    <Compile Include="Entities\SMEVEmergencyHouse\EmergencyHouseAnswerProxy.cs" />
+    <Compile Include="Entities\SMEVEmergencyHouse\SMEVEmergencyHouse.cs" />
+    <Compile Include="Entities\SMEVEmergencyHouse\SMEVEmergencyHouseFile.cs" />
+    <Compile Include="Entities\SMEVEmergencyHouse\SMEVEmergencyHouseProxy.cs" />
+    <Compile Include="Entities\SMEVOwnershipProperty\OwnershipPropertyAnswerProxy.cs" />
+    <Compile Include="Entities\SMEVOwnershipProperty\SMEVOwnershipProperty.cs" />
+    <Compile Include="Entities\SMEVOwnershipProperty\SMEVOwnershipPropertyFile.cs" />
+    <Compile Include="Entities\SMEVOwnershipProperty\SMEVOwnershipPropertyProxy.cs" />
+    <Compile Include="Entities\SMEVPremises\PremisesAnswerProxy.cs" />
+    <Compile Include="Entities\SMEVPremises\SMEVPremises.cs" />
+    <Compile Include="Entities\SMEVPremises\SMEVPremisesFile.cs" />
+    <Compile Include="Entities\SMEVRedevelopment\RedevelopmentAnswerProxy.cs" />
+    <Compile Include="Entities\SMEVRedevelopment\SMEVRedevelopment.cs" />
+    <Compile Include="Entities\SMEVRedevelopment\SMEVRedevelopmentFile.cs" />
+    <Compile Include="Entities\SMEVRedevelopment\SMEVRedevelopmentProxy.cs" />
+    <Compile Include="Entities\SMEV\Helper\DateTimePrecise.cs" />
+    <Compile Include="Entities\SMEV\Helper\GuidGeneration.cs" />
+    <Compile Include="Entities\SMEV\Helper\GuidGenerator.cs" />
+    <Compile Include="Entities\SMEV\Helper\GuidVersion.cs" />
+    <Compile Include="Entities\SMEV\Helper\InterdepartmentalRequestsDTO.cs" />
+    <Compile Include="Entities\SMEV\Helper\TimeStampHelper.cs" />
+    <Compile Include="Entities\SMEV\MVDSendRequest.cs" />
+    <Compile Include="Entities\SMEV\SMEVChangePremisesState.cs" />
+    <Compile Include="Entities\SMEV\SMEVChangePremisesStateFile.cs" />
+    <Compile Include="Entities\SMEV\SMEVChangePremisesStateProxy.cs" />
+    <Compile Include="Entities\SMEV\SMEVDISKVLIC.cs" />
+    <Compile Include="Entities\SMEV\SMEVDISKVLICFile.cs" />
+    <Compile Include="Entities\SMEV\SMEVEDO.cs" />
+    <Compile Include="Entities\SMEV\SMEVEDOFile.cs" />
+    <Compile Include="Entities\SMEV\SMEVEGRIP.cs" />
+    <Compile Include="Entities\SMEV\SMEVEGRIPFile.cs" />
+    <Compile Include="Entities\SMEV\SMEVEGRN.cs" />
+    <Compile Include="Entities\SMEV\SMEVEGRNFile.cs" />
+    <Compile Include="Entities\SMEV\SMEVEGRUL.cs" />
+    <Compile Include="Entities\SMEV\SMEVEGRULFile.cs" />
+    <Compile Include="Entities\SMEV\SMEVExploitResolution.cs" />
+    <Compile Include="Entities\SMEV\SMEVExploitResolutionFile.cs" />
+    <Compile Include="Entities\SMEV\SMEVExploitResolutionProxy.cs" />
+    <Compile Include="Entities\SMEV\SMEVMVD.cs" />
+    <Compile Include="Entities\SMEV\SMEVMVDFile.cs" />
+    <Compile Include="Entities\SMEV\SMEVNDFL.cs" />
+    <Compile Include="Entities\SMEV\SMEVNDFLAnswer.cs" />
+    <Compile Include="Entities\SMEV\SMEVNDFLFile.cs" />
+    <Compile Include="Entities\SMEV\SMEVNDFLProxy.cs" />
+    <Compile Include="Entities\SMEV\SMEVSNILS.cs" />
+    <Compile Include="Entities\SMEV\SMEVSNILSFile.cs" />
+    <Compile Include="Entities\SMEV\SMEVSocialHire.cs" />
+    <Compile Include="Entities\SMEV\SMEVSocialHireFile.cs" />
+    <Compile Include="Entities\SMEV\SMEVSocialHireProxy.cs" />
+    <Compile Include="Entities\SSTUExportTask\SSTUAppeal.cs" />
+    <Compile Include="Entities\SSTUExportTask\SSTUAppealNoAnswer.cs" />
+    <Compile Include="Entities\SSTUExportTask\SSTUAppealTransfer.cs" />
+    <Compile Include="Entities\SSTUExportTask\SSTUAttachment.cs" />
+    <Compile Include="Entities\SSTUExportTask\SSTUExportedAppeal.cs" />
+    <Compile Include="Entities\SSTUExportTask\SSTUExportTask.cs" />
+    <Compile Include="Entities\SSTUExportTask\SSTUExportTaskAppeal.cs" />
+    <Compile Include="Entities\SSTUExportTask\SSTUQuestions.cs" />
+    <Compile Include="Entities\SSTUExportTask\SSTUQuestionsNoAnswer.cs" />
+    <Compile Include="Entities\SSTUExportTask\SSTUQuestionsTransfer.cs" />
+    <Compile Include="Entities\SSTUExportTask\SSTUTransfer.cs" />
+    <Compile Include="Entities\VDGOViolators\VDGOViolators.cs" />
+    <Compile Include="Enums\ChangePremisesType.cs" />
+    <Compile Include="Enums\CourtMeetingResult.cs" />
+    <Compile Include="Enums\CourtPracticeState.cs" />
+    <Compile Include="Enums\DisputeCategory.cs" />
+    <Compile Include="Enums\DisputeType.cs" />
+    <Compile Include="Enums\Egrn\RequestDataType.cs" />
+    <Compile Include="Enums\Egrn\RequestType.cs" />
+    <Compile Include="Enums\EmergencyTypeSGIO.cs" />
+    <Compile Include="Enums\ERKNMRequestType.cs" />
+    <Compile Include="Enums\ERPAddressType.cs" />
+    <Compile Include="Enums\ERPInspectionType.cs" />
+    <Compile Include="Enums\ERPNoticeType.cs" />
+    <Compile Include="Enums\ERPObjectType.cs" />
+    <Compile Include="Enums\ERPReasonType.cs" />
+    <Compile Include="Enums\ERPRiskType.cs" />
+    <Compile Include="Enums\ERPVLawSuitType.cs" />
+    <Compile Include="Enums\FuckingOSSState.cs" />
+    <Compile Include="Enums\GasuMessageType.cs" />
+    <Compile Include="Enums\GisErpRequestType.cs" />
+    <Compile Include="Enums\GisGkhTypeRequest.cs" />
+    <Compile Include="Enums\GisGmpChargeType.cs" />
+    <Compile Include="Enums\GisGmpPaymentsKind.cs" />
+    <Compile Include="Enums\GisGmpPaymentsType.cs" />
+    <Compile Include="Enums\IdentifierType.cs" />
+    <Compile Include="Enums\InnOgrn.cs" />
+    <Compile Include="Enums\KindKND.cs" />
+    <Compile Include="Enums\Koefficients.cs" />
+    <Compile Include="Enums\LawyerInspector.cs" />
+    <Compile Include="Enums\MVDTypeAddress.cs" />
+    <Compile Include="Enums\OSSApplicantType.cs" />
+    <Compile Include="Enums\PayerType.cs" />
+    <Compile Include="Enums\PreliminaryCheckResult.cs" />
+    <Compile Include="Enums\PublicPropertyLevel.cs" />
+    <Compile Include="Enums\QueryTypeType.cs" />
+    <Compile Include="Enums\RequestParamType.cs" />
+    <Compile Include="Enums\SMEVGender.cs" />
+    <Compile Include="Enums\SMEVLivingPlaceHasReg.cs" />
+    <Compile Include="Enums\SMEVStayingPlaceDocType.cs" />
+    <Compile Include="Enums\SnilsPlaceType.cs" />
+    <Compile Include="Enums\SocialHireContractType.cs" />
+    <Compile Include="Enums\SocialHireDocType.cs" />
+    <Compile Include="Enums\TypeBaseOMSU.cs" />
+    <Compile Include="Enums\TypeDocumentGJI.cs" />
+    <Compile Include="Enums\TypeEntityLogging.cs" />
+    <Compile Include="Enums\TypeLicenseRequest.cs" />
+    <Compile Include="ExecutionAction\CheckERPNeedCorrectionAction.cs" />
+    <Compile Include="ExecutionAction\CreateResolutionPayFinesAction.cs" />
+    <Compile Include="ExecutionAction\ExportAppealsToSOPRAction.cs" />
+    <Compile Include="ExecutionAction\FillAppealCitsNumberAction.cs" />
+    <Compile Include="ExecutionAction\FindGisGmpDocNumbersAction.cs" />
+    <Compile Include="ExecutionAction\GetComplaintsAction.cs" />
+    <Compile Include="ExecutionAction\GetRPGUAnswersAction.cs" />
+    <Compile Include="ExecutionAction\GetSMEV2AnswersAction.cs" />
+    <Compile Include="ExecutionAction\GetSMEVAnswersAction.cs" />
+    <Compile Include="ExecutionAction\SendEGRULRequestsAction.cs" />
+    <Compile Include="ExecutionAction\SendPayRegRequestAction.cs" />
+    <Compile Include="Export\AdmonitionDataExport.cs" />
+    <Compile Include="Export\AppealOrderDataExport.cs" />
+    <Compile Include="Export\BaseOmsuDataExport.cs" />
+    <Compile Include="Export\CourtPracticeDataExport.cs" />
+    <Compile Include="Export\GISERPDataExport.cs" />
+    <Compile Include="Export\ProtocolOSPRequestDataExport.cs" />
+    <Compile Include="Export\VDGOViolatorsDataExport.cs" />
+    <Compile Include="GjiHabarovskFieldRequirementMap.cs" />
+    <Compile Include="GkhGjiHabarovskViewCollection.cs" />
+    <Compile Include="Imports\AmirsImport.cs" />
+    <Compile Include="Imports\TarifInport.cs" />
+    <Compile Include="InspectionRules\DocumentRules\BaseLicenseReissuanceToDisposalRule.cs" />
+    <Compile Include="InspectionRules\DocumentRules\BaseOMSUToDecisionRule.cs" />
+    <Compile Include="InspectionRules\DocumentRules\BaseOMSUToDisposalRule.cs" />
+    <Compile Include="InspectionRules\DocumentRules\HabarovskPrescriptionToDisposalRule.cs" />
+    <Compile Include="Interceptors\AppealCitsAdmonition\AppCitAdmonVoilationInterceptor.cs" />
+    <Compile Include="Interceptors\AppealCitsAdmonition\AppealCitsAdmonitionInterceptor.cs" />
+    <Compile Include="Interceptors\AppealOrder\AppealCitsPrescriptionFondInterceptor.cs" />
+    <Compile Include="Interceptors\AppealOrder\AppealOrderFileInterceptor.cs" />
+    <Compile Include="Interceptors\AppealOrder\AppealOrderInterceptor.cs" />
+    <Compile Include="Interceptors\CourtPractice\CourtPracticeInterceptor.cs" />
+    <Compile Include="Interceptors\EDSInspection\ActCheckAnnexInterceptor.cs" />
+    <Compile Include="Interceptors\EDSInspection\ActCheckDefinitionInterceptor.cs" />
+    <Compile Include="Interceptors\EDSInspection\AppealCitsRequestAnswerInterceptor.cs" />
+    <Compile Include="Interceptors\EDSInspection\AppealCitsRequestInterceptor.cs" />
+    <Compile Include="Interceptors\EDSInspection\DecisionAnnexInterceptor.cs" />
+    <Compile Include="Interceptors\EDSInspection\DisposalAnnexInterceptor.cs" />
+    <Compile Include="Interceptors\EDSInspection\MKDLicRequestQueryAnswerInterceptor.cs" />
+    <Compile Include="Interceptors\EDSInspection\PrescriptionAnnexInterceptor.cs" />
+    <Compile Include="Interceptors\EDSInspection\Protocol197AnnexInterceptor.cs" />
+    <Compile Include="Interceptors\EDSInspection\ProtocolAnnexInterceptor.cs" />
+    <Compile Include="Interceptors\EDSInspection\ResolutionAnnexInterceptor.cs" />
+    <Compile Include="Interceptors\EDSInspection\UKDocumentInterceptor.cs" />
+    <Compile Include="Interceptors\FileRegister\FileRegisterInterceptor.cs" />
+    <Compile Include="Interceptors\Inspection\BaseLicenseReissuanceServiceInterceptor.cs" />
+    <Compile Include="Interceptors\Inspection\BaseOMSUServiceInterceptor.cs" />
+    <Compile Include="Interceptors\Inspection\BaseStatementServiceInterceptor.cs" />
+    <Compile Include="Interceptors\Inspection\PrescriptionViolInterceptor.cs" />
+    <Compile Include="Interceptors\LicenseReissuance\LicenseReissuanceInterceptor.cs" />
+    <Compile Include="Interceptors\ProtocolOSPRequest\ProtocolOSPRequestInterceptor.cs" />
+    <Compile Include="Interceptors\RiskOrientedMethod\ROMCategoryInterceptor.cs" />
+    <Compile Include="Interceptors\ROMCalcTask\ROMCalcTaskInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV2\SMEVLivingPlaceInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV2\SMEVPropertyTypeInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV2\SMEVStayingPlaceInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV2\SMEVValidPassportInterceptor.cs" />
+    <Compile Include="Interceptors\SMEVEmergencyHouse\SMEVEmergencyHouseInterceptor.cs" />
+    <Compile Include="Interceptors\SMEVOwnershipProperty\SMEVOwnershipPropertyInterceptor.cs" />
+    <Compile Include="Interceptors\SMEVPremises\SMEVPremisesInterceptor.cs" />
+    <Compile Include="Interceptors\SMEVRedevelopment\SMEVRedevelopmentInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV\ERKNMInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV\GASUInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV\GISERPInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV\GisGmpInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV\PayRegInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV\SMEVChangePremisesStateInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV\SMEVDISKVLICInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV\SMEVEDOInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV\SMEVEGRIPInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV\SMEVEGRNInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV\SMEVEGRULInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV\SMEVExploitResolutionInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV\SMEVFNSLicRequestInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV\SMEVMVDInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV\SMEVNDFLInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV\SMEVSNILSInterceptor.cs" />
+    <Compile Include="Interceptors\SMEV\SMEVSocialHireInterceptor.cs" />
+    <Compile Include="Interceptors\SSTUExportTask\SSTUExportTaskInterceptor.cs" />
+    <Compile Include="Interceptors\VDGOViolators\VDGOViolatorsInterceptor.cs" />
+    <Compile Include="Map\AppealCits\AppCitAdmonAnnexMap.cs" />
+    <Compile Include="Map\AppealCits\AppCitAdmonAppealMap.cs" />
+    <Compile Include="Map\AppealCits\AppCitAdmonViolationMap.cs" />
+    <Compile Include="Map\AppealCits\AppCitPrFondObjectCrMap.cs" />
+    <Compile Include="Map\AppealCits\AppCitPrFondViolationMap.cs" />
+    <Compile Include="Map\AppealCits\AppealAnswerExecutionTypeMap.cs" />
+    <Compile Include="Map\AppealCits\AppealCitsAdmonitionLongTextMap.cs" />
+    <Compile Include="Map\AppealCits\AppealCitsAdmonitionMap.cs" />
+    <Compile Include="Map\AppealCits\AppealCitsExecutionTypeMap.cs" />
+    <Compile Include="Map\AppealCits\AppealCitsPrescriptionFondMap.cs" />
+    <Compile Include="Map\AppealCits\AppealCitsResolutionExecutorMap.cs" />
+    <Compile Include="Map\AppealCits\AppealCitsResolutionMap.cs" />
+    <Compile Include="Map\BaseOMSU\BaseOMSUContragentMap.cs" />
+    <Compile Include="Map\BaseOMSU\BaseOMSUMap.cs" />
+    <Compile Include="Map\CourtPractice\CourtPracticeFileMap.cs" />
+    <Compile Include="Map\CourtPractice\CourtPracticeInspectorMap.cs" />
+    <Compile Include="Map\CourtPractice\CourtPracticeMap.cs" />
+    <Compile Include="Map\CourtPractice\CourtPracticeRealityObjectMap.cs" />
+    <Compile Include="Map\Dict\AppealExecutionTypeMap.cs" />
+    <Compile Include="Map\Dict\EGRNApplicantTypeMap.cs" />
+    <Compile Include="Map\Dict\EGRNDocTypeMap.cs" />
+    <Compile Include="Map\Dict\EGRNObjectTypeMap.cs" />
+    <Compile Include="Map\Dict\FLDocTypeMap.cs" />
+    <Compile Include="Map\Dict\GISGMPPayerStatusMap.cs" />
+    <Compile Include="Map\Dict\RegionCodeMVDMap.cs" />
+    <Compile Include="Map\EmailLists\EmailListsMap.cs" />
+    <Compile Include="Map\FileRegister\FileRegisterMap.cs" />
+    <Compile Include="Map\Inspection\BaseLicenseReissuanceMap.cs" />
+    <Compile Include="Map\LicenseReissuance\LicenseReissuanceMap.cs" />
+    <Compile Include="Map\LicenseReissuance\LicenseReissuancePersonMap.cs" />
+    <Compile Include="Map\LicenseReissuance\LicenseReissuanceProvDocMap.cs" />
+    <Compile Include="Map\LicenseReissuance\LicenseReissuanceRPGUMap.cs" />
+    <Compile Include="Map\PreliminaryСheckMap.cs" />
+    <Compile Include="Map\ProtocolOSPRequest\ProtocolOSPRequestMap.cs" />
+    <Compile Include="Map\RiskOrientedMethod\EffectiveKNDIndexMap.cs" />
+    <Compile Include="Map\RiskOrientedMethod\KindKNDDictArtLawMap.cs" />
+    <Compile Include="Map\RiskOrientedMethod\KindKNDDictMap.cs" />
+    <Compile Include="Map\RiskOrientedMethod\ROMCategoryMap.cs" />
+    <Compile Include="Map\RiskOrientedMethod\ROMCategoryMKDMap.cs" />
+    <Compile Include="Map\RiskOrientedMethod\VnResolutionMap.cs" />
+    <Compile Include="Map\RiskOrientedMethod\VpResolutionMap.cs" />
+    <Compile Include="Map\RiskOrientedMethod\VprPrescriptionMap.cs" />
+    <Compile Include="Map\RiskOrientedMethod\VprResolutionMap.cs" />
+    <Compile Include="Map\ROMCalcTask\ROMCalcTaskManOrgMap.cs" />
+    <Compile Include="Map\ROMCalcTask\ROMCalcTaskMap.cs" />
+    <Compile Include="Map\SMEV2\SMEVLivingPlaceFileMap.cs" />
+    <Compile Include="Map\SMEV2\SMEVLivingPlaceMap.cs" />
+    <Compile Include="Map\SMEV2\SMEVPropertyTypeFileMap.cs" />
+    <Compile Include="Map\SMEV2\SMEVPropertyTypeMap.cs" />
+    <Compile Include="Map\SMEV2\SMEVStayingPlaceFileMap.cs" />
+    <Compile Include="Map\SMEV2\SMEVStayingPlaceMap.cs" />
+    <Compile Include="Map\SMEV2\SMEVValidPassportFileMap.cs" />
+    <Compile Include="Map\SMEV2\SMEVValidPassportMap.cs" />
+    <Compile Include="Map\SMEVEmergencyHouse\SMEVEmergencyHouseFileMap.cs" />
+    <Compile Include="Map\SMEVEmergencyHouse\SMEVEmergencyHouseMap.cs" />
+    <Compile Include="Map\SMEVOwnershipProperty\SMEVOwnershipPropertyFileMap.cs" />
+    <Compile Include="Map\SMEVOwnershipProperty\SMEVOwnershipPropertyMap.cs" />
+    <Compile Include="Map\SMEVPremises\SMEVEPremisesFileMap.cs" />
+    <Compile Include="Map\SMEVPremises\SMEVEPremisesMap.cs" />
+    <Compile Include="Map\SMEVRedevelopment\SMEVRedevelopmentFileMap.cs" />
+    <Compile Include="Map\SMEVRedevelopment\SMEVRedevelopmentMap.cs" />
+    <Compile Include="Map\SMEV\ERKNMFileMap.cs" />
+    <Compile Include="Map\SMEV\ERKNMMap.cs" />
+    <Compile Include="Map\SMEV\ERKNMResultViolationsMap.cs" />
+    <Compile Include="Map\SMEV\GASUDataMap.cs" />
+    <Compile Include="Map\SMEV\GASUFileMap.cs" />
+    <Compile Include="Map\SMEV\GASUMap.cs" />
+    <Compile Include="Map\SMEV\GISERPFileMap.cs" />
+    <Compile Include="Map\SMEV\GISERPMap.cs" />
+    <Compile Include="Map\SMEV\GISERPResultViolationsMap.cs" />
+    <Compile Include="Map\SMEV\GisGmpFileMap.cs" />
+    <Compile Include="Map\SMEV\GisGmpMap.cs" />
+    <Compile Include="Map\SMEV\GISGMPPaymentsMap.cs" />
+    <Compile Include="Map\SMEV\PayRegFileMap.cs" />
+    <Compile Include="Map\SMEV\PayRegMap.cs" />
+    <Compile Include="Map\SMEV\PayRegRequestsMap.cs" />
+    <Compile Include="Map\SMEV\SMEVChangePremisesStateFileMap.cs" />
+    <Compile Include="Map\SMEV\SMEVChangePremisesStateMap.cs" />
+    <Compile Include="Map\SMEV\SMEVDISKVLICFileMap.cs" />
+    <Compile Include="Map\SMEV\SMEVDISKVLICMap.cs" />
+    <Compile Include="Map\SMEV\SMEVEDOFileMap.cs" />
+    <Compile Include="Map\SMEV\SMEVEDOMap.cs" />
+    <Compile Include="Map\SMEV\SMEVEGRIPFileMap.cs" />
+    <Compile Include="Map\SMEV\SMEVEGRIPMap.cs" />
+    <Compile Include="Map\SMEV\SMEVEGRNFileMap.cs" />
+    <Compile Include="Map\SMEV\SMEVEGRNMap.cs" />
+    <Compile Include="Map\SMEV\SMEVEGRULFileMap.cs" />
+    <Compile Include="Map\SMEV\SMEVEGRULMap.cs" />
+    <Compile Include="Map\SMEV\SMEVExploitResolutionFileMap.cs" />
+    <Compile Include="Map\SMEV\SMEVExploitResolutionMap.cs" />
+    <Compile Include="Map\SMEV\SMEVMVDFileMap.cs" />
+    <Compile Include="Map\SMEV\SMEVMVDMap.cs" />
+    <Compile Include="Map\SMEV\SMEVNDFLAnswerMap.cs" />
+    <Compile Include="Map\SMEV\SMEVNDFLFileMap.cs" />
+    <Compile Include="Map\SMEV\SMEVNDFLMap.cs" />
+    <Compile Include="Map\SMEV\SMEVSNILSFileMap.cs" />
+    <Compile Include="Map\SMEV\SMEVSNILSMap.cs" />
+    <Compile Include="Map\SMEV\SMEVSocialHireFileMap.cs" />
+    <Compile Include="Map\SMEV\SMEVSocialHireMap.cs" />
+    <Compile Include="Map\SSTUExportTask\SSTUExportedAppealMap.cs" />
+    <Compile Include="Map\SSTUExportTask\SSTUExportTaskAppealMap.cs" />
+    <Compile Include="Map\SSTUExportTask\SSTUExportTaskMap.cs" />
+    <Compile Include="Map\VDGOViolators\VDGOViolatorsMap.cs" />
+    <Compile Include="Migrations\2022\Version_1\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2017050400\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2017051900\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2017112200\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2018092600\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2019031400\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2019031500\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2019051300\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2019073000\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2019080500\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2019081200\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2019092000\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2019092300\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2019092400\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2019092500\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2019121700\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020022000\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020031700\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020092200\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020092300\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020100600\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020101200\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020102200\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020111100\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020111700\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020113000\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020113001\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020120200\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020120201\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020120300\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020120301\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020120400\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020120600\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020120700\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020121000\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020121500\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020121700\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020121800\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020121900\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020122600\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020122800\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2020122900\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021011200\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021011500\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021012200\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021012201\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021030100\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021031100\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021031600\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021032900\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021033000\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021033100\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021033101\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021040200\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021040800\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021042100\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021052600\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021072800\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021081100\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021081101\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021102600\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2021122200\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2022030400\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2022031000\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2022032400\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2022053100\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2022060600\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2022092800\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2022110200\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2022111400\UpdateSchema.cs" />
+    <Compile Include="Migrations\2022\Version_2022121200\UpdateSchema.cs" />
+    <Compile Include="Migrations\2023\Version_2023011100\UpdateSchema.cs" />
+    <Compile Include="Migrations\2023\Version_2023011600\UpdateSchema.cs" />
+    <Compile Include="Migrations\2023\Version_2023011900\UpdateSchema.cs" />
+    <Compile Include="Migrations\2023\Version_2023013000\UpdateSchema.cs" />
+    <Compile Include="Migrations\2023\Version_2023031100\UpdateSchema.cs" />
+    <Compile Include="Migrations\2023\Version_2023040400\UpdateSchema.cs" />
+    <Compile Include="Migrations\2023\Version_2023080700\UpdateSchema.cs" />
+    <Compile Include="Migrations\2023\Version_2023110800\UpdateSchema.cs" />
+    <Compile Include="Migrations\2023\Version_2023111300\UpdateSchema.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="NavigationProvider.cs" />
+    <Compile Include="Navigation\DocumentsGjiRegisterMenuProvider.cs" />
+    <Compile Include="NumberRule\AppealCitsNumberRule.cs" />
+    <Compile Include="Permissions\GkhGjiHabarovskPermissionMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\ModuleAssemblyInfo.cs" />
+    <Compile Include="Properties\ModuleAssemblyInfo1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModuleAssemblyInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Report\AppealAnswer1.cs" />
+    <Compile Include="Report\AppealAnswer2.cs" />
+    <Compile Include="Report\AppealCitsAdmonitionReport.cs" />
+    <Compile Include="Report\AppealLetterp3st8Report.cs" />
+    <Compile Include="Report\AppealLetterp4st8Report.cs" />
+    <Compile Include="Report\AppealResolutionReport.cs" />
+    <Compile Include="Report\DisposalGji\HabarovskDisposalStimulReport.cs" />
+    <Compile Include="Report\PayRegReport.cs" />
+    <Compile Include="Report\SMEVEGRIPReport.cs" />
+    <Compile Include="Report\SMEVEGRULReport.cs" />
+    <Compile Include="Report\SMEVMVDReport.cs" />
+    <Compile Include="ResourceManifest.cs">
+      <DependentUpon>ResourceManifest.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ResourceManifest.Part.cs" />
+    <Compile Include="Services\DataContracts\OSSPApproveRequest.cs" />
+    <Compile Include="Services\DataContracts\RequestResult.cs" />
+    <Compile Include="Services\DataContracts\SyncAppealCitFromEDM\AppealCitFromEDMRecord.cs" />
+    <Compile Include="Services\DataContracts\SyncAppealCit\AppealCitRecord.cs" />
+    <Compile Include="Services\DataContracts\SyncAppealCit\File.cs" />
+    <Compile Include="Services\DataContracts\SyncAppealCit\Resolution.cs" />
+    <Compile Include="Services\DataContracts\SyncAppealCit\ResolutionExecutor.cs" />
+    <Compile Include="Services\DataContracts\SyncDictionaries\DictionaryGJIResponse.cs" />
+    <Compile Include="Services\DataContracts\SyncDictionaries\DictionaryRecord.cs" />
+    <Compile Include="Services\DataContracts\SyncInspections\ActCheckProxy.cs" />
+    <Compile Include="Services\DataContracts\SyncInspections\ActRemovalProxy.cs" />
+    <Compile Include="Services\DataContracts\SyncInspections\DisposalProxy.cs" />
+    <Compile Include="Services\DataContracts\SyncInspections\DocumentsGJIData.cs" />
+    <Compile Include="Services\DataContracts\SyncInspections\IncpectionGJI.cs" />
+    <Compile Include="Services\DataContracts\SyncInspections\IncpectionGJIResponse.cs" />
+    <Compile Include="Services\DataContracts\SyncInspections\PrescriptionProxy.cs" />
+    <Compile Include="Services\DataContracts\SyncInspections\ProtocolProxy.cs" />
+    <Compile Include="Services\DataContracts\SyncOperators\OperatorGJI.cs" />
+    <Compile Include="Services\DataContracts\SyncOperators\OperatorGJIResponse.cs" />
+    <Compile Include="Services\Impl\AppealCitFromEDMService.cs" />
+    <Compile Include="Services\Impl\AppealCitService.cs" />
+    <Compile Include="Services\Impl\MobileApplicationService.cs" />
+    <Compile Include="Services\ServiceContracts\IAppealCitFromEDMService.cs" />
+    <Compile Include="Services\ServiceContracts\IAppealCitService.cs" />
+    <Compile Include="Services\ServiceContracts\IMobileApplicationService.cs" />
+    <Compile Include="Signature\AppealCitsAdmonitionAnswerSignature.cs" />
+    <Compile Include="Signature\AppealCitsAdmonitionSignature.cs" />
+    <Compile Include="Signature\IAnswerSignature.cs" />
+    <Compile Include="StateChange\BaseDocNumberValidationHabarovskRule.cs" />
+    <Compile Include="StateChange\Complaints\ComplaintsAcceptRule.cs" />
+    <Compile Include="StateChange\Complaints\ComplaintsCompleteWorkRule.cs" />
+    <Compile Include="StateChange\Complaints\ComplaintsInWorkAcceptRule.cs" />
+    <Compile Include="StateChange\Complaints\ComplaintsInWorkRule.cs" />
+    <Compile Include="StateChange\Complaints\ComplaintsRejectWorkRule.cs" />
+    <Compile Include="StateChange\Complaints\ComplaintsSentExecutatnRule.cs" />
+    <Compile Include="StateChange\Rule\ActCheckNumberValidationHabarovskRule.cs" />
+    <Compile Include="StateChange\Rule\AppealCitsPosAnswerRule.cs" />
+    <Compile Include="StateChange\Rule\AppealCitsPosRule.cs" />
+    <Compile Include="StateChange\Rule\AppealSOPRStateRule.cs" />
+    <Compile Include="StateChange\Rule\ASDOUSendRule.cs" />
+    <Compile Include="StateChange\Rule\DecisionNumberValidationHabarovskRule.cs" />
+    <Compile Include="StateChange\Rule\DisposalNumberValidationHabarovskRule.cs" />
+    <Compile Include="StateChange\Rule\LicenseApprovalChangeStateRule.cs" />
+    <Compile Include="StateChange\Rule\LicenseInfoRequestAcceptRule.cs" />
+    <Compile Include="StateChange\Rule\LicenseInfoRequestDeclineRule.cs" />
+    <Compile Include="StateChange\Rule\LicenseReissuanceAcceptRule.cs" />
+    <Compile Include="StateChange\Rule\LicenseReissuanceDeclineRule.cs" />
+    <Compile Include="StateChange\Rule\LicenseTerminationChangeStateRule.cs" />
+    <Compile Include="StateChange\Rule\LicRequestAcceptRule.cs" />
+    <Compile Include="StateChange\Rule\LicRequestDeclineRule.cs" />
+    <Compile Include="StateChange\Rule\PrescriptionNumberValidationHabarovskRule.cs" />
+    <Compile Include="StateChange\Rule\PresentationNumberValidationHabarovskRule.cs" />
+    <Compile Include="StateChange\Rule\ProtocolNumberValidationHabarovskRule.cs" />
+    <Compile Include="StateChange\Rule\ProtocolOSPRequestRule.cs" />
+    <Compile Include="StateChange\Rule\ResolutionNumberValidationHabarovskRule.cs" />
+    <Compile Include="StatefulEntityManifest.cs" />
+    <Compile Include="Tasks\ChangePremisesStateSendInformationRequest\SendChangePremisesStateRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\ChangePremisesStateSendInformationRequest\SendChangePremisesStateRequestTaskProvider.cs" />
+    <Compile Include="Tasks\CheckERPNeedCorrection\CheckERPNeedCorrectionTaskExecutor.cs" />
+    <Compile Include="Tasks\CheckERPNeedCorrection\CheckERPNeedCorrectionTaskProvider.cs" />
+    <Compile Include="Tasks\CreateResolutionPayFines\CreateResolutionPayFinesTaskExecutor.cs" />
+    <Compile Include="Tasks\CreateResolutionPayFines\CreateResolutionPayFinesTaskProvider.cs" />
+    <Compile Include="Tasks\DISKVLICSendInformationRequest\SendDISKVLICRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\DISKVLICSendInformationRequest\SendDISKVLICRequestTaskProvider.cs" />
+    <Compile Include="Tasks\DOSendInformationRequest\SendDORequestTaskExecutor.cs" />
+    <Compile Include="Tasks\DOSendInformationRequest\SendDORequestTaskProvider.cs" />
+    <Compile Include="Tasks\EGRIPSendInformationRequest\SendEGRIPRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\EGRIPSendInformationRequest\SendEGRIPRequestTaskProvider.cs" />
+    <Compile Include="Tasks\EGRNSendInformationRequest\SendEGRNRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\EGRNSendInformationRequest\SendEGRNRequestTaskProvider.cs" />
+    <Compile Include="Tasks\EGRULSendInformationRequest\SendInformationRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\EGRULSendInformationRequest\SendInformationRequestTaskProvider.cs" />
+    <Compile Include="Tasks\EGULSendInformationRequest\SendERULRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\EGULSendInformationRequest\SendERULRequestTaskProvider.cs" />
+    <Compile Include="Tasks\EmergencyHouse\EmergencyHouseProvider.cs" />
+    <Compile Include="Tasks\EmergencyHouse\EmergencyHouseTaskExecutor.cs" />
+    <Compile Include="Tasks\ERKNMSendInitiateRequest\ERKNMSendInitiateRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\ERKNMSendInitiateRequest\ERKNMSendInitiateRequestTaskProvider.cs" />
+    <Compile Include="Tasks\ERPSendAskProsecOfficesRequest\SendAskProsecOfficesRequestExecutor.cs" />
+    <Compile Include="Tasks\ERPSendAskProsecOfficesRequest\SendAskProsecOfficesRequestProvider.cs" />
+    <Compile Include="Tasks\ExploitResolutionSendInformationRequest\SendExploitResolutionRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\ExploitResolutionSendInformationRequest\SendExploitResolutionRequestTaskProvider.cs" />
+    <Compile Include="Tasks\FileRegister\FileRegisterTaskExecutor.cs" />
+    <Compile Include="Tasks\FileRegister\FileRegisterTaskProvider.cs" />
+    <Compile Include="Tasks\FNSSendRequest\FNSSendRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\FNSSendRequest\FNSSendRequestTaskProvider.cs" />
+    <Compile Include="Tasks\GASU\GASUTaskExecutor.cs" />
+    <Compile Include="Tasks\GASU\GASUTaskProvider.cs" />
+    <Compile Include="Tasks\GetRPGUAnswers\GetRPGUAnswersTaskExecutor.cs" />
+    <Compile Include="Tasks\GetRPGUAnswers\GetRPGUAnswersTaskProvider.cs" />
+    <Compile Include="Tasks\GetSMEV2Answers\GetSMEV2AnswersTaskExecutor.cs" />
+    <Compile Include="Tasks\GetSMEV2Answers\GetSMEV2AnswersTaskProvider.cs" />
+    <Compile Include="Tasks\GetSMEVAnswers\GetSMEVAnswersTaskExecutor.cs" />
+    <Compile Include="Tasks\GetSMEVAnswers\GetSMEVAnswersTaskProvider.cs" />
+    <Compile Include="Tasks\GISERPSendInitiateRequest\SendInitiateRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\GISERPSendInitiateRequest\SendInitiateRequestTaskProvider.cs" />
+    <Compile Include="Tasks\GISGMPSendCalcRequest\SendCalcRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\GISGMPSendCalcRequest\SendCalcRequestTaskProvider.cs" />
+    <Compile Include="Tasks\GISGMPSendPayRequest\SendPayRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\GISGMPSendPayRequest\SendPayRequestTaskProvider.cs" />
+    <Compile Include="Tasks\GISGMPSendReconcileRequest\SendReconcileRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\GISGMPSendReconcileRequest\SendReconcileRequestTaskProvider.cs" />
+    <Compile Include="Tasks\MVDLivingPlaceRegistrationRequest\MVDLivingPlaceRegistrationRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\MVDLivingPlaceRegistrationRequest\MVDLivingPlaceRegistrationRequestTaskProvider.cs" />
+    <Compile Include="Tasks\MVDPassportSendInformationRequest\MVDPassportRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\MVDPassportSendInformationRequest\MVDPassportRequestTaskProvider.cs" />
+    <Compile Include="Tasks\MVDSendInformationRequest\SendMVDRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\MVDSendInformationRequest\SendMVDRequestTaskProvider.cs" />
+    <Compile Include="Tasks\MVDStayingPlaceRegistrationRequest\MVDStayingPlaceRegistrationRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\MVDStayingPlaceRegistrationRequest\MVDStayingPlaceRegistrationRequestTaskProvider.cs" />
+    <Compile Include="Tasks\NDFLSendInformationRequest\SendNDFLRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\NDFLSendInformationRequest\SendNDFLRequestTaskProvider.cs" />
+    <Compile Include="Tasks\OwnershipProperty\OwnershipPropertyTaskExecutor.cs" />
+    <Compile Include="Tasks\OwnershipProperty\OwnershipPropertyTaskProvider.cs" />
+    <Compile Include="Tasks\PAYREGSendPaymentRequest\SendPaymentRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\PAYREGSendPaymentRequest\SendPaymentRequestTaskProvider.cs" />
+    <Compile Include="Tasks\Premises\PremisesTaskExecutor.cs" />
+    <Compile Include="Tasks\Premises\PremisesTaskProvider.cs" />
+    <Compile Include="Tasks\Redevelopment\RedevelopmentTaskExecutor.cs" />
+    <Compile Include="Tasks\Redevelopment\RedevelopmentTaskProvider.cs" />
+    <Compile Include="Tasks\SendComplaintsCustomRequest\SendComplaintsCustomRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\SendComplaintsCustomRequest\SendComplaintsCustomRequestTaskProvider.cs" />
+    <Compile Include="Tasks\SMEVExploitResolution\SMEVExploitResolutionTaskExecutor.cs" />
+    <Compile Include="Tasks\SMEVExploitResolution\SMEVExploitResolutionTaskProvider.cs" />
+    <Compile Include="Tasks\SMEVLivingPlace\SendSMEVLivingPlaceTaskExecutor.cs" />
+    <Compile Include="Tasks\SMEVLivingPlace\SendSMEVLivingPlaceTaskProvider.cs" />
+    <Compile Include="Tasks\SMEVPropertyType\SendSMEVPropertyTypeTaskExecutor.cs" />
+    <Compile Include="Tasks\SMEVPropertyType\SendSMEVPropertyTypeTaskProvider.cs" />
+    <Compile Include="Tasks\SMEVSNILS\SMEVSNILSTaskExecutor.cs" />
+    <Compile Include="Tasks\SMEVSNILS\SMEVSNILSTaskProvider.cs" />
+    <Compile Include="Tasks\SMEVStayingPlace\SendSMEVStayingPlaceTaskExecutor.cs" />
+    <Compile Include="Tasks\SMEVStayingPlace\SendSMEVStayingPlaceTaskProvider.cs" />
+    <Compile Include="Tasks\SMEVValidPassport\SendSMEVValidPassportTaskExecutor.cs" />
+    <Compile Include="Tasks\SMEVValidPassport\SendSMEVValidPassportTaskProvider.cs" />
+    <Compile Include="Tasks\SocialHireSendInformationRequest\SendSocialHireRequestTaskExecutor.cs" />
+    <Compile Include="Tasks\SocialHireSendInformationRequest\SendSocialHireRequestTaskProvider.cs" />
+    <Compile Include="Tasks\SSTUExportTask\SSTUExportTaskExecutor.cs" />
+    <Compile Include="Tasks\SSTUExportTask\SSTUExportTaskProvider.cs" />
+    <Compile Include="TextValues\DisposalText.cs" />
+    <Compile Include="ViewModel\AppealCits\AppCitAdmonAnnexViewModel.cs" />
+    <Compile Include="ViewModel\AppealCits\AppCitAdmonAppealViewModel.cs" />
+    <Compile Include="ViewModel\AppealCits\AppCitAdmonVoilationViewModel.cs" />
+    <Compile Include="ViewModel\AppealCits\AppCitPrFondObjectCrViewModel.cs" />
+    <Compile Include="ViewModel\AppealCits\AppCitPrFondVoilationViewModel.cs" />
+    <Compile Include="ViewModel\AppealCits\AppealAnswerExecutionTypeViewModel.cs" />
+    <Compile Include="ViewModel\AppealCits\AppealCitsAdmonitionViewModel.cs" />
+    <Compile Include="ViewModel\AppealCits\AppealCitsExecutionTypeViewModel.cs" />
+    <Compile Include="ViewModel\AppealCits\AppealCitsPrescriptionFondViewModel.cs" />
+    <Compile Include="ViewModel\AppealCits\AppealCitsResolutionExecutorViewModel.cs" />
+    <Compile Include="ViewModel\AppealCits\AppealCitsResolutionViewModel.cs" />
+    <Compile Include="ViewModel\CitizenSuggestionViewModel.cs" />
+    <Compile Include="ViewModel\CourtPractice\CourtPracticeFileViewModel.cs" />
+    <Compile Include="ViewModel\CourtPractice\CourtPracticeInspectorViewModel.cs" />
+    <Compile Include="ViewModel\CourtPractice\CourtPracticeRealityObjectViewModel.cs" />
+    <Compile Include="ViewModel\CourtPractice\CourtPracticeViewModel.cs" />
+    <Compile Include="ViewModel\Dict\EGRNApplicantTypeViewModel.cs" />
+    <Compile Include="ViewModel\Dict\EGRNDocTypeViewModel.cs" />
+    <Compile Include="ViewModel\Dict\EGRNObjectTypeViewModel.cs" />
+    <Compile Include="ViewModel\Dict\FLDocTypeViewModel.cs" />
+    <Compile Include="ViewModel\Dict\GISGMPPayerStatusViewModel.cs" />
+    <Compile Include="ViewModel\Dict\RegionCodeMVDViewModel.cs" />
+    <Compile Include="ViewModel\EmailLists\EmailListsViewModel.cs" />
+    <Compile Include="ViewModel\FileRegister\FileRegisterViewModel.cs" />
+    <Compile Include="ViewModel\Inspection\BaseLicenseReissuanceViewModel.cs" />
+    <Compile Include="ViewModel\Inspection\BaseOMSUViewModel.cs" />
+    <Compile Include="ViewModel\LicenseReissuance\LicenseReissuancePersonViewModel.cs" />
+    <Compile Include="ViewModel\LicenseReissuance\LicenseReissuanceProvDocViewModel.cs" />
+    <Compile Include="ViewModel\LicenseReissuance\LicenseReissuanceViewModel.cs" />
+    <Compile Include="ViewModel\PreliminaryCheckViewModel.cs" />
+    <Compile Include="ViewModel\ProtocolOSPRequest\ProtocolOSPRequestViewModel.cs" />
+    <Compile Include="ViewModel\RiskOrientedMethod\EffectiveKNDIndexViewModel.cs" />
+    <Compile Include="ViewModel\RiskOrientedMethod\KindKNDDictArtLawViewModel.cs" />
+    <Compile Include="ViewModel\RiskOrientedMethod\KindKNDDictViewModel.cs" />
+    <Compile Include="ViewModel\RiskOrientedMethod\ROMCategoryMKDViewModel.cs" />
+    <Compile Include="ViewModel\RiskOrientedMethod\ROMCategoryViewModel.cs" />
+    <Compile Include="ViewModel\RiskOrientedMethod\VnResolutionViewModel.cs" />
+    <Compile Include="ViewModel\RiskOrientedMethod\VpResolutionViewModel.cs" />
+    <Compile Include="ViewModel\RiskOrientedMethod\VprPrescriptionViewModel.cs" />
+    <Compile Include="ViewModel\RiskOrientedMethod\VprResolutionViewModel.cs" />
+    <Compile Include="ViewModel\ROMCalcTask\ROMCalcTaskManOrgViewModel.cs" />
+    <Compile Include="ViewModel\ROMCalcTask\ROMCalcTaskViewModel.cs" />
+    <Compile Include="ViewModel\SMEV2\SMEVLivingPlaceFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV2\SMEVLivingPlaceViewModel.cs" />
+    <Compile Include="ViewModel\SMEV2\SMEVPropertyTypeFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV2\SMEVPropertyTypeViewModel.cs" />
+    <Compile Include="ViewModel\SMEV2\SMEVStayingPlaceFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV2\SMEVStayingPlaceViewModel.cs" />
+    <Compile Include="ViewModel\SMEV2\SMEVValidPassportFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV2\SMEVValidPassportViewModel.cs" />
+    <Compile Include="ViewModel\SMEVEmergencyHouse\SMEVEmergencyHouseFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEVEmergencyHouse\SMEVEmergencyHouseViewModel.cs" />
+    <Compile Include="ViewModel\SMEVOwnershipProperty\SMEVOwnershipPropertyFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEVOwnershipProperty\SMEVOwnershipPropertyViewModel.cs" />
+    <Compile Include="ViewModel\SMEVPremises\SMEVPremisesFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEVPremises\SMEVPremisesViewModel.cs" />
+    <Compile Include="ViewModel\SMEVRedevelopment\SMEVRedevelopmentFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEVRedevelopment\SMEVRedevelopmentViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\ERKNMFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\ERKNMResultViolationsViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\ERKNMViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\GASUDataViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\GASUFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\GASUViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\GISERPFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\GISERPResultViolationsViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\GISERPViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\GisGmpFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\GISGMPPaymentsViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\GisGmpViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\PayRegFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\PayRegRequestsViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\PayRegViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVChangePremisesStateFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVChangePremisesStateViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVDISKVLICFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVDISKVLICViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVEDOFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVEDOViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVEGRIPFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVEGRIPViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVEGRNFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVEGRNViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVEGRULFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVEGRULViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVExploitResolutionFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVExploitResolutionViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVMVDFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVMVDViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVNDFLAnswerViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVNDFLFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVNDFLViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVSNILSFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVSNILSViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVSocialHireFileViewModel.cs" />
+    <Compile Include="ViewModel\SMEV\SMEVSocialHireViewModel.cs" />
+    <Compile Include="ViewModel\SSTUExportTask\SSTUExportTaskAppealViewModel.cs" />
+    <Compile Include="ViewModel\SSTUExportTask\SSTUExportTaskViewModel.cs" />
+    <Compile Include="ViewModel\VDGOViolators\VDGOViolatorsViewModel.cs" />
+    <Compile Include="ViewModel\HabarovskEntityChangeLogViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="paket.references">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\AppAnswer1.mrt" />
+    <None Include="Resources\AppAnswer2.mrt" />
+    <None Include="Resources\AppealCitsAdmonitionReport.mrt" />
+    <None Include="Resources\AppealLetterp3st8.mrt" />
+    <None Include="Resources\AppealLetterp4st8.mrt" />
+    <None Include="Resources\AppealResolutionReport.mrt" />
+    <None Include="Resources\blazon_Voronezh" />
+    <None Include="Resources\ChelyabinskDisposal.mrt" />
+    <None Include="Resources\PayRegReportForm.mrt" />
+    <None Include="Resources\SMEVEGRIPReport.mrt" />
+    <None Include="Resources\SMEVEGRULReport.mrt" />
+    <None Include="Resources\SMEVEGRULReport1.mrt" />
+    <None Include="Resources\SMEV_MVD_PF.mrt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PropTypeXml.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signtemplate.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stamp_Voronezh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="Resources\test1.xsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Services\AppealCitFromEDMService.svc" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Services\AppealCitService.svc" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Services\MobileApplicationService.svc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ResourceManifest.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ResourceManifest.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Bars.Gkh.DocIoGenerator\Bars.Gkh.DocIoGenerator.csproj">
+      <Project>{be69b329-adfb-46f6-b0a7-983e761caab1}</Project>
+      <Name>Bars.Gkh.DocIoGenerator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.Gkh.Overhaul.Hmao\Bars.Gkh.Overhaul.Hmao.csproj">
+      <Project>{390e291f-c1cf-4bf8-a205-4e78b40618b6}</Project>
+      <Name>Bars.Gkh.Overhaul.Hmao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.GkhCalendar\Bars.GkhCalendar.csproj">
+      <Project>{9de7e6ba-32cd-452f-828b-5ef9007a16f2}</Project>
+      <Name>Bars.GkhCalendar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.GkhCR\Bars.GkhCR.csproj">
+      <Project>{16841fbf-162a-4641-9a52-a8975fe6bae3}</Project>
+      <Name>Bars.GkhCR</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.GkhExcel\Bars.GkhExcel.csproj">
+      <Project>{558c303d-115d-4c79-bc89-73dc91a1834f}</Project>
+      <Name>Bars.GkhExcel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.GkhGji.Contracts\Bars.GkhGji.Contracts.csproj">
+      <Project>{e100e48a-f0e2-4ec2-9d85-9f3ee4525e4b}</Project>
+      <Name>Bars.GkhGji.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.GkhGJI\Bars.GkhGji.csproj">
+      <Project>{0E792744-CC64-41C1-A5F2-3F6E3C00470C}</Project>
+      <Name>Bars.GkhGji</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.Gkh\Bars.Gkh.csproj">
+      <Project>{2495a42b-7ec1-44d3-b7a7-1f90a2c44c85}</Project>
+      <Name>Bars.Gkh</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Modules\FIAS\Bars.B4.Modules.FIAS\Bars.B4.Modules.FIAS.csproj">
+      <Project>{6a9e84ec-5b9e-441f-95e5-493b52081d92}</Project>
+      <Name>Bars.B4.Modules.FIAS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Regions\Base\Bars.GkhGji.Regions.BaseChelyabinsk\Bars.GkhGji.Regions.BaseChelyabinsk.csproj">
+      <Project>{dd6422f9-1366-4761-b252-a590e9f61d1f}</Project>
+      <Name>Bars.GkhGji.Regions.BaseChelyabinsk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SMEV3Library\SMEV3Library.csproj">
+      <Project>{2fc75a47-fc01-4ea3-a67f-8d629fe909b7}</Project>
+      <Name>SMEV3Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Voronezh\Bars.Gkh.Regions.Voronezh\Bars.Gkh.Regions.Voronezh.csproj">
+      <Project>{ef4fcc78-a682-4143-9e22-0e1d26679ea3}</Project>
+      <Name>Bars.Gkh.Regions.Voronezh</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\ModuleAssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModuleAssemblyInfo1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

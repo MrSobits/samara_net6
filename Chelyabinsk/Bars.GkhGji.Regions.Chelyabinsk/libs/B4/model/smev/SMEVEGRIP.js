@@ -1,0 +1,36 @@
+Ext.define('B4.model.smev.SMEVEGRIP', {
+    extend: 'B4.base.Model',
+    idProperty: 'Id',
+    proxy: {
+        type: 'b4proxy',
+        controllerName: 'SMEVEGRIP'
+    },
+    fields: [
+        { name: 'ReqId'},
+        { name: 'RequestDate'},
+        { name: 'Inspector'},
+        { name: 'RequestState' },
+        { name: 'INNReq' },
+        { name: 'Answer' },
+        { name: 'AddressRegOrg' },
+        { name: 'CalcDate' },
+        { name: 'CodeRegOrg' },
+        { name: 'CreateWayName' },
+        { name: 'FIO' },
+        { name: 'OGRN' },
+        { name: 'OGRNDate' },
+        { name: 'OKVEDCodes' },
+        { name: 'OKVEDNames' },
+        { name: 'IPType' },
+        { name: 'Citizenship' },
+        { name: 'RegionType' },
+        { name: 'RegionName' },
+        { name: 'CityType' },
+        { name: 'CityName' },
+        { name: 'RegOrgName' },
+        { name: 'ResponceDate' },
+        { name: 'MessageId' },
+        { name: 'InnOgrn' },
+        { name: 'CalcDate' },
+    ]
+});

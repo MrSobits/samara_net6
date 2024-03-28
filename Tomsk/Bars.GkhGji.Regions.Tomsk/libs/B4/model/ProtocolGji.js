@@ -1,0 +1,43 @@
+Ext.define('B4.model.ProtocolGji', {
+    extend: 'B4.model.DocumentGji',
+    idProperty: 'Id',
+    proxy: {
+        type: 'b4proxy',
+        controllerName: 'Protocol'
+    },
+    fields: [
+        { name: 'Inspection', defaultValue: null },
+        { name: 'Executant', defaultValue: null },
+        { name: 'Contragent', defaultValue: null },
+        { name: 'PhysicalPerson' },
+        { name: 'PhysicalPersonInfo' },
+        { name: 'DateToCourt' },
+        { name: 'ToCourt', defaultValue: false },
+        { name: 'Description' },
+        { name: 'ViolationsList', defaultValue: null },
+        { name: 'ParentDocumentsList' },
+        { name: 'TypeDocumentGji', defaultValue: 60 },
+        { name: 'ContragentName' },
+        { name: 'TypeExecutant' },
+        { name: 'MunicipalityNames' },
+        { name: 'CountViolation' },
+        { name: 'DocumentNumber' },
+        { name: 'DocumentDate' },
+        { name: 'InspectorNames' },
+        { name: 'InspectionId', defaultValue: null },
+        { name: 'TypeBase', defaultValue: null },
+        { name: 'ResolutionId' },
+        { name: 'DateOfProceedings' },
+        { name: 'HourOfProceedings' },
+        { name: 'MinuteOfProceedings' },
+        { name: 'DateOfViolation' },
+        { name: 'HourOfViolation' },
+        { name: 'MinuteOfViolation' },
+        { name: 'PersonFollowConversion' },
+        { name: 'TypeGender', defaultValue: 0 },
+        { name: 'PhysJob', defaultValue: null },
+        { name: 'PhysPosition', defaultValue: null },
+        { name: 'PhysBirthdayAndPlace', defaultValue: null },
+        { name: 'PhysIdentityDoc', defaultValue: null }
+    ]
+});

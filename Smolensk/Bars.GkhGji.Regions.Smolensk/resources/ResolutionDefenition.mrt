@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="0" />
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="14">
+      <value>,ДатаОпределения,ДатаОпределения,System.String,,False,False</value>
+      <value>,НаселенныйПункт,НаселенныйПункт,System.String,,False,False</value>
+      <value>,Инспектор,Инспектор,System.String,,False,False</value>
+      <value>,Установлено,Установлено,System.String,,False,False</value>
+      <value>,РезультатОпределения,РезультатОпределения,System.String,,False,False</value>
+      <value>,ДолжностьРуководителя,ДолжностьРуководителя,System.String,,False,False</value>
+      <value>,Руководитель,Руководитель,System.String,,False,False</value>
+      <value>,НомерОпределения,НомерОпределения,System.String,,False,False</value>
+      <value>,РуководительФИО,РуководительФИО,System.String,,False,False</value>
+      <value>,КодРуководителяФИО_сИнициалами,КодРуководителяФИО_сИнициалами,System.String,,False,False</value>
+      <value>,ДатаПостановления,ДатаПостановления,System.String,,False,False</value>
+      <value>,НомерПостановления,НомерПостановления,System.String,,False,False</value>
+      <value>,Правонарушитель,Правонарушитель,System.String,,False,False</value>
+      <value>,Контрагент,Контрагент,System.String,,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="2" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="1">
+        <ReportTitleBand2 Ref="3" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,17.5,12.2</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text1 Ref="4" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,17.5,8.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <DockStyle>Top</DockStyle>
+              <Font>Times New Roman,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="2" />
+              <Parent isRef="3" />
+              <Text>{ДатаОпределения} - ДатаОпределения
+{НаселенныйПункт} - НаселенныйПункт
+{Инспектор} - Инспектор
+{Установлено} - Установлено
+{РезультатОпределения} - РезультатОпределения
+{ДолжностьРуководителя} - ДолжностьРуководителя
+{Руководитель} - Руководитель
+{НомерОпределения} - НомерОпределения
+{РуководительФИО} - РуководительФИО
+{КодРуководителяФИО_сИнициалами} - КодРуководителяФИО_сИнициалами
+{ДатаПостановления} - ДатаПостановления
+{НомерПостановления} - НомерПостановления
+{Правонарушитель} - Правонарушитель
+{Контрагент} - Контрагент</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>9fe6ea3930184d22910fdd5ea4be1183</Guid>
+          <Name>ReportTitleBand2</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+        </ReportTitleBand2>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>3719af0d49ac489ea54d4d0310c0d9d4</Guid>
+      <Margins>2.2,1.3,0.75,0.5</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="5" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="6" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>6/8/2014 3:37:42 PM</ReportChanged>
+  <ReportCreated>9/1/2013 1:25:03 PM</ReportCreated>
+  <ReportFile>C:\_WORK\_REPOS\tfs\GKH.GKH.CMMI\Dev\Smolensk\Bars.GkhGji.Regions.Smolensk\resources\ResolutionDefenition.mrt</ReportFile>
+  <ReportGuid>8f020f5a278e46ea8c546726ad95e181</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2012.2.1400</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

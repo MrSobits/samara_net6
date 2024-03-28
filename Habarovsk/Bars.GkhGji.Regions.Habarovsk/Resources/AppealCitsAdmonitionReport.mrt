@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="1">
+      <AppCitAdmonVoilation Ref="2" type="DataTableSource" isKey="true">
+        <Alias>AppCitAdmonVoilation</Alias>
+        <Columns isList="true" count="3">
+          <value>ViolationGji,System.String</value>
+          <value>PlanedDate,System.String</value>
+          <value>FactDate,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>AppCitAdmonVoilation</Name>
+        <NameInSource>AppCitAdmonVoilation</NameInSource>
+      </AppCitAdmonVoilation>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="25">
+      <value>,ЛицензияНомер,ЛицензияНомер,System.String,,False,False</value>
+      <value>,ЛицензияНомерПриказа,ЛицензияНомерПриказа,System.String,,False,False</value>
+      <value>,ЛицензияДатаПриказа,ЛицензияДатаПриказа,System.String,,False,False</value>
+      <value>,УоНаименование,УоНаименование,System.String,,False,False</value>
+      <value>,УоКраткоеНаименование,УоКраткоеНаименование,System.String,,False,False</value>
+      <value>,УоИнн,УоИнн,System.String,,False,False</value>
+      <value>,УоОгрн,УоОгрн,System.String,,False,False</value>
+      <value>,УоОпф,УоОпф,System.String,,False,False</value>
+      <value>,ДлФио,ДлФио,System.String,,False,False</value>
+      <value>,ДлДокТипДокумента,ДлДокТипДокумента,System.String,,False,False</value>
+      <value>,ДлДокДатаВыдачи,ДлДокДатаВыдачи,System.String,,False,False</value>
+      <value>,ДлДокСерия,ДлДокСерия,System.String,,False,False</value>
+      <value>,ДлДокНомер,ДлДокНомер,System.String,,False,False</value>
+      <value>,ДлДокКемВыдан,ДлДокКемВыдан,System.String,,False,False</value>
+      <value>,Номер,Номер,System.String,,False,False</value>
+      <value>,Дата,Дата,System.String,,False,False</value>
+      <value>,Обр_Номер,Обр_Номер,System.String,Администрациия_x0020_Самарского_x00A0_района_x0020_г.о._x0020_Самара,False,False</value>
+      <value>,Обр_Дата,Обр_Дата,System.String,ул.Некрасовская_x002C__x0020_38_x000D__x000A_443077_x002C__x0020_г.Самара,False,False</value>
+      <value>,Контрагент,Контрагент,System.String,,False,False</value>
+      <value>,Контрагент_Адр,Контрагент_Адр,System.String,,False,False</value>
+      <value>,Контрагент_ОГРН,Контрагент_ОГРН,System.String,,False,False</value>
+      <value>,Срок,Срок,System.String,,False,False</value>
+      <value>,АдресМКД,АдресМКД,System.String,,False,False</value>
+      <value>,Должнострое_лицо,Должнострое_лицо,System.String,,False,False</value>
+      <value>,Должность,Должность,System.String,,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page3 Ref="3" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="4">
+        <ReportTitleBand1 Ref="4" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,19.3,12.4</ClientRectangle>
+          <Components isList="true" count="9">
+            <Image1 Ref="5" type="Image" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.4,0.2,3.4,2.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Guid>5e37b6e291d547c6a838f91fbb1eccb0</Guid>
+              <Image>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</Image>
+              <Name>Image1</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+            </Image1>
+            <Text1 Ref="6" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4,2.8,12,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14,Bold</Font>
+              <Guid>6c6cab8bcf62444a9b424f8c7ff1371a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>ПРАВИТЕЛЬСТВО САМАРСКОЙ ОБЛАСТИ</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text1>
+            <Text2 Ref="7" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4,3.8,12,1.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14,Bold</Font>
+              <Guid>9f49a12ef12843af82fe7dcd1c343412</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>ГОСУДАРСТВЕННАЯ ЖИЛИЩНАЯ
+ИНСПЕКЦИЯ
+САМАРСКОЙ ОБЛАСТИ</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+            <Text3 Ref="8" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4,5.6,12,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>d0110eb501664377b9bbc6d4ba9e35a8</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>443041, г. Самара, ул. Льва Толстого, дом 123
+Телефон 200-02-56, факс 207-06-78, эл.почта info@gzhi-samara.ru</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
+            <Text4 Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,7.2,17.8,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14,Bold</Font>
+              <Guid>2696554e1e9d4f969797054ee2fdb77d</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>ПРЕДОСТЕРЕЖЕНИЕ № {Номер}
+О НЕДОПУСТИМОСТИ НАРУШЕНИЯ ОБЯЗАТЕЛЬНЫХ ТРЕБОВАНИЙ</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text4>
+            <Text5 Ref="10" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.4,8.6,4.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>df9b5d9b34f8486bac51ce7fd3e4b0f5</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>{Дата}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text5>
+            <Text6 Ref="11" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,8.6,2.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>bd8c58d70b6e4f6a876c096a38e1a1e8</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>г.Самара</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text6>
+            <Text7 Ref="12" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,9.8,18.4,1.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14</Font>
+              <Guid>d522ee02c66740db8ad16bc28848ad69</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>	В ходе рассмотрения сведений о готовящихся нарушениях или о признаках нарушений обязательных требований, изложенных в обращении № {Обр_Номер} от {Обр_Дата}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text7>
+            <Text8 Ref="13" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,11.6,8.2,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14</Font>
+              <Guid>00683eaf65c14dcc9f47bd9bb29bd444</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>установлены следующие нарушения:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text8>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>94ae6a30706640aa8bb98e7a478c0cb7</Guid>
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+        </ReportTitleBand1>
+        <DataBand1 Ref="14" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <CanBreak>True</CanBreak>
+          <CanShrink>True</CanShrink>
+          <ClientRectangle>0,13.6,19.3,1</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text9 Ref="15" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0.8,0.2,18.3,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14,Underline</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>e04d6d07b4ce41a98314d06159d6e8a4</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="3" />
+              <Parent isRef="14" />
+              <Text>	{AppCitAdmonVoilation.ViolationGji}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text9>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>AppCitAdmonVoilation</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+        <DataBand2 Ref="16" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <CanBreak>True</CanBreak>
+          <ClientRectangle>0,15.4,19.3,8</ClientRectangle>
+          <Components isList="true" count="4">
+            <Text11 Ref="17" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,2,18.4,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14,Bold</Font>
+              <Guid>0acfb620b22f4df5b25495d84b98f354</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="3" />
+              <Parent isRef="16" />
+              <Text>ПРЕДОСТЕРЕГАЮ</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text11>
+            <Text12 Ref="18" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanBreak>True</CanBreak>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0.8,3,18.4,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14,Underline</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>4cb8e040a4964a0da1a7394736a0cc64</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="3" />
+              <Parent isRef="16" />
+              <Text>{Контрагент}, ОГРН {Контрагент_ОГРН}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text12>
+            <Text10 Ref="19" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0,18.4,2.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14</Font>
+              <Guid>c68ce006dba44ac298d5f5a75b7f166e</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="3" />
+              <Parent isRef="16" />
+              <Text>	На основании изложенного,  руководствуясь ст. 8.2., 8.3. Федерального закона от 26.12.2008 № 294-ФЗ «О защите прав юридических лиц и индивидуальных предпринимателей при осуществлении государственного контроля (надзора) и муниципального контроля»</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text10>
+            <Text13 Ref="20" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanBreak>True</CanBreak>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0.8,4.2,18.4,3.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>a7efbc025729412dab776d36b90080fc</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="3" />
+              <Parent isRef="16" />
+              <Text>о недопустимости   указанных   нарушений   обязательных требований   и   предлагаю принять меры по их обеспечению.
+В срок до {Срок} уведомить государственную жилищную инспекцию Самарской области об исполнении предостережения по адресу {АдресМКД}
+
+{Должность}  {Должнострое_лицо}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text13>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand2</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand2>
+        <ReportSummaryBand1 Ref="21" type="ReportSummaryBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <CanBreak>True</CanBreak>
+          <CanGrow>False</CanGrow>
+          <ClientRectangle>0,24.2,19.3,3</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text15 Ref="22" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0.8,0,18.4,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14</Font>
+              <Guid>97c8f97fcb3643de8b0222cf430de945</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="3" />
+              <Parent isRef="21" />
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text15>
+            <Text16 Ref="23" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0.8,1,18.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>0a1e6e924bb84b11a871e5c031d5b764</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text16</Name>
+              <Page isRef="3" />
+              <Parent isRef="21" />
+              <Text>(подпись, заверенная печатью)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text16>
+            <Text17 Ref="24" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0.8,2,18.4,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>2730f871d7894cb981fe1c216213f872</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text17</Name>
+              <Page isRef="3" />
+              <Parent isRef="21" />
+              <Text>(фамилия, имя, отчество (в случае, если имеется) и должность должностного лица, непосредственно подготовившего проект предостережения, контактный телефон, электронный адрес (при наличии))</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text17>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportSummaryBand1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+        </ReportSummaryBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>98286977176d40f7b038671832fa072b</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page3</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21.3</PageWidth>
+      <Report isRef="0" />
+      <UnlimitedHeight>True</UnlimitedHeight>
+      <Watermark Ref="25" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page3>
+  </Pages>
+  <PrinterSettings Ref="26" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>1/8/2018 3:14:11 PM</ReportChanged>
+  <ReportCreated>4/9/2015 11:56:41 AM</ReportCreated>
+  <ReportFile>C:\bars\gkh_samara\Bars.GkhGJI\resources\AppealCitsAdmonitionReport.mrt</ReportFile>
+  <ReportGuid>8bdbea6a250b49b1a39c2874217d459c</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

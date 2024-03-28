@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="3">
+      <Приказ Ref="2" type="DataTableSource" isKey="true">
+        <Alias>Приказ</Alias>
+        <Columns isList="true" count="10">
+          <value>Дата,System.DateTime</value>
+          <value>НомерДокумента,System.String</value>
+          <value>ПериодС,System.DateTime</value>
+          <value>ПериодПо,System.DateTime</value>
+          <value>ВидПроверки,System.String</value>
+          <value>ДлВынПриказ,System.String</value>
+          <value>ЦелиПроверки,System.String</value>
+          <value>СрокПроверки,System.String</value>
+          <value>Инспекторы,System.String</value>
+          <value>Контрагенты,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Приказ</Name>
+        <NameInSource>Приказ</NameInSource>
+      </Приказ>
+      <Контрагенты Ref="3" type="DataTableSource" isKey="true">
+        <Alias>Контрагенты</Alias>
+        <Columns isList="true" count="4">
+          <value>Контрагент,System.String</value>
+          <value>ФизАдрес,System.String</value>
+          <value>ЮрАдрес,System.String</value>
+          <value>КраткоеНаименование,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Контрагенты</Name>
+        <NameInSource>Контрагенты</NameInSource>
+      </Контрагенты>
+      <Инспекторы Ref="4" type="DataTableSource" isKey="true">
+        <Alias>Инспекторы</Alias>
+        <Columns isList="true" count="8">
+          <value>ФИО,System.String</value>
+          <value>Телефон,System.String</value>
+          <value>ФИОТп,System.String</value>
+          <value>ФИОВп,System.String</value>
+          <value>ДолжностьТп,System.String</value>
+          <value>ДолжностьВп,System.String</value>
+          <value>ДолжностьРп,System.String</value>
+          <value>ФиоСокр,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Инспекторы</Name>
+        <NameInSource>Инспекторы</NameInSource>
+      </Инспекторы>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="5" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="0" />
+      <Conditions isList="true" count="0" />
+      <Guid>922ac521bd36446b9fdb0146d4d42342</Guid>
+      <LargeHeight>True</LargeHeight>
+      <LargeHeightFactor>3</LargeHeightFactor>
+      <Margins>2,1,2,2</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+      <Watermark Ref="6" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="7" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>10/24/2014 10:12:35 AM</ReportChanged>
+  <ReportCreated>5/21/2014 9:50:01 AM</ReportCreated>
+  <ReportFile>C:\Users\nail.gaysin\Documents\gkh-templates\GJI\Сахалин\приказ\BlockGJI_Instruction_5_1.mrt</ReportFile>
+  <ReportGuid>a8b89f7ec74d4418bd009d26de4e1743</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

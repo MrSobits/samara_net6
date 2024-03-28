@@ -1,0 +1,83 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\packages\MSBuild.Microsoft.VisualStudio.Web.targets\build\MSBuild.Microsoft.VisualStudio.Web.targets.props" Condition="Exists('..\packages\MSBuild.Microsoft.VisualStudio.Web.targets\build\MSBuild.Microsoft.VisualStudio.Web.targets.props')" Label="Paket" />
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <SccProjectName></SccProjectName>
+    <SccLocalPath></SccLocalPath>
+    <SccAuxPath></SccAuxPath>
+    <SccProvider></SccProvider>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Bars.Gkh.Mobile.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Bars.Gkh.Mobile.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Properties\ModuleAssemblyInfo.cs">
+      <DependentUpon>ModuleAssemblyInfo.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="ResourceManifest.cs">
+      <DependentUpon>ResourceManifest.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="ResourceManifest.Manual.cs">
+      <DependentUpon>ResourceManifest.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="paket.references" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Properties\ModuleAssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModuleAssemblyInfo.cs</LastGenOutput>
+    </None>
+    <None Update="ResourceManifest.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ResourceManifest.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modules\Analytics\Bars.B4.Modules.Analytics\Bars.B4.Modules.Analytics.csproj" />
+    <ProjectReference Include="..\Bars.Gkh.Decisions.Nso\Bars.Gkh.Decisions.Nso.csproj" />
+    <ProjectReference Include="..\Bars.Gkh.Overhaul.Hmao\Bars.Gkh.Overhaul.Hmao.csproj" />
+    <ProjectReference Include="..\Bars.Gkh.Overhaul\Bars.Gkh.Overhaul.csproj" />
+    <ProjectReference Include="..\Bars.Gkh.RegOperator\Bars.Gkh.RegOperator.csproj" />
+    <ProjectReference Include="..\Bars.GkhCR\Bars.GkhCR.csproj" />
+    <ProjectReference Include="..\Bars.Gkh\Bars.Gkh.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties VerifyCodeBehindFields="True" VerifyCodeBehindEvents="True">
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <Target Name="AfterBuild" Condition="'$(BuildingInsideVisualStudio)' == 'true'">
+    <ItemGroup>
+      <DllFiles Include="$(TargetDir)*.dll" />
+      <PdbFiles Include="$(TargetDir)*.pdb" />
+      <XmlFiles Include="$(TargetDir)*.xml" />
+    </ItemGroup>
+    <Copy SourceFiles="@(DllFiles)" DestinationFolder="$(SolutionDir).build\" OverwriteReadOnlyFiles="True" SkipUnchangedFiles="True" />
+    <Copy SourceFiles="@(PdbFiles)" DestinationFolder="$(SolutionDir).build\" OverwriteReadOnlyFiles="True" SkipUnchangedFiles="True" />
+    <Copy SourceFiles="@(XmlFiles)" DestinationFolder="$(SolutionDir).build\" OverwriteReadOnlyFiles="True" SkipUnchangedFiles="True" />
+  </Target>
+</Project>

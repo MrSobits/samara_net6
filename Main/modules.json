@@ -1,0 +1,583 @@
+﻿{
+  /* Базовые модули, которые обязательны для любого региона */
+  "baseModules": [
+    "Bars.Gkh",
+    "Bars.Gkh.DocIoGenerator",
+    "Bars.GkhCr",
+    "Bars.GkhExcel",
+    "Bars.B4.Modules.Analytics",
+    "Bars.B4.Modules.Analytics.Reports",
+    "Bars.B4.Modules.Analytics.Reports.Web",
+    "Bars.B4.Modules.Analytics.Web",
+    "Bars.B4.Modules.FIAS.AutoUpdater"
+  ],
+  /* Модули, присутствие которых, определяется регионом */
+  "regions": [
+    // Воронеж
+    {
+      "regionName": "Воронеж",
+      "modules": [
+        "Bars.Gkh.Decisions.Nso",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Hmao",
+        "Bars.Gkh.RegOperator",
+        "Bars.Gkh.UserActionRetention",
+        "Bars.Gkh1468",
+        "Bars.GkhRf",
+        "Bars.GkhGji",
+        "Bars.GkhGji.Contracts",
+        "Bars.GkhGjiCr",
+        "Bars.GkhDi",
+        "Bars.GkhDiGji",
+        "Bars.GkhCalendar", 
+        "Bars.GkhGji.Regions.BaseChelyabinsk",
+        "Bars.Gkh.Regions.Voronezh",
+        "Bars.GkhGji.Regions.Voronezh",
+        "Bars.GisIntegration.Inspection",
+        "Bars.GisIntegration.Gkh",
+        "Bars.GisIntegration.UI",
+        "Bars.Gkh.ClaimWork",
+        "Sobits.RosReg",
+        "Bars.B4.Modules.ESIA.Auth",
+        "Sobits.GisGkh"
+      ]
+    },
+    // Демо
+    {
+      "regionName": "Демо",
+      "modules": [
+        "Bars.Gkh.Quartz.Scheduler",
+        "Bars.GisIntegration.Base",
+        "Bars.GisIntegration.Inspection",
+        "Bars.GisIntegration.Gkh",
+        "Bars.GisIntegration.UI",
+        "Bars.Gkh.Regions.Chelyabinsk",
+        "Bars.GkhDi.Regions.Chelyabinsk",
+        "Bars.GkhGji.Regions.BaseChelyabinsk",
+        "Bars.GkhOverhaulTp.Regions.Chelyabinsk",
+        "Bars.Gkh.ClaimWork",
+        "Bars.Gkh.Decisions.Nso",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Hmao",
+        "Bars.Gkh.Reforma",
+        "Bars.Gkh.RegOperator",
+        "Bars.Gkh.UserActionRetention",
+        "Bars.Gkh1468",
+        "Bars.GkhCrTp",
+        "Bars.GkhDi",
+        "Bars.GkhDiCr",
+        "Bars.GkhGji",
+        "Bars.GkhGji.Contracts",
+        "Bars.GkhGjiCr",
+        "Bars.GkhRf",
+        "Bars.GkhCalendar"
+      ]
+    },
+    // Забайкалье
+    {
+      "regionName": "Забайкалье",
+      "modules": [
+        "Bars.GkhGji.Regions.Zabaykalye",
+        "Bars.Gkh.ClaimWork",
+        "Bars.Gkh.Decisions.Nso",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Hmao",
+        "Bars.Gkh.RegOperator",
+        "Bars.Gkh.UserActionRetention",
+        "Bars.GkhCalendar",
+        "Bars.GkhGji",
+        "Bars.GkhGji.Contracts",
+        "Bars.GkhGjiCr",
+        "Bars.GkhRf"
+      ]
+    },
+    // Иваново
+    {
+      "regionName": "Иваново",
+      "modules": [
+        "Bars.Gkh.Quartz.Scheduler",
+        "Bars.Gkh.Decisions.Nso",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Hmao",
+        "Bars.Gkh.RegOperator",
+        "Bars.Gkh1468",
+        "Bars.Gkh.UserActionRetention",
+        "Bars.GkhCrTp",
+        "Bars.GkhRf"
+      ]
+    },
+    // НАО
+    {
+      "regionName": "НАО",
+      "modules": [
+        "Bars.Gkh.Decisions.Nso",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Nso",
+        "Bars.Gkh.RegOperator",
+        "Bars.Gkh1468",
+        "Bars.GkhDi",
+        "Bars.GkhDiCr",
+        "Bars.GkhDiGji",
+        "Bars.GkhGji",
+        "Bars.GkhGji.Contracts",
+        "Bars.GkhRf",
+        "Bars.Gkh.ClaimWork",
+        "Bars.Gkh.Regions.Nao"
+      ]
+    },
+    // Нижний Новгород
+    {
+      "regionName": "Нижний Новгород",
+      "modules": [
+        "Bars.Gkh.Regions.Nnovgorod",
+        "Bars.GkhGji.Regions.Nnovgorod",
+        "Bars.Gkh.UserActionRetention",
+        "Bars.Gkh1468",
+        "Bars.GkhGji",
+        "Bars.GkhGji.Contracts"
+      ]
+    },
+    // Пермь
+    {
+      "regionName": "Пермь",
+      "modules": [
+        "Bars.B4.Modules.ESIA.Auth",
+        "Bars.GkhDi.Regions.Chelyabinsk",
+        "Bars.GkhGji.Regions.BaseChelyabinsk",
+        "Bars.GkhGji.Regions.Perm",
+        "Bars.GkhOverhaulTp.Regions.Chelyabinsk",
+        "Bars.GisIntegration.UI",
+        "Bars.GisIntegration.Base",
+        "Bars.GisIntegration.Gkh",
+        "Bars.Gkh.Quartz.Scheduler",
+        "Bars.Gkh.Regions.Perm",
+        "Bars.Gkh.ClaimWork",
+        "Bars.Gkh.Decisions.Nso",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Hmao",
+        "Bars.Gkh.Reforma",
+        "Bars.Gkh.RegOperator",
+        "Bars.Gkh.UserActionRetention",
+        "Bars.Gkh1468",
+        "Bars.GkhCrTp",
+        "Bars.GkhDi",
+        "Bars.GkhDiCr",
+        "Bars.GkhGji",
+        "Bars.GkhGji.Contracts",
+        "Bars.GkhGjiCr",
+        "Bars.GkhRf",
+        "Bars.GkhCalendar"
+      ]
+    },
+    // Самара
+    {
+      "regionName": "Самара",
+      "modules": [
+        "Bars.Gkh.Quartz.Scheduler",
+        "Bars.GisIntegration.Base",
+        "Bars.GisIntegration.Inspection",
+        "Bars.GisIntegration.Gkh",
+        "Bars.GisIntegration.UI",
+        "Bars.Gkh.Regions.Samara",
+        "Bars.GkhDI.Regions.Samara",
+        "Bars.GkhGji.Regions.Samara",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Nso",
+        "Bars.Gkh.Reforma",
+        "Bars.Gkh1468",
+        "Bars.GkhCrTp",
+        "Bars.GkhDi",
+        "Bars.GkhDiCr",
+        "Bars.GkhDiGji",
+        "Bars.GkhGji",
+        "Bars.GkhGji.Contracts"
+      ]
+    },
+    // Саха
+    {
+      "regionName": "Саха",
+      "modules": [
+        "Bars.Gkh.Overhaul.Regions.Saha",
+        "Bars.GkhGji.Regions.Saha",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Hmao",
+        "Bars.Gkh.UserActionRetention",
+        "Bars.Gkh.Decisions.Nso",
+        "Bars.Gkh.RegOperator",
+        "Bars.Gkh1468",
+        "Bars.GkhDi",
+        "Bars.GkhDiCr",
+        "Bars.GkhDiGji",
+        "Bars.GkhGji",
+        "Bars.GkhGji.Contracts",
+        "Bars.GkhGjiCr",
+        "Bars.GkhRf"
+      ]
+    },
+    // Саха (с базовым функционалом интеграции с ГИС ЖКХ РФ)
+    {
+      "regionName": "Саха (с базовым функционалом интеграции с ГИС ЖКХ РФ)",
+      "modules": [
+        "Bars.Gkh.Overhaul.Regions.Saha",
+        "Bars.GkhGji.Regions.Saha",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Hmao",
+        "Bars.Gkh.UserActionRetention",
+        "Bars.Gkh.Decisions.Nso",
+        "Bars.Gkh.RegOperator",
+        "Bars.Gkh1468",
+        "Bars.GkhDi",
+        "Bars.GkhDiCr",
+        "Bars.GkhDiGji",
+        "Bars.GkhGji",
+        "Bars.GkhGji.Contracts",
+        "Bars.GkhGjiCr",
+        "Bars.GkhRf",
+        "Bars.Gkh.Quartz.Scheduler",
+        "Bars.GisIntegration.Base",
+        "Bars.GisIntegration.Inspection",
+        "Bars.GisIntegration.CapitalRepair",
+        "Bars.GisIntegration.Gkh",
+        "Bars.GisIntegration.UI"
+      ]
+    },
+    // Сахалин
+    {
+      "regionName": "Сахалин",
+      "modules": [
+        "Bars.Gkh.Quartz.Scheduler",
+        "Bars.GisIntegration.Base",
+        "Bars.GisIntegration.CapitalRepair",
+        "Bars.GisIntegration.RegOp",
+        "Bars.GisIntegration.Gkh",
+        "Bars.GisIntegration.UI",
+        "Bars.Gkh.FillPassport1468",
+        "Bars.GkhGji.Regions.Nso",
+        "Bars.GkhGji.Regions.Sahalin",
+        "Bars.Gkh.ClaimWork",
+        "Bars.Gkh.Decisions.Nso",
+        "Bars.Gkh.Mobile",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Hmao",
+        "Bars.Gkh.RegOperator",
+        "Bars.Gkh1468",
+        "Bars.GkhCalendar",
+        "Bars.GkhCrTp",
+        "Bars.GkhDi",
+        "Bars.GkhDiCr",
+        "Bars.GkhGji",
+        "Bars.GkhGji.Contracts",
+        "Bars.GkhGjiCr",
+        "Bars.GkhRf"
+      ]
+    },
+    // Смоленск
+    {
+      "regionName": "Смоленск",
+      "modules": [
+        "Bars.GkhGji.Regions.Smolensk",
+        "Bars.Gkh.Decisions.Nso",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Hmao",
+        "Bars.Gkh.RegOperator",
+        "Bars.Gkh.ClaimWork",
+        "Bars.Gkh1468",
+        "Bars.GkhCrTp",
+        "Bars.GkhDi",
+        "Bars.GkhDiCr",
+        "Bars.GkhDiGji",
+        "Bars.GkhGji",
+        "Bars.GkhGji.Contracts",
+        "Bars.GkhGjiCr",
+        "Bars.GkhRf",
+        "Bars.Gkh.Regions.Voronezh",
+        "Bars.Gkh.ClaimWork.Regions.Smolensk",
+        "Sobits.GisGkh"
+      ]
+    },
+    // Ставрополь
+    {
+      "regionName": "Ставрополь",
+      "modules": [
+        "Bars.GkhGji.Regions.Stavropol",
+        "Bars.Gkh.ClaimWork",
+        "Bars.Gkh.Decisions.Nso",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Hmao",
+        "Bars.Gkh.RegOperator",
+        "Bars.Gkh.UserActionRetention",
+        "Bars.Gkh1468",
+        "Bars.GkhDi",
+        "Bars.GkhDi.Regions.Tatarstan",
+        "Bars.Gkh.Reforma",
+        "Bars.GkhDiCr",
+        "Bars.GkhDiGji",
+        "Bars.GkhGji",
+        "Bars.GkhGjiCr",
+        "Bars.GkhGji.Contracts",
+        "Bars.GkhRf",
+        "Bars.Gkh.Quartz.Scheduler",
+        "Bars.GisIntegration.Base",
+        "Bars.GisIntegration.Inspection",
+        "Bars.GisIntegration.CapitalRepair",
+        "Bars.GisIntegration.RegOp",
+        "Bars.GisIntegration.Gkh",
+        "Bars.GisIntegration.UI",
+        "Bars.B4.Modules.ESIA.Auth"
+      ]
+    },
+    //Ставрополь (с базовым функционалом интеграции с ГИС ЖКХ РФ)
+    {
+      "regionName": "Ставрополь (с базовым функционалом интеграции с ГИС ЖКХ РФ)",
+      "modules": [
+        "Bars.GkhGji.Regions.Stavropol",
+        "Bars.Gkh.ClaimWork",
+        "Bars.Gkh.Decisions.Nso",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Hmao",
+        "Bars.Gkh.RegOperator",
+        "Bars.Gkh.UserActionRetention",
+        "Bars.Gkh1468",
+        "Bars.GkhDi",
+        "Bars.GkhDi.Regions.Tatarstan",
+        "Bars.Gkh.Reforma",
+        "Bars.GkhDiCr",
+        "Bars.GkhDiGji",
+        "Bars.GkhGji",
+        "Bars.GkhGji.Contracts",
+        "Bars.GkhRf",
+        "Bars.Gkh.Quartz.Scheduler",
+        "Bars.GisIntegration.Base",
+        "Bars.GisIntegration.Inspection",
+        "Bars.GisIntegration.CapitalRepair",
+        "Bars.GisIntegration.RegOp",
+        "Bars.GisIntegration.Gkh",
+        "Bars.GisIntegration.UI"
+      ]
+    },
+    // Татарстан
+    {
+      "regionName": "Татарстан",
+      "modules": [
+        "Bars.Gkh.Quartz.Scheduler",
+        "Bars.GisIntegration.Base",
+        "Bars.GisIntegration.Inspection",
+        "Bars.GisIntegration.CapitalRepair",
+        "Bars.GisIntegration.Gkh",
+        "Bars.GisIntegration.UI",
+        "Bars.Gkh.Gis",
+        "Bars.Gkh.Ris",
+        "Bars.B4.Modules.ESIA.Auth",
+        "Bars.Gkh.Gis.Reports",
+        "Bars.Gkh.Gis.Reports.UI",
+        "Bars.Gkh.Regions.Tatarstan",
+        "Bars.Gkh.RegOperator.Regions.Tatarstan",
+        "Bars.GkhDi.Regions.Tatarstan",
+        "Bars.GkhGji.Regions.Tatarstan",
+        "Bars.Gkh.ClaimWork",
+        "Bars.Gkh.Decisions.Nso",
+        "Bars.Gkh.Gku",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Tat",
+        "Bars.Gkh.Quartz.Scheduler",
+        "Bars.Gkh.Reforma",
+        "Bars.Gkh.RegOperator",
+        "Bars.Gkh.Repair",
+        "Bars.Gkh.UserActionRetention",
+        "Bars.Gkh1468",
+        "Bars.GkhCrTp",
+        "Bars.GkhDi",
+        "Bars.GkhDiCr",
+        "Bars.GkhDiGji",
+        "Bars.GkhEdoInteg",
+        "Bars.GkhGji",
+        "Bars.GkhGji.Contracts",
+        "Bars.GkhGjiCr",
+        "Bars.GkhRf"
+      ]
+    },
+    // Тюмень
+    {
+      "regionName": "Тюмень",
+      "modules": [
+        "Bars.Gkh.Regions.Tyumen",
+        "Bars.GkhCR.Regions.Tyumen",
+        "Bars.GkhGji.Regions.Tyumen",
+        "Bars.Gkh.RegOperator.Regions.Tyumen",
+        "Bars.Gkh.AlphaBI",
+        "Bars.Gkh.Decisions.Nso",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Hmao",
+        "Bars.Gkh.RegOperator",
+        "Bars.Gkh1468",
+        "Bars.GkhDi",
+        "Bars.GkhDiCr",
+        "Bars.GkhDiGji",
+        "Bars.GkhGjiCr",
+        "Bars.GkhGji",
+        "Bars.GkhGji.Contracts",
+        "Bars.GkhRf",
+        "Bars.B4.Modules.ESIA.Auth",
+        "Bars.GisIntegration.Base",
+        "Bars.GisIntegration.CapitalRepair",
+        "Bars.GisIntegration.Gkh",
+        "Bars.GisIntegration.Inspection",
+        "Bars.GisIntegration.RegOp",
+        "Bars.GisIntegration.UI",
+        "Sobits.GisGkh"
+      ]
+    },
+    // Хакасия
+    {
+      "regionName": "Хакасия",
+      "modules": [
+        "Bars.Gkh.ClaimWork",
+        "Bars.Gkh.Decisions.Nso",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Hmao",
+        "Bars.Gkh.Reforma",
+        "Bars.Gkh.RegOperator",
+        "Bars.Gkh1468",
+        "Bars.GkhCrTp",
+        "Bars.GkhDi",
+        "Bars.GkhDiCr",
+        "Bars.GkhDiGji",
+        "Bars.GkhGji",
+        "Bars.GkhGji.Contracts",
+        "Bars.GkhGjiCr",
+        "Bars.GkhRf",
+        "Bars.Gkh.Regions.Tomsk",
+        "Bars.GkhGji.Regions.Tomsk",
+        "Bars.GkhCalendar"
+      ]
+    },
+    // ХМАО
+    {
+      "regionName": "ХМАО",
+      "modules": [
+        "Bars.Gkh.Quartz.Scheduler",
+        "Bars.GisIntegration.Base",
+        "Bars.GisIntegration.CapitalRepair",
+        "Bars.GisIntegration.RegOp",
+        "Bars.GisIntegration.Gkh",
+        "Bars.GisIntegration.UI",
+        "Bars.Gkh.Decisions.Nso",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Hmao",
+        "Bars.Gkh.RegOperator",
+        "Bars.Gkh1468",
+        "Bars.Gkh.UserActionRetention",
+        "Bars.GkhCrTp",
+        "Bars.GkhRf"
+      ]
+    },
+    // Челябинск
+    {
+      "regionName": "Челябинск",
+      "modules": [
+        "Bars.B4.Modules.ESIA.Auth",
+        "Bars.Gkh.Regions.Chelyabinsk",
+        "Bars.GkhDi.Regions.Chelyabinsk",
+        "Bars.GkhGji.Regions.BaseChelyabinsk",
+        "Bars.Gkh.RegOperator.Regions.Chelyabinsk",
+        "Bars.GkhGji.Regions.Chelyabinsk",
+        "Bars.GkhDi.Regions.Chelyabinsk",
+        "Bars.GkhOverhaulTp.Regions.Chelyabinsk",
+        "Bars.Gkh.ClaimWork",
+        "Bars.Gkh.Decisions.Nso",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Hmao",
+        "Bars.Gkh.Reforma",
+        "Bars.Gkh.RegOperator",
+        "Bars.Gkh.UserActionRetention",
+        "Bars.Gkh1468",
+        "Bars.GkhCrTp",
+        "Bars.GkhDi",
+        "Bars.GkhDiCr",
+        "Bars.GkhGji",
+        "Bars.GkhGji.Contracts",
+        "Bars.GkhGjiCr",
+        "Bars.GkhRf",
+        "Bars.GkhCalendar",
+        "Bars.B4.Modules.ESIA.Auth",
+        "Bars.GisIntegration.UI",
+        "Bars.GisIntegration.Base",
+        "Bars.GisIntegration.Gkh",
+        "Sobits.RosReg",
+        "Sobits.GisGkh"
+      ]
+    },
+    // ЯНАО
+    {
+      "regionName": "ЯНАО",
+      "modules": [
+        "Bars.Gkh.Quartz.Scheduler",
+        "Bars.GisIntegration.Base",
+        "Bars.GisIntegration.Inspection",
+        "Bars.GisIntegration.Gkh",
+        "Bars.GisIntegration.UI",
+        "Bars.Gkh.Regions.Yanao",
+        "Bars.GkhGji.Regions.Yanao",
+        "Bars.Gkh1468",
+        "Bars.GkhDi",
+        "Bars.GkhDiCr",
+        "Bars.GkhDiGji",
+        "Bars.GkhGji",
+        "Bars.GkhGji.Contracts",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Hmao"
+      ]
+    },
+    // Хабаровск
+    {
+      "regionName": "Хабаровск",
+      "modules": [
+        "Bars.Gkh.Decisions.Nso",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Hmao",
+        "Bars.Gkh.RegOperator",
+        "Bars.Gkh.UserActionRetention",
+        "Bars.Gkh1468",
+        "Bars.GkhRf",
+        "Bars.GkhGji",
+        "Bars.GkhGji.Contracts",
+        "Bars.GkhGjiCr",
+        "Bars.GkhDi",
+        "Bars.GkhDiGji",
+        "Bars.GkhCalendar",
+        "Bars.GkhGji.Regions.BaseChelyabinsk",
+        "Bars.Gkh.Regions.Voronezh",
+        "Bars.GkhGji.Regions.Habarovsk",
+        "Bars.GisIntegration.Inspection",
+        "Bars.GisIntegration.Gkh",
+        "Bars.GisIntegration.UI",
+        "Bars.Gkh.ClaimWork",
+        "Sobits.RosReg",
+        "Bars.B4.Modules.ESIA.Auth",
+        "Sobits.GisGkh"
+      ]
+    },
+    // Тестовый
+    {
+      "regionName": "Тестовый",
+      "modules": [
+        "Bars.Gkh.ClaimWork",
+        "Bars.Gkh.Gku.Regions.Kamchatka",
+        "Bars.Gkh.Overhaul.Regions.Kamchatka",
+        "Bars.Gkh.AlphaBI",
+        "Bars.Gkh.Decisions.Nso",
+        "Bars.Gkh.Gku",
+        "Bars.Gkh.Overhaul",
+        "Bars.Gkh.Overhaul.Hmao",
+        "Bars.Gkh.RegOperator",
+        "Bars.Gkh.UserActionRetention",
+        "Bars.Gkh1468",
+        "Bars.GkhDi",
+        "Bars.GkhCrTp",
+        "Bars.GkhRf",
+        "Bars.GkhGji",
+        "Bars.Gkh.Diagnostic"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="1">
+      <AccountExcelSaldo Ref="2" type="DataTableSource" isKey="true">
+        <Alias>AccountExcelSaldo</Alias>
+        <Columns isList="true" count="7">
+          <value>ORIGINAL,Municipality,Муниципальное_x0020_образование,Муниципальное_x0020_образование,System.String</value>
+          <value>ORIGINAL,Address,Адрес,Адрес,System.String</value>
+          <value>ORIGINAL,AccountNumber,Лицевой_x0020_счет,Лицевой_x0020_счет,System.String</value>
+          <value>ORIGINAL,State,Статус,Статус,System.String</value>
+          <value>ORIGINAL,SaldoByBaseTariff,Сальдо_x0020_по_x0020_базовому_x0020_тарифу,Сальдо_x0020_по_x0020_базовому_x0020_тарифу,System.Decimal</value>
+          <value>ORIGINAL,SaldoByDecisionTariff,Сальдо_x0020_по_x0020_тарифу_x0020_решения,Сальдо_x0020_по_x0020_тарифу_x0020_решения,System.Decimal</value>
+          <value>ORIGINAL,SaldoByPenalty,Сальдо_x0020_по_x0020_пени,Сальдо_x0020_по_x0020_пени,System.Decimal</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>AccountExcelSaldo</Name>
+        <NameInSource>AccountExcelSaldo</NameInSource>
+      </AccountExcelSaldo>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="3" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="2">
+        <ReportTitleBand1 Ref="4" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,28.7,0.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text1 Ref="5" type="Text" isKey="true">
+              <Border>None;Red;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.2,28.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>Внимание! Необходимо корректировать значения: Сальдо по Базовому тарифу, Сальдо по тарифу решения, Сальдо по пени. Значение Сальдо вычислится автоматически</Text>
+              <TextBrush>Red</TextBrush>
+              <Type>Expression</Type>
+            </Text1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+        </ReportTitleBand1>
+        <TableAccountExcelSaldo Ref="6" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,2,28.7,1.6</ClientRectangle>
+          <ColumnCount>8</ColumnCount>
+          <Components isList="true" count="16">
+            <TableAccountExcelSaldo_Cell1 Ref="7" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableAccountExcelSaldo_Cell1</Name>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Муниципальное образование</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </TableAccountExcelSaldo_Cell1>
+            <TableAccountExcelSaldo_Cell2 Ref="8" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.2,0,5.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableAccountExcelSaldo_Cell2</Name>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Адрес</Text>
+              <TextBrush>Black</TextBrush>
+            </TableAccountExcelSaldo_Cell2>
+            <TableAccountExcelSaldo_Cell3 Ref="9" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.4,0,3.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableAccountExcelSaldo_Cell3</Name>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Лицевой счет</Text>
+              <TextBrush>Black</TextBrush>
+            </TableAccountExcelSaldo_Cell3>
+            <TableAccountExcelSaldo_Cell4 Ref="10" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.6,0,2.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableAccountExcelSaldo_Cell4</Name>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Статус</Text>
+              <TextBrush>Black</TextBrush>
+            </TableAccountExcelSaldo_Cell4>
+            <TableAccountExcelSaldo_Cell5 Ref="11" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.2,0,2.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <FixedWidth>True</FixedWidth>
+              <Font>Arial,9</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>4</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableAccountExcelSaldo_Cell5</Name>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Сальдо по базовому тарифу</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </TableAccountExcelSaldo_Cell5>
+            <TableAccountExcelSaldo_Cell6 Ref="12" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>19.8,0,3.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <FixedWidth>True</FixedWidth>
+              <Font>Arial,9</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>5</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableAccountExcelSaldo_Cell6</Name>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Сальдо по тарифу решения</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </TableAccountExcelSaldo_Cell6>
+            <TableAccountExcelSaldo_Cell7 Ref="13" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <FixedWidth>True</FixedWidth>
+              <Font>Arial,9</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>6</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableAccountExcelSaldo_Cell7</Name>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Сальдо по пени</Text>
+              <TextBrush>Black</TextBrush>
+            </TableAccountExcelSaldo_Cell7>
+            <TableAccountExcelSaldo_Cell8 Ref="14" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>25.8,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <FixedWidth>True</FixedWidth>
+              <Font>Arial,9</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>14</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableAccountExcelSaldo_Cell8</Name>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Сальдо</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </TableAccountExcelSaldo_Cell8>
+            <TableAccountExcelSaldo_Cell9 Ref="15" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>7</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableAccountExcelSaldo_Cell9</Name>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{AccountExcelSaldo.Муниципальное_образование}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </TableAccountExcelSaldo_Cell9>
+            <TableAccountExcelSaldo_Cell10 Ref="16" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.2,0.8,5.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>8</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableAccountExcelSaldo_Cell10</Name>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{AccountExcelSaldo.Адрес}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableAccountExcelSaldo_Cell10>
+            <TableAccountExcelSaldo_Cell11 Ref="17" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.4,0.8,3.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>9</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableAccountExcelSaldo_Cell11</Name>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{AccountExcelSaldo.Лицевой_счет}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableAccountExcelSaldo_Cell11>
+            <TableAccountExcelSaldo_Cell12 Ref="18" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.6,0.8,2.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>10</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableAccountExcelSaldo_Cell12</Name>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{AccountExcelSaldo.Статус}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableAccountExcelSaldo_Cell12>
+            <TableAccountExcelSaldo_Cell13 Ref="19" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.2,0.8,2.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <FixedWidth>True</FixedWidth>
+              <Font>Arial,9</Font>
+              <ID>11</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableAccountExcelSaldo_Cell13</Name>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{AccountExcelSaldo.Сальдо_по_базовому_тарифу}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="20" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+            </TableAccountExcelSaldo_Cell13>
+            <TableAccountExcelSaldo_Cell14 Ref="21" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>19.8,0.8,3.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <FixedWidth>True</FixedWidth>
+              <Font>Arial,9</Font>
+              <ID>12</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableAccountExcelSaldo_Cell14</Name>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{AccountExcelSaldo.Сальдо_по_тарифу_решения}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="22" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+            </TableAccountExcelSaldo_Cell14>
+            <TableAccountExcelSaldo_Cell15 Ref="23" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23,0.8,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <FixedWidth>True</FixedWidth>
+              <Font>Arial,9</Font>
+              <ID>13</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableAccountExcelSaldo_Cell15</Name>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{AccountExcelSaldo.Сальдо_по_пени}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="24" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+            </TableAccountExcelSaldo_Cell15>
+            <TableAccountExcelSaldo_Cell16 Ref="25" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>25.8,0.8,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <ExcelValue>=E{Line+3}+F{Line+3}+G{Line+3}</ExcelValue>
+              <FixedWidth>True</FixedWidth>
+              <Font>Arial,9</Font>
+              <ID>15</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableAccountExcelSaldo_Cell16</Name>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="26" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+            </TableAccountExcelSaldo_Cell16>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>AccountExcelSaldo</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderPrintOnAllPages>False</HeaderPrintOnAllPages>
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableAccountExcelSaldo</Name>
+          <NumberID>16</NumberID>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableAccountExcelSaldo>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>6cbc2c8ebc0a4907a7df23bb9e0d849c</Guid>
+      <Margins>0.5,0.5,0.5,0.5</Margins>
+      <Name>Page1</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>21</PageHeight>
+      <PageWidth>29.7</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+      <Watermark Ref="27" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="28" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>9/8/2016 6:07:16 PM</ReportChanged>
+  <ReportCreated>9/7/2016 9:58:01 AM</ReportCreated>
+  <ReportFile>C:\Repos\gkh\Bars.Gkh.RegOperator\Resources\AccountExcelSaldoReport.mrt</ReportFile>
+  <ReportGuid>d8a73b8ad78f4ca3a7e8aa10032c4650</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

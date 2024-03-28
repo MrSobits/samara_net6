@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://sz.service.bars-open.ru/smev3.0/v1.1" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceConsumer" targetNamespace="http://sz.service.bars-open.ru/smev3.0/v1.1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://sz.service.bars-open.ru/smev3.0/v1.1/Imports">
+      <xsd:import schemaLocation="http://93.170.52.172/ServiceConsumer?xsd=xsd0" namespace="http://sz.service.bars-open.ru/smev3.0/v1.1" />
+      <xsd:import schemaLocation="http://93.170.52.172/ServiceConsumer?xsd=xsd1" namespace="urn://x-artefacts-smev-gov-ru/services/message-exchange/types/1.1" />
+      <xsd:import schemaLocation="http://93.170.52.172/ServiceConsumer?xsd=xsd2" namespace="urn://x-artefacts-smev-gov-ru/services/message-exchange/types/basic/1.1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ServiceConsumer_SendRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendRequest" />
+  </wsdl:message>
+  <wsdl:message name="ServiceConsumer_SendRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceConsumer_SendDataRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendDataRequest" />
+  </wsdl:message>
+  <wsdl:message name="ServiceConsumer_SendDataRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendDataRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceConsumer_AckRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:AckRequest" />
+  </wsdl:message>
+  <wsdl:message name="ServiceConsumer_AckRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AckRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceConsumer_GetResponseRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResponseRequest" />
+  </wsdl:message>
+  <wsdl:message name="ServiceConsumer_GetResponseRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResponseRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceConsumer_GetRequestRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequestRequest" />
+  </wsdl:message>
+  <wsdl:message name="ServiceConsumer_GetRequestRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequestRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceConsumer_GetResponseRequestById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResponseRequestById" />
+  </wsdl:message>
+  <wsdl:message name="ServiceConsumer_GetResponseRequestById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResponseRequestByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceConsumer">
+    <wsdl:operation name="SendRequest">
+      <wsdl:input wsaw:Action="http://sz.service.bars-open.ru/smev3.0/v1.1/ServiceConsumer/SendRequest" message="tns:ServiceConsumer_SendRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://sz.service.bars-open.ru/smev3.0/v1.1/ServiceConsumer/SendRequestResponse" message="tns:ServiceConsumer_SendRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendDataRequest">
+      <wsdl:input wsaw:Action="http://sz.service.bars-open.ru/smev3.0/v1.1/ServiceConsumer/SendDataRequest" message="tns:ServiceConsumer_SendDataRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://sz.service.bars-open.ru/smev3.0/v1.1/ServiceConsumer/SendDataRequestResponse" message="tns:ServiceConsumer_SendDataRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AckRequest">
+      <wsdl:input wsaw:Action="http://sz.service.bars-open.ru/smev3.0/v1.1/ServiceConsumer/AckRequest" message="tns:ServiceConsumer_AckRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://sz.service.bars-open.ru/smev3.0/v1.1/ServiceConsumer/AckRequestResponse" message="tns:ServiceConsumer_AckRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResponseRequest">
+      <wsdl:input wsaw:Action="http://sz.service.bars-open.ru/smev3.0/v1.1/ServiceConsumer/GetResponseRequest" message="tns:ServiceConsumer_GetResponseRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://sz.service.bars-open.ru/smev3.0/v1.1/ServiceConsumer/GetResponseRequestResponse" message="tns:ServiceConsumer_GetResponseRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestRequest">
+      <wsdl:input wsaw:Action="http://sz.service.bars-open.ru/smev3.0/v1.1/ServiceConsumer/GetRequestRequest" message="tns:ServiceConsumer_GetRequestRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://sz.service.bars-open.ru/smev3.0/v1.1/ServiceConsumer/GetRequestRequestResponse" message="tns:ServiceConsumer_GetRequestRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResponseRequestById">
+      <wsdl:input wsaw:Action="http://sz.service.bars-open.ru/smev3.0/v1.1/ServiceConsumer/GetResponseRequestById" message="tns:ServiceConsumer_GetResponseRequestById_InputMessage" />
+      <wsdl:output wsaw:Action="http://sz.service.bars-open.ru/smev3.0/v1.1/ServiceConsumer/GetResponseRequestByIdResponse" message="tns:ServiceConsumer_GetResponseRequestById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ServiceConsumer" type="tns:ServiceConsumer">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendRequest">
+      <soap:operation soapAction="http://sz.service.bars-open.ru/smev3.0/v1.1/ServiceConsumer/SendRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendDataRequest">
+      <soap:operation soapAction="http://sz.service.bars-open.ru/smev3.0/v1.1/ServiceConsumer/SendDataRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AckRequest">
+      <soap:operation soapAction="http://sz.service.bars-open.ru/smev3.0/v1.1/ServiceConsumer/AckRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponseRequest">
+      <soap:operation soapAction="http://sz.service.bars-open.ru/smev3.0/v1.1/ServiceConsumer/GetResponseRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestRequest">
+      <soap:operation soapAction="http://sz.service.bars-open.ru/smev3.0/v1.1/ServiceConsumer/GetRequestRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponseRequestById">
+      <soap:operation soapAction="http://sz.service.bars-open.ru/smev3.0/v1.1/ServiceConsumer/GetResponseRequestById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceConsumer">
+    <wsdl:port name="BasicHttpBinding_ServiceConsumer" binding="tns:BasicHttpBinding_ServiceConsumer">
+      <soap:address location="http://93.170.52.172/ServiceConsumer" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

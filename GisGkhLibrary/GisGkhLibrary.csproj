@@ -1,0 +1,948 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CryptoPro.Sharpei.Base, Version=1.4.0.10, Culture=neutral, PublicKeyToken=473b8c5086e795f5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\CryptoPro\CryptoPro.Sharpei.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="CryptoPro.Sharpei.ServiceModel, Version=1.4.0.1, Culture=neutral, PublicKeyToken=473b8c5086e795f5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\CryptoPro\CryptoPro.Sharpei.ServiceModel.dll</HintPath>
+    </Reference>
+    <Reference Include="CryptoPro.Sharpei.ServiceModel45, Version=1.4.0.1, Culture=neutral, PublicKeyToken=473b8c5086e795f5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\CryptoPro\CryptoPro.Sharpei.ServiceModel45.dll</HintPath>
+    </Reference>
+    <Reference Include="CryptoPro.Sharpei.Xml, Version=1.4.0.10, Culture=neutral, PublicKeyToken=473b8c5086e795f5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\CryptoPro\CryptoPro.Sharpei.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xades, Version=1.0.0.0, Culture=neutral, PublicKeyToken=52bc0bff8bc72d48, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Xades\Microsoft.Xades.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Connected Services\AppealsServiceAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Update="Connected Services\BillsServiceAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Update="Connected Services\DebtRequestAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Update="Connected Services\HcsCapitalRepairAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Update="Connected Services\HouseManagementAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Update="Connected Services\InspectionServiceAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Update="Connected Services\LicenseServiceAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Update="Connected Services\NsiCommonAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Update="Connected Services\NsiServiceAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Update="Connected Services\PaymentServiceAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Update="Connected Services\RapServiceAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Update="Connected Services\RegOrgCommonAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Connected Services\AppealsServiceAsync\GisGkhLibrary.AppealsServiceAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\AppealsServiceAsync\GisGkhLibrary.AppealsServiceAsync.exportAppealResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\AppealsServiceAsync\GisGkhLibrary.AppealsServiceAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\AppealsServiceAsync\GisGkhLibrary.AppealsServiceAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\AppealsServiceAsync\GisGkhLibrary.AppealsServiceAsync.importAnswerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\AppealsServiceAsync\GisGkhLibrary.AppealsServiceAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\AppealsServiceAsync\hcs-account-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\AppealsServiceAsync\hcs-appeals-types.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\AppealsServiceAsync\hcs-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\AppealsServiceAsync\hcs-bills-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\AppealsServiceAsync\hcs-individual-registry-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\AppealsServiceAsync\hcs-nsi-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\AppealsServiceAsync\hcs-organizations-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\AppealsServiceAsync\hcs-organizations-registry-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\AppealsServiceAsync\hcs-premises-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\AppealsServiceAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\GisGkhLibrary.BillsServiceAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\GisGkhLibrary.BillsServiceAsync.exportInsuranceProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\GisGkhLibrary.BillsServiceAsync.exportNotificationsOfOrderExecutionPaginalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\GisGkhLibrary.BillsServiceAsync.exportNotificationsOfOrderExecutionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\GisGkhLibrary.BillsServiceAsync.exportPaymentDocumentDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\GisGkhLibrary.BillsServiceAsync.exportSettlementsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\GisGkhLibrary.BillsServiceAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\GisGkhLibrary.BillsServiceAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\GisGkhLibrary.BillsServiceAsync.importAcknowledgmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\GisGkhLibrary.BillsServiceAsync.importIKUSettlementsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\GisGkhLibrary.BillsServiceAsync.importInsuranceProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\GisGkhLibrary.BillsServiceAsync.importPaymentDocumentDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\GisGkhLibrary.BillsServiceAsync.importRSOSettlementsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\GisGkhLibrary.BillsServiceAsync.RequestHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\GisGkhLibrary.BillsServiceAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\hcs-account-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\hcs-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\hcs-bills-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\hcs-bills-types.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\hcs-individual-registry-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\hcs-nsi-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\hcs-organizations-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\hcs-organizations-registry-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\hcs-payments-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\hcs-premises-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\BillsServiceAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\DebtRequestAsync\GisGkhLibrary.DebtRequestAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\DebtRequestAsync\GisGkhLibrary.DebtRequestAsync.exportDebtRequestsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\DebtRequestAsync\GisGkhLibrary.DebtRequestAsync.exportDebtSubrequestsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\DebtRequestAsync\GisGkhLibrary.DebtRequestAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\DebtRequestAsync\GisGkhLibrary.DebtRequestAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\DebtRequestAsync\GisGkhLibrary.DebtRequestAsync.importDebtRequestsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\DebtRequestAsync\GisGkhLibrary.DebtRequestAsync.importResponsesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\DebtRequestAsync\GisGkhLibrary.DebtRequestAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\DebtRequestAsync\hcs-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\DebtRequestAsync\hcs-debt-requests-types.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\DebtRequestAsync\hcs-nsi-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\DebtRequestAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.exportAccountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.exportContractsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.exportCreditContractResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.exportDecisionsFormingFundResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.exportDecisionsOrderOfProvidingPDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.exportFundSizeInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.exportPlanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.exportPlanWorkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.exportRegionalProgramResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.exportRegionalProgramWorkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.importCertificatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.importContractsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.importDecisionsFormingFundResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.importDecisionsOrderOfProvidingPDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.importFundSizeInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.importOperationAndBalanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.importPaymentsInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.importPlanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.importPlanWorkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.importRegionalOperatorAccountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.importRegionalProgramResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.importRegionalProgramWorkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.importSpecialAccountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.RequestHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\GisGkhLibrary.HcsCapitalRepairAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\hcs-account-base1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\hcs-base1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\hcs-bills-base1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\hcs-capital-repair-types1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\hcs-nsi-base1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\hcs-organizations-base1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\hcs-organizations-registry-base1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\hcs-premises-base1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HcsCapitalRepairAsync\xmldsig-core-schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.demolishHouseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.exportAccountDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.exportAccountIndividualServicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.exportBriefApartmentHouseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.exportBriefBasicHouseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.exportBriefLivingHouseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.exportBriefSocialHireContractResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.exportBriefSupplyResourceContractResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.exportCAChDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.exportHouseDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.exportMeteringDeviceDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.exportOwnerDecisionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.exportOwnerRefusalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.exportRolloverStatusCAChResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.exportStatusCAChDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.exportStatusPublicPropertyContractResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.exportSupplyResourceContractDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.exportSupplyResourceContractObjectAddressDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.exportVotingMessageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.exportVotingProtocolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.importAccountDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.importAccountIndividualServicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.importCharterDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.importContractDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.importExternalVotingProtocolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.importHouseESPDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.importHouseOMSDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.importHouseUODataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.importMeteringDeviceDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.importNotificationDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.importOwnerDecisionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.importOwnerRefusalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.importPublicPropertyContractResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.importSupplyResourceContractDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.importSupplyResourceContractObjectAddressDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.importSupplyResourceContractProjectDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.importVotingMessageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.importVotingProtocolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\GisGkhLibrary.HouseManagementAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\hcs-account-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\hcs-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\hcs-bills-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\hcs-house-management-types.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\hcs-individual-registry-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\hcs-metering-device-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\hcs-nsi-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\hcs-organizations-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\hcs-organizations-registry-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\hcs-premises-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\HouseManagementAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\InspectionServiceAsync\GisGkhLibrary.InspectionServiceAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\InspectionServiceAsync\GisGkhLibrary.InspectionServiceAsync.exportExaminationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\InspectionServiceAsync\GisGkhLibrary.InspectionServiceAsync.exportExaminationURIStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\InspectionServiceAsync\GisGkhLibrary.InspectionServiceAsync.exportInspectionPlansResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\InspectionServiceAsync\GisGkhLibrary.InspectionServiceAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\InspectionServiceAsync\GisGkhLibrary.InspectionServiceAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\InspectionServiceAsync\GisGkhLibrary.InspectionServiceAsync.importExaminationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\InspectionServiceAsync\GisGkhLibrary.InspectionServiceAsync.importInspectionPlanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\InspectionServiceAsync\GisGkhLibrary.InspectionServiceAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\InspectionServiceAsync\hcs-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\InspectionServiceAsync\hcs-inspection-types.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\InspectionServiceAsync\hcs-nsi-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\InspectionServiceAsync\hcs-organizations-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\InspectionServiceAsync\hcs-organizations-registry-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\InspectionServiceAsync\hcs-premises-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\InspectionServiceAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\LicenseServiceAsync\GisGkhLibrary.LicenseServiceAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\LicenseServiceAsync\GisGkhLibrary.LicenseServiceAsync.exportDisqualifiedPersonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\LicenseServiceAsync\GisGkhLibrary.LicenseServiceAsync.exportLicenseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\LicenseServiceAsync\GisGkhLibrary.LicenseServiceAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\LicenseServiceAsync\GisGkhLibrary.LicenseServiceAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\LicenseServiceAsync\GisGkhLibrary.LicenseServiceAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\LicenseServiceAsync\hcs-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\LicenseServiceAsync\hcs-individual-registry-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\LicenseServiceAsync\hcs-licenses-types.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\LicenseServiceAsync\hcs-nsi-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\LicenseServiceAsync\hcs-organizations-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\LicenseServiceAsync\hcs-organizations-registry-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\LicenseServiceAsync\hcs-premises-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\LicenseServiceAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\NsiCommonAsync\GisGkhLibrary.NsiCommonAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiCommonAsync\GisGkhLibrary.NsiCommonAsync.exportNsiItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiCommonAsync\GisGkhLibrary.NsiCommonAsync.exportNsiListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiCommonAsync\GisGkhLibrary.NsiCommonAsync.exportNsiPagingItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiCommonAsync\GisGkhLibrary.NsiCommonAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiCommonAsync\GisGkhLibrary.NsiCommonAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiCommonAsync\GisGkhLibrary.NsiCommonAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiCommonAsync\hcs-base1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\NsiCommonAsync\hcs-nsi-base1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\NsiCommonAsync\hcs-nsi-common-types1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\NsiCommonAsync\xmldsig-core-schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\NsiServiceAsync\GisGkhLibrary.NsiServiceAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiServiceAsync\GisGkhLibrary.NsiServiceAsync.exportDataProviderNsiItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiServiceAsync\GisGkhLibrary.NsiServiceAsync.exportDataProviderPagingNsiItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiServiceAsync\GisGkhLibrary.NsiServiceAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiServiceAsync\GisGkhLibrary.NsiServiceAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiServiceAsync\GisGkhLibrary.NsiServiceAsync.importAdditionalServicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiServiceAsync\GisGkhLibrary.NsiServiceAsync.importBaseDecisionMSPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiServiceAsync\GisGkhLibrary.NsiServiceAsync.importCapitalRepairWorkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiServiceAsync\GisGkhLibrary.NsiServiceAsync.importCommunalInfrastructureSystemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiServiceAsync\GisGkhLibrary.NsiServiceAsync.importGeneralNeedsMunicipalResourceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiServiceAsync\GisGkhLibrary.NsiServiceAsync.importMunicipalServicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiServiceAsync\GisGkhLibrary.NsiServiceAsync.importOrganizationWorksResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiServiceAsync\GisGkhLibrary.NsiServiceAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\NsiServiceAsync\hcs-base1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\NsiServiceAsync\hcs-nsi-base1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\NsiServiceAsync\hcs-nsi-types1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\NsiServiceAsync\xmldsig-core-schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\PaymentServiceAsync\GisGkhLibrary.PaymentServiceAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\PaymentServiceAsync\GisGkhLibrary.PaymentServiceAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\PaymentServiceAsync\GisGkhLibrary.PaymentServiceAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\PaymentServiceAsync\GisGkhLibrary.PaymentServiceAsync.importNotificationsOfOrderExecutionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\PaymentServiceAsync\GisGkhLibrary.PaymentServiceAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\PaymentServiceAsync\hcs-account-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\PaymentServiceAsync\hcs-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\PaymentServiceAsync\hcs-bills-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\PaymentServiceAsync\hcs-individual-registry-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\PaymentServiceAsync\hcs-nsi-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\PaymentServiceAsync\hcs-organizations-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\PaymentServiceAsync\hcs-organizations-registry-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\PaymentServiceAsync\hcs-payment-types.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\PaymentServiceAsync\hcs-payments-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\PaymentServiceAsync\hcs-premises-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\PaymentServiceAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\RapServiceAsync\GisGkhLibrary.RapServiceAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\RapServiceAsync\GisGkhLibrary.RapServiceAsync.exportDecreesAndDocumentsDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\RapServiceAsync\GisGkhLibrary.RapServiceAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\RapServiceAsync\GisGkhLibrary.RapServiceAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\RapServiceAsync\GisGkhLibrary.RapServiceAsync.importDecreesAndDocumentsDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\RapServiceAsync\GisGkhLibrary.RapServiceAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\RapServiceAsync\hcs-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\RapServiceAsync\hcs-individual-registry-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\RapServiceAsync\hcs-nsi-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\RapServiceAsync\hcs-organizations-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\RapServiceAsync\hcs-organizations-registry-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\RapServiceAsync\hcs-premises-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\RapServiceAsync\hcs-rap-types.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\RapServiceAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\RegOrgCommonAsync\GisGkhLibrary.RegOrgCommonAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\RegOrgCommonAsync\GisGkhLibrary.RegOrgCommonAsync.exportDataProviderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\RegOrgCommonAsync\GisGkhLibrary.RegOrgCommonAsync.exportDelegatedAccessResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\RegOrgCommonAsync\GisGkhLibrary.RegOrgCommonAsync.exportObjectsDelegatedAccessResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\RegOrgCommonAsync\GisGkhLibrary.RegOrgCommonAsync.exportOrgRegistryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\RegOrgCommonAsync\GisGkhLibrary.RegOrgCommonAsync.exportTerritoryDelegatedAccessResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\RegOrgCommonAsync\GisGkhLibrary.RegOrgCommonAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\RegOrgCommonAsync\GisGkhLibrary.RegOrgCommonAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\RegOrgCommonAsync\GisGkhLibrary.RegOrgCommonAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Update="Connected Services\RegOrgCommonAsync\hcs-base1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\RegOrgCommonAsync\hcs-nsi-base1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\RegOrgCommonAsync\hcs-organizations-base1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\RegOrgCommonAsync\hcs-organizations-registry-base1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\RegOrgCommonAsync\hcs-organizations-registry-common-types1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\RegOrgCommonAsync\hcs-premises-base1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Connected Services\RegOrgCommonAsync\xmldsig-core-schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\AppealsServiceAsync\" />
+    <WCFMetadataStorage Include="Connected Services\BillsServiceAsync\" />
+    <WCFMetadataStorage Include="Connected Services\DebtRequestAsync\" />
+    <WCFMetadataStorage Include="Connected Services\HcsCapitalRepairAsync\" />
+    <WCFMetadataStorage Include="Connected Services\HouseManagementAsync\" />
+    <WCFMetadataStorage Include="Connected Services\InspectionServiceAsync\" />
+    <WCFMetadataStorage Include="Connected Services\LicenseServiceAsync\" />
+    <WCFMetadataStorage Include="Connected Services\NsiCommonAsync\" />
+    <WCFMetadataStorage Include="Connected Services\NsiServiceAsync\" />
+    <WCFMetadataStorage Include="Connected Services\PaymentServiceAsync\" />
+    <WCFMetadataStorage Include="Connected Services\RapServiceAsync\" />
+    <WCFMetadataStorage Include="Connected Services\RegOrgCommonAsync\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Connected Services\HcsCapitalRepairAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Connected Services\NsiCommonAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Connected Services\RegOrgCommonAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Connected Services\BillsServiceAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Connected Services\PaymentServiceAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Connected Services\NsiServiceAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Managers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Connected Services\AppealsServiceAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Connected Services\RapServiceAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Connected Services\InspectionServiceAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Connected Services\LicenseServiceAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Connected Services\DebtRequestAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Connected Services\HouseManagementAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Castle.Windsor">
+      <Version>5.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Bars.B4.Modules.FileSystemStorage">
+      <Version>3.2.0-dev.202312131620</Version>
+    </PackageReference>
+    <PackageReference Include="Bars.B4.Core">
+      <Version>3.2.0-dev.202312131620</Version>
+    </PackageReference>
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.8.1" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.8.1" />
+    <PackageReference Include="System.ServiceModel.Federation" Version="4.8.1" />
+    <PackageReference Include="BouncyCastle.Crypto.dll" Version="1.8.1" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <Import Project="..\packages\NETStandard.Library\build\$(__paket__NETStandard_Library_targets).targets" Condition="Exists('..\packages\NETStandard.Library\build\$(__paket__NETStandard_Library_targets).targets')" Label="Paket" />
+</Project>

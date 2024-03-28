@@ -1,0 +1,1929 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08A1A721-54F9-42F1-B461-5330230CA921}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bars.Gkh.Ris</RootNamespace>
+    <AssemblyName>Bars.Gkh.Ris</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Quartz, Version=2.3.1.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Quartz\lib\net40\Quartz.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Linq.Dynamic">
+      <HintPath>..\..\packages\System.Linq.Dynamic\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel.Discovery" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="ClientRouteMapRegistrar.cs" />
+    <Compile Include="ConfigSections\GisIntegrationConfig.cs" />
+    <Compile Include="Controllers\GisIntegrationController.cs" />
+    <Compile Include="Controllers\BillsController.cs" />
+    <Compile Include="Controllers\InfrastructureController.cs" />
+    <Compile Include="Controllers\HouseManagementController.cs" />
+    <Compile Include="Controllers\InspectionServiceController.cs" />
+    <Compile Include="Controllers\NsiController.cs" />
+    <Compile Include="Controllers\OrgRegistryController.cs" />
+    <Compile Include="Controllers\PaymentServiceController.cs" />
+    <Compile Include="Controllers\RisSettingsController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Controllers\TaskTreeController.cs" />
+    <Compile Include="DomainService\GisIntegration\IGisIntegrationService.cs" />
+    <Compile Include="DomainService\GisIntegration\IBillsService.cs" />
+    <Compile Include="DomainService\GisIntegration\IInfrastructureService.cs" />
+    <Compile Include="DomainService\GisIntegration\IHouseManagementService.cs" />
+    <Compile Include="DomainService\GisIntegration\IInspectionService.cs" />
+    <Compile Include="DomainService\GisIntegration\Impl\GisIntegrationService.cs" />
+    <Compile Include="DomainService\GisIntegration\Impl\BillsService.cs" />
+    <Compile Include="DomainService\GisIntegration\Impl\InfrastructureService.cs" />
+    <Compile Include="DomainService\GisIntegration\Impl\InspectionService.cs" />
+    <Compile Include="DomainService\GisIntegration\Impl\HouseManagementService.cs" />
+    <Compile Include="DomainService\GisIntegration\IPaymentService.cs" />
+    <Compile Include="DomainService\GisIntegration\Impl\NsiService.cs" />
+    <Compile Include="DomainService\GisIntegration\Impl\OrgRegistryService.cs" />
+    <Compile Include="DomainService\GisIntegration\Impl\PaymentService.cs" />
+    <Compile Include="DomainService\GisIntegration\Impl\ServicesService.cs" />
+    <Compile Include="DomainService\GisIntegration\Impl\TaskTreeService.cs" />
+    <Compile Include="DomainService\GisIntegration\INsiService.cs" />
+    <Compile Include="DomainService\GisIntegration\IOrgRegistryService.cs" />
+    <Compile Include="DomainService\GisIntegration\IServicesService.cs" />
+    <Compile Include="DomainService\GisIntegration\ITaskTreeService.cs" />
+    <Compile Include="Entities\BaseRisEntity.cs" />
+    <Compile Include="Entities\Bills\OrgPaymentPeriod.cs" />
+    <Compile Include="Entities\DeviceMetering\RisMeteringDeviceControlValue.cs" />
+    <Compile Include="Entities\DeviceMetering\RisMeteringDeviceCurrentValue.cs" />
+    <Compile Include="Entities\DeviceMetering\RisMeteringDeviceVerificationValue.cs" />
+    <Compile Include="Entities\External\Administration\System\ReportPeriod.cs" />
+    <Compile Include="Entities\External\Administration\System\DataSupplier.cs" />
+    <Compile Include="Entities\External\Attachment\ExtAttachment.cs" />
+    <Compile Include="Entities\External\Contragent\ExtContragent.cs" />
+    <Compile Include="Entities\External\Dict\Common\ExtContragentType.cs" />
+    <Compile Include="Entities\External\Dict\Common\MoTerritory.cs" />
+    <Compile Include="Entities\External\Dict\Common\Okei.cs" />
+    <Compile Include="Entities\External\Dict\House\BuildProjectType.cs" />
+    <Compile Include="Entities\External\Dict\House\CommunalSource.cs" />
+    <Compile Include="Entities\External\Dict\House\CrFormingType.cs" />
+    <Compile Include="Entities\External\Dict\House\EnergyEfficiencyClass.cs" />
+    <Compile Include="Entities\External\Dict\House\HouseState.cs" />
+    <Compile Include="Entities\External\Dict\House\HouseType.cs" />
+    <Compile Include="Entities\External\Dict\House\InnerWallType.cs" />
+    <Compile Include="Entities\External\Dict\House\LivePremiseChar.cs" />
+    <Compile Include="Entities\External\Dict\House\LivePremiseKind.cs" />
+    <Compile Include="Entities\External\Dict\House\ManagMode.cs" />
+    <Compile Include="Entities\External\Dict\House\NotifType.cs" />
+    <Compile Include="Entities\External\Dict\House\PremiseCategory.cs" />
+    <Compile Include="Entities\External\Dict\House\TimeZone.cs" />
+    <Compile Include="Entities\External\Dict\House\WorkType.cs" />
+    <Compile Include="Entities\External\Dict\Oki\ExtCommunalService.cs" />
+    <Compile Include="Entities\External\Dict\Oki\ElectroStationType.cs" />
+    <Compile Include="Entities\External\Dict\Oki\ElectroSubstantionType.cs" />
+    <Compile Include="Entities\External\Dict\Oki\FuelType.cs" />
+    <Compile Include="Entities\External\Dict\Oki\GasNetType.cs" />
+    <Compile Include="Entities\External\Dict\Oki\GasPressure.cs" />
+    <Compile Include="Entities\External\Dict\Oki\HeatType.cs" />
+    <Compile Include="Entities\External\Dict\Oki\OkiDocType.cs" />
+    <Compile Include="Entities\External\Dict\Oki\OkiType.cs" />
+    <Compile Include="Entities\External\Dict\Oki\OkiTypeCommunalService.cs" />
+    <Compile Include="Entities\External\Dict\Oki\OkiTypeGroup.cs" />
+    <Compile Include="Entities\External\Dict\Oki\RunBase.cs" />
+    <Compile Include="Entities\External\Dict\Oki\SkiType.cs" />
+    <Compile Include="Entities\External\Dict\Oki\Voltage.cs" />
+    <Compile Include="Entities\External\Dict\Oki\WaterIntakeType.cs" />
+    <Compile Include="Entities\External\Housing\House\House.cs" />
+    <Compile Include="Entities\External\Housing\House\Notif.cs" />
+    <Compile Include="Entities\External\Housing\House\NotifAddress.cs" />
+    <Compile Include="Entities\External\Housing\House\NotifDoc.cs" />
+    <Compile Include="Entities\External\Housing\House\Porch.cs" />
+    <Compile Include="Entities\External\Housing\House\Premise.cs" />
+    <Compile Include="Entities\External\Housing\OKI\ManagBaseDoc.cs" />
+    <Compile Include="Entities\External\Housing\OKI\NetPart.cs" />
+    <Compile Include="Entities\External\Housing\OKI\OkiCommunalService.cs" />
+    <Compile Include="Entities\External\Housing\OKI\OkiCommunalSource.cs" />
+    <Compile Include="Entities\External\Housing\OKI\OkiDoc.cs" />
+    <Compile Include="Entities\External\Housing\OKI\OkiObject.cs" />
+    <Compile Include="Entities\External\Housing\OKI\SourceReceiver.cs" />
+    <Compile Include="Entities\External\Mo\ManagementOrganization.cs" />
+    <Compile Include="Entities\External\Rso\RsoCompany.cs" />
+    <Compile Include="Entities\GisIntegration\GisDict.cs" />
+    <Compile Include="Entities\Bills\RisAdditionalServiceExtChargeInfo.cs" />
+    <Compile Include="Entities\Bills\RisHousingServiceChargeInfo.cs" />
+    <Compile Include="Entities\Bills\RisAdditionalServiceChargeInfo.cs" />
+    <Compile Include="Entities\Bills\RisAddressInfo.cs" />
+    <Compile Include="Entities\Bills\BaseRisChargeInfo.cs" />
+    <Compile Include="Entities\Bills\RisMunicipalServiceChargeInfo.cs" />
+    <Compile Include="Entities\Bills\RisPaymentDocument.cs" />
+    <Compile Include="Entities\Bills\RisPaymentInformation.cs" />
+    <Compile Include="Entities\Bills\RisTechService.cs" />
+    <Compile Include="Entities\HouseManagement\AddService.cs" />
+    <Compile Include="Entities\HouseManagement\Charter.cs" />
+    <Compile Include="Entities\HouseManagement\ConfirmDoc.cs" />
+    <Compile Include="Entities\HouseManagement\ContractObject.cs" />
+    <Compile Include="Entities\HouseManagement\HouseManService.cs" />
+    <Compile Include="Entities\HouseManagement\RisAccount.cs" />
+    <Compile Include="Entities\HouseManagement\RisAddAgreementPayment.cs" />
+    <Compile Include="Entities\HouseManagement\RisAgreement.cs" />
+    <Compile Include="Entities\HouseManagement\RisContract.cs" />
+    <Compile Include="Entities\HouseManagement\RisContractAttachment.cs" />
+    <Compile Include="Entities\HouseManagement\RisAccountRelations.cs" />
+    <Compile Include="Entities\HouseManagement\RisEcnbr.cs" />
+    <Compile Include="Entities\HouseManagement\RisEcnbrInd.cs" />
+    <Compile Include="Entities\HouseManagement\RisHouseInnerWallMaterial.cs" />
+    <Compile Include="Entities\HouseManagement\ProtocolMeetingOwner.cs" />
+    <Compile Include="Entities\HouseManagement\RisEntrance.cs" />
+    <Compile Include="Entities\HouseManagement\RisHouse.cs" />
+    <Compile Include="Entities\HouseManagement\LivingRoom.cs" />
+    <Compile Include="Entities\HouseManagement\NonResidentialPremises.cs" />
+    <Compile Include="Entities\HouseManagement\ResidentialPremises.cs" />
+    <Compile Include="Entities\HouseManagement\RisInd.cs" />
+    <Compile Include="Entities\HouseManagement\RisMeteringDeviceAccount.cs" />
+    <Compile Include="Entities\HouseManagement\RisMeteringDeviceData.cs" />
+    <Compile Include="Entities\HouseManagement\RisMeteringDeviceLivingRoom.cs" />
+    <Compile Include="Entities\HouseManagement\RisNotification.cs" />
+    <Compile Include="Entities\HouseManagement\RisNotificationAddressee.cs" />
+    <Compile Include="Entities\HouseManagement\RisNotificationAttachment.cs" />
+    <Compile Include="Entities\HouseManagement\RisPublicPropertyContract.cs" />
+    <Compile Include="Entities\HouseManagement\RisShare.cs" />
+    <Compile Include="Entities\HouseManagement\RisShareEncbrLivingHouse.cs" />
+    <Compile Include="Entities\HouseManagement\RisShareEncbrLivingRoom.cs" />
+    <Compile Include="Entities\HouseManagement\RisShareEncbrNonResPrem.cs" />
+    <Compile Include="Entities\HouseManagement\RisShareEncbrResidentialPremises.cs" />
+    <Compile Include="Entities\HouseManagement\RisShareInd.cs" />
+    <Compile Include="Entities\HouseManagement\RisDecisionList.cs" />
+    <Compile Include="Entities\HouseManagement\RisTrustDocAttachment.cs" />
+    <Compile Include="Entities\HouseManagement\RisVoteInitiators.cs" />
+    <Compile Include="Entities\HouseManagement\RisVotingProtocol.cs" />
+    <Compile Include="Entities\HouseManagement\RisVotingProtocolAttachment.cs" />
+    <Compile Include="Entities\HouseManagement\RisProtocolOK.cs" />
+    <Compile Include="Entities\HouseManagement\SupResContractAttachment.cs" />
+    <Compile Include="Entities\HouseManagement\SupResContractSubjectOtherQuality.cs" />
+    <Compile Include="Entities\HouseManagement\SupResContractTemperatureChart.cs" />
+    <Compile Include="Entities\HouseManagement\SupResContractServiceResource.cs" />
+    <Compile Include="Entities\HouseManagement\SupResContractSubject.cs" />
+    <Compile Include="Entities\HouseManagement\SupplyResourceContract.cs" />
+    <Compile Include="Entities\Infrastructure\RisAttachmentsEnergyEfficiency.cs" />
+    <Compile Include="Entities\Infrastructure\RisNetPieces.cs" />
+    <Compile Include="Entities\Infrastructure\RisResource.cs" />
+    <Compile Include="Entities\Infrastructure\RisRkiAttachment.cs" />
+    <Compile Include="Entities\Infrastructure\RisRkiCommunalService.cs" />
+    <Compile Include="Entities\Infrastructure\RisRkiItem.cs" />
+    <Compile Include="Entities\Infrastructure\RisRkiReceiver.cs" />
+    <Compile Include="Entities\Infrastructure\RisRkiSource.cs" />
+    <Compile Include="Entities\Infrastructure\RisTransportationResources.cs" />
+    <Compile Include="Entities\Inspection\ExaminationAttachment.cs" />
+    <Compile Include="Entities\Inspection\ExaminationPlace.cs" />
+    <Compile Include="Entities\Inspection\OffenceAttachment.cs" />
+    <Compile Include="Entities\Inspection\PreceptAttachment.cs" />
+    <Compile Include="Entities\Inspection\Offence.cs" />
+    <Compile Include="Entities\Inspection\Precept.cs" />
+    <Compile Include="Entities\Inspection\Examination.cs" />
+    <Compile Include="Entities\Inspection\InspectionPlan.cs" />
+    <Compile Include="Entities\GisIntegration\Ref\GisDictRef.cs" />
+    <Compile Include="Entities\IUserEntity.cs" />
+    <Compile Include="Entities\Nsi\RisOrganizationWork.cs" />
+    <Compile Include="Entities\Nsi\RisAdditionalService.cs" />
+    <Compile Include="Entities\Nsi\RisMunicipalService.cs" />
+    <Compile Include="Entities\Nsi\ServiceType.cs" />
+    <Compile Include="Entities\OrgRegistry\RisSubsidiary.cs" />
+    <Compile Include="Entities\Payment\NotificationOfOrderExecution.cs" />
+    <Compile Include="Entities\Payment\RisAcknowledgment.cs" />
+    <Compile Include="Entities\RisConfigParam.cs" />
+    <Compile Include="Entities\RisContainer.cs" />
+    <Compile Include="Entities\RisContragent.cs" />
+    <Compile Include="Entities\Attachment.cs" />
+    <Compile Include="Entities\RisPackage.cs" />
+    <Compile Include="Entities\RisPackageTrigger.cs" />
+    <Compile Include="Entities\RisSettings.cs" />
+    <Compile Include="Entities\RisTask.cs" />
+    <Compile Include="Entities\RisTaskTrigger.cs" />
+    <Compile Include="Entities\Services\RisCompletedWork.cs" />
+    <Compile Include="Entities\Services\WorkPlanItem.cs" />
+    <Compile Include="Entities\Services\WorkingPlan.cs" />
+    <Compile Include="Entities\Services\RisHouseService.cs" />
+    <Compile Include="Entities\Services\WorkList.cs" />
+    <Compile Include="Entities\Services\WorkListItem.cs" />
+    <Compile Include="Enums\AllTypesContractManOrg.cs" />
+    <Compile Include="Enums\CheckForm.cs" />
+    <Compile Include="Enums\ConditionHouse.cs" />
+    <Compile Include="Enums\DataSendingState.cs" />
+    <Compile Include="Enums\DocumentTypeByResult.cs" />
+    <Compile Include="Enums\External\Oki\OkiDocType.cs" />
+    <Compile Include="Enums\External\Oki\OkiSection.cs" />
+    <Compile Include="Enums\External\Oki\OkiTypeGroup.cs" />
+    <Compile Include="Enums\FileStorageName.cs" />
+    <Compile Include="Enums\Bills\PaymentDocumentState.cs" />
+    <Compile Include="Enums\HouseManagement\DeviceType.cs" />
+    <Compile Include="Enums\HouseManagement\ConnectionSchemeType.cs" />
+    <Compile Include="Enums\HouseManagement\HeatingSystemType.cs" />
+    <Compile Include="Enums\HouseManagement\MeteringDeviceArchivation.cs" />
+    <Compile Include="Enums\HouseManagement\MeteringDeviceType.cs" />
+    <Compile Include="Enums\HouseManagement\Position.cs" />
+    <Compile Include="Enums\HouseManagement\PremisesCharacteristic.cs" />
+    <Compile Include="Enums\HouseManagement\Purpose.cs" />
+    <Compile Include="Enums\HouseManagement\RisContractObjectStatus.cs" />
+    <Compile Include="Enums\HouseManagement\RisContractOwnersType.cs" />
+    <Compile Include="Enums\HouseManagement\RisTimeZone.cs" />
+    <Compile Include="Enums\HouseManagement\RisVotingTimeType.cs" />
+    <Compile Include="Enums\HouseManagement\RisVotingResume.cs" />
+    <Compile Include="Enums\HouseManagement\RisVotingType.cs" />
+    <Compile Include="Enums\HouseManagement\RisAccountType.cs" />
+    <Compile Include="Enums\HouseManagement\RisMeetingEligibility.cs" />
+    <Compile Include="Enums\HouseManagement\HouseManagementType.cs" />
+    <Compile Include="Enums\HouseManagement\RoomsNum.cs" />
+    <Compile Include="Enums\HouseManagement\SupplyResourceContactPersonType.cs" />
+    <Compile Include="Enums\HouseManagement\SupplyResourceContactPersonTypeOrganization.cs" />
+    <Compile Include="Enums\HouseManagement\SupplyResourceContractType.cs" />
+    <Compile Include="Enums\HouseManagement\SupResCommercialMeteringResourceType.cs" />
+    <Compile Include="Enums\Inspection\ExaminationBaseType.cs" />
+    <Compile Include="Enums\Inspection\ExaminationResultDocType.cs" />
+    <Compile Include="Enums\Inspection\ExaminationSubjectType.cs" />
+    <Compile Include="Enums\Inspection\OversightActivityType.cs" />
+    <Compile Include="Enums\IntegrationService.cs" />
+    <Compile Include="Enums\MeteringDevice\MeteringDeviceValueType.cs" />
+    <Compile Include="Enums\ObjectProcessingState.cs" />
+    <Compile Include="Enums\ObjectValidateState.cs" />
+    <Compile Include="Enums\PackageState.cs" />
+    <Compile Include="Enums\RisEntityOperation.cs" />
+    <Compile Include="Enums\RisPaymentPeriodType.cs" />
+    <Compile Include="Enums\RisGender.cs" />
+    <Compile Include="Enums\HouseManagement\HouseState.cs" />
+    <Compile Include="Enums\HouseType.cs" />
+    <Compile Include="Enums\TaskState.cs" />
+    <Compile Include="Enums\TriggerState.cs" />
+    <Compile Include="Enums\TriggerType.cs" />
+    <Compile Include="Enums\TypeBaseCheckJurPerson.cs" />
+    <Compile Include="ExecutionAction\GenerateContracts.cs" />
+    <Compile Include="ExecutionAction\GisIntegrationConfigCreateAction.cs" />
+    <Compile Include="Export\PackagesExport.cs" />
+    <Compile Include="Export\ValidationResultExport.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Extensions\GisIntegrationConfigExtension.cs" />
+    <Compile Include="Extensions\XmlExtensions.cs" />
+    <Compile Include="GisServiceProvider\BaseGisServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\Bills\BillsAsyncServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\DeviceMetering\DeviceMeteringAsyncServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\HouseManagement\HouseManagementServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\IGisServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\Infrastructure\InfrastructureServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\Inspection\InspectionServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\Nsi\NsiServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\OrgRegistryCommon\OrgRegistryCommonServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\OrgRegistry\OrgRegistryServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\Payment\PaymentServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\Services\ServicesServiceProvider.cs" />
+    <Compile Include="Integration\BaseSlimDataExtractor.cs" />
+    <Compile Include="Integration\BaseDataExporter.cs" />
+    <Compile Include="Integration\BaseDataExtractor.cs" />
+    <Compile Include="Integration\Bills\DataExtractors\AcknowledgmentDataExtractor.cs" />
+    <Compile Include="Integration\Bills\DataExtractors\RisAdditionalServiceChargeInfoDataExtractor.cs" />
+    <Compile Include="Integration\Bills\DataExtractors\RisAdditionalServiceExtChargeInfoDataExtractor.cs" />
+    <Compile Include="Integration\Bills\DataExtractors\RisHousingServiceChargeInfoDataExtractor.cs" />
+    <Compile Include="Integration\Bills\DataExtractors\RisMunicipalServiceChargeInfoDataExtractor.cs" />
+    <Compile Include="Integration\Bills\DataExtractors\RisPaymentDocumentDataExtractor.cs" />
+    <Compile Include="Integration\Bills\DataExtractors\RisTechServiceDataExtractor.cs" />
+    <Compile Include="Integration\Bills\Exporters\PaymentDocumentDataExporter.cs" />
+    <Compile Include="Integration\DeviceMetering\Exporters\MeteringDeviceValuesExporter.cs" />
+    <Compile Include="Integration\Bills\Exporters\OpenOrgPaymentPeriodExporter.cs" />
+    <Compile Include="Integration\Bills\DataExtractors\OpenOrgPaymentPeriodExtractor.cs" />
+    <Compile Include="Integration\DeviceMetering\IMeteringDeviceBasePrepareAssistant.cs" />
+    <Compile Include="Integration\DeviceMetering\IMeteringDevicePrepareAssistant.cs" />
+    <Compile Include="Integration\DeviceMetering\MeteringDeviceBasePrepareAssistant.cs" />
+    <Compile Include="Integration\DeviceMetering\DataExtractors\MeteringDeviceValuesBaseDataExtractor.cs" />
+    <Compile Include="Integration\DeviceMetering\PrepareAssistants\RisMeteringDeviceVerificationValueAssistant.cs" />
+    <Compile Include="Integration\DeviceMetering\PrepareAssistants\RisMeteringDeviceCurrentValueAssistant.cs" />
+    <Compile Include="Integration\DeviceMetering\PrepareAssistants\RisMeteringDeviceControlValueAssistant.cs" />
+    <Compile Include="Integration\FileService\IFileUploadService.cs" />
+    <Compile Include="Integration\FileService\Impl\FileUploadService.cs" />
+    <Compile Include="Integration\GisIntegrationDataExtractorBase.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\AccountData\AccountDataExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\CharterData\CharterExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\ContractData\JskTsjHouseManServiceExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\ContractData\JskTsjAddServiceExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\ContractData\JskTsjProtocolMeetingOwnerExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\ContractData\OwnersProtocolMeetingOwnerExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\ContractData\OwnersProtocolOkExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\ContractData\ContractAttachmentExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\ContractData\ContractDataExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\ContractData\ContractObjectDataExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\ContractData\OwnersAddServiceExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\ContractData\OwnersHouseManServiceExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\HouseData\EntranceDataExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\HouseData\LivingRoomExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\NotificationData\NotificationAttachmentExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\MeteringDeviceData\MeteringDeviceAccountExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\MeteringDeviceData\MeteringDeviceLivingRoomExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\SupplyResourceContract\SupplyResourceContractExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\SupplyResourceContract\SupResContractAttachmentExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\SupplyResourceContract\SupResContractServiceResourceExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\SupplyResourceContract\SupResContractSubjectExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\SupplyResourceContract\SupResContractSubjectOtherQualityExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\SupplyResourceContract\SupResContractTemperatureChartExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\VotingProtocolData\DecisionExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\MeteringDeviceData\MeteringDeviceDataExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\HouseData\NonResidentialPremisesDataExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\PublicPropertyContractData\ContractAttachmentExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\PublicPropertyContractData\TrustDocAttachmentExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\PublicPropertyContractData\PublicPropertyContractExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\NotificationData\NotificationAddresseeExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\NotificationData\NotificationDataExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\HouseData\ResidentialPremisesDataExtractor.cs.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\HouseData\RisHouseDataExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\SupplyResourceContractExporter.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\NotificationDataExporter.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\VotingProtocolData\VotingProtocolAttachmentExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\VotingProtocolData\VotingProtocolExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\CharterDataExporter.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\ContractDataExporter.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\AccountDataExporter.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\HouseOMSDataExporter.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\HouseRSODataExporter.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\HouseUODataExporter.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\MeteringDeviceDataExporter.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\PublicPropertyContractExporter.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\VotingProtocolExporter.cs" />
+    <Compile Include="Integration\IDataExporter.cs" />
+    <Compile Include="Integration\IDataSelector.cs" />
+    <Compile Include="Integration\IDataExtractor.cs" />
+    <Compile Include="Integration\IGisIntegrationDataExtractor.cs" />
+    <Compile Include="Integration\Infrastructure\DataExtractors\RkiData\RkiAttachmentEnergyEfficiencyExtractor.cs" />
+    <Compile Include="Integration\Infrastructure\DataExtractors\RkiData\RkiNetPiecesExtractor.cs" />
+    <Compile Include="Integration\Infrastructure\DataExtractors\RkiData\RkiReceiverExtractor.cs" />
+    <Compile Include="Integration\Infrastructure\DataExtractors\RkiData\RkiResourceExtractor.cs" />
+    <Compile Include="Integration\Infrastructure\DataExtractors\RkiData\RkiCommunalServiceExtractor.cs" />
+    <Compile Include="Integration\Infrastructure\DataExtractors\RkiData\RkiAttachmentExtractor.cs" />
+    <Compile Include="Integration\Infrastructure\DataExtractors\RkiData\RkiItemDataExtractor.cs" />
+    <Compile Include="Integration\Infrastructure\DataExtractors\RkiData\RkiSourceExtractor.cs" />
+    <Compile Include="Integration\Infrastructure\DataExtractors\RkiData\RkiTransportationResourceExtractor.cs" />
+    <Compile Include="Integration\Infrastructure\Exporters\RkiDataExporter.cs" />
+    <Compile Include="Integration\Inspection\DataExtractors\Examination\DisposalSelector.cs" />
+    <Compile Include="Integration\Inspection\DataExtractors\Examination\ExaminationResultDocProxy.cs" />
+    <Compile Include="Integration\Inspection\DataExtractors\Examination\ExaminationExtractorCache.cs" />
+    <Compile Include="Integration\Inspection\DataExtractors\Examination\ExaminationExtractor.cs" />
+    <Compile Include="Integration\Inspection\DataExtractors\Examination\InspectionSelector.cs" />
+    <Compile Include="Integration\Inspection\DataExtractors\Examination\OffenceExtractor.cs" />
+    <Compile Include="Integration\Inspection\DataExtractors\Examination\PreceptExtractor.cs" />
+    <Compile Include="Integration\Inspection\DataExtractors\InspectionPlan\InspectionPlanExaminationExtractor.cs" />
+    <Compile Include="Integration\Inspection\DataExtractors\InspectionPlan\InspectionPlanExtractor.cs" />
+    <Compile Include="Integration\Inspection\Exporters\ExaminationExporter.cs" />
+    <Compile Include="Integration\Inspection\Exporters\InspectionPlanExporter.cs" />
+    <Compile Include="Integration\Inspection\Tasks\ExaminationPrepareDataTask.Extract.cs" />
+    <Compile Include="Integration\Inspection\Tasks\ExaminationPrepareDataTask.GetRequest.cs" />
+    <Compile Include="Integration\Inspection\Tasks\ExaminationExportTask.cs" />
+    <Compile Include="Integration\Inspection\Tasks\ExaminationPrepareDataTask.Validate.cs" />
+    <Compile Include="Integration\Nsi\DataExtractors\AdditionalServicesDataExtractor.cs" />
+    <Compile Include="Integration\Nsi\DataExtractors\OrganizationWorksDataExtractor.cs" />
+    <Compile Include="Integration\Nsi\DataExtractors\MunicipalServicesDataExtractor.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\BaseDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\HouseManagementTypeDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\OlsonTZDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\OverhaulFormingKindDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\SupplyResContractBaseDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\Inspection\ExaminationFormDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\Inspection\ExaminationBaseDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\ContractBaseDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\FormingFondTypeDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\ChargeableMunicipalResourceDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\OwnersMeetingDecisionTypeDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\PositionDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\PremisesCharacteristicDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\OwnerDocumentTypeDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\PurposeDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\RoomsNumDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\StopReasonDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\UnitMeasureDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\KindCheckDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\ConditionHouseDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\HouseStateDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\ProjectTypeDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\MunicipalResourceDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\MunicipalServiceDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\Nsi\ContentRepairMkdWorkDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\Nsi\ServiceWorkPurposeDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\Services\ServiceTypeDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\TypeContractManOrgDictAction.cs" />
+    <Compile Include="Integration\Nsi\Exporters\OrganizationWorksExporter.cs" />
+    <Compile Include="Integration\Nsi\Exporters\MunicipalServicesExporter.cs" />
+    <Compile Include="Integration\Nsi\Exporters\AdditionalServicesExporter.cs" />
+    <Compile Include="Integration\Nsi\IGisIntegrDictAction.cs" />
+    <Compile Include="Integration\OrgRegistryCommon\DataExtractors\ContragentProxy.cs" />
+    <Compile Include="Integration\OrgRegistryCommon\DataExtractors\ContragentSelector.cs" />
+    <Compile Include="Integration\OrgRegistryCommon\Exporters\OrgRegistryExporter.cs" />
+    <Compile Include="Integration\OrgRegistry\DataExtractors\SubsidiaryDataExtractor.cs" />
+    <Compile Include="Integration\OrgRegistry\Exporters\SubsidiaryExporter.cs" />
+    <Compile Include="Integration\OrgRegistryCommon\Exporters\DataProviderExporter.cs" />
+    <Compile Include="Integration\Bills\Exporters\AcknowledgmentExporter.cs" />
+    <Compile Include="Integration\PackageSendingResult.cs" />
+    <Compile Include="Integration\Payment\DataExtractors\NotificationOfOrderExecutionExtractor.cs" />
+    <Compile Include="Integration\Payment\DataSelectors\NotificationOfOrderExecutionCancellationDataSelector.cs" />
+    <Compile Include="Integration\Payment\Exporters\NotificationsOfOrderExecutionCancellationExporter.cs" />
+    <Compile Include="Integration\Payment\Exporters\SupplierNotificationsOfOrderExecutionExporter.cs" />
+    <Compile Include="Integration\Payment\Exporters\NotificationsOfOrderExecutionExporter.cs" />
+    <Compile Include="Integration\PrepareDataDescription.cs" />
+    <Compile Include="Integration\PrepareDataResult.cs" />
+    <Compile Include="Map\HouseManagement\SupResContractSubjectOtherQualityMap.cs" />
+    <Compile Include="Map\HouseManagement\SupResContractTemperatureChartMap.cs" />
+    <Compile Include="Integration\Services\DataExtractors\RisCompletedWorkExtractor.cs" />
+    <Compile Include="Integration\Services\Exporters\RisCompletedWorkExporter.cs" />
+    <Compile Include="Map\External\Administration\System\ReportPeriodMap.cs" />
+    <Compile Include="Map\External\Dict\Common\ExtContragentTypeMap.cs" />
+    <Compile Include="Map\HouseManagement\SupResContractSubjectMap.cs" />
+    <Compile Include="Map\External\Dict\House\CommunalSourceMap.cs" />
+    <Compile Include="Map\External\Dict\Oki\ExtCommunalServiceMap.cs" />
+    <Compile Include="Map\External\Dict\Oki\ElectroStationTypeMap.cs" />
+    <Compile Include="Map\External\Dict\Oki\ElectroSubstantionTypeMap.cs" />
+    <Compile Include="Map\External\Dict\Oki\FuelTypeMap.cs" />
+    <Compile Include="Map\External\Dict\Oki\GasNetTypeMap.cs" />
+    <Compile Include="Map\External\Dict\Oki\GasPressureMap.cs" />
+    <Compile Include="Map\External\Dict\Oki\HeatTypeMap.cs" />
+    <Compile Include="Map\External\Dict\Oki\OkiDocTypeMap.cs" />
+    <Compile Include="Map\External\Dict\Oki\OkiTypeCommunalServiceMap.cs" />
+    <Compile Include="Map\External\Dict\Oki\OkiTypeGroupMap.cs" />
+    <Compile Include="Map\External\Dict\Oki\OkiTypeMap.cs" />
+    <Compile Include="Map\External\Dict\Oki\RunBaseMap.cs" />
+    <Compile Include="Map\External\Dict\Oki\SkiTypeMap.cs" />
+    <Compile Include="Map\External\Dict\Oki\VoltageMap.cs" />
+    <Compile Include="Map\External\Dict\Oki\WaterIntakeTypeMap.cs" />
+    <Compile Include="Map\External\Housing\Oki\ManagBaseDocMap.cs" />
+    <Compile Include="Map\External\Housing\Oki\NetPartMap.cs" />
+    <Compile Include="Map\External\Housing\Oki\OkiCommunalServiceMap.cs" />
+    <Compile Include="Map\External\Housing\Oki\OkiCommunalSourceMap.cs" />
+    <Compile Include="Map\External\Housing\Oki\OkiDocMap.cs" />
+    <Compile Include="Map\External\Housing\Oki\OkiObjectMap.cs" />
+    <Compile Include="Map\External\Housing\Oki\SourceReceiverMap.cs" />
+    <Compile Include="Map\External\Rso\RsoCompanyMap.cs" />
+    <Compile Include="Map\Infrastructure\RisRkiCommunalServiceMap.cs" />
+    <Compile Include="Map\Infrastructure\RisRkiReceiverMap.cs" />
+    <Compile Include="Map\Infrastructure\RisRkiSourceMap.cs" />
+    <Compile Include="Map\Inspection\ExaminationAttachmentMap.cs" />
+    <Compile Include="Map\Inspection\ExaminationPlaceMap.cs" />
+    <Compile Include="Map\Inspection\OffenceAttachmentMap.cs" />
+    <Compile Include="Map\Inspection\PreceptAttachmentMap.cs" />
+    <Compile Include="Map\Services\RisCompletedWorkMap.cs" />
+    <Compile Include="Migrations\Version_2016052300\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016060300\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016052800\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016053000\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016052700\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016053100\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016060600\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016061000\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016061700\UpdateSchema.cs" />
+    <Compile Include="Service References\HouseManagementAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\InfrastructureAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Bills\ImportPaymentDocumentData\PaymentDocumentPrepareDataTask.cs" />
+    <Compile Include="Tasks\Bills\ImportPaymentDocumentData\ExportPaymentDocumentTask.cs" />
+    <Compile Include="Tasks\Bills\ImportPaymentDocumentData\PaymentDocumentPrepareDataTask.ValidateData.cs" />
+    <Compile Include="Tasks\Bills\OpenOrgPaymentPeriod\ExportOpenOrgPaymentPeriodTask.cs" />
+    <Compile Include="Tasks\Bills\OpenOrgPaymentPeriod\OpenOrgPaymentPeriodPrepareDataTask.cs" />
+    <Compile Include="Tasks\Infrastructure\Rki\ExportRkiDataTask.cs" />
+    <Compile Include="Tasks\Infrastructure\Rki\RkiPrepareDataTask.cs" />
+    <Compile Include="Service References\DeviceMeteringAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\DeviceMetering\MeteringDeviceValues\MeteringDeviceValuesExportTask.cs" />
+    <Compile Include="Tasks\DeviceMetering\MeteringDeviceValues\MeteringDeviceValuesPrepareDataTask.cs" />
+    <Compile Include="Integration\Services\DataExtractors\WorkPlanItemExtractor.cs" />
+    <Compile Include="Integration\Services\DataExtractors\WorkingPlanExtractor.cs" />
+    <Compile Include="Migrations\Version_2016052400\UpdateSchema.cs" />
+    <Compile Include="Tasks\Payment\ExportNotificationsOfOrderExecutionTask.cs" />
+    <Compile Include="Tasks\Payment\NotificationsOfOrderExecutionCancellation\ExportNotificationsOfOrderExecutionCancellationTask.cs" />
+    <Compile Include="Tasks\Payment\NotificationsOfOrderExecutionCancellation\NotificationsOfOrderExecutionCancellationPrepareDataTask.cs" />
+    <Compile Include="Tasks\Payment\NotificationsOfOrderExecutionPrepareDataTask.cs" />
+    <Compile Include="Map\HouseManagement\SupResContractServiceResourceMap.cs" />
+    <Compile Include="Map\HouseManagement\SupResContractAttachmentMap.cs" />
+    <Compile Include="Map\HouseManagement\SupplyResourceContractMap.cs" />
+    <Compile Include="Migrations\Version_2016053001\UpdateSchema.cs" />
+    <Compile Include="Tasks\HouseManagement\SupplyResourceContract\ExportSupplyResourceContractTask.cs" />
+    <Compile Include="Tasks\HouseManagement\SupplyResourceContract\SupplyResourceContractPrepareDataTask.cs" />
+    <Compile Include="Tasks\Payment\SupplierNotificationsOfOrderExecution\ExportSupplierNotificationsOfOrderExecutionTask.cs" />
+    <Compile Include="Tasks\Payment\SupplierNotificationsOfOrderExecution\SupplierNotificationsOfOrderExecutionPrepareDataTask.cs" />
+    <Compile Include="Tasks\SerializablePrepareDataResult.cs" />
+    <Compile Include="Integration\Services\DataExtractors\WorkListItemExtractor.cs" />
+    <Compile Include="Integration\Services\DataExtractors\WorkListExtractor.cs" />
+    <Compile Include="Integration\Services\Exporters\WorkingListExporter.cs" />
+    <Compile Include="Integration\Services\Exporters\WorkingPlanExporter.cs" />
+    <Compile Include="Integration\Services\Tasks\WorkingListExportTask.cs" />
+    <Compile Include="Integration\Services\Tasks\WorkingListPrepareDataTask.cs" />
+    <Compile Include="Integration\Signature\GisIntegrationClientMessageInspector.cs" />
+    <Compile Include="Integration\Signature\XadesSign.cs" />
+    <Compile Include="Integration\ValidateObjectResult.cs" />
+    <Compile Include="Interceptors\GisIntegration\GisDictInterceptor.cs" />
+    <EmbeddedResource Include="libs\B4\model\integrations\services\RepairObject.js" />
+    <EmbeddedResource Include="libs\B4\model\TaskTreeNode.js" />
+    <EmbeddedResource Include="libs\B4\store\integrations\gis\TaskTreeStore.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\TaskTree.js" />
+    <Compile Include="Interceptors\UserEntityInterceptor.cs" />
+    <Compile Include="Map\BaseRisEntityMap.cs" />
+    <Compile Include="Map\Bills\OrgPaymentPeriodMap.cs" />
+    <Compile Include="Map\DeviceMetering\RisMeteringDeviceControlValueMap.cs" />
+    <Compile Include="Map\DeviceMetering\RisMeteringDeviceCurrentValueMap.cs" />
+    <Compile Include="Map\DeviceMetering\RisMeteringDeviceVerificationValueMap.cs" />
+    <Compile Include="Map\External\Administration\System\DataSupplierMap.cs" />
+    <Compile Include="Map\External\Attachment\ExtAttachmentMap.cs" />
+    <Compile Include="Map\External\Contragent\ExtContragentMap.cs" />
+    <Compile Include="Map\External\Dict\Common\MoTerritoryMap.cs" />
+    <Compile Include="Map\External\Dict\Common\OkeiMap.cs" />
+    <Compile Include="Map\External\Dict\House\BuildProjectTypeMap.cs" />
+    <Compile Include="Map\External\Dict\House\CrFormingTypeMap.cs" />
+    <Compile Include="Map\External\Dict\House\EnergyEfficiencyClassMap.cs" />
+    <Compile Include="Map\External\Dict\House\HouseStateMap.cs" />
+    <Compile Include="Map\External\Dict\House\HouseTypeMap.cs" />
+    <Compile Include="Map\External\Dict\House\InnerWallTypeMap.cs" />
+    <Compile Include="Map\External\Dict\House\LivePremiseCharMap.cs" />
+    <Compile Include="Map\External\Dict\House\LivePremiseKindMap.cs" />
+    <Compile Include="Map\External\Dict\House\ManagModeMap.cs" />
+    <Compile Include="Map\External\Dict\House\NotifTypeMap.cs" />
+    <Compile Include="Map\External\Dict\House\PremiseCategoryMap.cs" />
+    <Compile Include="Map\External\Dict\House\TimeZoneMap.cs" />
+    <Compile Include="Map\External\Dict\House\WorkTypeMap.cs" />
+    <Compile Include="Map\External\Housing\House\HouseMap.cs" />
+    <Compile Include="Map\External\Housing\House\NotifAddressMap.cs" />
+    <Compile Include="Map\External\Housing\House\NotifDocMap.cs" />
+    <Compile Include="Map\External\Housing\House\NotifMap.cs" />
+    <Compile Include="Map\External\Housing\House\PorchMap.cs" />
+    <Compile Include="Map\External\Housing\House\PremiseMap.cs" />
+    <Compile Include="Map\External\MO\ManagementOrganizationMap.cs" />
+    <Compile Include="Map\GisIntegration\GisDictMap.cs" />
+    <Compile Include="Map\AttachmentMap.cs" />
+    <Compile Include="Map\Bills\BaseRisChargeInfoMap.cs" />
+    <Compile Include="Map\Bills\RisAdditionalServiceChargeInfoMap.cs" />
+    <Compile Include="Map\Bills\RisAdditionalServiceExtChargeInfoMap.cs" />
+    <Compile Include="Map\Bills\RisAddressInfoMap.cs" />
+    <Compile Include="Map\Bills\RisHousingServiceChargeInfoMap.cs" />
+    <Compile Include="Map\Bills\RisMunicipalServiceChargeInfoMap.cs" />
+    <Compile Include="Map\Bills\RisPaymentDocumentMap.cs" />
+    <Compile Include="Map\Bills\RisPaymentInformationMap.cs" />
+    <Compile Include="Map\Bills\RisTechServiceMap.cs" />
+    <Compile Include="Map\HouseManagement\AddServiceMap.cs" />
+    <Compile Include="Map\HouseManagement\CharterMap.cs" />
+    <Compile Include="Map\HouseManagement\ConfirmDocMap.cs" />
+    <Compile Include="Map\HouseManagement\ContractObjectMap.cs" />
+    <Compile Include="Map\HouseManagement\HouseManServiceMap.cs" />
+    <Compile Include="Map\HouseManagement\ProtocolMeetingOwnerMap.cs" />
+    <Compile Include="Map\HouseManagement\RisAccountMap.cs" />
+    <Compile Include="Map\HouseManagement\RisAddAgreementPaymentMap.cs" />
+    <Compile Include="Map\HouseManagement\RisAgreementMap.cs" />
+    <Compile Include="Map\HouseManagement\RisContractAttachmentMap.cs" />
+    <Compile Include="Map\HouseManagement\RisContractMap.cs" />
+    <Compile Include="Map\HouseManagement\RisEcnbrIndMap.cs" />
+    <Compile Include="Map\HouseManagement\RisAccountRelationsMap.cs" />
+    <Compile Include="Map\HouseManagement\RisEcnbrMap.cs" />
+    <Compile Include="Map\HouseManagement\RisEntranceMap.cs" />
+    <Compile Include="Map\HouseManagement\RisHouseInnerWallMaterialMap.cs" />
+    <Compile Include="Map\HouseManagement\RisHouseMap.cs" />
+    <Compile Include="Map\HouseManagement\LivingRoomMap.cs" />
+    <Compile Include="Map\HouseManagement\ResidentialPremisesMap.cs" />
+    <Compile Include="Map\HouseManagement\NonResidentialPremisesMap.cs" />
+    <Compile Include="Map\HouseManagement\RisIndMap.cs" />
+    <Compile Include="Map\HouseManagement\RisMeteringDeviceAccountMap.cs" />
+    <Compile Include="Map\HouseManagement\RisMeteringDeviceDataMap.cs" />
+    <Compile Include="Map\HouseManagement\RisMeteringDeviceLivingRoomMap.cs" />
+    <Compile Include="Map\HouseManagement\RisNotificationAddresseeMap.cs" />
+    <Compile Include="Map\HouseManagement\RisProtocolOkMap.cs" />
+    <Compile Include="Map\HouseManagement\RisVoteInitiatorsMap.cs" />
+    <Compile Include="Map\HouseManagement\RisNotificationAttachmentMap.cs" />
+    <Compile Include="Map\HouseManagement\RisNotificationMap.cs" />
+    <Compile Include="Map\HouseManagement\RisPublicPropertyContractMap.cs" />
+    <Compile Include="Map\HouseManagement\RisShareEncbrLivingHouseMap.cs" />
+    <Compile Include="Map\HouseManagement\RisShareEncbrLivingRoomMap.cs" />
+    <Compile Include="Map\HouseManagement\RisShareEncbrNonResPremMap.cs" />
+    <Compile Include="Map\HouseManagement\RisShareEncbrResidentialPremisesMap.cs" />
+    <Compile Include="Map\HouseManagement\RisShareIndMap.cs" />
+    <Compile Include="Map\HouseManagement\RisVotingProtocolAttachmentMap.cs" />
+    <Compile Include="Map\HouseManagement\RisDecisionListMap.cs" />
+    <Compile Include="Map\HouseManagement\RisVotingProtocolMap.cs" />
+    <Compile Include="Map\HouseManagement\RisShareMap.cs" />
+    <Compile Include="Map\HouseManagement\RisTrustDocAttachmentMap.cs" />
+    <Compile Include="Map\Infrastructure\RisAttachmentsEnergyEfficiencyMap.cs" />
+    <Compile Include="Map\Infrastructure\RisNetPiecesMap.cs" />
+    <Compile Include="Map\Infrastructure\RisResourceMap.cs" />
+    <Compile Include="Map\Infrastructure\RisRkiAttachmentMap.cs" />
+    <Compile Include="Map\Infrastructure\RisRkiItemMap.cs" />
+    <Compile Include="Map\Infrastructure\RisTransportationResourcesMap.cs" />
+    <Compile Include="Map\Inspection\ExaminationMap.cs" />
+    <Compile Include="Map\Inspection\InspectionPlanMap.cs" />
+    <Compile Include="Map\GisIntegration\Ref\GisDictRefMap.cs" />
+    <Compile Include="Map\Inspection\OffenceMap.cs" />
+    <Compile Include="Map\Inspection\PreceptMap.cs" />
+    <Compile Include="Map\Nsi\RisAdditionalServiceMap.cs" />
+    <Compile Include="Map\Nsi\RisOrganizationWorkMap.cs" />
+    <Compile Include="Map\Nsi\RisMunicipalServiceMap.cs" />
+    <Compile Include="Map\Nsi\ServiceTypeMap.cs" />
+    <Compile Include="Map\OrgRegistry\RisSubsidiaryMap.cs" />
+    <Compile Include="Map\Payment\NotificationOfOrderExecutionMap.cs" />
+    <Compile Include="Map\Payment\RisAcknowledgmentMap.cs" />
+    <Compile Include="Map\RisConfigParamMap.cs" />
+    <Compile Include="Map\RisContainerMap.cs" />
+    <Compile Include="Map\RisContragentMap.cs" />
+    <Compile Include="Map\RisPackageMap.cs" />
+    <Compile Include="Map\RisPackageTriggerMap.cs" />
+    <Compile Include="Map\RisSettingsMap.cs" />
+    <Compile Include="Map\RisTaskMap.cs" />
+    <Compile Include="Map\RisTaskTriggerMap.cs" />
+    <Compile Include="Map\Services\RisHouseServiceMap.cs" />
+    <Compile Include="Map\Services\WorkListItemMap.cs" />
+    <Compile Include="Map\Services\WorkPlanItemMap.cs" />
+    <Compile Include="Map\Services\WorkingPlanMap.cs" />
+    <Compile Include="Map\Services\WorkListMap.cs" />
+    <Compile Include="Migrations\RisMigrationExtensions.cs" />
+    <Compile Include="Migrations\MigrationInfo.cs" />
+    <Compile Include="Migrations\Version_1\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015083100\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015090200\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015091000\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015101200\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015101600\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015102800\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015103100\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015110200\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015110700\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015110701\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015111000\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015111300\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015111100\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015112300\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015112400\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015112500\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015112600\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015120700\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015113000\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015120400\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015120500\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015120800\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015121100\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015121101\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015121700\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015121400\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015121200\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015121600\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015121800\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015122300\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015122600\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015122601\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016012600\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016020100\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016021000\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016021001\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016021600\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016021700\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016021800\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016022400\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016022500\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016031400\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016031500\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016032900\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016050200\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016051700\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016050500\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016051100\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016051800\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016051701\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016051300\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016051500\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016051600\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016051901\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016051900\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016052000\UpdateSchema.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="Module.ResourcePart.cs" />
+    <Compile Include="NavigationProvider.cs" />
+    <Compile Include="ResourceManifest.cs">
+      <DependentUpon>ResourceManifest.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="RisPermissionMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\Main\AssemblyInfoVersion.cs">
+        <Link>Properties\AssemblyInfoVersion.cs</Link>
+    </Compile>
+    <Compile Include="Properties\ModuleAssemblyInfo.cs">
+      <DependentUpon>ModuleAssemblyInfo.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceManifest.Part.cs" />
+    <Compile Include="Security\CrossAuthentification.cs" />
+    <Compile Include="Security\RisManager.cs" />
+    <Compile Include="Service References\BillsAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\InspectionAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NsiAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NsiCommon\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\OrgRegistryAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\OrgRegistryCommonAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PaymentAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServicesAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Tasks\BaseSendDataTask.cs" />
+    <Compile Include="Tasks\Bills\Acknowledgment\AcknowledgmentPrepareDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\AccountData\AccountPrepareDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\AccountData\ExportAccountDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\CharterData\CharterPrepareDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\ContractData\ContractPrepareDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\HouseData\BaseHousePrepareDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\HouseData\BaseExportHouseDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\CharterData\ExportCharterDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\ContractData\ExportContractDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\HouseData\HouseOMSExportDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\HouseData\HouseOMSPrepareDataTask.ApartmentHouse.cs" />
+    <Compile Include="Tasks\HouseManagement\HouseData\HouseOMSPrepareDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\HouseData\HouseOMSPrepareDataTask.LivingHouse.cs" />
+    <Compile Include="Tasks\HouseManagement\HouseData\HouseRSOExportDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\HouseData\HouseRSOPrepareDataTask.ApartmentHouse.cs" />
+    <Compile Include="Tasks\HouseManagement\HouseData\HouseRSOPrepareDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\HouseData\HouseRSOPrepareDataTask.LivingHouse.cs" />
+    <Compile Include="Tasks\HouseManagement\HouseData\HouseUOExportDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\HouseData\HouseUOPrepareDataTask.ApartmentHouse.cs" />
+    <Compile Include="Tasks\HouseManagement\HouseData\HouseUOPrepareDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\HouseData\HouseUOPrepareDataTask.LivingHouse.cs" />
+    <Compile Include="Tasks\HouseManagement\MeteringDeviceData\ExportMeteringDeviceDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\MeteringDeviceData\MeteringDevicePrepareDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\PublicPropertyContractData\ExportPublicPropertyContractDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\PublicPropertyContractData\PublicPropertyContractPrepareDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\VotingProtocol\ExportVotingProtocolTask.cs" />
+    <Compile Include="Tasks\HouseManagement\VotingProtocol\VotingProtocolPrepareDataTask.cs" />
+    <Compile Include="Tasks\Inspection\InspectionPlan\InspectionPlanPrepareDataTask.cs" />
+    <Compile Include="Tasks\Inspection\InspectionPlan\ExportInspectionPlanTask.cs" />
+    <Compile Include="Tasks\HouseManagement\NotificationData\ExportNotificationDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\NotificationData\NotificationPrepareDataTask.cs" />
+    <Compile Include="Tasks\ITaskManager.cs" />
+    <Compile Include="Tasks\Nsi\AdditionalServices\AdditionalServicesPrepareDataTask.cs" />
+    <Compile Include="Tasks\Nsi\OrganizationWorks\ExportOrganizationWorksTask.cs" />
+    <Compile Include="Tasks\Nsi\MunicipalServices\ExportMunicipalServicesTask.cs" />
+    <Compile Include="Tasks\Nsi\AdditionalServices\ExportAdditionalServicesTask.cs" />
+    <Compile Include="Tasks\Nsi\MunicipalServices\MunicipalServicesPrepareDataTask.cs" />
+    <Compile Include="Tasks\Nsi\OrganizationWorks\OrganizationWorksPrepareDataTask.cs" />
+    <Compile Include="Integration\ObjectProcessingResult.cs" />
+    <Compile Include="Tasks\OrgRegistryCommon\OrgRegistry\ExportOrgRegistryTask.cs" />
+    <Compile Include="Tasks\OrgRegistryCommon\DataProvider\DataProviderPrepareDataTask.cs" />
+    <Compile Include="Tasks\OrgRegistryCommon\DataProvider\ExportDataProviderTask.cs" />
+    <Compile Include="Tasks\OrgRegistryCommon\OrgRegistry\OrgRegistryPrepareDataTask.cs" />
+    <Compile Include="Tasks\OrgRegistry\SubsidiaryExportTask.cs" />
+    <Compile Include="Tasks\OrgRegistry\SubsidiaryPrepareDataTask.cs" />
+    <Compile Include="Tasks\PackageProcessingResult.cs" />
+    <Compile Include="Tasks\Bills\Acknowledgment\ExportAcknowledgmentTask.cs" />
+    <Compile Include="Tasks\BasePrepareDataTask.cs" />
+    <Compile Include="Tasks\PackageSendingLogRecord.cs" />
+    <Compile Include="Tasks\SerializableObjectProcessingResult.cs" />
+    <Compile Include="Tasks\Services\CompletedWorkExportTask.cs" />
+    <Compile Include="Tasks\Services\CompletedWorkPrepareDataTask.cs" />
+    <Compile Include="Tasks\Services\WorkingPlanPrepareDataTask.cs" />
+    <Compile Include="Tasks\Services\WorkingPlanExportTask.cs" />
+    <Compile Include="Tasks\TaskExecutionLevel.cs" />
+    <Compile Include="Tasks\TaskManager.cs" />
+    <Compile Include="Tasks\TriggerExecutionLevel.cs" />
+    <Compile Include="ViewModel\GisIntegration\GisDictRefViewModel.cs" />
+    <Compile Include="ViewModel\GisIntegration\GisDictViewModel.cs" />
+    <Compile Include="ViewModel\HouseManagement\RisContractViewModel.cs" />
+    <Compile Include="ViewModel\IObjectProcessingResultViewModel.cs" />
+    <Compile Include="ViewModel\ITreeViewModel.cs" />
+    <Compile Include="ViewModel\ITriggerProtocolViewModel.cs" />
+    <Compile Include="ViewModel\Protocol\DataSendingProtocolRecordView.cs" />
+    <Compile Include="ViewModel\Protocol\PreparingDataProtocolRecordView.cs" />
+    <Compile Include="ViewModel\Protocol\TriggerProtocolViewModel.cs" />
+    <Compile Include="ViewModel\Result\ObjectProcessingResultView.cs" />
+    <Compile Include="ViewModel\Result\ObjectProcessingResultViewModel.cs" />
+    <Compile Include="ViewModel\Task\BaseNode.cs" />
+    <Compile Include="ViewModel\Task\ITreeNode.cs" />
+    <Compile Include="ViewModel\Task\TaskTreeNode.cs" />
+    <Compile Include="ViewModel\Task\TaskTreeAsyncViewModel.cs" />
+    <Compile Include="ViewModel\Task\TaskTreeViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ResourceManifest.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ResourceManifest.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\BillsAsync\Bars.Gkh.Ris.BillsAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillsAsync\Bars.Gkh.Ris.BillsAsync.closeHousePaymentPeriodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillsAsync\Bars.Gkh.Ris.BillsAsync.exportNotificationsOfOrderExecutionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillsAsync\Bars.Gkh.Ris.BillsAsync.exportOrgPeriodDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillsAsync\Bars.Gkh.Ris.BillsAsync.exportPaymentDocumentDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillsAsync\Bars.Gkh.Ris.BillsAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillsAsync\Bars.Gkh.Ris.BillsAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillsAsync\Bars.Gkh.Ris.BillsAsync.importAcknowledgmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillsAsync\Bars.Gkh.Ris.BillsAsync.importPaymentDocumentDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillsAsync\Bars.Gkh.Ris.BillsAsync.openOrgPaymentPeriodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillsAsync\Bars.Gkh.Ris.BillsAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillsAsync\hcs-basetypes-8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BillsAsync\hcs-basetypes-81.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BillsAsync\hcs-basetypes-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BillsAsync\hcs-bills-service-async-8.wsdl" />
+    <None Include="Service References\BillsAsync\hcs-bills-service-async-81.wsdl" />
+    <None Include="Service References\BillsAsync\hcs-bills-service-async-9.wsdl" />
+    <None Include="Service References\BillsAsync\hcs-bills-types-8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BillsAsync\hcs-bills-types-81.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BillsAsync\hcs-bills-types-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BillsAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BillsAsync\xmldsig-core-schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BillsAsync\xmldsig-core-schema11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DeviceMeteringAsync\Bars.Gkh.Ris.DeviceMeteringAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DeviceMeteringAsync\Bars.Gkh.Ris.DeviceMeteringAsync.exportMeteringDeviceHistoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DeviceMeteringAsync\Bars.Gkh.Ris.DeviceMeteringAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DeviceMeteringAsync\Bars.Gkh.Ris.DeviceMeteringAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DeviceMeteringAsync\Bars.Gkh.Ris.DeviceMeteringAsync.importMeteringDeviceValuesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DeviceMeteringAsync\Bars.Gkh.Ris.DeviceMeteringAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DeviceMeteringAsync\hcs-basetypes-81.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DeviceMeteringAsync\hcs-basetypes-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DeviceMeteringAsync\hcs-device-metering-service-async-81.wsdl" />
+    <None Include="Service References\DeviceMeteringAsync\hcs-device-metering-service-async-9.wsdl" />
+    <None Include="Service References\DeviceMeteringAsync\hcs-device-metering-types-81.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DeviceMeteringAsync\hcs-device-metering-types-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DeviceMeteringAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DeviceMeteringAsync\xmldsig-core-schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.exportAccountDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.exportCAChDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.exportHouseDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.exportMeteringDeviceDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.exportStatusCAChDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.exportStatusPublicPropertyContractResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.exportSupplyResourceContractDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.exportVotingProtocolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.importAccountDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.importCharterDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.importContractDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.importHouseOMSDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.importHouseRSODataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.importHouseUODataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.importMeteringDeviceDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.importNotificationDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.importPublicPropertyContractResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.importSupplyResourceContractDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.importVotingProtocolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\Bars.Gkh.Ris.HouseManagementAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagementAsync\hcs-basetypes-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HouseManagementAsync\hcs-house-management-service-async-9.wsdl" />
+    <None Include="Service References\HouseManagementAsync\hcs-house-management-types-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HouseManagementAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InfrastructureAsync\Bars.Gkh.Ris.InfrastructureAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InfrastructureAsync\Bars.Gkh.Ris.InfrastructureAsync.exportOKIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InfrastructureAsync\Bars.Gkh.Ris.InfrastructureAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InfrastructureAsync\Bars.Gkh.Ris.InfrastructureAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InfrastructureAsync\Bars.Gkh.Ris.InfrastructureAsync.importOKIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InfrastructureAsync\Bars.Gkh.Ris.InfrastructureAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InfrastructureAsync\hcs-basetypes-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InfrastructureAsync\hcs-infrastructure-service-async-9.wsdl" />
+    <None Include="Service References\InfrastructureAsync\hcs-infrastructure-types-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InfrastructureAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InspectionAsync\Bars.Gkh.Ris.InspectionAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InspectionAsync\Bars.Gkh.Ris.InspectionAsync.exportExaminationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InspectionAsync\Bars.Gkh.Ris.InspectionAsync.exportInspectionPlansResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InspectionAsync\Bars.Gkh.Ris.InspectionAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InspectionAsync\Bars.Gkh.Ris.InspectionAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InspectionAsync\Bars.Gkh.Ris.InspectionAsync.importExaminationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InspectionAsync\Bars.Gkh.Ris.InspectionAsync.importInspectionPlanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InspectionAsync\Bars.Gkh.Ris.InspectionAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InspectionAsync\hcs-basetypes-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InspectionAsync\hcs-inspection-service-async-9.wsdl" />
+    <None Include="Service References\InspectionAsync\hcs-inspection-types-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InspectionAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NsiAsync\Bars.Gkh.Ris.NsiAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiAsync\Bars.Gkh.Ris.NsiAsync.exportDataProviderNsiItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiAsync\Bars.Gkh.Ris.NsiAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiAsync\Bars.Gkh.Ris.NsiAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiAsync\Bars.Gkh.Ris.NsiAsync.importAdditionalServicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiAsync\Bars.Gkh.Ris.NsiAsync.importMunicipalServicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiAsync\Bars.Gkh.Ris.NsiAsync.importOrganizationWorksResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiAsync\Bars.Gkh.Ris.NsiAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiAsync\hcs-basetypes-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NsiAsync\hcs-nsi-service-async-9.wsdl" />
+    <None Include="Service References\NsiAsync\hcs-nsi-types-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NsiAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NsiCommon\Bars.Gkh.Ris.NsiCommon.exportNsiItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiCommon\Bars.Gkh.Ris.NsiCommon.exportNsiItemResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiCommon\Bars.Gkh.Ris.NsiCommon.exportNsiListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiCommon\Bars.Gkh.Ris.NsiCommon.exportNsiListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiCommon\Bars.Gkh.Ris.NsiCommon.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <EmbeddedResource Include="content\icon\wand.png" />
+    <EmbeddedResource Include="content\img\wizard.png" />
+    <EmbeddedResource Include="libs\B4\view\wizard\export\workinglistdata\ExportWorkingListDataWizard.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\export\workinglistdata\WorkingListDataParametersStepFrame.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\WizardBaseStepFrame.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\WizardFinishStepFrame.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\WizardStartStepFrame.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\WizardWindow.js" />
+    <None Include="Service References\NsiCommon\hcs-basetypes-81.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NsiCommon\hcs-basetypes-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NsiCommon\hcs-nsi-common-service-81.wsdl" />
+    <None Include="Service References\NsiCommon\hcs-nsi-common-service-9.wsdl" />
+    <None Include="Service References\NsiCommon\hcs-nsi-common-types-81.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NsiCommon\hcs-nsi-common-types-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NsiCommon\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NsiCommon\xmldsig-core-schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrgRegistryAsync\Bars.Gkh.Ris.OrgRegistryAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrgRegistryAsync\Bars.Gkh.Ris.OrgRegistryAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrgRegistryAsync\Bars.Gkh.Ris.OrgRegistryAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrgRegistryAsync\Bars.Gkh.Ris.OrgRegistryAsync.importSubsidiaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrgRegistryAsync\Bars.Gkh.Ris.OrgRegistryAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrgRegistryAsync\hcs-basetypes-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrgRegistryAsync\hcs-organizations-registry-service-async-9.wsdl" />
+    <None Include="Service References\OrgRegistryAsync\hcs-organizations-registry-types-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrgRegistryAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrgRegistryCommonAsync\Bars.Gkh.Ris.OrgRegistryCommonAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrgRegistryCommonAsync\Bars.Gkh.Ris.OrgRegistryCommonAsync.exportDataProviderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrgRegistryCommonAsync\Bars.Gkh.Ris.OrgRegistryCommonAsync.exportOrgRegistryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrgRegistryCommonAsync\Bars.Gkh.Ris.OrgRegistryCommonAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrgRegistryCommonAsync\Bars.Gkh.Ris.OrgRegistryCommonAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrgRegistryCommonAsync\Bars.Gkh.Ris.OrgRegistryCommonAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrgRegistryCommonAsync\hcs-basetypes-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrgRegistryCommonAsync\hcs-organizations-registry-common-service-async-9.wsdl" />
+    <None Include="Service References\OrgRegistryCommonAsync\hcs-organizations-registry-common-types-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrgRegistryCommonAsync\hcs-organizations-registry-types-8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrgRegistryCommonAsync\xmldsig-core-schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PaymentAsync\Bars.Gkh.Ris.PaymentAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PaymentAsync\Bars.Gkh.Ris.PaymentAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PaymentAsync\Bars.Gkh.Ris.PaymentAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PaymentAsync\hcs-basetypes-8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PaymentAsync\hcs-basetypes-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PaymentAsync\hcs-payment-service-async-8.wsdl" />
+    <None Include="Service References\PaymentAsync\hcs-payment-service-async-9.wsdl" />
+    <None Include="Service References\PaymentAsync\hcs-payment-types-8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PaymentAsync\hcs-payment-types-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PaymentAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PaymentAsync\xmldsig-core-schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicesAsync\Bars.Gkh.Ris.ServicesAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicesAsync\Bars.Gkh.Ris.ServicesAsync.exportDisqualifiedPersonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicesAsync\Bars.Gkh.Ris.ServicesAsync.exportLicenseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicesAsync\Bars.Gkh.Ris.ServicesAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicesAsync\Bars.Gkh.Ris.ServicesAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicesAsync\Bars.Gkh.Ris.ServicesAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PaymentAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PaymentAsync\configuration.svcinfo" />
+    <None Include="Service References\PaymentAsync\configuration91.svcinfo" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\SettingsPanel.js" />
+    <EmbeddedResource Include="libs\B4\controller\integrations\GisIntegrationSettings.js" />
+    <EmbeddedResource Include="libs\B4\store\integrations\gis\DictRecordList.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\DictRefSelectWindow.js" />
+    <EmbeddedResource Include="libs\B4\store\integrations\gis\DictList.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\DictWindow.js" />
+    <EmbeddedResource Include="libs\B4\model\integrations\gis\DictRef.js" />
+    <EmbeddedResource Include="libs\B4\store\integrations\gis\DictRef.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\DictRefGrid.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\DictRefWindow.js" />
+    <EmbeddedResource Include="libs\B4\store\integrations\gis\Dict.js" />
+    <EmbeddedResource Include="libs\B4\model\integrations\gis\Dict.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\DictGrid.js" />
+    <EmbeddedResource Include="libs\B4\model\integrations\gis\Method.js" />
+    <EmbeddedResource Include="libs\B4\store\integrations\gis\Method.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\Panel.js" />
+    <EmbeddedResource Include="libs\B4\controller\integrations\GisIntegration.js" />
+    <EmbeddedResource Include="content\css\risMain.css" />
+    <None Include="app.config" />
+    <None Include="paket.references">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\ModuleAssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModuleAssemblyInfo.cs</LastGenOutput>
+    </None>
+    <Compile Include="Tasks\Bills\ImportPaymentDocumentData\PaymentDocumentPrepareDataTask.PrepareData.cs" />
+    <None Include="Service References\ServicesAsync\hcs-basetypes-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicesAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Bars.Gkh.Decisions.Nso\Bars.Gkh.Decisions.Nso.csproj">
+      <Project>{70DB05C7-B019-4353-A72C-6A60F46963EA}</Project>
+      <Name>Bars.Gkh.Decisions.Nso</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.Gkh.Overhaul.Tat\Bars.Gkh.Overhaul.Tat.csproj">
+      <Project>{1a8e4c35-c84e-4624-9cb8-1097ce8ab521}</Project>
+      <Name>Bars.Gkh.Overhaul.Tat</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.Gkh.Repair\Bars.Gkh.Repair.csproj">
+      <Project>{B7C98BEE-6925-4C1F-A85C-59E0833BEBD1}</Project>
+      <Name>Bars.Gkh.Repair</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.Gkh1468\Bars.Gkh1468.csproj">
+      <Project>{7C84DDF0-D582-4542-9030-7A7E3B3844D1}</Project>
+      <Name>Bars.Gkh1468</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.GkhDI\Bars.GkhDI.csproj">
+      <Project>{5BC99FA1-DB04-4830-8D2C-E604F83E0BE7}</Project>
+      <Name>Bars.GkhDI</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.GkhExcel\Bars.GkhExcel.csproj">
+      <Project>{558c303d-115d-4c79-bc89-73dc91a1834f}</Project>
+      <Name>Bars.GkhExcel</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.GkhGJI\Bars.GkhGji.csproj">
+      <Project>{0e792744-cc64-41c1-a5f2-3f6e3c00470c}</Project>
+      <Name>Bars.GkhGji</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.GkhTP\Bars.GkhTP.csproj">
+      <Project>{cc0dba5f-57e1-4020-81e4-a33ae462feaa}</Project>
+      <Name>Bars.GkhTP</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.Gkh\Bars.Gkh.csproj">
+      <Project>{2495a42b-7ec1-44d3-b7a7-1f90a2c44c85}</Project>
+      <Name>Bars.Gkh</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Bars.Gkh.Gis\Bars.Gkh.Gis.csproj">
+      <Project>{2a580f94-6628-40b0-8540-45544d710f59}</Project>
+      <Name>Bars.Gkh.Gis</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Bars.Gkh.Quartz.Scheduler\Bars.Gkh.Quartz.Scheduler.csproj">
+      <Project>{a0bcc684-dbb7-4a14-bc94-75a031cc2f8d}</Project>
+      <Name>Bars.Gkh.Quartz.Scheduler</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BillsAsync\" />
+    <WCFMetadataStorage Include="Service References\DeviceMeteringAsync\" />
+    <WCFMetadataStorage Include="Service References\HouseManagementAsync\" />
+    <WCFMetadataStorage Include="Service References\InfrastructureAsync\" />
+    <WCFMetadataStorage Include="Service References\InspectionAsync\" />
+    <WCFMetadataStorage Include="Service References\NsiAsync\" />
+    <WCFMetadataStorage Include="Service References\NsiCommon\" />
+    <WCFMetadataStorage Include="Service References\OrgRegistryAsync\" />
+    <WCFMetadataStorage Include="Service References\OrgRegistryCommonAsync\" />
+    <WCFMetadataStorage Include="Service References\PaymentAsync\" />
+    <WCFMetadataStorage Include="Service References\ServicesAsync\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="content\icon\arrow-180.png" />
+    <EmbeddedResource Include="content\icon\arrow.png" />
+    <EmbeddedResource Include="content\icon\cross.png" />
+    <EmbeddedResource Include="content\img\apply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="content\img\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\RisPackage.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\RisPackage.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="content\icon\task.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\municipalservices\MunicipalServicesParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\RisCertificate.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\RisCertificate.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\cryptopro\xadessigner.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\ValidationResult.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\ValidationResult.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NsiAsync\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NsiAsync\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NsiAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BillsAsync\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BillsAsync\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BillsAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\contractData\ExportContractDataWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\contractData\ContractDataParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="content\img\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\houseManagement\Contract.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\houseManagement\Contract.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NsiCommon\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NsiCommon\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NsiCommon\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\houseManagement\Charter.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\houseManagement\Charter.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\charterData\CharterDataParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\charterData\ExportCharterDataWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrgRegistryCommonAsync\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrgRegistryCommonAsync\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrgRegistryCommonAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\cryptopro\jsxmlsigner.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\dataprovider\ExportDataProviderWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\dataprovider\ExportDataProviderXmlPreviewStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\houseManagement\House.js" />
+    <EmbeddedResource Include="libs\B4\store\integrations\houseManagement\House.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\export\houseData\ExportHouseDataWizard.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\export\houseData\HouseDataParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\additionalservices\ExportAdditionalServicesWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\additionalservices\AdditionalServicesParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\nsi\AdditionalService.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\nsi\AdditionalService.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\municipalservices\ExportMunicipalServicesWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\nsi\MunicipalService.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\nsi\MunicipalService.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\organizationworks\ExportOrganizationWorksWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\organizationworks\OrganizationWorksParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\nsi\OrganizationWork.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\nsi\OrganizationWork.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\PrepareDataResultWindow.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\ValidationResultGrid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\orgregistry\ImportOrgRegistryWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\orgregistry\OrgRegistryParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\orgRegistry\Contragent.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="content\icon\prepareData.png" />
+    <EmbeddedResource Include="content\icon\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\orgRegistry\Contragent.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrgRegistryAsync\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrgRegistryAsync\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrgRegistryAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="content\icon\sign_send.png" />
+    <EmbeddedResource Include="content\icon\view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\controller\integrations\ExternalRis.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\integrations\ExternalRis.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\meteringdevicedata\MeteringDeviceDataParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\meteringdevicedata\ExportMeteringDeviceDataWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\preparedata\Wizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\preparedata\StartStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\preparedata\FinishStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\preparedata\ParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\accountData\ExportAccountDataWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\accountData\AccountDataParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\publicPropertyContractData\PublicPropertyContractDataParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\publicPropertyContractData\ExportPublicPropertyContractDataWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\houseManagement\PublicPropertyContract.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\houseManagement\PublicPropertyContract.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\votingProtocol\VotingProtocolParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\votingProtocol\ExportVotingProtocolaWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InspectionAsync\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InspectionAsync\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InspectionAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicesAsync\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicesAsync\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicesAsync\hcs-licenses-service-async-9.wsdl" />
+    <None Include="Service References\ServicesAsync\hcs-licenses-types-9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicesAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\SendDataProtocolRecord.js" />
+    <EmbeddedResource Include="libs\B4\model\PrepareDataProtocolRecord.js" />
+    <EmbeddedResource Include="libs\B4\store\PrepareDataProtocol.js" />
+    <EmbeddedResource Include="libs\B4\store\SendDataProtocol.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\ProtocolWindow.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\inspectionplan\ExportInspectionPlanWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\inspectionplan\InspectionPlanParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\inspection\Plan.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\inspection\Plan.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\notificationData\ExportNotificationDataWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\notificationData\NotificationDataParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\houseManagement\Notification.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\houseManagement\Notification.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InfrastructureAsync\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InfrastructureAsync\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InfrastructureAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\rkiData\ExportRkiDataWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\rkiData\RkiDataParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\infrastructure\Rki.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\supplyresourcecontract\SupplyResourceContractParametersStepFrame.js" />
+    <EmbeddedResource Include="libs\B4\model\integrations\services\CompletedWork.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\notificationsoforderexecutioncancellation\NotificationsOfOrderExecutionCancellationDataWizard.js" />
+    <EmbeddedResource Include="libs\B4\store\integrations\bills\OpenOrgPaymentPeriod.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\infrastructure\Rki.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\services\RepairObject.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\workingplan\ExportWorkingPlanDataWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\workingplan\WorkingPlanDataParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\PackageDataPreviewWindow.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\services\RepairProgram.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\senddata\FinishStepFrame.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\senddata\PackageGrid.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\senddata\StartStepFrame.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\senddata\XmlPreviewStepFrame.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\senddata\ValidationResultStepFrame.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\senddata\Wizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\services\RepairProgram.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DeviceMeteringAsync\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DeviceMeteringAsync\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DeviceMeteringAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\devicemetering\ExportMeteringDeviceValuesDataWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\devicemetering\ExportMeteringDeviceValuesPreviewStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\services\CompletedWork.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\export\supplyresourcecontract\ExportSupplyResourceContractWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\houseManagement\SupplyResourceContract.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\export\completedWork\ExportCompletedWorkWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\houseManagement\SupplyResourceContract.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\export\completedWork\CompletedWorkParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\paymentdocumentdata\ExportPaymentDocumentDataWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\paymentdocumentdata\PaymentDocumentDataParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\bills\OpenOrgPaymentPeriod.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\openOrgPaymentPeriod\OpenOrgPaymentPeriodWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\openOrgPaymentPeriod\OpenOrgPaymentPeriodParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\examination\ExportExaminationDataWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\examination\ExaminationDataParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HouseManagementAsync\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\ObjectProcessingResult.js" />
+    <EmbeddedResource Include="libs\B4\store\ObjectProcessingResult.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\acknowledgmentexporter\ExportAcknowledgmentDataWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\acknowledgmentexporter\AcknowledgmentDataParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\SendDataResultWindow.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\bills\Acknowledgment.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\bills\Acknowledgment.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\notificationsoforderexecutioncancellation\NotificationsOfOrderExecutionCancellationDataParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\payment\NotificationOfOrderExecution.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\payment\NotificationOfOrderExecution.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\notificationoforderexecution\NotificationsOfOrderExecutionParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\notificationoforderexecution\NotificationsOfOrderExecutionWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\inspection\Examination.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\inspection\Examination.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HouseManagementAsync\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HouseManagementAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\suppliernotificationoforderexecution\SupplierNotificationsOfOrderExecutionParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\suppliernotificationoforderexecution\SupplierNotificationsOfOrderExecutionWizard.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="..\..\.paket\paket.targets" />
+</Project>

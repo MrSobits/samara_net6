@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <Соединение Ref="2" type="Stimulsoft.Report.Dictionary.StiPostgreSQLDatabase" isKey="true">
+        <Alias>Соединение</Alias>
+        <ConnectionStringEncrypted>48jd60ZXSzVrEynMSQi1TtV4cylhXJOQ4U2xje5xd3eBcPuDYl+p8WIaecDnXKRnjXjNCUhWadVDRaTsdw3iF99Wm4lhTnPpQlv99GpMJ3qe8ruiRgoxgeJFPaVy</ConnectionStringEncrypted>
+        <Name>Соединение</Name>
+      </Соединение>
+    </Databases>
+    <DataSources isList="true" count="1">
+      <ИсточникДанных1 Ref="3" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ИсточникДанных1</Alias>
+        <Columns isList="true" count="14">
+          <value>должность,System.String</value>
+          <value>отдел,System.String</value>
+          <value>фио_инспектор,System.String</value>
+          <value>fullname,System.String</value>
+          <value>name,System.String</value>
+          <value>juridical_address,System.String</value>
+          <value>id,System.Int32</value>
+          <value>receiverfullname,System.String</value>
+          <value>receiverposition,System.String</value>
+          <value>correspondent,System.String</value>
+          <value>appdate,System.String</value>
+          <value>gji_number,System.String</value>
+          <value>statement_subjects,System.String</value>
+          <value>npatr,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ИсточникДанных1</Name>
+        <NameInSource>Соединение</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select 
+	gdi.position as "должность", lower(zp.name) as "отдел", replace(shortfio, left(shortfio, position (' ' in shortfio)), '')||' '|| left(shortfio, position (' ' in shortfio)) as "фио_инспектор",
+	gdi.fio fullname,
+	gc.name, gc.juridical_address,
+	gc.id, t1.full_name receiverfullname, t1.posname receiverposition, gac.correspondent, to_char(gac.date_from, 'dd.MM.yyyy') appdate, gac.gji_number, lower(gac.statement_subjects)statement_subjects, t1.npatr
+	from gji_appcit_answer gae
+join gji_appeal_citizens gac on gae.appcit_id = gac.id
+join gkh_contragent gc on gc.id = redirect_contragent_id
+left join (select max(cc.id), full_name, pos.name posname, contragent_id, concat(cc.name, ' ', cc.patronymic) npatr from gkh_contragent_contact cc
+join gkh_dict_position pos on cc.position_id = pos.id where pos.code in ('Председатель', 'Генеральный директор', 'Глава', 'Руководитель')
+group by 2,3,4,5) t1 on t1.contragent_id = gc.id
+join gkh_dict_inspector gdi on gdi.id = gae.signer_id --рук
+ left join gkh_dict_zonainsp_inspect zz on zz.inspector_id = gdi.id
+ left join gkh_dict_zonainsp zp on zp.id = zz.zonal_inspection_id
+
+where gae.id = {Id}</SqlCommand>
+        <Type>StoredProcedure</Type>
+      </ИсточникДанных1>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="1">
+      <value>,Id,Id,System.Int64,_x0031_94475,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="4" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="3">
+        <DataBand1 Ref="5" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,18,9.2</ClientRectangle>
+          <Components isList="true" count="9">
+            <Text1 Ref="6" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.6,2.8,7.2,1.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14,Bold</Font>
+              <Guid>e3ec158a32714606accb84f5d16bd79d</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>ГОСУДАРСТВЕННАЯ ЖИЛИЩНАЯ ИНСПЕЦИЯ
+ВОРОНЕЖСКОЙ ОБЛАСТИ</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text1>
+            <Text2 Ref="7" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.6,4.6,7.2,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>56c6052dbd634b138044cd4cd63b3852</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>ул. Кирова, 6а г. Воронеж, 394018
+т.212-76-26 e-mail: zhilinsp@govvrn.ru
+ОГРН 1033600084968, ОКПО 47799878, ИНН/КПП 3664032439/366401001
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+            <Image1 Ref="8" type="Image" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>2.8,0.2,2.6,2.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Image>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</Image>
+              <Name>Image1</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+            </Image1>
+            <Text14 Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.8,1.6,7.8,3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14,Bold</Font>
+              <Guid>8228aeac809a40efa0125abd38e6a8ef</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{morpher.Проанализировать(ИсточникДанных1.receiverposition).Дательный} {morpher.Проанализировать(ИсточникДанных1.name).Родительный} </Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text14>
+            <Text15 Ref="10" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.8,4.8,7.8,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14,Bold</Font>
+              <Guid>76b33c441bec46f6934708d6cd3cc82c</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{morpher.Проанализировать(ИсточникДанных1.receiverfullname).Дательный}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text15>
+            <Text16 Ref="11" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.8,6.4,7.8,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14,Bold</Font>
+              <Guid>99c9dd9d9d554fb58d9dfea2decf95bf</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text16</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{ИсточникДанных1.juridical_address}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text16>
+            <Text17 Ref="12" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.6,6.2,7.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>c1ea034cff9046429eaf799acc67b25f</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text17</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;№</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text17>
+            <Text18 Ref="13" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.6,7,7.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>572f7d5361914c089ddc9662650bf57b</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text18</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>На №</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text18>
+            <Text19 Ref="14" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.6,8,7.2,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>f836b8da9c884c299179a093dfdb908a</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text19</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>О направлении обращения
+по подведомственности
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text19>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>6c311c1eb35045d697565432d379a288</Guid>
+          <Name>DataBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+        <DataBand2 Ref="15" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,10.4,18,8.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text3 Ref="16" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,18,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14,Bold</Font>
+              <Guid>ddc639dadafc459bbe4f5082998b5976</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="4" />
+              <Parent isRef="15" />
+              <Text>Уважаемый {ИсточникДанных1.npatr}!</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
+            <Text4 Ref="17" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.8,18,4.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14</Font>
+              <Guid>bc00761aa5ee4a12ababb2201c8404de</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="4" />
+              <Parent isRef="15" />
+              <Text>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;В соответствии с частью 4 статьи 8 Федерального закона от 02.05.2006 № 59-ФЗ «О порядке рассмотрения обращений граждан Российской Федерации» направляется Вам копия обращения &lt;b&gt;{morpher.Проанализировать(ИсточникДанных1.correspondent).Родительный}&lt;/b&gt; от {ИсточникДанных1.appdate} № {ИсточникДанных1.gji_number} в части касающейся вопроса &lt;u&gt;{morpher.Проанализировать(ИсточникДанных1.statement_subjects).Родительный}&lt;/u&gt; для рассмотрения указанных в обращении доводов и принятия мер в пределах компетенции.
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;О результатах рассмотрения обращения прошу Вас проинформировать заявителя и государственную жилищную инспекцию Воронежской области в установленный законом срок.
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text4>
+            <Text5 Ref="18" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.2,6.8,13,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14</Font>
+              <Guid>ddbb9f58f5d9443fa82504262476bb65</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="4" />
+              <Parent isRef="15" />
+              <Text>Приложение: копия обращения на _л. в 1 экз.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text5>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>bebd152f20a944f88120dd3963dea404</Guid>
+          <Name>DataBand2</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </DataBand2>
+        <DataBand4 Ref="19" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,19.4,18,8.2</ClientRectangle>
+          <Components isList="true" count="4">
+            <Text8 Ref="20" type="Text" isKey="true">
+              <Border>None;White;1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0.2,5.2,3.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>1b95af509451494583a2b48e6b08334c</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="4" />
+              <Parent isRef="19" />
+              <Text>{ИсточникДанных1.фио_инспектор}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text8>
+            <Text12 Ref="21" type="Text" isKey="true">
+              <Border>None;White;1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.2,0.2,7.6,3.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>9616ab543e6b4b3aa9947e8be0b70c0c</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="4" />
+              <Parent isRef="19" />
+              <Text>$_ЭП_$</Text>
+              <TextBrush>White</TextBrush>
+              <Type>Expression</Type>
+            </Text12>
+            <Text11 Ref="22" type="Text" isKey="true">
+              <Border>None;White;1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.2,5.2,3.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>25f86b85e876422fbd24938a921b39c6</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="4" />
+              <Parent isRef="19" />
+              <Text>{ИсточникДанных1.должность} {morpher.Проанализировать(ИсточникДанных1.отдел).Родительный} Государственной жилищной инспекции Воронежской области</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text11>
+            <Text7 Ref="23" type="Text" isKey="true">
+              <Border>None;White;1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,4,18,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>5b27af5df8074080bb42e6036a1c8b73</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="4" />
+              <Parent isRef="19" />
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text7>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand4</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </DataBand4>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>b2dc8e976a8041139009fdcf95bcbe10</Guid>
+      <LargeHeight>True</LargeHeight>
+      <LargeHeightFactor>2</LargeHeightFactor>
+      <Margins>2,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+      <Watermark Ref="24" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="25" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="9">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+    <value>Morpher.dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>6/1/2022 1:23:19 PM</ReportChanged>
+  <ReportCreated>12/8/2020 11:10:16 AM</ReportCreated>
+  <ReportFile>D:\FileStore\Voronej\AppealLetterp4st8.mrt</ReportFile>
+  <ReportGuid>f6ed1e01e3f34f5783345a850a881a99</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+using Slepov.Russian.Morpher;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+		public Склонятель morpher = new Склонятель("SonFhyB1DbaxkkAQ4tfrhQ==");
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

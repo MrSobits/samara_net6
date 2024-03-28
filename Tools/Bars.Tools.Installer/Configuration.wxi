@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:iis="http://schemas.microsoft.com/wix/IIsExtension"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension" xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+  
+  <?include Variables.wxi ?>
+  
+  <Property Id="LastMessage" Value=" " />
+  <Property Id="LicenseValid" />
+  <Property Id="LICENSE_TEXT" />
+  <Property Id="INTERNAL_PRODUCT_VERSION" Value="$(var.INTERNAL_PRODUCT_VERSION)" />
+  <Property Id="LICENSE_DIR" Value="License" />
+  <Property Id="BUILD_DATE" Value="01.06.2015" />
+  
+  <!-- Путь к b4.config приложения и сервера расчетов. -->
+  <Property Id="B4_CONFIG_APP_PATH" Secure="yes" />
+  <Property Id="B4_CONFIG_MASTER_PATH" Secure="yes" />
+  <Property Id="B4_CONFIG_EXECUTOR_PATH" Secure="yes" />
+  
+  <!-- Web App Settings -->
+  <Property Id="VIRTUAL_APP_NAME" Value="bars-website" />
+  <Property Id="WEB_APPPOOL_NAME_POSTFIX" Value="AppPool" />
+
+  <!-- Connection String -->
+  <Property Id="SERVER_NAME" Value="localhost" />
+  <Property Id="DB_NAME" Secure="yes" />
+  <Property Id="LOGIN" Value="postgres" />
+  <Property Id="PASSWORD" Secure="yes" />
+  <Property Id="CONNECTION_STRING" Secure="yes" />
+</Include>

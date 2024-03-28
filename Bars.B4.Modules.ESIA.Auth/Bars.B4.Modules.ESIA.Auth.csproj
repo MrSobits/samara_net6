@@ -1,0 +1,632 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{97D74333-4110-420B-91B1-AB29C7E6557D}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>Bars.B4.Modules.ESIA.Auth</RootNamespace>
+        <AssemblyName>Bars.B4.Modules.ESIA.Auth</AssemblyName>
+        <TargetFramework>net6.0</TargetFramework>
+        <FileAlignment>512</FileAlignment>
+        <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+        <TargetFrameworkProfile />
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <Prefer32Bit>false</Prefer32Bit>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <Prefer32Bit>false</Prefer32Bit>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Microsoft.CSharp" />
+        <Reference Include="System" />
+        <Reference Include="System.Configuration" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Data.Services" />
+        <Reference Include="System.IdentityModel" />
+        <Reference Include="System.Runtime.Serialization" />
+        <Reference Include="System.ServiceModel" />
+        <Reference Include="System.ServiceModel.Activation" />
+        <Reference Include="System.ServiceModel.Discovery" />
+        <Reference Include="System.ServiceModel.Web" />
+        <Reference Include="System.Xml" />
+        <Reference Include="System.Xml.Linq" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Controllers\OAuthLoginController.cs" />
+        <Compile Include="Controllers\LoginController.cs" />
+        <Compile Include="Dto\ContragentInfoDto.cs" />
+        <Compile Include="Dto\OrganizationInfoDto.cs" />
+        <Compile Include="Dto\UserInfoDto.cs" />
+        <Compile Include="Entities\EsiaOperator.cs" />
+        <Compile Include="Exceptions\BadGatewayException.cs" />
+        <Compile Include="Exceptions\ServiceUnavailableException.cs" />
+        <Compile Include="Handlers\OAuthLogOutHandler.cs" />
+        <Compile Include="Handlers\OAuthLogInHandler.cs" />
+        <Compile Include="Interceptors\OperatorInterceptor.cs" />
+        <Compile Include="Mappings\EsiaOperatorMap.cs" />
+        <Compile Include="Migrations\2022\Version_2022060200\UpdateSchema.cs" />
+        <Compile Include="Migrations\MigrationInfo.cs" />
+        <Compile Include="Migrations\Version_1\UpdateSchema.cs" />
+        <Compile Include="Migrations\Version_2021062900\UpdateSchema.cs" />
+        <Compile Include="Module.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="$(SolutionDir)CommonAssemblyInfo.cs">
+            <Link>Properties\CommonAssemblyInfo.cs</Link>
+        </Compile>
+        <Compile Include="$(SolutionDir)Main\AssemblyInfoVersion.cs">
+            <Link>Properties\AssemblyInfoVersion.cs</Link>
+        </Compile>
+        <Compile Include="Properties\ModuleAssemblyInfo.cs">
+            <DependentUpon>ModuleAssemblyInfo.tt</DependentUpon>
+            <AutoGen>True</AutoGen>
+            <DesignTime>True</DesignTime>
+        </Compile>
+        <Compile Include="ResourceManifest.cs">
+            <DependentUpon>ResourceManifest.tt</DependentUpon>
+            <AutoGen>True</AutoGen>
+            <DesignTime>True</DesignTime>
+        </Compile>
+        <Compile Include="Services\IAuthAppIntegrationService.cs" />
+        <Compile Include="Services\Impl\AuthAppIntegrationService.cs" />
+        <Compile Include="Services\IOAuthLoginService.cs" />
+        <Compile Include="Services\Impl\OAuthLoginService.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="paket.references" />
+        <EmbeddedResource Include="Esia\oauthlogout.ashx" />
+        <EmbeddedResource Include="Esia\oauthlogin.ashx" />
+        <EmbeddedResource Include="Views\Login\esia.cshtml" />
+        <EmbeddedResource Include="Views\OAuthLogin\index.cshtml" />
+        <None Include="Web.config" />
+    </ItemGroup>
+    <ItemGroup>
+        <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Bars.Gkh\Bars.Gkh.csproj">
+            <Project>{2495a42b-7ec1-44d3-b7a7-1f90a2c44c85}</Project>
+            <Name>Bars.Gkh</Name>
+            <Private>False</Private>
+        </ProjectReference>
+        <ProjectReference Include="..\Main\Bars.Esia.OAuth20.App\Bars.Esia.OAuth20.App.csproj">
+            <Project>{323f82c4-7158-483e-a452-6b17ffd565ce}</Project>
+            <Name>Bars.Esia.OAuth20.App</Name>
+        </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Include="libs\B4\view\desktop\portlet\User.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="ResourceManifest.tt">
+            <Generator>TextTemplatingFileGenerator</Generator>
+            <LastGenOutput>ResourceManifest.cs</LastGenOutput>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Include="libs\B4\view\desktop\portlet\LoginForm.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="Properties\ModuleAssemblyInfo.tt">
+            <Generator>TextTemplatingFileGenerator</Generator>
+            <LastGenOutput>ModuleAssemblyInfo.cs</LastGenOutput>
+        </None>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+    <Import Project="..\.paket\paket.targets" />
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Antlr3.Runtime">
+                    <HintPath>..\packages\Antlr\lib\Antlr3.Runtime.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+            <ItemGroup>
+                <Reference Include="Antlr3.Runtime">
+                    <HintPath>..\packages\Antlr3.Runtime\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Bars.B4.Core">
+                    <HintPath>..\packages\Bars.B4.Core\lib\net40\Bars.B4.Core.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Bars.B4.Icons">
+                    <HintPath>..\packages\Bars.B4.Icons\lib\net40\Bars.B4.Icons.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Bars.B4.Modules.Ecm7.Framework">
+                    <HintPath>..\packages\Bars.B4.Modules.Ecm7.Framework\lib\net40\Bars.B4.Modules.Ecm7.Framework.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Bars.B4.Modules.ESIA">
+                    <HintPath>..\packages\Bars.B4.Modules.ESIA\lib\net40\Bars.B4.Modules.ESIA.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Bars.B4.Modules.ExtJs">
+                    <HintPath>..\packages\Bars.B4.Modules.ExtJs\lib\net40\Bars.B4.Modules.ExtJs.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Bars.B4.Modules.JSDeferred">
+                    <HintPath>..\packages\Bars.B4.Modules.JSDeferred\lib\net40\Bars.B4.Modules.JSDeferred.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Bars.B4.Modules.Mapping">
+                    <HintPath>..\packages\Bars.B4.Modules.Mapping\lib\net40\Bars.B4.Modules.Mapping.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+            <ItemGroup>
+                <Reference Include="Bars.B4.Modules.NH">
+                    <HintPath>..\packages\Bars.B4.Modules.NH\lib\net461\Bars.B4.Modules.NH.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Bars.B4.Modules.NH.Migrations">
+                    <HintPath>..\packages\Bars.B4.Modules.NH.Migrations\lib\net40\Bars.B4.Modules.NH.Migrations.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Bars.B4.Modules.RequireJS">
+                    <HintPath>..\packages\Bars.B4.Modules.RequireJS\lib\net40\Bars.B4.Modules.RequireJS.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Bars.B4.Modules.Security">
+                    <HintPath>..\packages\Bars.B4.Modules.Security\lib\net40\Bars.B4.Modules.Security.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Bars.B4.Modules.Security.Web">
+                    <HintPath>..\packages\Bars.B4.Modules.Security.Web\lib\net40\Bars.B4.Modules.Security.Web.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Bars.B4.Utils">
+                    <HintPath>..\packages\Bars.B4.Utils\lib\net40\Bars.B4.Utils.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Bars.B4.Utils.Web">
+                    <HintPath>..\packages\Bars.B4.Utils.Web\lib\net40\Bars.B4.Utils.Web.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Bars.B4.Web">
+                    <HintPath>..\packages\Bars.B4.Web\lib\net40\Bars.B4.Web.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+            <ItemGroup>
+                <Reference Include="Bars.Security">
+                    <HintPath>..\packages\Bars.Security\lib\net461\Bars.Security.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.0'">
+            <ItemGroup>
+                <Reference Include="Castle.Core">
+                    <HintPath>..\packages\Castle.Core\lib\net40-client\Castle.Core.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Castle.Core">
+                    <HintPath>..\packages\Castle.Core\lib\net45\Castle.Core.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.0'">
+            <ItemGroup>
+                <Reference Include="Castle.Facilities.WcfIntegration">
+                    <HintPath>..\packages\Castle.WcfIntegrationFacility\lib\net40\Castle.Facilities.WcfIntegration.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Castle.Facilities.WcfIntegration">
+                    <HintPath>..\packages\Castle.WcfIntegrationFacility\lib\net45\Castle.Facilities.WcfIntegration.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.0'">
+            <ItemGroup>
+                <Reference Include="Castle.Windsor">
+                    <HintPath>..\packages\Castle.Windsor\lib\net40\Castle.Windsor.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Castle.Windsor">
+                    <HintPath>..\packages\Castle.Windsor\lib\net45\Castle.Windsor.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="EcmaScript.NET">
+                    <HintPath>..\packages\EcmaScript.NET\lib\net45\EcmaScript.NET.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Elmah">
+                    <HintPath>..\packages\elmah.corelibrary\lib\Elmah.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Fasterflect">
+                    <HintPath>..\packages\fasterflect\lib\net40\Fasterflect.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2')">
+            <ItemGroup>
+                <Reference Include="Iesi.Collections">
+                    <HintPath>..\packages\Iesi.Collections\lib\net40\Iesi.Collections.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+            <ItemGroup>
+                <Reference Include="Iesi.Collections">
+                    <HintPath>..\packages\Iesi.Collections\lib\net461\Iesi.Collections.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Microsoft.Web.Infrastructure">
+                    <HintPath>..\packages\Mvc3-Base\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+                <Reference Include="System.Web">
+                    <HintPath>..\packages\Mvc3-Base\lib\net40\System.Web.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+                <Reference Include="System.Web.Helpers">
+                    <HintPath>..\packages\Mvc3-Base\lib\net40\System.Web.Helpers.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+                <Reference Include="System.Web.Mvc">
+                    <HintPath>..\packages\Mvc3-Base\lib\net40\System.Web.Mvc.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+                <Reference Include="System.Web.Razor">
+                    <HintPath>..\packages\Mvc3-Base\lib\net40\System.Web.Razor.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+                <Reference Include="System.Web.Services">
+                    <HintPath>..\packages\Mvc3-Base\lib\net40\System.Web.Services.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+                <Reference Include="System.Web.WebPages">
+                    <HintPath>..\packages\Mvc3-Base\lib\net40\System.Web.WebPages.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+                <Reference Include="System.Web.WebPages.Deployment">
+                    <HintPath>..\packages\Mvc3-Base\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+                <Reference Include="System.Web.WebPages.Razor">
+                    <HintPath>..\packages\Mvc3-Base\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.0'">
+            <ItemGroup>
+                <Reference Include="Newtonsoft.Json">
+                    <HintPath>..\packages\Newtonsoft.Json\lib\net40\Newtonsoft.Json.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Newtonsoft.Json">
+                    <HintPath>..\packages\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+            <ItemGroup>
+                <Reference Include="System.Transactions">
+                    <Paket>True</Paket>
+                </Reference>
+                <Reference Include="NHibernate">
+                    <HintPath>..\packages\NHibernate\lib\net461\NHibernate.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2')">
+            <ItemGroup>
+                <Reference Include="System.Transactions">
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.0'">
+            <ItemGroup>
+                <Reference Include="System.Transactions">
+                    <Paket>True</Paket>
+                </Reference>
+                <Reference Include="NLog">
+                    <HintPath>..\packages\NLog\lib\net40-client\NLog.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="System.IO.Compression">
+                    <Paket>True</Paket>
+                </Reference>
+                <Reference Include="NLog">
+                    <HintPath>..\packages\NLog\lib\net45\NLog.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="QuickGraph">
+                    <HintPath>..\packages\QuickGraph\lib\net4\QuickGraph.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+                <Reference Include="QuickGraph.Data">
+                    <HintPath>..\packages\QuickGraph\lib\net4\QuickGraph.Data.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+                <Reference Include="QuickGraph.Graphviz">
+                    <HintPath>..\packages\QuickGraph\lib\net4\QuickGraph.Graphviz.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+                <Reference Include="QuickGraph.Serialization">
+                    <HintPath>..\packages\QuickGraph\lib\net4\QuickGraph.Serialization.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+            <ItemGroup>
+                <Reference Include="Remotion.Linq">
+                    <HintPath>..\packages\Remotion.Linq\lib\net45\Remotion.Linq.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+            <ItemGroup>
+                <Reference Include="Remotion.Linq.EagerFetching">
+                    <HintPath>..\packages\Remotion.Linq.EagerFetching\lib\net45\Remotion.Linq.EagerFetching.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+    <Choose>
+        <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+            <ItemGroup>
+                <Reference Include="Yahoo.Yui.Compressor">
+                    <HintPath>..\packages\YUICompressor.NET\lib\NET20\Yahoo.Yui.Compressor.dll</HintPath>
+                    <Private>False</Private>
+                    <Paket>True</Paket>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+</Project>

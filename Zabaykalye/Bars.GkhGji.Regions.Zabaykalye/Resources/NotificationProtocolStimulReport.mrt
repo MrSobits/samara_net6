@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="0" />
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="25">
+      <value>,СтатьяЗакона,СтатьяЗакона,System.String,,False,False</value>
+      <value>,ОписаниеСтатьи,ОписаниеСтатьи,System.String,,False,False</value>
+      <value>,АдресПравонарушения,АдресПравонарушения,System.String,,False,False</value>
+      <value>,Основание,Основание,System.String,,False,False</value>
+      <value>,ТипИсполнителя,ТипИсполнителя,,System.String,,False,False,True</value>
+      <value>,Контрагент,Контрагент,System.String,,False,False</value>
+      <value>,КонтрагентСокр,КонтрагентСокр,System.String,,False,False</value>
+      <value>,КонтрагентИНН,КонтрагентИНН,System.String,,False,False</value>
+      <value>,КонтрагентКПП,КонтрагентКПП,System.String,,False,False</value>
+      <value>,КонтрагентЮрАдрес,КонтрагентЮрАдрес,System.String,,False,False</value>
+      <value>,КонтрагентКонтактДолжность,КонтрагентКонтактДолжность,System.String,,False,False</value>
+      <value>,КонтрагентКонтактДолжностьРП,КонтрагентКонтактДолжностьРП,System.String,,False,False</value>
+      <value>,КонтрагентКонтактДолжностьДП,КонтрагентКонтактДолжностьДП,System.String,,False,False</value>
+      <value>,ФизЛицоФИО,ФизЛицоФИО,System.String,,False,False</value>
+      <value>,ФизЛицоФИОРП,ФизЛицоФИОРП,System.String,,False,False</value>
+      <value>,ФизЛицоФИОДП,ФизЛицоФИОДП,System.String,,False,False</value>
+      <value>,ФизЛицоДолжность,ФизЛицоДолжность,System.String,,False,False</value>
+      <value>,ФизЛицоДолжностьРП,ФизЛицоДолжностьРП,System.String,,False,False</value>
+      <value>,ФизЛицоДолжностьДП,ФизЛицоДолжностьДП,System.String,,False,False</value>
+      <value>,ФизЛицоАдрес,ФизЛицоАдрес,System.String,,False,False</value>
+      <value>,ФизЛицоДУЛ,ФизЛицоДУЛ,System.String,,False,False</value>
+      <value>,ДолжностьРуководителя,ДолжностьРуководителя,System.String,,False,False</value>
+      <value>,РуководительФИОСокр,РуководительФИОСокр,System.String,,False,False</value>
+      <value>,НомерПредписания,НомерПредписания,System.String,,False,False</value>
+      <value>,ДатаПредписания,ДатаПредписания,System.String,,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="2" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="1">
+        <ReportTitleBand1 Ref="3" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,18,26.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text1 Ref="4" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,18,26.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="2" />
+              <Parent isRef="3" />
+              <Text>1) {СтатьяЗакона} - СтатьяЗакона - вводить статью из вкладки "статьи закона" в карточке протокола. Если несколько то через запятую
+2) {ОписаниеСтатьи} - ОписаниеСтатьи- выводить описание статьи из вкладки "статьи закона" в карточке протокола
+3) {АдресПравонарушения} - АдресПравонарушения - выводить адрес по которому составлен протокол. смотреть на вкладке нарушений. Если несколько, то выводить через запятую
+4) {Основание} - Основание - выводить значение поля Документ-основание в карточке протокола
+5) {ТипИсполнителя} - ТипИсполнителя - выводить кода 0,9,11,8,15,18,4,17,18,6,7,14,20,2,3,1,10,12,13,16,19,5,19 типов исполнителей (для условного форматирования в отчете) в карточке протокола
+6) {Контрагент} - Контрагент - выводить полное наименование поля "Контрагент", выводить из справочника Контрагентов
+7) {КонтрагентСокр}  - КонтрагентСокр- выводить сокращенное наименование поля "Контрагент", выводить из справочника Контрагентов
+8) {КонтрагентИНН} - КонтрагентИНН - выводить ИНН контрагента из поля "конрагент", выводить из справочника Контрагентов
+9) {КонтрагентКПП} - КонтрагентКПП - выводить КПП контрагента из поля "конрагент", выводить из справочника Контрагентов
+10) {КонтрагентЮрАдрес} - КонтрагентЮрАдрес - выводить юр адрес контрагента из поля "конрагент", выводить из справочника Контрагентов
+11) {КонтрагентКонтактДолжность} - КонтрагентКонтактДолжность - выводить должность из контактов контрагента, выводить из справочника Контрагентов, вкладка контакты
+12) {КонтрагентКонтактДолжностьРП} - КонтрагентКонтактДолжностьРП - выводить должность в родительном падеже из контактов контрагента, выводить из справочника Контрагентов, вкладка контакты
+13) {КонтрагентКонтактДолжностьДП} - КонтрагентКонтактДолжностьДП - выводить должность в дательном падеже из контактов контрагента, выводить из справочника Контрагентов, вкладка контакты
+14) {ФизЛицоФИО} - ФизЛицоФИО - выводить значение поля физ лицо в карточке протокола
+15) {ФизЛицоФИОРП} - ФизЛицоФИОРП - выводить выводить значение поля физ лицо в карточке протокола в родительном падеже
+16) {ФизЛицоФИОДП} - ФизЛицоФИОДП - выводить значение поля физ лицо в карточке протокола в дательном падеже
+17) {ФизЛицоДолжность} - ФизЛицоДолжность - выводить значение поля должность в карточке протокола
+18) {ФизЛицоДолжностьРП}  - ФизЛицоДолжностьРП - выводить значение поля должность в карточке протокола в родительном падеже
+19) {ФизЛицоДолжностьДП} - ФизЛицоДолжностьДП - выводить значение поля должность в карточке протокола в дательном падеже
+20) {ФизЛицоАдрес} - ФизЛицоАдрес - выводить значение поля "Адрес (место жительства, телефон)" в карточке протокола
+21) {ФизЛицоДУЛ} - ФизЛицоДУЛ- выводить значение поля "документ, удостоверяющий личность" в карточке протокола
+22) {ДолжностьРуководителя} - ДолжностьРуководителя - выводить должность  из поля "инспекторы" в карточке протокола
+23) {РуководительФИОСокр} - РуководительФИОСокр - выводить сокращенное имя из поля "инспекторы" в карточке протокола, Сокращенное имя брать из поля "Фамилия И.О." из справочника Инспекторы
+24) {НомерПредписания} - НомерПредписания - номер родительского предписания
+25) {ДатаПредписания} - ДатаПредписания - дата родительского предписания
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+        </ReportTitleBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>0ab7c5868b01445d91f5288ad2d78d94</Guid>
+      <LargeHeight>True</LargeHeight>
+      <Margins>2,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="5" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="6" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>8/27/2014 1:58:58 PM</ReportChanged>
+  <ReportCreated>6/11/2014 11:49:31 AM</ReportCreated>
+  <ReportFile>C:\_WORK\_REPOS\tfs\GKH.GKH.CMMI\Dev\Zabaykalye\Bars.GkhGji.Regions.Zabaykalye\Resources\NotificationProtocolStimulReport.mrt</ReportFile>
+  <ReportGuid>4cead404cacb4a5884252ab72f40c887</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

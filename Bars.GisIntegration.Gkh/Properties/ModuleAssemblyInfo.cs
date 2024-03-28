@@ -1,0 +1,26 @@
+﻿using System.Reflection;
+using System.Runtime.InteropServices;
+using Bars.B4.Utils;
+
+[assembly: DependsOn("Bars.GisIntegration.Base")]
+[assembly: DependsOn("Bars.GisIntegration.UI")]
+[assembly: DependsOn("Bars.Gkh.Quartz.Scheduler")]
+[assembly: DependsOn("Bars.GkhDi")]
+[assembly: DependsOn("Bars.Gkh")]
+[assembly: DependsOn("Bars.Gkh.Repair")]
+[assembly: DependsOn("Bars.B4.Icons")]
+[assembly: DependsOn("Bars.B4.Modules.ECM7")]
+[assembly: DependsOn("Bars.B4.Modules.ExtJs")]
+[assembly: DependsOn("Bars.B4.Modules.FIAS")]
+[assembly: DependsOn("Bars.B4.Modules.FileStorage")]
+[assembly: DependsOn("Bars.B4.Modules.JSDeferred")]
+[assembly: DependsOn("Bars.B4.Modules.Mapping")]
+[assembly: DependsOn("Bars.B4.Modules.NH")]
+[assembly: DependsOn("Bars.B4.Modules.NH.Migrations")]
+[assembly: DependsOn("Bars.B4.Modules.RequireJS")]
+[assembly: DependsOn("Bars.B4.Modules.Security")]
+[assembly: DependsOn("Bars.B4.Modules.Security.ExtJS4")]
+[assembly: DependsOn("Bars.B4.Modules.Security.Web")]
+[assembly: DependsOn("Bars.B4.Modules.Setup")]
+[assembly: DependsOn("Bars.B4.Modules.States")]
+

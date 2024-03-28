@@ -1,0 +1,30 @@
+﻿<#@ template debug="false" hostspecific="false" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+<#@ assembly Name="C:\_TFS\GKH.GKH.CMMI\Sources\Bars.Gkh.RegOperator\bin\Debug\Bars.Gkh.dll" #>
+<#@ assembly Name="C:\_TFS\GKH.GKH.CMMI\Sources\Bars.Gkh.RegOperator\bin\Debug\Newtonsoft.Json.dll" #>
+<#@ assembly Name="C:\_TFS\GKH.GKH.CMMI\Sources\Bars.Gkh.RegOperator\bin\Debug\Bars.B4.Core.dll" #>
+<#@ assembly Name="C:\_TFS\GKH.GKH.CMMI\Sources\Bars.Gkh.RegOperator\bin\Debug\Bars.Gkh.RegOperator.dll" #>
+<#@ import namespace="Newtonsoft.Json" #>
+<#@ import namespace="Bars.Gkh.RegOperator.Entities" #>
+<#@ output extension=".js" #>
+Ext.define('<#= className #>', {
+	extend: 'B4.base.Model',
+
+	fields: [
+		<#= t.GetProperties().Where(x =>
+                !x.GetCustomAttributes(true).Any(o=> o.ToString().Contains("JsonIgnore")))
+                .Select(x => "{name: '" + x.Name + "' }")
+                .Aggregate((i, j) => i + ",\n\t\t" + j) #>
+	],
+
+    proxy: {
+        type: 'b4proxy',
+        controllerName: '<#= className #>'
+    }
+});
+<#+ string className = "PersonalAccount"; #>
+<#+ Type t = typeof(PersonalAccount); #>

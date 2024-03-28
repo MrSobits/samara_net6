@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="5">
+      <СекцияЭксперты Ref="2" type="DataTableSource" isKey="true">
+        <Alias>СекцияЭксперты</Alias>
+        <Columns isList="true" count="1">
+          <value>Эксперты,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>СекцияЭксперты</Name>
+        <NameInSource>СекцияЭксперты</NameInSource>
+      </СекцияЭксперты>
+      <СекцияДокументы Ref="3" type="DataTableSource" isKey="true">
+        <Alias>СекцияДокументы</Alias>
+        <Columns isList="true" count="1">
+          <value>ПредоставляемыйДокумент,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>СекцияДокументы</Name>
+        <NameInSource>СекцияДокументы</NameInSource>
+      </СекцияДокументы>
+      <СекцияПредметПроверки Ref="4" type="DataTableSource" isKey="true">
+        <Alias>СекцияПредметПроверки</Alias>
+        <Columns isList="true" count="1">
+          <value>ПредметПроверки,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>СекцияПредметПроверки</Name>
+        <NameInSource>СекцияПредметПроверки</NameInSource>
+      </СекцияПредметПроверки>
+      <СекцияПравовыеОснования Ref="5" type="DataTableSource" isKey="true">
+        <Alias>СекцияПравовыеОснования</Alias>
+        <Columns isList="true" count="1">
+          <value>ПравовоеОснование,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>СекцияПравовыеОснования</Name>
+        <NameInSource>СекцияПравовыеОснования</NameInSource>
+      </СекцияПравовыеОснования>
+      <МероприятияПоКонтролю Ref="6" type="DataTableSource" isKey="true">
+        <Alias>МероприятияПоКонтролю</Alias>
+        <Columns isList="true" count="1">
+          <value>МероприятиеПоКонтролю,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>МероприятияПоКонтролю</Name>
+        <NameInSource>МероприятияПоКонтролю</NameInSource>
+      </МероприятияПоКонтролю>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="45">
+      <value>,ВидПроверки,ВидПроверки,System.String,внеплановой_x0020_документарной,False,False</value>
+      <value>,ВидОбследования,ВидОбследования,System.String,,False,False</value>
+      <value>,ДатаРаспоряжения,ДатаРаспоряжения,System.String,_x00AB_02_x00BB__x0020_августа_x0020_2013_x0020_г.,False,False</value>
+      <value>,НомерРаспоряжения,НомерРаспоряжения,System.String,_x0032_309,False,False</value>
+      <value>,УправОрг,УправОрг,System.String,Открытого_x0020_акционерного_x0020_общества_x0020__x00AB_Томская_x0020_энергосбытовая_x0020_компания_x00BB_,False,False</value>
+      <value>,УправОргРп,УправОргРп,System.String,,False,False</value>
+      <value>,УправОргСокр,УправОргСокр,System.String,ОАО_x0020__x00AB_Томскэнергосбыт_x00BB_,False,False</value>
+      <value>,ИНН,ИНН,System.String,_x0037_017114680,False,False</value>
+      <value>,ОГРН,ОГРН,System.String,,False,False</value>
+      <value>,АдресКонтрагента,АдресКонтрагента,System.String,г._x0020_Томск_x002C__x0020_ул._x0020_Котовского_x002C__x0020_д._x0020_19,False,False</value>
+      <value>,АдресКонтрагентаФакт,АдресКонтрагентаФакт,System.String,г._x0020_Томск_x002C__x0020_ул._x0020_Котовского_x002C__x0020_д._x0020_19,False,False</value>
+      <value>,НомерОбращения,НомерОбращения,System.String,,False,False</value>
+      <value>,НачалоПериода,НачалоПериода,System.String,_x00AB__x0009_06_x0009__x00BB__x0009_августа_x0009_20_x0009_13_x0009_г.,False,False</value>
+      <value>,ОкончаниеПериода,ОкончаниеПериода,System.String,_x00AB__x0009_02_x0009__x00BB__x0009_сентября_x0009_20_x0009_13_x0009_г.,False,False</value>
+      <value>,ДатаОбращения,ДатаОбращения,System.String,,False,False</value>
+      <value>,ТелефонИнспектора,ТелефонИнспектора,System.String,_x0028_3822_x0029__x0020_905-541,False,False</value>
+      <value>,ИнспекторыИКоды,ИнспекторыИКоды,System.String,Сыркашев_x0020_Владимир_x0020_Владимирович_x002C__x0020_консультант_x0020_-_x0020_государственный_x0020_жилищный_x0020_инспектор_x0020_Томской_x0020_области,False,False</value>
+      <value>,ДолжностьФИОРП,ДолжностьФИОРП,System.String,консультанта_x0020__x2013__x0020_государственного_x0020_жилищного_x0020_инспектора_x0020_Томской_x0020_области_x0020_Сыркашева_x0020_Владимира_x0020_Владимировича,False,False</value>
+      <value>,РуководительДолжность,РуководительДолжность,System.String,,False,False</value>
+      <value>,РуководительФИОСокр,РуководительФИОСокр,System.String,А.А._x0020_Михайлов,False,False</value>
+      <value>,Ответственный,Ответственный,System.String,,False,False</value>
+      <value>,ДолжностьОтветственныйРП,ДолжностьОтветственныйРП,System.String,,False,False</value>
+      <value>,ФИООтветственныйСокрРП,ФИООтветственныйСокрРП,System.String,,False,False</value>
+      <value>,Эксперты,Эксперты,System.String,,False,False</value>
+      <value>,ПредоставляемыеДокументы,ПредоставляемыеДокументы,System.String,,False,False</value>
+      <value>,НомерОснованияПроверки,НомерОснованияПроверки,System.String,,False,False</value>
+      <value>,ДатаОснованияПроверки,ДатаОснованияПроверки,System.String,,False,False</value>
+      <value>,ПлановыйГод,ПлановыйГод,System.String,,False,False</value>
+      <value>,ИсточникОбращенияРП,ИсточникОбращенияРП,System.String,,False,False</value>
+      <value>,ИсточникОбращения,ИсточникОбращения,System.String,,False,False</value>
+      <value>,СрокПроверки,СрокПроверки,System.String,,False,False</value>
+      <value>,ДомаИАдреса,ДомаИАдреса,System.String,,False,False</value>
+      <value>,ПродолжительностьПроверки,ПродолжительностьПроверки,System.String,,False,False</value>
+      <value>,Основание,Основание,Основание,System.String,,False,False,False</value>
+      <value>,ИнспекторДП,ИнспекторДП,ИнспекторДП,System.String,,False,False,False</value>
+      <value>,ДолжностьДП,ДолжностьДП,ДолжностьДП,System.String,,False,False,False</value>
+      <value>,КодВидаПроверки,КодВидаПроверки,КодВидаПроверки,System.String,,False,False,False</value>
+      <value>,АдресОбр,АдресОбр,АдресОбр,System.String,,False,False,False</value>
+      <value>,ТипКонтрагента,ТипКонтрагента,ТипКонтрагента,System.String,,False,False,False</value>
+      <value>,ДолжностьИнспектораТП,ДолжностьИнспектораТП,ДолжностьИнспектораТП,System.String,,False,False,False</value>
+      <value>,ДолжностьИнспектораВП,ДолжностьИнспектораВП,ДолжностьИнспектораВП,System.String,,False,False,False</value>
+      <value>,Задача,Задача,Задача,System.String,,False,False,False</value>
+      <value>,ПравовоеОснование,ПравовоеОснование,ПравовоеОснование,System.String,,False,False,False</value>
+      <value>,ОснованиеПроверки,ОснованиеПроверки,ОснованиеПроверки,System.String,,False,False,False</value>
+      <value>,Цель,Цель,Цель,System.String,,False,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="7" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="11">
+        <ReportTitleBand1 Ref="8" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,19,26.4</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text1 Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,26.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <DockStyle>Top</DockStyle>
+              <Font>Times New Roman,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{ВидПроверки} - ВидПроверки
+{ДатаРаспоряжения} - ДатаРаспоряжения
+{НомерРаспоряжения} - НомерРаспоряжения
+{УправОрг} - УправОрг
+{УправОргСокр} - УправОргСокр
+{ИНН} - ИНН
+{ОГРН} - ОГРН
+{АдресКонтрагента} - АдресКонтрагента
+{АдресКонтрагентаФакт} - АдресКонтрагентаФакт
+{НомерОбращения} - НомерОбращения
+{НачалоПериода} - НачалоПериода
+{ОкончаниеПериода} - ОкончаниеПериода
+{ДатаОбращения} - ДатаОбращения
+{ТелефонИнспектора} - ТелефонИнспектора
+{ИнспекторыИКоды} - ИнспекторыИКоды
+{ДолжностьФИОРП} - ДолжностьФИОРП
+{МероприятияПоКонтролю} - МероприятияПоКонтролю
+{РуководительДолжность} - РуководительДолжность
+{РуководительФИОСокр} - РуководительФИОСокр
+{Ответственный} - Ответственный
+{ДолжностьОтветственныйРП} - ДолжностьОтветственныйРП
+{ФИООтветственныйСокрРП} - ФИООтветственныйСокрРП
+{Эксперты} -Эксперты
+{ПредоставляемыеДокументы} - ПредоставляемыеДокументы
+{НомерОснованияПроверки} - НомерОснованияПроверки
+{ДатаОснованияПроверки} - ДатаОснованияПроверки
+{ПлановыйГод} - ПлановыйГод
+{ИсточникОбращенияРП} - ИсточникОбращенияРП
+{ИсточникОбращения} - ИсточникОбращения
+{СрокПроверки} - СрокПроверки
+{ДомаИАдреса} - дома и адреса из основания проверки првоеряемые дома разделеныне ";"
+{АдресОбр} - первый адрес из оснвоания проверки првоеряемые дома 
+{ПродолжительностьПроверки} - ПродолжительностьПроверки
+{Основание} - Основание , специфичный вывод оснваония куча текста
+{ИнспекторДП} - инспекторв из поля инспекторы в дательном падеже
+{ДолжностьДП} - должность инспектора из поля инспекторы в дательном падеже
+{КодВидаПроверки} - код вида првоерки 1,2,3,4,5,6,7,8,9
+{ТипКонтрагента} - тип контрагента
+{ДолжностьИнспектораТП} - ДолжностьИнспектораТП
+{ДолжностьИнспектораВП} - ДолжностьИнспектораВП
+{Задача} - Задача
+{ПравовоеОснование} - ПравовоеОснование
+{ОснованиеПроверки} - ОснованиеПроверки
+{Цель} - Цель</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </ReportTitleBand1>
+        <HeaderBand1 Ref="10" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,27.6,19,0.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text2 Ref="11" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="7" />
+              <Parent isRef="10" />
+              <Text>Секция документы:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </HeaderBand1>
+        <DataBand1 Ref="12" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,29,19,0.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text3 Ref="13" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="7" />
+              <Parent isRef="12" />
+              <Text>{СекцияДокументы.ПредоставляемыйДокумент}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text3>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>СекцияДокументы</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+        <HeaderBand2 Ref="14" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,30.4,19,0.4</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text4 Ref="15" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>862e7f6f159440509c90aea8249b5651</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="7" />
+              <Parent isRef="14" />
+              <Text>Секция эксперты:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text4>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand2</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </HeaderBand2>
+        <DataBand2 Ref="16" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,31.6,19,0.4</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text5 Ref="17" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="7" />
+              <Parent isRef="16" />
+              <Text>{СекцияЭксперты.Эксперты}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text5>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>СекцияЭксперты</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand2</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <Sort isList="true" count="0" />
+        </DataBand2>
+        <HeaderBand3 Ref="18" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,32.8,19,0.4</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text6 Ref="19" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,18.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="7" />
+              <Parent isRef="18" />
+              <Text>Мероприятия по контролю:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text6>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand3</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </HeaderBand3>
+        <DataBand3 Ref="20" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,34,19,0.4</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text7 Ref="21" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,18.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="7" />
+              <Parent isRef="20" />
+              <Text>-  {МероприятияПоКонтролю.МероприятиеПоКонтролю}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text7>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>МероприятияПоКонтролю</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand3</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <Sort isList="true" count="0" />
+        </DataBand3>
+        <HeaderBand4 Ref="22" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,35.2,19,0.4</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text8 Ref="23" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>44ca53deeca847a8ba101ed002152df2</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="7" />
+              <Parent isRef="22" />
+              <Text>Секция предмет проверки:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text8>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand4</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </HeaderBand4>
+        <DataBand4 Ref="24" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,36.4,19,0.4</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text10 Ref="25" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="7" />
+              <Parent isRef="24" />
+              <Text>-  {СекцияПредметПроверки.ПредметПроверки}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text10>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>СекцияПредметПроверки</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand4</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <Sort isList="true" count="0" />
+        </DataBand4>
+        <HeaderBand5 Ref="26" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,37.6,19,0.4</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text9 Ref="27" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>8044806454f243d5988a1c9db31c0f2e</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="7" />
+              <Parent isRef="26" />
+              <Text>Секция правовые основания:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text9>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand5</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </HeaderBand5>
+        <DataBand5 Ref="28" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,38.8,19,0.4</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text11 Ref="29" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="7" />
+              <Parent isRef="28" />
+              <Text>- {СекцияПравовыеОснования.ПравовоеОснование}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text11>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>СекцияПравовыеОснования</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand5</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <Sort isList="true" count="0" />
+        </DataBand5>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>922ac521bd36446b9fdb0146d4d42342</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>100</PageHeight>
+      <PageWidth>21</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+      <Watermark Ref="30" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="31" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>8/14/2014 8:31:30 AM</ReportChanged>
+  <ReportCreated>5/21/2014 9:50:01 AM</ReportCreated>
+  <ReportFile>D:\TFS\GKH.GKH.CMMI\Dev\Saha\Bars.GkhGji.Regions.Saha\Resources\Disposal.mrt</ReportFile>
+  <ReportGuid>379362208c074c809e7d4b6e9b919a2a</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

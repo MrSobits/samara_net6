@@ -1,0 +1,53 @@
+﻿Ext.define('B4.model.publicservorg.Contract', {
+    extend: 'B4.base.Model',
+    idProperty: 'Id',
+    proxy: {
+        type: 'b4proxy',
+        controllerName: 'PublicServiceOrgContract'
+    },
+    fields: [
+        { name: 'Id', useNull: true },
+        { name: 'PublicServiceOrg', defaultValue: null },
+        { name: 'ResOrgReason', defaultValue: null },
+        { name: 'Municipality', defaultValue: null },
+        { name: 'Address', defaultValue: null },
+        { name: 'DateStart' },
+        { name: 'DateEnd' },
+        { name: 'ContractNumber' },
+        { name: 'ContractDate' },
+        { name: 'Note' },
+        { name: 'FileInfo', defaultValue: null },
+        { name: 'TermBillingPaymentNoLaterThan', defaultValue: null },
+        { name: 'TermPaymentNoLaterThan', defaultValue: null },
+        { name: 'DeadlineInformationOfDebt', defaultValue: null },
+        { name: 'DayStart', defaultValue: null },
+        { name: 'DayEnd', defaultValue: null },
+        { name: 'EndDeviceMetteringIndication', defaultValue: null },
+        { name: 'StartDeviceMetteringIndication', defaultValue: null },
+        { name: 'StopReason', defaultValue: null },
+        { name: 'DateStop', defaultValue: null },
+        { name: 'PartName', defaultValue: null },
+
+        // поля контракта
+        { name: 'ContractPartId', defaultValue: null },
+        { name: 'TypeContractPart', defaultValue: null },
+        { name: 'TypeContactPerson', defaultValue: null },
+        { name: 'TypeOwnerContract', defaultValue: null },
+        { name: 'FirstName', defaultValue: null },
+        { name: 'LastName', defaultValue: null },
+        { name: 'MiddleName', defaultValue: null },
+        { name: 'Gender', defaultValue: null },
+        { name: 'OwnerDocumentType', defaultValue: null },
+        { name: 'IssueDate', defaultValue: null },
+        { name: 'DocumentSeries', defaultValue: null },
+        { name: 'DocumentNumber', defaultValue: null },
+        { name: 'BirthPlace', defaultValue: null },
+        { name: 'BirthDate', defaultValue: null },
+        { name: 'Contragent', defaultValue: null },
+        { name: 'ManagingOrganization', defaultValue: null },
+        { name: 'CommercialMeteringResourceType', defaultValue: null },
+        { name: 'FuelEnergyResourceOrg', defaultValue: null },
+        { name: 'Organization', defaultValue: null },
+        { name: 'TypeCustomer', defaultValue: null }
+    ]
+});

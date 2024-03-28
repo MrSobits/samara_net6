@@ -1,0 +1,85 @@
+﻿@using System.Text
+@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@using Bars.B4.Modules.ESIA.Auth.Dto
+@{
+    Layout = null;
+}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>@ViewData["Title"]</title>
+        <link rel="shortcut icon" href="@Url.Content("~/content/favicon.ico")" />
+        <link href='@Url.Content("~/content/css/login.css")' rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        @{
+            var error = ViewData["error"].ToString();
+            var userInfo = ViewData["userInfo"] != null ? (UserInfoDto) ViewData["userInfo"] : new UserInfoDto();
+
+            var selectItems = ViewData["contragents"] ?? ViewData["organizations"];
+            var selectItemsList = selectItems != null ? selectItems as IEnumerable<SelectListItem> : new List<SelectListItem>();
+            var selectItemsListName = ViewData["contragents"] != null ? "contragentIds" : "organizationIds";
+
+            var loginBtnHidden = !selectItemsList.Any() ? "visibility: hidden" : "";
+
+            var organizationsListInput = new StringBuilder();
+            var orgCount = 0;
+
+            if (userInfo.Organizations != null)
+            {
+                orgCount = userInfo.Organizations.Count;
+            }
+
+            if (orgCount > 0)
+            {
+                var properties = userInfo.Organizations[0].GetType().GetProperties();
+                for (var i = 0; i < orgCount; i++)
+                {
+                    foreach (var propertyInfo in properties)
+                    {
+                        organizationsListInput.AppendLine(string.Format("<input type=\"hidden\" name=\"userInfo.Organizations[{0}].{1}\" value=\"{2}\"/>",
+                            i, propertyInfo.Name, propertyInfo.GetValue(userInfo.Organizations[i])));
+                    }
+                }
+            }
+        }
+    <div class="wrapper">
+        <div class="container">
+            <div class="header">
+                <span class="logo"></span>
+                <span class="title"></span>
+                <span data-title="@ViewData["Title"]"></span> 
+            </div>
+            <form id="onboard_form" method="post" action="" style="padding: 10px;">
+                <input type="hidden" name="userInfo.Id" value="@userInfo.Id"/>
+                <input type="hidden" name="userInfo.Name" value="@userInfo.Name"/>
+                <input type="hidden" name="userInfo.FirstName" value="@userInfo.FirstName"/>
+                <input type="hidden" name="userInfo.LastName" value="@userInfo.LastName"/>
+                <input type="hidden" name="userInfo.MiddleName" value="@userInfo.MiddleName"/>
+                <input type="hidden" name="userInfo.Gender" value="@userInfo.Gender"/>
+                <input type="hidden" name="userInfo.BirthDate" value="@userInfo.BirthDate"/>
+                <input type="hidden" name="userInfo.SelectedOrganizationId" value="@userInfo.SelectedOrganizationId"/>
+                <input type="hidden" name="userInfo.SelectedContragentId" value="@userInfo.SelectedContragentId"/>
+                @Html.Raw(orgCount > 0 ? organizationsListInput.ToString() : "")
+                <div class="nice-text">
+                    @userInfo.LastName @userInfo.FirstName @userInfo.MiddleName
+                </div>
+                @Html.DropDownList(selectItemsListName, selectItemsList, new { @class = "nice-dropdownlist", style = loginBtnHidden })
+                <div class="errorMessage" @if (string.IsNullOrEmpty(error))
+                                          {
+                                              @: style="visibility: hidden"
+                                          }>
+                    @(string.IsNullOrEmpty(error) ? "-" : error)
+                </div>
+                <div class="footer" style="bottom: 15px; position: absolute; width: 100%">
+                    <input value="Назад" type="button" class="nice-button" style="float: left;"
+                           onclick="location.href = '@Url.Action("Index", "Login")';"/>
+                    <input name="commit" value="Войти" type="submit" class="nice-button" style="float: right; margin-right: 20px; @loginBtnHidden"/>
+                </div>
+            </form>
+        </div>
+    </div>
+    </body>
+</html>

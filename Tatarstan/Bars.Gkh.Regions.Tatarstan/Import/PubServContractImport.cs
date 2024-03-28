@@ -1,0 +1,452 @@
+﻿namespace Bars.Gkh.Regions.Tatarstan.Import
+{
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Reflection;
+    using System.Text;
+
+    using Bars.B4;
+    using Bars.B4.Utils;
+    using Bars.Gkh.Authentification;
+    using Bars.Gkh.Domain;
+    using Bars.Gkh.Entities;
+    using Bars.Gkh.Enums.Import;
+    using Bars.Gkh.Import;
+    using Bars.Gkh.Import.Impl;
+    using Bars.Gkh.Modules.Gkh1468.Entities;
+    using Bars.Gkh.Regions.Tatarstan.DomainService;
+    using Bars.Gkh.Regions.Tatarstan.Entities;
+    using Bars.Gkh.Utils;
+
+    using NHibernate.Linq;
+
+    /// <summary>
+    /// Загрузка данных по договорам ресурсоснабжения
+    /// </summary>
+    public class PubServContractImport : GkhImportBase
+    {
+        public static string Id = MethodBase.GetCurrentMethod().DeclaringType.FullName;
+
+        private readonly IList<ContractPeriodSummDetail> listToSave = new List<ContractPeriodSummDetail>();
+        private readonly IList<string> splits = new List<string>();
+
+        private ImportParams importParams;
+        private Contragent currentContragent;
+        private ContractPeriod period;
+
+        private ManagingOrganization managingOrganization;
+        private PublicServiceOrg publicServiceOrg;
+
+        /// <summary>
+        /// Словарь: [Идентификатор дома[Управляющая организация [Код услуги [Детализация по дому по договору]]]]
+        /// </summary>
+        private IDictionary<long, Dictionary<string, Dictionary<int, ContractPeriodSummDetail>>> realityObjectDict;
+       
+        /// <inheritdoc />
+        public override string Key => PubServContractImport.Id;
+
+        /// <inheritdoc />
+        public override string CodeImport => "TatarstanImport";
+
+        /// <inheritdoc />
+        public override string Name => "Импорт данных по договорам ресурсоснабжения (УО)";
+
+        /// <inheritdoc />
+        public override string PossibleFileExtensions => "csv";
+
+        /// <inheritdoc />
+        public override string PermissionName => string.Empty;
+
+        /// <summary>
+        /// Менеджер пользователей
+        /// </summary>
+        public IGkhUserManager UserManager { get; set; }
+
+        /// <summary>
+        /// Домен-сервис <see cref="Contragent"/>
+        /// </summary>
+        public IDomainService<Contragent> ContragentDomain { get; set; }
+
+        /// <summary>
+        /// Домен-сервис <see cref="ManagingOrganization"/>
+        /// </summary>
+        public IDomainService<ManagingOrganization> ManagingOrganizationDomain { get; set; }
+
+        /// <summary>
+        /// Домен-сервис <see cref="ContractPeriod"/>
+        /// </summary>
+        public IDomainService<ContractPeriod> ContractPeriodDomain { get; set; }
+
+        /// <summary>
+        /// Домен-сервис <see cref="PublicServiceOrg"/>
+        /// </summary>
+        public IDomainService<PublicServiceOrg> PublicServiceOrgDomain { get; set; }
+
+        /// <summary>
+        /// Домен-сервис <see cref="ContractPeriodSummDetail"/>
+        /// </summary>
+        public IDomainService<ContractPeriodSummDetail> ContractPeriodSummDetailDomain { get; set; }
+
+        /// <summary>
+        /// Домен-сервис <see cref="PubServContractPeriodSumm"/>
+        /// </summary>
+        public IDomainService<PubServContractPeriodSumm> PubServContractPeriodSummDomain { get; set; }
+
+        /// <summary>
+        /// Интерфейс работы с расщеплением платежей
+        /// </summary>
+        public IChargeSplittingService ChargeSplittingService { get; set; }
+
+        /// <inheritdoc />
+        protected override ImportResult ImportUsingGkhApi(BaseParams baseParams)
+        {
+            string errorMessage;
+            if (!this.Validate(baseParams, out errorMessage))
+            {
+                return new ImportResult(StatusImport.CompletedWithError, errorMessage);
+            }
+
+            using (var memoryStream = new MemoryStream(baseParams.Files.First().Value.Data))
+            using (var streamReader = new StreamReader(memoryStream, Encoding.GetEncoding(1251)))
+            {
+                var validateResult = this.ValidateAndInitInternal(streamReader);
+                if (!validateResult.Success)
+                {
+                    return new ImportResult(StatusImport.CompletedWithError, validateResult.Message);
+                }
+
+                this.Indicate(5, "Инициализация кэша");
+                this.InitCache();
+
+                this.Indicate(10, "Чтение файла");
+                this.ImportInternal(streamReader);
+
+                this.Indicate(90, "Сохранение данных");
+                this.Container.InTransaction(() =>
+                {
+                    TransactionHelper.InsertInManyTransactions(this.Container, this.listToSave);
+
+                    foreach (var contract in this.listToSave.Select(x => x.ContractPeriodSumm).Distinct())
+                    {
+                        this.ChargeSplittingService.RecalcSummary(contract);
+                    }
+                });
+            }
+
+            return new ImportResult();
+        }
+
+        private IDataResult ValidateAndInitInternal(StreamReader streamReader)
+        {
+            // Читаем первую строку
+            streamReader.ReadLine();
+
+            try
+            {
+                // Читаем вторую строку о поставщике информации
+                var inputString = streamReader.ReadLine().Split(';');
+                this.importParams = new ImportParams
+                {
+                    Inn = inputString[1],
+                    Kpp = inputString[2],
+                    Ogrn = inputString[3],
+                    Year = inputString[4].ToInt(),
+                    Month = inputString[5].ToInt(),
+                    ProviderCode = (ProviderCode)inputString[9].ToInt()
+                };
+
+                return this.InitParams();
+            }
+            catch (Exception)
+            {
+                return BaseDataResult.Error("Отсутствует строка заголовка");
+            }
+        }
+        
+        private IDataResult InitParams()
+        {
+            var userContragentIds = this.UserManager.GetContragentIds();
+            this.currentContragent = this.ContragentDomain.GetAll().FirstOrDefault(x => x.Inn == this.importParams.Inn && x.Kpp == this.importParams.Kpp);
+
+            if (this.currentContragent.IsNull())
+            {
+                return BaseDataResult.Error("Не найден контрагент по указанным ИНН и КПП");
+            }
+
+            // если к оператору привязан контрагент, то проверяем, что ему можно грузить
+            if (userContragentIds.Any() && !userContragentIds.Contains(this.currentContragent.Id))
+            {
+                return BaseDataResult.Error("Текущий оператор не имеет прав доступа на импорт указанного файла");
+            }
+
+            switch (this.importParams.ProviderCode)
+            {
+                case ProviderCode.Rso:
+                    this.publicServiceOrg = this.PublicServiceOrgDomain.GetAll().FirstOrDefault(x => x.Contragent.Id == this.currentContragent.Id);
+                    break;
+                case ProviderCode.Uo:
+                    return BaseDataResult.Error("Ошибка при определении типа поставщика информации");
+                    // Пока грузим только от имени РСО
+                    this.managingOrganization = this.ManagingOrganizationDomain.GetAll().FirstOrDefault(x => x.Contragent.Id == this.currentContragent.Id);
+                    break;
+                default:
+                    return BaseDataResult.Error("Ошибка при определении типа поставщика информации");
+            }
+
+            if (this.managingOrganization.IsNull() && this.publicServiceOrg.IsNull())
+            {
+                return BaseDataResult.Error("Не найден указанный поставщик информации");
+            }
+
+
+            this.period = this.ContractPeriodDomain.GetAll()
+                    .FirstOrDefault(x => x.StartDate.Year == this.importParams.Year && x.StartDate.Month == this.importParams.Month);
+
+            if (this.period.IsNull())
+            {
+                return BaseDataResult.Error("Не сформирован указанный период");
+            }
+
+            return new BaseDataResult();
+        }
+
+        private void InitCache()
+        {
+            var contractQuery = this.PubServContractPeriodSummDomain.GetAll()
+                    .Where(x => x.ContractPeriod.Id == this.period.Id)
+                    .Where(x => x.PublicService.ResOrgContract.PublicServiceOrg == this.publicServiceOrg);
+
+            this.realityObjectDict = this.ContractPeriodSummDetailDomain.GetAll()
+                .Fetch(x => x.ContractPeriodSumm)
+                .ThenFetch(x => x.ContractPeriodSummUo)
+                .ThenFetch(x => x.ManagingOrganization)
+                .ThenFetch(x => x.Contragent)
+                .Where(x => contractQuery.Any(y => y == x.ContractPeriodSumm))
+                .AsEnumerable()
+                .GroupBy(x => x.PublicServiceOrgContractRealObjInContract.RealityObject.Id)
+                .ToDictionary(
+                    x => x.Key, 
+                    y => y
+                        .GroupBy(x => $"{x.ContractPeriodSumm.ContractPeriodSummUo.ManagingOrganization.Contragent.Inn}_"
+                                      + $"{x.ContractPeriodSumm.ContractPeriodSummUo.ManagingOrganization.Contragent.Kpp}")
+                        .ToDictionary(
+                            x => x.Key, 
+                            z => z.ToDictionary(x => x.ContractPeriodSumm.PublicService.Service.Code)));
+        }
+
+        private void ImportInternal(StreamReader streamReader)
+        {
+            streamReader.ReadLine(); // читаем строку с шапкой
+
+            while (!streamReader.EndOfStream)
+            {
+                this.splits.Add(streamReader.ReadLine());
+            }
+
+            var rowNum = 3; // 3-я строка, т.к. первые 2 - это шапка
+            var splitsCount = (double)this.splits.Count + 2; // количество строк
+            foreach (var split in this.splits)
+            {
+                var percent = (Math.Min((rowNum - 1) / splitsCount * 100, 100) * 0.8) + 10;
+
+                if (split.IsNotEmpty())
+                {
+                    this.Indicate((int)percent, $"Обработка строки {rowNum} из {splitsCount}");
+                    this.ProcessLine(rowNum++, split.Split(';'));
+                }
+            }
+        }
+
+        private void ProcessLine(int rowNum, string[] splits)
+        {
+            var dataExtractor = new DataExtractor();
+            var record = Record.Parse(splits, dataExtractor);
+
+            if (!record.IsValid)
+            {
+                var rowIdtext = $"rowNum = {rowNum}";
+                this.LogImport.Warn(rowIdtext, record.Errors.AggregateWithSeparator(","));
+                return;
+            }
+
+            var processResult = this.ProcessRecord(record, dataExtractor);
+            if (!processResult.Success)
+            {
+                var rowIdtext = $"rowNum = {rowNum}";
+                this.LogImport.Warn(rowIdtext, processResult.Message);
+            }
+        }
+
+        private IDataResult ProcessRecord(Record record, DataExtractor dataExtractor)
+        {
+            if (record.InnRso != this.publicServiceOrg.Contragent.Inn || record.KppRso != this.publicServiceOrg.Contragent.Kpp)
+            {
+                return BaseDataResult.Error("Импортируемая информация принадлежит к другой РСО");
+            }
+
+            var entity = this.GetEntity(record);
+
+            if (entity.IsNull())
+            {
+                return BaseDataResult.Error("Не удалось определить договор по дому");
+            }
+
+            if (dataExtractor.MergeData(record, entity))
+            {
+                this.listToSave.Add(entity);
+                this.LogImport.CountChangedRows++;
+            }
+
+            return new BaseDataResult();
+        }
+
+        private ContractPeriodSummDetail GetEntity(Record record)
+        {
+            var innKppKey = record.InnUo + "_" + record.KppUo;
+            return this.realityObjectDict.Get(record.RealityObjectId)?.Get(innKppKey)?.Get(record.ServiceCode);
+        }
+
+        private class DataExtractor
+        {
+            private readonly Dictionary<string, PropertyInfo> propertyInfos = new Dictionary<string, PropertyInfo>();
+            private readonly Dictionary<string, Tuple<int, string, bool>> propertyMapping = new Dictionary<string, Tuple<int, string, bool>>
+            {
+                { "InnUo", new Tuple<int, string, bool>(0, "ИНН УО", false) },
+                { "KppUo", new Tuple<int, string, bool>(1, "КПП УО", false) },
+                { "NameUo", new Tuple<int, string, bool>(2, "Наименование УО", false) },
+                { "InnRso", new Tuple<int, string, bool>(3, "ИНН РСО", false) },
+                { "KppRso", new Tuple<int, string, bool>(4, "КПП РСО", false) },
+                { "NameRso", new Tuple<int, string, bool>(5, "Наименование РСО", false) },
+                { "RealityObjectId", new Tuple<int, string, bool>(8, "Код дома", false) },
+                { "ServiceCode", new Tuple<int, string, bool>(6, "Код услуги", false) },
+                { "ChargedManOrg", new Tuple<int, string, bool>(10, "Начислено УО за месяц", true) },
+                { "PaidManOrg", new Tuple<int, string, bool>(11, "Поступившие оплаты  от УО", true) },
+                { "SaldoOut", new Tuple<int, string, bool>(12, "Исходящее сальдо", true) }
+            };
+
+            public TObject GetObject<TObject>(string[] splits) where TObject : class, IRecord, new()
+            {
+                var obj = new TObject();
+                foreach (var mapping in this.propertyMapping)
+                {
+                    try
+                    {
+                        this.TryExtractProperty(obj, mapping.Key, splits[mapping.Value.Item1]);
+                    }
+                    catch
+                    {
+                        obj.LogError($"Значение столбца {mapping.Value.Item2} пусто или имеет неверный формат");
+                    }
+                }
+
+                return obj;
+            }
+
+            public bool MergeData<TIn, TOut>(TIn obj, TOut result)
+            {
+                var infos = this.propertyMapping.Where(x => x.Value.Item3).Select(x => this.GetProperty<TIn>(x.Key)).ToDictionary(x => x.Name);
+                var resultProperties = typeof(TOut)
+                    .GetProperties(BindingFlags.Public | BindingFlags.SetProperty | BindingFlags.Instance)
+                    .Where(x => infos.Keys.Contains(x.Name))
+                    .ToList();
+
+                var changes = false;
+                foreach (var propertyInfo in resultProperties)
+                {
+                    var sourceProperty = infos.Get(propertyInfo.Name);
+                    propertyInfo.SetValue(result, sourceProperty.GetValue(obj));
+                    changes = true;
+                }
+
+                return changes;
+            }
+
+            private void TryExtractProperty<TObject>(TObject obj, string propertyName, string value)
+            {
+                var propertyInfo = this.GetProperty<TObject>(propertyName);
+                var convertedValue = ConvertHelper.ConvertTo(value, propertyInfo.PropertyType);
+                propertyInfo.SetValue(obj, convertedValue);
+            }
+
+            private PropertyInfo GetProperty<TObject>(string propertyName)
+            {
+                PropertyInfo propertyInfo;
+                if (!this.propertyInfos.TryGetValue(typeof(TObject).Name + propertyName, out propertyInfo))
+                {
+                    propertyInfo = typeof(TObject).GetProperty(propertyName);
+                    this.propertyInfos.Add(typeof(TObject).Name + propertyName, propertyInfo);
+                }
+                return propertyInfo;
+            }
+        }
+
+        private interface IRecord
+        {
+            /// <summary>
+            /// Добавить лог ошибки объекта
+            /// </summary>
+            /// <param name="errorMessage">Сообщение об ошибке</param>
+            void LogError(string errorMessage);
+        }
+
+        private class Record : IRecord
+        {
+            public string InnUo { get; set; }
+            public string KppUo { get; set; }
+            public string NameUo { get; set; }
+
+            public string InnRso { get; set; }
+            public string KppRso { get; set; }
+            public string NameRso { get; set; }
+
+            public long RealityObjectId { get; set; }
+            public int ServiceCode { get; set; }
+
+            public decimal ChargedManOrg { get; set; }
+            public decimal PaidManOrg { get; set; }
+            public decimal SaldoOut { get; set; }
+
+            public bool IsValid { get; private set; }
+            public IList<string> Errors { get; }
+
+            public Record()
+            {
+                this.IsValid = true;
+                this.Errors = new List<string>();
+            }
+
+            public static Record Parse(string[] splits, DataExtractor extractor)
+            {
+                return extractor.GetObject<Record>(splits);
+            }
+
+            /// <summary>
+            /// Добавить лог ошибки объекта
+            /// </summary>
+            /// <param name="errorMessage">Сообщение об ошибке</param>
+            public void LogError(string errorMessage)
+            {
+                this.IsValid = false;
+                this.Errors.Add(errorMessage);
+            }
+        }
+
+        private class ImportParams
+        {
+            public string Inn { get; set; }
+            public string Kpp { get; set; }
+            public string Ogrn { get; set; }
+            public int Year { get; set; }
+            public int Month { get; set; }
+            public ProviderCode ProviderCode { get; set; }
+        }
+
+        private enum ProviderCode
+        {
+            Rso = 1,
+            Uo = 2
+        }
+    }
+}

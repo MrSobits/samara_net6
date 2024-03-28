@@ -1,0 +1,58 @@
+﻿@using Bars.B4
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >        
+    <title>@ViewData["Title"]</title>
+    <link rel="shortcut icon" href="@Url.Content("~/content/favicon.ico")" />
+    <link href='@Url.Content("~/content/css/login.css")' rel="stylesheet" type="text/css" />
+</head>
+<body>
+    
+@*<div class="bg" style="height: 100%;">
+        <div class="march8-word"></div>
+        <div class="march8"></div>
+        <div class="towers"></div>
+    </div>*@
+@{
+    AuthenticationResult authResult = (ViewData["result"] != null)
+        ? (AuthenticationResult)ViewData["result"]
+        : new AuthenticationResult { UserName = "", Error = "" };
+}
+<div class="wrapper">
+    <div class="container">
+        <div class="header">
+            <span class="logo"></span>
+            <span class="title"></span>
+            <span data-title="@ViewData["Title"]"></span>
+        </div>
+        <form id="onboard_form" method="post" action="">
+            <div class="content">
+                <div class="input-holder">
+                    <label for="login">Логин</label>
+                    <input id="login" name="login" value="@authResult.UserName" type="text"/>
+                </div>
+                <div class="input-holder">
+                    <label for="password">Пароль</label>
+                    <input id="password" name="password" value="" type="password"/>
+                </div>
+            </div>
+            <div class="errorMessage" @if (string.IsNullOrEmpty(authResult.Error))
+                                      {
+                                          @:style="visibility: hidden"
+                                      }>
+                @(string.IsNullOrEmpty(authResult.Error) ? "-" : authResult.Error)
+            </div>
+            <div class="footer">
+                <input name="commit" value="" type="submit" class="submit"/>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

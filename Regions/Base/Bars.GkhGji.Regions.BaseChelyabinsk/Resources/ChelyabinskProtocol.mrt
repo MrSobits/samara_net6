@@ -1,0 +1,3743 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="28">
+      <ПредоставляемыеДокументы Ref="2" type="DataTableSource" isKey="true">
+        <Alias>ПредоставляемыеДокументы</Alias>
+        <Columns isList="true" count="1">
+          <value>Наименование,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ПредоставляемыеДокументы</Name>
+        <NameInSource>ПредоставляемыеДокументы</NameInSource>
+      </ПредоставляемыеДокументы>
+      <ПредоставленныеДокументы Ref="3" type="DataTableSource" isKey="true">
+        <Alias>ПредоставленныеДокументы</Alias>
+        <Columns isList="true" count="1">
+          <value>Наименование,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ПредоставленныеДокументы</Name>
+        <NameInSource>ПредоставленныеДокументы</NameInSource>
+      </ПредоставленныеДокументы>
+      <ДопПредоставленныеДокументы Ref="4" type="DataTableSource" isKey="true">
+        <Alias>ДопПредоставленныеДокументы</Alias>
+        <Columns isList="true" count="1">
+          <value>Наименование,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ДопПредоставленныеДокументы</Name>
+        <NameInSource>ДопПредоставленныеДокументы</NameInSource>
+      </ДопПредоставленныеДокументы>
+      <ДатаИВремяПроведенияПроверки Ref="5" type="DataTableSource" isKey="true">
+        <Alias>ДатаИВремяПроведенияПроверки</Alias>
+        <Columns isList="true" count="4">
+          <value>Дата,System.String</value>
+          <value>ВремяНачала,System.String</value>
+          <value>ВремяОкончания,System.String</value>
+          <value>Продолжительность,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ДатаИВремяПроведенияПроверки</Name>
+        <NameInSource>ДатаИВремяПроведенияПроверки</NameInSource>
+      </ДатаИВремяПроведенияПроверки>
+      <ПредметыПроверки Ref="6" type="DataTableSource" isKey="true">
+        <Alias>ПредметыПроверки</Alias>
+        <Columns isList="true" count="1">
+          <value>Наименование,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ПредметыПроверки</Name>
+        <NameInSource>ПредметыПроверки</NameInSource>
+      </ПредметыПроверки>
+      <ДомаПроверки Ref="7" type="DataTableSource" isKey="true">
+        <Alias>ДомаПроверки</Alias>
+        <Columns isList="true" count="3">
+          <value>Адрес,System.String</value>
+          <value>ХарактеристикиТП,System.String</value>
+          <value>ДопХарактеристики,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ДомаПроверки</Name>
+        <NameInSource>ДомаПроверки</NameInSource>
+      </ДомаПроверки>
+      <СоставлениеПротокола Ref="8" type="DataTableSource" isKey="true">
+        <Alias>СоставлениеПротокола</Alias>
+        <Columns isList="true" count="3">
+          <value>МестоСоставления,System.String</value>
+          <value>Дата,System.String</value>
+          <value>Время,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>СоставлениеПротокола</Name>
+        <NameInSource>СоставлениеПротокола</NameInSource>
+      </СоставлениеПротокола>
+      <Реквизиты Ref="9" type="DataTableSource" isKey="true">
+        <Alias>Реквизиты</Alias>
+        <Columns isList="true" count="5">
+          <value>НомерДокумента,System.String</value>
+          <value>ДокументОснование,System.String</value>
+          <value>ДокументыВСуде,System.String</value>
+          <value>ДатаПередачиДокументов,System.String</value>
+          <value>ОснованиеОбследования,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Реквизиты</Name>
+        <NameInSource>Реквизиты</NameInSource>
+      </Реквизиты>
+      <Инспектор Ref="10" type="DataTableSource" isKey="true">
+        <Alias>Инспектор</Alias>
+        <Columns isList="true" count="4">
+          <value>ФамилияИнициалыИнспектора,System.String</value>
+          <value>ФамилияИнициалыИнспектораТП,System.String</value>
+          <value>ДолжностьИнспектора,System.String</value>
+          <value>ДолжностьИнспектораТП,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Инспектор</Name>
+        <NameInSource>Инспектор</NameInSource>
+      </Инспектор>
+      <ДокументВыдан Ref="11" type="DataTableSource" isKey="true">
+        <Alias>ДокументВыдан</Alias>
+        <Columns isList="true" count="24">
+          <value>ТипИсполнителя,System.String</value>
+          <value>ТипИсполнителяТП,System.String</value>
+          <value>ЮридическоеЛицо,System.String</value>
+          <value>ЮридическоеЛицоРП,System.String</value>
+          <value>ЮридическоеЛицоДП,System.String</value>
+          <value>ЮридическоеЛицоТП,System.String</value>
+          <value>ОрганизационноПравоваяФорма,System.String</value>
+          <value>ИНН,System.String</value>
+          <value>ДатаРегистрации,System.String</value>
+          <value>ЮридическийАдрес,System.String</value>
+          <value>ПочтовыйАдрес,System.String</value>
+          <value>АдресЗаПределамиСубъекта,System.String</value>
+          <value>ФизическоеЛицо,System.String</value>
+          <value>ФизическоеЛицоРП,System.String</value>
+          <value>ФизическоеЛицоДП,System.String</value>
+          <value>ФизическоеЛицоТП,System.String</value>
+          <value>Должность,System.String</value>
+          <value>ДолжностьТП,System.String</value>
+          <value>ДатаМестоРождения,System.String</value>
+          <value>АдресРегистрации,System.String</value>
+          <value>ФактическийАдрес,System.String</value>
+          <value>ВПрисутсвииОтсутствии,System.String</value>
+          <value>Представитель,System.String</value>
+          <value>ВидРеквизитыОснования,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ДокументВыдан</Name>
+        <NameInSource>ДокументВыдан</NameInSource>
+      </ДокументВыдан>
+      <ПереченьТребований Ref="12" type="DataTableSource" isKey="true">
+        <Alias>ПереченьТребований</Alias>
+        <Columns isList="true" count="1">
+          <value>ПереченьТребований,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ПереченьТребований</Name>
+        <NameInSource>ПереченьТребований</NameInSource>
+      </ПереченьТребований>
+      <УведомлениеОСоставлении Ref="13" type="DataTableSource" isKey="true">
+        <Alias>УведомлениеОСоставлении</Alias>
+        <Columns isList="true" count="3">
+          <value>ВрученоЧерезКанцелярию,System.String</value>
+          <value>ДатаУведомления,System.String</value>
+          <value>НомерРегистрации,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>УведомлениеОСоставлении</Name>
+        <NameInSource>УведомлениеОСоставлении</NameInSource>
+      </УведомлениеОСоставлении>
+      <Рассмотрение Ref="14" type="DataTableSource" isKey="true">
+        <Alias>Рассмотрение</Alias>
+        <Columns isList="true" count="4">
+          <value>Дата,System.String</value>
+          <value>Время,System.String</value>
+          <value>Место,System.String</value>
+          <value>КоличествоЭкземпляров,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Рассмотрение</Name>
+        <NameInSource>Рассмотрение</NameInSource>
+      </Рассмотрение>
+      <ЗамечанияНарушителя Ref="15" type="DataTableSource" isKey="true">
+        <Alias>ЗамечанияНарушителя</Alias>
+        <Columns isList="true" count="1">
+          <value>ЗамечанияНарушителя,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ЗамечанияНарушителя</Name>
+        <NameInSource>ЗамечанияНарушителя</NameInSource>
+      </ЗамечанияНарушителя>
+      <Нарушения Ref="16" type="DataTableSource" isKey="true">
+        <Alias>Нарушения</Alias>
+        <Columns isList="true" count="5">
+          <value>ТекстНарушения,System.String</value>
+          <value>АдресаДомов,System.String</value>
+          <value>ПунктНПД,System.String</value>
+          <value>СокращенноеНаименованиеНПД,System.String</value>
+          <value>Описание,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Нарушения</Name>
+        <NameInSource>Нарушения</NameInSource>
+      </Нарушения>
+      <СведенияОНарушении Ref="17" type="DataTableSource" isKey="true">
+        <Alias>СведенияОНарушении</Alias>
+        <Columns isList="true" count="5">
+          <value>ДатаПравонарушения,System.String</value>
+          <value>ВремяПравонарушения,System.String</value>
+          <value>Свидетели,System.String</value>
+          <value>Потерпевшие,System.String</value>
+          <value>НаименованиеТребования,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>СведенияОНарушении</Name>
+        <NameInSource>СведенияОНарушении</NameInSource>
+      </СведенияОНарушении>
+      <СтатьиЗакона Ref="18" type="DataTableSource" isKey="true">
+        <Alias>СтатьиЗакона</Alias>
+        <Columns isList="true" count="2">
+          <value>СтатьяЗакона,System.String</value>
+          <value>Описание,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>СтатьиЗакона</Name>
+        <NameInSource>СтатьиЗакона</NameInSource>
+      </СтатьиЗакона>
+      <Приложения Ref="19" type="DataTableSource" isKey="true">
+        <Alias>Приложения</Alias>
+        <Columns isList="true" count="1">
+          <value>ПриложенияНаименования,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Приложения</Name>
+        <NameInSource>Приложения</NameInSource>
+      </Приложения>
+      <СведенияСвидетельствущиеАктПроверки Ref="20" type="DataTableSource" isKey="true">
+        <Alias>СведенияСвидетельствущиеАктПроверки</Alias>
+        <Columns isList="true" count="2">
+          <value>СведенияОЛицахДопустившихНарушения,System.String</value>
+          <value>СведенияСвидетельствующие,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>СведенияСвидетельствущиеАктПроверки</Name>
+        <NameInSource>СведенияСвидетельствущиеАктПроверки</NameInSource>
+      </СведенияСвидетельствущиеАктПроверки>
+      <СведенияСвидетельствущиеАктПроверкиПредписания Ref="21" type="DataTableSource" isKey="true">
+        <Alias>СведенияСвидетельствущиеАктПроверкиПредписания</Alias>
+        <Columns isList="true" count="2">
+          <value>СведенияОЛицахДопустившихНарушения,System.String</value>
+          <value>СведенияСвидетельствующие,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>СведенияСвидетельствущиеАктПроверкиПредписания</Name>
+        <NameInSource>СведенияСвидетельствущиеАктПроверкиПредписания</NameInSource>
+      </СведенияСвидетельствущиеАктПроверкиПредписания>
+      <Деятельность Ref="22" type="DataTableSource" isKey="true">
+        <Alias>Деятельность</Alias>
+        <Columns isList="true" count="7">
+          <value>НаправлениеДеятельности,System.String</value>
+          <value>ПравовоеОснование,System.String</value>
+          <value>АдресМКД,System.String</value>
+          <value>ДокументОснование,System.String</value>
+          <value>ДатаДокумента,System.String</value>
+          <value>НомерДокумента,System.String</value>
+          <value>СоставПравонарушения,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Деятельность</Name>
+        <NameInSource>Деятельность</NameInSource>
+      </Деятельность>
+      <Приказ Ref="23" type="DataTableSource" isKey="true">
+        <Alias>Приказ</Alias>
+        <Columns isList="true" count="2">
+          <value>Дата,System.String</value>
+          <value>НомерДокумента,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Приказ</Name>
+        <NameInSource>Приказ</NameInSource>
+      </Приказ>
+      <АктПроверки Ref="24" type="DataTableSource" isKey="true">
+        <Alias>АктПроверки</Alias>
+        <Columns isList="true" count="2">
+          <value>Дата,System.String</value>
+          <value>НомерДокумента,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>АктПроверки</Name>
+        <NameInSource>АктПроверки</NameInSource>
+      </АктПроверки>
+      <Предписание Ref="25" type="DataTableSource" isKey="true">
+        <Alias>Предписание</Alias>
+        <Columns isList="true" count="3">
+          <value>Дата,System.String</value>
+          <value>НомерПредписания,System.String</value>
+          <value>НомераНевыполненныхПунктов,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Предписание</Name>
+        <NameInSource>Предписание</NameInSource>
+      </Предписание>
+      <ВыполнениеПредписания Ref="26" type="DataTableSource" isKey="true">
+        <Alias>ВыполнениеПредписания</Alias>
+        <Columns isList="true" count="6">
+          <value>НомерПункта,System.String</value>
+          <value>Мероприятие,System.String</value>
+          <value>ОписаниеОбстоятельств,System.String</value>
+          <value>ДатаФактИсполнения,System.String</value>
+          <value>СрокУстранения,System.String</value>
+          <value>Адрес,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ВыполнениеПредписания</Name>
+        <NameInSource>ВыполнениеПредписания</NameInSource>
+      </ВыполнениеПредписания>
+      <ПриказНаПроверкуПредписания Ref="27" type="DataTableSource" isKey="true">
+        <Alias>ПриказНаПроверкуПредписания</Alias>
+        <Columns isList="true" count="2">
+          <value>Дата,System.String</value>
+          <value>НомерДокумента,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ПриказНаПроверкуПредписания</Name>
+        <NameInSource>ПриказНаПроверкуПредписания</NameInSource>
+      </ПриказНаПроверкуПредписания>
+      <АктПроверкиПредписания Ref="28" type="DataTableSource" isKey="true">
+        <Alias>АктПроверкиПредписания</Alias>
+        <Columns isList="true" count="2">
+          <value>Дата,System.String</value>
+          <value>НомерДокумента,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>АктПроверкиПредписания</Name>
+        <NameInSource>АктПроверкиПредписания</NameInSource>
+      </АктПроверкиПредписания>
+      <Дома Ref="29" type="DataTableSource" isKey="true">
+        <Alias>Дома</Alias>
+        <Columns isList="true" count="1">
+          <value>Дома,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Дома</Name>
+        <NameInSource>Дома</NameInSource>
+      </Дома>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="69">
+      <value>,ДатаАкта,ДатаАкта,System.String,,False,False</value>
+      <value>,НомерАкта,НомерАкта,System.String,,False,False</value>
+      <value>,ПроверПлощадь,ПроверПлощадь,System.String,,False,False</value>
+      <value>,ВремяСоставленияАкта,ВремяСоставленияАкта,System.String,,False,False</value>
+      <value>,УправОрг,УправОрг,System.String,,False,False</value>
+      <value>,ИННУправОрг,ИННУправОрг,System.String,,False,False</value>
+      <value>,ТипЛица,ТипЛица,System.String,,False,False</value>
+      <value>,УправОргРП,УправОргРП,System.String,,False,False</value>
+      <value>,СокрУправОрг,СокрУправОрг,System.String,,False,False</value>
+      <value>,РуководительЮЛ,РуководительЮЛ,System.String,,False,False</value>
+      <value>,АдресКонтрагентаФакт,АдресКонтрагентаФакт,System.String,,False,False</value>
+      <value>,НеВыявлено,НеВыявлено,System.String,,False,False</value>
+      <value>,ПрилагаемыеДокументы,ПрилагаемыеДокументы,System.String,,False,False</value>
+      <value>,НомерДома,НомерДома,System.String,,False,False</value>
+      <value>,АдресДома,АдресДома,System.String,,False,False</value>
+      <value>,НаселенныйПункт,НаселенныйПункт,System.String,,False,False</value>
+      <value>,УлицаДом,УлицаДом,System.String,,False,False</value>
+      <value>,Описание,Описание,System.String,,False,False</value>
+      <value>,ДомаИАдреса,ДомаИАдреса,System.String,,False,False</value>
+      <value>,НевыявленныеНарушения,НевыявленныеНарушения,System.String,,False,False</value>
+      <value>,ОбщаяПлощадьСумма,ОбщаяПлощадьСумма,System.String,,False,False</value>
+      <value>,ДатаРаспоряжения,ДатаРаспоряжения,System.String,,False,False</value>
+      <value>,НомерРаспоряжения,НомерРаспоряжения,System.String,,False,False</value>
+      <value>,ВидПроверки,ВидПроверки,System.String,,False,False</value>
+      <value>,ВидОбследования,ВидОбследования,System.String,,False,False</value>
+      <value>,КодИнспектораРП,КодИнспектораРП,System.String,,False,False</value>
+      <value>,КодИнспектораТП,КодИнспектораТП,System.String,,False,False</value>
+      <value>,РуководительРП,РуководительРП,System.String,,False,False</value>
+      <value>,РуководительТП,РуководительТП,System.String,,False,False</value>
+      <value>,ВидОбследованияРП,ВидОбследованияРП,System.String,,False,False</value>
+      <value>,ПродолжительностьПроверки,ПродолжительностьПроверки,System.String,,False,False</value>
+      <value>,Эксперты,Эксперты,System.String,,False,False</value>
+      <value>,КодРуководителяФИО,КодРуководителяФИО,System.String,,False,False</value>
+      <value>,НачалоПериода,НачалоПериода,System.String,,False,False</value>
+      <value>,ОкончаниеПериода,ОкончаниеПериода,System.String,,False,False</value>
+      <value>,ПредоставляемыеДокументыСтрокой,ПредоставляемыеДокументыСтрокой,System.String,,False,False</value>
+      <value>,ДЛприПроверке,ДЛприПроверке,System.String,,False,False</value>
+      <value>,Ознакомлен,Ознакомлен,System.String,,False,False</value>
+      <value>,ЧислоЛицПривлеченныеЛица,ЧислоЛицПривлеченныеЛица,System.String,,False,False</value>
+      <value>,РуководительЮЛДолжность,РуководительЮЛДолжность,System.String,,False,False</value>
+      <value>,ПредоставленныеДокументыСтрокой,ПредоставленныеДокументыСтрокой,System.String,,False,False</value>
+      <value>,ФактПредоставленныйДокумент,ФактПредоставленныйДокумент,System.String,,False,False</value>
+      <value>,ДопПредоставленныеДокументыСтрокой,ДопПредоставленныеДокументыСтрокой,System.String,,False,False</value>
+      <value>,ДатаИНомерРешенияПрокурора,ДатаИНомерРешенияПрокурора,System.String,,False,False</value>
+      <value>,СсылкиНаПунктыНормативныхАктов,СсылкиНаПунктыНормативныхАктов,System.String,,False,False</value>
+      <value>,ДатаВремяПроверки,ДатаВремяПроверки,System.String,,False,False</value>
+      <value>,ИнспекторыИКоды,ИнспекторыИКоды,System.String,,False,False</value>
+      <value>,ЮрАдресКонтрагента,ЮрАдресКонтрагента,System.String,,False,False</value>
+      <value>,Отдел,Отдел,System.String,,False,False</value>
+      <value>,ИнспекторыАкта,ИнспекторыАкта,System.String,,False,False</value>
+      <value>,ПродолжительностьПроверкиДЧ,ПродолжительностьПроверкиДЧ,System.String,,False,False</value>
+      <value>,ТекстНарушения,ТекстНарушения,System.String,,False,False</value>
+      <value>,НарушенияВыявлены,НарушенияВыявлены,System.String,,False,False</value>
+      <value>,ОбщаяПродолжительностьРабДни,ОбщаяПродолжительностьРабДни,ОбщаяПродолжительностьРабДни,System.String,,False,False,False</value>
+      <value>,СКопиейПриказаОзнакомлен,СКопиейПриказаОзнакомлен,СКопиейПриказаОзнакомлен,System.String,,False,False,False</value>
+      <value>,МестоСоставления,МестоСоставления,System.String,,False,False</value>
+      <value>,МестаПроведенияПроверки,МестаПроведенияПроверки,System.String,,False,False</value>
+      <value>,ОбъектПроверки,ОбъектПроверки,System.String,,False,False</value>
+      <value>,ФИОФизлицаРП,ФИОФизлицаРП,System.String,,False,False</value>
+      <value>,НомерРешенияПрокурора,НомерРешенияПрокурора,System.String,,False,False</value>
+      <value>,ДатаРешенияПрокурора,ДатаРешенияПрокурора,System.String,,False,False</value>
+      <value>,СогласованиеСПрокуратурой,СогласованиеСПрокуратурой,System.String,,False,False</value>
+      <value>,ОснованиеОбследования,ОснованиеОбследования,System.String,,False,False</value>
+      <value>,НомераНевыполненныхПунктовПредписания,НомераНевыполненныхПунктовПредписания,System.String,,False,False</value>
+      <value>,НомерПредписания,НомерПредписания,System.String,,False,False</value>
+      <value>,ДатаПредписания,ДатаПредписания,System.String,,False,False</value>
+      <value>,СведенияОЛицахДопустившихНарушения,СведенияОЛицахДопустившихНарушения,System.String,,False,False</value>
+      <value>,СведенияСвидетельствующие,СведенияСвидетельствующие,System.String,,False,False</value>
+      <value>,ПереченьНПД,ПереченьНПД,System.String,,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="2">
+    <Page1 Ref="30" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="22">
+        <ReportTitleBand1 Ref="31" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,19,15</ClientRectangle>
+          <Components isList="true" count="48">
+            <Text1 Ref="32" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>4,0.2,9.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ТипИсполнителя}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text1>
+            <Text3 Ref="33" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>4,1,9.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ТипИсполнителяТП}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text3>
+            <Text4 Ref="34" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0.2,1,3.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ТипИсполнителяТП</Text>
+              <TextBrush>Black</TextBrush>
+            </Text4>
+            <Text5 Ref="35" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>4,1.8,9.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ЮридическоеЛицо}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text5>
+            <Text7 Ref="36" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>4,2.6,9.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ЮридическоеЛицоРП}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text7>
+            <Text9 Ref="37" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>4.2,3.4,9,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ЮридическоеЛицоДП}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text9>
+            <Text11 Ref="38" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>4.2,4.2,9,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ЮридическоеЛицоТП}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text11>
+            <Text13 Ref="39" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>4.2,4.8,10.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ОрганизационноПравоваяФорма}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text13>
+            <Text23 Ref="40" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>15.8,0.2,3.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text23</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ИНН}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text23>
+            <Text24 Ref="41" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>13.2,0.2,2.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text24</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ИНН</Text>
+              <TextBrush>Black</TextBrush>
+            </Text24>
+            <Text25 Ref="42" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>16.2,1,2.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text25</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ДатаРегистрации}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text25>
+            <Text26 Ref="43" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>13.2,1,3,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text26</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ДатаРегистрации</Text>
+              <TextBrush>Black</TextBrush>
+            </Text26>
+            <Text27 Ref="44" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>4.2,5.4,9,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text27</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ЮридическийАдрес}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text27>
+            <Text28 Ref="45" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0.2,5.4,4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text28</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ЮридическийАдрес</Text>
+              <TextBrush>Black</TextBrush>
+            </Text28>
+            <Text29 Ref="46" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>3.2,6,10.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text29</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ПочтовыйАдрес}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text29>
+            <Text31 Ref="47" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>5.6,6.6,10,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text31</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.АдресЗаПределамиСубъекта}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text31>
+            <Text32 Ref="48" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0.2,6.6,5.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text32</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>АдресЗаПределамиСубъекта</Text>
+              <TextBrush>Black</TextBrush>
+            </Text32>
+            <Text2 Ref="49" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,0.2,4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ТипИсполнителя</Text>
+              <TextBrush>Black</TextBrush>
+            </Text2>
+            <Text6 Ref="50" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,1.8,4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ЮридическоеЛицо</Text>
+              <TextBrush>Black</TextBrush>
+            </Text6>
+            <Text8 Ref="51" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,2.6,4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ЮридическоеЛицоРП</Text>
+              <TextBrush>Black</TextBrush>
+            </Text8>
+            <Text10 Ref="52" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,3.4,4.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ЮридическоеЛицоДП</Text>
+              <TextBrush>Black</TextBrush>
+            </Text10>
+            <Text12 Ref="53" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,4.2,4.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ЮридическоеЛицоТП</Text>
+              <TextBrush>Black</TextBrush>
+            </Text12>
+            <Text22 Ref="54" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,4.8,4.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text22</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ОрганизационноПравоваяФорма</Text>
+              <TextBrush>Black</TextBrush>
+            </Text22>
+            <Text30 Ref="55" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,6,3.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text30</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ПочтовыйАдрес</Text>
+              <TextBrush>Black</TextBrush>
+            </Text30>
+            <Text33 Ref="56" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>3.4,7.2,11.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text33</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ФизическоеЛицо}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text33>
+            <Text34 Ref="57" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,7.2,3.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text34</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ФизическоеЛицо</Text>
+              <TextBrush>Black</TextBrush>
+            </Text34>
+            <Text35 Ref="58" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>3.8,7.8,11,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text35</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ФизическоеЛицоРП}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text35>
+            <Text36 Ref="59" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,7.8,3.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text36</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ФизическоеЛицоРП</Text>
+              <TextBrush>Black</TextBrush>
+            </Text36>
+            <Text37 Ref="60" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>4,8.4,12.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text37</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ФизическоеЛицоДП}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text37>
+            <Text38 Ref="61" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,8.4,4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text38</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ФизическоеЛицоДП</Text>
+              <TextBrush>Black</TextBrush>
+            </Text38>
+            <Text39 Ref="62" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>3.8,9,12.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text39</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ФизическоеЛицоТП}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text39>
+            <Text40 Ref="63" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,9,3.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text40</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ФизическоеЛицоТП</Text>
+              <TextBrush>Black</TextBrush>
+            </Text40>
+            <Text41 Ref="64" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>2.2,9.6,14.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text41</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.Должность}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text41>
+            <Text42 Ref="65" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,9.6,2.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text42</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>Должность</Text>
+              <TextBrush>Black</TextBrush>
+            </Text42>
+            <Text43 Ref="66" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>2.8,10.2,13.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text43</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ДолжностьТП}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text43>
+            <Text44 Ref="67" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,10.2,2.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text44</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ДолжностьТП</Text>
+              <TextBrush>Black</TextBrush>
+            </Text44>
+            <Text45 Ref="68" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>4,10.8,12.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text45</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ДатаМестоРождения}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text45>
+            <Text46 Ref="69" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,10.8,4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text46</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ДатаМестоРождения</Text>
+              <TextBrush>Black</TextBrush>
+            </Text46>
+            <Text47 Ref="70" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>3.6,11.4,12.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text47</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.АдресРегистрации}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text47>
+            <Text48 Ref="71" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,11.4,3.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text48</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>АдресРегистрации</Text>
+              <TextBrush>Black</TextBrush>
+            </Text48>
+            <Text49 Ref="72" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>3.8,12,12.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text49</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ФактическийАдрес}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text49>
+            <Text50 Ref="73" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,12,3.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text50</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ФактическийАдрес</Text>
+              <TextBrush>Black</TextBrush>
+            </Text50>
+            <Text51 Ref="74" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>4.8,12.6,12,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text51</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ВПрисутсвииОтсутствии}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text51>
+            <Text52 Ref="75" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,12.6,4.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text52</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ВПрисутсвииОтсутствии</Text>
+              <TextBrush>Black</TextBrush>
+            </Text52>
+            <Text53 Ref="76" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>3,13.2,13.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text53</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.Представитель}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text53>
+            <Text54 Ref="77" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,13.2,3,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text54</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>Представитель</Text>
+              <TextBrush>Black</TextBrush>
+            </Text54>
+            <Text55 Ref="78" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>4.8,13.8,12,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text55</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>{ДокументВыдан.ВидРеквизитыОснования}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text55>
+            <Text56 Ref="79" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;True;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,13.8,4.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text56</Name>
+              <Page isRef="30" />
+              <Parent isRef="31" />
+              <Text>ВидРеквизитыОснования</Text>
+              <TextBrush>Black</TextBrush>
+            </Text56>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+        </ReportTitleBand1>
+        <TableСоставлениеПротокола Ref="80" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,16.2,19,1.6</ClientRectangle>
+          <ColumnCount>3</ColumnCount>
+          <Components isList="true" count="6">
+            <TableСоставлениеПротокола_Cell1 Ref="81" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСоставлениеПротокола_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="80" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>МестоСоставления</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСоставлениеПротокола_Cell1>
+            <TableСоставлениеПротокола_Cell2 Ref="82" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.4,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСоставлениеПротокола_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="80" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Дата</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСоставлениеПротокола_Cell2>
+            <TableСоставлениеПротокола_Cell3 Ref="83" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСоставлениеПротокола_Cell3</Name>
+              <Page isRef="30" />
+              <Parent isRef="80" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Время</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСоставлениеПротокола_Cell3>
+            <TableСоставлениеПротокола_Cell4 Ref="84" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСоставлениеПротокола_Cell4</Name>
+              <Page isRef="30" />
+              <Parent isRef="80" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{СоставлениеПротокола.МестоСоставления}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСоставлениеПротокола_Cell4>
+            <TableСоставлениеПротокола_Cell5 Ref="85" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.4,0.8,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>4</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСоставлениеПротокола_Cell5</Name>
+              <Page isRef="30" />
+              <Parent isRef="80" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{СоставлениеПротокола.Дата}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСоставлениеПротокола_Cell5>
+            <TableСоставлениеПротокола_Cell6 Ref="86" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0.8,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>5</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСоставлениеПротокола_Cell6</Name>
+              <Page isRef="30" />
+              <Parent isRef="80" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{СоставлениеПротокола.Время}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСоставлениеПротокола_Cell6>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>СоставлениеПротокола</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableСоставлениеПротокола</Name>
+          <NumberID>6</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableСоставлениеПротокола>
+        <TableРеквизиты Ref="87" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,18.6,19,1.6</ClientRectangle>
+          <Components isList="true" count="10">
+            <TableРеквизиты_Cell1 Ref="88" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableРеквизиты_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="87" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>НомерДокумента</Text>
+              <TextBrush>Black</TextBrush>
+            </TableРеквизиты_Cell1>
+            <TableРеквизиты_Cell2 Ref="89" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.8,0,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableРеквизиты_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="87" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ДокументОснование</Text>
+              <TextBrush>Black</TextBrush>
+            </TableРеквизиты_Cell2>
+            <TableРеквизиты_Cell3 Ref="90" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,0,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableРеквизиты_Cell3</Name>
+              <Page isRef="30" />
+              <Parent isRef="87" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ДокументыВСуде</Text>
+              <TextBrush>Black</TextBrush>
+            </TableРеквизиты_Cell3>
+            <TableРеквизиты_Cell4 Ref="91" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.4,0,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableРеквизиты_Cell4</Name>
+              <Page isRef="30" />
+              <Parent isRef="87" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ДатаПередачиДокументов</Text>
+              <TextBrush>Black</TextBrush>
+            </TableРеквизиты_Cell4>
+            <TableРеквизиты_Cell5 Ref="92" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.2,0,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>4</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableРеквизиты_Cell5</Name>
+              <Page isRef="30" />
+              <Parent isRef="87" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ОснованиеОбследования</Text>
+              <TextBrush>Black</TextBrush>
+            </TableРеквизиты_Cell5>
+            <TableРеквизиты_Cell6 Ref="93" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>5</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableРеквизиты_Cell6</Name>
+              <Page isRef="30" />
+              <Parent isRef="87" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Реквизиты.НомерДокумента}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableРеквизиты_Cell6>
+            <TableРеквизиты_Cell7 Ref="94" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.8,0.8,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>6</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableРеквизиты_Cell7</Name>
+              <Page isRef="30" />
+              <Parent isRef="87" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Реквизиты.ДокументОснование}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableРеквизиты_Cell7>
+            <TableРеквизиты_Cell8 Ref="95" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,0.8,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>7</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableРеквизиты_Cell8</Name>
+              <Page isRef="30" />
+              <Parent isRef="87" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Реквизиты.ДокументыВСуде}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableРеквизиты_Cell8>
+            <TableРеквизиты_Cell9 Ref="96" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.4,0.8,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>8</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableРеквизиты_Cell9</Name>
+              <Page isRef="30" />
+              <Parent isRef="87" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Реквизиты.ДатаПередачиДокументов}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableРеквизиты_Cell9>
+            <TableРеквизиты_Cell10 Ref="97" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.2,0.8,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>9</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableРеквизиты_Cell10</Name>
+              <Page isRef="30" />
+              <Parent isRef="87" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Реквизиты.ОснованиеОбследования}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableРеквизиты_Cell10>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Реквизиты</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableРеквизиты</Name>
+          <NumberID>10</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableРеквизиты>
+        <TableИнспектор Ref="98" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,21,19,1.6</ClientRectangle>
+          <ColumnCount>4</ColumnCount>
+          <Components isList="true" count="8">
+            <TableИнспектор_Cell1 Ref="99" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableИнспектор_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="98" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ФамилияИнициалыИнспектора</Text>
+              <TextBrush>Black</TextBrush>
+            </TableИнспектор_Cell1>
+            <TableИнспектор_Cell2 Ref="100" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.8,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableИнспектор_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="98" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ФамилияИнициалыИнспектораТП</Text>
+              <TextBrush>Black</TextBrush>
+            </TableИнспектор_Cell2>
+            <TableИнспектор_Cell3 Ref="101" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableИнспектор_Cell3</Name>
+              <Page isRef="30" />
+              <Parent isRef="98" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ДолжностьИнспектора</Text>
+              <TextBrush>Black</TextBrush>
+            </TableИнспектор_Cell3>
+            <TableИнспектор_Cell4 Ref="102" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.4,0,4.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableИнспектор_Cell4</Name>
+              <Page isRef="30" />
+              <Parent isRef="98" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ДолжностьИнспектораТП</Text>
+              <TextBrush>Black</TextBrush>
+            </TableИнспектор_Cell4>
+            <TableИнспектор_Cell5 Ref="103" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>4</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableИнспектор_Cell5</Name>
+              <Page isRef="30" />
+              <Parent isRef="98" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Инспектор.ФамилияИнициалыИнспектора}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableИнспектор_Cell5>
+            <TableИнспектор_Cell6 Ref="104" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.8,0.8,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>5</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableИнспектор_Cell6</Name>
+              <Page isRef="30" />
+              <Parent isRef="98" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Инспектор.ФамилияИнициалыИнспектораТП}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableИнспектор_Cell6>
+            <TableИнспектор_Cell7 Ref="105" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0.8,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>6</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableИнспектор_Cell7</Name>
+              <Page isRef="30" />
+              <Parent isRef="98" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Инспектор.ДолжностьИнспектора}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableИнспектор_Cell7>
+            <TableИнспектор_Cell8 Ref="106" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.4,0.8,4.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>7</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableИнспектор_Cell8</Name>
+              <Page isRef="30" />
+              <Parent isRef="98" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Инспектор.ДолжностьИнспектораТП}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableИнспектор_Cell8>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Инспектор</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableИнспектор</Name>
+          <NumberID>8</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableИнспектор>
+        <TableПереченьТребований Ref="107" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,23.4,19,1.6</ClientRectangle>
+          <ColumnCount>1</ColumnCount>
+          <Components isList="true" count="2">
+            <TableПереченьТребований_Cell1 Ref="108" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableПереченьТребований_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="107" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ПереченьТребований</Text>
+              <TextBrush>Black</TextBrush>
+            </TableПереченьТребований_Cell1>
+            <TableПереченьТребований_Cell2 Ref="109" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableПереченьТребований_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="107" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ПереченьТребований.ПереченьТребований}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableПереченьТребований_Cell2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>ПереченьТребований</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableПереченьТребований</Name>
+          <NumberID>2</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableПереченьТребований>
+        <TableУведомлениеОСоставлении Ref="110" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,25.8,19,1.6</ClientRectangle>
+          <ColumnCount>3</ColumnCount>
+          <Components isList="true" count="6">
+            <TableУведомлениеОСоставлении_Cell1 Ref="111" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableУведомлениеОСоставлении_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="110" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ВрученоЧерезКанцелярию</Text>
+              <TextBrush>Black</TextBrush>
+            </TableУведомлениеОСоставлении_Cell1>
+            <TableУведомлениеОСоставлении_Cell2 Ref="112" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.4,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableУведомлениеОСоставлении_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="110" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ДатаУведомления</Text>
+              <TextBrush>Black</TextBrush>
+            </TableУведомлениеОСоставлении_Cell2>
+            <TableУведомлениеОСоставлении_Cell3 Ref="113" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableУведомлениеОСоставлении_Cell3</Name>
+              <Page isRef="30" />
+              <Parent isRef="110" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>НомерРегистрации</Text>
+              <TextBrush>Black</TextBrush>
+            </TableУведомлениеОСоставлении_Cell3>
+            <TableУведомлениеОСоставлении_Cell4 Ref="114" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableУведомлениеОСоставлении_Cell4</Name>
+              <Page isRef="30" />
+              <Parent isRef="110" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{УведомлениеОСоставлении.ВрученоЧерезКанцелярию}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableУведомлениеОСоставлении_Cell4>
+            <TableУведомлениеОСоставлении_Cell5 Ref="115" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.4,0.8,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>4</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableУведомлениеОСоставлении_Cell5</Name>
+              <Page isRef="30" />
+              <Parent isRef="110" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{УведомлениеОСоставлении.ДатаУведомления}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableУведомлениеОСоставлении_Cell5>
+            <TableУведомлениеОСоставлении_Cell6 Ref="116" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0.8,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>5</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableУведомлениеОСоставлении_Cell6</Name>
+              <Page isRef="30" />
+              <Parent isRef="110" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{УведомлениеОСоставлении.НомерРегистрации}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableУведомлениеОСоставлении_Cell6>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>УведомлениеОСоставлении</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableУведомлениеОСоставлении</Name>
+          <NumberID>6</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableУведомлениеОСоставлении>
+        <TableРассмотрение Ref="117" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,28.2,19,1.6</ClientRectangle>
+          <ColumnCount>4</ColumnCount>
+          <Components isList="true" count="8">
+            <TableРассмотрение_Cell1 Ref="118" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableРассмотрение_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="117" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Дата</Text>
+              <TextBrush>Black</TextBrush>
+            </TableРассмотрение_Cell1>
+            <TableРассмотрение_Cell2 Ref="119" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.8,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableРассмотрение_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="117" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Время</Text>
+              <TextBrush>Black</TextBrush>
+            </TableРассмотрение_Cell2>
+            <TableРассмотрение_Cell3 Ref="120" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableРассмотрение_Cell3</Name>
+              <Page isRef="30" />
+              <Parent isRef="117" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Место</Text>
+              <TextBrush>Black</TextBrush>
+            </TableРассмотрение_Cell3>
+            <TableРассмотрение_Cell4 Ref="121" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.4,0,4.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableРассмотрение_Cell4</Name>
+              <Page isRef="30" />
+              <Parent isRef="117" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>КоличествоЭкземпляров</Text>
+              <TextBrush>Black</TextBrush>
+            </TableРассмотрение_Cell4>
+            <TableРассмотрение_Cell5 Ref="122" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>4</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableРассмотрение_Cell5</Name>
+              <Page isRef="30" />
+              <Parent isRef="117" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Рассмотрение.Дата}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableРассмотрение_Cell5>
+            <TableРассмотрение_Cell6 Ref="123" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.8,0.8,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>5</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableРассмотрение_Cell6</Name>
+              <Page isRef="30" />
+              <Parent isRef="117" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Рассмотрение.Время}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableРассмотрение_Cell6>
+            <TableРассмотрение_Cell7 Ref="124" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0.8,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>6</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableРассмотрение_Cell7</Name>
+              <Page isRef="30" />
+              <Parent isRef="117" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Рассмотрение.Место}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableРассмотрение_Cell7>
+            <TableРассмотрение_Cell8 Ref="125" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.4,0.8,4.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>7</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableРассмотрение_Cell8</Name>
+              <Page isRef="30" />
+              <Parent isRef="117" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Рассмотрение.КоличествоЭкземпляров}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableРассмотрение_Cell8>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Рассмотрение</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableРассмотрение</Name>
+          <NumberID>8</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableРассмотрение>
+        <TableЗамечанияНарушителя Ref="126" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,30.6,19,1.6</ClientRectangle>
+          <ColumnCount>1</ColumnCount>
+          <Components isList="true" count="2">
+            <TableЗамечанияНарушителя_Cell1 Ref="127" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableЗамечанияНарушителя_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="126" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ЗамечанияНарушителя</Text>
+              <TextBrush>Black</TextBrush>
+            </TableЗамечанияНарушителя_Cell1>
+            <TableЗамечанияНарушителя_Cell2 Ref="128" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableЗамечанияНарушителя_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="126" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ЗамечанияНарушителя.ЗамечанияНарушителя}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableЗамечанияНарушителя_Cell2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>ЗамечанияНарушителя</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableЗамечанияНарушителя</Name>
+          <NumberID>2</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableЗамечанияНарушителя>
+        <TableНарушения Ref="129" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,33,19,1.6</ClientRectangle>
+          <Components isList="true" count="10">
+            <TableНарушения_Cell1 Ref="130" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableНарушения_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="129" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ТекстНарушения</Text>
+              <TextBrush>Black</TextBrush>
+            </TableНарушения_Cell1>
+            <TableНарушения_Cell2 Ref="131" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.8,0,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableНарушения_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="129" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>АдресаДомов</Text>
+              <TextBrush>Black</TextBrush>
+            </TableНарушения_Cell2>
+            <TableНарушения_Cell3 Ref="132" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,0,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableНарушения_Cell3</Name>
+              <Page isRef="30" />
+              <Parent isRef="129" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ПунктНПД</Text>
+              <TextBrush>Black</TextBrush>
+            </TableНарушения_Cell3>
+            <TableНарушения_Cell4 Ref="133" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.4,0,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableНарушения_Cell4</Name>
+              <Page isRef="30" />
+              <Parent isRef="129" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>СокращенноеНаименованиеНПД</Text>
+              <TextBrush>Black</TextBrush>
+            </TableНарушения_Cell4>
+            <TableНарушения_Cell5 Ref="134" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.2,0,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>4</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableНарушения_Cell5</Name>
+              <Page isRef="30" />
+              <Parent isRef="129" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Описание</Text>
+              <TextBrush>Black</TextBrush>
+            </TableНарушения_Cell5>
+            <TableНарушения_Cell6 Ref="135" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>5</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableНарушения_Cell6</Name>
+              <Page isRef="30" />
+              <Parent isRef="129" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Нарушения.ТекстНарушения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableНарушения_Cell6>
+            <TableНарушения_Cell7 Ref="136" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.8,0.8,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>6</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableНарушения_Cell7</Name>
+              <Page isRef="30" />
+              <Parent isRef="129" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Нарушения.АдресаДомов}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableНарушения_Cell7>
+            <TableНарушения_Cell8 Ref="137" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,0.8,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>7</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableНарушения_Cell8</Name>
+              <Page isRef="30" />
+              <Parent isRef="129" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Нарушения.ПунктНПД}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableНарушения_Cell8>
+            <TableНарушения_Cell9 Ref="138" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.4,0.8,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>8</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableНарушения_Cell9</Name>
+              <Page isRef="30" />
+              <Parent isRef="129" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Нарушения.СокращенноеНаименованиеНПД}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableНарушения_Cell9>
+            <TableНарушения_Cell10 Ref="139" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.2,0.8,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>9</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableНарушения_Cell10</Name>
+              <Page isRef="30" />
+              <Parent isRef="129" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Нарушения.Описание}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableНарушения_Cell10>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Нарушения</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableНарушения</Name>
+          <NumberID>10</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableНарушения>
+        <TableСведенияОНарушении Ref="140" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,35.4,19,1.6</ClientRectangle>
+          <Components isList="true" count="10">
+            <TableСведенияОНарушении_Cell1 Ref="141" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСведенияОНарушении_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="140" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ДатаПравонарушения</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСведенияОНарушении_Cell1>
+            <TableСведенияОНарушении_Cell2 Ref="142" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.8,0,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСведенияОНарушении_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="140" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ВремяПравонарушения</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСведенияОНарушении_Cell2>
+            <TableСведенияОНарушении_Cell3 Ref="143" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,0,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСведенияОНарушении_Cell3</Name>
+              <Page isRef="30" />
+              <Parent isRef="140" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Свидетели</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСведенияОНарушении_Cell3>
+            <TableСведенияОНарушении_Cell4 Ref="144" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.4,0,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСведенияОНарушении_Cell4</Name>
+              <Page isRef="30" />
+              <Parent isRef="140" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Потерпевшие</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСведенияОНарушении_Cell4>
+            <TableСведенияОНарушении_Cell5 Ref="145" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.2,0,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>4</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСведенияОНарушении_Cell5</Name>
+              <Page isRef="30" />
+              <Parent isRef="140" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>НаименованиеТребования</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСведенияОНарушении_Cell5>
+            <TableСведенияОНарушении_Cell6 Ref="146" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>5</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСведенияОНарушении_Cell6</Name>
+              <Page isRef="30" />
+              <Parent isRef="140" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{СведенияОНарушении.ДатаПравонарушения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСведенияОНарушении_Cell6>
+            <TableСведенияОНарушении_Cell7 Ref="147" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.8,0.8,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>6</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСведенияОНарушении_Cell7</Name>
+              <Page isRef="30" />
+              <Parent isRef="140" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{СведенияОНарушении.ВремяПравонарушения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСведенияОНарушении_Cell7>
+            <TableСведенияОНарушении_Cell8 Ref="148" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,0.8,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>7</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСведенияОНарушении_Cell8</Name>
+              <Page isRef="30" />
+              <Parent isRef="140" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{СведенияОНарушении.Свидетели}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСведенияОНарушении_Cell8>
+            <TableСведенияОНарушении_Cell9 Ref="149" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.4,0.8,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>8</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСведенияОНарушении_Cell9</Name>
+              <Page isRef="30" />
+              <Parent isRef="140" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{СведенияОНарушении.Потерпевшие}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСведенияОНарушении_Cell9>
+            <TableСведенияОНарушении_Cell10 Ref="150" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.2,0.8,3.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>9</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСведенияОНарушении_Cell10</Name>
+              <Page isRef="30" />
+              <Parent isRef="140" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{СведенияОНарушении.НаименованиеТребования}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСведенияОНарушении_Cell10>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>СведенияОНарушении</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableСведенияОНарушении</Name>
+          <NumberID>10</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableСведенияОНарушении>
+        <TableСтатьиЗакона Ref="151" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,37.8,19,1.6</ClientRectangle>
+          <ColumnCount>2</ColumnCount>
+          <Components isList="true" count="4">
+            <TableСтатьиЗакона_Cell1 Ref="152" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,9.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСтатьиЗакона_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="151" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>СтатьяЗакона</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСтатьиЗакона_Cell1>
+            <TableСтатьиЗакона_Cell2 Ref="153" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0,9.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСтатьиЗакона_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="151" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Описание</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСтатьиЗакона_Cell2>
+            <TableСтатьиЗакона_Cell3 Ref="154" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,9.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСтатьиЗакона_Cell3</Name>
+              <Page isRef="30" />
+              <Parent isRef="151" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{СтатьиЗакона.СтатьяЗакона}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСтатьиЗакона_Cell3>
+            <TableСтатьиЗакона_Cell4 Ref="155" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0.8,9.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСтатьиЗакона_Cell4</Name>
+              <Page isRef="30" />
+              <Parent isRef="151" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{СтатьиЗакона.Описание}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСтатьиЗакона_Cell4>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>СтатьиЗакона</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableСтатьиЗакона</Name>
+          <NumberID>4</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableСтатьиЗакона>
+        <TableПриложения Ref="156" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,40.2,19,1.6</ClientRectangle>
+          <ColumnCount>1</ColumnCount>
+          <Components isList="true" count="2">
+            <TableПриложения_Cell1 Ref="157" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableПриложения_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="156" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ПриложенияНаименования</Text>
+              <TextBrush>Black</TextBrush>
+            </TableПриложения_Cell1>
+            <TableПриложения_Cell2 Ref="158" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableПриложения_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="156" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Приложения.ПриложенияНаименования}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableПриложения_Cell2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Приложения</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableПриложения</Name>
+          <NumberID>2</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableПриложения>
+        <TableСведенияСвидетельствущиеАктПроверки Ref="159" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,42.6,19,1.6</ClientRectangle>
+          <ColumnCount>2</ColumnCount>
+          <Components isList="true" count="4">
+            <TableСведенияСвидетельствущиеАктПроверки_Cell1 Ref="160" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,9.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСведенияСвидетельствущиеАктПроверки_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="159" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>СведенияОЛицахДопустившихНарушения</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСведенияСвидетельствущиеАктПроверки_Cell1>
+            <TableСведенияСвидетельствущиеАктПроверки_Cell2 Ref="161" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0,9.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСведенияСвидетельствущиеАктПроверки_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="159" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>СведенияСвидетельствующие</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСведенияСвидетельствущиеАктПроверки_Cell2>
+            <TableСведенияСвидетельствущиеАктПроверки_Cell3 Ref="162" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,9.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСведенияСвидетельствущиеАктПроверки_Cell3</Name>
+              <Page isRef="30" />
+              <Parent isRef="159" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{СведенияСвидетельствущиеАктПроверки.СведенияОЛицахДопустившихНарушения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСведенияСвидетельствущиеАктПроверки_Cell3>
+            <TableСведенияСвидетельствущиеАктПроверки_Cell4 Ref="163" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0.8,9.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСведенияСвидетельствущиеАктПроверки_Cell4</Name>
+              <Page isRef="30" />
+              <Parent isRef="159" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{СведенияСвидетельствущиеАктПроверки.СведенияСвидетельствующие}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСведенияСвидетельствущиеАктПроверки_Cell4>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>СведенияСвидетельствущиеАктПроверки</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableСведенияСвидетельствущиеАктПроверки</Name>
+          <NumberID>4</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableСведенияСвидетельствущиеАктПроверки>
+        <TableСведенияСвидетельствущиеАктПроверкиПредписания Ref="164" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,45,19,1.6</ClientRectangle>
+          <ColumnCount>2</ColumnCount>
+          <Components isList="true" count="4">
+            <TableСведенияСвидетельствущиеАктПроверкиПредписания_Cell1 Ref="165" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,9.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСведенияСвидетельствущиеАктПроверкиПредписания_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="164" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>СведенияОЛицахДопустившихНарушения</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСведенияСвидетельствущиеАктПроверкиПредписания_Cell1>
+            <TableСведенияСвидетельствущиеАктПроверкиПредписания_Cell2 Ref="166" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0,9.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСведенияСвидетельствущиеАктПроверкиПредписания_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="164" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>СведенияСвидетельствующие</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСведенияСвидетельствущиеАктПроверкиПредписания_Cell2>
+            <TableСведенияСвидетельствущиеАктПроверкиПредписания_Cell3 Ref="167" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,9.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСведенияСвидетельствущиеАктПроверкиПредписания_Cell3</Name>
+              <Page isRef="30" />
+              <Parent isRef="164" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{СведенияСвидетельствущиеАктПроверкиПредписания.СведенияОЛицахДопустившихНарушения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСведенияСвидетельствущиеАктПроверкиПредписания_Cell3>
+            <TableСведенияСвидетельствущиеАктПроверкиПредписания_Cell4 Ref="168" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0.8,9.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableСведенияСвидетельствущиеАктПроверкиПредписания_Cell4</Name>
+              <Page isRef="30" />
+              <Parent isRef="164" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{СведенияСвидетельствущиеАктПроверкиПредписания.СведенияСвидетельствующие}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableСведенияСвидетельствущиеАктПроверкиПредписания_Cell4>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>СведенияСвидетельствущиеАктПроверкиПредписания</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableСведенияСвидетельствущиеАктПроверкиПредписания</Name>
+          <NumberID>4</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableСведенияСвидетельствущиеАктПроверкиПредписания>
+        <TableДеятельность Ref="169" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,47.4,19,1.6</ClientRectangle>
+          <ColumnCount>7</ColumnCount>
+          <Components isList="true" count="14">
+            <TableДеятельность_Cell1 Ref="170" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableДеятельность_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="169" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>НаправлениеДеятельности</Text>
+              <TextBrush>Black</TextBrush>
+            </TableДеятельность_Cell1>
+            <TableДеятельность_Cell2 Ref="171" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.8,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableДеятельность_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="169" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ПравовоеОснование</Text>
+              <TextBrush>Black</TextBrush>
+            </TableДеятельность_Cell2>
+            <TableДеятельность_Cell3 Ref="172" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.6,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableДеятельность_Cell3</Name>
+              <Page isRef="30" />
+              <Parent isRef="169" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>АдресМКД</Text>
+              <TextBrush>Black</TextBrush>
+            </TableДеятельность_Cell3>
+            <TableДеятельность_Cell4 Ref="173" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.4,0,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableДеятельность_Cell4</Name>
+              <Page isRef="30" />
+              <Parent isRef="169" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ДокументОснование</Text>
+              <TextBrush>Black</TextBrush>
+            </TableДеятельность_Cell4>
+            <TableДеятельность_Cell5 Ref="174" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.2,0,2.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>4</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableДеятельность_Cell5</Name>
+              <Page isRef="30" />
+              <Parent isRef="169" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ДатаДокумента</Text>
+              <TextBrush>Black</TextBrush>
+            </TableДеятельность_Cell5>
+            <TableДеятельность_Cell6 Ref="175" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.8,0,2.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>5</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableДеятельность_Cell6</Name>
+              <Page isRef="30" />
+              <Parent isRef="169" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>НомерДокумента</Text>
+              <TextBrush>Black</TextBrush>
+            </TableДеятельность_Cell6>
+            <TableДеятельность_Cell7 Ref="176" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16.4,0,2.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>6</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableДеятельность_Cell7</Name>
+              <Page isRef="30" />
+              <Parent isRef="169" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>СоставПравонарушения</Text>
+              <TextBrush>Black</TextBrush>
+            </TableДеятельность_Cell7>
+            <TableДеятельность_Cell8 Ref="177" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>7</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableДеятельность_Cell8</Name>
+              <Page isRef="30" />
+              <Parent isRef="169" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Деятельность.НаправлениеДеятельности}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableДеятельность_Cell8>
+            <TableДеятельность_Cell9 Ref="178" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.8,0.8,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>8</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableДеятельность_Cell9</Name>
+              <Page isRef="30" />
+              <Parent isRef="169" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Деятельность.ПравовоеОснование}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableДеятельность_Cell9>
+            <TableДеятельность_Cell10 Ref="179" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.6,0.8,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>9</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableДеятельность_Cell10</Name>
+              <Page isRef="30" />
+              <Parent isRef="169" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Деятельность.АдресМКД}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableДеятельность_Cell10>
+            <TableДеятельность_Cell11 Ref="180" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.4,0.8,2.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>10</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableДеятельность_Cell11</Name>
+              <Page isRef="30" />
+              <Parent isRef="169" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Деятельность.ДокументОснование}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableДеятельность_Cell11>
+            <TableДеятельность_Cell12 Ref="181" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.2,0.8,2.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>11</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableДеятельность_Cell12</Name>
+              <Page isRef="30" />
+              <Parent isRef="169" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Деятельность.ДатаДокумента}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableДеятельность_Cell12>
+            <TableДеятельность_Cell13 Ref="182" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.8,0.8,2.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>12</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableДеятельность_Cell13</Name>
+              <Page isRef="30" />
+              <Parent isRef="169" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Деятельность.НомерДокумента}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableДеятельность_Cell13>
+            <TableДеятельность_Cell14 Ref="183" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16.4,0.8,2.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>13</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableДеятельность_Cell14</Name>
+              <Page isRef="30" />
+              <Parent isRef="169" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Деятельность.СоставПравонарушения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableДеятельность_Cell14>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Деятельность</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableДеятельность</Name>
+          <NumberID>14</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableДеятельность>
+        <TableПриказ Ref="184" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,49.8,19,1.6</ClientRectangle>
+          <ColumnCount>2</ColumnCount>
+          <Components isList="true" count="4">
+            <TableПриказ_Cell1 Ref="185" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,9.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableПриказ_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="184" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Дата</Text>
+              <TextBrush>Black</TextBrush>
+            </TableПриказ_Cell1>
+            <TableПриказ_Cell2 Ref="186" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0,9.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableПриказ_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="184" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>НомерДокумента</Text>
+              <TextBrush>Black</TextBrush>
+            </TableПриказ_Cell2>
+            <TableПриказ_Cell3 Ref="187" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,9.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableПриказ_Cell3</Name>
+              <Page isRef="30" />
+              <Parent isRef="184" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Приказ.Дата}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableПриказ_Cell3>
+            <TableПриказ_Cell4 Ref="188" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0.8,9.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableПриказ_Cell4</Name>
+              <Page isRef="30" />
+              <Parent isRef="184" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Приказ.НомерДокумента}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableПриказ_Cell4>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Приказ</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableПриказ</Name>
+          <NumberID>4</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableПриказ>
+        <TableАктПроверки Ref="189" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,52.2,19,1.6</ClientRectangle>
+          <ColumnCount>2</ColumnCount>
+          <Components isList="true" count="4">
+            <TableАктПроверки_Cell1 Ref="190" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,9.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableАктПроверки_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="189" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Дата</Text>
+              <TextBrush>Black</TextBrush>
+            </TableАктПроверки_Cell1>
+            <TableАктПроверки_Cell2 Ref="191" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0,9.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableАктПроверки_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="189" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>НомерДокумента</Text>
+              <TextBrush>Black</TextBrush>
+            </TableАктПроверки_Cell2>
+            <TableАктПроверки_Cell3 Ref="192" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,9.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableАктПроверки_Cell3</Name>
+              <Page isRef="30" />
+              <Parent isRef="189" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{АктПроверки.Дата}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableАктПроверки_Cell3>
+            <TableАктПроверки_Cell4 Ref="193" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0.8,9.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableАктПроверки_Cell4</Name>
+              <Page isRef="30" />
+              <Parent isRef="189" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{АктПроверки.НомерДокумента}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableАктПроверки_Cell4>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>АктПроверки</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableАктПроверки</Name>
+          <NumberID>4</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableАктПроверки>
+        <TableПредписание Ref="194" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,54.6,19,1.6</ClientRectangle>
+          <ColumnCount>3</ColumnCount>
+          <Components isList="true" count="6">
+            <TableПредписание_Cell1 Ref="195" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableПредписание_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="194" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Дата</Text>
+              <TextBrush>Black</TextBrush>
+            </TableПредписание_Cell1>
+            <TableПредписание_Cell2 Ref="196" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.4,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableПредписание_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="194" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>НомерПредписания</Text>
+              <TextBrush>Black</TextBrush>
+            </TableПредписание_Cell2>
+            <TableПредписание_Cell3 Ref="197" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableПредписание_Cell3</Name>
+              <Page isRef="30" />
+              <Parent isRef="194" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>НомераНевыполненныхПунктов</Text>
+              <TextBrush>Black</TextBrush>
+            </TableПредписание_Cell3>
+            <TableПредписание_Cell4 Ref="198" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableПредписание_Cell4</Name>
+              <Page isRef="30" />
+              <Parent isRef="194" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Предписание.Дата}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableПредписание_Cell4>
+            <TableПредписание_Cell5 Ref="199" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.4,0.8,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>4</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableПредписание_Cell5</Name>
+              <Page isRef="30" />
+              <Parent isRef="194" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Предписание.НомерПредписания}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableПредписание_Cell5>
+            <TableПредписание_Cell6 Ref="200" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0.8,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>5</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableПредписание_Cell6</Name>
+              <Page isRef="30" />
+              <Parent isRef="194" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Предписание.НомераНевыполненныхПунктов}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableПредписание_Cell6>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Предписание</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableПредписание</Name>
+          <NumberID>6</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableПредписание>
+        <TableВыполнениеПредписания Ref="201" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,57,19,1.6</ClientRectangle>
+          <ColumnCount>6</ColumnCount>
+          <Components isList="true" count="12">
+            <TableВыполнениеПредписания_Cell1 Ref="202" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,3.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableВыполнениеПредписания_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="201" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>НомерПункта</Text>
+              <TextBrush>Black</TextBrush>
+            </TableВыполнениеПредписания_Cell1>
+            <TableВыполнениеПредписания_Cell2 Ref="203" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,0,3.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableВыполнениеПредписания_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="201" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Мероприятие</Text>
+              <TextBrush>Black</TextBrush>
+            </TableВыполнениеПредписания_Cell2>
+            <TableВыполнениеПредписания_Cell3 Ref="204" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.4,0,3.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableВыполнениеПредписания_Cell3</Name>
+              <Page isRef="30" />
+              <Parent isRef="201" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ОписаниеОбстоятельств</Text>
+              <TextBrush>Black</TextBrush>
+            </TableВыполнениеПредписания_Cell3>
+            <TableВыполнениеПредписания_Cell4 Ref="205" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0,3.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableВыполнениеПредписания_Cell4</Name>
+              <Page isRef="30" />
+              <Parent isRef="201" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>ДатаФактИсполнения</Text>
+              <TextBrush>Black</TextBrush>
+            </TableВыполнениеПредписания_Cell4>
+            <TableВыполнениеПредписания_Cell5 Ref="206" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0,3.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>4</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableВыполнениеПредписания_Cell5</Name>
+              <Page isRef="30" />
+              <Parent isRef="201" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>СрокУстранения</Text>
+              <TextBrush>Black</TextBrush>
+            </TableВыполнениеПредписания_Cell5>
+            <TableВыполнениеПредписания_Cell6 Ref="207" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,0,3,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>5</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableВыполнениеПредписания_Cell6</Name>
+              <Page isRef="30" />
+              <Parent isRef="201" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Адрес</Text>
+              <TextBrush>Black</TextBrush>
+            </TableВыполнениеПредписания_Cell6>
+            <TableВыполнениеПредписания_Cell7 Ref="208" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,3.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>6</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableВыполнениеПредписания_Cell7</Name>
+              <Page isRef="30" />
+              <Parent isRef="201" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ВыполнениеПредписания.НомерПункта}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableВыполнениеПредписания_Cell7>
+            <TableВыполнениеПредписания_Cell8 Ref="209" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,0.8,3.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>7</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableВыполнениеПредписания_Cell8</Name>
+              <Page isRef="30" />
+              <Parent isRef="201" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ВыполнениеПредписания.Мероприятие}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableВыполнениеПредписания_Cell8>
+            <TableВыполнениеПредписания_Cell9 Ref="210" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.4,0.8,3.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>8</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableВыполнениеПредписания_Cell9</Name>
+              <Page isRef="30" />
+              <Parent isRef="201" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ВыполнениеПредписания.ОписаниеОбстоятельств}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableВыполнениеПредписания_Cell9>
+            <TableВыполнениеПредписания_Cell10 Ref="211" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0.8,3.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>9</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableВыполнениеПредписания_Cell10</Name>
+              <Page isRef="30" />
+              <Parent isRef="201" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ВыполнениеПредписания.ДатаФактИсполнения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableВыполнениеПредписания_Cell10>
+            <TableВыполнениеПредписания_Cell11 Ref="212" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0.8,3.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>10</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableВыполнениеПредписания_Cell11</Name>
+              <Page isRef="30" />
+              <Parent isRef="201" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ВыполнениеПредписания.СрокУстранения}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableВыполнениеПредписания_Cell11>
+            <TableВыполнениеПредписания_Cell12 Ref="213" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,0.8,3,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>11</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableВыполнениеПредписания_Cell12</Name>
+              <Page isRef="30" />
+              <Parent isRef="201" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ВыполнениеПредписания.Адрес}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableВыполнениеПредписания_Cell12>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>ВыполнениеПредписания</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableВыполнениеПредписания</Name>
+          <NumberID>12</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableВыполнениеПредписания>
+        <TableПриказНаПроверкуПредписания Ref="214" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,59.4,19,1.6</ClientRectangle>
+          <ColumnCount>2</ColumnCount>
+          <Components isList="true" count="4">
+            <TableПриказНаПроверкуПредписания_Cell1 Ref="215" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,9.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableПриказНаПроверкуПредписания_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="214" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Дата</Text>
+              <TextBrush>Black</TextBrush>
+            </TableПриказНаПроверкуПредписания_Cell1>
+            <TableПриказНаПроверкуПредписания_Cell2 Ref="216" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0,9.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableПриказНаПроверкуПредписания_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="214" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>НомерДокумента</Text>
+              <TextBrush>Black</TextBrush>
+            </TableПриказНаПроверкуПредписания_Cell2>
+            <TableПриказНаПроверкуПредписания_Cell3 Ref="217" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,9.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableПриказНаПроверкуПредписания_Cell3</Name>
+              <Page isRef="30" />
+              <Parent isRef="214" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ПриказНаПроверкуПредписания.Дата}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableПриказНаПроверкуПредписания_Cell3>
+            <TableПриказНаПроверкуПредписания_Cell4 Ref="218" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0.8,9.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableПриказНаПроверкуПредписания_Cell4</Name>
+              <Page isRef="30" />
+              <Parent isRef="214" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{ПриказНаПроверкуПредписания.НомерДокумента}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableПриказНаПроверкуПредписания_Cell4>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>ПриказНаПроверкуПредписания</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableПриказНаПроверкуПредписания</Name>
+          <NumberID>4</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableПриказНаПроверкуПредписания>
+        <TableАктПроверкиПредписания Ref="219" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,61.8,19,1.6</ClientRectangle>
+          <ColumnCount>2</ColumnCount>
+          <Components isList="true" count="4">
+            <TableАктПроверкиПредписания_Cell1 Ref="220" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,9.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableАктПроверкиПредписания_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="219" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Дата</Text>
+              <TextBrush>Black</TextBrush>
+            </TableАктПроверкиПредписания_Cell1>
+            <TableАктПроверкиПредписания_Cell2 Ref="221" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0,9.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableАктПроверкиПредписания_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="219" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>НомерДокумента</Text>
+              <TextBrush>Black</TextBrush>
+            </TableАктПроверкиПредписания_Cell2>
+            <TableАктПроверкиПредписания_Cell3 Ref="222" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,9.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableАктПроверкиПредписания_Cell3</Name>
+              <Page isRef="30" />
+              <Parent isRef="219" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{АктПроверкиПредписания.Дата}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableАктПроверкиПредписания_Cell3>
+            <TableАктПроверкиПредписания_Cell4 Ref="223" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0.8,9.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableАктПроверкиПредписания_Cell4</Name>
+              <Page isRef="30" />
+              <Parent isRef="219" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{АктПроверкиПредписания.НомерДокумента}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableАктПроверкиПредписания_Cell4>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>АктПроверкиПредписания</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableАктПроверкиПредписания</Name>
+          <NumberID>4</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableАктПроверкиПредписания>
+        <TableДома Ref="224" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,64.2,19,1.6</ClientRectangle>
+          <ColumnCount>1</ColumnCount>
+          <Components isList="true" count="2">
+            <TableДома_Cell1 Ref="225" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableДома_Cell1</Name>
+              <Page isRef="30" />
+              <Parent isRef="224" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Дома</Text>
+              <TextBrush>Black</TextBrush>
+            </TableДома_Cell1>
+            <TableДома_Cell2 Ref="226" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableДома_Cell2</Name>
+              <Page isRef="30" />
+              <Parent isRef="224" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{Дома.Дома}</Text>
+              <TextBrush>Black</TextBrush>
+            </TableДома_Cell2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Дома</DataSourceName>
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.4</MinHeight>
+          <Name>TableДома</Name>
+          <NumberID>2</NumberID>
+          <Page isRef="30" />
+          <Parent isRef="30" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableДома>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>58aa7ab28c9040fb8b5cf3c87cd8f3b8</Guid>
+      <LargeHeight>True</LargeHeight>
+      <LargeHeightFactor>2</LargeHeightFactor>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>50</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="227" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+    <Page2 Ref="228" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="5">
+        <HeaderBand4 Ref="229" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,19,0.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text14 Ref="230" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>9a5bb68fac9648d9bed546439bf74dde</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="228" />
+              <Parent isRef="229" />
+              <Text>Таблица предоставленные документы:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text14>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>aeeea5f896c642868f034317724c51a1</Guid>
+          <Name>HeaderBand4</Name>
+          <Page isRef="228" />
+          <Parent isRef="228" />
+        </HeaderBand4>
+        <DataBand4 Ref="231" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,1.8,19,0.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text15 Ref="232" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>5548d51e50e44325a9320b63b766e87d</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="228" />
+              <Parent isRef="231" />
+              <Text>{ПредоставленныеДокументы.Наименование}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+            </Text15>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>ПредоставленныеДокументы</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Guid>d09002bce3454b01a60d758e44d68b85</Guid>
+          <Name>DataBand4</Name>
+          <Page isRef="228" />
+          <Parent isRef="228" />
+          <Sort isList="true" count="0" />
+        </DataBand4>
+        <HeaderBand5 Ref="233" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,3.2,19,0.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text16 Ref="234" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,11.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>97efd667abbc40bebdcab86a4c7d86ee</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text16</Name>
+              <Page isRef="228" />
+              <Parent isRef="233" />
+              <Text>Таблица доп. предоставляемых документов</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text16>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>c3b43412c1d84c1da2532d0cf1a586da</Guid>
+          <Name>HeaderBand5</Name>
+          <Page isRef="228" />
+          <Parent isRef="228" />
+        </HeaderBand5>
+        <DataBand5 Ref="235" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,4.6,19,0.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text17 Ref="236" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>3121215166954689be661c8e337ce313</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text17</Name>
+              <Page isRef="228" />
+              <Parent isRef="235" />
+              <Text>{ДопПредоставленныеДокументы.Наименование}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+            </Text17>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>ДопПредоставленныеДокументы</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Guid>82fb344c743e4d1b9dbfad338395c12d</Guid>
+          <Name>DataBand5</Name>
+          <Page isRef="228" />
+          <Parent isRef="228" />
+          <Sort isList="true" count="0" />
+        </DataBand5>
+        <HeaderBand6 Ref="237" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,6,19,1</ClientRectangle>
+          <Components isList="true" count="4">
+            <Text18 Ref="238" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>All;Black;2;Solid;False;0;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,1.2,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>90d0d537297f46e7bcd2df082d02faf0</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text18</Name>
+              <Page isRef="228" />
+              <Parent isRef="237" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>№&lt;br&gt;
+п/п</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text18>
+            <Text19 Ref="239" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>All;Black;2;Solid;False;0;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.2,0,8.2,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>5fc28fbd7a044bed82bd6b8ec293b221</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text19</Name>
+              <Page isRef="228" />
+              <Parent isRef="237" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>Мероприятия и работы,&lt;br&gt; подлежащие к выполнению</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text19>
+            <Text20 Ref="240" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>All;Black;2;Solid;False;0;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.4,0,5.6,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>b938bf2bbfcb48d683dc13235589b19f</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text20</Name>
+              <Page isRef="228" />
+              <Parent isRef="237" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>Основание</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text20>
+            <Text21 Ref="241" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>All;Black;2;Solid;False;0;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15,0,4,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10</Font>
+              <Guid>b61a80d042d4428894f61a7575922c33</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text21</Name>
+              <Page isRef="228" />
+              <Parent isRef="237" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>Дата&lt;br&gt;
+выполнения
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text21>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>80d868de426947e3b486c0f8ac6cb943</Guid>
+          <Name>HeaderBand6</Name>
+          <Page isRef="228" />
+          <Parent isRef="228" />
+        </HeaderBand6>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>07b2b81eb0284edaa7ce0b9d81c0581b</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page2</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="242" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page2>
+  </Pages>
+  <PrinterSettings Ref="243" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>6/9/2015 1:50:30 PM</ReportChanged>
+  <ReportCreated>5/28/2014 3:38:42 PM</ReportCreated>
+  <ReportFile>C:\Users\1\Downloads\Protocol.mrt</ReportFile>
+  <ReportGuid>53c152f7b5514fc6ab677ae45620554f</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

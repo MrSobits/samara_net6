@@ -1,0 +1,873 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="8">
+      <Инспекторы Ref="2" type="DataTableSource" isKey="true">
+        <Alias>Инспекторы</Alias>
+        <Columns isList="true" count="2">
+          <value>Должность,System.String</value>
+          <value>ФИО,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Инспекторы</Name>
+        <NameInSource>Инспекторы</NameInSource>
+      </Инспекторы>
+      <Приказ Ref="3" type="DataTableSource" isKey="true">
+        <Alias>Приказ</Alias>
+        <Columns isList="true" count="5">
+          <value>Номер,System.String</value>
+          <value>Дата,System.String</value>
+          <value>ВидПроверки,System.String</value>
+          <value>ДолжностьРуководителяРП,System.String</value>
+          <value>РуководительРП,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Приказ</Name>
+        <NameInSource>Приказ</NameInSource>
+      </Приказ>
+      <Контрагенты Ref="4" type="DataTableSource" isKey="true">
+        <Alias>Контрагенты</Alias>
+        <Columns isList="true" count="6">
+          <value>Наименование,System.String</value>
+          <value>ЮрАдрес,System.String</value>
+          <value>ФактАдрес,System.String</value>
+          <value>ИНН,System.String</value>
+          <value>ОГРН,System.String</value>
+          <value>НаименованиеСокр,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Контрагенты</Name>
+        <NameInSource>Контрагенты</NameInSource>
+      </Контрагенты>
+      <АктПроверки Ref="5" type="DataTableSource" isKey="true">
+        <Alias>АктПроверки</Alias>
+        <Columns isList="true" count="5">
+          <value>Дата,System.String</value>
+          <value>Номер,System.String</value>
+          <value>Описание,System.String</value>
+          <value>НевыявленныеНарушения,System.String</value>
+          <value>СКопиейПриказаОзнакомлен,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>АктПроверки</Name>
+        <NameInSource>АктПроверки</NameInSource>
+      </АктПроверки>
+      <АдресДома Ref="6" type="DataTableSource" isKey="true">
+        <Alias>АдресДома</Alias>
+        <Columns isList="true" count="2">
+          <value>Адрес,System.String</value>
+          <value>МестоСоставления,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>АдресДома</Name>
+        <NameInSource>АдресДома</NameInSource>
+      </АдресДома>
+      <ЛицаПрисутствующиеНаПроверке Ref="7" type="DataTableSource" isKey="true">
+        <Alias>ЛицаПрисутствующиеНаПроверке</Alias>
+        <Columns isList="true" count="3">
+          <value>ФИО,System.String</value>
+          <value>Должность,System.String</value>
+          <value>Ознакомлен,System.Boolean</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ЛицаПрисутствующиеНаПроверке</Name>
+        <NameInSource>ЛицаПрисутствующиеНаПроверке</NameInSource>
+      </ЛицаПрисутствующиеНаПроверке>
+      <ПредоставленныеДокументы Ref="8" type="DataTableSource" isKey="true">
+        <Alias>ПредоставленныеДокументы</Alias>
+        <Columns isList="true" count="2">
+          <value>Наименование,System.String</value>
+          <value>ДатаПредоставления,System.Nullable`1[System.DateTime]</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ПредоставленныеДокументы</Name>
+        <NameInSource>ПредоставленныеДокументы</NameInSource>
+      </ПредоставленныеДокументы>
+      <ДатаИВремяПроведенияПроверки Ref="9" type="DataTableSource" isKey="true">
+        <Alias>ДатаИВремяПроведенияПроверки</Alias>
+        <Columns isList="true" count="2">
+          <value>Дата,System.Nullable`1[System.DateTime]</value>
+          <value>Продолжительность,System.Nullable`1[System.DateTime]</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ДатаИВремяПроведенияПроверки</Name>
+        <NameInSource>ДатаИВремяПроведенияПроверки</NameInSource>
+      </ДатаИВремяПроведенияПроверки>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="10" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="54">
+        <Text5 Ref="11" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,2.4,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text5</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{АктПроверки.Дата}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text5>
+        <Text6 Ref="12" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,2.4,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text6</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>Дата</Text>
+          <TextBrush>Black</TextBrush>
+        </Text6>
+        <Text7 Ref="13" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,3,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text7</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{АктПроверки.Номер}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text7>
+        <Text8 Ref="14" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,3,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text8</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>Номер</Text>
+          <TextBrush>Black</TextBrush>
+        </Text8>
+        <Text9 Ref="15" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,3.6,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text9</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{АктПроверки.Описание}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text9>
+        <Text10 Ref="16" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,3.6,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text10</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>Описание</Text>
+          <TextBrush>Black</TextBrush>
+        </Text10>
+        <Text11 Ref="17" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,4.2,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text11</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{АктПроверки.НевыявленныеНарушения}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text11>
+        <Text12 Ref="18" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,4.2,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text12</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>НевыявленныеНарушения</Text>
+          <TextBrush>Black</TextBrush>
+        </Text12>
+        <Text13 Ref="19" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,4.8,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text13</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{АктПроверки.СКопиейПриказаОзнакомлен}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text13>
+        <Text14 Ref="20" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,4.8,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text14</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>СКопиейПриказаОзнакомлен</Text>
+          <TextBrush>Black</TextBrush>
+        </Text14>
+        <Text15 Ref="21" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,6,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text15</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{ДатаИВремяПроведенияПроверки.Дата}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text15>
+        <Text16 Ref="22" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,6,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text16</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>Дата</Text>
+          <TextBrush>Black</TextBrush>
+        </Text16>
+        <Text17 Ref="23" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,6.6,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text17</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{ДатаИВремяПроведенияПроверки.Продолжительность}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text17>
+        <Text18 Ref="24" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,6.6,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text18</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>Продолжительность</Text>
+          <TextBrush>Black</TextBrush>
+        </Text18>
+        <Text19 Ref="25" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,7.8,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text19</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{Инспекторы.Должность}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text19>
+        <Text20 Ref="26" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,7.8,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text20</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>Должность</Text>
+          <TextBrush>Black</TextBrush>
+        </Text20>
+        <Text21 Ref="27" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,8.4,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text21</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{Инспекторы.ФИО}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text21>
+        <Text22 Ref="28" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,8.4,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text22</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>ФИО</Text>
+          <TextBrush>Black</TextBrush>
+        </Text22>
+        <Text23 Ref="29" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,9.6,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text23</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{Контрагенты.Наименование}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text23>
+        <Text24 Ref="30" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,9.6,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text24</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>Наименование</Text>
+          <TextBrush>Black</TextBrush>
+        </Text24>
+        <Text25 Ref="31" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,10.2,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text25</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{Контрагенты.ЮрАдрес}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text25>
+        <Text26 Ref="32" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,10.2,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text26</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>ЮрАдрес</Text>
+          <TextBrush>Black</TextBrush>
+        </Text26>
+        <Text27 Ref="33" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,10.8,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text27</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{Контрагенты.ФактАдрес}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text27>
+        <Text28 Ref="34" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,10.8,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text28</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>ФактАдрес</Text>
+          <TextBrush>Black</TextBrush>
+        </Text28>
+        <Text29 Ref="35" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,11.4,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text29</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{Контрагенты.ИНН}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text29>
+        <Text30 Ref="36" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,11.4,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text30</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>ИНН</Text>
+          <TextBrush>Black</TextBrush>
+        </Text30>
+        <Text31 Ref="37" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,12,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text31</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{Контрагенты.ОГРН}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text31>
+        <Text32 Ref="38" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,12,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text32</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>ОГРН</Text>
+          <TextBrush>Black</TextBrush>
+        </Text32>
+        <Text33 Ref="39" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,12.6,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text33</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{Контрагенты.НаименованиеСокр}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text33>
+        <Text34 Ref="40" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,12.6,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text34</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>НаименованиеСокр</Text>
+          <TextBrush>Black</TextBrush>
+        </Text34>
+        <Text35 Ref="41" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,13.8,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text35</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{ЛицаПрисутствующиеНаПроверке.ФИО}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text35>
+        <Text36 Ref="42" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,13.8,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text36</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>ФИО</Text>
+          <TextBrush>Black</TextBrush>
+        </Text36>
+        <Text37 Ref="43" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,14.4,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text37</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{ЛицаПрисутствующиеНаПроверке.Должность}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text37>
+        <Text38 Ref="44" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,14.4,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text38</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>Должность</Text>
+          <TextBrush>Black</TextBrush>
+        </Text38>
+        <CheckBox1 Ref="45" type="CheckBox" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <Checked>{ЛицаПрисутствующиеНаПроверке.Ознакомлен}</Checked>
+          <ClientRectangle>7.8,15,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <ContourColor>Black</ContourColor>
+          <Name>CheckBox1</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <TextBrush>Black</TextBrush>
+        </CheckBox1>
+        <Text39 Ref="46" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,15,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text39</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>Ознакомлен</Text>
+          <TextBrush>Black</TextBrush>
+        </Text39>
+        <Text40 Ref="47" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,16.2,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text40</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{ПредоставленныеДокументы.Наименование}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text40>
+        <Text41 Ref="48" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,16.2,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text41</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>Наименование</Text>
+          <TextBrush>Black</TextBrush>
+        </Text41>
+        <Text42 Ref="49" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,16.8,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text42</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{ПредоставленныеДокументы.ДатаПредоставления}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text42>
+        <Text43 Ref="50" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,16.8,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text43</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>ДатаПредоставления</Text>
+          <TextBrush>Black</TextBrush>
+        </Text43>
+        <Text44 Ref="51" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,18,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text44</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{Приказ.Номер}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text44>
+        <Text45 Ref="52" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,18,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text45</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>Номер</Text>
+          <TextBrush>Black</TextBrush>
+        </Text45>
+        <Text46 Ref="53" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,18.6,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text46</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{Приказ.Дата}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text46>
+        <Text47 Ref="54" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,18.6,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text47</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>Дата</Text>
+          <TextBrush>Black</TextBrush>
+        </Text47>
+        <Text48 Ref="55" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,19.2,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text48</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{Приказ.ВидПроверки}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text48>
+        <Text49 Ref="56" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,19.2,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text49</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>ВидПроверки</Text>
+          <TextBrush>Black</TextBrush>
+        </Text49>
+        <Text50 Ref="57" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,19.8,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text50</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{Приказ.ДолжностьРуководителяРП}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text50>
+        <Text51 Ref="58" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,19.8,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text51</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>ДолжностьРуководителяРП</Text>
+          <TextBrush>Black</TextBrush>
+        </Text51>
+        <Text52 Ref="59" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,20.4,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text52</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{Приказ.РуководительРП}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text52>
+        <Text53 Ref="60" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,20.4,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text53</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>РуководительРП</Text>
+          <TextBrush>Black</TextBrush>
+        </Text53>
+        <Text4 Ref="61" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,1.2,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text4</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>МестоСоставления</Text>
+          <TextBrush>Black</TextBrush>
+        </Text4>
+        <Text2 Ref="62" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.6,7.8,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text2</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>Адрес</Text>
+          <TextBrush>Black</TextBrush>
+        </Text2>
+        <Text1 Ref="63" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,0.6,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text1</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{АдресДома.Адрес}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text1>
+        <Text3 Ref="64" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,1.2,10.2,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,9,Bold</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text3</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Text>{АдресДома.МестоСоставления}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text3>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>922ac521bd36446b9fdb0146d4d42342</Guid>
+      <LargeHeight>True</LargeHeight>
+      <LargeHeightFactor>3</LargeHeightFactor>
+      <Margins>2,1,2,2</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+      <Watermark Ref="65" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="66" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>12/15/2014 11:17:25 PM</ReportChanged>
+  <ReportCreated>5/21/2014 9:50:01 AM</ReportCreated>
+  <ReportFile>D:\TomskActSurvey.mrt</ReportFile>
+  <ReportGuid>7af0511a9dec44e6b31c6b7a5e978945</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

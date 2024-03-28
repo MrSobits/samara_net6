@@ -1,0 +1,43 @@
+Ext.define('B4.model.licenseaction.LicenseAction', {
+    extend: 'B4.base.Model',
+    idProperty: 'Id',
+    proxy: {
+        type: 'b4proxy',
+        controllerName: 'LicenseAction'
+    },
+    fields: [
+        { name: 'Id' },
+        { name: 'ApplicantAgreement'},
+        { name: 'ApplicantEmail'},
+        { name: 'ApplicantEsiaId' },
+        { name: 'ApplicantFirstName' },
+        { name: 'ApplicantInn' },
+        { name: 'ApplicantLastName' },
+        { name: 'ApplicantMiddleName' },
+        { name: 'ApplicantOkved' },
+        { name: 'ApplicantPhone' },
+        { name: 'ApplicantSnils'},
+        { name: 'ApplicantType' },
+        { name: 'DocumentDate' },
+        { name: 'DocumentIssuer' },
+        { name: 'DocumentName' },
+        { name: 'DocumentNumber' },
+        { name: 'DocumentSeries' },
+        { name: 'DocumentType' },
+        { name: 'FileInfo' },
+        { name: 'DeclineReason' },
+        { name: 'ObjectCreateDate' },
+        { name: 'Contragent' },
+        { name: 'LicenseActionType' },
+        { name: 'LicenseDate' },
+        { name: 'LicenseNumber' },
+        { name: 'MiddleNameFl' },
+        { name: 'NameFl' },
+        { name: 'Position' },
+        { name: 'SurnameFl' },
+        { name: 'State' },
+        { name: 'TypeAnswer' },
+        { name: 'Address' },
+        { name: 'FIO' }
+    ]
+});

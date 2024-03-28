@@ -1,0 +1,90 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <SccProjectName></SccProjectName>
+    <SccLocalPath></SccLocalPath>
+    <SccAuxPath></SccAuxPath>
+    <SccProvider></SccProvider>
+    <LangVersion>7.3</LangVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Update="Properties\ModuleAssemblyInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModuleAssemblyInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourceManifest.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceManifest.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <!-- TODO: Расскомментировать после перехода на .NET 6 <ProjectReference Include="..\..\Bars.GisIntegration.Base\Bars.GisIntegration.Base.csproj" />  -->
+    <!-- <ProjectReference Include="..\..\Bars.GisIntegration.Tor\Bars.GisIntegration.Tor.csproj" />  -->
+    <!-- <ProjectReference Include="..\..\Bars.GisIntegration.UI\Bars.GisIntegration.UI.csproj" />   -->
+    <ProjectReference Include="..\..\Bars.Gkh.Overhaul\Bars.Gkh.Overhaul.csproj" /> 
+    <!--  <ProjectReference Include="..\..\Bars.Gkh.PrintForm\Bars.Gkh.PrintForm.csproj" />   -->
+    <!--  <ProjectReference Include="..\..\Bars.Gkh.Quartz.Scheduler\Bars.Gkh.Quartz.Scheduler.csproj" />   -->
+      <ProjectReference Include="..\..\Bars.Gkh.RegOperator\Bars.Gkh.RegOperator.csproj" />
+      <ProjectReference Include="..\..\Bars.GkhCalendar\Bars.GkhCalendar.csproj" />
+      <ProjectReference Include="..\..\Bars.GkhGji.Contracts\Bars.GkhGji.Contracts.csproj" />
+      <ProjectReference Include="..\..\Bars.GkhGji\Bars.GkhGji.csproj" />
+      <ProjectReference Include="..\..\Bars.Gkh\Bars.Gkh.csproj" />
+      <ProjectReference Include="..\..\Modules\Analytics\Bars.B4.Modules.Analytics\Bars.B4.Modules.Analytics.csproj" />
+      <ProjectReference Include="..\Bars.Gkh.Regions.Tatarstan\Bars.Gkh.Regions.Tatarstan.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Update="paket.references">
+        <SubType>Designer</SubType>
+      </None>
+      <None Update="Properties\ModuleAssemblyInfo.tt">
+        <Generator>TextTemplatingFileGenerator</Generator>
+        <LastGenOutput>ModuleAssemblyInfo.cs</LastGenOutput>
+      </None>
+      <None Update="ResourceManifest.tt">
+        <Generator>TextTemplatingFileGenerator</Generator>
+        <LastGenOutput>ResourceManifest.cs</LastGenOutput>
+      </None>
+      <None Update="Resources\TatProtocolGji.mrt">
+        <SubType>Designer</SubType>
+      </None>
+    </ItemGroup>
+    <ItemGroup>
+      <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Update="Properties\Resources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <SubType>Designer</SubType>
+        <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="Resources\RapidResponseSystemAppealMailTemplate.html" />
+      <Content Include="Resources\IntegrationErknm.mrt" />
+      <Content Include="Resources\EmptyReport.mrt" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Map\ControlList\" />
+      <EmbeddedResource Include="libs\**\*" />
+    </ItemGroup>
+  </Project>

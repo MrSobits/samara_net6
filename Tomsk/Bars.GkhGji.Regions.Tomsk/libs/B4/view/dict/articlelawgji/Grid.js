@@ -1,0 +1,167 @@
+﻿Ext.define('B4.view.dict.articlelawgji.Grid', {
+    extend: 'B4.ux.grid.Panel',
+    requires: [
+        'B4.ux.button.Add',
+        'B4.ux.button.Save',
+        'B4.ux.button.Update',
+        'B4.ux.grid.column.Delete',
+        'B4.ux.grid.plugin.HeaderFilters',
+        'B4.ux.grid.toolbar.Paging'
+    ],
+
+    title: 'Статьи закона',
+    store: 'dict.ArticleLawGji',
+    alias: 'widget.articleLawGjiGrid',
+    closable: true,
+
+    initComponent: function () {
+        var me = this;
+
+        Ext.applyIf(me, {
+            columnLines: true,
+            columns: [
+                {
+                    dataIndex: 'Name',
+                    flex: 1,
+                    text: 'Наименование',
+                    editor: {
+                        xtype: 'textfield',
+                        maxLength: 300
+                    },
+                    filter: {
+                        xtype: 'textfield'
+                    }
+                },
+                {
+                    dataIndex: 'Description',
+                    flex: 1,
+                    text: 'Описание',
+                    editor: {
+                        xtype: 'textfield',
+                        maxLength: 2000
+                    },
+                    filter: {
+                        xtype: 'textfield'
+                    }
+                },
+                {
+                    dataIndex: 'Code',
+                    flex: 1,
+                    text: 'Код',
+                    editor: {
+                        xtype: 'textfield',
+                        maxLength: 300
+                    },
+                    filter: {
+                        xtype: 'textfield'
+                    }
+                },
+                {
+                    dataIndex: 'Part',
+                    width: 100,
+                    text: 'Часть',
+                    editor: {
+                        xtype: 'textfield',
+                        maxLength: 50
+                    },
+                    filter: {
+                        xtype: 'textfield'
+                    }
+                },
+                {
+                    dataIndex: 'Article',
+                    width: 100,
+                    text: 'Статья',
+                    editor: {
+                        xtype: 'textfield',
+                        maxLength: 50
+                    },
+                    filter: {
+                        xtype: 'textfield'
+                    }
+                },
+                {
+                    dataIndex: 'PhysPersonPenalty',
+                    width: 100,
+                    text: 'Штраф для Физ.Лица',
+                    editor: {
+                        xtype: 'textfield',
+                        maxLength: 50
+                    },
+                    filter: {
+                        xtype: 'textfield'
+                    }
+                },
+                {
+                    dataIndex: 'JurPersonPenalty',
+                    width: 100,
+                    text: 'Штраф для Юр. лица',
+                    editor: {
+                        xtype: 'textfield',
+                        maxLength: 50
+                    },
+                    filter: {
+                        xtype: 'textfield'
+                    }
+                },
+                 {
+                     dataIndex: 'OffPersonPenalty',
+                     width: 100,
+                     text: 'Штраф для должн. лица',
+                     editor: {
+                         xtype: 'textfield',
+                         maxLength: 50
+                     },
+                     filter: {
+                         xtype: 'textfield'
+                     }
+                 },
+                {
+                    xtype: 'b4deletecolumn',
+                    scope: me
+                }
+            ],
+            plugins: [
+                Ext.create('B4.ux.grid.plugin.HeaderFilters'),
+                Ext.create('Ext.grid.plugin.CellEditing', {
+                    clicksToEdit: 1,
+                    pluginId: 'cellEditing'
+                })
+            ],
+            viewConfig: {
+                loadMask: true
+            },
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    dock: 'top',
+                    items: [
+                        {
+                            xtype: 'buttongroup',
+                            columns: 3,
+                            items: [
+                                {
+                                    xtype: 'b4addbutton'
+                                },
+                                {
+                                    xtype: 'b4updatebutton'
+                                },
+                                {
+                                    xtype: 'b4savebutton'
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    xtype: 'b4pagingtoolbar',
+                    displayInfo: true,
+                    store: this.store,
+                    dock: 'bottom'
+                }
+            ]
+        });
+
+        me.callParent(arguments);
+    }
+});

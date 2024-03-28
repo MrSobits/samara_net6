@@ -1,0 +1,1497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B1BFEC9-645A-48D6-A045-7EFFB41622E8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestFeaturesFilling</RootNamespace>
+    <AssemblyName>TestFeaturesFilling</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="TechTalk.SpecFlow">
+      <HintPath>..\packages\SpecFlow.1.9.2.3\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="accepting_charge.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>accepting_charge.feature</DependentUpon>
+    </Compile>
+    <Compile Include="actions_removeViol.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>actions_removeViol.feature</DependentUpon>
+    </Compile>
+    <Compile Include="actions_removeViol_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>actions_removeViol_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="add_buildContract_to_objectCr.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>add_buildContract_to_objectCr.feature</DependentUpon>
+    </Compile>
+    <Compile Include="add_checkReport_to_order.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>add_checkReport_to_order.feature</DependentUpon>
+    </Compile>
+    <Compile Include="add_exclusion_to_pay_penalties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>add_exclusion_to_pay_penalties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="add_financeSource_to_programCr.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>add_financeSource_to_programCr.feature</DependentUpon>
+    </Compile>
+    <Compile Include="add_kindWork_to_financeSource.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>add_kindWork_to_financeSource.feature</DependentUpon>
+    </Compile>
+    <Compile Include="add_kindWork_to_financeSource_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>add_kindWork_to_financeSource_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="add_order_to_base_jurPerson.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>add_order_to_base_jurPerson.feature</DependentUpon>
+    </Compile>
+    <Compile Include="add_privileged_category_to_persAcc.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>add_privileged_category_to_persAcc.feature</DependentUpon>
+    </Compile>
+    <Compile Include="add_room_PersAccOwner.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>add_room_PersAccOwner.feature</DependentUpon>
+    </Compile>
+    <Compile Include="add_room_PersAccOwner_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>add_room_PersAccOwner_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="bank_statement_distribution.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bank_statement_distribution.feature</DependentUpon>
+    </Compile>
+    <Compile Include="base_JurPerson.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>base_JurPerson.feature</DependentUpon>
+    </Compile>
+    <Compile Include="builder.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>builder.feature</DependentUpon>
+    </Compile>
+    <Compile Include="builder_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>builder_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="building_features.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>building_features.feature</DependentUpon>
+    </Compile>
+    <Compile Include="building_features_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>building_features_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="calculation_charges.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>calculation_charges.feature</DependentUpon>
+    </Compile>
+    <Compile Include="calculation_penalties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>calculation_penalties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="cancel_charges.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cancel_charges.feature</DependentUpon>
+    </Compile>
+    <Compile Include="cancel_penalties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cancel_penalties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="capital_groups.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>capital_groups.feature</DependentUpon>
+    </Compile>
+    <Compile Include="capital_groups_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>capital_groups_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="cash_payment_center.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cash_payment_center.feature</DependentUpon>
+    </Compile>
+    <Compile Include="change_balance.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>change_balance.feature</DependentUpon>
+    </Compile>
+    <Compile Include="close_account.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>close_account.feature</DependentUpon>
+    </Compile>
+    <Compile Include="close_period.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>close_period.feature</DependentUpon>
+    </Compile>
+    <Compile Include="common_app_settings_regop.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>common_app_settings_regop.feature</DependentUpon>
+    </Compile>
+    <Compile Include="constructive_elements.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>constructive_elements.feature</DependentUpon>
+    </Compile>
+    <Compile Include="constructive_elements_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>constructive_elements_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="constructive_elem_groups.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>constructive_elem_groups.feature</DependentUpon>
+    </Compile>
+    <Compile Include="constructive_elem_groups_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>constructive_elem_groups_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="contragent.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>contragent.feature</DependentUpon>
+    </Compile>
+    <Compile Include="contragent_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>contragent_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="court_verdict_gji.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>court_verdict_gji.feature</DependentUpon>
+    </Compile>
+    <Compile Include="court_verdict_gji_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>court_verdict_gji_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="deleteDocs_BasesPir.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>deleteDocs_BasesPir.feature</DependentUpon>
+    </Compile>
+    <Compile Include="change_penalties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>change_penalties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="finance_source.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>finance_source.feature</DependentUpon>
+    </Compile>
+    <Compile Include="finance_source_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>finance_source_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="gkh1765.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh1765.feature</DependentUpon>
+    </Compile>
+    <Compile Include="gkh2902.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh2902.feature</DependentUpon>
+    </Compile>
+    <Compile Include="gkh3187.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3187.feature</DependentUpon>
+    </Compile>
+    <Compile Include="gkh3216.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3216.feature</DependentUpon>
+    </Compile>
+    <Compile Include="gkh3273.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3273.feature</DependentUpon>
+    </Compile>
+    <Compile Include="gkh3300.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3300.feature</DependentUpon>
+    </Compile>
+    <Compile Include="gkh3322.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3322.feature</DependentUpon>
+    </Compile>
+    <Compile Include="gkh3346.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3346.feature</DependentUpon>
+    </Compile>
+    <Compile Include="gkh3431.feature.cs">
+      <DependentUpon>gkh3431.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="gkh3502.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3502.feature</DependentUpon>
+    </Compile>
+    <Compile Include="delete_account.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>delete_account.feature</DependentUpon>
+    </Compile>
+    <Compile Include="gkh3673.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3673.feature</DependentUpon>
+    </Compile>
+    <Compile Include="gkh3719.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3719.feature</DependentUpon>
+    </Compile>
+    <Compile Include="gkh3763.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gkh3763.feature</DependentUpon>
+    </Compile>
+    <Compile Include="house_several_tariffs.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>house_several_tariffs.feature</DependentUpon>
+    </Compile>
+    <Compile Include="inspectors.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>inspectors.feature</DependentUpon>
+    </Compile>
+    <Compile Include="inspectors_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>inspectors_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="kind_works.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kind_works.feature</DependentUpon>
+    </Compile>
+    <Compile Include="kind_works_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kind_works_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="kind_work_notif_gji.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kind_work_notif_gji.feature</DependentUpon>
+    </Compile>
+    <Compile Include="kind_work_notif_gji_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kind_work_notif_gji_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="license_provived_docs.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>license_provived_docs.feature</DependentUpon>
+    </Compile>
+    <Compile Include="license_provived_docs_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>license_provived_docs_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="loan.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>loan.feature</DependentUpon>
+    </Compile>
+    <Compile Include="managing_organization.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>managing_organization.feature</DependentUpon>
+    </Compile>
+    <Compile Include="merging_accounts.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>merging_accounts.feature</DependentUpon>
+    </Compile>
+    <Compile Include="metering_devices.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>metering_devices.feature</DependentUpon>
+    </Compile>
+    <Compile Include="metering_devices_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>metering_devices_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="municipality.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>municipality.feature</DependentUpon>
+    </Compile>
+    <Compile Include="municipality_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>municipality_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="normative_docs.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>normative_docs.feature</DependentUpon>
+    </Compile>
+    <Compile Include="normative_docs_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>normative_docs_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectCr.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ObjectCr.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectCr_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ObjectCr_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ooi.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ooi.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ooi_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ooi_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="organization_form.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>organization_form.feature</DependentUpon>
+    </Compile>
+    <Compile Include="organization_form_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>organization_form_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="payment_doc_info.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>payment_doc_info.feature</DependentUpon>
+    </Compile>
+    <Compile Include="payment_doc_info_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>payment_doc_info_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="payment_doc_snapshot.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>payment_doc_snapshot.feature</DependentUpon>
+    </Compile>
+    <Compile Include="payment_penalties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>payment_penalties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="payment_penalties_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>payment_penalties_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="performed_work_act_payment.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>performed_work_act_payment.feature</DependentUpon>
+    </Compile>
+    <Compile Include="periodicity_services.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>periodicity_services.feature</DependentUpon>
+    </Compile>
+    <Compile Include="periodicity_services_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>periodicity_services_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="period_di.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>period_di.feature</DependentUpon>
+    </Compile>
+    <Compile Include="period_di_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>period_di_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="period_program_cr.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>period_program_cr.feature</DependentUpon>
+    </Compile>
+    <Compile Include="period_program_cr_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>period_program_cr_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="petition_to_courtType.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>petition_to_courtType.feature</DependentUpon>
+    </Compile>
+    <Compile Include="petition_to_courtType_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>petition_to_courtType_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="plans_actionGji.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>plans_actionGji.feature</DependentUpon>
+    </Compile>
+    <Compile Include="plans_actionGji_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>plans_actionGji_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Plans_InsCheckGji.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Plans_InsCheckGji.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Plans_InsCheckGji_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Plans_InsCheckGji_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="plans_jurPersonGji.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>plans_jurPersonGji.feature</DependentUpon>
+    </Compile>
+    <Compile Include="plans_jurPersonGji_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>plans_jurPersonGji_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="positions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>positions.feature</DependentUpon>
+    </Compile>
+    <Compile Include="positions_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>positions_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="privileged_category.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>privileged_category.feature</DependentUpon>
+    </Compile>
+    <Compile Include="privileged_category_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>privileged_category_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="programCr.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>programCr.feature</DependentUpon>
+    </Compile>
+    <Compile Include="programCr_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>programCr_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="public_services.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>public_services.feature</DependentUpon>
+    </Compile>
+    <Compile Include="public_services_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>public_services_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="real_estate_type.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>real_estate_type.feature</DependentUpon>
+    </Compile>
+    <Compile Include="real_estate_type_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>real_estate_type_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="recalculation_charges.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>recalculation_charges.feature</DependentUpon>
+    </Compile>
+    <Compile Include="recalculation_penalties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>recalculation_penalties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="recalc_penalties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>recalc_penalties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="register_houses.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>register_houses.feature</DependentUpon>
+    </Compile>
+    <Compile Include="register_personal_acc_owner.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>register_personal_acc_owner.feature</DependentUpon>
+    </Compile>
+    <Compile Include="register_personal_acc_owner_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>register_personal_acc_owner_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="regop_account.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>regop_account.feature</DependentUpon>
+    </Compile>
+    <Compile Include="reopen_pers_account.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reopen_pers_account.feature</DependentUpon>
+    </Compile>
+    <Compile Include="role.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>role.feature</DependentUpon>
+    </Compile>
+    <Compile Include="role_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>role_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="roofing_materials.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>roofing_materials.feature</DependentUpon>
+    </Compile>
+    <Compile Include="roofing_materials_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>roofing_materials_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="sanctions_gji.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sanctions_gji.feature</DependentUpon>
+    </Compile>
+    <Compile Include="sanctions_gji_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sanctions_gji_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="server_calculations.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>server_calculations.feature</DependentUpon>
+    </Compile>
+    <Compile Include="change_personal_account_owner.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>change_personal_account_owner.feature</DependentUpon>
+    </Compile>
+    <Compile Include="stage_work_cr.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stage_work_cr.feature</DependentUpon>
+    </Compile>
+    <Compile Include="stage_work_cr_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stage_work_cr_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="state_duty.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>state_duty.feature</DependentUpon>
+    </Compile>
+    <Compile Include="bank_account_statement.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bank_account_statement.feature</DependentUpon>
+    </Compile>
+    <Compile Include="types_ownership.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>types_ownership.feature</DependentUpon>
+    </Compile>
+    <Compile Include="types_ownership_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>types_ownership_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="type_court_gji.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>type_court_gji.feature</DependentUpon>
+    </Compile>
+    <Compile Include="type_court_gji_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>type_court_gji_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="type_group_ooi.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>type_group_ooi.feature</DependentUpon>
+    </Compile>
+    <Compile Include="type_group_ooi_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>type_group_ooi_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="type_project.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>type_project.feature</DependentUpon>
+    </Compile>
+    <Compile Include="type_project_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>type_project_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="type_services.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>type_services.feature</DependentUpon>
+    </Compile>
+    <Compile Include="type_services_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>type_services_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="UnitMeasure.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnitMeasure.feature</DependentUpon>
+    </Compile>
+    <Compile Include="UnitMeasure_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnitMeasure_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="user_actions_lock.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>user_actions_lock.feature</DependentUpon>
+    </Compile>
+    <Compile Include="User_actions_log.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User_actions_log.feature</DependentUpon>
+    </Compile>
+    <Compile Include="violationsGji.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>violationsGji.feature</DependentUpon>
+    </Compile>
+    <Compile Include="violationsGji_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>violationsGji_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="violations_claimWork.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>violations_claimWork.feature</DependentUpon>
+    </Compile>
+    <Compile Include="violations_claimWork_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>violations_claimWork_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="wall_materials.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>wall_materials.feature</DependentUpon>
+    </Compile>
+    <Compile Include="wall_materials_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>wall_materials_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="works.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>works.feature</DependentUpon>
+    </Compile>
+    <Compile Include="works_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>works_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="work_kinds_current_repair.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>work_kinds_current_repair.feature</DependentUpon>
+    </Compile>
+    <Compile Include="work_kinds_current_repair_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>work_kinds_current_repair_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="zonal_inspection.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>zonal_inspection.feature</DependentUpon>
+    </Compile>
+    <Compile Include="zonal_inspection_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>zonal_inspection_boundaries.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="accepting_charge.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>accepting_charge.feature.cs</LastGenOutput>
+    </None>
+    <None Include="actions_removeViol.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>actions_removeViol.feature.cs</LastGenOutput>
+    </None>
+    <None Include="actions_removeViol_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>actions_removeViol_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="add_buildContract_to_objectCr.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>add_buildContract_to_objectCr.feature.cs</LastGenOutput>
+    </None>
+    <None Include="add_checkReport_to_order.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>add_checkReport_to_order.feature.cs</LastGenOutput>
+    </None>
+    <None Include="add_exclusion_to_pay_penalties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>add_exclusion_to_pay_penalties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="add_financeSource_to_programCr.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>add_financeSource_to_programCr.feature.cs</LastGenOutput>
+    </None>
+    <None Include="add_kindWork_to_financeSource.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>add_kindWork_to_financeSource.feature.cs</LastGenOutput>
+    </None>
+    <None Include="add_kindWork_to_financeSource_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>add_kindWork_to_financeSource_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="add_order_to_base_jurPerson.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>add_order_to_base_jurPerson.feature.cs</LastGenOutput>
+    </None>
+    <None Include="add_privileged_category_to_persAcc.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>add_privileged_category_to_persAcc.feature.cs</LastGenOutput>
+    </None>
+    <None Include="add_room_PersAccOwner.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>add_room_PersAccOwner.feature.cs</LastGenOutput>
+    </None>
+    <None Include="add_room_PersAccOwner_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>add_room_PersAccOwner_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="bank_statement_distribution.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>bank_statement_distribution.feature.cs</LastGenOutput>
+    </None>
+    <None Include="base_JurPerson.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>base_JurPerson.feature.cs</LastGenOutput>
+    </None>
+    <None Include="builder.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>builder.feature.cs</LastGenOutput>
+    </None>
+    <None Include="builder_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>builder_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="building_features.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>building_features.feature.cs</LastGenOutput>
+    </None>
+    <None Include="building_features_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>building_features_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="calculation_charges.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>calculation_charges.feature.cs</LastGenOutput>
+    </None>
+    <None Include="calculation_penalties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>calculation_penalties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="cancel_charges.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>cancel_charges.feature.cs</LastGenOutput>
+    </None>
+    <None Include="cancel_penalties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>cancel_penalties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="capital_groups.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>capital_groups.feature.cs</LastGenOutput>
+    </None>
+    <None Include="capital_groups_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>capital_groups_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="cash_payment_center.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>cash_payment_center.feature.cs</LastGenOutput>
+    </None>
+    <None Include="change_balance.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>change_balance.feature.cs</LastGenOutput>
+    </None>
+    <None Include="close_account.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>close_account.feature.cs</LastGenOutput>
+    </None>
+    <None Include="close_period.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>close_period.feature.cs</LastGenOutput>
+    </None>
+    <None Include="common_app_settings_regop.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>common_app_settings_regop.feature.cs</LastGenOutput>
+    </None>
+    <None Include="constructive_elements.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>constructive_elements.feature.cs</LastGenOutput>
+    </None>
+    <None Include="constructive_elements_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>constructive_elements_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="constructive_elem_groups.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>constructive_elem_groups.feature.cs</LastGenOutput>
+    </None>
+    <None Include="constructive_elem_groups_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>constructive_elem_groups_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="contragent.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>contragent.feature.cs</LastGenOutput>
+    </None>
+    <None Include="contragent_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>contragent_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="court_verdict_gji.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>court_verdict_gji.feature.cs</LastGenOutput>
+    </None>
+    <None Include="court_verdict_gji_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>court_verdict_gji_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="deleteDocs_BasesPir.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>deleteDocs_BasesPir.feature.cs</LastGenOutput>
+    </None>
+    <None Include="change_penalties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>change_penalties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="finance_source.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>finance_source.feature.cs</LastGenOutput>
+    </None>
+    <None Include="finance_source_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>finance_source_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="gkh1765.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh1765.feature.cs</LastGenOutput>
+    </None>
+    <None Include="gkh2902.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh2902.feature.cs</LastGenOutput>
+    </None>
+    <None Include="gkh3187.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3187.feature.cs</LastGenOutput>
+    </None>
+    <None Include="gkh3216.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3216.feature.cs</LastGenOutput>
+    </None>
+    <None Include="gkh3273.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3273.feature.cs</LastGenOutput>
+    </None>
+    <None Include="gkh3300.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3300.feature.cs</LastGenOutput>
+    </None>
+    <None Include="gkh3322.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3322.feature.cs</LastGenOutput>
+    </None>
+    <None Include="gkh3346.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3346.feature.cs</LastGenOutput>
+    </None>
+    <None Include="gkh3431.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3431.feature.cs</LastGenOutput>
+    </None>
+    <None Include="gkh3502.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3502.feature.cs</LastGenOutput>
+    </None>
+    <None Include="delete_account.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>delete_account.feature.cs</LastGenOutput>
+    </None>
+    <None Include="gkh3673.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3673.feature.cs</LastGenOutput>
+    </None>
+    <None Include="gkh3719.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3719.feature.cs</LastGenOutput>
+    </None>
+    <None Include="gkh3763.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gkh3763.feature.cs</LastGenOutput>
+    </None>
+    <None Include="house_several_tariffs.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>house_several_tariffs.feature.cs</LastGenOutput>
+    </None>
+    <None Include="inspectors.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>inspectors.feature.cs</LastGenOutput>
+    </None>
+    <None Include="inspectors_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>inspectors_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="kind_works.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>kind_works.feature.cs</LastGenOutput>
+    </None>
+    <None Include="kind_works_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>kind_works_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="kind_work_notif_gji.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>kind_work_notif_gji.feature.cs</LastGenOutput>
+    </None>
+    <None Include="kind_work_notif_gji_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>kind_work_notif_gji_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="license_provived_docs.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>license_provived_docs.feature.cs</LastGenOutput>
+    </None>
+    <None Include="license_provived_docs_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>license_provived_docs_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="loan.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>loan.feature.cs</LastGenOutput>
+    </None>
+    <None Include="managing_organization.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>managing_organization.feature.cs</LastGenOutput>
+    </None>
+    <None Include="merging_accounts.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>merging_accounts.feature.cs</LastGenOutput>
+    </None>
+    <None Include="metering_devices.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>metering_devices.feature.cs</LastGenOutput>
+    </None>
+    <None Include="metering_devices_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>metering_devices_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="municipality.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>municipality.feature.cs</LastGenOutput>
+    </None>
+    <None Include="municipality_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>municipality_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="normative_docs.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>normative_docs.feature.cs</LastGenOutput>
+    </None>
+    <None Include="normative_docs_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>normative_docs_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ObjectCr.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ObjectCr.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ObjectCr_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ObjectCr_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ooi.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ooi.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ooi_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ooi_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="organization_form.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>organization_form.feature.cs</LastGenOutput>
+    </None>
+    <None Include="organization_form_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>organization_form_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="payment_doc_info.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>payment_doc_info.feature.cs</LastGenOutput>
+    </None>
+    <None Include="payment_doc_info_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>payment_doc_info_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="payment_doc_snapshot.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>payment_doc_snapshot.feature.cs</LastGenOutput>
+    </None>
+    <None Include="payment_penalties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>payment_penalties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="payment_penalties_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>payment_penalties_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="performed_work_act_payment.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>performed_work_act_payment.feature.cs</LastGenOutput>
+    </None>
+    <None Include="periodicity_services.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>periodicity_services.feature.cs</LastGenOutput>
+    </None>
+    <None Include="periodicity_services_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>periodicity_services_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="period_di.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>period_di.feature.cs</LastGenOutput>
+    </None>
+    <None Include="period_di_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>period_di_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="period_program_cr.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>period_program_cr.feature.cs</LastGenOutput>
+    </None>
+    <None Include="period_program_cr_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>period_program_cr_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="petition_to_courtType.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>petition_to_courtType.feature.cs</LastGenOutput>
+    </None>
+    <None Include="petition_to_courtType_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>petition_to_courtType_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="plans_actionGji.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>plans_actionGji.feature.cs</LastGenOutput>
+    </None>
+    <None Include="plans_actionGji_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>plans_actionGji_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Plans_InsCheckGji.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Plans_InsCheckGji.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Plans_InsCheckGji_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Plans_InsCheckGji_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="plans_jurPersonGji.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>plans_jurPersonGji.feature.cs</LastGenOutput>
+    </None>
+    <None Include="plans_jurPersonGji_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>plans_jurPersonGji_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="positions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>positions.feature.cs</LastGenOutput>
+    </None>
+    <None Include="positions_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>positions_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="privileged_category.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>privileged_category.feature.cs</LastGenOutput>
+    </None>
+    <None Include="privileged_category_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>privileged_category_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="programCr.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>programCr.feature.cs</LastGenOutput>
+    </None>
+    <None Include="programCr_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>programCr_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="public_services.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>public_services.feature.cs</LastGenOutput>
+    </None>
+    <None Include="public_services_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>public_services_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="real_estate_type.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>real_estate_type.feature.cs</LastGenOutput>
+    </None>
+    <None Include="real_estate_type_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>real_estate_type_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="recalculation_charges.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>recalculation_charges.feature.cs</LastGenOutput>
+    </None>
+    <None Include="recalculation_penalties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>recalculation_penalties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="recalc_penalties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>recalc_penalties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="register_houses.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>register_houses.feature.cs</LastGenOutput>
+    </None>
+    <None Include="register_personal_acc_owner.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>register_personal_acc_owner.feature.cs</LastGenOutput>
+    </None>
+    <None Include="register_personal_acc_owner_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>register_personal_acc_owner_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="regop_account.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>regop_account.feature.cs</LastGenOutput>
+    </None>
+    <None Include="reopen_pers_account.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>reopen_pers_account.feature.cs</LastGenOutput>
+    </None>
+    <None Include="role.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>role.feature.cs</LastGenOutput>
+    </None>
+    <None Include="role_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>role_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="roofing_materials.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>roofing_materials.feature.cs</LastGenOutput>
+    </None>
+    <None Include="roofing_materials_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>roofing_materials_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="sanctions_gji.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>sanctions_gji.feature.cs</LastGenOutput>
+    </None>
+    <None Include="sanctions_gji_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>sanctions_gji_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="server_calculations.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>server_calculations.feature.cs</LastGenOutput>
+    </None>
+    <None Include="change_personal_account_owner.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>change_personal_account_owner.feature.cs</LastGenOutput>
+    </None>
+    <None Include="stage_work_cr.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>stage_work_cr.feature.cs</LastGenOutput>
+    </None>
+    <None Include="stage_work_cr_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>stage_work_cr_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="state_duty.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>state_duty.feature.cs</LastGenOutput>
+    </None>
+    <None Include="bank_account_statement.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>bank_account_statement.feature.cs</LastGenOutput>
+    </None>
+    <None Include="types_ownership.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>types_ownership.feature.cs</LastGenOutput>
+    </None>
+    <None Include="types_ownership_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>types_ownership_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="type_court_gji.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>type_court_gji.feature.cs</LastGenOutput>
+    </None>
+    <None Include="type_court_gji_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>type_court_gji_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="type_group_ooi.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>type_group_ooi.feature.cs</LastGenOutput>
+    </None>
+    <None Include="type_group_ooi_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>type_group_ooi_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="type_project.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>type_project.feature.cs</LastGenOutput>
+    </None>
+    <None Include="type_project_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>type_project_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="type_services.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>type_services.feature.cs</LastGenOutput>
+    </None>
+    <None Include="type_services_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>type_services_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="UnitMeasure.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UnitMeasure.feature.cs</LastGenOutput>
+    </None>
+    <None Include="UnitMeasure_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UnitMeasure_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="user_actions_lock.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>user_actions_lock.feature.cs</LastGenOutput>
+    </None>
+    <None Include="User_actions_log.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>User_actions_log.feature.cs</LastGenOutput>
+    </None>
+    <None Include="violationsGji.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>violationsGji.feature.cs</LastGenOutput>
+    </None>
+    <None Include="violationsGji_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>violationsGji_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="violations_claimWork.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>violations_claimWork.feature.cs</LastGenOutput>
+    </None>
+    <None Include="violations_claimWork_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>violations_claimWork_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="wall_materials.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>wall_materials.feature.cs</LastGenOutput>
+    </None>
+    <None Include="wall_materials_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>wall_materials_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="works.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>works.feature.cs</LastGenOutput>
+    </None>
+    <None Include="works_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>works_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="work_kinds_current_repair.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>work_kinds_current_repair.feature.cs</LastGenOutput>
+    </None>
+    <None Include="work_kinds_current_repair_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>work_kinds_current_repair_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="zonal_inspection.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>zonal_inspection.feature.cs</LastGenOutput>
+    </None>
+    <None Include="zonal_inspection_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>zonal_inspection_boundaries.feature.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

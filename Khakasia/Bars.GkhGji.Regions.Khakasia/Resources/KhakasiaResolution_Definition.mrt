@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="0" />
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="29">
+      <value>,НомерОпределения,НомерОпределения,System.String,,False,False</value>
+      <value>,ДатаОпределения,ДатаОпределения,System.String,,False,False</value>
+      <value>,ДолжностьРуководителя,ДолжностьРуководителя,System.String,,False,False</value>
+      <value>,Руководитель,Руководитель,System.String,,False,False</value>
+      <value>,ДатаПостановления,ДатаПостановления,System.String,,False,False</value>
+      <value>,НомерПостановления,НомерПостановления,System.String,,False,False</value>
+      <value>,СтатьяЗакона,СтатьяЗакона,System.String,,False,False</value>
+      <value>новые</value>
+      <value>новые,ОписаниеСтатьи,ОписаниеСтатьи,System.String,,False,False</value>
+      <value>новые,ВынесшийПостановление,ВынесшийПостановление,System.String,,False,False</value>
+      <value>новые,ТипИсполнителя,ТипИсполнителя,System.String,,False,False</value>
+      <value>новые,РуководительФИОСокр,РуководительФИОСокр,System.String,,False,False</value>
+      <value>новые,Штраф,Штраф,System.Decimal,,False,False</value>
+      <value>новые,Контрагент,Контрагент,System.String,,False,False</value>
+      <value>новые,КонтрагентСокр,КонтрагентСокр,System.String,,False,False</value>
+      <value>новые,КонтрагентИНН,КонтрагентИНН,System.String,,False,False</value>
+      <value>новые,КонтрагентКПП,КонтрагентКПП,System.String,,False,False</value>
+      <value>новые,КонтрагентЮрАдрес,КонтрагентЮрАдрес,System.String,,False,False</value>
+      <value>новые,КонтрагентКонтактДолжность,КонтрагентКонтактДолжность,System.String,,False,False</value>
+      <value>новые,КонтрагентКонтактДолжностьРП,КонтрагентКонтактДолжностьРП,System.String,,False,False</value>
+      <value>новые,КонтрагентКонтактДолжностьДП,КонтрагентКонтактДолжностьДП,System.String,,False,False</value>
+      <value>новые,ФизЛицоФИО,ФизЛицоФИО,System.String,,False,False</value>
+      <value>новые,ФизЛицоФИОРП,ФизЛицоФИОРП,System.String,,False,False</value>
+      <value>новые,ФизЛицоФИОДП,ФизЛицоФИОДП,System.String,,False,False</value>
+      <value>новые,ФизЛицоДолжность,ФизЛицоДолжность,System.String,,False,False</value>
+      <value>новые,ФизЛицоДолжностьРП,ФизЛицоДолжностьРП,System.String,,False,False</value>
+      <value>новые,ФизЛицоДолжностьДП,ФизЛицоДолжностьДП,System.String,,False,False</value>
+      <value>новые,ФизЛицоАдрес,ФизЛицоАдрес,System.String,,False,False</value>
+      <value>новые,ФизЛицоДУЛ,ФизЛицоДУЛ,System.String,,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="2" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="1">
+        <ReportTitleBand1 Ref="3" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,18,11</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text1 Ref="4" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,18,26.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Tahoma,9.75,Regular,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="2" />
+              <Parent isRef="3" />
+              <Text>1) {НомерОпределения} - НомерОпределения - выводить значение поля "номер" в редактировании определения в карточке постановления
+2) {ДатаОпределения} - ДатаОпределения - выводить значение поля "дата" в редактировании определения в карточке постановления
+3) {ДолжностьРуководителя} - ДолжностьРуководителя- выводить должность  из поля "ДЛ, вынесшее определение" в редактировании определения в карточке постановления
+4) {Руководитель}- Руководитель- выводить ФИО  из поля "ДЛ, вынесшее определение" в редактировании определения в карточке постановления 
+5) {НомерПостановления} - НомерПостановления- значение поля "номер документа" из постановления
+6) {ДатаПостановления} - ДатаПостановления - значение поля "Дата" из постановления
+7) {СтатьяЗакона} - СтатьяЗакона- вводить статью из вкладки "статьи закона" в карточке протокола из которого сделано постановление. Если несколько то через запятую
+8) {ОписаниеСтатьи} - ОписаниеСтатьи - выводить описание статьи из вкладки "статьи закона" в карточке протокола из которого сделано постановление
+9) {ВынесшийПостановление} - ВынесшийПостановление- выводить значение поля "Должностное лицо" в карточке постановления
+10) {ТипИсполнителя} - ТипИсполнителя- выводить кода 0,9,11,8,15,18,4,17,18,6,7,14,20,2,3,1,10,12,13,16,19,5,19 типов исполнителей (для условного форматирования в отчете) в карточке постановления
+11) {РуководительФИОСокр} - РуководительФИОСокр- выводить сокращенное имя из поля "ДЛ, вынесшее определение" в редактировании определения в карточке постановления, Сокращенное имя брать из поля "Фамилия И.О." из справочника Инспекторы
+12) {Штраф} - Штраф - выводить значение поля "сумма штрава" в каточке постановления
+13) {Контрагент} - Контрагент- выводить полное наименование поля "Контрагент", выводить из справочника Контрагентов
+14) {КонтрагентСокр}  - КонтрагентСокр - выводить сокращенное наименование поля "Контрагент", выводить из справочника Контрагентов
+15) {КонтрагентИНН} - КонтрагентИНН - выводить ИНН контрагента из поля "конрагент", выводить из справочника Контрагентов
+16) {КонтрагентКПП} - КонтрагентКПП - выводить КПП контрагента из поля "конрагент", выводить из справочника Контрагентов
+17) {КонтрагентЮрАдрес} - КонтрагентЮрАдрес - выводить юр адрес контрагента из поля "конрагент", выводить из справочника Контрагентов
+18) {КонтрагентКонтактДолжность} - КонтрагентКонтактДолжность - выводить должность из контактов контрагента, выводить из справочника Контрагентов, вкладка контакты
+19) {КонтрагентКонтактДолжностьРП} - КонтрагентКонтактДолжностьРП - выводить должность в родительном падеже из контактов контрагента, выводить из справочника Контрагентов, вкладка контакты
+20) {КонтрагентКонтактДолжностьДП} - КонтрагентКонтактДолжностьДП - выводить должность в дательном падеже из контактов контрагента, выводить из справочника Контрагентов, вкладка контакты
+21) {ФизЛицоФИО} - ФизЛицоФИО - выводить значение поля физ лицо в карточке постановления
+22) {ФизЛицоФИОРП} - ФизЛицоФИОРП - выводить выводить значение поля физ лицо в карточке постановления в родительном падеже
+23) {ФизЛицоФИОДП} - ФизЛицоФИОДП - выводить значение поля физ лицо в карточке постановления в дательном падеже
+24) {ФизЛицоДолжность} - ФизЛицоДолжность - выводить значение поля должность в карточке постановления
+25) {ФизЛицоДолжностьРП}  - ФизЛицоДолжностьРП - выводить значение поля должность в карточке постановления в родительном падеже
+26) {ФизЛицоДолжностьДП} - ФизЛицоДолжностьДП - выводить значение поля должность в карточке постановления в дательном падеже
+27) {ФизЛицоАдрес} - ФизЛицоАдрес - выводить значение поля Адрес (место жительства, телефон)
+28) {ФизЛицоДУЛ} - ФизЛицоДУЛ - выводить значение поля документ, удостоверяющий личность
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+        </ReportTitleBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>0ab7c5868b01445d91f5288ad2d78d94</Guid>
+      <LargeHeight>True</LargeHeight>
+      <Margins>2,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="5" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="6" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>8/27/2014 12:07:30 PM</ReportChanged>
+  <ReportCreated>6/11/2014 11:49:31 AM</ReportCreated>
+  <ReportFile>C:\_WORK\_REPOS\tfs\GKH.GKH.CMMI\Dev\Khakasia\Bars.GkhGji.Regions.Khakasia\Resources\KhakasiaResolution_Definition.mrt</ReportFile>
+  <ReportGuid>fcb4bc2c7b8f4cfaa6bd2c397202a391</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

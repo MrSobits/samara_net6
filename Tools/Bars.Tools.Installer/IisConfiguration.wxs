@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:iis="http://schemas.microsoft.com/wix/IIsExtension"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+
+  <Fragment>
+    <?include Configuration.wxi ?>
+
+    <iis:WebSite Id="DefaultWebSite" Description='Default Web Site'>
+      <iis:WebAddress Id="AllUnassigned" Port="80" />
+    </iis:WebSite>
+
+    <DirectoryRef Id="INSTALLLOCATION">
+      <Component Id="AppPoolCmp" Guid="C1E126F3-CE39-4511-8EED-915A4AF9B37B" KeyPath="yes" >
+        <CreateFolder>
+          <util:PermissionEx User="BUILTIN\IIS_IUSRS" GenericAll="yes" />
+        </CreateFolder>
+        <iis:WebAppPool Id="License_App_Pool"
+                        Name="[VIRTUAL_APP_NAME][WEB_APPPOOL_NAME_POSTFIX]"
+                        Identity="applicationPoolIdentity"
+                        ManagedPipelineMode="Integrated"
+                        ManagedRuntimeVersion="v4.0"
+                         />
+      </Component>
+
+      <Component Id="VirtualApp"
+             Guid="E6EBB8BB-0739-40CE-825F-E45D686EC020"
+             KeyPath="yes" >
+        <iis:WebVirtualDir Id="SiteWirtualPath"
+                  Alias="[VIRTUAL_APP_NAME]" Directory="INSTALLLOCATION"
+                  WebSite="DefaultWebSite">
+          <iis:WebDirProperties Id="MyWebVirtDirProperties"
+             AnonymousAccess="yes" BasicAuthentication="no"
+             WindowsAuthentication="yes" />
+          <iis:WebApplication Id="MyWebWebApplication"
+                              Name="[VIRTUAL_APP_NAME]"
+                              WebAppPool="License_App_Pool"
+                              />
+        </iis:WebVirtualDir>
+      </Component>
+    </DirectoryRef>
+
+    <ComponentGroup Id="IssConfiguration">
+      <ComponentRef Id="AppPoolCmp" />
+      <ComponentRef Id="VirtualApp" />
+    </ComponentGroup>
+
+  </Fragment>
+</Wix>

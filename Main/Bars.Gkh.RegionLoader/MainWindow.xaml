@@ -1,0 +1,42 @@
+﻿<Window
+    x:Class="Bars.Gkh.RegionLoader.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Конфигуратор сборки"
+    Height="135"
+    Width="550"
+    MinHeight="135"
+    MinWidth="400"
+    WindowStartupLocation="CenterScreen"
+    Icon="/mainicon.ico"
+    x:Name="frmMain"
+    Style="{StaticResource VS2012WindowStyle}"
+    >
+
+    <Grid>
+        <DockPanel RenderTransformOrigin="0.949,0.316" Margin="0,63,0,0">
+            <StatusBar
+        		DockPanel.Dock="Bottom"
+        		Height="24">
+                <TextBlock Margin="3,0,0,0"><Run x:Name="statusBar" Text="Выберите регион для сборки"/></TextBlock>
+            </StatusBar>
+        </DockPanel>
+        <ComboBox
+            x:Name="cmbxRegions"
+            HorizontalAlignment="Left"
+	        Margin="30,20,0,0"
+	        VerticalAlignment="Top"
+	        Width="355"
+            SelectionChanged="OnSelectionChanged" Background="{DynamicResource TitleBarBackgroundBrush}"
+            />
+        <Button Content="Установить" 
+                x:Name="btnSetRegion"
+                HorizontalAlignment="Left" 
+                Margin="390,20,0,0" 
+                VerticalAlignment="Top" 
+                Width="114"
+                Click="OnSetRegion" Background="{DynamicResource TitleBarBackgroundBrush}"
+                />
+        <Label Content="Регион" HorizontalAlignment="Left" Margin="24,-5,0,0" VerticalAlignment="Top" Width="76" Height="30"/>
+    </Grid>
+</Window>

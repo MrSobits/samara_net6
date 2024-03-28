@@ -1,0 +1,42 @@
+Ext.define('B4.model.realityobj.TechnicalMonitoring', {
+    extend: 'B4.base.Model',
+    idProperty: 'Id',
+    proxy: {
+        type: 'b4proxy',
+        controllerName: 'RealityObjectTechnicalMonitoring'
+    },
+    fields: [
+        { name: 'Id', useNull: true },
+        { name: 'RealityObject', defaultValue: null },
+        { name: 'MonitoringTypeDict', defaultValue: null },
+        { name: 'Name' },
+        { name: 'DocumentDate' },
+        { name: 'Description' },
+        { name: 'File' },
+        { name: 'UsedInExport', defaultValue: 10 },
+        { name: 'TotalBuildingVolume'},
+        { name: 'AreaMkd'},
+        { name: 'AreaLivingNotLivingMkd'},
+        { name: 'AreaLiving'},
+        { name: 'AreaNotLiving'},
+        { name: 'AreaNotLivingFunctional'},
+        { name: 'Floors'},
+        { name: 'NumberApartments'},
+        { name: 'WallMaterial' },
+        { name: 'PhysicalWear' },
+        //{ name: 'TotalWear' },
+        { name: 'CapitalGroup' },
+        { name: 'WearFoundation' },
+        { name: 'WearWalls' },
+        { name: 'WearRoof' },
+        { name: 'WearInnerSystems' },
+        { name: 'WearHeating' },
+        { name: 'WearWater' },
+        { name: 'WearWaterCold' },
+        { name: 'WearWaterHot' },
+        { name: 'WearSewere' },
+        { name: 'WearElectric' },
+        { name: 'WearLift' },
+        { name: 'WearGas' }
+    ]
+});

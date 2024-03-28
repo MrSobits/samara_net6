@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="1">
+      <ПредоставляемыеДокументы Ref="2" type="DataTableSource" isKey="true">
+        <Alias>ПредоставляемыеДокументы</Alias>
+        <Columns isList="true" count="1">
+          <value>ПредоставляемыйДокумент,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ПредоставляемыеДокументы</Name>
+        <NameInSource>ПредоставляемыеДокументы</NameInSource>
+      </ПредоставляемыеДокументы>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="19">
+      <value>,ВидПроверки,ВидПроверки,System.String,,False,False</value>
+      <value>,КодПроверки,КодПроверки,,System.String,,False,False,True</value>
+      <value>,НомерПриказа,НомерПриказа,System.String,,False,False</value>
+      <value>,ДатаПриказа,ДатаПриказа,System.String,,False,False</value>
+      <value>,ПериодС,ПериодС,System.String,,False,False</value>
+      <value>,ПериодПо,ПериодПо,System.String,,False,False</value>
+      <value>,ПредметПроверки,ПредметПроверки,System.String,,False,False</value>
+      <value>,Цель,Цель,System.String,,False,False</value>
+      <value>,РуководительДолжность,РуководительДолжность,System.String,,False,False</value>
+      <value>,РуководительФИОСокр,РуководительФИОСокр,System.String,,False,False</value>
+      <value>,ОтветственныйДолжность,ОтветственныйДолжность,System.String,,False,False</value>
+      <value>,ОтветственныйФИОСокр,ОтветственныйФИОСокр,System.String,,False,False</value>
+      <value>,УправОРГ,УправОРГ,System.String,,False,False</value>
+      <value>,АдресКонтрагента,АдресКонтрагента,System.String,,False,False</value>
+      <value>,ФИОРукОрг,ФИОРукОрг,System.String,,False,False</value>
+      <value>,Вотношении,Вотношении,,System.String,,False,False,True</value>
+      <value>,Адрес,Адрес,System.String,,False,False</value>
+      <value>,ОтветсвенныйИнспекторСокр,ОтветсвенныйИнспекторСокр,System.String,,False,False</value>
+      <value>,ДолжностьИнспектра,ДолжностьИнспектра,System.String,,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="3" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="3">
+        <ReportTitleBand1 Ref="4" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,18,11.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text1 Ref="5" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,18,11.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>{КодПроверки} - КодПроверки
+{ВидПроверки} - ВидПроверки
+{НомерПриказа} - НомерПриказа
+{ДатаПриказа} - ДатаПриказа
+{ПериодС} - ПериодС
+{ПериодПо} - ПериодПо
+{ПредметПроверки} - ПредметПроверки
+{Цель} - Цель
+{РуководительДолжность} - РуководительДолжность
+{РуководительФИОСокр} - РуководительФИОСокр
+{ОтветственныйДолжность} - ОтветственныйДолжность
+{ОтветственныйФИОСокр} - ОтветственныйФИОСокр
+{УправОРГ} - УправОРГ
+{АдресКонтрагента} - АдресКонтрагента
+{ФИОРукОрг} - ФИОРукОрг
+{Вотношении} - Вотношении - пока ничем незаполняется
+{Адрес} - Адрес
+{ОтветсвенныйИнспекторСокр} - ОтветсвенныйИнспекторСокр
+{ДолжностьИнспектра} - ДолжностьИнспектра</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+        </ReportTitleBand1>
+        <HeaderBand1 Ref="6" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,13,18,0.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text2 Ref="7" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,18,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+              <Text>Предоставляемые дкоументы:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+        </HeaderBand1>
+        <DataBand1 Ref="8" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,14.4,18,0.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text3 Ref="9" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,18,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="3" />
+              <Parent isRef="8" />
+              <Text>{ПредоставляемыеДокументы.ПредоставляемыйДокумент}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+            </Text3>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>ПредоставляемыеДокументы</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>df4f287fff3e4800b4539c0fc760a401</Guid>
+      <LargeHeight>True</LargeHeight>
+      <Margins>2,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="10" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="11" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>8/22/2014 9:55:00 AM</ReportChanged>
+  <ReportCreated>6/3/2014 9:53:36 AM</ReportCreated>
+  <ReportFile>C:\_WORK\_REPOS\tfs\GKH.GKH.CMMI\Dev\Tula\Bars.GkhGji.Regions.Tula\Resources\DisposalNotification.mrt</ReportFile>
+  <ReportGuid>6bcd91ed60a84416bb5b32009cb548ad</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

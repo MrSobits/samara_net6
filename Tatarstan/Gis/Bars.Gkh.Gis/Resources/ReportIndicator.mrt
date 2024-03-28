@@ -1,0 +1,540 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="1">
+      <ПараметрыОтчета Ref="2" type="Stimulsoft.Report.Dictionary.StiBusinessObject" isKey="true">
+        <Alias>ПараметрыОтчета</Alias>
+        <BusinessObjects isList="true" count="0" />
+        <Category>ПараметрыОтчета</Category>
+        <Columns isList="true" count="1">
+          <value>housesType,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Guid>a3cda55cc00f44588d2139f6748955af</Guid>
+        <Name>ПараметрыОтчета</Name>
+      </ПараметрыОтчета>
+    </BusinessObjects>
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="3">
+      <Main Ref="3" type="DataTableSource" isKey="true">
+        <Alias>Main</Alias>
+        <Columns isList="true" count="8">
+          <value>MunicipalityId,System.Int64</value>
+          <value>MunicipalityName,System.String</value>
+          <value>Address,System.String</value>
+          <value>ManOrgs,System.String</value>
+          <value>IndicatorId,System.Int64</value>
+          <value>IndicatorName,System.String</value>
+          <value>IndicatorValue,System.String</value>
+          <value>HouseId,System.Int64</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Main</Name>
+        <NameInSource>Data</NameInSource>
+      </Main>
+      <Detail Ref="4" type="DataTableSource" isKey="true">
+        <Alias>Detail</Alias>
+        <Columns isList="true" count="5">
+          <value>HouseId,System.Int64</value>
+          <value>IndicatorId,System.Int64</value>
+          <value>Date,System.DateTime</value>
+          <value>Value,System.String</value>
+          <value>IsNormal,System.Boolean</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Detail</Name>
+        <NameInSource>Data</NameInSource>
+      </Detail>
+      <Months Ref="5" type="DataTableSource" isKey="true">
+        <Alias>Months</Alias>
+        <Columns isList="true" count="1">
+          <value>Date,System.DateTime</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Months</Name>
+        <NameInSource>Data</NameInSource>
+      </Months>
+    </DataSources>
+    <Relations isList="true" count="1">
+      <MainDetail Ref="6" type="DataRelation" isKey="true">
+        <Alias>MainDetail</Alias>
+        <ChildColumns isList="true" count="2">
+          <value>HouseId</value>
+          <value>IndicatorId</value>
+        </ChildColumns>
+        <ChildSource isRef="4" />
+        <Dictionary isRef="1" />
+        <Name>MainDetail</Name>
+        <NameInSource>MainDetail</NameInSource>
+        <ParentColumns isList="true" count="2">
+          <value>HouseId</value>
+          <value>IndicatorId</value>
+        </ParentColumns>
+        <ParentSource isRef="3" />
+      </MainDetail>
+    </Relations>
+    <Report isRef="0" />
+    <Variables isList="true" count="1">
+      <value>,showText,showText,System.Boolean,true,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <NumberOfPass>DoublePass</NumberOfPass>
+  <Pages isList="true" count="1">
+    <Page1 Ref="7" type="Page" isKey="true">
+      <AfterPrintEvent>if (IsSecondPass) showText = true;</AfterPrintEvent>
+      <BeforePrintEvent>if (IsSecondPass)
+	Text2.Width = (double)ht[PageNumber];
+
+if (IsFirstPass)
+	ht[PageNumber] = 0;</BeforePrintEvent>
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="4">
+        <ReportTitleBand1 Ref="8" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,28.7,1</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text1 Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.4,13.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,11.25,Bold,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{ПараметрыОтчета.housesType == null || ПараметрыОтчета.housesType == "" ? "" : ("Тип дома: " + ПараметрыОтчета.housesType)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </ReportTitleBand1>
+        <HeaderBand1 Ref="10" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,2.2,28.7,2</ClientRectangle>
+          <Components isList="true" count="2">
+            <CrossHeaderBand1 Ref="11" type="Stimulsoft.Report.Components.StiCrossHeaderBand" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,16.2,2</ClientRectangle>
+              <Components isList="true" count="4">
+                <Text5 Ref="12" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,0,5,2</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,10,Bold</Font>
+                  <Guid>2428b7d8c5514b45bd074e97a27ad3f6</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text5</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="11" />
+                  <Text>Адрес</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text5>
+                <Text6 Ref="13" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>5,0,4.2,2</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,10,Bold</Font>
+                  <Guid>70a86fc1718c465c8c9a76163d3add7e</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text6</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="11" />
+                  <Text>Управляющая компания</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text6>
+                <Text7 Ref="14" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>9.2,0,4.2,2</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,10,Bold</Font>
+                  <Guid>10a3116c5c4146ea8e590cd0546bfe17</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text7</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="11" />
+                  <Text>Наименование индикатора</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text7>
+                <Text4 Ref="15" type="Text" isKey="true">
+                  <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;3;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>13.4,0,2.8,2</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,10,Bold</Font>
+                  <Guid>526877946aa14d68a5860d36094c96c2</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text4</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="11" />
+                  <Text>Нормативное значение</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text4>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <Name>CrossHeaderBand1</Name>
+              <Page isRef="7" />
+              <Parent isRef="10" />
+            </CrossHeaderBand1>
+            <CrossDataBand1 Ref="16" type="CrossDataBand" isKey="true">
+              <AfterPrintEvent>if (IsSecondPass)showText = false;</AfterPrintEvent>
+              <BeforePrintEvent>if (IsFirstPass) 
+{
+	ht[PageNumber] = Double.Parse(ht[PageNumber].ToString()) + CrossDataBand1.Width;
+}</BeforePrintEvent>
+              <Brush>Transparent</Brush>
+              <BusinessObjectGuid isNull="true" />
+              <CanGrow>False</CanGrow>
+              <ClientRectangle>16.2,0,2.8,2</ClientRectangle>
+              <Components isList="true" count="3">
+                <Text3 Ref="17" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <CanBreak>True</CanBreak>
+                  <ClientRectangle>0,0.8,2.8,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,10</Font>
+                  <Guid>5abeca400b1f49fbbec9dec91a1ef4e9</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text3</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="16" />
+                  <Text>{Months.Date.ToString("MMMM yyyy")}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text3>
+                <Text8 Ref="18" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <CanBreak>True</CanBreak>
+                  <ClientRectangle>0,1.2,2.8,0.8</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,10</Font>
+                  <Guid>87eaaca64bfa49dc815245c17b76c3ae</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text8</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="16" />
+                  <Text>Значение индикатора дома</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text8>
+                <Text2 Ref="19" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <CanBreak>True</CanBreak>
+                  <CanGrow>True</CanGrow>
+                  <ClientRectangle>0,0,2.8,0.8</ClientRectangle>
+                  <Conditions isList="true" count="1">
+                    <value>_x007B__x0021_showText_x007D_,Red,Transparent,Arial_x002C_8,False,False,,,None</value>
+                  </Conditions>
+                  <Font>Times New Roman,10,Bold</Font>
+                  <Guid>c792e56a79534f3aaf618c3f51cdee66</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text2</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="16" />
+                  <Text>Значения индикатора</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>Expression</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text2>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <DataRelationName isNull="true" />
+              <DataSourceName>Months</DataSourceName>
+              <Filters isList="true" count="0" />
+              <Name>CrossDataBand1</Name>
+              <Page isRef="7" />
+              <Parent isRef="10" />
+              <Sort isList="true" count="0" />
+            </CrossDataBand1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </HeaderBand1>
+        <GroupHeaderBand1 Ref="20" type="GroupHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,5,28.7,0.4</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text9 Ref="21" type="Text" isKey="true">
+              <BeforePrintEvent>if (IsFirstPass) 
+{
+	Text9.Width = Text9.Width + 2.8 * Months.Count;
+}</BeforePrintEvent>
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,16.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,10,Bold</Font>
+              <Guid>35aa4a62819746bfaf90f28784277f25</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="7" />
+              <Parent isRef="20" />
+              <Text>{Main.MunicipalityName}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text9>
+          </Components>
+          <Condition>{Main.MunicipalityId}</Condition>
+          <Conditions isList="true" count="0" />
+          <Name>GroupHeaderBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </GroupHeaderBand1>
+        <DataBand1 Ref="22" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,6.2,28.7,0.4</ClientRectangle>
+          <Components isList="true" count="2">
+            <CrossHeaderBand2 Ref="23" type="Stimulsoft.Report.Components.StiCrossHeaderBand" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,16.2,0.4</ClientRectangle>
+              <Components isList="true" count="4">
+                <Text10 Ref="24" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <CanGrow>True</CanGrow>
+                  <ClientRectangle>0,0,5,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,10</Font>
+                  <GrowToHeight>True</GrowToHeight>
+                  <Guid>5f53530c6cc14ae4bcacdec5d8ee3fce</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text10</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="23" />
+                  <ProcessingDuplicates>Merge</ProcessingDuplicates>
+                  <Text>{Main.Address}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text10>
+                <Text11 Ref="25" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <CanGrow>True</CanGrow>
+                  <ClientRectangle>5,0,4.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,10</Font>
+                  <GrowToHeight>True</GrowToHeight>
+                  <Guid>dd5c5a6238df456b85ba4728835c44c9</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text11</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="23" />
+                  <ProcessingDuplicates>Merge</ProcessingDuplicates>
+                  <Text>{Main.ManOrgs}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text11>
+                <Text12 Ref="26" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <CanGrow>True</CanGrow>
+                  <ClientRectangle>9.2,0,4.2,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,10</Font>
+                  <GrowToHeight>True</GrowToHeight>
+                  <Guid>f6795a2fb36f433ab4047098e4a20ef3</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text12</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="23" />
+                  <ProcessingDuplicates>Merge</ProcessingDuplicates>
+                  <Text>{Main.IndicatorName}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text12>
+                <Text14 Ref="27" type="Text" isKey="true">
+                  <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;3;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <CanGrow>True</CanGrow>
+                  <ClientRectangle>13.4,0,2.8,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Times New Roman,10</Font>
+                  <GrowToHeight>True</GrowToHeight>
+                  <Guid>61eb10a7fe554f0da55055cda3063bea</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text14</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="23" />
+                  <ProcessingDuplicates>Merge</ProcessingDuplicates>
+                  <Text>{Main.IndicatorValue}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text14>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <Name>CrossHeaderBand2</Name>
+              <Page isRef="7" />
+              <Parent isRef="22" />
+            </CrossHeaderBand2>
+            <CrossDataBand2 Ref="28" type="CrossDataBand" isKey="true">
+              <Brush>Transparent</Brush>
+              <BusinessObjectGuid isNull="true" />
+              <ClientRectangle>16.2,0,2.8,0.4</ClientRectangle>
+              <Components isList="true" count="1">
+                <Text13 Ref="29" type="Text" isKey="true">
+                  <Border>All;Black;1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <CanBreak>True</CanBreak>
+                  <CanGrow>True</CanGrow>
+                  <ClientRectangle>0,0,2.8,0.4</ClientRectangle>
+                  <Conditions isList="true" count="1">
+                    <value>Detail.IsNormal,EqualTo,false,,String,Red,Transparent,Arial_x002C_8,True,False,,,All</value>
+                  </Conditions>
+                  <Font>Times New Roman,10</Font>
+                  <GrowToHeight>True</GrowToHeight>
+                  <Guid>ede0a2c1e1fe477c8ae1ee8e1069861d</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text13</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="28" />
+                  <Text>{Detail.Value}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <Type>DataColumn</Type>
+                  <VertAlignment>Center</VertAlignment>
+                </Text13>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <DataRelationName>MainDetail</DataRelationName>
+              <DataSourceName>Detail</DataSourceName>
+              <Filters isList="true" count="0" />
+              <MasterComponent isRef="22" />
+              <Name>CrossDataBand2</Name>
+              <Page isRef="7" />
+              <Parent isRef="22" />
+              <Sort isList="true" count="0" />
+            </CrossDataBand2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>Main</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <Sort isList="true" count="4">
+            <value>ASC</value>
+            <value>Address</value>
+            <value>ASC</value>
+            <value>IndicatorName</value>
+          </Sort>
+        </DataBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>5e743bb7ed1e491e960986a0454cdb5a</Guid>
+      <Margins>0.5,0.5,0.5,0.5</Margins>
+      <Name>Page1</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>21</PageHeight>
+      <PageWidth>29.7</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+      <UnlimitedBreakable>False</UnlimitedBreakable>
+      <UnlimitedHeight>True</UnlimitedHeight>
+      <Watermark Ref="30" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="31" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <PrintingEvent> if (IsFirstPass) 
+{
+	Page1.Width = Page1.Width + 2.8 * Months.Count;
+}</PrintingEvent>
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>7/30/2014 1:46:25 AM</ReportChanged>
+  <ReportCreated>6/20/2014 1:19:46 PM</ReportCreated>
+  <ReportFile>D:\TFS\GKH.GIS\Dev\Bars.Gkh.Gis\Resources\ReportIndicator.mrt</ReportFile>
+  <ReportGuid>5a5fdb0caf1a4bf69b43e3c800fea993</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2013.3.1800</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+		
+		private static System.Collections.Hashtable ht = new System.Collections.Hashtable();
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

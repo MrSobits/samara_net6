@@ -1,0 +1,1147 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="3">
+      <СекцияЭксперты Ref="2" type="DataTableSource" isKey="true">
+        <Alias>СекцияЭксперты</Alias>
+        <Columns isList="true" count="1">
+          <value>Эксперты,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>СекцияЭксперты</Name>
+        <NameInSource>СекцияЭксперты</NameInSource>
+      </СекцияЭксперты>
+      <СекцияДокументы Ref="3" type="DataTableSource" isKey="true">
+        <Alias>СекцияДокументы</Alias>
+        <Columns isList="true" count="1">
+          <value>ПредоставляемыйДокумент,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>СекцияДокументы</Name>
+        <NameInSource>СекцияДокументы</NameInSource>
+      </СекцияДокументы>
+      <СекцияПредметПроверки Ref="4" type="DataTableSource" isKey="true">
+        <Alias>СекцияПредметПроверки</Alias>
+        <Columns isList="true" count="3">
+          <value>ПредметПроверки,System.String</value>
+          <value>Активная,System.String</value>
+          <value>Выбрано,System.Boolean</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>СекцияПредметПроверки</Name>
+        <NameInSource>СекцияПредметПроверки</NameInSource>
+      </СекцияПредметПроверки>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="50">
+      <value>,ВидПроверки,ВидПроверки,System.String,внеплановой_x0020_документарной,False,False</value>
+      <value>,ДатаРаспоряжения,ДатаРаспоряжения,System.String,_x00AB_02_x00BB__x0020_августа_x0020_2013_x0020_г.,False,False</value>
+      <value>,НомерРаспоряжения,НомерРаспоряжения,System.String,_x0032_309,False,False</value>
+      <value>,УправОрг,УправОрг,System.String,Открытого_x0020_акционерного_x0020_общества_x0020__x00AB_Томская_x0020_энергосбытовая_x0020_компания_x00BB_,False,False</value>
+      <value>,ИННУправОрг,ИННУправОрг,System.String,_x0037_017114680,False,False</value>
+      <value>,УправОргСокр,УправОргСокр,System.String,ОАО_x0020__x00AB_Томскэнергосбыт_x00BB_,False,False</value>
+      <value>,АдресКонтрагента,АдресКонтрагента,System.String,г._x0020_Томск_x002C__x0020_ул._x0020_Котовского_x002C__x0020_д._x0020_19,False,False</value>
+      <value>,АдресКонтрагентаФакт,АдресКонтрагентаФакт,System.String,г._x0020_Томск_x002C__x0020_ул._x0020_Котовского_x002C__x0020_д._x0020_19,False,False</value>
+      <value>,ДомаИАдреса,ДомаИАдреса,System.String,г._x0020_Томск_x002C__x0020_ул._x0020_Учебная_x002C__x0020_д._x0020_47,False,False</value>
+      <value>,ДолжностьФИОВП,ДолжностьФИОВП,System.String,консультанта_x0020__x2013__x0020_государственного_x0020_жилищного_x0020_инспектора_x0020_Томской_x0020_области_x0020_Сыркашева_x0020_Владимира_x0020_Владимировича,False,False</value>
+      <value>,Цель,Цель,System.String,защиты_x0020_прав_x0020_и_x0020_законных_x0020_интересов_x0020_граждан_x0020_и_x0020_государства_x0020_при_x0020_предоставлении_x0020_населению_x0020_коммунальных_x002F_жилищных_x0020_услуг,False,False</value>
+      <value>,ОснованиеОбследованияПриказа,ОснованиеОбследованияПриказа,System.String,обращение_x0020_граждан_x002C__x0020_поступившее_x0020_в_x0020_Департамент_x0020_из_x0020_Управления_x0020_Президента_x0020_по_x0020_работе_x0020_с_x0020_обращениями_x0020_граждан_x0020_и_x0020_организаций_x0020__x0028_вх._x0020__x2116__x0020_2309_x0020_от_x0020_27.07.2013_x0029__x0020_по_x0020_вопросу_x0020_нарушения_x0020_порядка_x0020_расчета_x0020_и_x0020__x0020_внесения_x0020_платы_x0020_за_x0020_коммунальную_x0020_услугу_x0020_по_x0020_электроснабжению_x0020_жильцам_x0020_жилого_x0020_дома_x002C__x0020_расположенного_x0020_по_x0020_адресу:_x0020_г._x0020_Томск_x002C__x0020_ул._x0020_Учебная_x002C__x0020_д._x0020_47,False,False</value>
+      <value>,Задача,Задача,System.String,контроль_x0020_за_x0020_нормативным_x0020_обеспечением_x0020_населения_x000D__x000A__x000D__x000A_коммунальными_x0020_услугами_x0020__x002F__x0020_контроль_x0020_за_x0020_использованием_x0020_и_x0020_сохранностью_x0020_жилищного_x0020_фонда_x0020_Томской_x0020_области_x000D__x000A_,False,False</value>
+      <value>,НачалоПериода,НачалоПериода,System.String,_x00AB__x0009_06_x0009__x00BB__x0009_августа_x0009_20_x0009_13_x0009_г.,False,False</value>
+      <value>,ОкончаниеПериода,ОкончаниеПериода,System.String,_x00AB__x0009_02_x0009__x00BB__x0009_сентября_x0009_20_x0009_13_x0009_г.,False,False</value>
+      <value>,ПравовоеОснование,ПравовоеОснование,System.String,Правила_x0020_предоставления_x0020_коммунальных_x0020_услуг_x0020_собственникам_x0020_и_x0020_пользователям_x0020_помещений_x0020_в_x0020_многоквартирных_x0020_домах_x0020_и_x0020_жилых_x0020_домов_x002C__x0020_утвержденных_x0020_постановлением_x0020_Правительства_x0020_РФ_x0020_от_x0020_06.05.2011_x0020__x2116__x0020_354_x0020__x002F__x0020_Правила_x0020_и_x0020_нормы_x0020_технической_x0020_эксплуатации_x0020_жилищного_x0020_фонда_x002C__x0020_утвержденные_x0020_постановлением_x0020_Госстроя_x0020_РФ_x0020_от_x0020_27.09.2003_x0020__x2116__x0020_170_x003B__x0020_Правила_x0020_содержания_x0020_общего_x0020_имущества_x0020_в_x0020_многоквартирном_x0020_доме_x002C__x0020_утвержденные_x0020_постановлением_x0020_Правительства_x0020_РФ_x0020_от_x0020_13.08.2006_x0020__x2116__x0020_491,False,False</value>
+      <value>,МероприятияПоКонтролю,МероприятияПоКонтролю,System.String,запросить_x0020_и_x0020_рассмотреть_x0020_документы_x002C__x0020_необходимые_x0020_для_x0020_принятия_x0020_объективного_x0020_решения_x0020_в_x0020_рамках_x0020_проводимой_x0020_проверки_x0028_с_x0020_06.08.2013_x0020_по_x0020_02.09.2013_x0020_-_x0020_20_x0020_рабочих_x0020_дней_x0029_,False,False</value>
+      <value>,КодРуководителя,КодРуководителя,System.String,Заместитель_x0020_начальника_x0020_Департамента,False,False</value>
+      <value>,РуководительФИОСокр,РуководительФИОСокр,System.String,А.А._x0020_Михайлов,False,False</value>
+      <value>,ИнспекторыИКоды,ИнспекторыИКоды,System.String,Сыркашев_x0020_Владимир_x0020_Владимирович_x002C__x0020_консультант_x0020_-_x0020_государственный_x0020_жилищный_x0020_инспектор_x0020_Томской_x0020_области,False,False</value>
+      <value>,ТелефонИнспектора,ТелефонИнспектора,System.String,_x0028_3822_x0029__x0020_905-541,False,False</value>
+      <value>,EmailИнспектора,EmailИнспектора,System.String,ggi-vvs_x0040_ggi.tomsk.ru,False,False</value>
+      <value>,УправОргРП,УправОргРП,System.String,,False,False</value>
+      <value>,ВидОбследования,ВидОбследования,System.String,,False,False</value>
+      <value>,ОГРН,ОГРН,System.String,,False,False</value>
+      <value>,НачалоПериодаВыезд,НачалоПериодаВыезд,System.String,,False,False</value>
+      <value>,ОкончаниеПериодаВыезд,ОкончаниеПериодаВыезд,System.String,,False,False</value>
+      <value>,РуководительДолжность,РуководительДолжность,System.String,,False,False</value>
+      <value>,ДомАдрес,ДомАдрес,System.String,,False,False</value>
+      <value>,НомерДома,НомерДома,System.String,,False,False</value>
+      <value>,АдресДома,АдресДома,System.String,,False,False</value>
+      <value>,Ответственный,Ответственный,System.String,,False,False</value>
+      <value>,ДолжностьОтветственныйРП,ДолжностьОтветственныйРП,System.String,,False,False</value>
+      <value>,ФИООтветственныйСокрРП,ФИООтветственныйСокрРП,System.String,,False,False</value>
+      <value>,Эксперты,Эксперты,System.String,,False,False</value>
+      <value>,ЦельОбследования,ЦельОбследования,System.String,,False,False</value>
+      <value>,ПредоставляемыеДокументы,ПредоставляемыеДокументы,System.String,,False,False</value>
+      <value>,ПродолжительностьПроверки,ПродолжительностьПроверки,System.String,,False,False</value>
+      <value>,Правило,Правило,System.String,,False,False</value>
+      <value>,ТипОснованияПроверки,ТипОснованияПроверки,System.String,,False,False</value>
+      <value>,НомерОснованияПроверки,НомерОснованияПроверки,System.String,,False,False</value>
+      <value>,ДатаОснованияПроверки,ДатаОснованияПроверки,System.String,,False,False</value>
+      <value>,НомерОбращения,НомерОбращения,System.String,,False,False</value>
+      <value>,ДатаОбращения,ДатаОбращения,System.String,,False,False</value>
+      <value>,Корреспондент,Корреспондент,System.String,,False,False</value>
+      <value>,ТипКорреспондента,ТипКорреспондента,System.String,,False,False</value>
+      <value>,ПлановыйГод,ПлановыйГод,System.String,,False,False</value>
+      <value>,ИсточникОбращенияРП,ИсточникОбращенияРП,System.String,,False,False</value>
+      <value>,ПоВопросу,ПоВопросу,System.String,,False,False</value>
+      <value>,ТекстПередДокументами,ТекстПередДокументами,System.String,,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="5" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="12">
+        <Text46 Ref="6" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>21.4,11.4,2.4,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,12</Font>
+          <HorAlignment>Width</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text46</Name>
+          <Page isRef="5" />
+          <Parent isRef="5" />
+          <Text>Column</Text>
+          <TextBrush>Black</TextBrush>
+        </Text46>
+        <Text42 Ref="7" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>21.4,28.6,2.4,1</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,12</Font>
+          <HorAlignment>Width</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text42</Name>
+          <Page isRef="5" />
+          <Parent isRef="5" />
+          <Text>ТекстПередДокументами</Text>
+          <TextBrush>Black</TextBrush>
+        </Text42>
+        <ReportTitleBand1 Ref="8" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <CanShrink>True</CanShrink>
+          <ClientRectangle>0,0.4,19,10.2</ClientRectangle>
+          <Components isList="true" count="11">
+            <Text1 Ref="9" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <DockStyle>Top</DockStyle>
+              <Font>Times New Roman,12,Bold</Font>
+              <Guid>dbe6d0eb4865427bac7a7a12efeaa0a9</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="5" />
+              <Parent isRef="8" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>ДЕПАРТАМЕНТ ЖКХ И ГОСУДАРСТВЕННОГО ЖИЛИЩНОГО НАДЗОРА&lt;br&gt;ТОМСКОЙ ОБЛАСТИ</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text1>
+            <Text2 Ref="10" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <DockStyle>Top</DockStyle>
+              <Font>Times New Roman,10</Font>
+              <Guid>e4454c52671e42de9172112349731de7</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="5" />
+              <Parent isRef="8" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>(наименование органа государственного контроля (надзора) или органа муниципального контроля)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text2>
+            <Text3 Ref="11" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.8,3,6.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8,Italic</Font>
+              <Guid>ad15729f64d8437c8a31f659b74cecff</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="5" />
+              <Parent isRef="8" />
+              <Text>(плановой/внеплановой, документарной/выездной)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text3>
+            <Text5 Ref="12" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,1.8,19,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>8b4ee2ca175a4255aa42628af0c209c8</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="5" />
+              <Parent isRef="8" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>РАСПОРЯЖЕНИЕ (ПРИКАЗ)&lt;br&gt;
+органа государственного контроля (надзора), органа муниципального
+контроля&lt;br&gt;
+о проведении	{ВидПроверки}	проверки</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text5>
+            <Text4 Ref="13" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,3.4,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,13</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>cf6b82023cdf47a0b277d071c3318c5c</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="5" />
+              <Parent isRef="8" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>&lt;b&gt;юридического лица, индивидуального предпринимателя&lt;/b&gt;
+&lt;br&gt;от &lt;u&gt;{ДатаРаспоряжения}&lt;/u&gt; № &lt;u&gt;{НомерРаспоряжения}&lt;/u&gt;</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text4>
+            <Text24 Ref="14" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,4.6,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>6674ff5e85e24b0298e73677f5de3a15</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text24</Name>
+              <Page isRef="5" />
+              <Parent isRef="8" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>1. Провести проверку в отношении: &lt;u&gt;{УправОрг} ({УправОргСокр}), ИНН {ИННУправОрг}&lt;/u&gt;</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text24>
+            <Text25 Ref="15" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,5.6,19,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8,Italic</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>fb4b9f936abf4f02868e04feb8c3860d</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text25</Name>
+              <Page isRef="5" />
+              <Parent isRef="8" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text> (наименование юридического лица, фамилия, имя, отчество (последнее – при наличии) индивидуального предпринимателя)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text25>
+            <Text26 Ref="16" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,6,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>9d55fe2f62d6491d9c1ada5df31ffe66</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text26</Name>
+              <Page isRef="5" />
+              <Parent isRef="8" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>2. Место нахождения: &lt;u&gt;юридический адрес: {АдресКонтрагента}, фактический адрес: 
+{АдресКонтрагентаФакт}, место фактического осуществления деятельности: 
+{ДомаИАдреса}.&lt;/u&gt;</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text26>
+            <Text27 Ref="17" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,7,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8,Italic</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>5958fef4c9194e579dd85d15a3d65244</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text27</Name>
+              <Page isRef="5" />
+              <Parent isRef="8" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>(юридического лица (их филиалов, представительств, обособленных структурных подразделений) или место жительства индивидуального предпринимателя и место (а) фактического осуществления им деятельности)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text27>
+            <Text7 Ref="18" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,7.8,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>162dcf72eac546c48d8d00cc9201cd28</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="5" />
+              <Parent isRef="8" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>3. Назначить лицом (ми), уполномоченным (ми) на проведение проверки: &lt;u&gt;
+{ДолжностьФИОВП}&lt;/u&gt;</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text7>
+            <Text8 Ref="19" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,9,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8,Italic</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>674e6775cff04a64a8bf6da45293eae4</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="5" />
+              <Parent isRef="8" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text> (фамилия, имя, отчество (последнее – при наличии), должность должностного лица (должностных лиц), уполномоченного(ых) на проведение проверки)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text8>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="5" />
+          <Parent isRef="5" />
+        </ReportTitleBand1>
+        <HeaderBand3 Ref="20" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <CanBreak>True</CanBreak>
+          <CanShrink>True</CanShrink>
+          <ClientRectangle>0,11.4,19,0.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text9 Ref="21" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>400f2f76b05e4d47904020c82e1f11af</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="5" />
+              <Parent isRef="20" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>4. Привлечь к проведению проверки в качестве экспертов, представителей экспертных организаций следующих лиц:</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text9>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand3</Name>
+          <Page isRef="5" />
+          <Parent isRef="5" />
+        </HeaderBand3>
+        <DataBand4 Ref="22" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <CanShrink>True</CanShrink>
+          <ClientRectangle>0,13,19,0.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text38 Ref="23" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanBreak>True</CanBreak>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,11.5,Underline</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>12d365e7e90744e381d99595484ec5be</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text38</Name>
+              <Page isRef="5" />
+              <Parent isRef="22" />
+              <Text>{СекцияЭксперты.Эксперты}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>DataColumn</Type>
+            </Text38>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>СекцияЭксперты</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand4</Name>
+          <Page isRef="5" />
+          <Parent isRef="5" />
+          <Sort isList="true" count="0" />
+        </DataBand4>
+        <FooterBand2 Ref="24" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <CanShrink>True</CanShrink>
+          <ClientRectangle>0,14.6,19,3.4</ClientRectangle>
+          <Components isList="true" count="4">
+            <Text10 Ref="25" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0.4,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8,Italic</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>ccf220e9a3954565bf281b0f1ec0fd1d</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="5" />
+              <Parent isRef="24" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text> (фамилия, имя, отчество (последнее – при наличии), должности привлекаемых к проведению проверки экспертов и (или) наименование экспертной организации с указанием реквизитов свидетельства об аккредитации и наименования органа по аккредитации, выдавшего свидетельство об аккредитации)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text10>
+            <Text11 Ref="26" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,1.2,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>8c66ee463cfc49cd91773217984d939c</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="5" />
+              <Parent isRef="24" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>5. Установить, что:&lt;br&gt;
+настоящая проверка проводится с целью: &lt;u&gt;{Цель}. Основание: {ОснованиеОбследованияПриказа}.&lt;/u&gt;</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text11>
+            <Text13 Ref="27" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,2.2,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8,Italic</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>7e810edf8e194bd0a6280224576f491b</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="5" />
+              <Parent isRef="24" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;При установлении целей проводимой проверки указывается следующая информация:
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;а) в случае проведения плановой проверки:
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;– ссылка на утвержденный ежегодный план проведения плановых проверок;
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;б) в случае проведения внеплановой выездной проверки:
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;–  реквизиты ранее выданного проверяемому лицу предписания об устранении выявленного нарушения, срок для исполнения которого истек;
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;– реквизиты обращений и заявлений граждан, юридических лиц, индивидуальных предпринимателей, поступивших в органы государственного контроля (надзора), органы муниципального контроля;
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;–  реквизиты приказа (распоряжения) руководителя органа государственного контроля (надзора), изданного в соответствии с поручениями Президента Российской Федерации, Правительства Российской Федерации;
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;–  реквизиты требования прокурора о проведении внеплановой проверки в рамках надзора за исполнением законов и реквизиты прилагаемых к требованию материалов и обращений;
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;в) в случае проведения внеплановой выездной проверки, которая подлежит согласованию органами прокуратуры, но в целях принятия неотложных мер должна быть проведена незамедлительно в связи с причинением вреда либо нарушением проверяемых требований, если такое причинение вреда либо нарушение требований обнаружено непосредственно в момент его совершения:
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;– реквизиты прилагаемой копии документа (рапорта, докладной записки и другие.), представленного должностным лицом, обнаружившим нарушение;
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text13>
+            <Text12 Ref="28" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,2.8,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>1c83242613364056affbf3ca5b8a9dc7</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="5" />
+              <Parent isRef="24" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;задачами настоящей проверки являются: &lt;u&gt;{Задача}&lt;/u&gt;</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text12>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>FooterBand2</Name>
+          <Page isRef="5" />
+          <Parent isRef="5" />
+        </FooterBand2>
+        <HeaderBand1 Ref="29" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <CanShrink>True</CanShrink>
+          <ClientRectangle>0,18.8,19,0.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text14 Ref="30" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0.2,19,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>4862b66d64c149cf9bc78ef89642358a</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="5" />
+              <Parent isRef="29" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>6. Предметом настоящей проверки являются:</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text14>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand1</Name>
+          <Page isRef="5" />
+          <Parent isRef="5" />
+        </HeaderBand1>
+        <DataBand1 Ref="31" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <CanBreak>True</CanBreak>
+          <CanShrink>True</CanShrink>
+          <ClientRectangle>0,20.4,19,0.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text6 Ref="32" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanBreak>True</CanBreak>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,11.5</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="5" />
+              <Parent isRef="31" />
+              <Text>{IIF(СекцияПредметПроверки.Выбрано, 'V', ' ')} {СекцияПредметПроверки.ПредметПроверки}{IIF(Line == Count(),".",";")}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text6>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>СекцияПредметПроверки</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand1</Name>
+          <Page isRef="5" />
+          <Parent isRef="5" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+        <FooterBand1 Ref="33" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <CanBreak>True</CanBreak>
+          <CanShrink>True</CanShrink>
+          <ClientRectangle>0,22,19,5.8</ClientRectangle>
+          <Components isList="true" count="7">
+            <Text16 Ref="34" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,19,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>370da5d4631b49c99880095ff45ff24a</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text16</Name>
+              <Page isRef="5" />
+              <Parent isRef="33" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>7. Срок проведения проверки: &lt;u&gt;не более 20 рабочих дней&lt;/u&gt;</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text16>
+            <Text17 Ref="35" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0.6,0.4,18.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>b7492a065b9845d7b3dc7002909bafbd</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text17</Name>
+              <Page isRef="5" />
+              <Parent isRef="33" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>К проведению проверки приступить&lt;br&gt;
+&lt;u&gt;{НачалоПериода}&lt;/u&gt;
+	&lt;br&gt;
+Проверку окончить не позднее&lt;br&gt;
+&lt;u&gt;{ОкончаниеПериода}&lt;/u&gt;
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text17>
+            <Text18 Ref="36" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,1.2,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>4957ac32394744149313292d0afc615e</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text18</Name>
+              <Page isRef="5" />
+              <Parent isRef="33" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>8.&amp;nbsp;Правовые основания проведения проверки: &lt;u&gt;Положение о Департаменте ЖКХ и государственного жилищного надзора Томской области, утвержденное постановлением Губернатора Томской области от 03.10.2012 № 117; Федеральный закон № 294-ФЗ «О защите прав юридических лиц и индивидуальных предпринимателей при осуществлении государственного контроля (надзора) и муниципального контроля»; Жилищный Кодекс РФ; Гражданский Кодекс РФ; {ПравовоеОснование}.&lt;/u&gt;</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text18>
+            <Text19 Ref="37" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,2.4,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8,Italic</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>6a3d5da3d6b74391a96d12be5b878def</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text19</Name>
+              <Page isRef="5" />
+              <Parent isRef="33" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>(ссылка на положение нормативного правового акта, в соответствии с которым осуществляется проверка; ссылка на положения (нормативных) правовых актов, устанавливающих требования, которые являются предметом проверки)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text19>
+            <Text20 Ref="38" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,3.2,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>b5290b34e1fb4ef19ca04311d9070f5e</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text20</Name>
+              <Page isRef="5" />
+              <Parent isRef="33" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>9.&amp;nbsp;В процессе проверки провести следующие мероприятия по контролю, необходимые для достижения целей и задач проведения проверки: 
+&lt;u&gt;{МероприятияПоКонтролю}.&lt;/u&gt;</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text20>
+            <Text21 Ref="39" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,4,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>3edd9098df904a09b836e299d434077e</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text21</Name>
+              <Page isRef="5" />
+              <Parent isRef="33" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>10.&amp;nbsp;Перечень административных регламентов по осуществлению государственного контроля (надзора), осуществлению муниципального контроля (при их наличии): &lt;u&gt;не предусмотрено&lt;/u&gt;</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text21>
+            <Text23 Ref="40" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,5.2,19,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8,Italic</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>ee6272ffe7964656a489e31a311b90ab</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text23</Name>
+              <Page isRef="5" />
+              <Parent isRef="33" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>(с указанием наименований, номеров и дат их принятия)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text23>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>FooterBand1</Name>
+          <Page isRef="5" />
+          <Parent isRef="5" />
+        </FooterBand1>
+        <HeaderBand2 Ref="41" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,28.6,19,1</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text28 Ref="42" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>9427de89d5b54d0697a5221989326369</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text28</Name>
+              <Page isRef="5" />
+              <Parent isRef="41" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>11.&amp;nbsp;Перечень документов, предоставление которых юридическим лицом, индивидуальным предпринимателем необходимо для достижения целей и задач проведения проверки:&lt;br&gt;
+{ТекстПередДокументами}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text28>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>0839bd018bc948bca14d7de266b619cd</Guid>
+          <Name>HeaderBand2</Name>
+          <Page isRef="5" />
+          <Parent isRef="5" />
+        </HeaderBand2>
+        <DataBand3 Ref="43" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <CanBreak>True</CanBreak>
+          <CanShrink>True</CanShrink>
+          <ClientRectangle>0,30.4,19,0.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text22 Ref="44" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanBreak>True</CanBreak>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,0,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,11.5</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text22</Name>
+              <Page isRef="5" />
+              <Parent isRef="43" />
+              <Text>- {СекцияДокументы.ПредоставляемыйДокумент}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text22>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName>Связь</DataRelationName>
+          <DataSourceName>СекцияДокументы</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand3</Name>
+          <Page isRef="5" />
+          <Parent isRef="5" />
+          <Sort isList="true" count="0" />
+        </DataBand3>
+        <ReportSummaryBand1 Ref="45" type="ReportSummaryBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <CanShrink>True</CanShrink>
+          <ClientRectangle>0,32,19,8.8</ClientRectangle>
+          <Components isList="true" count="9">
+            <Text29 Ref="46" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,1.2,7.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12,Underline</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>2d4d6d77f5414b9eaaccf84fd4f5ad27</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text29</Name>
+              <Page isRef="5" />
+              <Parent isRef="45" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>{КодРуководителя}
+&lt;br&gt;{РуководительФИОСокр}
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text29>
+            <Text30 Ref="47" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,2.4,7.6,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8,Italic</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>fa0b8a99c423425bad11216b80785d1f</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text30</Name>
+              <Page isRef="5" />
+              <Parent isRef="45" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>(должность, фамилия, инициалы руководителя, заместителя руководителя органа государственного контроля (надзора), органа муниципального контроля, издавшего распоряжение или приказ о проведении проверки)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text30>
+            <Text31 Ref="48" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>11.4,2.4,7.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8,Italic</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>92968eb1ac4b4c1a9fb31f179367bc39</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text31</Name>
+              <Page isRef="5" />
+              <Parent isRef="45" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>(подпись, заверенная печатью)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text31>
+            <Text32 Ref="49" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,4.6,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12,Underline</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>c3cff01b73914d2f812fbfb4df2271d8</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text32</Name>
+              <Page isRef="5" />
+              <Parent isRef="45" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>{ИнспекторыИКоды}, тел.: {ТелефонИнспектора}, e-mail: {EmailИнспектора}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text32>
+            <Text33 Ref="50" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,5.6,19,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8,Italic</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>43481743023042598f432fd6ffde58a2</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text33</Name>
+              <Page isRef="5" />
+              <Parent isRef="45" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>(фамилия, имя, отчество (последнее – при наличии), и должность должностного лица, непосредственно подготовившего проект распоряжения (приказа), контактный телефон, электронный адрес (при наличии))</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text33>
+            <Text34 Ref="51" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,7,9.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>7207088432714e62a4480fef72e1da2d</Guid>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text34</Name>
+              <Page isRef="5" />
+              <Parent isRef="45" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>С распоряжением ознакомлен, копию получил:</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text34>
+            <Text35 Ref="52" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>9.8,7,9.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12,Underline</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>830919dec1b048eb87180430a6932b72</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text35</Name>
+              <Page isRef="5" />
+              <Parent isRef="45" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>_____________ /_____________________________/</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text35>
+            <Text36 Ref="53" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>9.8,7.6,2.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8,Italic</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>bef7ea1d89014d2780b6588961b0bb84</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text36</Name>
+              <Page isRef="5" />
+              <Parent isRef="45" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>(подпись)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text36>
+            <Text37 Ref="54" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>13.8,7.6,4.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8,Italic</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>605057cb8f4e4a59a168fcdcad4518c7</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text37</Name>
+              <Page isRef="5" />
+              <Parent isRef="45" />
+              <PrintOn>OnlyFirstPage</PrintOn>
+              <Text>(ФИО  должностного лица)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </Text37>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportSummaryBand1</Name>
+          <Page isRef="5" />
+          <Parent isRef="5" />
+        </ReportSummaryBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>922ac521bd36446b9fdb0146d4d42342</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>100</PageHeight>
+      <PageWidth>21</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+      <Watermark Ref="55" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="56" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>8/13/2014 3:03:14 PM</ReportChanged>
+  <ReportCreated>5/21/2014 9:50:01 AM</ReportCreated>
+  <ReportFile>D:\_TFS\GKH.GKH.CMMI\Dev\Tomsk\Bars.GkhGji.Regions.Tomsk\resources\Disposal.mrt</ReportFile>
+  <ReportGuid>65211b87279545f49ea6a4553f492d33</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1817</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

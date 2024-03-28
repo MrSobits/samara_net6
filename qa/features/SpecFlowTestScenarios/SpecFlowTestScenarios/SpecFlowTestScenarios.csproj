@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6B78EFB-2BC2-4BB1-977E-3D8C46FC802E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SpecFlowTestScenarios</RootNamespace>
+    <AssemblyName>SpecFlowTestScenarios</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="TechTalk.SpecFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SpecFlow.1.9.2.3\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="close_period.feature.cs" />
+    <Compile Include="close_period1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>close_period.feature</DependentUpon>
+    </Compile>
+    <Compile Include="confirming_docs_regfund.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>confirming_docs_regfund.feature</DependentUpon>
+    </Compile>
+    <Compile Include="cost_calc_dpkr.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cost_calc_dpkr.feature</DependentUpon>
+    </Compile>
+    <Compile Include="credit_org.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>credit_org.feature</DependentUpon>
+    </Compile>
+    <Compile Include="credit_org_boundaries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>credit_org_boundaries.feature</DependentUpon>
+    </Compile>
+    <Compile Include="directory_ooi.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>directory_ooi.feature</DependentUpon>
+    </Compile>
+    <Compile Include="gasu_export.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gasu_export.feature</DependentUpon>
+    </Compile>
+    <Compile Include="import_conditions_msk.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>import_conditions_msk.feature</DependentUpon>
+    </Compile>
+    <Compile Include="import_dpkr_msk.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>import_dpkr_msk.feature</DependentUpon>
+    </Compile>
+    <Compile Include="info_for_individuals.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>info_for_individuals.feature</DependentUpon>
+    </Compile>
+    <Compile Include="login.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>login.feature</DependentUpon>
+    </Compile>
+    <Compile Include="notification_to_applicant.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>notification_to_applicant.feature</DependentUpon>
+    </Compile>
+    <Compile Include="objects_cr.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>objects_cr.feature</DependentUpon>
+    </Compile>
+    <Compile Include="objects_cr_new.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>objects_cr_new.feature</DependentUpon>
+    </Compile>
+    <Compile Include="pir_debt_restructuring.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pir_debt_restructuring.feature</DependentUpon>
+    </Compile>
+    <Compile Include="pir_register_defaulters.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pir_register_defaulters.feature</DependentUpon>
+    </Compile>
+    <Compile Include="pir_register_docs.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pir_register_docs.feature</DependentUpon>
+    </Compile>
+    <Compile Include="pir_setting_defaulters.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pir_setting_defaulters.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="recalculation_fines.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>recalculation_fines.feature</DependentUpon>
+    </Compile>
+    <Compile Include="register_gji_docs.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>register_gji_docs.feature</DependentUpon>
+    </Compile>
+    <Compile Include="register_houses.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>register_houses.feature</DependentUpon>
+    </Compile>
+    <Compile Include="register_officials.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>register_officials.feature</DependentUpon>
+    </Compile>
+    <Compile Include="register_settings_pay_import.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>register_settings_pay_import.feature</DependentUpon>
+    </Compile>
+    <Compile Include="register_subscribers.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>register_subscribers.feature</DependentUpon>
+    </Compile>
+    <Compile Include="rf.gji_numbering_docs.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rf.gji_numbering_docs.feature</DependentUpon>
+    </Compile>
+    <Compile Include="rf.register_appeals.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rf.register_appeals.feature</DependentUpon>
+    </Compile>
+    <Compile Include="rf.register_houses_card.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rf.register_houses_card.feature</DependentUpon>
+    </Compile>
+    <Compile Include="rf.register_pay_agents.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rf.register_pay_agents.feature</DependentUpon>
+    </Compile>
+    <Compile Include="rf.transfer_funds_to_fund.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rf.transfer_funds_to_fund.feature</DependentUpon>
+    </Compile>
+    <Compile Include="rf.zonal_inspection.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rf.zonal_inspection.feature</DependentUpon>
+    </Compile>
+    <Compile Include="rr.04_register_spec_accounts.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rr.04_register_spec_accounts.feature</DependentUpon>
+    </Compile>
+    <Compile Include="settings_dpkr.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>settings_dpkr.feature</DependentUpon>
+    </Compile>
+    <Compile Include="unaccepted_charges.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>unaccepted_charges.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="close_period.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>close_period1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="confirming_docs_regfund.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>confirming_docs_regfund.feature.cs</LastGenOutput>
+    </None>
+    <None Include="cost_calc_dpkr.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>cost_calc_dpkr.feature.cs</LastGenOutput>
+    </None>
+    <None Include="credit_org.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>credit_org.feature.cs</LastGenOutput>
+    </None>
+    <None Include="credit_org_boundaries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>credit_org_boundaries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="directory_ooi.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>directory_ooi.feature.cs</LastGenOutput>
+    </None>
+    <None Include="gasu_export.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>gasu_export.feature.cs</LastGenOutput>
+    </None>
+    <None Include="import_conditions_msk.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>import_conditions_msk.feature.cs</LastGenOutput>
+    </None>
+    <None Include="import_dpkr_msk.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>import_dpkr_msk.feature.cs</LastGenOutput>
+    </None>
+    <None Include="info_for_individuals.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>info_for_individuals.feature.cs</LastGenOutput>
+    </None>
+    <None Include="login.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>login.feature.cs</LastGenOutput>
+    </None>
+    <None Include="notification_to_applicant.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>notification_to_applicant.feature.cs</LastGenOutput>
+    </None>
+    <None Include="objects_cr.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>objects_cr.feature.cs</LastGenOutput>
+    </None>
+    <None Include="objects_cr_new.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>objects_cr_new.feature.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="pir_debt_restructuring.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>pir_debt_restructuring.feature.cs</LastGenOutput>
+    </None>
+    <None Include="pir_register_defaulters.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>pir_register_defaulters.feature.cs</LastGenOutput>
+    </None>
+    <None Include="pir_register_docs.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>pir_register_docs.feature.cs</LastGenOutput>
+    </None>
+    <None Include="pir_setting_defaulters.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>pir_setting_defaulters.feature.cs</LastGenOutput>
+    </None>
+    <None Include="recalculation_fines.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>recalculation_fines.feature.cs</LastGenOutput>
+    </None>
+    <None Include="register_gji_docs.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>register_gji_docs.feature.cs</LastGenOutput>
+    </None>
+    <None Include="register_houses.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>register_houses.feature.cs</LastGenOutput>
+    </None>
+    <None Include="register_officials.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>register_officials.feature.cs</LastGenOutput>
+    </None>
+    <None Include="register_settings_pay_import.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>register_settings_pay_import.feature.cs</LastGenOutput>
+    </None>
+    <None Include="register_subscribers.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>register_subscribers.feature.cs</LastGenOutput>
+    </None>
+    <None Include="rf.gji_numbering_docs.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>rf.gji_numbering_docs.feature.cs</LastGenOutput>
+    </None>
+    <None Include="rf.register_appeals.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>rf.register_appeals.feature.cs</LastGenOutput>
+    </None>
+    <None Include="rf.register_houses_card.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>rf.register_houses_card.feature.cs</LastGenOutput>
+    </None>
+    <None Include="rf.register_pay_agents.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>rf.register_pay_agents.feature.cs</LastGenOutput>
+    </None>
+    <None Include="rf.transfer_funds_to_fund.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>rf.transfer_funds_to_fund.feature.cs</LastGenOutput>
+    </None>
+    <None Include="rf.zonal_inspection.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>rf.zonal_inspection.feature.cs</LastGenOutput>
+    </None>
+    <None Include="rr.04_register_spec_accounts.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>rr.04_register_spec_accounts.feature.cs</LastGenOutput>
+    </None>
+    <None Include="settings_dpkr.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>settings_dpkr.feature.cs</LastGenOutput>
+    </None>
+    <None Include="unaccepted_charges.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>unaccepted_charges.feature.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
