@@ -549,6 +549,7 @@
             this.Container.Register(Component.For<ICodedReport, IClaimWorkCodedReport>().ImplementedBy<LawSuitOwnerClaimStatementReport>().LifestyleTransient());
             this.Container.Register(Component.For<ICodedReport, IClaimWorkCodedReport>().ImplementedBy<LawSuitOwnerApplicationIssuanceCourtOrderReport>().LifestyleTransient());
             this.Container.Register(Component.For<ICodedReport, IClaimWorkCodedReport>().ImplementedBy<LawSuitDeclarationAccountReport>().LifestyleTransient());
+            this.Container.Register(Component.For<IStatusPaymentDocumentHousesService>().ImplementedBy<StatusPaymentDocumentHousesService>().LifeStyle.Transient);
 
             this.Container.RegisterTransient<ICodedReport, CalcDebtExportReport>();
             this.Container.RegisterTransient<ICodedReport, CalcDebtReport>();
@@ -1057,6 +1058,10 @@
             this.Container.RegisterViewModel<ContragentBankCreditOrg, ContragentBankCreditOrgViewModel>();
             this.Container.RegisterViewModel<DocumentClwAccountDetail, DocumentClwAccountDetailViewModel>();
             this.Container.RegisterViewModel<ViewDocumentClw, ViewDocumentClwViewModel>();
+
+            this.Container.RegisterViewModel<SaldoRefresh, SaldoRefreshViewModel>();
+            this.Container.RegisterViewModel<UnconfirmedPayments, UnconfirmedPaymentsViewModel>();
+            this.Container.RegisterViewModel<MobileAppAccountComparsion, MobileAppAccountComparsionViewModel>();
         }
 
         private void RegisterControllers()
@@ -1243,6 +1248,15 @@
 
             this.Container.RegisterController<MenuRegopController>();
             ContainerHelper.RegisterFileDataController<ChesImportFile>();
+
+            this.Container.RegisterController<StatusPaymentDocumentHouses>();
+            this.Container.RegisterController<SaldoRefreshActionController>();
+            this.Container.RegisterAltDataController<SaldoRefresh>();
+            this.Container.RegisterAltDataController<UnconfirmedPayments>();
+            this.Container.RegisterController<SberbankPaymentDocController>();
+            this.Container.RegisterController<EmailNewsletterController>();
+            this.Container.RegisterAltDataController<EmailNewsletterLog>();
+            this.Container.RegisterAltDataController<MobileAppAccountComparsion>();
         }
 
         private void RegisterImports()

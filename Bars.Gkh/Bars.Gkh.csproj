@@ -4,6 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	<RuntimeIdentifiers>win10-x64;linux-x64</RuntimeIdentifiers>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <WarningLevel>4</WarningLevel>
@@ -83,6 +84,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourceManifest.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ResourceManifest.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

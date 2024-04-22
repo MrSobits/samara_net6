@@ -1,10 +1,12 @@
 ﻿namespace Bars.Gkh.SystemDataTransfer.Utils
 {
     using System;
+    using System.Linq;
     using System.Security.Cryptography;
     using System.Text;
 
     using Bars.B4.Utils;
+    using Bars.Gkh.Services.DataContracts;
     using Bars.Gkh.SystemDataTransfer.Meta.Services;
 
     using CoreWCF;

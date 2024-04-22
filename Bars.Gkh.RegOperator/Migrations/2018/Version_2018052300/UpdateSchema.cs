@@ -4,7 +4,6 @@
 
     [Migration("2018052300")]
     [MigrationDependsOn(typeof(Version_2018020200.UpdateSchema))]
-    [MigrationDependsOn(typeof(Version_2018020900.UpdateSchema))]
     public class UpdateSchema : Migration
     {
         /// <inheritdoc/>

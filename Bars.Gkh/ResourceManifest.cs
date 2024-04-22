@@ -12,6 +12,7 @@ namespace Bars.Gkh
             this.AddResource(container, "libs/B4/CountCacheQueue.js");
             this.AddResource(container, "libs/B4/Date.js");
             this.AddResource(container, "libs/B4/DateFix.js");
+            this.AddResource(container, "libs/B4/GkhConfig.js");
             this.AddResource(container, "libs/B4/TabPanelOverride.js");
             this.AddResource(container, "libs/B4/TextValues.js");
             this.AddResource(container, "libs/B4/TextValuesOverride.js");
@@ -135,8 +136,8 @@ namespace Bars.Gkh
             this.AddResource(container, "libs/B4/controller/BelayOrg.js");
             this.AddResource(container, "libs/B4/controller/Builder.js");
             this.AddResource(container, "libs/B4/controller/Contragent.js");
-            this.AddResource(container, "libs/B4/controller/CSCalculation.js");
             this.AddResource(container, "libs/B4/controller/ContragentClw.js");
+            this.AddResource(container, "libs/B4/controller/CSCalculation.js");
             this.AddResource(container, "libs/B4/controller/EmergencyObj.js");
             this.AddResource(container, "libs/B4/controller/FiasController.js");
             this.AddResource(container, "libs/B4/controller/GkhConfig.js");
@@ -221,8 +222,8 @@ namespace Bars.Gkh
             this.AddResource(container, "libs/B4/controller/Dict/BuildingFeature.js");
             this.AddResource(container, "libs/B4/controller/Dict/CabinLift.js");
             this.AddResource(container, "libs/B4/controller/Dict/CapitalGroup.js");
-            this.AddResource(container, "libs/B4/controller/Dict/CategoryCSMKD.js");
             this.AddResource(container, "libs/B4/controller/Dict/CategoryConsumersEqualPopulation.js");
+            this.AddResource(container, "libs/B4/controller/Dict/CategoryCSMKD.js");
             this.AddResource(container, "libs/B4/controller/Dict/CategoryPosts.js");
             this.AddResource(container, "libs/B4/controller/Dict/CentralHeatingStation.js");
             this.AddResource(container, "libs/B4/controller/Dict/CommunalResource.js");
@@ -510,6 +511,10 @@ namespace Bars.Gkh
             this.AddResource(container, "libs/B4/model/Contragent/ActivityStage.js");
             this.AddResource(container, "libs/B4/model/Contragent/Bank.js");
             this.AddResource(container, "libs/B4/model/Contragent/Contact.js");
+            this.AddResource(container, "libs/B4/model/Contragent/ContragentAdditionRole.js");
+            this.AddResource(container, "libs/B4/model/Contragent/Risk.js");
+            this.AddResource(container, "libs/B4/model/contragentclw/ContragentClw.js");
+            this.AddResource(container, "libs/B4/model/contragentclw/Municipality.js");
             this.AddResource(container, "libs/B4/model/cscalculation/CategoryCSMKD.js");
             this.AddResource(container, "libs/B4/model/cscalculation/CSCalculation.js");
             this.AddResource(container, "libs/B4/model/cscalculation/CSCalculationRow.js");
@@ -519,10 +524,6 @@ namespace Bars.Gkh
             this.AddResource(container, "libs/B4/model/cscalculation/TarifNormative.js");
             this.AddResource(container, "libs/B4/model/cscalculation/TypeCategoryCS.js");
             this.AddResource(container, "libs/B4/model/Dict/AdditWork.js");
-            this.AddResource(container, "libs/B4/model/Contragent/ContragentAdditionRole.js");
-            this.AddResource(container, "libs/B4/model/Contragent/Risk.js");
-            this.AddResource(container, "libs/B4/model/contragentclw/ContragentClw.js");
-            this.AddResource(container, "libs/B4/model/contragentclw/Municipality.js");
             this.AddResource(container, "libs/B4/model/Dict/BaseDict.js");
             this.AddResource(container, "libs/B4/model/Dict/BelayOrgKindActivity.js");
             this.AddResource(container, "libs/B4/model/Dict/BuilderDocumentType.js");
@@ -667,8 +668,8 @@ namespace Bars.Gkh
             this.AddResource(container, "libs/B4/model/RealityObj/RealityObjectAntenna.js");
             this.AddResource(container, "libs/B4/model/RealityObj/RealityObjectCategoryMKD.js");
             this.AddResource(container, "libs/B4/model/RealityObj/RealityObjectHousekeeper.js");
-            this.AddResource(container, "libs/B4/model/RealityObj/RealityObjectVidecam.js");
             this.AddResource(container, "libs/B4/model/RealityObj/RealityObjectOutdoor.js");
+            this.AddResource(container, "libs/B4/model/RealityObj/RealityObjectVidecam.js");
             this.AddResource(container, "libs/B4/model/RealityObj/ResOrg.js");
             this.AddResource(container, "libs/B4/model/RealityObj/ServiceOrg.js");
             this.AddResource(container, "libs/B4/model/RealityObj/TechnicalMonitoring.js");
@@ -699,6 +700,14 @@ namespace Bars.Gkh
             this.AddResource(container, "libs/B4/routing/Event.js");
             this.AddResource(container, "libs/B4/routing/Router.js");
             this.AddResource(container, "libs/B4/routing/State.js");
+            this.AddResource(container, "libs/B4/signalR/Hub.js");
+            this.AddResource(container, "libs/B4/signalR/HubManager.js");
+            this.AddResource(container, "libs/B4/signalR/hub/CountCache.js");
+            this.AddResource(container, "libs/B4/signalR/hub/GkhConfig.js");
+            this.AddResource(container, "libs/B4/signalR/hub/GkhParams.js");
+            this.AddResource(container, "libs/B4/signalR/hub/Notify.js");
+            this.AddResource(container, "libs/B4/signalR/hub/ProsecutorsOffice.js");
+            this.AddResource(container, "libs/B4/signalR/hub/ReportStatus.js");
             this.AddResource(container, "libs/B4/store/ActiveOperator.js");
             this.AddResource(container, "libs/B4/store/ActiveUser.js");
             this.AddResource(container, "libs/B4/store/AddressMatch.js");
@@ -1065,9 +1074,9 @@ namespace Bars.Gkh
             this.AddResource(container, "libs/B4/store/RealityObj/RealityObjectForSelect.js");
             this.AddResource(container, "libs/B4/store/RealityObj/RealityObjectForSelected.js");
             this.AddResource(container, "libs/B4/store/RealityObj/RealityObjectHousekeeper.js");
-            this.AddResource(container, "libs/B4/store/RealityObj/RealityObjectVidecam.js");
             this.AddResource(container, "libs/B4/store/RealityObj/RealityObjectOutdoor.js");
             this.AddResource(container, "libs/B4/store/RealityObj/RealityObjectOutdoorNavigationMenu.js");
+            this.AddResource(container, "libs/B4/store/RealityObj/RealityObjectVidecam.js");
             this.AddResource(container, "libs/B4/store/RealityObj/ResOrg.js");
             this.AddResource(container, "libs/B4/store/RealityObj/Room.js");
             this.AddResource(container, "libs/B4/store/RealityObj/ServiceOrg.js");
@@ -1107,9 +1116,9 @@ namespace Bars.Gkh
             this.AddResource(container, "libs/B4/store/View/ViewRealityObject.js");
             this.AddResource(container, "libs/B4/utils/Highcharts.js");
             this.AddResource(container, "libs/B4/utils/config/Helper.js");
+            this.AddResource(container, "libs/B4/ux/HighChart.js");
             this.AddResource(container, "libs/B4/ux/Highcharts.js");
             this.AddResource(container, "libs/B4/ux/MultiRowTabPanel.js");
-            this.AddResource(container, "libs/B4/ux/HighChart.js");
             this.AddResource(container, "libs/B4/ux/button/AcceptMenuButton.js");
             this.AddResource(container, "libs/B4/ux/button/BackForward.js");
             this.AddResource(container, "libs/B4/ux/button/ChangeValue.js");
@@ -1328,9 +1337,9 @@ namespace Bars.Gkh
             this.AddResource(container, "libs/B4/view/Dict/builderdocumenttype/Grid.js");
             this.AddResource(container, "libs/B4/view/Dict/cabinlift/Grid.js");
             this.AddResource(container, "libs/B4/view/Dict/CapitalGroup/Grid.js");
+            this.AddResource(container, "libs/B4/view/Dict/categoryconsumersequalpopulation/Grid.js");
             this.AddResource(container, "libs/B4/view/Dict/categorycsmkd/EditWindow.js");
             this.AddResource(container, "libs/B4/view/Dict/categorycsmkd/Grid.js");
-            this.AddResource(container, "libs/B4/view/Dict/categoryconsumersequalpopulation/Grid.js");
             this.AddResource(container, "libs/B4/view/Dict/categoryposts/CategoryPosts.js");
             this.AddResource(container, "libs/B4/view/Dict/categoryposts/CategoryPostsGrid.js");
             this.AddResource(container, "libs/B4/view/Dict/categoryposts/MessageSubjectGrid.js");
@@ -1751,14 +1760,6 @@ namespace Bars.Gkh
             this.AddResource(container, "libs/B4/view/technicalcustomer/EditWindow.js");
             this.AddResource(container, "libs/B4/view/technicalcustomer/Grid.js");
             this.AddResource(container, "libs/Gkh/Init.js");
-            this.AddResource(container, "libs/B4/signalR/hub/CountCache.js");
-            this.AddResource(container, "libs/B4/signalR/hub/GkhConfig.js");
-            this.AddResource(container, "libs/B4/signalR/hub/GkhParams.js");
-            this.AddResource(container, "libs/B4/signalR/hub/Notify.js");
-            this.AddResource(container, "libs/B4/signalR/hub/ProsecutorsOffice.js");
-            this.AddResource(container, "libs/B4/signalR/hub/ReportStatus.js");
-            this.AddResource(container, "libs/B4/signalR/Hub.js");
-            this.AddResource(container, "libs/B4/signalR/HubManager.js");
             this.AddResource(container, "libs/SignalR/signalr.min.js");
             this.AddResource(container, "libs/Yandex/YandexMap.js");
 

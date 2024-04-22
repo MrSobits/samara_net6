@@ -88,6 +88,7 @@
     using Bars.GkhGji.ViewModel.Dict;
     using Bars.GkhGji.ViewModel.FuelInfo;
     using Bars.GkhGji.ViewModel.ResolutionRospotrebnadzor;
+    using Bars.GkhGji.ViewModel.Email;
 
     public partial class Module : AssemblyDefinedModule
     {
@@ -469,6 +470,13 @@
             this.Container.RegisterAltDataController<ActIsolatedRealObjViolation>();
             this.Container.RegisterAltDataController<ActIsolatedRealObjMeasure>();
             this.Container.RegisterAltDataController<ActIsolatedRealObjEvent>();
+
+            this.Container.RegisterAltDataController<AppealCitsInfo>();
+            this.Container.RegisterController<EntityChangeLogRecordController>();
+
+            //Владелец специального счета
+            Container.RegisterAltDataController<SpecialAccountOwner>();
+            Container.RegisterAltDataController<SPAccOwnerRealityObject>();
         }
 
         private void RegisterDomainService()
@@ -786,6 +794,12 @@
             this.Container.RegisterViewModel<ActIsolatedRealObjViolation, ActIsolatedRealObjViolationViewModel>();
             this.Container.RegisterViewModel<ActIsolatedWitness, ActIsolatedWitnessViewModel>();
 
+            this.Container.RegisterViewModel<AppealCitsInfo, AppealCitsInfoViewModel>();
+            this.Container.RegisterViewModel<EntityChangeLogRecord, EntityChangeLogRecordViewModel>();
+
+            // Владелец специального счета
+            this.Container.RegisterViewModel<SpecialAccountOwner, SpecialAccountOwnerViewModel>();
+            this.Container.RegisterViewModel<SPAccOwnerRealityObject, SPAccOwnerRealityObjectViewModel>();
         }
 
         private void RegisterService()

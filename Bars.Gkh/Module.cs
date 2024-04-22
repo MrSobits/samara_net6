@@ -230,6 +230,7 @@
     using Microsoft.AspNetCore.Builder;
 
     using Refit;
+    using Bars.Gkh.Entities.Administration.PrintCertHistory;
 
     /// <summary>
     /// Класс модуля
@@ -560,6 +561,10 @@
             this.Container.ReplaceController<StateController>("state");
             this.Container.ReplaceController<StateTransferRuleController>("StateTransferRule");
             this.Container.ReplaceController<StateTransferController>("StateTransfer");
+
+            this.Container.RegisterAltDataController<PrintCertHistory>();
+
+            this.Container.RegisterController<FilePreviewController>();
 
             this.Container.RegisterController<PaymentDocumentNumberController>();
             this.Container.RegisterController<FormulaController>();
@@ -1398,6 +1403,7 @@
         private void RegisterViewModels()
         {
             // Administration
+            this.Container.RegisterViewModel<PrintCertHistory, PrintCertHistoryViewModel>();
             this.Container.RegisterViewModel<InstructionGroup, InstructionGroupViewModel>();
             this.Container.RegisterViewModel<InstructionGroupRole, InstructionGroupRoleViewModel>();
             this.Container.RegisterViewModel<Instruction, InstructionViewModel>();

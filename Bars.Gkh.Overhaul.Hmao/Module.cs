@@ -290,6 +290,8 @@ namespace Bars.Gkh.Overhaul.Hmao
 
             this.Container.RegisterAltDataController<ChangeYearOwnerDecision>();
             this.Container.RegisterAltDataController<DpkrDocument>();
+
+            this.Container.RegisterAltDataController<DPKRActualCriterias>();
         }
 
         private void RegisterViewModels()
@@ -353,6 +355,8 @@ namespace Bars.Gkh.Overhaul.Hmao
             this.Container.RegisterViewModel<FormatDataExportEntity, FormatDataExportEntityViewModel>();
             this.Container.RegisterViewModel<DpkrDocumentProgramVersion, DpkrDocumentProgramVersionViewModel>();
             this.Container.RegisterViewModel<DpkrDocumentRealityObject, DpkrDocumentRealityObjectViewModel>();
+
+            Container.RegisterViewModel<DPKRActualCriterias, DPKRActualCriteriasViewModel>();
         }
 
         private void RegisterServices()
@@ -495,6 +499,8 @@ namespace Bars.Gkh.Overhaul.Hmao
                     .ImplementedBy<Interceptors.TypeWorkCrRemovalInterceptor>()
                     .LifeStyle.Transient);
             this.Container.RegisterDomainInterceptor<FormatDataExportEntity, FormatDataExportEntityInterceptor>();
+
+            this.Container.RegisterDomainInterceptor<DPKRActualCriterias, DPKRActualCriteriasInterceptor>();
         }
 
         private void RegisterImports()
