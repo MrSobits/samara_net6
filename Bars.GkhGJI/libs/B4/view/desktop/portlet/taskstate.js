@@ -11,7 +11,7 @@
     header: true,
     footer: true,
     isBuilt: false,
-    store: 'B4.store.desktop.TaskState',
+    store: 'desktop.TaskState',
     column: 1,
 
     permissions: [

@@ -16,7 +16,7 @@
     footer: true,
     isBuilt: false,
     title: 'Доска задач',
-    store: 'B4.store.desktop.ReminderWidget',
+    store: 'desktop.ReminderWidget',
     column: 1,
 
     permissions: [
@@ -76,6 +76,7 @@
     }],
     
     initComponent: function () {
+        debugger;
         var me = this,
             store = me.store;
         if (Ext.isString(store)) {
@@ -97,6 +98,7 @@
     },
 
     afterRender: function () {
+        debugger;
         this.callParent(arguments);
         if (this.store.isStore) {
             if (this.store.getCount() == 0) {

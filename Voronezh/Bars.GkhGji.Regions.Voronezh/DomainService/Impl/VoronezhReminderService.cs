@@ -18,7 +18,7 @@ namespace Bars.GkhGji.Regions.Voronezh.DomainService.Impl
 
     using Castle.Windsor;
 
-    public class VoronezhReminderService : IExtReminderService
+    public class VoronezhReminderService : GkhGji.DomainService.IExtReminderService
     {
         public IWindsorContainer Container { get; set; }
 

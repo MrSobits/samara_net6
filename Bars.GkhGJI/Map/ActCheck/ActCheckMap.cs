@@ -34,11 +34,8 @@ namespace Bars.GkhGji.Map
             this.Property(x => x.AcquaintState, "Статус ознакомления с результатами проверки").Column("ACQUAINT_STATE");
             this.Property(x => x.RefusedToAcquaintPerson, "ФИО должностного лица, отказавшегося от ознакомления с актом проверки").Column("REFUSED_TO_ACQUAINT_PERSON");
             this.Property(x => x.AcquaintedPerson, "ФИО должностного лица, ознакомившегося с актом проверки").Column("ACQUAINTED_PERSON");
-            this.Property(x => x.AcquaintedPersonTitle, "Должность лица, ознакомившегося с актом проверки").Column("ACQUAINTED_PERSON_TITLE");
             this.Property(x => x.AcquaintedDate, "Дата ознакомления").Column("ACQUAINTED_DATE");
             this.Reference(x => x.SignatoryInspector, "Инспектор подписавший акт проверки").Column("SIGNATORY_INSPECTOR_ID");
-            this.Property(x => x.PlaceErknmGuid, "Гуид ЕРКНМ для места составления").Column("PLACE_ERKNM_GUID").Length(36);
-            this.Reference(x => x.Signer, "Должностное лицо, подписавшее акт проверки").Column("SIGNER_ID").Fetch();
         }
     }
 }

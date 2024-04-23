@@ -16,7 +16,7 @@
 
     using Castle.Windsor;
     using Entities.Reminder;
-    public class ChelyabinskReminderService : IExtReminderService
+    public class ChelyabinskReminderService : GkhGji.DomainService.IExtReminderService
     {
         public IWindsorContainer Container { get; set; }
 

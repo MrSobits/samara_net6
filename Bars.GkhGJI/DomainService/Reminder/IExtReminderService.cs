@@ -1,8 +1,11 @@
-﻿namespace Bars.GkhGji.Regions.BaseChelyabinsk.DomainService
+﻿namespace Bars.GkhGji.DomainService
 {
-    using Bars.B4;
+    using System.Linq;
 
-    // Интерфейс для дополнительных функций по Напоминаниям в регионе НСО
+    using Bars.B4;
+    using Bars.GkhGji.Contracts.Enums;
+    using Bars.GkhGji.Entities;
+
     public interface IExtReminderService
     {
         // Метод получения только Напоминаний по Обращениям в регионе НСО

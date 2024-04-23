@@ -12,7 +12,7 @@
     collapsible: false,
     closable: false,
     isBuilt: false,
-    store: 'B4.store.News',
+    store: 'News',
     column: 3,
     position: 2,
     

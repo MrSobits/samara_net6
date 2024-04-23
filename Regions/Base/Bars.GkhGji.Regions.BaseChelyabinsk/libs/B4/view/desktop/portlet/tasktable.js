@@ -12,9 +12,9 @@
     closable: false,
     header: true,
     footer: true,
+    store: 'desktop.ReminderWidget',
     isBuilt: false,
-    title: 'Доска задач',
-    
+    title: 'Доска задач!',    
     dockedItems: [{
         xtype: 'toolbar',
         dock: 'bottom',
@@ -48,21 +48,19 @@
                 text: 'Все задачи'
             }
         ]
-    }],
-    
+    }],    
     initComponent: function () {
+        debugger;
         var me = this,
-            store = me.store;
+            store = 'desktop.ReminderWidget';
         if (Ext.isString(store)) {
             store = me.store = Ext.getStore(store);
         }
         if (store) {
             me.relayEvents(store, ['load'], 'store');
-        }
-        
+        }        
         me.callParent();
     },
-
     afterRender: function () {
         this.callParent(arguments);
         if (this.store.isStore) {
@@ -72,20 +70,15 @@
                 this.build(this.store);
             }
         }
-    },
-    
+    },    
     listeners: {
         storeload: function (store, records, successful) {
             if (successful) {
-                this.build(store, records);
-            }
+                this.build(store, records); }
         }
-    },
-    
-    build: function (store) {
-        
+    },    
+    build: function (store) {        
         if (!this.isBuilt) {
-
             this.add({
                 xtype: 'dataview',
                 ui: 'inspectorportletItem',
@@ -129,12 +122,8 @@
                          '</tpl>',
                     '</ul>'
                 )
-            });
-            
-            
-            
+            });            
             this.isBuilt = true;
-        }
-        
+        }        
     }
 });

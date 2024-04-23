@@ -12,6 +12,7 @@
     closable: false,
     header: true,
     footer: true,
+    store: 'desktop.ReminderWidget',
     isBuilt: false,
     title: 'Доска задач',
     

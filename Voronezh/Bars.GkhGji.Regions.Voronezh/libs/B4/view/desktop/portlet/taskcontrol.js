@@ -49,7 +49,7 @@
     
     initComponent: function () {
         var me = this,
-            store = me.store;
+            store = 'desktop.TaskControl';
         if (Ext.isString(store)) {
             store = me.store = Ext.getStore(store);
         }

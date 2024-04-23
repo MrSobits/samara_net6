@@ -47,8 +47,7 @@
                 // Базовые типы намеренно перенесены в самый низ, для корректного определения типа статуса для таких случаев как
                 // наследование конкретного типа, например, OffspringDisposal : Disposal, чтобы OffspringDisposal смог получить 
                 // начальный статус Disposal, а не начальный статус DocumentGji
-
-                new StatefulEntityInfo("gji_document_disp", string.Format("Документы ГЖИ - {0}", dispText.SubjectiveCase), typeof(Disposal)),
+             
                 new StatefulEntityInfo("gji_document", "Документы ГЖИ", typeof(DocumentGji)),
                 new StatefulEntityInfo("gji_inspection", "Основания проверок", typeof(InspectionGji)),
 

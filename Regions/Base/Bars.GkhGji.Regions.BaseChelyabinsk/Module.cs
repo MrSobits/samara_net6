@@ -220,8 +220,7 @@
         }
 
         private void ReplaceComponents()
-        {
-            this.Container.ReplaceController<ReminderController>("reminder");
+        {          
 
             this.Container.ReplaceComponent<IHeatSeasonService>(
                 typeof(Bars.GkhGji.DomainService.HeatSeasonService),

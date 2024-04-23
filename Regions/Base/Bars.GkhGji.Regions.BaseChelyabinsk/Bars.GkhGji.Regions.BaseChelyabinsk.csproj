@@ -54,6 +54,11 @@
     <EmbeddedResource Include="libs\**\*" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="Controllers\Reminder\**" />
+    <EmbeddedResource Remove="Controllers\Reminder\**" />
+    <None Remove="Controllers\Reminder\**" />
+  </ItemGroup>
+  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
@@ -76,7 +81,6 @@
     <ProjectReference Include="..\..\..\SMEV3Library\SMEV3Library.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\Reminder\" />
     <Folder Include="Entities\Dict\" />
     <Folder Include="libs\B4\view\dict\inspector\" />
     <Folder Include="ViewModel\Glossary\" />

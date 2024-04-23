@@ -117,13 +117,13 @@
                                             xtype: 'tasktable',
                                             wtype: 'taskTable',
                                             itemId: 'taskTable',
-                                            store: 'B4.store.desktop.ReminderWidget'
+                                            store: 'desktop.ReminderWidget'
                                         },
                                         {
                                             xtype: 'taskstate',
                                             wtype: 'taskState',
                                             itemId: 'taskState',
-                                            store: 'B4.store.desktop.TaskState'
+                                            store: 'desktop.TaskState'
                                         }
                                     ]
                                 },
@@ -178,7 +178,7 @@
                                             xtype: 'taskcontrol',
                                             itemId: 'taskControl',
                                             wtype: 'taskControl',
-                                            store: 'B4.store.desktop.TaskControl'
+                                            store: 'desktop.TaskControl'
                                         }
                                     ]
                                 },

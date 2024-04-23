@@ -32,7 +32,6 @@ namespace Bars.GkhGji.Map
             this.Reference(x => x.State, "Статус").Column("STATE_ID").Fetch();
             this.Property(x => x.ErpGuid, "Гуид ЕРП").Column("ERP_GUID");
             this.Property(x => x.ErknmGuid, "Гуид ЕРКНМ").Column("ERKNM_GUID");
-            this.Property(x => x.QRCodeAccessToken, "Токен доступа по QR-коду").Column("QR_CODE_ACCESS_TOKEN");
         }
     }
 }

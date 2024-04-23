@@ -7,12 +7,25 @@
     using Bars.B4.Modules.DataExport.Domain;
     using Bars.GkhGji.DomainService;
     using Bars.GkhGji.Entities;
+    using Bars.Gkh.Domain;
 
     /// <summary>
     /// Для панели руководителя и Доске задач Инспектора
     /// </summary>
     public class ReminderController : B4.Alt.DataController<Reminder>
     {
+        public ActionResult ListAppealCitsReminder(BaseParams baseParams)
+        {
+            var service = this.Container.Resolve<IExtReminderService>();
+            try
+            {
+                return service.ListAppealCitsReminder(baseParams).ToJsonResult();
+            }
+            finally
+            {
+                this.Container.Release(service);
+            }
+        }
         public ActionResult ListWidgetInspector(BaseParams baseParams)
         {
             var service = Container.Resolve<IReminderService>();

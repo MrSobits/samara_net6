@@ -16,7 +16,7 @@
     isBuilt: false,
     column: 3,
     position: 1,
-    store: 'B4.store.desktop.ActiveOperator',
+    store: 'desktop.ActiveOperator',
 
     actions: {
         '#profileBtn': {

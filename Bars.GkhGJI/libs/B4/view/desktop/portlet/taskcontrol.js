@@ -11,7 +11,7 @@
     header: true,
     footer: true,
     isBuilt: false,
-    store: 'B4.store.desktop.TaskControl',
+    store: 'desktop.TaskControl',
     
     permissions: [
         {
