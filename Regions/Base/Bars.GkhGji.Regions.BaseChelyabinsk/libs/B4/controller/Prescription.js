@@ -215,7 +215,6 @@
            },
 
            goToCourtPractice: function () {
-               debugger;
                var me = this,
                    portal = me.controller.getController('PortalController'),
                    controllerEditName,
@@ -291,7 +290,6 @@
                     docId: asp.controller.params.documentId
                 })).next(function (response) {
                     asp.controller.unmask();
-                    debugger;
                     //десериализуем полученную строку             
                     var data = Ext.decode(response.responseText);
                     var btnGoTo = panel.down('#btnCourtPractice');
@@ -468,7 +466,6 @@
            listeners: {
                getdata: function (me, records) {
                    var recordIds = [];
-                   debugger;
                    Ext.each(records.items, function (item) {
                        recordIds.push(item.get('Id'));
                    });
@@ -528,7 +525,6 @@
                                     fn: function (btn) {
                                         var gisinfo = btn.up('#prescriptionPlanDateSetWindow');
                                         var paramdate = gisinfo.down('#dfSetPlanRemoval').getValue();
-                                        debugger;
                                         var docId = this.params.documentId;
                                         me.mask('Установка плановой даты устранения нарушения', this.getMainComponent());
                                         var result = B4.Ajax.request(B4.Url.action('SetNewDatePlanRemoval', 'PrescriptionViol', {
@@ -575,7 +571,6 @@
                 var me = this;
                 var store = this.getStore();
                 var objViolationStore = this.controller.getStore('prescription.RealityObjViolation');
-                debugger;
                 // очищаем, так как записи уже удалили с сервера
                 store.removed = [];
                 var modifiedRecs = store.getModifiedRecords();

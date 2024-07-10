@@ -15,7 +15,7 @@
         public override IDataResult List(IDomainService<SMEVComplaintsDecision> domain, BaseParams baseParams)
         {
             var loadParams = baseParams.GetLoadParam();
-            var lsText = baseParams.Params.GetAs<string>("lsText","");
+            var lsText = baseParams.Params.GetAs<string>("lsText", "");
             //var isFiltered = loadParams.Filter.GetAs("isFiltered", false);
             if (!string.IsNullOrEmpty(lsText))
             {
@@ -38,11 +38,11 @@
             }
             else
             {
-                var data = domain.GetAll()      
+                var data = domain.GetAll()
                 .AsQueryable()
                 .Filter(loadParams, Container);
                 return new ListDataResult(data.Order(loadParams).Paging(loadParams).ToList(), data.Count());
-            }        
+            }
         }
         private List<long> GetDecisions(string lstext)
         {
@@ -51,8 +51,8 @@
             if (!string.IsNullOrEmpty(lscode))
             {
                 list.AddRange(SMEVComplaintsDecisionLifeSituationDomain.GetAll()
-                    .Where(x=> x.Code == lscode)
-                    .Select(x=> x.SMEVComplaintsDecision.Id).Distinct().ToList());
+                    .Where(x => x.Code == lscode)
+                    .Select(x => x.SMEVComplaintsDecision.Id).Distinct().ToList());
             }
             return list;
         }

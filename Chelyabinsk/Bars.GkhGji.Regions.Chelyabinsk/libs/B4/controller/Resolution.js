@@ -553,7 +553,6 @@
             buttonSelector: '#resolutionDecisionEditWindow #btnPrint',
             codeForm: 'ResolutionDecision',
             getUserParams: function () {
-                debugger;
                 var param = { Id: this.controller.resolutionDecision };
                 this.params.userParams = Ext.JSON.encode(param);
             }
@@ -717,8 +716,6 @@
                     payRegId: payRegId
                 }
                 )).next(function (response) {
-                    debugger;
-
                     var grid = me.getGrid(),
                         store = grid.getStore();
                     store.load();

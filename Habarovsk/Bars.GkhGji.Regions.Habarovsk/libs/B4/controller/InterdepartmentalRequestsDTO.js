@@ -61,19 +61,19 @@
         me.callParent(arguments);
     },
     onChangeDateStart: function (field, newValue, oldValue) {
-        debugger;
+        
         if (this.params) {
             this.params.dateStart = newValue;
         }
     },
     onChangeDateEnd: function (field, newValue, oldValue) {
-        debugger;
+        
         if (this.params) {
             this.params.dateEnd = newValue;
         }
     },
     gotoRequest: function (grid, action, rec) {
-        debugger;
+        
         var me = this,
         params = {},
         portal = me.getController('PortalController');
@@ -89,7 +89,7 @@
         
     },
     updategrid: function (btn) {
-        debugger;
+        
         var grid = btn.up('interdepartmentalrequestsdtoGrid');
         grid.getStore().load();
     },
@@ -105,7 +105,7 @@
     },
 
     onBeforeLoadDoc: function (store, operation) {
-        debugger;
+        
         if (this.params) { 
             operation.params.dateStart = this.params.dateStart;
             operation.params.dateEnd = this.params.dateEnd;

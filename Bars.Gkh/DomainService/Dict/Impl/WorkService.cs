@@ -54,7 +54,7 @@
                 return new ListDataResult(data.ToList(), totalCount);
             }
 
-            return new ListDataResult {Success = false, Message = "Модуль капитального ремонта не подключен"};
+            return new ListDataResult { Success = false, Message = "Модуль капитального ремонта не подключен" };
         }
 
         /// <summary>
@@ -68,7 +68,7 @@
 
             var domaneService = this.Container.Resolve<IDomainService<Work>>();
 
-            var data = domaneService.GetAll().Select(x => new {x.Id, x.Name}).Filter(loadParams, this.Container);
+            var data = domaneService.GetAll().Select(x => new { x.Id, x.Name }).Filter(loadParams, this.Container);
 
             var totalCount = data.Count();
 
@@ -108,11 +108,11 @@
                     contentRepairMkdWorkService.Update(contentRepairMkdWork);
                 }
 
-                return new BaseDataResult {Success = true};
+                return new BaseDataResult { Success = true };
             }
             catch (ValidationException exc)
             {
-                return new BaseDataResult {Success = false, Message = exc.Message};
+                return new BaseDataResult { Success = false, Message = exc.Message };
             }
         }
 
@@ -135,11 +135,11 @@
                 contentRepairMkdWork.Work = null;
                 contentRepairMkdWorkService.Update(contentRepairMkdWork);
 
-                return new BaseDataResult {Success = true};
+                return new BaseDataResult { Success = true };
             }
             catch (ValidationException exc)
             {
-                return new BaseDataResult {Success = false, Message = exc.Message};
+                return new BaseDataResult { Success = false, Message = exc.Message };
             }
         }
     }

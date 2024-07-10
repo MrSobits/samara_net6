@@ -292,6 +292,15 @@ namespace Bars.Gkh.Overhaul.Hmao
             this.Container.RegisterAltDataController<DpkrDocument>();
 
             this.Container.RegisterAltDataController<DPKRActualCriterias>();
+            this.Container.RegisterController<CostLimitController>();
+            this.Container.RegisterAltDataController<CostLimit>();
+            this.Container.RegisterAltDataController<CostLimitTypeWorkCr>();
+            this.Container.RegisterAltDataController<CostLimitOOI>();
+            this.Container.RegisterAltDataController<OwnerProtocolType>();
+            this.Container.RegisterAltDataController<OwnerProtocolTypeDecision>();
+            this.Container.RegisterController<OwnerProtocolTypeDecisionsController>();
+            this.Container.RegisterAltDataController<CriteriaForActualizeVersion>();
+            this.Container.RegisterAltDataController<CrPeriod>();
         }
 
         private void RegisterViewModels()
@@ -357,6 +366,11 @@ namespace Bars.Gkh.Overhaul.Hmao
             this.Container.RegisterViewModel<DpkrDocumentRealityObject, DpkrDocumentRealityObjectViewModel>();
 
             Container.RegisterViewModel<DPKRActualCriterias, DPKRActualCriteriasViewModel>();
+            Container.RegisterViewModel<CostLimit, CostLimitViewModel>();
+            Container.RegisterViewModel<CostLimitOOI, CostLimitOOIViewModel>();
+            Container.RegisterViewModel<CostLimitTypeWorkCr, CostLimitTypeWorkCrViewModel>();
+            this.Container.RegisterViewModel<OwnerProtocolType, OwnerProtocolTypeViewModel>();
+            this.Container.RegisterViewModel<OwnerProtocolTypeDecision, OwnerProtocolTypeDecisionViewModel>();
         }
 
         private void RegisterServices()
@@ -432,6 +446,8 @@ namespace Bars.Gkh.Overhaul.Hmao
             this.Container.RegisterTransient<BaseRealObjOverhaulDataObject, HmaoRealObjOverhaulDataObject>("RealObjOverhaulDataObject");
 
             this.Container.ReplaceComponent(Component.For<IDefectService>().ImplementedBy<DefectService>().LifestyleTransient());
+
+            this.Container.RegisterTransient<IOwnerProtocolTypeDecisionsService, OwnerProtocolTypeDecisionsService>();
         }
 
         private void RegisterDomainServices()
@@ -501,6 +517,9 @@ namespace Bars.Gkh.Overhaul.Hmao
             this.Container.RegisterDomainInterceptor<FormatDataExportEntity, FormatDataExportEntityInterceptor>();
 
             this.Container.RegisterDomainInterceptor<DPKRActualCriterias, DPKRActualCriteriasInterceptor>();
+            this.Container.RegisterDomainInterceptor<CostLimit, CostLimitInterceptor>();
+            this.Container.RegisterDomainInterceptor<CostLimitOOI, CostLimitOOIInterceptor>();
+            this.Container.RegisterDomainInterceptor<CostLimitTypeWorkCr, CostLimitTypeWorkCrInterceptor>();
         }
 
         private void RegisterImports()

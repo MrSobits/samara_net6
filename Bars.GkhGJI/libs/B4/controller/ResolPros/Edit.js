@@ -570,7 +570,7 @@
         this.callParent(arguments);
     },
     //onLaunch: function () {
-    //    debugger;
+    //    
     //    var grid = this.getMainView();
     //    if (this.params && this.params.recId > 0) {
     //        var model = this.getModel('ResolPros');

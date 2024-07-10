@@ -205,7 +205,7 @@
     //match: function (btn) {
     //    var me = this;
     //    me.mask('Сопоставление', this.getMainComponent());
-    //    debugger;
+    //    
     //    var winEdit = btn.up('#payregEditWindow');
     //    var param1 = winEdit.down('#dfId').getValue();
     //    var param2 = winEdit.down('#dfCalculation').getValue();

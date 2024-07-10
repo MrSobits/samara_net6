@@ -1,6 +1,3 @@
-//ToDo данный контроллер нельзя переводить на роуты поскольку у него форма редактирвоания открывается в модальном окне, и нельзя без реестра вызывать отдельно открытие карточки редактирвоания обращения
-//ToDo необходимо данный контроллер переделать на отдельно открывающуюся панель а не модальное окно //Voronezh
-
 Ext.define('B4.controller.AppealCits', {
     extend: 'B4.base.Controller',
     requires: [
@@ -213,7 +210,6 @@ Ext.define('B4.controller.AppealCits', {
             buttonSelector: '#appealCitsAnswerEditWindow #btnPrint',
             codeForm: 'AppealAnswer1',
             getUserParams: function () {
-                debugger;
                 var param = { Id: this.controller.appealCitsAnswerId };
                 this.params.userParams = Ext.JSON.encode(param);
             }
@@ -273,7 +269,6 @@ Ext.define('B4.controller.AppealCits', {
                     selector: '#appealCitsExecutantGrid',
                     applyBy: function (component, allowed) {
                         var me = this;
-                        debugger;
                         me.controller.params = me.controller.params || {};
                         if (allowed) {
                             component.show();
@@ -460,7 +455,6 @@ Ext.define('B4.controller.AppealCits', {
                 )).next(function (response) {
                     var data = Ext.decode(response.responseText);
                     if (data.data.soprId != null) {
-                        debugger;
                         sopr = data.data.soprId;
                         if (sopr != null) {
                             var controllerEditName = 'B4.controller.AppealOrder';
@@ -501,7 +495,6 @@ Ext.define('B4.controller.AppealCits', {
             },
 
             onAfterSetFormData: function (aspect, rec, form) {
-                debugger;
                 if (rec.get('Id')) {
                     aspect.controller.controlDateValue = rec.get('CheckTime');
                 }
@@ -556,7 +549,6 @@ Ext.define('B4.controller.AppealCits', {
             },
             listeners: {
                 aftersetformdata: function (asp, record, form) {
-                    debugger;
                     var state = record.get('State');
                     if (state && (state.Code == 'СОПР' || state.Code == 'СОПР2')) {
                         var dfSoprDate = form.down('#dfSoprDate');
@@ -1232,7 +1224,6 @@ Ext.define('B4.controller.AppealCits', {
             onBeforeLoad: function (store, operation) {
                 operation = operation || {};
                 operation.params = operation.params || {};
-                debugger;
                 operation.params.anotherrelatesToId = this.controller.appealCitizensId;
                 operation.params.anothermatchRelated = true;
 
@@ -1623,7 +1614,6 @@ Ext.define('B4.controller.AppealCits', {
                             me);
                         store.load();
                     }
-                    debugger;
                     this.controller.getAspect('descriptionBlobTextAspect').doInjection();
                 },
 
@@ -2035,7 +2025,6 @@ Ext.define('B4.controller.AppealCits', {
                 },
                 getdata: function (asp, records) {
                     var recordIds = [];
-                    debugger;
                     records.each(function (rec) {
                         recordIds.push(rec.get('Id'));
                     });
@@ -2069,7 +2058,6 @@ Ext.define('B4.controller.AppealCits', {
                         Ext.Msg.alert('Ошибка!', 'Необходимо выбрать исполнителя');
                         return false;
                     }
-                    debugger;
                     var resolutionValue = sfResolveGji.value.Name;
 
                     asp.controller.mask('Сохранение', asp.controller.getMainComponent());
@@ -2081,7 +2069,7 @@ Ext.define('B4.controller.AppealCits', {
                         cbIsResponsible: cbIsResponsible.value,
                         taDescription: resolutionValue,
                         authorId: 0
-                        // authorId: authorField.value ? authorField.value.Id : 0
+                       // authorId: authorField.value ? authorField.value.Id : 0
                     })).next(function () {
                         asp.controller.getStore(asp.storeName).load();
                         asp.controller.unmask();
@@ -2095,11 +2083,9 @@ Ext.define('B4.controller.AppealCits', {
                     return true;
                 },
                 aftersetformdata: function (asp, record) {
-                    debugger;
                     this.controller.getAspect('appcitsExecutantStateButtonAspect').setStateData(record.get('Id'), record.get('State'));
                 },
                 panelrendered: function (asp, prm) {
-                    debugger;
                     var me = this,
                         autoPerformanceDate = true;//Gkh.config.HousingInspection.SettingTheVerification.AutoPerformanceDate;
 
@@ -2572,51 +2558,8 @@ Ext.define('B4.controller.AppealCits', {
         store.on('load', function () { win.show(); });
         store.load();
     },
-    //ToDo Пока невозможно перевести реестр обращения на роуты
-    /*Закомментировал в связи с невозможностью перевода на роутинг
-    index: function () {
-        var view = this.getMainView() || Ext.widget('appealCitsPanel');
-        this.bindContext(view);
-        this.application.deployView(view);
-
-        this.params = {};
-        this.params.dateFromStart = null;
-        this.params.dateFromEnd = null;
-        this.params.checkTimeStart = null;
-        this.params.checkTimeEnd = null;
-        this.params.statSubsubjectGjiId = null;
-        this.params.statSubjectId = null;
-        this.params.realityObjectId = null;
-    },
-
-    edit: function (id) {
-        var view = this.getMainView() || Ext.widget('appealCitsPanel');
-        
-        if (view && !view.rendered) {
-            this.bindContext(view);
-            this.application.deployView(view);
-
-            this.params = {};
-            this.params.dateFromStart = null;
-            this.params.dateFromEnd = null;
-            this.params.checkTimeStart = null;
-            this.params.checkTimeEnd = null;
-
-            this.params.realityObjectId = null;
-        this.params.statSubsubjectGjiId = null;
-        this.params.statSubjectId = null;
-
-
-        }
-
-        var model = this.getModel('AppealCits');
-        this.getAspect('appealCitizensWindowAspect').editRecord(new model({ Id: id }));
-    },
-    */
-    //ToDo Убрать метод только в случае переывода на роутинг когда окно будет октрываться отдельной вклдкой а не модальныйм окном
     onLaunch: function () {
         var me = this;
-        debugger;
         if (this.params && this.params.appealId > 0) {
             if (this.params.appealIdGetBack > 0) {
                 me.appealCitizensGetBackId = this.params.appealIdGetBack;
@@ -2675,5 +2618,4 @@ Ext.define('B4.controller.AppealCits', {
             }
         });
     }
-
 });

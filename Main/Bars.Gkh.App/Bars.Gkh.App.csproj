@@ -74,6 +74,10 @@
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
     <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
   </Target>
+  <Target Name="B4SetupPreparation" AfterTargets="AfterPublish">
+    <MakeDir Directories="$(PublishDir).cache" Condition="!Exists('$(PublishDir).cache')" />
+    <MakeDir Directories="$(PublishDir)modules" Condition="!Exists('$(PublishDir)modules')" />
+  </Target>
   <Import Project="..\RegionModules.targets" Condition="Exists('..\RegionModules.targets')" />
   <ProjectExtensions>
     <VisualStudio>

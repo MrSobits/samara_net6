@@ -123,7 +123,7 @@ var Crypto = {
         if (this.isCryptoEnabled) {
             return true;
         }
-        debugger;
+        
         switch (navigator.appName) {
             
             case 'Microsoft Internet Explorer':
@@ -135,7 +135,7 @@ var Crypto = {
                 }
                 break;
             default:
-                debugger;
+                
                 var mimetype = navigator.mimeTypes["application/x-cades"];
                 if (mimetype) {
                     var plugin = mimetype.enabledPlugin;
@@ -448,7 +448,7 @@ var Crypto = {
     * warning Not tested
     */
     signXml: function (certificate, dataBase64) {
-        debugger;
+        
         if (!this.checkForCryptoPlugin()) {
             this.alert("Shit");
             return false;

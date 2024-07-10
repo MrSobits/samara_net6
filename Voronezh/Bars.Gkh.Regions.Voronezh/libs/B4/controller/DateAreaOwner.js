@@ -65,7 +65,7 @@
     },
 
     onMerge: function () {
-        debugger;
+        
         B4.Ajax.request({
             url: B4.Url.action('Merge', 'DataAreaOwnerMerger')
         });

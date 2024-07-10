@@ -123,7 +123,7 @@
                 actions['prescriptionfondeditwindow #sfBuildContract'] = { 'change': { fn: this.onChangeDoc, scope: this } };
             },
             onChangeDoc: function (field, newValue) {
-                debugger;
+                
                 if (newValue != null) {
                     bcId = newValue.Id;
                 }
@@ -195,7 +195,7 @@
                     }
                 },
                 aftersetformdata: function (asp, record, form) {
-                    debugger;
+                    
                     var sfObjCr = this.getForm().down('#sfObjCr');
                     sfObjCr.getStore().filter('bcId', bcId);
                 }
@@ -209,7 +209,7 @@
         me.params = {};
         me.params.dateStart = new Date(new Date().getFullYear(), 0, 1);
         me.params.dateEnd = new Date(new Date().getFullYear(), 11, 31);
-        debugger;
+        
         me.bindContext(view);
         this.application.deployView(view);
         //me.getAspect('manOrgLicenseNotificationGisEditPanelAspect').setData(id);

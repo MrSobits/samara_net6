@@ -168,7 +168,6 @@
 
     sendRequest: function () {
         var me = this;
-        debugger;
         var reqId = signwindow.rec.getId();
         signwindow.close();
         B4.Ajax.request({

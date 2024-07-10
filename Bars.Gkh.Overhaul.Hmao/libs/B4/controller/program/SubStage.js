@@ -411,7 +411,7 @@
     },
 
     hideRecord: function (grid, rowIndex, colIndex, param, param2, rec, asp) {
-        debugger;
+        
         B4.Ajax.request({
             url: B4.Url.action('RemoveFromSubProgramm', 'ProgramVersion'),
             params: {

@@ -73,7 +73,7 @@
 
     sendRequest: function (grid, rowIndex, colIndex, param, param2, rec, asp) {
         var me = this;
-        debugger;
+        
         smevCertInfo = rec.getId();
         B4.Ajax.request({
             url: B4.Url.action('Execute', 'MVDLivingPlaceRegistrationExecute'),

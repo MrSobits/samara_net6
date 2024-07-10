@@ -240,7 +240,7 @@
             },
 
             SkipEmails: function (btn) {
-                debugger;
+                
                 var w = btn.up('ansRegPdfWindow');
                 w.close();
                 var me = this;
@@ -304,7 +304,7 @@
                     }
                 }).error(function (err) {
                     //asp.unmask();
-                    debugger;
+                    
                     Ext.Msg.alert('Ошибка', err.message);
                 });
             },

@@ -35,7 +35,7 @@ Ext.define('B4.aspects.permission.realityobj.RealityObjectFields', {
             {
                 name: 'Gkh.RealityObject.Buttons.SendToGZHI', applyTo: '#btnPrescr', selector: 'realityobjgeneralinfocontainer',
                 applyBy: function (component, allowed) {
-                    debugger;
+                    
                     if (allowed) {
                         component.show();
                     } else {

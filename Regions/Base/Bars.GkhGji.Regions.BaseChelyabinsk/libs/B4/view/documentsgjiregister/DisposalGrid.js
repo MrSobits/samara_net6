@@ -31,7 +31,6 @@
         //то получаем енум и формируем из его item-ов новый енум но без постановления прокуратуры
         var currTypeBase = B4.enums.TypeBase.getItemsWithEmpty([null, '-']);
         var newTypeBase = [];
-        debugger;
         Ext.iterate(currTypeBase, function (val, key) {
             if (key != 6)
                 newTypeBase.push(val);

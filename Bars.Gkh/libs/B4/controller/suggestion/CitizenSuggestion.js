@@ -350,7 +350,7 @@
                     return true;
                 },
                 aftersetformdata: function (asp, record) {
-                    debugger;
+                    
                     var commentFilesStore = asp.getForm().down('citsugfilegrid[type="CommentQuestion"]').getStore(),
                             answerFilesStore = asp.getForm().down('citsugfilegrid[type="CommentAnswer"]').getStore();
 

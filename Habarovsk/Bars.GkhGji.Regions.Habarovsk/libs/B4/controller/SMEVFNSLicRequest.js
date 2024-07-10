@@ -89,7 +89,7 @@
                             licenseData: licenseData
                         }
                         )).next(function (response) {
-                            debugger;
+                            
                             var data = Ext.decode(response.responseText);
                             dfOGRN.setValue(data.data.OGRN);
                             dfINN.setValue(data.data.INN);
@@ -204,7 +204,7 @@
                 }
             },
             send: function (record) {
-                debugger;
+                
                 var me = this;
                 var taskId = SMEVFNSLicRequest;
                 var form = this.getForm();

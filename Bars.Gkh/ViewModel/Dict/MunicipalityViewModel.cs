@@ -26,15 +26,6 @@ namespace Bars.Gkh.ViewModel
 
             var listIds = !string.IsNullOrEmpty(ids) ? ids.Split(',').Select(id => id.ToLong()).ToArray() : new long[0];
 
-            var useAuthFilter = baseParams.Params.Get("useAuthFilter", false);
-            if (useAuthFilter)
-            {
-                var userManager = this.Container.Resolve<IGkhUserManager>();
-                using (this.Container.Using(userManager))
-                {
-                    listIds = userManager.GetMunicipalityIds().ToArray();
-                }
-            }
             // если переданы ид'шники мун. образований верхнего уровня, т.е. необходимо грузить муниципальные образования нижнего уровня
             domain = listParentIds.Length > 0 ? new BaseDomainService<Municipality> { Container = Container } : domain;
 
@@ -65,9 +56,9 @@ namespace Bars.Gkh.ViewModel
                 .Filter(loadParams, Container);
 
             return new ListDataResult(
-                loadParams.Order.Length > 0 
+                loadParams.Order.Length > 0
                     ? data.Order(loadParams).Paging(loadParams).ToList()
-                    : data.OrderBy(x => x.Name).Paging(loadParams).ToList(), 
+                    : data.OrderBy(x => x.Name).Paging(loadParams).ToList(),
                 data.Count());
         }
 
@@ -75,7 +66,7 @@ namespace Bars.Gkh.ViewModel
         {
             var id = baseParams.Params.GetAs<long>("id");
             var obj = domainService.Get(id);
-            
+
             var repository = Container.Resolve<IFiasRepository>();
             if (obj != null && obj.RegionName.IsEmpty())
             {
@@ -88,28 +79,27 @@ namespace Bars.Gkh.ViewModel
 
             return obj != null ? new BaseDataResult(
                  new
-                     {
-                         obj.Id,
-                         obj.ExternalId,
-                         obj.ObjectCreateDate,
-                         obj.ObjectEditDate,
-                         obj.ObjectVersion,
-                         obj.Code,
-                         obj.FiasId,
-                         obj.Group,
-                         obj.Name,
-                         obj.Okato,
-                         obj.Oktmo,
-                         obj.Description,
-                         obj.FederalNumber,
-                         obj.Cut,
-                         obj.Level,
-                         DinamicFias = !string.IsNullOrEmpty(obj.FiasId) ? (DinamicAddress)repository.GetDinamicAddress(obj.FiasId) : null,
-                         obj.RegionName,
-                         obj.CheckCertificateValidity,
-                         obj.ParentMo,
-                         obj.CodeGji
-                     }) : new BaseDataResult();
+                 {
+                     obj.Id,
+                     obj.ExternalId,
+                     obj.ObjectCreateDate,
+                     obj.ObjectEditDate,
+                     obj.ObjectVersion,
+                     obj.Code,
+                     obj.FiasId,
+                     obj.Group,
+                     obj.Name,
+                     obj.Okato,
+                     obj.Oktmo,
+                     obj.Description,
+                     obj.FederalNumber,
+                     obj.Cut,
+                     obj.Level,
+                     DinamicFias = !string.IsNullOrEmpty(obj.FiasId) ? (DinamicAddress)repository.GetDinamicAddress(obj.FiasId) : null,
+                     obj.RegionName,
+                     obj.CheckCertificateValidity,
+                     obj.ParentMo
+                 }) : new BaseDataResult();
 
 
         }

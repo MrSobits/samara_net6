@@ -210,7 +210,6 @@
             publishDateField = grid.down('[name=PublishDate]'),
             summaryField = grid.down('[name=Summary]');
 
-        debugger;
         var tfMainProg = grid.down('#tfMainProg');
         var tfSubProg = grid.down('#tfSubProg');
         var tfTotalCount = grid.down('#tfHousesCount');
@@ -268,7 +267,6 @@
             tfAllTotalCount.setValue(data.data.allTotalCount);
             return true;
         }).error(function () {
-            debugger;
             });
 
         B4.Ajax.request({

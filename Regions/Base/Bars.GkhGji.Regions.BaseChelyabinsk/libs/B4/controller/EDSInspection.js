@@ -77,7 +77,7 @@
             //    var form = window ? window.getForm() : null;
             //    var rec = form ? form.getRecord() : null;
             //    if (rec) {
-            //        debugger;
+            //        
             //        var inspection = rec.getId();
             //        store = grid.getStore();
             //        store.on('beforeload',
@@ -213,7 +213,7 @@
             listeners: {
                 getdata: function (asp, record) {
                     if (!record.get('Id')) {
-                        debugger;
+                        
                         record.set('EDSInspection', edsId);
                     }
                 }

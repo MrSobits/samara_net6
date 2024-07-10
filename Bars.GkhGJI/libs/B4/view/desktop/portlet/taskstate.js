@@ -11,6 +11,7 @@
     header: true,
     footer: true,
     isBuilt: false,
+    store: 'B4.store.desktop.TaskState',
     store: 'desktop.TaskState',
     column: 1,
 
@@ -89,7 +90,7 @@
 
     afterRender: function () {
         this.callParent(arguments);
-        if (this.store.isStore) {
+        if (this.store && this.store.isStore) {
             if (this.store.getCount() == 0) {
                 this.store.load();
             } else {

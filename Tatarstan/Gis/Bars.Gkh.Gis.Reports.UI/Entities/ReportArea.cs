@@ -5,6 +5,7 @@
     /// <summary>
     /// Список районов для отчета
     /// </summary>
+    // TODO При необходимости адаптировать функционал после смены Billing.Core на Dapper
     public class ReportArea : PersistentObject
     {
         /// <summary>

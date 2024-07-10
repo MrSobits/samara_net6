@@ -6,7 +6,7 @@
     layout: 'fit',
     initComponent: function () {
         var me = this;
-        debugger;
+        
         me.Id =  'ya-map-' + Ext.id(),
         Ext.applyIf(me, {
             items: [

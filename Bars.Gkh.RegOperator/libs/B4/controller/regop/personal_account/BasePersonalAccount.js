@@ -1651,7 +1651,6 @@
             distributeForBaseTariff: cbDistributeForBaseTariff.checked,
             distributeForDecisionTariff: cbDistributeForDecisionTariff.checked
         };
-        debugger;
         distributionWindow.submit({
             url: B4.Url.action('ApplyPerformedWorkDistribution', 'PersonAccountOperation'),
             params: params,
@@ -2011,7 +2010,6 @@
             store = grid.getStore(),
             array = [],
             params = form.getValues();
-        debugger;
         store.each(function (rec) {
             var record = {
                 Id: rec.get('Id'),
@@ -2619,7 +2617,6 @@
             IsCharge: isCharge,
             IsPenalty: isPenalty
             };
-        debugger;
 
             Ext.apply(params, me.getFilterParams());
 
@@ -2754,7 +2751,6 @@
     },
 
     showSetSignWin: function (recs) {
-        debugger;
         var me = this,            
             accountIds = [],
             totalCount = 0;         

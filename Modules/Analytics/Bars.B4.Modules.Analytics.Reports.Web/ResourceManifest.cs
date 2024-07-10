@@ -11,15 +11,18 @@
         protected override void BaseInit(IResourceManifestContainer container)
         {	
             this.RegisterResource(container, "libs/B4/controller/BaseReportController.js");
+            this.RegisterResource(container, "libs/B4/controller/PrintFormCategory.js");
             this.RegisterResource(container, "libs/B4/controller/al/Kp60Reports.js");
             this.RegisterResource(container, "libs/B4/controller/al/ReportCustom.js");
             this.RegisterResource(container, "libs/B4/controller/al/ReportPanel.js");
             this.RegisterResource(container, "libs/B4/controller/al/StoredReport.js");
             this.RegisterResource(container, "libs/B4/helpers/al/ReportParamFieldBuilder.js");
+            this.RegisterResource(container, "libs/B4/model/PrintFormCategory.js");
             this.RegisterResource(container, "libs/B4/model/ReportHistory.js");
             this.RegisterResource(container, "libs/B4/model/al/DataSourceNode.js");
             this.RegisterResource(container, "libs/B4/model/al/Role.js");
             this.RegisterResource(container, "libs/B4/model/al/SqlQueryParam.js");
+            this.RegisterResource(container, "libs/B4/store/PrintFormCategory.js");
             this.RegisterResource(container, "libs/B4/store/ReportCustomSelect.js");
             this.RegisterResource(container, "libs/B4/store/ReportHistory.js");
             this.RegisterResource(container, "libs/B4/store/ReportHistoryParam.js");

@@ -132,7 +132,7 @@
     },
 
     onCreateSignature: function (win) {
-        debugger;
+        
         var me = this;
         certCombo = win.down('#dfCert');
         record = win.rec;
@@ -154,7 +154,7 @@
         }
         me.mask('Обмен информацией со СМЭВ', this.getMainComponent());
         //Ext.Msg.alert('Внимание!', 'Запуск экспорта.');
-  //      debugger;
+  //      
         signwindow = Ext.create('B4.view.gisGkh.SignWindow');
         signwindow.rec = rec;
         signwindow.signer = new XadesSigner();
@@ -216,7 +216,7 @@
 
     sendRequest: function () {
         var me = this;
-            debugger;
+            
         var reqId = signwindow.rec.getId();
         signwindow.close();
               B4.Ajax.request({
@@ -237,7 +237,7 @@
     },
 
     signRequest: function (reqId, reqIdsToSign, win) {
-    //    debugger;
+    //    
         var me = this,
             signingResult = {
                 success: true,
@@ -266,7 +266,7 @@
             timeout: 9999999
         }).next(function (response) {
             var notSignedData = Ext.decode(response.responseText).data;
-            debugger;
+            
             //if (!notSignedData || notSignedData.length === 0) {
             //    Ext.Msg.alert('Ошибка!', 'Выберите сертификат для подписи');
             //}
@@ -275,28 +275,28 @@
                 signingResult.message = 'Не получены неподписанные данные с сервера';
                
             }
-            debugger;
+            
             var signedXml = me.createSign(val.subjectName, notSignedData, function(xml) {
             }, function (e) {
-                    debugger;
+                    
                 signingResult.success = false;
                 signingResult.message = 'Не удалось подписать данные на клиенте' + '<br>' + (e.message || e);
                 //Ext.Msg.alert('Ошибка!', 'Не удалось подписать данные на клиенте' + '<br>' + (e.message || e));
             }, me);
 
-            debugger;
+            
             //win.signer.setCertificate(val);
             //win.signer.signXml(notSignedData, function (xml) {
-            //    debugger;
+            //    
             //}, function (e) {
-            //        debugger;
+            //        
             //    signingResult.success = false;
             //    signingResult.message = 'Не удалось подписать данные на клиенте' + '<br>' + (e.message || e);
             //    //Ext.Msg.alert('Ошибка!', 'Не удалось подписать данные на клиенте' + '<br>' + (e.message || e));
             //}, me);
         })
             .error(function (e) {
-                debugger;
+                
                 signingResult.success = false;
                 signingResult.message = 'Не получены неподписанные данные с сервера' + '<br>' + (e.message || e);
                 me.signNextRequest(win, reqIdsToSign, signingResult);
@@ -403,7 +403,7 @@
             var oSigner = yield cadesplugin.CreateObjectAsync("CAdESCOM.CPSigner");
             yield oSigner.propset_Certificate(oCertificate);
             yield oSigner.propset_CheckCertificate(true);
-                debugger;
+                
             // Создаем объект CAdESCOM.SignedXML
             var oSignedXML = yield cadesplugin.CreateObjectAsync("CAdESCOM.SignedXML");
                 yield oSignedXML.propset_Content(sContent);
@@ -418,12 +418,12 @@
 
             //// Указываем алгоритм хэширования
             //yield oSignedXML.propset_DigestMethod(me.XmlDsigGost3411Url2012256);
-                debugger;
+                
             var sSignedMessage = "";
             try {
                 sSignedMessage = yield oSignedXML.Sign(oSigner);
             } catch (err) {
-                debugger;
+                
                 Ext.Msg.alert("Failed to create signature. Error: ", err);
                 return;
             }
@@ -440,27 +440,27 @@
             //    Ext.Msg.alert("Failed to verify signature. Error: " + cadesplugin.getLastError(err));
             //    return;
             //}
-                debugger;
+                
                 return oSignedXML2;
         });
     },
 
     getCertificateBySubjectName: function (certSubjectName) {
         var me = this;
-        debugger;
+        
         try {
             //var plug = signwindow.cadesplugin;
             //var stroeSert = signwindow.cadesplugin.CreateObjectAsync("CAdESCOM.Store");
-            //debugger;
+            //
             //var yeldstore = cadesplugin.CreateObjectAsync("CAdESCOM.Store");
         }
         catch(e)
         {
-            debugger;
+            
         }
-        debugger;
+        
         var oStore = cadesplugin.CreateObject("CAdESCOM.Store");
-        debugger;
+        
          oStore.Open(me.CAPICOM_CURRENT_USER_STORE, me.CAPICOM_MY_STORE,
             me.CAPICOM_STORE_OPEN_MAXIMUM_ALLOWED);
 

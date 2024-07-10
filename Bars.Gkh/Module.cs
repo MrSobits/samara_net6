@@ -1,13 +1,6 @@
 ﻿namespace Bars.Gkh
 {
-    using System;
-    using System.Collections.Specialized;
-    using System.Globalization;
-    using System.Linq;
-    using System.Threading;
-
     using AutoMapper;
-
     using B4;
     using B4.Application;
     using B4.DataAccess;
@@ -27,7 +20,6 @@
     using B4.Modules.Security;
     using B4.Modules.States;
     using B4.Windsor;
-    
     using Bars.B4.Migrations;
     using Bars.B4.Modules.Analytics.Reports;
     using Bars.B4.Modules.FileSystemStorage;
@@ -40,7 +32,6 @@
     using Bars.Gkh.Config.Impl;
     using Bars.Gkh.ConfigSections.Administration;
     using Bars.Gkh.ConfigSections.ClaimWork;
-    using Bars.Gkh.ConfigSections.PostalService;
     using Bars.Gkh.ConfigSections.RegOperator;
     using Bars.Gkh.ConfigSections.RegOperator.Administration;
     using Bars.Gkh.Controllers;
@@ -51,7 +42,6 @@
     using Bars.Gkh.Controllers.Dict.RealEstateType;
     using Bars.Gkh.Controllers.EfficiencyRating;
     using Bars.Gkh.Controllers.Licensing;
-    using Bars.Gkh.Controllers.ManOrg.ManOrgContract;
     using Bars.Gkh.Controllers.MetaValueConstructor;
     using Bars.Gkh.Controllers.RealityObj;
     using Bars.Gkh.Controllers.Suggestion;
@@ -73,7 +63,6 @@
     using Bars.Gkh.DomainEvent.Infrastructure;
     using Bars.Gkh.DomainService;
     using Bars.Gkh.DomainService.AddressMatching;
-    using Bars.Gkh.DomainService.Administration;
     using Bars.Gkh.DomainService.Administration.Impl;
     using Bars.Gkh.DomainService.Config;
     using Bars.Gkh.DomainService.Config.Impl;
@@ -91,15 +80,12 @@
     using Bars.Gkh.DomainService.Multipurpose.Impl;
     using Bars.Gkh.DomainService.Permission;
     using Bars.Gkh.DomainService.Permission.Impl;
-    using Bars.Gkh.DomainService.RealityObjectOutdoor;
-    using Bars.Gkh.DomainService.RealityObjectOutdoor.Impl;
-    using Bars.Gkh.DomainService.RealityObjImage;
     using Bars.Gkh.DomainService.TechPassport;
     using Bars.Gkh.DomainService.TechPassport.Impl;
     using Bars.Gkh.Entities;
     using Bars.Gkh.Entities.Administration.ExecutionAction;
     using Bars.Gkh.Entities.Administration.FormatDataExport;
-    using Bars.Gkh.Entities.Administration.Notification;
+    using Bars.Gkh.Entities.Administration.PrintCertHistory;
     using Bars.Gkh.Entities.Administration.SystemDataTransfer;
     using Bars.Gkh.Entities.Dicts;
     using Bars.Gkh.Entities.Dicts.ContractService;
@@ -121,10 +107,11 @@
     using Bars.Gkh.FormatDataExport.Domain.Impl;
     using Bars.Gkh.FormatDataExport.Scheduler;
     using Bars.Gkh.FormatDataExport.Scheduler.Impl;
-    using Bars.Gkh.FormatDataExport.Tasks;
     using Bars.Gkh.Formulas;
     using Bars.Gkh.Formulas.Impl;
     using Bars.Gkh.GeneralState;
+    using Bars.Gkh.Helpers;
+    using Bars.Gkh.Helpers.Impl;
     using Bars.Gkh.Import;
     using Bars.Gkh.Import.ElevatorsImport;
     using Bars.Gkh.Import.FiasHelper;
@@ -146,7 +133,6 @@
     using Bars.Gkh.Interceptors.ManOrg;
     using Bars.Gkh.Interceptors.MetaValueConstructor;
     using Bars.Gkh.Interceptors.RealEstateType;
-    using Bars.Gkh.Interceptors.RealityObjectOutdoor;
     using Bars.Gkh.Interceptors.ServOrg;
     using Bars.Gkh.Log;
     using Bars.Gkh.Log.Impl;
@@ -154,6 +140,9 @@
     using Bars.Gkh.MetaValueConstructor.DataFillers;
     using Bars.Gkh.MetaValueConstructor.DomainModel;
     using Bars.Gkh.MetaValueConstructor.FormulaValidating;
+    using Bars.Gkh.MigrationManager;
+    using Bars.Gkh.MigrationManager.Interceptors;
+    using Bars.Gkh.Migrations;
     using Bars.Gkh.Modules.ClaimWork.Controller;
     using Bars.Gkh.Modules.ClaimWork.Controllers;
     using Bars.Gkh.Modules.ClaimWork.DomainService;
@@ -162,6 +151,7 @@
     using Bars.Gkh.Modules.ClaimWork.Interceptors;
     using Bars.Gkh.Modules.ClaimWork.Repository;
     using Bars.Gkh.Modules.ClaimWork.Repository.Impl;
+    using Bars.Gkh.Modules.ClaimWork.ViewModel;
     using Bars.Gkh.Modules.Gkh1468.Entities;
     using Bars.Gkh.Modules.Gkh1468.Entities.ContractPart;
     using Bars.Gkh.Modules.Gkh1468.Entities.Dict;
@@ -177,7 +167,17 @@
     using Bars.Gkh.Repositories;
     using Bars.Gkh.Repositories.Impl;
     using Bars.Gkh.SchedulerTasks;
+    using Bars.Gkh.Services.Override;
     using Bars.Gkh.StateChanges;
+    using Bars.Gkh.SystemDataTransfer;
+    using Bars.Gkh.SystemDataTransfer.Caching;
+    using Bars.Gkh.SystemDataTransfer.Domain;
+    using Bars.Gkh.SystemDataTransfer.Meta;
+    using Bars.Gkh.SystemDataTransfer.Tasks;
+    using Bars.Gkh.Tasks.ExecutorTest;
+    using Bars.Gkh.Tasks.FiasUpdater;
+    using Bars.Gkh.TechnicalPassport;
+    using Bars.Gkh.TechnicalPassport.Impl;
     using Bars.Gkh.TextValues;
     using Bars.Gkh.TextValues.Impl;
     using Bars.Gkh.Utils;
@@ -187,42 +187,39 @@
     using Bars.Gkh.ViewModel.Administration;
     using Bars.Gkh.ViewModel.Dict;
     using Bars.Gkh.ViewModel.EfficiencyRating;
+    using Bars.Gkh.ViewModel.EntityHistory;
+    using Bars.Gkh.ViewModel.HousingInspection;
     using Bars.Gkh.ViewModel.Licensing;
     using Bars.Gkh.ViewModel.ManOrg;
     using Bars.Gkh.ViewModel.MetaValueConstructor;
     using Bars.Gkh.ViewModel.RealityObject;
     using Bars.Gkh.ViewModel.Suggestion;
-
     using Castle.MicroKernel.Registration;
-
+    using Controllers.HousingInspection;
     using Entities.EmergencyObj;
     using Entities.RealEstateType;
-
     using global::Quartz;
-
-    using Bars.Gkh.Migrations;
-    using FiasController = Bars.Gkh.Controllers.FiasController;
-    using Bars.Gkh.MigrationManager;
-    using Bars.Gkh.MigrationManager.Interceptors;
-    using Bars.Gkh.Modules.ClaimWork.ViewModel;
-    using Bars.Gkh.Nhibernate;
-    using Bars.Gkh.Services.Override;
-    using Bars.Gkh.SystemDataTransfer;
-    using Bars.Gkh.SystemDataTransfer.Caching;
-    using Bars.Gkh.SystemDataTransfer.Domain;
-    using Bars.Gkh.SystemDataTransfer.Meta;
-    using Bars.Gkh.SystemDataTransfer.Tasks;
-    using Bars.Gkh.ViewModel.HousingInspection;
-    using Bars.Gkh.TechnicalPassport;
-    using Bars.Gkh.TechnicalPassport.Impl;
-    using Bars.Gkh.ViewModel.EntityHistory;
-
     using global::Quartz.Impl;
-    using Controllers.HousingInspection;
+    using System;
+    using System.Collections.Specialized;
+    using System.Globalization;
+    using System.Linq;
+    using System.Threading;
+    using FiasController = Controllers.FiasController;
+    using Bars.Gkh.Tasks;
+    using Bars.Gkh.ConfigSections.GisGkh;
+    using Bars.Gkh.ConfigSections.PostalService;
+    using Bars.Gkh.Controllers.ManOrg.ManOrgContract;
     using Bars.Gkh.DomainService.ContragentClw.Impl;
+    using Bars.Gkh.DomainService.GisGkhRegional.Impl;
+    using Bars.Gkh.DomainService.GisGkhRegional;
+    using Bars.Gkh.DomainService.RealityObjImage;
+    using Bars.Gkh.Entities.Administration;
+    using Bars.Gkh.Entities.Administration.Notification;
+    using Bars.Gkh.Interceptors.RealityObjectOutdoor;
+    using Bars.Gkh.Nhibernate;
     using Bars.Gkh.Services.Impl;
     using Bars.Gkh.Services.ServiceContracts;
-    using Bars.Gkh.Entities.Administration;
     using Bars.Gkh.Services.ServiceContracts.Mail;
 
     using Castle.Windsor;
@@ -230,7 +227,6 @@
     using Microsoft.AspNetCore.Builder;
 
     using Refit;
-    using Bars.Gkh.Entities.Administration.PrintCertHistory;
 
     /// <summary>
     /// Класс модуля
@@ -295,7 +291,8 @@
             this.Container.Register(Component.For<IGkhUserManager>()
                 .Forward<IUserManager>()
                 .ImplementedBy<UserManager>()
-                .LifeStyle.Scoped());
+                .LifeStyle
+                .Scoped());
 
             this.Container.RegisterAuthenticationServiceHandler<GkhAuthenticationServiceHandler>();
             this.Container.Register(Component.For<IGkhReportProvider>().ImplementedBy<GkhReportProvider>().LifeStyle.Singleton);
@@ -305,7 +302,6 @@
             this.Container.Register(Component.For<IPermissionSource>().ImplementedBy<GkhPermissionMap>());
             this.Container.Register(Component.For<IFieldRequirementSource>().ImplementedBy<GkhFieldRequirementMap>());
             this.Container.Register(Component.For<IFieldRequirementService>().ImplementedBy<FieldRequirementService>());
-            this.Container.Register(Component.For<IFormatDataExportEntityInfoService>().ImplementedBy<FormatDataExportEntityInfoService>());
             this.Container.RegisterTransient<IViewCollection, GkhViewCollection>("GkhViewCollection");
 
             this.Container.RegisterSingleton<IFormPermssionService, FormPermssionService>();
@@ -369,6 +365,7 @@
 
             this.Container.Register(
                 Component.For<IPrintForm>().ImplementedBy<AdviceMkdReport>().Named("Report Bars.Gkh AdviceMKD").LifestyleTransient(),
+                Component.For<IPrintForm>().ImplementedBy<ExportLicenseGISReport>().Named("Report Bars.Gkh ExportLicenseGISReport").LifestyleTransient(),
                 Component.For<IPrintForm>().ImplementedBy<RoomAreaControlReport>().Named("Report Bars.Gkh RoomAreaControl").LifestyleTransient(),
                 Component.For<IPrintForm>().ImplementedBy<InformationByFloors>().Named("Report Bars.Gkh InformationByFloors").LifestyleTransient(),
                 Component.For<IPrintForm>().ImplementedBy<NoteByReestrHousesReport>().Named("RF Report.NoteByReestrHouses").LifestyleTransient(),
@@ -381,9 +378,17 @@
                 Component.For<IPrintForm>().ImplementedBy<ReferenceWallMaterial>().Named("Report Bars.Gkh ReferenceWallMaterial").LifestyleTransient(),
                 Component.For<IPrintForm>().ImplementedBy<MakingProtocolsOwnersControlReport>().Named("Report Bars.Gkh MakingProtocolsOwnersControl").LifestyleTransient(),
                 Component.For<IPrintForm>().ImplementedBy<ContragentReport>().Named("Report Bars.Gkh Contragents").LifestyleTransient());
+                Container.RegisterTransient<IGkhBaseReport, CSCalculationReport>(); ;
 
             this.Container.RegisterTransient<IGkhBaseReport, QualificationCertificateReport>("QualificationCertificate");
             this.Container.RegisterTransient<IGkhBaseReport, PersonRequestToExamReport>("PersonRequestToExamReport");
+
+            this.Container.RegisterTransient<IGkhBaseReport, PersonRequestToOGJN>("PersonRequestToOGJN");
+            this.Container.RegisterTransient<IGkhBaseReport, PersonAnswerRequest>("PersonAnswerRequest");
+            this.Container.RegisterTransient<IGkhBaseReport, PersonProtocolResult>("PersonProtocolResult");
+            this.Container.RegisterTransient<IGkhBaseReport, PersonOrganizationForm>("PersonOrganizationForm");
+            this.Container.RegisterTransient<IGkhBaseReport, PersonQualificationCertificateReport> ("PersonQualificationCertificateReport");
+
             this.Container.RegisterTransient<IGkhBaseReport, LicenseApplicationPrimaryReport>();
             this.Container.RegisterTransient<IGkhBaseReport, LicenseApplicationJurPersonReport>();
             this.Container.RegisterTransient<IGkhBaseReport, LicenseRenewalApplicationReport>();
@@ -421,8 +426,7 @@
                         .ScheduleTask<SuggestionsClosingTask>());
             }
 
-            // Переопределение Bars.B4.Modules.Quartz.WindsorJobListener, который безбожно писал в Info.log всякую чепух
-            
+            // Переопределение Bars.B4.Modules.Quartz.WindsorJobListener, который безбожно писал в Info.log всякую чепуху
             // TODO: quartz
             // this.Container.Register(Component.For<IScheduler>().IsDefault().Named(nameof(GkhWindsorJobListener)).UsingFactoryMethod((k, cc) =>
             // {
@@ -442,6 +446,10 @@
             this.Container.Register(Component.For<IDomainServiceInterceptor<ManOrgLicense>>().ImplementedBy<ManOrgLicenseInterceptor>().LifestyleTransient());
             this.Container.Register(Component.For<IDomainServiceInterceptor<NormativeDoc>>().ImplementedBy<NormativeDocInterceptor>().LifestyleTransient());
             this.Container.RegisterTransient<IMenuModificator, EmptyMenuModificator>();
+
+            Container.RegisterTransient<IEMailSender, EMailSender>();
+            Container.RegisterTransient<ICitSugEMailSender, CitSugEMailSender>();
+            Container.RegisterTransient<IImportHelper, ImportHelper>();
 
             this.RegisterController();
             this.RegisterDomainInterceptors();
@@ -534,6 +542,7 @@
             this.Container.RegisterGkhConfig<ConfigSections.General.GeneralConfig>();
             this.Container.RegisterGkhConfig<ClaimWorkConfig>();
             this.Container.RegisterGkhConfig<RegOperatorConfig>();
+            this.Container.RegisterGkhConfig<GisGkhConfig>();
             this.Container.RegisterGkhConfig<RegOperatorLogsConfig>();
             this.Container.RegisterGkhConfig<PostalServiceConfig>();
 
@@ -554,16 +563,23 @@
 
         private void RegisterController()
         {
+            this.Container.RegisterAltDataController<CSFormula>();
+            this.Container.RegisterAltDataController<MonitoringTypeDict>();
+            this.Container.RegisterAltDataController<TarifNormative>();
+            this.Container.RegisterAltDataController<VideoOverwatchType>();
+            this.Container.RegisterAltDataController<TypeCategoryCS>();
+            this.Container.RegisterAltDataController<MOCoefficient>();
+            this.Container.RegisterAltDataController<CategoryCSMKD>();
+            this.Container.RegisterAltDataController<RealityObjectCategoryMKD>();
             this.Container.ReplaceController<ChangeLogController>("changeLog");
             this.Container.RegisterController<CountCacheController>();
-            this.Container.RegisterController<Controllers.GkhPermissionController>();
-            this.Container.ReplaceController<StatePermissionController>("statepermission");
-            this.Container.ReplaceController<StateController>("state");
-            this.Container.ReplaceController<StateTransferRuleController>("StateTransferRule");
-            this.Container.ReplaceController<StateTransferController>("StateTransfer");
+            this.Container.ReplaceController<Controllers.PermissionController>("permission");
+            this.Container.ReplaceController<StatePermissionController>();
+            this.Container.ReplaceController<StateController>();
+            this.Container.ReplaceController<StateTransferRuleController>();
+            this.Container.ReplaceController<StateTransferController>();
 
             this.Container.RegisterAltDataController<PrintCertHistory>();
-
             this.Container.RegisterController<FilePreviewController>();
 
             this.Container.RegisterController<PaymentDocumentNumberController>();
@@ -576,11 +592,15 @@
             this.Container.RegisterController<GkhParamController>();
 
             this.Container.RegisterController<MultipurposeGlossaryItemController>();
+            this.Container.RegisterAltDataController<FlattenedClaimWork>();
             this.Container.RegisterAltDataController<MultipurposeGlossary>();
             this.Container.RegisterController<GkhTasksController>();
             this.Container.RegisterController<TaskStatusController>();
 
+            this.Container.RegisterAltDataController<ViewStructElementRealObj>();
             // Administration
+            this.Container.RegisterAltDataController<ExternalExchangeTestingFiles>();
+
             this.Container.RegisterController<OperatorController>();
             this.Container.RegisterAltDataController<OperatorContragent>();
             this.Container.RegisterController<MenuController>();
@@ -601,7 +621,6 @@
             ContainerHelper.RegisterGkhDataController<NotifyPermission>();
             ContainerHelper.RegisterGkhDataController<NotifyStats>();
             ContainerHelper.RegisterGkhDataController<EmailMessage>();
-
             // BelayManOrgActivity
             this.Container.RegisterController<BelayManOrgActivityController>();
 
@@ -653,6 +672,8 @@
             this.Container.RegisterController<BuilderDocumentTypeController>();
             this.Container.RegisterController<ResettlementProgramController>();
 
+
+            this.Container.RegisterAltDataController<AdditWork>();
             this.Container.RegisterAltDataController<LicenseProvidedDoc>();
             this.Container.RegisterAltDataController<BuildingFeature>();
             this.Container.RegisterAltDataController<Institutions>();
@@ -678,13 +699,20 @@
             this.Container.RegisterAltDataController<BelayOrgKindActivity>();
             this.Container.RegisterAltDataController<ZonalInspectionMunicipality>();
             this.Container.RegisterAltDataController<ZonalInspectionInspector>();
+            this.Container.RegisterAltDataController<ProtocolMKDState>();
+            this.Container.RegisterAltDataController<ProtocolMKDSource>();
+            this.Container.RegisterAltDataController<ProtocolMKDIniciator>();
             this.Container.RegisterAltDataController<KindRisk>();
             this.Container.RegisterAltDataController<TypeProject>();
             this.Container.RegisterAltDataController<InspectorSubscription>();
+            this.Container.RegisterAltDataController<CSCalculation>();
+            this.Container.RegisterAltDataController<CSCalculationRow>();
             this.Container.RegisterAltDataController<ProblemPlace>();
+            this.Container.RegisterAltDataController<SugTypeProblem>();
             this.Container.RegisterAltDataController<FiasOktmo>();
             this.Container.RegisterAltDataController<MunicipalityFiasOktmo>();
             this.Container.RegisterAltDataController<ContentRepairMkdWork>();
+            this.Container.RegisterAltDataController<LivingSquareCost>();
             this.Container.RegisterAltDataController<ContragentRole>();
             this.Container.RegisterAltDataController<RiskCategory>();
             this.Container.RegisterAltDataController<TypeFloor>();
@@ -704,6 +732,7 @@
             this.Container.RegisterAltDataController<TypeNormativeAct>();
             this.Container.RegisterAltDataController<IdentityDocumentType>();
 
+
             // EmergencyObj
             this.Container.RegisterController<EmergencyObjectController>();
             this.Container.RegisterController<EmergencyObjectDocumentsController>();
@@ -711,6 +740,7 @@
             // Import
             this.Container.RegisterController<ImportLogController>();
             this.Container.RegisterAltDataController<AddressMatch>();
+            this.Container.RegisterAltDataController<ASSberbankClient>();
             ContainerHelper.RegisterGkhDataController<FormatDataExportTask>(this.Container);
             ContainerHelper.RegisterGkhDataController<FormatDataExportResult>(this.Container);
             ContainerHelper.RegisterGkhDataController<FormatDataExportRemoteResult>(this.Container);
@@ -726,7 +756,7 @@
             // ContragentClw
             this.Container.RegisterController<ContragentClwController>();
             this.Container.RegisterAltDataController<ContragentClwMunicipality>();
-
+            
             // ManOrg
             this.Container.RegisterController<ManagingOrganizationController>();
             this.Container.RegisterController<ManagingOrgWorkModeController>();
@@ -735,6 +765,7 @@
             this.Container.RegisterController<ManOrgContractTransferController>();
             this.Container.RegisterController<ManagingOrgRealityObjectController>();
             this.Container.RegisterController<ManOrgBaseContractController>();
+            this.Container.RegisterController<FileStorageDataController<ManOrgBaseContract>>();
             this.Container.RegisterController<FileStorageDataController<ManagingOrgDocumentation>>();
 
             this.Container.RegisterAltDataController<ManagingOrgClaim>();
@@ -769,6 +800,9 @@
             this.Container.RegisterAltDataController<RealityObjectHouseInfo>();
             this.Container.RegisterAltDataController<RealityObjectBlock>();
             this.Container.RegisterAltDataController<RealityObjectMeteringDevice>();
+            this.Container.RegisterAltDataController<RealityObjectAntenna>();
+            this.Container.RegisterAltDataController<RealityObjectVidecam>();
+            this.Container.RegisterAltDataController<RealityObjectHousekeeper>();
 
             this.Container.RegisterAltDataController<HouseAccount>();
             this.Container.RegisterAltDataController<HouseMeterReading>();
@@ -782,6 +816,7 @@
             this.Container.RegisterAltDataController<RealityObjectLift>();
             this.Container.RegisterAltDataController<RealityObjectLiftSum>();
             this.Container.RegisterFileStorageDataController<RealityObjectTechnicalMonitoring>();
+            this.Container.RegisterFileStorageDataController<RealityObjectAntenna>();
 
             this.Container.RegisterController<RealityObjectOutdoorController>();
             // Scripts
@@ -794,6 +829,7 @@
             this.Container.RegisterController<FileStorageDataController<ServiceOrgDocumentation>>();
             this.Container.RegisterController<FileStorageDataController<ServiceOrgContract>>();
             this.Container.RegisterController<ServiceOrgMunicipalityController>();
+            this.Container.RegisterAltDataController<ServiceOrgContract>();
             this.Container.RegisterAltDataController<CommunalResource>();
             this.Container.RegisterAltDataController<StopReason>();
             this.Container.RegisterAltDataController<PublicServiceOrgContractService>();
@@ -845,6 +881,7 @@
             // Лицезия УО
             this.Container.RegisterController<ManOrgLicenseController>();
             this.Container.RegisterController<FileStorageDataController<ManOrgLicenseDoc>>();
+            this.Container.RegisterController<FileStorageDataController<ManOrgLicenseExtension>>();
             this.Container.RegisterController<ManOrgLicenseRequestController>();
             this.Container.RegisterAltDataController<ManOrgRequestPerson>();
             this.Container.RegisterController<FileStorageDataController<ManOrgRequestProvDoc>>();
@@ -879,6 +916,8 @@
 
             this.Container.RegisterController<FormatDataExportController>();
 
+            this.Container.RegisterController<CSCalculationOperationsController>();
+
             this.Container.RegisterController<FormGovernmentServiceController>();
             this.Container.RegisterAltDataController<GovernmenServiceDetail>();
 
@@ -898,6 +937,9 @@
             ContainerHelper.RegisterGkhDataController<EntityHistoryInfo>();
             ContainerHelper.RegisterGkhDataController<EntityHistoryField>();
 
+            this.Container.RegisterAltDataController<ManOrgRequestRPGU>();
+            this.Container.RegisterAltDataController<ManOrgRequestSMEV>();
+            
             this.Container.RegisterAltDataController<BaseHouseEmergency>();
             this.Container.RegisterAltDataController<TypesHeatSource>();
             this.Container.RegisterAltDataController<TypeInterHouseHeatingSystem>();
@@ -916,6 +958,12 @@
             this.Container.RegisterAltDataController<WaterDispensers>();
             this.Container.RegisterAltDataController<CategoryConsumersEqualPopulation>();
             this.Container.RegisterAltDataController<EnergyEfficiencyClasses>();
+
+            //Квалификационный экзамен
+            this.Container.RegisterAltDataController<QualifyTestQuestions>();
+            this.Container.RegisterAltDataController<QualifyTestQuestionsAnswers>();
+            this.Container.RegisterAltDataController<QExamQuestion>();
+            this.Container.RegisterAltDataController<QualifyTestSettings>();
         }
 
         private void RegisterDomainInterceptors()
@@ -926,11 +974,13 @@
                 Component.For<IDomainServiceInterceptor<State>>().ImplementedBy<StateServiceInterceptor>().LifeStyle.Transient,
                 Component.For<IDomainServiceInterceptor<Instruction>>().ImplementedBy<InstructionServiceInterceptor>().LifeStyle.Transient);
 
+            this.Container.RegisterDomainInterceptor<CSCalculation, CSCalculationInterceptor>();
             this.Container.RegisterDomainInterceptor<InstructionGroup, InstructionGroupInterceptor>();
             this.Container.RegisterDomainInterceptor<Inspector, InspectorInterceptor>();
             this.Container.RegisterDomainInterceptor<ConstructiveElementGroup, ConstructiveElementGroupInterceptor>();
             this.Container.RegisterDomainInterceptor<Period, PeriodInterceptor>();
             this.Container.RegisterDomainInterceptor<Work, WorkInterceptor>();
+            this.Container.RegisterDomainInterceptor<RealityObjectHousekeeper, RealityObjectHousekeeperInterceptor>();
             this.Container.RegisterDomainInterceptor<ViolClaimWork, ViolClaimWorkInterceptor>();
             this.Container.RegisterDomainInterceptor<ZonalInspection, ZonalInspectionInterceptor>();
             this.Container.RegisterDomainInterceptor<LicenseProvidedDoc, LicenseProvidedDocInterceptor>();
@@ -1003,7 +1053,7 @@
 
             // ContragentClw
             this.Container.RegisterDomainInterceptor<ContragentClw, ContragentClwInterceptor>();
-
+            
             // ManOrg
             this.Container.RegisterDomainInterceptor<ManagingOrganization, ManOrgInterceptor>();
             this.Container.RegisterDomainInterceptor<ManOrgBaseContract, ManOrgBaseContractInterceptor>();
@@ -1019,6 +1069,10 @@
             this.Container.RegisterDomainInterceptor<RealityObject, RealityObjectInterceptor>();
             this.Container.RegisterDomainInterceptor<RealityObjectDirectManagContract, RealityObjectDirectManagContractInterceptor>();
             this.Container.RegisterDomainInterceptor<RealityObjectImage, RealityObjectImageInterceptor>();
+            this.Container.RegisterDomainInterceptor<RealityObjectVidecam, RealityObjectVidecamInterceptor>();
+            this.Container.RegisterDomainInterceptor<RealityObjectTechnicalMonitoring, RealityObjectTechnicalMonitoringInterceptor>();
+
+            this.Container.RegisterDomainInterceptor<ManOrgRequestRPGU, ManOrgRequestRPGUInterceptor>();
 
             this.Container.RegisterDomainInterceptor<RealityObjectOutdoor, RealityObjectOutdoorInterceptor>();
             // ServOrg
@@ -1055,7 +1109,7 @@
             this.Container.RegisterDomainInterceptor<PetitionToCourtType, PetitionToCourtTypeInterceptor>();
 
             this.Container.RegisterDomainInterceptor<BuildingFeature, BuildingFeatureInterceptor>();
-            
+
             this.Container.RegisterDomainInterceptor<DataMetaInfo, DataMetaInfoInterceptor>();
             this.Container.RegisterDomainInterceptor<BaseDataValue, BaseDataValueInterceptor>();
             this.Container.RegisterDomainInterceptor<EfficiencyRatingPeriod, EfficiencyRatingPeriodInterceptor>();
@@ -1086,6 +1140,8 @@
             this.Container.RegisterTransient<IDomainService<BelayPolicyEvent>, FileStorageDomainService<BelayPolicyEvent>>();
             this.Container.RegisterTransient<IDomainService<BelayPolicyPayment>, FileStorageDomainService<BelayPolicyPayment>>();
 
+            this.Container.RegisterDomainService<PersonPlaceWork, FileStorageDomainService<PersonPlaceWork>>();
+
             // Builder
             this.Container.RegisterTransient<IDomainService<Builder>, FileStorageDomainService<Builder>>();
             this.Container.RegisterTransient<IDomainService<BuilderDocument>, FileStorageDomainService<BuilderDocument>>();
@@ -1105,7 +1161,7 @@
 
             // LocalGov
             this.Container.RegisterDomainService<LocalGovernment, LocalGovernmentDomainService>();
-
+            
             // ManOrg
             this.Container.RegisterDomainService<ManagingOrganization, ManOrgDomainService>();
             this.Container.RegisterDomainService<ManOrgBaseContract, FileStorageDomainService<ManOrgBaseContract>>();
@@ -1120,12 +1176,14 @@
 
             // RealityObject
             this.Container.RegisterTransient<IDomainService<RealityObject>, RealityObjectDomainService>();
+            this.Container.RegisterTransient<IDomainService<RealityObjectImage>, FileStorageDomainService<RealityObjectImage>>();
             this.Container.RegisterTransient<IDomainService<RealityObjectImage>, RealityObjectImageDomainService>();
             this.Container.RegisterTransient<IDomainService<RealityObjectLand>, FileStorageDomainService<RealityObjectLand>>();
             this.Container.RegisterTransient<IDomainService<RealityObjectProtocol>, FileStorageDomainService<RealityObjectProtocol>>();
             this.Container.RegisterTransient<IDomainService<RealityObjectServiceOrg>, FileStorageDomainService<RealityObjectServiceOrg>>();
             this.Container.RegisterTransient<IRealityObjectFieldsService, RealityObjectFieldsService>();
             this.Container.RegisterFileStorageDomainService<RealityObjectTechnicalMonitoring>();
+            this.Container.RegisterFileStorageDomainService<RealityObjectAntenna>();
 
             // ServOrg
             this.Container.RegisterDomainService<ServiceOrgDocumentation, FileStorageDomainService<ServiceOrgDocumentation>>();
@@ -1133,6 +1191,7 @@
             // SupplyResOrg
             this.Container.RegisterDomainService<SupplyResourceOrgDocumentation, FileStorageDomainService<SupplyResourceOrgDocumentation>>();
             this.Container.RegisterDomainService<RealityObjectResOrg, FileStorageDomainService<RealityObjectResOrg>>();
+            this.Container.RegisterTransient<IDomainService<ServiceOrgContract>, FileStorageDomainService<ServiceOrgContract>>();
 
             // Person
             this.Container.RegisterDomainService<PersonDisqualificationInfo, FileStorageDomainService<PersonDisqualificationInfo>>();
@@ -1143,8 +1202,10 @@
             // Лицензия УО
             this.Container.RegisterDomainService<ManOrgLicenseRequest, FileStorageDomainService<ManOrgLicenseRequest>>();
             this.Container.RegisterDomainService<ManOrgLicenseDoc, FileStorageDomainService<ManOrgLicenseDoc>>();
+            this.Container.RegisterDomainService<ManOrgLicenseExtension, FileStorageDomainService<ManOrgLicenseExtension>>();
             this.Container.RegisterDomainService<ManOrgRequestProvDoc, FileStorageDomainService<ManOrgRequestProvDoc>>();
             this.Container.RegisterDomainService<ManOrgRequestAnnex, FileStorageDomainService<ManOrgRequestAnnex>>();
+            this.Container.RegisterDomainService<ManOrgRequestRPGU, FileStorageDomainService<ManOrgRequestRPGU>>();
             this.Container.RegisterDomainService<Municipality, MunicipalityDomainService>();
             this.Container.RegisterDomainService<CitizenSuggestion, CitizenSuggestionDomainService>();
             this.Container.RegisterDomainService<SuggestionComment, SuggestionCommentDomainService>();
@@ -1161,7 +1222,9 @@
         {
             this.Container.RegisterTransient<IDataExportService, ContragentDataExport>("ContragentDataExport");
             this.Container.RegisterTransient<IDataExportService, RealityObjectDataExport>("RealityObjectDataExport");
+            this.Container.RegisterTransient<IDataExportService, RealityObjectLiftRegisterDataExport>("RealityObjectLiftRegisterDataExport");
             this.Container.RegisterTransient<IDataExportService, ManagingOrganizationDataExport>("ManagingOrganizationDataExport");
+            this.Container.RegisterTransient<IDataExportService, ManOrgContactDataExport>("ManOrgContactDataExport");
             this.Container.RegisterTransient<IDataExportService, ServiceOrganizationDataExport>("ServiceOrganizationDataExport");
             this.Container.RegisterTransient<IDataExportService, LocalGovernmentDataExport>("LocalGovernmentDataExport");
             this.Container.RegisterTransient<IDataExportService, BuilderDataExport>("BuilderDataExport");
@@ -1190,6 +1253,7 @@
             this.Container.RegisterImport<ImportOperator>(ImportOperator.Id);
             this.Container.RegisterImport<OrganizationImport>();
             this.Container.RegisterImport<BillingGkuDataImport>();
+            this.Container.RegisterImport<ManagingOrganizationImport>(ManagingOrganizationImport.Id);           
 
             this.Container.RegisterTransient<IBillingFileImporter, AddressUidImporter>();
 
@@ -1240,6 +1304,7 @@
             this.Container.RegisterTransient<IInheritEntityChangeLog, ContragentContactChangeLog>(ContragentContactChangeLog.Id);
 
             this.Container.RegisterSingleton<INotifyService, NotifyService>();
+            this.Container.RegisterTransient<ICSCalculationOperationsService, CSCalculationOperationsService>();
 
             // BelayPolicy
             this.Container.RegisterTransient<IBelayPolicyService, BelayPolicyService>();
@@ -1254,7 +1319,6 @@
             // Contragent
             this.Container.RegisterTransient<IContragentService, ContragentService>();
             this.Container.RegisterTransient<IContragentListForTypeJurOrg, GkhContragentListForTypeJurOrg>();
-            this.Container.RegisterTransient<IContragentAdditionRoleService, ContragentAdditionRoleService>();
 
             // Dict
             this.Container.RegisterTransient<IZonalInspectionService, ZonalInspectionService>();
@@ -1275,7 +1339,7 @@
 
             // PaymentAgent
             this.Container.RegisterTransient<IPaymentAgentService, PaymentAgentService>();
-
+            
             // ContragentClw
             this.Container.RegisterTransient<IContragentClwService, ContragentClwService>();
 
@@ -1294,8 +1358,6 @@
             this.Container.RegisterTransient<IRealityObjectCouncillorsService, RealityObjectCouncillorsService>();
             this.Container.RegisterTransient<IRealityObjectProtocolService, RealityObjectProtocolService>();
             this.Container.RegisterService<IRealityObjectManOrgService, RealityObjectManOrgService>();
-
-            this.Container.RegisterTransient<IRealityObjectOutdoorService, RealityObjectOutdoorService>();
 
             // Scripts
             this.Container.RegisterTransient<IGkhScriptService, GkhScriptService>();
@@ -1318,8 +1380,11 @@
             this.Container.RegisterTransient<IHouseInfoOverviewService, HouseInfoOverviewService>();
             this.Container.RegisterTransient<ICitizenSuggestionService, CitizenSuggestionService>();
             this.Container.RegisterTransient<ICitizenSuggestionReportService, CitizenSuggestionReportService>();
+            this.Container.RegisterTransient<ISuggestionSendEmailService, SuggestionSendEmailServise>();
 
             this.Container.RegisterTransient<IVersionedEntityService, VersionedEntityService>();
+
+            //this.Container.RegisterTransient<IFiasHelper, UnstrongFiasHelper>();
             this.Container.RegisterTransient<IFiasHelper, FiasHelper>();
 
             this.Container.RegisterTransient<IGkhParams, ConfigGkhParams>();
@@ -1386,7 +1451,7 @@
             this.Container.RegisterTransient<IGeneralStateHistoryService, GeneralStateHistoryService>();
 
             this.Container.RegisterTransient<IServiceOverride, Services.Override.ServiceOverride>();
-            
+
             this.Container.RegisterTransient<IPostalService, PostalService>();
 
             this.Container.RegisterTransient<IReflectionHelperService, ReflectionHelperService>();
@@ -1398,6 +1463,8 @@
                 .UsingFactoryMethod(_ =>
                     RestService.For<ICryptographyJcpApi>(ApplicationContext.Current.Configuration.AppSettings.GetAs<string>("JcpApiUri")))
                 .LifeStyle.Scoped());
+
+            this.Container.RegisterService<IGisGkhRegionalService, GisGkhRegionalService>();
         }
 
         private void RegisterViewModels()
@@ -1408,6 +1475,13 @@
             this.Container.RegisterViewModel<InstructionGroupRole, InstructionGroupRoleViewModel>();
             this.Container.RegisterViewModel<Instruction, InstructionViewModel>();
             this.Container.RegisterViewModel<Operator, OperatorViewModel>();
+            this.Container.RegisterViewModel<TypeCategoryCS, TypeCategoryCSViewModel>();
+            this.Container.RegisterViewModel<CategoryCSMKD, CategoryCSMKDViewModel>();
+            this.Container.RegisterViewModel<MOCoefficient, MOCoefficientViewModel>();
+            this.Container.RegisterViewModel<RealityObjectCategoryMKD, RealityObjectCategoryMKDViewModel>();
+            this.Container.RegisterViewModel<TarifNormative, TarifNormativeViewModel>();
+            this.Container.RegisterViewModel<CSCalculation, CSCalculationViewModel>();
+            this.Container.RegisterViewModel<CSCalculationRow, CSCalculationRowViewModel>();
             this.Container.RegisterViewModel<Role, RoleViewModel>();
             this.Container.RegisterViewModel<TemplateReplacement, TemplateReplacementViewModel>();
             this.Container.RegisterViewModel<LogImport, LogImportViewModel>();
@@ -1415,7 +1489,6 @@
             this.Container.RegisterViewModel<OrganizationForm, OrganizationFormViewModel>();
             this.Container.RegisterViewModel<ExecutionActionTask, ExecutionActionTaskViewModel>();
             this.Container.RegisterViewModel<ExecutionActionResult, ExecutionActionResultViewModel>();
-            this.Container.RegisterViewModel<NotifyMessage, NotifyMessageViewModel>();
             this.Container.RegisterViewModel<NotifyStats, NotifyStatsViewModel>();
             this.Container.RegisterViewModel<NotifyPermission, NotifyPermissionViewModel>();
             this.Container.RegisterViewModel<EmailMessage, EmailMessageViewModel>();
@@ -1462,6 +1535,7 @@
             this.Container.RegisterViewModel<MunicipalitySourceFinancing, MunicipalitySourceFinancingViewModel>();
             this.Container.RegisterViewModel<ResettlementProgram, ResettlementProgramViewModel>();
             this.Container.RegisterViewModel<Work, WorkViewModel>();
+            this.Container.RegisterViewModel<AdditWork, AdditWorkViewModel>();
             this.Container.RegisterViewModel<WorkKindCurrentRepair, WorkKindCurrentRepairViewModel>();
             this.Container.RegisterViewModel<ZonalInspectionInspector, ZonalInspectionInspectorViewModel>();
             this.Container.RegisterViewModel<ZonalInspectionMunicipality, ZonalInspectionMunicipalityViewModel>();
@@ -1477,6 +1551,7 @@
             this.Container.RegisterViewModel<AdditionalContractService, AdditionalContractServiceViewModel>();
             this.Container.RegisterViewModel<CentralHeatingStation, CentralHeatingStationViewModel>();
             this.Container.RegisterViewModel<ActivityStage, ActivityStageViewModel>();
+            this.Container.RegisterViewModel<LivingSquareCost, LivingSquareCostViewModel>();
 
             // EmergencyObject
             this.Container.RegisterViewModel<EmergencyObject, EmergencyObjectViewModel>();
@@ -1495,7 +1570,7 @@
 
             // PaymentAgent
             this.Container.RegisterViewModel<PaymentAgent, PaymentAgentViewModel>();
-
+            
             // ContragentClw
             this.Container.RegisterViewModel<ContragentClw, ContragentClwViewModel>();
             this.Container.RegisterViewModel<ContragentClwMunicipality, ContragentClwMunicipalityViewModel>();
@@ -1537,11 +1612,12 @@
             this.Container.RegisterViewModel<RealityObjectBuildingFeature, RealityObjectBuildingFeatureViewModel>();
             this.Container.RegisterViewModel<MeteringDevicesChecks, MeteringDevicesChecksViewModel>();
             this.Container.RegisterViewModel<RealityObjectTechnicalMonitoring, RealityObjectTechnicalMonitoringViewModel>();
-
+            this.Container.RegisterViewModel<RealityObjectAntenna, RealityObjectAntennaViewModel>();
+            this.Container.RegisterViewModel<RealityObjectVidecam, RealityObjectVidecamViewModel>();
+            this.Container.RegisterViewModel<RealityObjectHousekeeper, RealityObjectHousekeeperViewModel>();
 
             this.Container.RegisterViewModel<RealityObjectLift, RealityObjectLiftViewModel>();
             this.Container.RegisterViewModel<RealityObjectLiftSum, RealityObjectLiftSumViewModel>();
-            this.Container.RegisterViewModel<RealityObjectOutdoor, RealityObjectOutdoorViewModel>();
 
             // ServOrg
             this.Container.RegisterViewModel<ServiceOrgDocumentation, ServiceOrgDocumentationViewModel>();
@@ -1577,13 +1653,17 @@
             this.Container.RegisterViewModel<ManOrgRequestProvDoc, ManOrgRequestProvDocViewModel>();
             this.Container.RegisterViewModel<ManOrgRequestAnnex, ManOrgRequestAnnexViewModel>();
             this.Container.RegisterViewModel<ManOrgLicenseDoc, ManOrgLicenseDocViewModel>();
+            this.Container.RegisterViewModel<ManOrgLicenseExtension, ManOrgLicenseExtensionViewModel>();
             this.Container.RegisterViewModel<ManOrgLicense, ManOrgLicenseViewModel>();
             this.Container.RegisterViewModel<ManOrgLicensePerson, ManOrgLicensePersonViewModel>();
+            this.Container.RegisterViewModel<ManOrgRequestRPGU, ManOrgRequestRPGUViewModel>();
+            this.Container.RegisterViewModel<ManOrgRequestSMEV, ManOrgRequestSMEVViewModel>();
 
             this.Container.RegisterViewModel<CitizenSuggestion, CitizenSuggestionViewModel>();
             this.Container.RegisterViewModel<Transition, TransitionViewModel>();
             this.Container.RegisterViewModel<CitizenSuggestionHistory, CitizenSuggestionHistoryViewModel>();
             this.Container.RegisterViewModel<CitizenSuggestionFiles, CitizenSuggestionFileViewModel>();
+            this.Container.RegisterViewModel<SugTypeProblem, SugTypeProblemViewModel>();
             this.Container.RegisterViewModel<SuggestionComment, SuggestionCommentViewModel>();
             this.Container.RegisterViewModel<SuggestionCommentFiles, SuggestionCommentFileViewModel>();
             this.Container.RegisterViewModel<MultipurposeGlossaryItem, MultipurposeGlossaryItemViewModel>();
@@ -1603,11 +1683,11 @@
             this.Container.RegisterViewModel<HousingFundMonitoringInfo, HousingFundMonitoringInfoViewModel>();
 
             this.Container.RegisterViewModel<AddressMatch, AddressMatchViewModel>();
+            this.Container.RegisterViewModel<ASSberbankClient, ASSberbankClientViewModel>();
 
             this.Container.RegisterViewModel<FormatDataExportTask, FormatDataExportTaskViewModel>();
             this.Container.RegisterViewModel<FormatDataExportResult, FormatDataExportResultViewModel>();
             this.Container.RegisterViewModel<FormatDataExportRemoteResult, FormatDataExportRemoteResultViewModel>();
-            this.Container.RegisterViewModel<FormatDataExportInfo, FormatDataExportInfoViewModel>();
 
             this.Container.RegisterViewModel<GeneralStateHistory, GeneralStateHistoryViewModel>();
 
@@ -1615,6 +1695,11 @@
 
             this.Container.RegisterViewModel<EntityHistoryInfo, EntityHistoryInfoViewModel>();
             this.Container.RegisterViewModel<EntityHistoryField, EntityHistoryFieldViewModel>();
+
+            this.Container.RegisterViewModel<QualifyTestQuestions, QualifyTestQuestionsViewModel>();
+            this.Container.RegisterViewModel<QualifyTestQuestionsAnswers, QualifyTestQuestionsAnswersViewModel>();
+            this.Container.RegisterViewModel<QExamQuestion, QExamQuestionViewModel>();
+            this.Container.RegisterViewModel<QualifyTestSettings, QualifyTestSettingsViewModel>();
         }
 
         private void RegisterExecuteActions()
@@ -1649,12 +1734,15 @@
             this.Container.RegisterExecutionAction<AddEntityImportIdAction>();
             this.Container.RegisterExecutionAction<UpdateFiasAddressStreetParentAction>();
             this.Container.RegisterExecutionAction<GrantForLocalAdminAction>();
+            this.Container.RegisterExecutionAction<FiasAutoUpdaterAction>();
+            this.Container.RegisterExecutionAction<FiasAutoUpdaterTaskAction>();
             this.Container.RegisterExecutionAction<ClearFileStorageAction>();
-            this.Container.RegisterExecutionAction<CheckFiasOktmoAction>();
-            this.Container.RegisterExecutionAction<FileStorageAnalyzeAction>();
+            this.Container.RegisterExecutionAction<ExecutorTestAction>();
+            this.Container.RegisterExecutionAction<FillReportTable>();
+            this.Container.RegisterExecutionAction<GisSyncDictionariesAction>();
 #if DEBUG
-            this.Container.RegisterExecutionAction<TestAction>();
-            this.Container.RegisterExecutionAction<TestMandatoryAction>();
+            //this.Container.RegisterExecutionAction<TestAction>();
+            //this.Container.RegisterExecutionAction<TestMandatoryAction>();
 #endif
         }
 
@@ -1671,8 +1759,10 @@
             this.Container.RegisterTransient<IGkhBaseReport, ManOrgLicenseRequestMvdReport>();
             this.Container.RegisterTransient<IGkhBaseReport, ManOrgLicenseRequestTreasuryReport>();
             this.Container.RegisterTransient<IGkhBaseReport, ManOrgLicenseRequestOrderReport>();
-
+            Container.RegisterTransient<IGkhBaseReport, PersonOnlineTestReport>();
+            Container.RegisterTransient<IGkhBaseReport, PersonOnlineTestNotificationReport>();
             this.Container.RegisterTransient<IGkhBaseReport, ManOrgLicenseReport>();
+            this.Container.RegisterTransient<IGkhBaseReport, ManOrgRequestLicComissionReport>();
 
             this.Container.RegisterTransient<IGkhBaseReport, MotivatedProposalForLicensingReport>();
             this.Container.RegisterTransient<IGkhBaseReport, NotificationRefusalToIssueLicenseReport>();
@@ -1717,10 +1807,9 @@
                 if (ApplicationContext.Current.GetContextType() == ApplicationContextType.WebApplication)
                 {
                     eventAggregator.GetEvent<AppStartEvent>().Subscribe<InitExecutionActionScheduler>();
-                    eventAggregator.GetEvent<AppStartEvent>().Subscribe<FormatDataExportSchedulerService>();
-#if !DEBUG
                     eventAggregator.GetEvent<AppStartEvent>().Subscribe<InitScheduler>();
-#endif
+                    eventAggregator.GetEvent<AppStartEvent>().Subscribe<FormatDataExportSchedulerService>();
+
                     // Регистрация планировщика
                     this.Container.RegisterSingleton<IExecutionActionScheduler, ExecutionActionScheduler>(ExecutionActionScheduler.Code);
                     this.Container.RegisterSingleton<IJobListener, ExecutionActionJobListener>(ExecutionActionJobListener.Code);
@@ -1738,11 +1827,9 @@
         private void RegisterTehPasport()
         {
             this.Container.RegisterResourceManifest<ResourceManifest>("GkhTp resources");
-#if DEBUG
-            this.Container.RegisterTransient<IPassportProvider, TechPassportXmlProvider>();
-#else
+
             this.Container.RegisterSingleton<IPassportProvider, TechPassportXmlProvider>();
-#endif
+
             this.Container.RegisterController<TechPassportController>();
             this.Container.RegisterController<RealtyObjTypeWorkCrController>();
 
@@ -1792,7 +1879,10 @@
 
         private void RegisterTaskExecutors()
         {
-            this.Container.RegisterTaskExecutor<FormatDataExportTaskExecutor>(FormatDataExportTaskExecutor.Id);
+            this.Container.RegisterTaskExecutor<ExecutorTestTaskExecutor>(ExecutorTestTaskExecutor.Id);
+            this.Container.RegisterTaskExecutor<GisSyncDictionariesTaskExecutor>(GisSyncDictionariesTaskExecutor.Id);
+            this.Container.RegisterTaskExecutor<FiasUpdaterTaskExecutor>(FiasUpdaterTaskExecutor.Id);
+            this.Container.RegisterTaskExecutor<FillReportTableExecutor>(FillReportTableExecutor.Id);
         }
 
         private void RegisterDomainEventHandlers()
@@ -1800,7 +1890,8 @@
             Component
                 .For<IDomainEventHandler<GeneralStateChangeEvent>>()
                 .ImplementedBy<GeneralStateChangeHandler>()
-                .LifeStyle.Scoped()
+                .LifeStyle
+                .Scoped()
                 .RegisterIn(this.Container);
         }
 
@@ -1837,6 +1928,14 @@
             //     .LifestyleSingleton()
             //     .RegisterIn(this.Container);
         }
+        
+        private void RegisterNhGenerators()
+        {
+            this.Container.RegisterTransient<INhibernateConfigModifier, NhConfigModifier>();
+            this.Container.RegisterMethodHqlGenerator<GetIdGenerator>();
+            this.Container.RegisterMethodHqlGenerator<ToNullableGenerator>();
+
+        }
 
         private void CheckMigration()
         {
@@ -1848,16 +1947,26 @@
                 });
             }
         }
-
-        private void RegisterNhGenerators()
+    }
+    
+    /// <summary>
+    /// Настройки для AutoMapper
+    /// </summary>
+    public static class AutoMapperConfigurator
+    {
+        public static void ConfigureAutoMapper(IWindsorContainer container)
         {
-            this.Container.RegisterTransient<INhibernateConfigModifier, NhConfigModifier>();
-            this.Container.RegisterMethodHqlGenerator<GetIdGenerator>();
-            this.Container.RegisterMethodHqlGenerator<ToNullableGenerator>();
-
+            var mapper = new Mapper(new MapperConfiguration(x =>
+                x.CreateMap<FiasAddress, Utils.Utils.FiassHouseProxy>()
+                    .ForMember(x => x.HouseGuid, x => x.MapFrom(y => y.HouseGuid.ToStr()))));
+            
+            Component.For<IMapper>()
+                .ImplementedBy<Mapper>()
+                .Instance(mapper)
+                .LifestyleSingleton();
         }
     }
-
+    
     /// <summary>
     /// Для того что бы не было тормозов на логинке. Будет переделано
     /// </summary>
@@ -1873,9 +1982,8 @@
             {
                 ApplicationContext.Current.Container.Resolve<IRepository<User>>().GetAll().Count();
             }
-            catch
+            catch (Exception)
             {
-                // ignored
             }
         }
     }

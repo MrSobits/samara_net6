@@ -25,8 +25,6 @@ namespace Bars.GkhGji.Map
             this.Property(x => x.DocumentYear, "Год документа").Column("DOCUMENT_YEAR");
             this.Property(x => x.GisGkhGuid, "ГИС ЖКХ GUID").Column("GIS_GKH_GUID").Length(36);
             this.Property(x => x.GisGkhTransportGuid, "ГИС ЖКХ Transport GUID").Column("GIS_GKH_TRANSPORT_GUID").Length(36);
-            //this.Property(x => x.TorId, "Идентификатор ТОР").Column("TOR_ID");
-            //this.Property(x => x.GisUin, "Код ГИС - уникальный идентификатор начисления").Column("GIS_UIN").Length(50);
             this.Reference(x => x.Inspection, "Проверка ГЖИ").Column("INSPECTION_ID");
             this.Reference(x => x.Stage, "Этап проверки").Column("STAGE_ID");
             this.Reference(x => x.State, "Статус").Column("STATE_ID").Fetch();

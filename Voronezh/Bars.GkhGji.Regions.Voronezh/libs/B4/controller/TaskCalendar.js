@@ -129,7 +129,7 @@
         me.callParent(arguments);
     },
     gotoRequest: function (grid, action, rec) {
-        debugger;
+        
         var me = this,
             params = {},
             portal = me.getController('PortalController');
@@ -145,12 +145,12 @@
 
     },
     updategrid: function (btn) {
-        debugger;
+        
         var grid = btn.up('taskcalendarsmevgrid');
         grid.getStore().load();
     },
     goToAdmonition: function (grid, action, record) {
-        debugger;
+        
         var me = this,
             portal = me.getController('PortalController'),
             controllerEditName,
@@ -162,7 +162,7 @@
         }
     },
     goToCourtPractice: function (grid, action, record) {
-        debugger;
+        
         var me = this,
             portal = me.getController('PortalController'),
             controllerEditName,
@@ -175,7 +175,7 @@
     },
 
     goToAppeals: function (grid, action, record) {
-        debugger;
+        
         var me = this,
             portal = me.getController('PortalController'),
             controllerEditName,
@@ -188,7 +188,7 @@
     },
 
     goToSopr: function (grid, action, record) {
-        debugger;
+        
         var me = this,
             portal = me.getController('PortalController'),
             controllerEditName,
@@ -201,7 +201,7 @@
     },
 
     rowActionProt: function (grid, action, record) {
-        debugger;
+        
         var me = this,
             typeReminder = 10,
             portal = me.getController('PortalController'),
@@ -546,7 +546,7 @@
     onDayButtonClick: function(id) {
         var me = this;
         if (me.editWindow) {
-            debugger;
+            
             me.editWindow.show();
             var width = Ext.getBody().getViewSize().width;
             me.editWindow.setSize('80%', '60%');
@@ -690,7 +690,7 @@
     },
 
     onAcceptNewDate: function () {
-        debugger;
+        
         var view = this.getMainView(),
             panel = view.down("#headerPanel"),
             layout = panel.getLayout(),

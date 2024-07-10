@@ -411,14 +411,14 @@
     ],
 
     init: function () {
-        debugger;
+        
         this.getStore('basedisphead.RealityObject').on('beforeload', this.onBeforeLoad, this);
 
         this.callParent(arguments);
     },
 
     onLaunch: function () {
-        debugger;
+        
         if (this.params) {
             this.getAspect('baseDispHeadEditPanelAspect').setData(this.params.inspectionId);
 

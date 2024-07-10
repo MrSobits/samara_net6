@@ -157,7 +157,7 @@
                 actions[this.editFormSelector + ' button[action=ERKNMRequest]'] = { 'click': { fn: this.ERKNMRequest, scope: this } };
             },
             onBeforeLoadReason: function (field, options, store) {
-                debugger;
+                
                 options = options || {};
                 options.params = options.params || {};
                 options.params.ERKNMDocumentType = 20;
@@ -166,7 +166,7 @@
                 var me = this,
                     panel = btn.up('#admonitioneditwindow'),
                     record = panel.getForm().getRecord();
-                debugger;
+                
                 var recId = record.getId();
                 Ext.Msg.confirm('Запрос в ЕРКНМ', 'Подтвердите размещение проверки в ЕРКНМ', function (result) {
                     if (result == 'yes') {
@@ -326,7 +326,7 @@
                     var recordIds = [];
 
                     records.each(function (rec, index) { recordIds.push(rec.get('Id')); });
-                    debugger;
+                    
                     if (recordIds[0] > 0) {
                         asp.controller.mask('Сохранение', asp.controller.getMainComponent());
                         B4.Ajax.request(B4.Url.action('SaveAppeal', 'AdmonitionOperations', {
@@ -683,7 +683,7 @@
     ],
 
     onLaunch: function () {
-        debugger;
+        
         var grid = this.getMainView();
         if (this.params && this.params.recId > 0) {
             var model = this.getModel('appealcits.Admonition');

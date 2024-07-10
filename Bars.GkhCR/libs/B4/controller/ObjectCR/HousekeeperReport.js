@@ -69,7 +69,7 @@ Ext.define('B4.controller.objectcr.HousekeeperReport', {
                 aftersetformdata: function (asp, record) {
                     var me = this,
                         grid = me.getGrid();
-                    debugger;
+                    
                     me.controller.reportId = record.getId();
 
                     var form = asp.getForm(),

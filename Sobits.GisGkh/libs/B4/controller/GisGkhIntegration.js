@@ -124,11 +124,11 @@
                 programId = newValue.Id;
             },
             onChangeObjectCr: function (field, newValue) {
-                debugger;
+                
                 objCrId = newValue.Id;
             },
             onChangeBuildContractForAct: function (field, newValue) {
-                debugger;
+                
                 buildContrId = newValue.Id;
             },
 
@@ -139,21 +139,21 @@
                 operation.params.programId = programId;
             },
             onBeforeLoadBuildContract: function (store, operation) {
-                debugger;
+                
                 operation = operation || {};
                 operation.params = operation.params || {};
 
                 operation.params.objCrId = objCrId;
             },
             onBeforeLoadBuildContractForAct: function (store, operation) {
-                debugger;
+                
                 operation = operation || {};
                 operation.params = operation.params || {};
 
                 operation.params.objCrId = objCrId;
             },
             onBeforeLoadPerfWorkAct: function (store, operation) {
-                debugger;
+                
                 operation = operation || {};
                 operation.params = operation.params || {};
 
@@ -1510,7 +1510,7 @@
                 })
                 return true;
             }, this).error(function (response) {
-                //debugger;
+                //
                 //me.unmask();
                 Ext.Msg.alert('Сообщение', response.message);
             });
@@ -1537,7 +1537,7 @@
                 })
                 return true;
             }, this).error(function (response) {
-                //debugger;
+                //
                 //me.unmask();
                 Ext.Msg.alert('Сообщение', response.message);
             });
@@ -1611,7 +1611,7 @@
 
     onSelectRO: function (model, records) {
         this.matchedList = null;
-        debugger;
+        
         matchingPanel = Ext.ComponentQuery.query('roommatchingpanel')[0];
         roomStore = matchingPanel.down('gisgkhroomgrid').getStore();
         roomStore.clearFilter(true);
@@ -1644,7 +1644,7 @@
     },
 
     signNextRequest: function (win, reqIdsToSign, previousSigningResult) {
-        debugger;
+        
         var me = this;
         if (previousSigningResult && previousSigningResult.success === false) {
             var errorMessage = (previousSigningResult.message || 'Ошибка при подписывании запроса')
@@ -1667,14 +1667,14 @@
             me.getMainView().down('gisgkhtaskgrid').getStore().load();
             return;
         }
-        debugger;
+        
         var nextRecordIdToSign = reqIdsToSign[0];
         reqIdsToSign = reqIdsToSign.slice(1);
         me.signRequest(nextRecordIdToSign, reqIdsToSign, win);
     },
 
     signRequest: function (requestId, reqIdsToSign, win) {
-        debugger;
+        
         var me = this,
             signingResult = {
                 success: true,
@@ -1706,7 +1706,7 @@
             timeout: 9999999
         }).next(function (response) {
             var notSignedData = Ext.decode(response.responseText).data;
-            debugger;
+            
             //if (!notSignedData || notSignedData.length === 0) {
             //    Ext.Msg.alert('Ошибка!', 'Выберите сертификат для подписи');
             //}
@@ -1717,7 +1717,7 @@
             }
             win.signer.setCertificate(val);
             win.signer.signXml(notSignedData, function (xml) {
-                debugger;
+                
                 B4.Ajax.request({
                     url: B4.Url.action('SaveAndSendRequest', 'GisGkhExecute'),
                     params: {
@@ -1759,7 +1759,7 @@
     },
 
     onCreateSignature: function (win) {
-        debugger;
+        
         var me = this;
         certCombo = win.down('#dfCert');
         record = win.rec;
@@ -1816,7 +1816,7 @@
         }
         else {
             me.mask('Обмен данными с ГИС ЖКХ');
-            debugger;
+            
             var result = B4.Ajax.request(B4.Url.action('GetDictionaries', 'GisGkhExecute'
             )).next(function (response) {
                 var data = Ext.decode(response.responseText);

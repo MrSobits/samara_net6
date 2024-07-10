@@ -76,7 +76,6 @@
     }],
     
     initComponent: function () {
-        debugger;
         var me = this,
             store = me.store;
         if (Ext.isString(store)) {
@@ -98,9 +97,8 @@
     },
 
     afterRender: function () {
-        debugger;
         this.callParent(arguments);
-        if (this.store.isStore) {
+        if (this.store && this.store.isStore) {
             if (this.store.getCount() == 0) {
                 this.store.load({ limit: 4 });
             } else {

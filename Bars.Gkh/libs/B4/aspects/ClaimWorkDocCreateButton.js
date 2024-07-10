@@ -199,7 +199,7 @@ Ext.define('B4.aspects.ClaimWorkDocCreateButton', {
     },
 
     getControllerByType: function (type) {
-        debugger;
+        
         return type;
     }
 });

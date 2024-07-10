@@ -511,7 +511,7 @@
                     me.setContextValue(view, 'id', id);
                     me.setContextValue(view, 'requestId', view.params.requestId);
                     me.setContextValue(view, 'licenseId', view.params.licenseId);
-                    debugger;
+                    
                     me.application.deployView(view, 'license_info');
 
                     me.getAspect('manOrgLicenseRequestEditPanelAspect').setData(view.params.requestId);
@@ -530,7 +530,7 @@
                 me.setContextValue(view, 'requestId', view.params.requestId);
                 me.setContextValue(view, 'licenseId', view.params.licenseId);
                 me.application.deployView(view, 'license_info');
-                debugger;
+                
                 me.getAspect('manOrgLicenseRequestEditPanelAspect').setData(view.params.requestId);
                 me.getAspect('licenseRequestPrintAspect').loadReportStore();
             }

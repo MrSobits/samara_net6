@@ -302,7 +302,7 @@
                 }
             },
             onChangecbcbDispute: function (field, newValue) {
-                debugger;
+                
                 var form = this.getForm(),
                     cbDisputeInstance = form.down('#cbDisputeInstance'),
                     cbDisputeResult = form.down('#cbDisputeResult'),
@@ -422,12 +422,12 @@
                 }
             },
             onChangesfTypeFactViolation: function (field, newValue) {
-                debugger;
+                
                 var form = this.getForm(),
                     sfDocumentGji = form.down('#sfDocumentGji');
                   var sfMKDLicRequest = form.down('#sfMKDLicRequest');
                 admonition = form.down('#admon');
-                debugger;
+                
                 if (newValue.Code == '01' || newValue.Code == '04' || newValue.Code == '05') {
                     sfDocumentGji.show();
                     sfMKDLicRequest.setValue(null);
@@ -493,7 +493,7 @@
                 }
             },
             onChangecbcbDispute: function (field, newValue) {
-                debugger;
+                
                 var form = this.getForm(),
                     cbDisputeInstance = form.down('#cbDisputeInstance'),
                     cbDisputeResult = form.down('#cbDisputeResult');
@@ -510,7 +510,7 @@
             listeners: {
                 aftersetformdata: function (asp, record, form) {
                     var me = this;
-                    debugger;
+                    
                   
                     var fieldDocs = form.down('#sfDocumentGji');
                     //пытаемся проставить прочитано для инспектора и/или руководителя управления

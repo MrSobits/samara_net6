@@ -14,13 +14,13 @@ namespace Bars.Gkh
         {
             return Expression.Call(
                 Expression.Call(
-                Expression.Call(Expression.Coalesce(expression, Expression.Constant(string.Empty)),
-                typeof(string).GetMethod("Replace",
-                            new Type[] { typeof(string), typeof(string) }),
+                    Expression.Call(Expression.Coalesce(expression, Expression.Constant(string.Empty)),
+                        typeof(string).GetMethod("Replace",
+                            new[] { typeof(string), typeof(string) }),
                         Expression.Constant(" "),
                         Expression.Constant(string.Empty)),
-                    typeof(string).GetMethod("ToLower", new Type[0])),
-                typeof(string).GetMethod("Contains"),
+                    typeof(string).GetMethod("ToLower", Type.EmptyTypes)),
+                typeof(string).GetMethod("Contains", new[] { typeof(string) }),
                 Expression.Constant(value.ToString().Replace(" ", string.Empty).ToLower()));
         }
     }

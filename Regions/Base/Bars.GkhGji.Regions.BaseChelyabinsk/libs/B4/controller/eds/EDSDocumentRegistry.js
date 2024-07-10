@@ -60,7 +60,7 @@
         this.aspectCollection.items
             .filter(function (item) { return item.name == 'edsDocumentSignatureAspect' })
             .forEach(function (item) {
-                debugger;
+                
                 item.controllerName = rec.get('SignController')
             });
     }

@@ -56,7 +56,7 @@
             buttonSelector: 'manorglicensenotificationgiseditwindow #btnPrint',
             codeForm: 'ManOrgLicenseNotification',
             getUserParams: function () {
-                debugger;
+                
                 var me = this,
                     param = { Id: me.controller.getContextValue(me.controller.getMainView(), 'licNotId') };
 

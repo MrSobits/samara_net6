@@ -55,7 +55,7 @@
             buttonSelector: '#agentPIRDebtorEditWindow #btnPrint',
             codeForm: 'AgentPirDebtor',
             getUserParams: function () {
-                debugger;
+                
                 var param = { Id: this.controller.agentPIRDebtorId };
                 this.params.userParams = Ext.JSON.encode(param);
             }
@@ -105,7 +105,7 @@
               
             }, 
             setPeriodId: function (field, newValue, oldValue) {
-                debugger;
+                
                 this.controller.periodId = newValue.Id;
             },
             listeners: {
@@ -193,7 +193,7 @@
                 aftersetformdata: function (asp, record, form) {
                     var me = this;
                     asp.controller.agentPIRDebtorId = record.getId();
-                    debugger;
+                    
                     asp.controller.extractId = record.get('BasePersonalAccountId');
 
                     var paygrid = form.down('paymentGrid'),
@@ -219,7 +219,7 @@
             calculateDebtStartDate: function (btn) {
                 var me = this;
                 var form = me.getForm();
-                debugger;
+                
                 //  var rec = view.getRecord;
                 //var curRec = me.getRecord();
                 var docId = me.controller.agentPIRDebtorId;
@@ -243,7 +243,7 @@
                         var obj = Ext.JSON.decode(response.responseText);
                         me.controller.unmask();
                         Ext.Msg.alert('Результаты расчета', obj.message);
-                        debugger;
+                        
                         var datefieldDSD = panel.down('#sfDebtStartDate');
                         var datefieldDED = panel.down('#sfDebtEndDate');
                         datefieldDSD.setValue(obj.dateStartDebt);
@@ -277,7 +277,7 @@
             },
             listeners: {
                 getdata: function (asp, record) {
-                    debugger;
+                    
                     if (!record.get('Id')) {
                         record.set('AgentPIRDebtor', asp.controller.agentPIRDebtorId);
                     }

@@ -265,10 +265,10 @@ var XadesSigner = function () {
         key: "signXml",
         value: function signXml(xml, success, error) {
             var scope = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : window;
-            debugger;
+            
             return __awaiter(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
                 var doc, signatureMethod, digestMethod, signedXml, ref1, sig, res;
-                debugger;
+                
                 return regeneratorRuntime.wrap(function _callee3$(_context3) {
                     while (1) {
                         switch (_context3.prev = _context3.next) {
@@ -295,7 +295,7 @@ var XadesSigner = function () {
                                 signatureMethod = this.indexAlgorithmMap[this.algorithmValue].signature;
                                 digestMethod = this.indexAlgorithmMap[this.algorithmValue].digest;
                                 signedXml = new js_xmldsig.signature.SignedXml(doc, this.cert);
-                                debugger;
+                                
                                 signedXml.signature.signedInfo.canonicalizationMethod = 'http://www.w3.org/2001/10/xml-exc-c14n#';
                                 signedXml.signature.signedInfo.signatureMethod = signatureMethod;
                                 ref1 = signedXml.signature.signedInfo.addReference(new js_xmldsig.signature.base.Reference(new js_xmldsig.signature.base.Uri(doc.documentElement)));
@@ -310,7 +310,7 @@ var XadesSigner = function () {
 
                             case 19:
                                 sig = _context3.sent;
-                                debugger;
+                                
                                 _context3.next = 22;
                                 return signedXml.createSignedXml();
 

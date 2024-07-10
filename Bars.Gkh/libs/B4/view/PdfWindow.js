@@ -500,7 +500,7 @@
                     certNames.push({ cert: cert, subjectName: SubjectName, thumbprint: Thumbprint });
                 }
                 oStore.Close();
-                debugger;
+                
                 var field = Ext.getCmp('#dfCert')
                 //var field = me.down('#dfCert');
                 var newStore = Ext.create('Ext.data.Store', {

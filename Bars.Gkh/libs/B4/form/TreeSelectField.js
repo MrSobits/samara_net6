@@ -368,7 +368,7 @@ Ext.define('B4.form.TreeSelectField', {
     },
 
     onSelectItem: function () {
-        debugger;
+        
         var me = this,
             tree = me.treePanel,
             selection = tree.getSelectionModel();

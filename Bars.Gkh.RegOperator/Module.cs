@@ -245,6 +245,7 @@
     using Tasks.PaymentDocuments;
 
     using ContragentRschetSelectorService = Bars.Gkh.RegOperator.FormatDataExport.ProxySelectors.Impl.ContragentRschetSelectorService;
+    using Bars.Gkh.RegOperator.ViewModels.EmailNewsletter;
     #endregion
 
     /// <summary>
@@ -1062,6 +1063,13 @@
             this.Container.RegisterViewModel<SaldoRefresh, SaldoRefreshViewModel>();
             this.Container.RegisterViewModel<UnconfirmedPayments, UnconfirmedPaymentsViewModel>();
             this.Container.RegisterViewModel<MobileAppAccountComparsion, MobileAppAccountComparsionViewModel>();
+
+            this.Container.RegisterViewModel<TariffByPeriodForClaimWork, TariffByPeriodForClaimWorkViewModel>();
+
+            this.Container.RegisterViewModel<SberbankPaymentDoc, SberbankPaymentDocViewModel>();
+
+            this.Container.RegisterViewModel<EmailNewsletter, EmailNewsletterViewModel>();
+            this.Container.RegisterViewModel<EmailNewsletterLog, EmailNewsletterLogViewModel>();
         }
 
         private void RegisterControllers()
@@ -1091,6 +1099,7 @@
             this.Container.RegisterAltDataController<ViewDebtor>();
             this.Container.RegisterAltDataController<ViewIndividualClaimWork>();
             this.Container.RegisterAltDataController<ClaimWorkAccountDetail>();
+            this.Container.RegisterAltDataController<TariffByPeriodForClaimWork>();
 
             #endregion
 

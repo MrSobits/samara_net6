@@ -546,7 +546,7 @@
         }
         
         store.filters.clear();
-        debugger;
+        
         store.filter([
             { property: 'manorgId', value: id },
             { property: 'showClose', value: me.params.showCloseAppeals },
@@ -642,7 +642,7 @@
     },
 
     onBeforeLoadRelation: function (store, operation) {
-        debugger;
+        
         if (this.params) {
             operation.params.contractId = this.getContractId();
             operation.params.fromManagOrg = true;

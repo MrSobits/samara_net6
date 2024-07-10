@@ -48,17 +48,17 @@
             //   controllerEditName: 'B4.controller.specialaccount.Navigation',
             onSaveSuccess: function (aspect, rec) {
                 //Закрываем окно после добавления новой записи
-                debugger;
+                
                 aspect.getForm().close();
-                debugger;
+                
                 //загружаем добавленный объект
                 var model = this.controller.getModel(this.modelName);
-                debugger;
+                
                 model.load(rec.getId(), {
                     success: function (record) {
                         //После загрузки объекта подменяем параметр и открываем вкладку
                         this.editRecord(record);
-                        debugger;
+                        
                     },
                     scope: this
                 });
@@ -76,12 +76,12 @@
                 }
             },
             editRecord: function (record) {
-                debugger;
+                
                 var me = this,
 
                     id = record ? record.get('Id') : null,
                     model;
-                debugger;
+                
                 model = me.controller.getModel(me.modelName);
                 var p = me.controller.getModel(me.modelName);
                 var v = me.controllerEditName;
@@ -101,7 +101,7 @@
                 }
             },
             deleteRecord: function (grid, action, rec) {
-                debugger;
+                
                 Ext.Msg.confirm('Удаление записи!',
                     'При удалении отчета теряются ранее заполненные вами данные. Продолжить?',
                     function (result) {

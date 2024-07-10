@@ -18,7 +18,6 @@
             var um = loadParams.Filter.GetAs<long>("UnitMeasure");
 
             var isAdditionalWorks = baseParams.Params.GetAs("isAdditionalWorks", false);
-            var isActual = baseParams.Params.GetAs("isActual", false);
             var isConstructionWorks = baseParams.Params.GetAs("isConstructionWorks", false);
 
             var workIds = baseParams.Params.ContainsKey("ids") ? baseParams.Params["ids"].ToStr() : string.Empty;
@@ -38,30 +37,29 @@
                 }
             }
 
-            return domain.GetAll()
+            var data = domain.GetAll()
                 .WhereIf(isAdditionalWorks, x => x.IsAdditionalWork || x.TypeWork == TypeWork.Service)
                 .WhereIf(isConstructionWorks, x => x.IsConstructionWork)
                 .WhereIf(um > 0, x => x.UnitMeasure.Id == um)
                 .WhereIf(onlyByWorkId, x => listWorkIds.Contains(x.Id)) // Флаг нужен для того что бы точно знать что мы получаем работы по переданным Id, например если мы в справочнике то список пустой флаг false и видим всех. Если затягиваем работы по id из реестра обекта КР и в фильтре нет работ то не видим ничего
                 .WhereIf(onlyWorks, x => x.TypeWork == TypeWork.Work)
-                .WhereIf(isActual, x => x.IsActual)
                 .Select(x => new
                 {
                     x.Id,
                     x.Name,
                     x.Code,
                     x.ReformCode,
-                    x.GisCode,
                     x.WorkAssignment,
                     x.Description,
                     UnitMeasureName = x.UnitMeasure.Name,
                     x.IsAdditionalWork,
                     x.Consistent185Fz,
                     x.IsPSD,
-                    x.TypeWork,
-                    x.IsActual
+                    x.TypeWork
                 })
-                .ToListDataResult(loadParams);
+                .Filter(loadParams, this.Container);
+
+            return new ListDataResult(data.Order(loadParams).Paging(loadParams).ToList(), data.Count());
         }
     }
 }

@@ -8,7 +8,7 @@ using Bars.B4.Modules.DataExport.Domain;
 
 namespace Bars.GkhGji.Regions.Habarovsk.Controllers
 {
-    class VDGOViolatorsController : B4.Alt.DataController<VDGOViolators>
+    public class VDGOViolatorsController : B4.Alt.DataController<VDGOViolators>
     {
         public IVDGOViolatorsService service { get; set; }
 

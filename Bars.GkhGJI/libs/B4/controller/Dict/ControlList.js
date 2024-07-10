@@ -41,7 +41,7 @@
             listeners: {
                 aftersetformdata: function (asp, record, form) {
                     questionId = record.getId();
-                    debugger;
+                    
                     var grid = form.down('controllistquestiongrid'),
                     store = grid.getStore();
                     store.filter('clistId', record.getId());

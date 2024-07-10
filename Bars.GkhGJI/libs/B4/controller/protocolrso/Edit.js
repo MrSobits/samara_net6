@@ -383,7 +383,7 @@
 
             onBeforeLoad: function (store, operation) {
                 if (this.controller.params) {
-                    debugger;
+                    
                     operation.params.contragentId = this.controller.params.contragentId;
                     //если тип не относится к управляющим организациям, то ставим тип юр.лица 0 (получаем все дома)
                     switch (this.controller.params.typeExecutant) {
@@ -468,7 +468,7 @@
      
         this.getStore('protocolrso.Annex').on('beforeload', this.onBeforeLoad, this);
         this.getStore('protocolrso.ArticleLaw').on('beforeload', this.onBeforeLoad, this);
-        debugger;
+        
         this.getStore('protocolrso.RealityObject').on('beforeload', this.onBeforeLoad, this);
         this.getStore('protocolrso.Definition').on('beforeload', this.onBeforeLoad, this);
 

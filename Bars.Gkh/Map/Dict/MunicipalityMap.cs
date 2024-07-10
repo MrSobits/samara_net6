@@ -1,41 +1,3 @@
-/// <mapping-converter-backup>
-/// namespace Bars.Gkh.Map
-/// {
-///     using Bars.Gkh.Entities;
-///     using Bars.Gkh.Enums;
-/// 
-///     /// <summary>
-///     /// Маппинг для сущности "Муниципальное образование"
-///     /// </summary>
-///     public class MunicipalityMap : BaseGkhEntityMap<Municipality>
-///     {
-///         public MunicipalityMap()
-///             : base("GKH_DICT_MUNICIPALITY")
-///         {
-///             Map(x => x.Code, "CODE").Length(30);
-///             Map(x => x.FiasId, "FIAS_ID").Length(36);
-///             Map(x => x.Group, "GRP").Length(30);
-///             Map(x => x.Name, "NAME").Length(300);
-///             Map(x => x.Okato, "OKATO").Length(30);
-///             Map(x => x.Description, "DESCRIPTION").Length(300);
-///             Map(x => x.FederalNumber, "FEDERALNUMBER").Length(30);
-///             Map(x => x.Cut, "CUT").Length(10);
-/// 
-///             Map(x => x.RegionName, "REGION_NAME").Length(200);
-/// 
-///             Map(x => x.MapGuid, "MAP_GUID").Length(36);
-///             Map(x => x.PolygonPointsArray, "POLYGON_POINTS").Length(5000);
-///             Map(x => x.CheckCertificateValidity, "CHECK_CERTIFICATE").Not.Nullable();
-///             Map(x => x.Oktmo, "OKTMO");
-///             Map(x => x.IsOld, "IS_OLD");
-/// 
-///             Map(x => x.Level, "TYPE_MO").Not.Nullable().CustomType<TypeMunicipality>();
-///             References(x => x.ParentMo, "PARENT_MO_ID").Nullable().Fetch.Join();
-///         }
-///     }
-/// }
-/// </mapping-converter-backup>
-
 namespace Bars.Gkh.Map
 {
     using Bars.B4.Modules.Mapping.Mappers;
@@ -69,8 +31,6 @@ namespace Bars.Gkh.Map
             Property(x => x.Oktmo, "ОКТМО").Column("OKTMO");
             Property(x => x.IsOld, "Признак МО, было заведено до импорта 2х уровневого справочника").Column("IS_OLD");
             Property(x => x.Level, "Уровень").Column("TYPE_MO").NotNull();
-            //Property(x => x.TorId, "Идентификатор в ТОР").Column("TOR_ID");
-            Property(x => x.CodeGji, "Код ГЖИ").Column("CODE_GJI");
             Reference(x => x.ParentMo, "Муниципальный район").Column("PARENT_MO_ID").Fetch();
         }
     }

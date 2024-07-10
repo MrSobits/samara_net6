@@ -129,7 +129,7 @@
                 var me = this,
                     panel = btn.up('#preventivevisitEditPanel'),
                     record = panel.getForm().getRecord();
-                debugger;
+                
                 var recId = record.getId();
                 Ext.Msg.confirm('Запрос в ЕРКНМ', 'Подтвердите размещение проверки в ЕРКНМ', function (result) {
                     if (result == 'yes') {
@@ -160,7 +160,7 @@
                 var me = this,
                     panel = btn.up('#preventivevisitEditPanel'),
                     record = panel.getForm().getRecord();
-                debugger;
+                
                 var recId = record.get('VideoLink');
                 new Ext.Window({
                     title: 'Проcмотр',
@@ -519,7 +519,7 @@
                     me.controller.currentResultId = 0;
                     if (record.get('Id')) {
                         asp.resultId = record.get('Id');
-                        debugger;
+                        
                         me.controller.currentResultId = record.get('Id');
                     }
                     store.on('beforeload', me.onBeforeLoadViolStore, me);
@@ -568,7 +568,7 @@
 
                     //Очищаем стор потомучто там буд
                     currentViolationStore.removeAll();
-                    debugger;
+                    
                     //сначала добавлем вверх новые нарушения
                     Ext.Array.each(records.items,
                         function (rec) {
@@ -585,7 +585,7 @@
                             });
                             //}
                         }, this);
-                    debugger;
+                    
                     //теперь добавляем старые вконец
                     Ext.Array.each(range,
                         function (rec) {

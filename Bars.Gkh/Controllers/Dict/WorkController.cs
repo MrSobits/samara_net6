@@ -17,7 +17,7 @@
 
             if (result.Success)
             {
-                return new JsonNetResult(new {success = true, data = result.Data, totalCount = result.TotalCount});
+                return new JsonNetResult(new { success = true, data = result.Data, totalCount = result.TotalCount });
             }
 
             return JsonNetResult.Message(result.Message);

@@ -40,7 +40,7 @@
             },
             onChangeRo: function (cmp, newValue) {
                 var me = this;
-                debugger;
+                
                 if (newValue)
                 {
                     me.controller.selectedRo = newValue.Id;
@@ -88,7 +88,7 @@
         me.callParent(arguments);
     },
     getExtractFromGrid: function (grid, row, col, p1, p2, record, asp) {
-        debugger;
+        
         var asp = this,
             rec = record.data.ExtractId ? record.data.ExtractId.Id : 0;
 

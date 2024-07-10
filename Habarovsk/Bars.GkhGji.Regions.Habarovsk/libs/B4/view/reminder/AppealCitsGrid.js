@@ -211,7 +211,7 @@
                         deltaDate,
                         hasAppealCitizensInWorkState = record.get('HasAppealCitizensInWorkState');
                     var isSopr = record.get('AppealState').Code;
-                    debugger;
+                    
                     if (isSopr == 'СОПР2')
                     {
                         return 'back-coralgreen';   

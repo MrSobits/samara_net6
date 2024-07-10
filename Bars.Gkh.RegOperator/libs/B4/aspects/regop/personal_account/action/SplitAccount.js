@@ -427,7 +427,6 @@
 			debtField = win.down('[name=DebtSum]'),
 			gridRec = store.getById(rec.getId()),
 			cbDistributionType = win.down('[name=DistributionType]');
-		debugger;
 		globalSavePayments = savePayments;
 			
 

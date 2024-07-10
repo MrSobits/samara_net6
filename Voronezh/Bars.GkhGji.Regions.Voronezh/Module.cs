@@ -512,9 +512,8 @@ namespace Bars.GkhGji.Regions.Voronezh
             ///ВДГО
             Container.RegisterViewModel<VDGOViolators, VDGOViolatorsViewModel>();
 
-
             //Справочники
-            //Container.RegisterViewModel<RegionCodeMVD, RegionCodeMVDViewModel>();
+            Container.RegisterViewModel<RegionCodeMVD, RegionCodeMVDViewModel>();
             Container.RegisterViewModel<EGRNApplicantType, EGRNApplicantTypeViewModel>();
             Container.RegisterViewModel<EGRNObjectType, EGRNObjectTypeViewModel>();
             Container.RegisterViewModel<EGRNDocType, EGRNDocTypeViewModel>();

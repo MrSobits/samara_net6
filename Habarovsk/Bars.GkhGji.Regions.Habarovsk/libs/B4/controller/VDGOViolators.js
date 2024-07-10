@@ -4,9 +4,13 @@
     requires: [
         'B4.aspects.GridEditWindow',
         'B4.aspects.GkhInlineGrid',
-        'B4.aspects.ButtonDataExport'
+        'B4.aspects.ButtonDataExport',
+        'B4.aspects.permission.GkhPermissionAspect'
     ],
-  
+    mixins: {
+        context: 'B4.mixins.Context',
+        mask: 'B4.mixins.MaskBody'
+    },
     models: [
         'vdgoviolators.VDGOViolators',
     ],
@@ -18,6 +22,15 @@
         'vdgoviolators.Grid',
         'vdgoviolators.EditWindow'
     ],
+    mainView: 'vdgoviolators.Grid',
+    mainViewSelector: '#vdgoviolatorsgrid',
+    refs: [
+        {
+            ref: 'mainView',
+            selector: '#vdgoviolatorsgrid'
+        }
+    ],
+
     aspects: [
         //{
         //    xtype: 'gkhinlinegridaspect',
@@ -39,7 +52,7 @@
                 B4.QuickMsg.msg('Сохранение', 'Данные успешно сохранены', 'success');
             },
             otherActions: function (actions) {
-                actions[this.editFormSelector + ' #cbRedtapeFlag'] = { 'change': { fn: this.onRedtapeFlagChange, scope: this } };                
+                actions[this.editFormSelector + ' #cbRedtapeFlag'] = { 'change': { fn: this.onRedtapeFlagChange, scope: this } };
             },
             onRedtapeFlagChange: function (field, newValue) {
                 var wnd = Ext.ComponentQuery.query(this.controller.editWindowSelector)[0];
@@ -149,7 +162,7 @@
                 {
                     name: 'GkhGji.VDGOViolators.Create', applyTo: '#addVDGOViolators', selector: '#vdgoviolatorsGrid',
                     applyBy: function (component, allowed) {
-                        debugger;
+
                         if (allowed) component.show();
                         else component.hide();
                     }
@@ -161,26 +174,9 @@
                         else component.hide();
                     }
                 },
-                
             ]
         },
     ],
-
-
-    mainView: 'vdgoviolators.Grid',
-    mainViewSelector: '#vdgoviolatorsgrid',
-
-    refs: [
-        {
-            ref: 'mainView',
-            selector: '#vdgoviolatorsgrid'
-        }
-    ],
-
-    mixins: {
-        context: 'B4.mixins.Context',
-        mask: 'B4.mixins.MaskBody'
-    },
 
     init: function () {
         this.callParent(arguments);

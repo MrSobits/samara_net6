@@ -10,8 +10,8 @@
 
             AddResource(container, "libs/B4/aspects/DisclosureInfo.js");
             AddResource(container, "libs/B4/aspects/permission/dict/GroupWorkPpr.js");
-            AddResource(container, "libs/B4/aspects/permission/dict/TemplateService.js");
             AddResource(container, "libs/B4/aspects/permission/dict/TemplateOtherService.js");
+            AddResource(container, "libs/B4/aspects/permission/dict/TemplateService.js");
             AddResource(container, "libs/B4/aspects/permission/dict/WorkPpr.js");
             AddResource(container, "libs/B4/aspects/permission/dict/WorkTo.js");
             AddResource(container, "libs/B4/aspects/permission/documents/State.js");
@@ -23,10 +23,10 @@
             AddResource(container, "libs/B4/aspects/permission/infoaboutusecommonfacilities/State.js");
             AddResource(container, "libs/B4/aspects/permission/informationoncontracts/State.js");
             AddResource(container, "libs/B4/aspects/permission/nonresidentialplacement/State.js");
+            AddResource(container, "libs/B4/aspects/permission/otherservice/State.js");
             AddResource(container, "libs/B4/aspects/permission/planreductionexpense/State.js");
             AddResource(container, "libs/B4/aspects/permission/planworkservicerepair/State.js");
             AddResource(container, "libs/B4/aspects/permission/service/State.js");
-            AddResource(container, "libs/B4/aspects/permission/otherservice/State.js");
             AddResource(container, "libs/B4/aspects/permission/terminatecontract/State.js");
             AddResource(container, "libs/B4/controller/AdminResp.js");
             AddResource(container, "libs/B4/controller/CopyServicePeriodController.js");
@@ -72,8 +72,8 @@
             AddResource(container, "libs/B4/controller/Dict/PeriodicityTemplateService.js");
             AddResource(container, "libs/B4/controller/Dict/SupervisoryOrg.js");
             AddResource(container, "libs/B4/controller/Dict/TaxSystem.js");
-            AddResource(container, "libs/B4/controller/Dict/TemplateService.js");
             AddResource(container, "libs/B4/controller/Dict/TemplateOtherService.js");
+            AddResource(container, "libs/B4/controller/Dict/TemplateService.js");
             AddResource(container, "libs/B4/controller/Dict/WorkPpr.js");
             AddResource(container, "libs/B4/controller/Dict/WorkTo.js");
             AddResource(container, "libs/B4/controller/report/B3PercentCalculation.js");
@@ -102,9 +102,6 @@
             AddResource(container, "libs/B4/model/InformationOnContracts.js");
             AddResource(container, "libs/B4/model/MembershipUnions.js");
             AddResource(container, "libs/B4/model/NonResidentialPlacement.js");
-            AddResource(container, "libs/B4/model/otherservice/OtherService.js");
-            AddResource(container, "libs/B4/model/otherservice/TariffForConsumersOtherService.js");
-            AddResource(container, "libs/B4/model/otherservice/ProviderOtherService.js");
             AddResource(container, "libs/B4/model/PlanReductionExpense.js");
             AddResource(container, "libs/B4/model/PlanWorkServiceRepair.js");
             AddResource(container, "libs/B4/model/RealityObjectPassport.js");
@@ -118,8 +115,8 @@
             AddResource(container, "libs/B4/model/Dict/ServiceType.js");
             AddResource(container, "libs/B4/model/Dict/SupervisoryOrg.js");
             AddResource(container, "libs/B4/model/Dict/TaxSystem.js");
-            AddResource(container, "libs/B4/model/Dict/TemplateService.js");
             AddResource(container, "libs/B4/model/Dict/TemplateOtherService.js");
+            AddResource(container, "libs/B4/model/Dict/TemplateService.js");
             AddResource(container, "libs/B4/model/Dict/WorkPPR.js");
             AddResource(container, "libs/B4/model/Dict/WorkTO.js");
             AddResource(container, "libs/B4/model/Dict/TemplateService/OptionFields.js");
@@ -140,6 +137,9 @@
             AddResource(container, "libs/B4/model/Menu/ManagingOrgDataMenu.js");
             AddResource(container, "libs/B4/model/Menu/ManagingOrgRealityObjDataMenu.js");
             AddResource(container, "libs/B4/model/NonResidentialPlacement/MeteringDevice.js");
+            AddResource(container, "libs/B4/model/otherservice/OtherService.js");
+            AddResource(container, "libs/B4/model/otherservice/ProviderOtherService.js");
+            AddResource(container, "libs/B4/model/otherservice/TariffForConsumersOtherService.js");
             AddResource(container, "libs/B4/model/PlanReductionExpense/Works.js");
             AddResource(container, "libs/B4/model/PlanWorkServiceRepair/Works.js");
             AddResource(container, "libs/B4/model/Service/Additional.js");
@@ -171,9 +171,6 @@
             AddResource(container, "libs/B4/store/InformationOnContracts.js");
             AddResource(container, "libs/B4/store/MembershipUnions.js");
             AddResource(container, "libs/B4/store/NonResidentialPlacement.js");
-            AddResource(container, "libs/B4/store/otherservice/OtherService.js");
-            AddResource(container, "libs/B4/store/otherservice/ProviderOtherService.js");
-            AddResource(container, "libs/B4/store/otherservice/TariffForConsumersOtherService.js");
             AddResource(container, "libs/B4/store/PlanReductionExpense.js");
             AddResource(container, "libs/B4/store/PlanWorkServiceRepair.js");
             AddResource(container, "libs/B4/store/TerminateContract.js");
@@ -186,8 +183,8 @@
             AddResource(container, "libs/B4/store/Dict/ServiceTypeForSelected.js");
             AddResource(container, "libs/B4/store/Dict/SupervisoryOrg.js");
             AddResource(container, "libs/B4/store/Dict/TaxSystem.js");
-            AddResource(container, "libs/B4/store/Dict/TemplateService.js");
             AddResource(container, "libs/B4/store/Dict/TemplateOtherService.js");
+            AddResource(container, "libs/B4/store/Dict/TemplateService.js");
             AddResource(container, "libs/B4/store/Dict/WorkPPR.js");
             AddResource(container, "libs/B4/store/Dict/WorkTO.js");
             AddResource(container, "libs/B4/store/Dict/TemplateService/OptionFields.js");
@@ -219,6 +216,9 @@
             AddResource(container, "libs/B4/store/Menu/ManagingOrgRealityObjDataMenuServSelected.js");
             AddResource(container, "libs/B4/store/Menu/NavigationMenu.js");
             AddResource(container, "libs/B4/store/NonResidentialPlacement/MeteringDevice.js");
+            AddResource(container, "libs/B4/store/otherservice/OtherService.js");
+            AddResource(container, "libs/B4/store/otherservice/ProviderOtherService.js");
+            AddResource(container, "libs/B4/store/otherservice/TariffForConsumersOtherService.js");
             AddResource(container, "libs/B4/store/PlanReductionExpense/Works.js");
             AddResource(container, "libs/B4/store/PlanWorkServiceRepair/Works.js");
             AddResource(container, "libs/B4/store/Service/Base.js");
@@ -270,11 +270,11 @@
             AddResource(container, "libs/B4/view/Dict/PeriodicityTemplateService/Grid.js");
             AddResource(container, "libs/B4/view/Dict/SupervisoryOrg/Grid.js");
             AddResource(container, "libs/B4/view/Dict/TaxSystem/Grid.js");
+            AddResource(container, "libs/B4/view/Dict/templateotherservice/EditWindow.js");
+            AddResource(container, "libs/B4/view/Dict/templateotherservice/Grid.js");
             AddResource(container, "libs/B4/view/Dict/TemplateService/EditWindow.js");
             AddResource(container, "libs/B4/view/Dict/TemplateService/Grid.js");
             AddResource(container, "libs/B4/view/Dict/TemplateService/OptionFieldsGrid.js");
-            AddResource(container, "libs/B4/view/Dict/TemplateOtherService/EditWindow.js");
-            AddResource(container, "libs/B4/view/Dict/TemplateOtherService/Grid.js");
             AddResource(container, "libs/B4/view/Dict/WorkPPR/EditWindow.js");
             AddResource(container, "libs/B4/view/Dict/WorkPPR/Grid.js");
             AddResource(container, "libs/B4/view/Dict/WorkTO/EditWindow.js");
@@ -349,6 +349,10 @@
             AddResource(container, "libs/B4/view/NonResidentialPlacement/MeteringDeviceEditWindow.js");
             AddResource(container, "libs/B4/view/NonResidentialPlacement/MeteringDeviceGrid.js");
             AddResource(container, "libs/B4/view/otherservice/Grid.js");
+            AddResource(container, "libs/B4/view/otherservice/editwindow/EditWindow.js");
+            AddResource(container, "libs/B4/view/otherservice/editwindow/ProviderGrid.js");
+            AddResource(container, "libs/B4/view/otherservice/editwindow/ProviderGridEditWindow.js");
+            AddResource(container, "libs/B4/view/otherservice/editwindow/TariffGrid.js");
             AddResource(container, "libs/B4/view/PlanReductionExpense/EditWindow.js");
             AddResource(container, "libs/B4/view/PlanReductionExpense/Grid.js");
             AddResource(container, "libs/B4/view/PlanReductionExpense/WorksGrid.js");
@@ -406,10 +410,6 @@
             AddResource(container, "libs/B4/view/Service/Repair/WorkRepairDetailGrid.js");
             AddResource(container, "libs/B4/view/Service/Repair/WorkRepairListGrid.js");
             AddResource(container, "libs/B4/view/Service/Repair/WorkRepairTechServGrid.js");
-            AddResource(container, "libs/B4/view/OtherService/EditWindow/EditWindow.js");
-            AddResource(container, "libs/B4/view/OtherService/EditWindow/ProviderGrid.js");
-            AddResource(container, "libs/B4/view/OtherService/EditWindow/TariffGrid.js");
-            AddResource(container, "libs/B4/view/OtherService/EditWindow/ProviderGridEditWindow.js");
             AddResource(container, "libs/B4/view/structelements/ViewPanel.js");
             AddResource(container, "libs/B4/view/TerminateContract/EditPanel.js");
             AddResource(container, "libs/B4/view/TerminateContract/Grid.js");

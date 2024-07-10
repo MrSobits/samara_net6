@@ -2769,7 +2769,7 @@
     },
 
     showSetSignWin: function (recs) {
-        debugger;
+        
         var me = this,
             accountIds = [],
             totalCount = 0;

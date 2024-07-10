@@ -37,7 +37,7 @@
             actions['#rosregextractEditWindow #sfPersAcc'] = { 'beforeload': { fn: this.onBeforeLoadPersAcc, scope: this } };
         },
         onBeforeLoadPersAcc: function (store, operation) {
-            debugger;
+            
             operation = operation || {};
             operation.params = operation.params || {};
 
@@ -46,7 +46,7 @@
         listeners: {
             aftersetformdata: function (asp, rec, form) {
                 var me = this;
-                //debugger;
+                //
                 parentId = rec.getId();
                 //   me.controller.getAspect('admonitionPrintAspect').loadReportStore();
                 var grid = form.down('rosregextractownergrid'),

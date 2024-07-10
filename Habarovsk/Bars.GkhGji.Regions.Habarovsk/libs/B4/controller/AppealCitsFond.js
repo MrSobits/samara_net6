@@ -1255,7 +1255,7 @@ Ext.define('B4.controller.AppealCitsFond', {
                 };
             },
             goFilter: function (btn) {
-                debugger;
+                
                 var filterData = btn.up('#appealCitsStatSubjectMultiSelectWindow').down('[ident=searchfield]').getValue(),
                     treepanel = btn.up('#appealCitsStatSubjectMultiSelectWindow').down('treepanel');
                 treepanel.getStore().reload({
@@ -2053,7 +2053,7 @@ Ext.define('B4.controller.AppealCitsFond', {
 
             },
             onChangeDoc: function (field, newValue) {
-                debugger;
+                
                 if (newValue != null) {
                     bcId = newValue.Id;
                 }
@@ -2171,14 +2171,14 @@ Ext.define('B4.controller.AppealCitsFond', {
             editWindowView: 'appealcits.AppCitPrFondObjectCrEditWindow',
             listeners: {
                 getdata: function (asp, record) {
-                    debugger;
+                    
                     if (!record.get('Id')) {
                         record.set('AppealCitsPrescriptionFond', appealCitsPrescriptionFond);
                     }
                 },
 
                 aftersetformdata: function (asp, record, form) {
-                    debugger;
+                    
                     var sfObjCr = this.getForm().down('#sfObjCr');
                     sfObjCr.getStore().filter('bcId', bcId);
                 }

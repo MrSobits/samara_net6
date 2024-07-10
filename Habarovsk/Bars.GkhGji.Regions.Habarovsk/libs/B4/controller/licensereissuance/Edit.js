@@ -441,7 +441,7 @@
 
         view.params = {};
         view.params.lr = id;
-        debugger;
+        
         me.bindContext(view);
         me.setContextValue(view, 'id', id);
         me.application.deployView(view);

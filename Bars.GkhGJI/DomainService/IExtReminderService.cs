@@ -1,11 +1,8 @@
 ﻿namespace Bars.GkhGji.DomainService
 {
-    using System.Linq;
-
     using Bars.B4;
-    using Bars.GkhGji.Contracts.Enums;
-    using Bars.GkhGji.Entities;
 
+    // Интерфейс для дополнительных функций по Напоминаниям в регионе НСО
     public interface IExtReminderService
     {
         // Метод получения только Напоминаний по Обращениям в регионе НСО

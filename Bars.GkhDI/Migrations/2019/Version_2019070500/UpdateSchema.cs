@@ -23,7 +23,7 @@ join DI_DISINFO_REALOBJ dr on dr.id=d.disinfo_ro_id
 group by disinfo_ro_id,disinfo_id
 having count(*)>1) t where t.min<>r.id and r.disinfo_ro_id=t.disinfo_ro_id and t.disinfo_id=r.disinfo_id);
 
-drop index unq_period_di_ro;
+ALTER TABLE public.di_disinfo_realobj DROP CONSTRAINT unq_period_di_ro;
 
 CREATE UNIQUE INDEX unq_period_di_ro
   ON public.di_disinfo_realobj

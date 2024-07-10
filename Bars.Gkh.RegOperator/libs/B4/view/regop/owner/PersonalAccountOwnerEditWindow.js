@@ -326,7 +326,6 @@
                                             labelWidth: 110,
                                             allowBlank: true,
                                             onTrigger1Click: function () {
-                                                debugger;
                                                 var pickAddressViget = Ext.create('B4.view.regop.owner.RegistrationAddressAddWindow');
                                                 pickAddressViget.show();
                                             }
@@ -386,7 +385,6 @@
                                                             listeners: {
                                                                 change: {
                                                                     fn: function (isFactAddressElement) {
-                                                                        debugger;
                                                                         var fiasFactAddressField = isFactAddressElement.up().down('#editWindowPersAccFiasFactAddressField'),
                                                                             fiasFactAddressDoct = isFactAddressElement.up().up(),
                                                                             fiasFactAddressDoc = fiasFactAddressDoct.down('#docPersAccFiasFactAddressField'),
@@ -398,7 +396,6 @@
 
                                                                         fiasFactAddressField.setReadOnly(!this.checked);
                                                                         fiasFactAddressField.allowBlank = !this.checked;
-                                                                        debugger;
                                                                         fiasFactAddressDoc.setReadOnly(!this.checked);
                                                                         fiasFactAddressDoc.allowBlank = !this.checked;
                                                                     }

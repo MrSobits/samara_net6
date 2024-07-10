@@ -180,7 +180,7 @@
 
         public override bool IsValidForRequest(Microsoft.AspNetCore.Routing.RouteContext routeContext, Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor action)
         {
-            return !string.IsNullOrEmpty(routeContext.HttpContext.Request.Form[this.ParamName]);
+            return !string.IsNullOrEmpty(routeContext.HttpContext.Request.Query[this.ParamName]);
         }
     }
 }

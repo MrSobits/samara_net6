@@ -275,7 +275,7 @@ Ext.define('B4.view.taskcalendar.AppealGrid', {
             viewConfig: {
                 loadMask: true,
                 getRowClass: function (record) {
-                    debugger;
+                    
                     var newDaTE = new Date();
                     newDaTE.setHours(0, 0, 0, 0);
                     var dfCaseDate = record.get('CheckTime');

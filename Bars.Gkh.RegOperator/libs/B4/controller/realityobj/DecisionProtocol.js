@@ -853,7 +853,7 @@
     },
 
     editRecord: function(record) {
-debugger;
+
         var me = this,
             id = record ? record.get('Id') : 0,
             available = me.getAvailableProtocolTypes() || [B4.enums.CoreDecisionType.Owners],

@@ -1057,7 +1057,6 @@
             },
 
             //showBigDescription: function (field) {
-            //    debugger;
             //    var currentDescriptonText = field.getValue();
             //    win = Ext.create('B4.view.person.DetailsEditWindow');
             //    var valuefield = win.down('#dfDescription');
@@ -1177,13 +1176,11 @@
                     qnLabel.setText('');
                     window.down('label[name = questionLabel]').setText('');
                 }
-                //debugger;
                 
                 
                 
                 window.step++;
               //  btn.setDisabled(false);
-                //debugger;
             },
             saveAndGetNext: function (window,btn) {
                 var radGrp = window.down('[name = radGroup]');
@@ -1298,7 +1295,6 @@
                 //window.unmask();
             },
             saveAnswer: function (window) {
-                //debugger;
                 window.mask();
                 var radGrp = window.down('[name = radGroup]');
                 var ans = radGrp.getChecked()[0].itemId;
@@ -1524,7 +1520,6 @@
     ],
 
     index: function (id) {
-        debugger;
         var me = this,
             view = me.getMainView() || Ext.widget('personEditPanel');
 
@@ -1560,7 +1555,6 @@
     },
     
     editRequest: function (id, requestId, qsId) {
-        debugger;
         if (qsId == 0) {
             var me = this,
                 aspect = me.getAspect('personRequestToExamAspect'),
@@ -1583,12 +1577,10 @@
             aspect.getForm().getForm().isValid();
         }
         else {
-            debugger;
                   var me = this,
             aspect = me.getAspect('personQualificationAspect'),
             model = me.getModel('person.QualificationCertificate'),
             view = me.getMainView() || Ext.widget('personEditPanel');
-        debugger;
         me.bindContext(view);
         me.setContextValue(view, 'personId', id);
         me.application.deployView(view, 'person_info');
@@ -1607,12 +1599,10 @@
     },
 
     //editSertificate: function (id, personId, poh) {
-    //    debugger;
     //    var me = this,
     //        aspect = me.getAspect('personQualificationAspect'),
     //        model = me.getModel('person.QualificationCertificate'),
     //        view = me.getMainView() || Ext.widget('personEditPanel');
-    //    debugger;
     //    me.bindContext(view);
     //    me.setContextValue(view, 'personId', id);
     //    me.application.deployView(view, 'person_info');

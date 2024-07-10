@@ -33,7 +33,7 @@
             listeners: {
                 aftersetformdata: function(asp, rec, form) {
                     var me = this;
-                    //debugger;
+                    //
                     parentId = rec.getId();
                 }
             }

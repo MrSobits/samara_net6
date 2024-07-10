@@ -39,7 +39,7 @@
 
         this.bindContext(view);
         this.application.deployView(view);
-        debugger;
+        
         this.getStore('EmailLists').load();
     }
 });

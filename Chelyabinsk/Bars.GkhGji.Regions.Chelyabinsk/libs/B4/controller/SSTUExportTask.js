@@ -42,7 +42,7 @@
             },
             listeners: {
                 aftersetformdata: function (asp, record, form) {
-                    debugger;
+                    
                     sSTUExportTask = record.getId();
                     var grid = form.down('sstuexporttaskappealgrid'),
                         store = grid.getStore();
@@ -92,9 +92,9 @@
                     });
 
                     if (recordIds[0] > 0) {
-                        debugger;
+                        
                         asp.controller.mask('Сохранение', asp.controller.getMainComponent());
-                        debugger;
+                        
                         B4.Ajax.request(B4.Url.action('AddAppeal', 'SSTUExportTaskAppeal', {
                             appealIds: recordIds,
                             taskId: sSTUExportTask

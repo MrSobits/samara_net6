@@ -154,7 +154,7 @@
                                 docId: recId
                             }
                         }).next(function (responce) {
-                            debugger;
+                            
                             var data = Ext.decode(responce.responseText);
                             me.unmask();
                             window.open(B4.Url.action('Download', 'FileUpload', { id: data.Id }));

@@ -164,7 +164,6 @@ Ext.define('B4.controller.AppealCits', {
             buttonSelector: '#appealCitsDecisionEditWindow #btnPrint',
             codeForm: 'AppealDecision',
             getUserParams: function () {
-                debugger;
                 var param = { Id: this.controller.appealCitsDecision };
                 this.params.userParams = Ext.JSON.encode(param);
             }
@@ -1994,23 +1993,19 @@ Ext.define('B4.controller.AppealCits', {
                 actions['#appealCitsExecutantEditWindow #sflController'] = { 'beforeload': { fn: this.onBeforeLoadExecutant, scope: this } };
             },
             onBeforeLoadExecutant: function (store, operation) {
-                debugger;
                 var me = this;
                 operation.params.currentPerson = me.controller.Executant;
             },
             onBeforeLoadAuthor: function (store, operation) {
-                debugger;
                 var me = this;
                 operation.params.currentPerson = me.controller.author;
             },
             onChangeAutor: function (field, newValue) {
-                debugger;
                 var me = this;
                 if (newValue)
                     me.controller.author = newValue.Id;
             },
             onChangeExecutant: function (field, newValue) {
-                debugger;
                 var me = this;
                 if (newValue)
                     me.controller.Executant = newValue.Id;
@@ -2083,7 +2078,7 @@ Ext.define('B4.controller.AppealCits', {
                     //form = win.down('form');
                     //var files = resolutionField.fileInputEl.dom.files;
                     //var me = this;
-                    //debugger;
+                    //
                    // var form = Ext.ComponentQuery.query(asp.multiSelectWindowSelector)[0];
                     //var file = files[0];
                     //var formData = new FormData();
@@ -2111,7 +2106,7 @@ Ext.define('B4.controller.AppealCits', {
                         return false;
                     }
                     //if (form.getForm().isValid()) {
-                    //    debugger;
+                    //    
                     //    asp.controller.mask('Сохранение', asp.controller.getMainComponent());
                     //    form.submit({
                     //        url: B4.Url.action('AddExecutants', 'AppealCitsExecutant'),
@@ -2586,7 +2581,6 @@ Ext.define('B4.controller.AppealCits', {
 
     onPreviewClick: function (grid, rowIndex, colIndex, param, param2, rec, asp) {
         var me = this;
-        debugger;
         var file = rec.get('Resolution');
         me.fileId = file.Id;
         if (me.fileId != null) {
@@ -2600,12 +2594,10 @@ Ext.define('B4.controller.AppealCits', {
     },
     downloadFile: function (params) {
         var me = this;
-        debugger;
         var id = me.fileId;
         window.open(B4.Url.action('/FileUpload/Download?id=' + id));
     },
     deleteAllRelated: function (btn) {
-        debugger;
         var me = this;
         me.mask('Загрузка', me.getMainView());
         B4.Ajax.request(B4.Url.action('RemoveAllRelated', 'AppealCits', {

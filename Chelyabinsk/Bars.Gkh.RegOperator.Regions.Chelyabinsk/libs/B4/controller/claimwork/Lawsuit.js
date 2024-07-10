@@ -276,10 +276,8 @@
                     parentDoc = asp.controller.getCurrentDoc();
                     parentDocSSP = record.getId();
                     if (!record.data.Id) {
-                        debugger;
                         record.data.Lawsuit = asp.controller.getCurrentDoc();
                     }
-                    debugger;
                     var grid = form.down('lawsuitsspdocgrid'),
                         store = grid.getStore();
                     store.filter('docId', record.getId());
@@ -309,7 +307,6 @@
             listeners: {
                 aftersetformdata: function (asp, record) {
                     if (!record.data.Id) {
-                        debugger;
                         record.data.LawSuitDebtWorkSSP = parentDocSSP;
                     }
 
@@ -834,7 +831,6 @@
 
     loadDocStore: function (component) {
         var me = this;
-        debugger;
         var thisGrid = component.up('lawsuitsspdocgrid');
         var storeSSP = thisGrid.getStore();
         storeSSP.clearFilter(true);
@@ -920,9 +916,7 @@
             }
         })
             .next(function (response) {
-                //debugger;
                 var obj = Ext.JSON.decode(response.responseText);
-                //debugger;
                 me.unmask();
                 lawgrig.getStore().load();
                 var alertWindow = Ext.Msg.alert('Результаты добавления', obj.message);
@@ -953,7 +947,6 @@
 
     onRenderLSDebtSSPGrid: function (grid) {
         var me = this;
-        debugger;
         grid.getStore().on('beforeload', me.onBeforeLoad, me);
         grid.getStore().load();
     },

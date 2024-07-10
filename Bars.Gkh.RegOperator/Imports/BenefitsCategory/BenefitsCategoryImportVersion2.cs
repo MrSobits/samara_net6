@@ -9,7 +9,6 @@
 
     using Bars.B4;
     using Bars.B4.DataAccess;
-    using Bars.B4.IoC;
     using Bars.B4.Modules.Security;
     using Bars.B4.Utils;
     using Bars.Gkh.Domain;
@@ -22,10 +21,13 @@
     using Bars.Gkh.RegOperator.Entities.PersonalAccount;
     using Bars.Gkh.RegOperator.Enums;
     using Bars.Gkh.RegOperator.Imports.BenefitsCategory;
+    using Bars.Gkh.RegOperator.Utils;
 
     using Castle.Windsor;
 
-    using NDbfReaderEx;
+    using DbfDataReader;
+    
+    // TODO: Проверить работу после смены библиотеки
 
     public class BenefitsCategoryImportVersion2 : GkhImportBase
     {
@@ -98,6 +100,11 @@
         /// Словарь id лицевых счетов по номеру
         /// </summary>
         private Dictionary<string, long> accountIdByAccountNumberDict;
+
+        /// <summary>
+        /// Список колонок таблицы DBF
+        /// </summary>
+        private List<string> columnNames;
 
         /// <summary>
         /// Словарь id лицевых счетов по коду адреса + имени абонента
@@ -230,7 +237,7 @@
             {
                 using (var stream = new MemoryStream(fileData))
                 {
-                    using (DbfTable.Open(stream, Encoding.GetEncoding(866)))
+                    using (new DbfTable(stream, Encoding.GetEncoding(866)))
                     {
                         return true;
                     }
@@ -426,18 +433,23 @@
             {
                 try
                 {
-                    using (var table = DbfTable.Open(stream, Encoding.GetEncoding(866)))
+                    using (var table = new DbfTable(stream, Encoding.GetEncoding(866)))
                     {
                         FillHeader(table);
 
-                        foreach (var row in table)
+                        var dbfRecord = new DbfRecord(table);
+                        columnNames = table.Columns.Select(x => x.ColumnName).ToList();
+                        var index = 0;
+                        while (table.Read(dbfRecord))
                         {
-                            var record = ReadLine(row);
+                            var record = ReadLine(dbfRecord, index);
 
                             if (record.IsValidRecord)
                             {
                                 records.Add(record);
                             }
+
+                            index++;
                         }
                     }
                 }
@@ -580,7 +592,7 @@
         private void FillHeader(DbfTable table)
         {
             var index = 0;
-            foreach (var header in table.columns.Select(col => col.name))
+            foreach (var header in table.Columns.Select(col => col.ColumnName))
             {
                 if (fields.Contains(header))
                 {
@@ -607,9 +619,9 @@
         /// <returns>
         /// The <see cref="string"/>.
         /// </returns>
-        private string GetValueOrDefault(DbfRow row, string column)
+        private string GetValueOrDefault(DbfRecord row, string column)
         {
-            return headersDict.ContainsKey(column) ? row.GetValue(column).ToString() : string.Empty;
+            return headersDict.ContainsKey(column) ? row.GetValueOrDefault(column, columnNames).ToString() : string.Empty;
         }
 
         /// <summary>
@@ -621,12 +633,12 @@
         /// <returns>
         /// The <see cref="RecordVersion2"/>.
         /// </returns>
-        private RecordVersion2 ReadLine(DbfRow row)
+        private RecordVersion2 ReadLine(DbfRecord row, int rowNumber)
         {
             var record = new RecordVersion2
             {
                 IsValidRecord = false,
-                RowNumber = row.recNo,
+                RowNumber = rowNumber,
                 AccountNum = GetValueOrDefault(row, "LSA"),
                 OwnerFullName = string.Format(
                     "{0} {1} {2}",
@@ -748,7 +760,7 @@
         /// <param name="row">
         /// Строка dbf-файла
         /// </param>
-        private bool CheckAddressCodeInfo(RecordVersion2 record, DbfRow row)
+        private bool CheckAddressCodeInfo(RecordVersion2 record, DbfRecord row)
         {
             if (!GetValueOrDefault(row, "KOD_POST").IsEmpty())
             {
@@ -786,11 +798,13 @@
                 return false;
             }
 
-            if (!GetValueOrDefault(row, "KOD_NYLIC").IsEmpty())
+
+            var nylic = GetValueOrDefault(row, "KOD_NYLIC");
+            if (!nylic.IsEmpty())
             {
-                if (GetValueOrDefault(row, "KOD_NYLIC").Length <= 5)
+                if (nylic.Length <= 5)
                 {
-                    record.CodeNylic = GetValueOrDefault(row, "KOD_NYLIC");
+                    record.CodeNylic = nylic;
                 }
                 else
                 {
@@ -804,11 +818,12 @@
                 return false;
             }
 
-            if (!GetValueOrDefault(row, "NDOM").IsEmpty())
+            var ndom = GetValueOrDefault(row, "NDOM");
+            if (!ndom.IsEmpty())
             {
-                if (GetValueOrDefault(row, "NDOM").Length <= 4)
+                if (ndom.Length <= 4)
                 {
-                    record.Ndom = GetValueOrDefault(row, "NDOM");
+                    record.Ndom = ndom;
                 }
                 else
                 {
@@ -822,9 +837,10 @@
                 return false;
             }
 
-            if (GetValueOrDefault(row, "NKORP").Length <= 3)
+            var nkorp = GetValueOrDefault(row, "NKORP");
+            if (nkorp.Length <= 3)
             {
-                record.Nkorp = GetValueOrDefault(row, "NKORP");
+                record.Nkorp = nkorp;
             }
             else
             {
@@ -832,7 +848,8 @@
                 return false;
             }
 
-            if (GetValueOrDefault(row, "NKW").Length <= 4)
+            var nkw = GetValueOrDefault(row, "NKW");
+            if (nkw.Length <= 4)
             {
                 record.Nkw = GetValueOrDefault(row, "NKW");
             }
@@ -842,9 +859,10 @@
                 return false;
             }
 
-            if (GetValueOrDefault(row, "NKOMN").Length <= 2)
+            var nkomn = GetValueOrDefault(row, "NKOMN");
+            if (nkomn.Length <= 2)
             {
-                record.Nkomn = GetValueOrDefault(row, "NKOMN");
+                record.Nkomn = nkomn;
             }
             else
             {

@@ -195,7 +195,6 @@
             },
             setCodeForm: function(type, docType) {
                 var asp = this;
-                debugger;
                 asp.codeForm = docType === 'restructdebtamicagr'
                     ? 'RestructDebtAmicAgr'
                     : 'RestructDebt';

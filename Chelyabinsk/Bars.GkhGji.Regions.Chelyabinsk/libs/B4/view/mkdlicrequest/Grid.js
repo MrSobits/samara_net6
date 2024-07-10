@@ -148,7 +148,7 @@
             viewConfig: {
                 loadMask: true,
                 getRowClass: function (record) {
-                    debugger;
+                    
                     var state = record.get('State');
 
                     if (state && state.FinalState) {

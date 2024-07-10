@@ -52,7 +52,7 @@
                 listeners: {
                     getdata: function (asp, record) {
                         var me = this;
-                        debugger;
+                        
                         if (!record.data.Id) {
                             record.data.RealityObject = me.controller.getContextValue(me.controller.getMainComponent(), 'realityObjectId');
                         }
@@ -64,7 +64,7 @@
                 },
 
                 changeValue: function (field, newValue, oldValue) {
-                    debugger;
+                    
                     var form = this.getForm();
                     work = form.down('#work');
                     range = form.down('#range');
@@ -170,7 +170,7 @@
         },
 
         onChangePayerType2: function (field, newValue) {
-            debugger;
+            
             //var form = this.getForm(),
             //    fsUrParams = form.down('#cont');
             //fsUrParams.hide();

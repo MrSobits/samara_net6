@@ -101,12 +101,12 @@
             commonDictsRoot.Add("Дерево муниципальных образований", "municipalityTree").AddRequiredPermission("Gkh.Dictionaries.MunicipalityTree.View").WithIcon("municipality");
             commonDictsRoot.Add("Универсальные справочники", "multipurposeglossary").AddRequiredPermission("Gkh.Dictionaries.Multipurpose.View");
             commonDictsRoot.Add("Документы подрядных организаций", "builderdocumenttype").AddRequiredPermission("Gkh.Dictionaries.BuilderDocumentType.View");
-            commonDictsRoot.Add("ЦТП", "centralheatingstation").AddRequiredPermission("Gkh.Dictionaries.CentralHeatingStation.View");
+            //commonDictsRoot.Add("ЦТП", "centralheatingstation").AddRequiredPermission("Gkh.Dictionaries.CentralHeatingStation.View");
             commonDictsRoot.Add("Типы информации в НПА", "typeinformationnpa").AddRequiredPermission("Gkh.Dictionaries.TypeInformationNpa.View");
             commonDictsRoot.Add("Типы НПА", "typenpa").AddRequiredPermission("Gkh.Dictionaries.TypeNpa.View");
             commonDictsRoot.Add("Виды нормативных актов", "typenormativeact").AddRequiredPermission("Gkh.Dictionaries.TypeNormativeAct.View");
             commonDictsRoot.Add("Роли контрагента", "contragentrole").AddRequiredPermission("Gkh.Dictionaries.ContragentRole.View");
-            commonDictsRoot.Add("Типы документов", "identitydocumenttype").AddRequiredPermission("Gkh.Dictionaries.IdentityDocumentType.View");
+            //commonDictsRoot.Add("Типы документов", "identitydocumenttype").AddRequiredPermission("Gkh.Dictionaries.IdentityDocumentType.View");
             var gkhDictsRoot = dictsRoot.Add("Жилищно-коммунальное хозяйство");
             gkhDictsRoot.Add("Группы капитальности", "capitalgroup").AddRequiredPermission("Gkh.Dictionaries.CapitalGroup.View");
             gkhDictsRoot.Add("Типы технического мониторинга", "monitoringtypedict").AddRequiredPermission("Gkh.Dictionaries.MonitoringTypeDict.View");
@@ -161,8 +161,8 @@
 
             var programDictsRoot = dictsRoot.Add("Программы");
             programDictsRoot.Add("Периоды программ", "period").AddRequiredPermission("Gkh.Dictionaries.Period.View");
-            programDictsRoot.Add("Варианты дальнейшего использования", "furtheruse").AddRequiredPermission("Gkh.Dictionaries.FurtherUse.View");
-            programDictsRoot.Add("Основания нецелесообразности", "reasoninexpedient").AddRequiredPermission("Gkh.Dictionaries.ReasonInexpedient.View");
+            //programDictsRoot.Add("Варианты дальнейшего использования", "furtheruse").AddRequiredPermission("Gkh.Dictionaries.FurtherUse.View");
+            //programDictsRoot.Add("Основания нецелесообразности", "reasoninexpedient").AddRequiredPermission("Gkh.Dictionaries.ReasonInexpedient.View");
             programDictsRoot.Add("Источники по программам переселения", "resettlementprogsource").AddRequiredPermission("Gkh.Dictionaries.ResettlementProgramSource.View");
 
             var overhaulDictsRoot = dictsRoot.Add("Капитальный ремонт");

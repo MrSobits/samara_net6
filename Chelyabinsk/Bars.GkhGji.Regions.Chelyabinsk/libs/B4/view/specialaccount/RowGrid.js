@@ -231,7 +231,7 @@
                     pluginId: 'cellEditing',
                     listeners: {
                         afteredit: function (record) {
-                            debugger;
+                            
                             var balanceValue = record.context.record.get('Incoming') + record.context.record.get('IncomingTotal') - record.context.record.get('Transfer') - record.context.record.get('TransferTotal'),
                                 totalDebtValue = record.context.record.get('Accured') + record.context.record.get('AccuredTotal') - record.context.record.get('Incoming') - record.context.record.get('IncomingTotal');
                             record.context.record.set('Ballance', balanceValue);
@@ -287,7 +287,7 @@
     },
 
     onStoreAfterLoad: function (store, records) {
-        debugger;
+        
         for (var i = 0; i < records.length; i++) {
             var balanceValue = records[i].data.Incoming + records[i].data.IncomingTotal - records[i].data.Transfer - records[i].data.TransferTotal,
                 totalDebtValue = records[i].data.Accured + records[i].data.AccuredTotal - records[i].data.Incoming - records[i].data.IncomingTotal;

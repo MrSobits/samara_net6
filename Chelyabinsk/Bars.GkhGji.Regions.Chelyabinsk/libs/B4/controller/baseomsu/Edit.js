@@ -142,7 +142,7 @@
 
                     //Делаем запрос на получение жилых домов управляющей организации по которой проверка
                     asp.controller.mask('Загрузка', asp.controller.getMainComponent());
-                    debugger;
+                    
                     B4.Ajax.request(B4.Url.action('GetInfo', 'BaseJurPerson', {
                         inspectionId: asp.controller.params.inspectionId
                     })).next(function (response) {
@@ -161,13 +161,13 @@
                     }).error(function () {
                         asp.controller.unmask();
                     });
-                    debugger;
+                    
                     //Обновляем Статусы
                     me.controller.getAspect('baseOMSUStateButtonAspect').setStateData(rec.get('Id'), rec.get('State'));
-                    debugger;
+                    
                     //Обновляем кнопку Сформировать
                    me.controller.getAspect('baseOMSUCreateButtonAspect').setData(rec.get('Id'));
-                    debugger;
+                    
                     
                 }
             }
@@ -285,7 +285,7 @@
 
     init: function () {
         var me = this;
-        debugger;
+        
     //    me.getStore('basejurperson.RealityObject').on('beforeload', me.onBeforeLoad, me);
         me.callParent(arguments);
     },

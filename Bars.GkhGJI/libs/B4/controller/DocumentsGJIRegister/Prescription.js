@@ -34,7 +34,7 @@
                 actions[this.gridSelector + ' #showRed'] = { 'change': { fn: this.onshowRed, scope: this } }; 
             },
             onShowYellow: function (cb, checked) {
-                debugger;
+                
                 var me = this;
                 if (me.controller.params) {
                     me.controller.params.filterParams.showYellow = checked;
@@ -44,7 +44,7 @@
                 store.filter('showSysFiles', checked);
             },
             onshowRed: function (cb, checked) {
-                debugger;
+                
                 var me = this;
                 if (me.controller.params) {
                     me.controller.params.filterParams.showRed = checked;

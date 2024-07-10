@@ -228,7 +228,7 @@
     ],
 
     //index: function (operation) {
-    //    debugger;
+    //    
     //    var me = this,
     //        view = me.getMainView() || Ext.widget('riskorientedmethodMainPanel');
     //    me.params = {};

@@ -51,7 +51,7 @@
                      selector: 'appealordergrid',
                      applyBy: function (component, allowed) {
                          var me = this;
-                         debugger;
+                         
                          me.controller.params = me.controller.params || {};
                          if (allowed) {
                              component.show();
@@ -67,7 +67,7 @@
                      selector: 'appealordergrid',
                      applyBy: function (component, allowed) {
                          var me = this;
-                         debugger;
+                         
                          me.controller.params = me.controller.params || {};
                          if (allowed) {
                              component.show();
@@ -83,7 +83,7 @@
                      selector: 'appealordergrid',
                      applyBy: function (component, allowed) {
                          var me = this;
-                         debugger;
+                         
                          me.controller.params = me.controller.params || {};
                          if (allowed) {
                              component.show();
@@ -99,7 +99,7 @@
                      selector: 'appealordergrid',
                      applyBy: function (component, allowed) {
                          var me = this;
-                         debugger;
+                         
                          me.controller.params = me.controller.params || {};
                          if (allowed) {
                              component.show();
@@ -115,7 +115,7 @@
                      selector: '#appealcitsAppealOrderEditWindow',
                      applyBy: function (component, allowed) {
                          var me = this;
-                         debugger;
+                         
                          me.controller.params = me.controller.params || {};
                          if (allowed) {
                              component.show();
@@ -131,7 +131,7 @@
                      selector: '#appealcitsAppealOrderEditWindow',
                      applyBy: function (component, allowed) {
                          var me = this;
-                         debugger;
+                         
                          me.controller.params = me.controller.params || {};
                          if (allowed) {
                              component.show();
@@ -147,7 +147,7 @@
                      selector: '#appealcitsAppealOrderEditWindow',
                      applyBy: function (component, allowed) {
                          var me = this;
-                         debugger;
+                         
                          me.controller.params = me.controller.params || {};
                          if (allowed) {
                              component.show();
@@ -184,7 +184,7 @@
                 }
             },
             onChangeCheckbox: function (field, newValue) {
-                debugger;
+                
                 this.controller.params.showCloseAppeals = newValue;
                 this.controller.getStore('appealcits.AppealOrder').load();
             },
@@ -273,7 +273,7 @@
             listeners: {
                 getdata: function (asp, record) {
                     if (!record.get('Id')) {
-                        debugger;
+                        
                         record.set('AppealOrder', appealOrderId);
                     }
                 }
@@ -309,7 +309,7 @@
         var grid = this.getMainView();
         //this.params.dateFromStart = grid.down('#dfDateFromStart').getValue();
         //this.params.dateFromEnd = grid.down('#dfDateFromEnd').getValue();
-        debugger;
+        
         if (this.params && this.params.soprId > 0) {
             var model = this.getModel('appealcits.AppealOrder');
             this.getAspect('appealOrderGridAspect').editRecord(new model({ Id: this.params.soprId }));

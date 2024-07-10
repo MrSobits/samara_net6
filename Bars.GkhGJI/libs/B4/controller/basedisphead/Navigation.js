@@ -51,7 +51,7 @@ Ext.define('B4.controller.basedisphead.Navigation', {
     ],
 
     onLaunch: function () {
-        debugger;
+        
         if (this.params) {
             var label = this.getInfoLabel();
             if(label)

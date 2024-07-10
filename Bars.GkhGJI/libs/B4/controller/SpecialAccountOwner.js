@@ -89,7 +89,7 @@
             listeners: {
                 getdata: function (asp, record) {
                     if (!record.get('Id')) {
-                        debugger;
+                        
                         record.set('SpecialAccountOwner', realityObjectId);
                     }
                 }

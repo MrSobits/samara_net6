@@ -91,7 +91,7 @@
             },
             
             //onChangeCheckbox: function (field, newValue) {
-            //    debugger;
+            //    
             //    var pasams = this.controller.params;
             //    this.controller.params.ShowDebt = newValue;
             //    this.controller.getStore('claimwork.LegalClaimWork').load();
@@ -131,7 +131,6 @@
         me.callParent(arguments);
     },
     onChangeCheckbox: function (field, newValue) {
-        debugger;
         var me = this,
             view = me.getMainView() || Ext.widget('legalclaimworkgrid');
         me.params.showPaused = newValue;

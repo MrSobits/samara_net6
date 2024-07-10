@@ -22,7 +22,6 @@
         {
             name: 'GkhCr.ObjectCr.Register.TypeWork.MoveToAnotherPeriod', applyTo: '#sendToOtherPeriodButton', selector: 'typeworkcreditwindow',
             applyBy: function (component, allowed) {
-                debugger;
                 if (allowed) component.show();
                 else component.hide();
             }

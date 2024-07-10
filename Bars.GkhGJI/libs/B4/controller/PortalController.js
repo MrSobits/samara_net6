@@ -168,8 +168,7 @@
         }
     ],
 
-    init: function () {
-        debugger;
+    init: function() {
         var actions = {
             // Временное решение для работы старой версии routing
             'b4portal': {
@@ -276,7 +275,6 @@
 
     onLaunch: function() {
         // jQuery
-        debugger;
         Ext.Loader.loadScript(rootUrl + 'libs/jQuery/jquery-1.9.1.min.js');
       //  Gkh.signalR.start();
         var viewPortal = this.getView('Portal');

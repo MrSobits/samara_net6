@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Bars.GkhGji.Regions.Voronezh.Controllers.SMEV
 {
-    class DepartmentlRequestsDTOController : BaseController
+    public class DepartmentlRequestsDTOController : BaseController
     {
         public ActionResult GetListInterdepartmentalRequests(BaseParams baseParams)
         {

@@ -120,7 +120,6 @@
                 aftersetformdata: function (asp, rec, form) {
                     var me = this;
                     if (rec.get('Id')) {
-                        debugger;
 
                         var filerid = form.down('propertyownerprotocolsfilegrid'),
                             filestore = filerid.getStore();
@@ -237,7 +236,6 @@
         //    },
 
         //    onBeforeLoadDecis: function (store, operation) {
-        //        debugger;
         //        operation = operation || {};
         //        operation.params = operation.params || {};
 
@@ -264,7 +262,6 @@
                 { header: 'Наименование', xtype: 'gridcolumn', dataIndex: 'Name', flex: 1 }
             ],
             onBeforeLoad: function (store, operation) {
-                debugger;
                 operation.params.protocolId = protocolId;
             },
 
@@ -274,7 +271,6 @@
                     records.each(function (rec) {
                         recordIds.push(rec.get('Id'));
                     });
-                    debugger;
                     if (recordIds[0] > 0) {
                         asp.controller.mask('Сохранение', asp.controller.getMainComponent());
                         B4.Ajax.request({
@@ -805,13 +801,11 @@
     },
 
     onBeforeLoad: function (store, operation) {
-        debugger;
         var me = this;
         operation.params.protocolId = protocolId;
     },
 
     onSelectProtocol: function (grid, record) {
-        debugger;
         var me = this,
             decisionGrid = me.getDecisionGrid(),
             decisionStore = decisionGrid.getStore(),

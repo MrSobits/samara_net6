@@ -511,7 +511,7 @@
                     var me = this,
                         mainView = me.controller.getMainView(),
                         requestId = me.controller.getContextValue(mainView, 'requestId');
-                    debugger;
+                    
 
                     record.set('LicRequest', requestId);
                 },

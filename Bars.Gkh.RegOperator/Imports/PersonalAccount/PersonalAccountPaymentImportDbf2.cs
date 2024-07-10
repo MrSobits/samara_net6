@@ -11,6 +11,7 @@
     using B4.Utils;
 
     using Bars.Gkh.Entities;
+    using Bars.Gkh.RegOperator.Entities.PersonalAccount;
 
     using Gkh.Domain;
     using Gkh.Enums.Import;
@@ -19,9 +20,10 @@
     using Entities;
     using Enums;
     using Imports;
-    using NDbfReaderEx;
+    
+    // TODO: Проверить работу после смены библиотеки
 
-    public class PersonalAccountPaymentImportDbf2 : AbstractDbfImport
+    public class PersonalAccountPaymentImportDbf2 : AbstractDbfImport<PersonalAccountImportEntity>
     {
         public static string Id = MethodBase.GetCurrentMethod().DeclaringType.FullName;
 
@@ -218,7 +220,7 @@
             TransactionHelper.InsertInManyTransactions(Container, unacceptedCharges, 1000, false, true);
         }
 
-        protected override void ProcessLine(DbfRow row, int rowNumber)
+        protected override void ProcessLine(PersonalAccountImportEntity row, int rowNumber)
         {
             _paymentRows.Add(new PaymentRow(row, rowNumber));
         }
@@ -323,15 +325,15 @@
 
         private class PaymentRow
         {
-            public PaymentRow(DbfRow row, int rowNum)
+            public PaymentRow(PersonalAccountImportEntity row, int rowNum)
             {
-                Period = row.GetString("PERIOD");
-                ExternalAccountNumber = row.GetString("KKC");
-                SaldoIn = row.GetDecimal("SLD_N");
-                Charged = row.GetDecimal("NACH");
-                Recalc = row.GetDecimal("RAZV");
-                SaldoOut = row.GetDecimal("SLD_K");
-                Penalty = row.GetDecimal("PENY");
+                Period = row.Period;
+                ExternalAccountNumber = row.ExternalAccountNumber;
+                SaldoIn = row.SaldoIn;
+                Charged = row.Charged;
+                Recalc = row.Recalc;
+                SaldoOut = row.SaldoOut;
+                Penalty = row.Penalty;
                 RowNum = rowNum;
             }
 

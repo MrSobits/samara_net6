@@ -74,7 +74,6 @@
                 win.show();
             },
             processCalculation: function (btn) {
-                debugger;
                 var me = this,
                     win = btn.up('costlimitparamswindow');
                 var nfCalcYear = win.down('#nfCalcYear');
@@ -89,13 +88,11 @@
                     Ext.Msg.alert('Ошибка!', 'Не заполнен индекс потребительских цен');
                 }
                 if (calcYear && calcIndex) {
-                    debugger;
                     me.mask('Рассчитываем предельные стоимости работ', win);
                     B4.Ajax.request(B4.Url.action('CalculateCostLimit', 'CostLimit', {
                         calcYear: calcYear,
                         calcIndex: calcIndex
                     })).next(function (response) {
-                        debugger;
                         me.unmask();
                         Ext.Msg.alert('Результаты расчета', response.message);
                     }).error(function (response) {

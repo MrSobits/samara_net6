@@ -49,7 +49,7 @@
                 listeners: {
                     getdata: function (asp, record) {
                         var me = this;
-                        debugger;
+                        
                         if (!record.data.Id) {
                             record.data.RealityObject = me.controller.getContextValue(me.controller.getMainComponent(), 'realityObjectId');
                         }

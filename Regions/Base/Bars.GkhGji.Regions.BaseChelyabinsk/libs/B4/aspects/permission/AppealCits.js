@@ -29,7 +29,7 @@
         //{
         //    name: 'GkhGji.AppealCitizensState.Field.DateFrom_Edit', applyTo: '[name=DateFrom]', selector: '#appealCitsEditWindow',
         //    applyBy: function (component, allowed) {
-        //        debugger;
+        //        
         //        if (component) {
         //            if (allowed) component.setDisabled(true);
         //            else component.setDisabled(false);
@@ -49,7 +49,7 @@
         //    name: 'GkhGji.AppealCitizensState.Field.Consideration.Delete', applyTo: 'b4deletecolumn', selector: '#appealCitsExecutantGrid',
         //    applyBy: function (component, allowed) {
         //        var v = allowed;
-        //        debugger;
+        //        
         //        this.setVisible(component, allowed);
         //    }
         //},

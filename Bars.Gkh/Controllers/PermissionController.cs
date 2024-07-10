@@ -17,7 +17,7 @@
     /// <summary>
     /// Контроллер настройки ограничений
     /// </summary>
-    public class GkhPermissionController : B4.Modules.Security.PermissionController
+    public class PermissionController : B4.Modules.Security.PermissionController
     {
         public ILocalAdminRoleService LocalAdminRoleService { get; set; }
         public IFilterPermissionService FilterPermissionService { get; set; }

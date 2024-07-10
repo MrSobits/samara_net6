@@ -132,7 +132,7 @@
     //    var grid = this.getMainView();
     //    //this.params.dateFromStart = grid.down('#dfDateFromStart').getValue();
     //    //this.params.dateFromEnd = grid.down('#dfDateFromEnd').getValue();
-    //    debugger;
+    //    
     //    if (this.params && this.params.soprId > 0) {
     //        var model = this.getModel('appealcits.AppealOrder');
     //        this.getAspect('appealOrderGridAspect').editRecord(new model({ Id: this.params.soprId }));

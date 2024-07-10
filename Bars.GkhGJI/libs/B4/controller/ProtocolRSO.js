@@ -105,7 +105,7 @@
             onSaveSuccess: function (aspect, rec) {
                 //Закрываем окно после добавления новой записи
                 aspect.getForm().close();
-                debugger;
+                
                 //загружаем добавленный объект
                 var model = this.controller.getModel(this.modelName);
 

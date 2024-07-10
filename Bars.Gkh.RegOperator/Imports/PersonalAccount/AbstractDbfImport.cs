@@ -6,18 +6,27 @@
     using System.Linq;
     using System.Text;
     using B4;
+    
+    using Bars.Gkh.RegOperator.Utils;
 
-    using Bars.B4.IoC;
-
+    using DbfDataReader;
     using Import;
     using Castle.Windsor;
     using Import.Impl;
-    using NDbfReaderEx;
 
-    public abstract class AbstractDbfImport : GkhImportBase
+     
+    // TODO: Проверить работу после смены библиотеки
+    
+    public abstract class AbstractDbfImport<T> : GkhImportBase
+        where T : new()
     {
         #region IGkhImport properties
         public override string PossibleFileExtensions { get { return "dbf"; } }
+        
+        /// <summary>
+        /// Список колонок таблицы DBF
+        /// </summary>
+        private List<string> columnNames;
         #endregion
 
         #region IGkhImport methods
@@ -46,7 +55,7 @@
             {
                 using (var stream = new MemoryStream(fileData))
                 {
-                    using (var table = DbfTable.Open(stream, Encoding))
+                    using (var table = new DbfTable(stream, Encoding))
                     {
                         return true;
                     }
@@ -82,17 +91,19 @@
 
         protected virtual void ProcessData(byte[] fileData)
         {
-
             using (var stream = new MemoryStream(fileData))
             {
-                using (var table = DbfTable.Open(stream, Encoding.GetEncoding(866)))
+                using (var table = new DbfTable(stream, Encoding))
                 {
+                    columnNames = table.Columns.Select(x => x.ColumnName).ToList();
                     FillHeader(table);
 
                     var index = 0;
 
-                    foreach (var row in table)
+                    var dbfRecord = new DbfRecord(table);
+                    while (table.Read(dbfRecord))
                     {
+                        var row = dbfRecord.ReadToObject<T>(table);
                         ProcessLine(row, index++);
                     }
                 }
@@ -102,7 +113,7 @@
         protected virtual void FillHeader(DbfTable table)
         {
             var index = 0;
-            foreach (var header in table.columns.Select(col => col.name))
+            foreach (var header in this.columnNames)
             {
                 if (FieldsNames.Contains(header))
                 {
@@ -117,7 +128,7 @@
             }
         }
 
-        protected abstract void ProcessLine(DbfRow row, int rowNumber);
+        protected abstract void ProcessLine(T row, int rowNumber);
 
         protected virtual void InitLog(string fileName)
         {

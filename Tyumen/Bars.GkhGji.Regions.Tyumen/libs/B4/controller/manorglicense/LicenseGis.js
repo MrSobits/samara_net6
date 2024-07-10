@@ -132,7 +132,7 @@
 
     init: function () {
         this.getStore('manorglicense.LicenseGis').on('beforeload', this.onBeforeLoad, this);
-        debugger;
+        
         this.callParent(arguments);
     },
 

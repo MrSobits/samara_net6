@@ -45,7 +45,7 @@
             actions['#rosregextractEditWindow #PrintExtract'] = { 'mouseover': { fn: this.printReport, scope: this } };
         },
         onBeforeLoadPersAcc: function (store, operation) {
-            debugger;
+            
             operation = operation || {};
             operation.params = operation.params || {};
 
@@ -59,7 +59,7 @@
         listeners: {
             aftersetformdata: function (asp, rec, form) {
                 var me = this;
-                //debugger;
+                //
                 parentId = rec.getId();
                 //Выставляем Id комнаты для кнопки изменения площади
                 var roomId = rec.data.Room_id;
@@ -127,7 +127,7 @@
     },
 
     onMerge: function () {
-        debugger;
+        
         B4.Ajax.request({
             url: B4.Url.action('Merge', 'DataAreaOwnerMerger')
         });

@@ -13,7 +13,6 @@ namespace Bars.GkhGji.Regions.Voronezh.DomainService.Impl
     using Bars.GkhGji.ConfigSections;
     using Bars.GkhGji.Contracts.Enums;
     using Bars.GkhGji.Entities;
-    using Bars.GkhGji.Regions.BaseChelyabinsk.DomainService;
     using Bars.GkhGji.Regions.BaseChelyabinsk.Entities.Reminder;
 
     using Castle.Windsor;

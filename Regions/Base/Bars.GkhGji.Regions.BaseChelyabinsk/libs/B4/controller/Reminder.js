@@ -509,7 +509,6 @@
     },
     
     rowAction: function (grid, action, record) {
-        debugger;
         var me = this,
             typeReminder = record.get('TypeReminder'),
             portal = me.getController('PortalController'),
@@ -536,7 +535,6 @@
                 break;
             case 20:
                 {
-                    debugger;
                     inspection = record.get('InspectionGji');
                     model = me.getModel('InspectionGji');
 
@@ -551,7 +549,6 @@
             
             default:
                 {
-                    debugger;
                     documentGji = record.get('DocumentGji');
                     inspection = record.get('InspectionGji');
                     model = me.getModel('InspectionGji');

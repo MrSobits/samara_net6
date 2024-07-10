@@ -70,7 +70,7 @@
                      docStore.clearFilter(true);
                      docStore.filter('specialAccountReportId', me.objectId);
                      docStore.load();
-                     debugger;
+                     
                      if (rec.raw.Sertificate != 'Не подписан' && rec.raw.Sertificate != 'Отчет сдан в письменном виде')
                          panel.down('specialaccountrowgrid').setDisabled(true);
                      else if (!afterset){
@@ -95,7 +95,7 @@
 
         me.bindContext(view);
         me.setContextValue(view, 'id', id);
-        debugger;
+        
         me.application.deployView(view);
         me.getAspect('specialaccountEditPanelAspect').setData(id);
         
@@ -109,7 +109,7 @@
 
     },
     reporteditor: function (id) {
-        debugger;
+        
         var me = this,
             view = me.getMainView() || Ext.widget('specialaccountEditPanel', {
                 controllerName: 'SpecialAccountRow',

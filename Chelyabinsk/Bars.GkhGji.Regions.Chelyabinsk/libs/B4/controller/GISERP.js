@@ -183,7 +183,7 @@
                 var tfSTART_DATE = form.down('#tfSTART_DATE');
                 var tfACT_DATE_CREATE = form.down('#tfACT_DATE_CREATE');
                 var enumValue = cbGisErpRequestType.value;
-                debugger;
+                
                 if (dfProtocol.value != "" && cbGisErpRequestType.value == 2) {
                     if (afterset) {
                         afterset = false;
@@ -191,7 +191,7 @@
                             protocolData: protocolData
                         }
                         )).next(function (response) {
-                            debugger;
+                            
                             var data = Ext.decode(response.responseText);
                             if (data.data.prosOffice != null) {
                                 sfProsecutorOffice.setValue(data.data.prosOffice);

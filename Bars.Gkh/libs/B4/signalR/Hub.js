@@ -64,7 +64,8 @@
         // Регистрируем клиентские обработчики методов хаба
         Ext.iterate(me.handlers, (methodName, handler) => {
             if (Ext.isFunction(handler)) {
-                connection.on(methodName, handler);
+
+                me.addHandler(methodName, handler);
             }
         });
     },
@@ -105,7 +106,16 @@
                 );
             });
     },
-    
+
+    /*
+    * Добавить обработчик
+    * */
+    addHandler: function (methodName, handlerFn) {
+        var me = this;
+
+        me.connection.on(methodName, handlerFn);
+    },
+
     start: function (){
         this.connection
             .start()

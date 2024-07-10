@@ -83,7 +83,7 @@
 
     afterRender: function () {
         this.callParent(arguments);
-        if (this.store.isStore) {
+        if (this.store && this.store.isStore) {
             if (this.store.getCount() == 0) {
                 this.store.load();
             } else {

@@ -74,7 +74,6 @@
                 {
                     name: 'Clw.ClaimWork.Individual.Delete', applyTo: 'b4deletecolumn', selector: 'individualclaimworkgrid',
                     applyBy: function (component, allowed) {
-                        debugger;
                         if (allowed) component.show();
                         else component.hide();
                     }

@@ -44,7 +44,7 @@
     },
 
     onChangePeriod: function (field, newValue) {
-        debugger;
+        
         var me = this;
         if (newValue) {
             var grid = field.up('statuspaymentdocumenthousesgrid'),
@@ -60,7 +60,7 @@
     },
 
     beforeSnapshotsLoad: function (store, opts) {
-        debugger;
+        
         var periodId = this.getPeriod().getValue();
         if (!periodId) {
             Ext.Msg.alert('Ошибка', 'Не выбран период!');

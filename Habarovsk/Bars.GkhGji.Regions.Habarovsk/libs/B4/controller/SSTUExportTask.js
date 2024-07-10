@@ -91,9 +91,9 @@
                     });
 
                     if (recordIds[0] > 0) {
-                        debugger;
+                        
                         asp.controller.mask('Сохранение', asp.controller.getMainComponent());
-                        debugger;
+                        
                         B4.Ajax.request(B4.Url.action('AddAppeal', 'SSTUExportTaskAppeal', {
                             appealIds: recordIds,
                             taskId: sSTUExportTask

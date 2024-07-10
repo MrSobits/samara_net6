@@ -22,6 +22,7 @@
     /// <summary>
     /// Базовый класс конфигурации WebApi приложения
     /// </summary>
+    // TODO заменить IStartup на IAspNetCoreApplicationConfigurator
     public abstract class BaseApiStartup : IStartup
     {
         /// <summary>

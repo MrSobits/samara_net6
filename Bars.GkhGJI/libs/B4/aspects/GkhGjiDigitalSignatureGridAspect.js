@@ -251,7 +251,7 @@
 
     SignCreate: function (cert, dataToSign, oldScope) {
         return new Promise(function (resolve, reject) {
-            debugger;
+            
             cadesplugin.async_spawn(
                 /*#__PURE__*/
                 regeneratorRuntime.mark(function _callee(args) {

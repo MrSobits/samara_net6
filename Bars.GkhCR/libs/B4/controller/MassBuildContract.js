@@ -305,7 +305,7 @@
                 getdata: function (asp, records) {
                     var recordIds = [];
                     var ocrGrid = asp.controller.getObjectCRGridGrid();
-                    debugger;
+                    
                     records.each(function (rec, index) {
                         recordIds.push(rec.get('Id'));
                     });

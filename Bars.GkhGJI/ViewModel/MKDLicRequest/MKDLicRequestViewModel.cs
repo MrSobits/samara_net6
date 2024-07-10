@@ -2,21 +2,19 @@
 {
     using B4;
     using Bars.B4.Utils;
-    using Bars.Gkh.Entities;
     using Bars.Gkh.Utils;
     using Entities;
     using System;
-    using System.Collections.Generic;
     using System.Linq;
 
     public class MKDLicRequestViewModel : BaseViewModel<MKDLicRequest>
     {
-
         public IDomainService<MKDLicRequestRealityObject> RODomain { get; set; }
         public IDomainService<MKDLicRequestInspector> InspectorDomain { get; set; }
+
+        /// <inheritdoc />
         public override IDataResult List(IDomainService<MKDLicRequest> domainService, BaseParams baseParams)
         {
-            var loadParams = GetLoadParam(baseParams);
             var showCloseAppeals = baseParams.Params.GetAs("showCloseAppeals", true);
             var dateStart2 = baseParams.Params.GetAs("dateStart", new DateTime());
             var dateEnd2 = baseParams.Params.GetAs("dateEnd", new DateTime());
@@ -51,8 +49,7 @@
                  .GroupBy(x => x.Id)
               .ToDictionary(x => x.Key, y => y.Distinct().AggregateWithSeparator(x => x.Inspector, ", "));
 
-
-            var data = domainService.GetAll()
+            return domainService.GetAll()
                 .Where(x => x.StatementDate >= dateStart2 && x.StatementDate <= dateEnd2)
                 .WhereIf(realityObjectId > 0, x => reqByRo.Contains(x.Id))
                 .AsEnumerable()
@@ -63,18 +60,18 @@
                     x.ConclusionDate,
                     x.ConclusionNumber,
                     x.LicStatementResult,
-                    RealityObjects = roDict.ContainsKey(x.Id) ? roDict[x.Id] : "",
+                    RealityObjects = roDict.TryGetValue(x.Id, out var ro) ? ro : string.Empty,
                     Contragent = x.Contragent != null ? x.Contragent.Name : "",
                     x.PhysicalPerson,
                     x.StatementDate,
                     x.StatementNumber,
-                    Inspector = inspDict.ContainsKey(x.Id) ? inspDict[x.Id] : "",
+                    Inspector = inspDict.TryGetValue(x.Id, out var insp) ? insp : string.Empty,
                     ExecutantDocGji = x.ExecutantDocGji.Name,
                     MKDLicTypeRequest = x.MKDLicTypeRequest.Name,
                     x.Objection,
                     x.ObjectionResult
                 }).AsQueryable()
-                .Select(x=> new
+                .Select(x => new
                 {
                     x.Id,
                     x.Inspector,
@@ -92,13 +89,7 @@
                     x.ExecutantDocGji,
                     x.MKDLicTypeRequest
                 })
-                .Filter(loadParams, Container);
-
-            int totalCount = data.Count();
-
-            return new ListDataResult(data.Order(loadParams).Paging(loadParams).ToList(), data.Count());
+                .ToListDataResult(baseParams.GetLoadParam());
         }
-
-
     }
 }

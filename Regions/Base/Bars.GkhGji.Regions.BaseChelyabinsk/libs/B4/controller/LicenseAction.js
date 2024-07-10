@@ -49,7 +49,7 @@
                 aftersetformdata: function (asp, record, form) {
                     var me = this;
                     licenseActionId = record.getId();
-                    debugger;
+                    
                     var grid = form.down('licenseactionfileinfogrid'),
                         store = grid.getStore();
                     store.on('beforeload', function (store, operation) {

@@ -1236,7 +1236,6 @@ Ext.define('B4.controller.AppealCits', {
             },
          
             onChangeAutor: function (field, newValue) {
-                debugger;
                 var me = this;
                 me.controller.currentPerson = newValue;
             },
@@ -1325,7 +1324,6 @@ Ext.define('B4.controller.AppealCits', {
                     return true;
                 },
                 aftersetformdata: function (asp, record) {
-                    debugger;
                     this.controller.getAspect('appcitsExecutantStateButtonAspect').setStateData(record.get('Id'), record.get('State'));
                 },
                 panelrendered: function (asp, prm) {
@@ -1536,7 +1534,6 @@ Ext.define('B4.controller.AppealCits', {
 
     onPreviewClick: function (grid, rowIndex, colIndex, param, param2, rec, asp) {
         var me = this;
-        debugger;
         var fileId = rec.get('Resolution');
     },
     //ToDo Пока невозможно перевести реестр обращения на роуты

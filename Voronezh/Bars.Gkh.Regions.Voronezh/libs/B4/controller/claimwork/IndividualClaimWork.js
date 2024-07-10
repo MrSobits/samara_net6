@@ -330,7 +330,7 @@
     },
 
     onChangeCheckbox: function (field, newValue) {
-        debugger;
+        
         var me = this,
             view = me.getMainView() || Ext.widget('individualclaimworkgrid');
         me.params.showPaused = newValue;

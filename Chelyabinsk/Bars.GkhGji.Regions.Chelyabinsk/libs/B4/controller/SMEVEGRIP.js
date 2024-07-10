@@ -65,7 +65,6 @@
  
             },
             getExtractPdf: function (){
-                debugger;
                 Ext.DomHelper.append(document.body, {
                     tag: 'iframe',
                     id: 'downloadIframe',
@@ -122,7 +121,7 @@
 
     runexport: function (grid, rowIndex, colIndex, param, param2, rec, asp) {
         var me = this;
-        debugger;
+        
         if (rec.get('RequestState') != 0)
         {
             Ext.Msg.alert('Внимание', 'Данный запрос уже выполнен или выполняется, повторный запуск невозможен');

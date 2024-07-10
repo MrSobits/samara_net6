@@ -30,7 +30,7 @@
     ],
 
     initComponent: function () {
-        debugger;
+        
         var me = this;
         Ext.applyIf(me, {
             defaults: {

@@ -98,11 +98,11 @@
                 },
                 getdata: function (asp, records) {
                     var recordIds = [];
-                    debugger;
+                    
                     records.each(function (rec) {
                         recordIds.push(rec.get('Id'));
                     });
-                    debugger;
+                    
                     var tfName = Ext.ComponentQuery.query('#tarifnormativemultiSelectWindowMunicipality #tfName')[0];
                     if (!tfName.allowBlank && !tfName.value) {
                         Ext.Msg.alert('Ошибка!', 'Необходимо указать наименование');

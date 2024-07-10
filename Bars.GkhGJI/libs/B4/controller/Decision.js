@@ -196,7 +196,6 @@
                 var me = this,
                     panel = btn.up('#decisionEditPanel'),
                     record = panel.getForm().getRecord();
-                debugger;
                 var recId = record.getId();
                 Ext.Msg.confirm('Запрос в ЕРКНМ', 'Подтвердите размещение проверки в ЕРКНМ', function (result) {
                     if (result == 'yes') {
@@ -225,7 +224,6 @@
             },
 
             onChangeTypeAgreementResult: function (field, newValue) {
-                debugger;
                 var form = field.up('#decisionEditPanel');
                 var approveContainer = form.down('#approveContainer');    
                 var approveresContainer = form.down('#approveresContainer');    
@@ -244,7 +242,6 @@
             saveRecord: function (rec) {
                 var me = this;
 
-                debugger;
                 //Ext.Msg.confirm('Внимание!', 'Убедитесь, что вид проверки указан правильно', function (result) {
                 //    if (result === 'yes') {
                 //        if (me.fireEvent('beforesave', me, rec) !== false) {
@@ -273,7 +270,6 @@
                 return true;
             },
             disableButtons: function (value) {
-                debugger;
                 //получаем все батон-группы
                 var groups = Ext.ComponentQuery.query(this.editPanelSelector + ' buttongroup');
                 var idx = 0;
@@ -323,7 +319,6 @@
                     cache: false
                 }).next(function (response) {
                     asp.controller.unmask();
-                    debugger;
                     //десериализуем полученную строку
                     var obj = Ext.JSON.decode(response.responseText);
 
@@ -334,7 +329,6 @@
                     panel.down('#tfBaseName').setValue(obj.baseName);
                     panel.down('#tfPlanName').setValue(obj.planName);
 
-                    debugger;
                     asp.disableButtons(false);
                 }).error(function () {
                     asp.controller.unmask();
@@ -1188,7 +1182,6 @@
 
     onLaunch: function () {
         var me = this;
-        debugger;
         if (me.params) {
             me.getAspect('decisionEditPanelAspect').setData(me.params.documentId);
         }

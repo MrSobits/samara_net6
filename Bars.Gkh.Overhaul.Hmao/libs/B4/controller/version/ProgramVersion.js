@@ -381,7 +381,6 @@
                 //    applyTo: '[dataIndex=Actualize]',
                 //    selector: 'versionrecordsgrid',
                 //    applyBy: function (component, allowed) {
-                //        debugger;
                 //        if (allowed) component.show();
                 //        else component.hide();
                 //    }
@@ -2740,7 +2739,6 @@
         var calcfromyear = yearwin.down('[name=YearFrom]').getValue();
         var calctoyear = yearwin.down('[name=YearTo]').getValue();
         var prsc = yearwin.down('[name=Coefficient]').getValue();
-        debugger;
         if (!calcfromyear) {
             Ext.Msg.alert('Ошибка!', 'Укажите год начала расчета');
         }
@@ -2852,7 +2850,6 @@
            PSDNext3 = win.down('[name=PSDNext3]').getValue(),
            grid = panel.down('versionrecordsgrid');
        versionProgram = panel.versionId;
-       debugger;
 
        if (!StartYear) {
            Ext.Msg.alert('Ошибка!', 'Значение \'Год начала\' не может быть пустым');
@@ -3151,7 +3148,6 @@
            panel = me.getEditPanel(),
            addgrid = me.getActualizeByFiltersAddGrid(),
            deletegrid = me.getActualizeByFiltersDeleteGrid();
-       debugger;
        var selected = Ext.Array.map(deletegrid.getSelectionModel().getSelection(), function (el) { return el.get('Id'); });
        me.mask('Пожалуйста, подождите...', panel);
        B4.Ajax.request({
@@ -3179,7 +3175,6 @@
            panel = me.getEditPanel(),
            addgrid = me.getActualizeSubProgramByFiltersAddGrid(),
            deletegrid = me.getActualizeSubProgramByFiltersDeleteGrid();
-       debugger;
        var seldel = Ext.Array.map(deletegrid.getSelectionModel().getSelection(), function (el) { return el.get('Id'); });
        me.mask('Пожалуйста, подождите...', panel);
        B4.Ajax.request({

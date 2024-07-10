@@ -24,7 +24,11 @@ namespace Bars.Gkh.App
         {
             services
                 .AddMvc()
-                .AddViewOptions(opt => opt.HtmlHelperOptions.ClientValidationEnabled = false);
+                .AddViewOptions(opt => opt.HtmlHelperOptions.ClientValidationEnabled = false)
+                .ConfigureApplicationPartManager(manager =>
+                {
+                    manager.FeatureProviders.Add(new GkhControllerFeatureProvider());
+                });
 
             base.ConfigureMvc(services, modules, ctx);
         }

@@ -117,7 +117,7 @@
                         dateStartField = form.down('datefield[name="DateStart"]'),
                         dateEndField = form.down('datefield[name="DateEnd"]')
                         ;
-                    debugger;
+                    
 
                     if (dateStartField.getValue() === null ) {
                         dateStartField.setValue(new Date());

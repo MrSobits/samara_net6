@@ -121,11 +121,7 @@ var XadesSigner = function () {
                                     build: _context.t7
                                 };
                                 (0, _context.t0)(true, _context.t4, _context.t8);
-<<<<<<< HEAD
-
-=======
                                 break;
->>>>>>> net6
                             case 37:
                             case "end":
                                 return _context.stop();
@@ -231,11 +227,7 @@ var XadesSigner = function () {
                                 dto.simpleName = _context2.sent;
 
                                 certDtos.push(dto);
-<<<<<<< HEAD
-
-=======
                                 break;
->>>>>>> net6
                             case 49:
                                 i++;
                                 _context2.next = 11;
@@ -254,11 +246,7 @@ var XadesSigner = function () {
 
                             case 58:
                                 success.apply(scope, [certDtos]);
-<<<<<<< HEAD
-
-=======
                                 break;
->>>>>>> net6
                             case 59:
                             case "end":
                                 return _context2.stop();
@@ -275,12 +263,7 @@ var XadesSigner = function () {
         }
     }, {
         key: "signXml",
-<<<<<<< HEAD
-            value: function signXml(xml, success, error) {
-                debugger;
-=======
         value: function signXml(xml, success, error) {
->>>>>>> net6
             var scope = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : window;
 
             return __awaiter(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
@@ -343,11 +326,7 @@ var XadesSigner = function () {
 
                             case 29:
                                 success.apply(scope, [js_xmldsig.utils.stringifyNode(res), js_xmldsig.utils.stringifyNode(sig)]);
-<<<<<<< HEAD
-
-=======
                                 break;
->>>>>>> net6
                             case 30:
                             case "end":
                                 return _context3.stop();

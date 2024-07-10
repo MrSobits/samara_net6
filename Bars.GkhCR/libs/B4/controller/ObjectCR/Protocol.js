@@ -236,7 +236,7 @@ Ext.define('B4.controller.objectcr.Protocol', {
 
                     me.controller.setContextValue(me.controller.getMainComponent(), 'protocolId', record.getId());
                     me.controller.setContextValue(form, 'protocolId', record.getId());
-                    debugger;
+                    
                     var storeTypeDocumentCr = cbTypeDocumentCr.getStore();
                     storeTypeDocumentCr.filters.clear();
                     storeTypeDocumentCr.filter([{ property: 'objectCrId', value: asp.controller.getContextValue(asp.controller.getMainComponent(), 'objectcrId') },
@@ -398,7 +398,7 @@ Ext.define('B4.controller.objectcr.Protocol', {
                     var me = this,
                         wnd = Ext.ComponentQuery.query('objectcrprotocolwin')[0],
                         ids = [];
-                    debugger;
+                    
                     Ext.Array.each(records.items,
                         function (item) {
                             ids.push(item.get('Id'));

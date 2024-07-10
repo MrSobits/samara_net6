@@ -2,6 +2,7 @@
 {
     using Bars.B4;
     using Bars.B4.IoC;
+    using Bars.B4.Modules.Analytics.Extensions;
     using Bars.B4.Modules.Analytics.Reports.Controllers;
     using Bars.B4.Modules.Analytics.Reports.Controllers.History;
     using Bars.B4.Modules.Analytics.Reports.Domain;
@@ -56,7 +57,7 @@
             // Interceptors
             this.Container.RegisterDomainInterceptor<ReportCustom, ReportCustomInterceptor>();
             this.Container.RegisterDomainInterceptor<PrintFormCategory, PrintFormCategoryInterceptor>();
-
+            
             // Taks
             this.Container.RegisterTransient<ITaskExecutor, ReportGeneratorTask>(ReportGeneratorTask.Id);
 
@@ -68,6 +69,7 @@
             this.Container.RegisterController<ReportHistoryController>();
 
             this.Container.RegisterController<GkhPrintFormController>();
+            this.Container.RegisterInlineDataController<PrintFormCategory>();
         }
     }
 }

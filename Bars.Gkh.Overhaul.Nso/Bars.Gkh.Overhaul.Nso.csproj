@@ -33,6 +33,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Update="ResourceManifest.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ResourceManifest.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Update="paket.references">

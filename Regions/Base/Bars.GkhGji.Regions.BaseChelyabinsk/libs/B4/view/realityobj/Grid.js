@@ -95,22 +95,22 @@
                     text: 'Административный округ',
                     filter: { xtype: 'textfield' }
                 },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'Municipality',
-                    width: 160,
-                    text: 'Муниципальный район',
-                    filter: {
-                        xtype: 'b4combobox',
-                        operand: CondExpr.operands.eq,
-                        storeAutoLoad: false,
-                        hideLabel: true,
-                        editable: false,
-                        valueField: 'Name',
-                        emptyItem: { Name: '-' },
-                        url: '/Municipality/ListMoAreaWithoutPaging'
-                    }
-                },
+                 {
+                     xtype: 'gridcolumn',
+                     dataIndex: 'Municipality',
+                     width: 160,
+                     text: 'Муниципальный район',
+                     filter: {
+                         xtype: 'b4combobox',
+                         operand: CondExpr.operands.eq,
+                         storeAutoLoad: false,
+                         hideLabel: true,
+                         editable: false,
+                         valueField: 'Name',
+                         emptyItem: { Name: '-' },
+                         url: '/Municipality/ListMoAreaWithoutPaging'
+                     }
+                 },
                 {
                     xtype: 'gridcolumn',
                     dataIndex: 'Settlement',
@@ -439,18 +439,18 @@
                         operand: CondExpr.operands.eq
                     }
                 },
-                {
-                    xtype: 'datecolumn',
-                    dataIndex: 'DateCommissioningLastSection',
-                    text: 'Дата сдачи в эксплуатацию последней секции дома',
-                    format: 'd.m.Y',
-                    flex: 1,
-                    hidden: true,
-                    filter: {
-                        xtype: 'datefield',
-                        operand: CondExpr.operands.eq
-                    }
-                },
+                 {
+                     xtype: 'datecolumn',
+                     dataIndex: 'DateCommissioningLastSection',
+                     text: 'Дата сдачи в эксплуатацию последней секции дома',
+                     format: 'd.m.Y',
+                     flex: 1,
+                     hidden: true,
+                     filter: {
+                         xtype: 'datefield',
+                         operand: CondExpr.operands.eq
+                     }
+                 },
                 {
                     xtype: 'gridcolumn',
                     dataIndex: 'ManOrgNames',
@@ -460,22 +460,14 @@
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'IsInvolvedCr',
+                    dataIndex: 'IsNotInvolvedCr',
                     flex: 1,
                     text: 'Дом участвует в программе КР',
                     hidden: true,
                     renderer: function (val) {
-                        return val ? "Да" : "Нет";
+                        return !val ? "Да" : "Нет";
                     },
                     filter: { xtype: 'b4dgridfilteryesno' }
-                },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'HouseGuid',
-                    flex: 1,
-                    text: 'ФИАС Guid',
-                    hidden: true,
-                    filter: { xtype: 'textfield' }
                 },
                 {
                     xtype: 'gridcolumn',
@@ -507,7 +499,9 @@
                     width: 100,
                     text: 'Код ЕРЦ',
                     filter: {
-                        xtype: 'textfield'
+                        xtype: 'numberfield',
+                        hideTrigger: true,
+                        operand: CondExpr.operands.eq
                     }
                 },
                 {
@@ -518,17 +512,6 @@
                     hidden: true,
                     renderer: function (val) {
                         return val ? "Да" : "Нет";
-                    },
-                    filter: { xtype: 'b4dgridfilteryesno' }
-                },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'HasVidecam',
-                    flex: 1,
-                    hidden: true,
-                    text: 'Имеются камеры видеонаблюдения',
-                    renderer: function (val) {
-                        return val ? 'Да' : 'Нет';
                     },
                     filter: { xtype: 'b4dgridfilteryesno' }
                 },
@@ -587,18 +570,6 @@
                     }
                 },
                 {
-                    xtype: 'datecolumn',
-                    dataIndex: 'DateTechInspection',
-                    text: 'Дата проведения тех. обследования',
-                    format: 'd.m.Y',
-                    flex: 1,
-                    hidden: true,
-                    filter: {
-                        xtype: 'datefield',
-                        operand: CondExpr.operands.eq
-                    }
-                },
-                {
                     xtype: 'b4deletecolumn',
                     scope: me
                 }
@@ -631,15 +602,8 @@
                                 },
                                 {
                                     xtype: 'button',
-                                    text: 'Расчет',
-                                    action: 'CreateCalcFecabililty',
-                                    iconCls: 'icon-cog-go',
-                                    itemId: 'btnCreateCalcFecabililty'
-                                },
-                                {
-                                    xtype: 'button',
                                     iconCls: 'icon-table-go',
-                                    text: 'Экспорт',
+                                    text: 'Выгрузка в Excel',
                                     textAlign: 'left',
                                     itemId: 'btnExport'
                                 },

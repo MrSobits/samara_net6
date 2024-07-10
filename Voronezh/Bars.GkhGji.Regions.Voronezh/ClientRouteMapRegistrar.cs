@@ -39,7 +39,7 @@
             map.AddRoute(new ClientRoute("payreg", "B4.controller.PayReg", requiredPermission: "GkhGji.SMEV.PAYREG.View")); //добавил
             map.AddRoute(new ClientRoute("premises", "B4.controller.SMEVPremises", requiredPermission: "GkhGji.SMEV.SMEVPremises.View"));
             map.AddRoute(new ClientRoute("diskvlic", "B4.controller.SMEVDISKVLIC", requiredPermission: "GkhGji.SMEV.SMEVDISKVLIC.View"));
-            map.AddRoute(new ClientRoute("smevsnils", "B4.controller.Exploit", requiredPermission: "GkhGji.SMEV.SMEVDISKVLIC.View"));
+            map.AddRoute(new ClientRoute("smevsnils", "B4.controller.SMEVSNILS", requiredPermission: "GkhGji.SMEV.SMEVDISKVLIC.View"));
             map.AddRoute(new ClientRoute("exploit", "B4.controller.SMEVExploitResolution", requiredPermission: "GkhGji.SMEV.SMEVExploitResolution.View"));
             map.AddRoute(new ClientRoute("changepremisesstate", "B4.controller.Validpassport", requiredPermission: "GkhGji.SMEV.SMEVExploitResolution.View"));
             map.AddRoute(new ClientRoute("validpassport", "B4.controller.SMEVValidPassport", requiredPermission: "GkhGji.SMEV.SMEVValidPassport.View"));

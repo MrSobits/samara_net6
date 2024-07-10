@@ -48,4 +48,11 @@
     <EmbeddedResource Include="libs\**\*" />
     <EmbeddedResource Include="Services\**\*" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Update="ResourceManifest.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ResourceManifest.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

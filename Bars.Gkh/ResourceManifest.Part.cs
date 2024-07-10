@@ -17,6 +17,7 @@
     using Bars.Gkh.Enums.BasePassport;
     using Bars.Gkh.Enums.ClaimWork;
     using Bars.Gkh.Enums.EfficiencyRating;
+    using Bars.Gkh.Enums.FIAS;
     using Bars.Gkh.Enums.Licensing;
     using Bars.Gkh.Enums.Notification;
     using Bars.Gkh.FormatDataExport.Enums;
@@ -157,6 +158,12 @@
             container.Add("libs/B4/enums/RequestSMEVType.js", new ExtJsEnumResource<RequestSMEVType>("B4.enums.RequestSMEVType"));
             container.Add("libs/B4/enums/SMEVRequestState.js", new ExtJsEnumResource<SMEVRequestState>("B4.enums.SMEVRequestState"));
             container.Add("libs/B4/enums/OperatorExportFormat.js", new ExtJsEnumResource<OperatorExportFormat>("B4.enums.OperatorExportFormat"));
+
+            container.Add("libs/B4/enums/FiasTypeRecordEnum.js", new ExtJsEnumResource<FiasTypeRecordEnum>("B4.enums.FiasTypeRecordEnum"));
+            container.Add("libs/B4/enums/FiasCenterStatusEnum.js", new ExtJsEnumResource<FiasCenterStatusEnum>("B4.enums.FiasCenterStatusEnum"));
+            container.Add("libs/B4/enums/FiasLevelEnum.js", new ExtJsEnumResource<FiasLevelEnum>("B4.enums.FiasLevelEnum"));
+            container.Add("libs/B4/enums/FiasOperationStatusEnum.js", new ExtJsEnumResource<FiasOperationStatusEnum>("B4.enums.FiasOperationStatusEnum"));
+            container.Add("libs/B4/enums/FiasActualStatusEnum.js", new ExtJsEnumResource<FiasActualStatusEnum>("B4.enums.FiasActualStatusEnum"));
 
             this.RegisterModels(container);
 

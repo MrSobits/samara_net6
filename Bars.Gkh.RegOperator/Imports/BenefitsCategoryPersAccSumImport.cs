@@ -18,10 +18,13 @@
     using Bars.Gkh.Import.Impl;
     using Bars.Gkh.RegOperator.Entities;
     using Bars.Gkh.RegOperator.Entities.PersonalAccount;
+    using Bars.Gkh.RegOperator.Utils;
 
     using Castle.Windsor;
 
-    using NDbfReaderEx;
+    using DbfDataReader;
+    
+    // TODO: Проверить работу после смены библиотеки
 
     /// <summary>
     /// Импорт информации по начисленным льготам
@@ -61,6 +64,11 @@
         /// The exist personal account dictionary.
         /// </summary>
         private Dictionary<string, BasePersonalAccount> persAccByNum = new Dictionary<string, BasePersonalAccount>();
+        
+        /// <summary>
+        /// Список колонок таблицы DBF
+        /// </summary>
+        private List<string> columnNames;
 
         /// <summary>
         /// Gets the key.
@@ -188,7 +196,7 @@
             {
                 using (var stream = new MemoryStream(fileData))
                 {
-                    using (DbfTable.Open(stream, Encoding.GetEncoding(866)))
+                    using (new DbfTable(stream, Encoding.GetEncoding(866)))
                     {
                         return true;
                     }
@@ -306,9 +314,10 @@
             {
                 try
                 {
-                    using (var table = DbfTable.Open(stream, Encoding.GetEncoding(866)))
+                    using (var table = new DbfTable(stream, Encoding.GetEncoding(866)))
                     {
-                        FillHeader(table);
+                        columnNames = table.Columns.Select(x => x.ColumnName).ToList();
+                        FillHeader();
 
                         var invalidHeaders = fields.Where(x => !headersDict.ContainsKey(x)).ToList();
 
@@ -321,34 +330,34 @@
 
                             return;
                         }
+                        
+                        var accNumbers = new List<string>();
+                        var benefitsValues = new List<string>();
+                        
+                        var dbfRecord = new DbfRecord(table);
+                        while (table.Read(dbfRecord))
+                        {
+                            accNumbers.Add(GetValueOrDefault(dbfRecord, "LSA"));
+                            benefitsValues.Add(GetValueOrDefault(dbfRecord, "SUML1"));
+                        }
 
-                        var rowCnt = 0;
-
-                        var importInfo = table
-                            .Select(x => new
-                            {
-                                AccNum = GetValueOrDefault(x, "LSA"),
-                                Benefits = GetValueOrDefault(x, "SUML1")
-                            }).ToList();
-
-
-                        if (importInfo.All(x => x.AccNum.IsEmpty()) || importInfo.All(x => x.Benefits.IsEmpty()))
+                        if (accNumbers.All(x => x.IsEmpty()) ||  benefitsValues.All(x => x.IsEmpty()))
                         {
                             this.LogImport.Error("Ошибка", "Не заполнены обязательные поля. Загрузка невозможна.");
                             return;
                         }
 
-                        if (importInfo.All(x => x.AccNum.ToInt() == 0) || importInfo.All(x => x.Benefits.ToDecimal() == 0))
+                        if (accNumbers.All(x => x.ToInt() == 0) || benefitsValues.All(x => x.ToDecimal() == 0))
                         {
                             this.LogImport.Error("Ошибка", "Некорректный тип обязательных атрибутов. Загрузка невозможна");
                             return;
                         }
-
-                        foreach (var row in table)
+                        
+                        for (int i = 0; i < accNumbers.Count; i++)
                         {
-                            rowCnt++;
-
-                            var accNum = GetValueOrDefault(row, "LSA");
+                            var rowCnt = i + 1;
+                            
+                            var accNum = accNumbers[i];
 
                             if (accNum.IsEmpty())
                             {
@@ -371,7 +380,7 @@
                             }
 
                             var benefits = 0.0m;
-                            var benefitsStr = GetValueOrDefault(row, "SUML1");
+                            var benefitsStr = benefitsValues[i];
 
                             if (!string.IsNullOrEmpty(benefitsStr) && !decimal.TryParse(benefitsStr, out benefits))
                             {
@@ -431,10 +440,10 @@
         /// <param name="table">
         /// The table.
         /// </param>
-        private void FillHeader(DbfTable table)
+        private void FillHeader()
         {
             var index = 0;
-            foreach (var header in table.columns.Select(col => col.name))
+            foreach (var header in columnNames)
             {
                 if (fields.Contains(header))
                 {
@@ -457,9 +466,9 @@
         /// <returns>
         /// The <see cref="string"/>.
         /// </returns>
-        private string GetValueOrDefault(DbfRow row, string column)
+        private string GetValueOrDefault(DbfRecord row, string column)
         {
-            return headersDict.ContainsKey(column) ? row.GetValue(column).ToStr() : string.Empty;
+            return headersDict.ContainsKey(column) ? row.GetValueOrDefault(column, columnNames).ToStr() : string.Empty;
         }
     }
 }

@@ -153,7 +153,7 @@ Ext.define('B4.view.desktop.menu.Main', {
 
     afterRender: function () {
         this.callParent(arguments);
-        if (this.store.isStore) {
+        if (this.store && this.store.isStore) {
             if (this.store.getRootNode().getChildAt(0)) {
                 this.build(this.store);
             } else { 

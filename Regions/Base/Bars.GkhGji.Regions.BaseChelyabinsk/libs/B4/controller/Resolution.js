@@ -141,7 +141,7 @@
             },
 
             goToCourtPractice: function () {
-                debugger;
+                
                 var me = this,
                     portal = me.controller.getController('PortalController'),
                     controllerEditName,
@@ -197,7 +197,7 @@
                     docId: asp.controller.params.documentId
                 })).next(function (response) {
                     asp.controller.unmask();
-                    debugger;
+                    
                     //десериализуем полученную строку             
                     var data = Ext.decode(response.responseText);
                     var btnGoTo = panel.down('#btnCourtPractice');
@@ -234,7 +234,7 @@
                         'GkhGji.DocumentsGji.Resolution.Field.PhysicalPerson_Edit',
                         'GkhGji.DocumentsGji.Resolution.Field.PhysicalPersonInfo_Edit'
                     ];
-                debugger;
+                
 
                 if (typeExec) {
                     me.controller.mask('Загрузка', me.controller.getMainComponent());
@@ -248,7 +248,7 @@
                     }).next(function (response) {
                         var perm = Ext.decode(response.responseText)[0];
                         me.controller.unmask();
-                        debugger;
+                        
                         switch (typeExec.Code) {
 
                             //Активны все поля

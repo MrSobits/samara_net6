@@ -30,7 +30,7 @@
         var me = this,
             tbar,
             isExistDelColumn = false;
-        debugger;
+        
         if (!me.columnsGridSelected) {
             me.columnsGridSelected = [];
         }

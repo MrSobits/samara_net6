@@ -220,8 +220,7 @@
         }
 
         private void ReplaceComponents()
-        {          
-
+        {
             this.Container.ReplaceComponent<IHeatSeasonService>(
                 typeof(Bars.GkhGji.DomainService.HeatSeasonService),
                 Component.For<IHeatSeasonService>().ImplementedBy<HeatSeasonService>().LifeStyle.Transient);
@@ -389,8 +388,9 @@
 
             Container.RegisterAltDataController<SMEVERULReqNumber>();
             Container.RegisterAltDataController<SMEVERULReqNumberFile>();
+
             //Досудебное
-            // this.Container.RegisterAltDataController<SMEVComplaints>();
+            this.Container.RegisterAltDataController<SMEVComplaints>();
             Container.RegisterAltDataController<SMEVComplaintsDecision>();
             Container.RegisterAltDataController<SMEVComplaintsDecisionLifeSituation>();
             this.Container.RegisterFileStorageDataController<SMEVComplaints>();

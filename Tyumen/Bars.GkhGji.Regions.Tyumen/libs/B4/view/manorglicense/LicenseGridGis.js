@@ -167,7 +167,7 @@
             
             getRowClass: function(record) {
                 var chekNum = record.get('postCount');
-                debugger;
+                
                 if (chekNum >= 2) {
                     return 'back-red';
                 }

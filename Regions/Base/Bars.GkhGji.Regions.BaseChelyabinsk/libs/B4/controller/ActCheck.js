@@ -1537,7 +1537,6 @@
                     btnExamNextQuestion.hide();
                     btnExamClose.show();
                 }
-                debugger;
                 var radGrp = clistAnswersWindow.down('#radGroupId');
                 var ans = radGrp.getChecked();
 
@@ -1545,7 +1544,6 @@
                     Ext.Msg.alert('Ошибка!', 'Выберите один из вариантов');
                 }
                 else {
-                    debugger;
                     var choise = ans[0].inputValue;
                     var descripitonfield = clistAnswersWindow.down('#infoFieldId'),
                         descripiton = descripitonfield.getValue();

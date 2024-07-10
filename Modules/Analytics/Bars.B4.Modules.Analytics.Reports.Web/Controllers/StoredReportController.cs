@@ -2,14 +2,13 @@
 {
     using System;
     using System.Data;
-    using System.Data.SqlClient;
     using System.IO;
     using System.Linq;
     using System.Text.RegularExpressions;
     using Analytics.Web.Data;
     using Bars.B4.Modules.Security;
     using B4.Utils;
-    using DataAccess;
+
     using Entities;
     using Npgsql;
     using System.Linq.Expressions;

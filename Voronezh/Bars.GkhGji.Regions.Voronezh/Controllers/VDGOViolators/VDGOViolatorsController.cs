@@ -8,9 +8,9 @@ using Bars.B4.Modules.DataExport.Domain;
 
 namespace Bars.GkhGji.Regions.Voronezh.Controllers
 {
-    class VDGOViolatorsController : B4.Alt.DataController<VDGOViolators>
+    public class VDGOViolatorsController : B4.Alt.DataController<VDGOViolators>
     {
-        public IVDGOViolatorsService service { get; set; }
+        public IVDGOViolatorsService VdgoViolatorService { get; set; }
 
         public ActionResult Export(BaseParams baseParams)
         {
@@ -31,12 +31,12 @@ namespace Bars.GkhGji.Regions.Voronezh.Controllers
 
         public ActionResult GetListRO(BaseParams baseParams)
         {
-            return service.GetListRO(baseParams).ToJsonResult();
+            return this.VdgoViolatorService.GetListRO(baseParams).ToJsonResult();
         }
 
         public ActionResult GetListMinOrgContragent(BaseParams baseParams)
         {
-            return service.GetListMinOrgContragent(baseParams).ToJsonResult();
+            return this.VdgoViolatorService.GetListMinOrgContragent(baseParams).ToJsonResult();
         }
     }
 }

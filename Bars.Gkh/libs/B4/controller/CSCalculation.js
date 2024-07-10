@@ -43,7 +43,6 @@
             buttonSelector: '#cscalculationEditWindow #btnPrint',
             codeForm: 'CSCalculation',
             getUserParams: function () {
-                debugger;
                 var param = { Id: this.controller.calcId };
                 this.params.userParams = Ext.JSON.encode(param);
             }
@@ -73,7 +72,6 @@
             },
             Calculate: function (btn) {
                 var me = this;
-                debugger;
                 var taskId = me.controller.calcId;
                 var form = this.getForm();
                 var nfResult = form.down('#nfResult');

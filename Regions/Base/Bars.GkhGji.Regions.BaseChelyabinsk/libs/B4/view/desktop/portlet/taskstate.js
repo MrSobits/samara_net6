@@ -11,6 +11,7 @@
     header: true,
     footer: true,
     isBuilt: false,
+    store: 'desktop.TaskState',
 
     dockedItems: [{
         xtype: 'toolbar',
@@ -49,7 +50,7 @@
 
     initComponent: function () {
         var me = this,
-            store = 'desktop.TaskState';
+            store = me.store;
         if (Ext.isString(store)) {
             store = me.store = Ext.getStore(store);
         }
@@ -66,7 +67,7 @@
 
     afterRender: function () {
         this.callParent(arguments);
-        if (this.store.isStore) {
+        if (this.store && this.store.isStore) {
             if (this.store.getCount() == 0) {
                 this.store.load();
             } else {
@@ -110,8 +111,11 @@
             
         if (!this.isBuilt) {
             if (records.length > 0) {
+
                 recordsDict = new Ext.util.MixedCollection();
+
                 Ext.each(records, function (record, i) {
+
                     red = record.get('CountRed');
                     yellow = record.get('CountYellow');
                     green = record.get('CountGreen');
@@ -131,7 +135,8 @@
                         sumYellow += yellow;
                         sumGreen += green;
                     }
-                });                
+                });
+                
                 me.add({
                     xtype: 'component',
                     ui: 'tasksportlet',
@@ -253,30 +258,35 @@
                         colorType = this.getAttribute('class');
                     
                     me.fireEvent('openregistrtaskstate', colorType, typeReminder);
-                });                
+                });
+                
                 Ext.select('ul[typeWidget="disposal"] li').on('click', function () {
                     var typeReminder = 30,
                         colorType = this.getAttribute('class');
                     
                     me.fireEvent('openregistrtaskstate', colorType, typeReminder);
-                });                
+                });
+                
                 Ext.select('ul[typeWidget="actcheck"] li').on('click', function () {
                     var typeReminder = 60,
                         colorType = this.getAttribute('class');
 
                     me.fireEvent('openregistrtaskstate', colorType, typeReminder);
-                });                
+                });
+                
                 Ext.select('ul[typeWidget="noticeofinspection"] li').on('click', function () {
                     var typeReminder = 70,
                         colorType = this.getAttribute('class');
 
                     me.fireEvent('openregistrtaskstate', colorType, typeReminder);
-                });                
+                });
+                
                 Ext.select('ul[typeWidget="total"] li').on('click', function () {
                     var colorType = this.getAttribute('class');
                     
                     me.fireEvent('openregistrtaskstate', colorType, 0);
                 });
+
             }
         }
         this.isBuilt = true;

@@ -9,7 +9,6 @@
 
     using Bars.B4;
     using Bars.B4.DataAccess;
-    using Bars.B4.IoC;
     using Bars.B4.Modules.FIAS;
     using Bars.B4.Modules.Security;
     using Bars.B4.Utils;
@@ -20,10 +19,15 @@
     using Bars.Gkh.RegOperator.Entities;
     using Bars.Gkh.RegOperator.Entities.Dict;
     using Bars.Gkh.RegOperator.Imports.BenefitsCategory;
+    using Bars.Gkh.RegOperator.Utils;
 
     using Castle.Windsor;
+
+    using DbfDataReader;
+
     using Import.Impl;
-    using NDbfReaderEx;
+    
+    // TODO: Проверить работу после смены библиотеки
 
     /// <summary>
     /// Импорт сведений по льготным категориям.
@@ -79,6 +83,11 @@
         /// Заменить данные.
         /// </summary>
         private bool isOverwriteData;
+        
+        /// <summary>
+        /// Список колонок таблицы DBF
+        /// </summary>
+        private List<string> columnNames;
 
         /// <summary>
         /// The existing realty object id list.
@@ -285,7 +294,7 @@
             {
                 using (var stream = new MemoryStream(fileData))
                 {
-                    using (var table = DbfTable.Open(stream, Encoding.GetEncoding(866)))
+                    using (var table = new DbfTable(stream, Encoding.GetEncoding(866)))
                     {
                         return true;
                     }
@@ -362,19 +371,24 @@
         {
             using (var stream = new MemoryStream(fileData))
             {
-                using (var table = DbfTable.Open(stream, Encoding.GetEncoding(866)))
+                using (var table = new DbfTable(stream, Encoding.GetEncoding(866)))
                 {
                     this.FillHeader(table);
 
-                    foreach (var row in table)
+                    var dbfRecord = new DbfRecord(table);
+                    columnNames = table.Columns.Select(x => x.ColumnName).ToList();
+                    int index = 0;
+                    while (table.Read(dbfRecord))
                     {
-                        var record = this.ReadLine(row);
+                        var record = this.ReadLine(dbfRecord, index);
                         
                         if (record.IsValidRecord)
                         {
                             record.Period = this.GetChargePeriod(record.DateLs);
                             this.records.Add(record);
                         }
+
+                        index++;
                     }
                 }
             }
@@ -528,7 +542,7 @@
         private void FillHeader(DbfTable table)
         {
             var index = 0;
-            foreach (var header in table.columns.Select(col => col.name))
+            foreach (var header in table.Columns.Select(col => col.ColumnName))
             {
                 if (this.fields.Contains(header))
                 {
@@ -555,9 +569,9 @@
         /// <returns>
         /// The <see cref="string"/>.
         /// </returns>
-        private string GetValueOrDefault(DbfRow row, string column)
+        private string GetValueOrDefault(DbfRecord row, string column)
         {
-            return this.headersDict.ContainsKey(column) ? row.GetValue(column).ToString() : string.Empty;
+            return this.headersDict.ContainsKey(column) ? row.GetValueOrDefault(column, columnNames).ToString() : string.Empty;
         }
 
         /// <summary>
@@ -643,12 +657,12 @@
         /// <returns>
         /// The <see cref="Record"/>.
         /// </returns>
-        private Record ReadLine(DbfRow row)
+        private Record ReadLine(DbfRecord row, int rowNumber)
         {
             var record = new Record
                              {
                                  IsValidRecord = false,
-                                 RowNumber = row.recNo,
+                                 RowNumber = rowNumber,
                                  ImportRealtyObjectId = this.GetValueOrDefault(row, "ID_DOMA").ToInt()
                              };
 

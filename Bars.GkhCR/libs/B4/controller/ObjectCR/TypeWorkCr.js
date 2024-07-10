@@ -388,7 +388,7 @@ Ext.define('B4.controller.objectcr.TypeWorkCr', {
                                    me.unmask();                           
                                });          
                                win.close();
-                               debugger;
+                               
                                var grid = this.componentQuery('objectcr_type_work_cr_grid[_active]'),
                                    store = grid.getStore(),
                                    id = this.controller.getContextValue(this.controller.getMainComponent(), 'objectcrId');

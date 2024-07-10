@@ -55,7 +55,7 @@
                 });
             },
             onBeforeLoadContragent: function (store, operation) {
-                debugger;
+                
                 operation = operation || {};
                 operation.params = operation.params || {};
                 operation.params.onlySpecAcc = true;
@@ -135,7 +135,7 @@
     ],
 
     init: function () {
-        debugger;
+        
         this.control({
             'specialaccountreportgrid b4updatebutton': { click: { fn: this.updateGrid, scope: this } },
         });
@@ -152,7 +152,7 @@
     },
 
     index: function () {
-        debugger;
+        
         var view = this.getMainView() || Ext.widget('specialaccountreportgrid');
         this.bindContext(view);
         this.application.deployView(view);

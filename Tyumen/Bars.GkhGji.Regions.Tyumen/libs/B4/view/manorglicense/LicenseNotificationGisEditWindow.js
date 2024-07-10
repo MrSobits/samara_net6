@@ -32,7 +32,7 @@
 
     initComponent: function () {
         var me = this;
-        debugger;
+        
         Ext.applyIf(me, {
             defaults: {
                 labelAlign: 'right',

@@ -587,7 +587,7 @@
 	
 	return {
         install: function (element, players) {
-            debugger;
+            
 			if(!element){
 				return false;
 			}

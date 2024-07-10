@@ -179,7 +179,6 @@ Ext.define('B4.aspects.regop.Distribution', {
     },
 
     updateSelectGrid: function () {
-        debugger;
         var grid = this.getSelectGrid();
         if (grid) {
             grid.getStore().load();

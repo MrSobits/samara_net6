@@ -7,11 +7,16 @@
     using System.Text;
 
     using Bars.B4.Utils;
+    using Bars.Gkh.RegOperator.Utils;
+    using Bars.Gkh.RegOperator.Utils.DbfTypes;
 
-    using NDbfReaderEx;
+    using DbfDataReader;
+    
+    using DbfRecord = DbfDataReader.DbfRecord;
+    
+    using DbfHeader = DbfDataReader.DbfHeader;
 
-    using SocialExplorer.IO.FastDBF;
-
+    // TODO: Проверить работу после смены библиотеки
     public class DbfIRTranslator : IIRTranslator
     {
         private List<IRModel> _rows;
@@ -34,19 +39,22 @@
             {
                 data = CutIfLengthNotMatch(data);
 
-                using (var table = DbfTable.Open(data, Encoding.GetEncoding(866)))
+                using (var table = new DbfTable(data, Encoding.GetEncoding(866)))
                 {
-                    foreach (var row in table)
+                    var dbfRecord = new DbfRecord(table);
+                    var columnNames = table.Columns.Select(x => x.ColumnName).ToList();
+                    int index = 0;
+                    while (table.Read(dbfRecord))
                     {
-                        var model = new IRModel { ModelName = "dbfrow", Path = row.recNo.ToStr() };
+                        var model = new IRModel { ModelName = "dbfrow", Path = index.ToStr() };
 
-                        var localRow = row;
-                        row.columns.ForEach(x =>
+                        var localRow = dbfRecord;
+                        table.Columns.ToList().ForEach(x =>
                             model.PropertyBag.Add(new IRModelProperty
                             {
-                                Name = x.name,
-                                Value = localRow.GetValue(x),
-                                Type = x.type
+                                Name = x.ColumnName,
+                                Value = localRow.GetValueOrDefault(x.ColumnName, columnNames),
+                                Type = localRow.GetValueOrDefault(x.ColumnName, columnNames).GetType()
                             }));
 
                         _rows.Add(model);
@@ -82,7 +90,7 @@
 
                     foreach (var m in modelList)
                     {
-                        var rec = new DbfRecord(dbf.Header);
+                        var rec = new RegOperator.Utils.DbfTypes.DbfRecord(dbf.Header);
 
                         int i = 0;
 
@@ -90,7 +98,7 @@
                         {
                             switch (dbf.Header[i].ColumnType)
                             {
-                                case DbfColumn.DbfColumnType.Number:
+                                case RegOperator.Utils.DbfTypes.DbfColumn.DbfColumnType.Number:
                                 {
                                     // вообщем если сделать от decimal .ToString то число представляется в таком виде
                                     // "243,45" а DBF число с таким разделителем непонимает ему над оименно точку 
@@ -130,7 +138,7 @@
             return new List<IRModel> { model };
         }
 
-        private IEnumerable<DbfColumn> CreateColumnDefinitions(IRModel model)
+        private IEnumerable<RegOperator.Utils.DbfTypes.DbfColumn> CreateColumnDefinitions(IRModel model)
         {
             foreach (var kv in model.PropertyBag)
             {
@@ -141,12 +149,12 @@
                     case TypeCode.Decimal:
                     case TypeCode.Double:
                     case TypeCode.Single:
-                        yield return new DbfColumn(kv.Name, DbfColumn.DbfColumnType.Number, kv.NLength, kv.DLength);
+                        yield return new RegOperator.Utils.DbfTypes.DbfColumn(kv.Name, RegOperator.Utils.DbfTypes.DbfColumn.DbfColumnType.Number, kv.NLength, kv.DLength);
                         break;
 
                     case TypeCode.Int64:
                     case TypeCode.UInt64:
-                        yield return new DbfColumn(kv.Name, DbfColumn.DbfColumnType.Number, kv.NLength, kv.DLength);
+                        yield return new RegOperator.Utils.DbfTypes.DbfColumn(kv.Name, RegOperator.Utils.DbfTypes.DbfColumn.DbfColumnType.Number, kv.NLength, kv.DLength);
                         break;
 
                     case TypeCode.Byte:
@@ -155,25 +163,25 @@
                     case TypeCode.SByte:
                     case TypeCode.UInt16:
                     case TypeCode.UInt32:
-                        yield return new DbfColumn(kv.Name, DbfColumn.DbfColumnType.Integer);
+                        yield return new RegOperator.Utils.DbfTypes.DbfColumn(kv.Name, RegOperator.Utils.DbfTypes.DbfColumn.DbfColumnType.Integer);
                         break;
                     case TypeCode.String:
                     case TypeCode.Char:
                         yield return
-                            new DbfColumn(
+                            new RegOperator.Utils.DbfTypes.DbfColumn(
                                 kv.Name,
-                                DbfColumn.DbfColumnType.Character,
+                                RegOperator.Utils.DbfTypes.DbfColumn.DbfColumnType.Character,
                                 kv.NLength*2 /*кодировка UTF8, 2 байта на символ*/,
                                 0);
                         break;
                     case TypeCode.Boolean:
-                        yield return new DbfColumn(kv.Name, DbfColumn.DbfColumnType.Boolean);
+                        yield return new RegOperator.Utils.DbfTypes.DbfColumn(kv.Name, RegOperator.Utils.DbfTypes.DbfColumn.DbfColumnType.Boolean);
                         break;
                     case TypeCode.DateTime:
-                        yield return new DbfColumn(kv.Name, DbfColumn.DbfColumnType.Date);
+                        yield return new RegOperator.Utils.DbfTypes.DbfColumn(kv.Name, RegOperator.Utils.DbfTypes.DbfColumn.DbfColumnType.Date);
                         break;
                     default:
-                        yield return new DbfColumn(kv.Name, DbfColumn.DbfColumnType.Memo);
+                        yield return new RegOperator.Utils.DbfTypes.DbfColumn(kv.Name, RegOperator.Utils.DbfTypes.DbfColumn.DbfColumnType.Memo);
                         break;
                 }
             }
@@ -183,10 +191,10 @@
         {
             try
             {
-                var header = DbfTable.ReadDbfHeader(stream);
+                var header = new DbfHeader(stream);
 
                 // подсчет длины файла, которая должна быть
-                var needLength = header.firstRecordPosition + (header.rowLength*header.recCount);
+                var needLength = header.HeaderLength;
 
 				//после переделки на последовательню обработку мы всегда возвращаем текущий поток, закрываем его, и в любом цикле, где идет перебор элементов
 				//мы опять попадаем сюда, но поток уже закрыт, в результате ObjectDisposedException, пока комментирую так как задача очень срочная, 

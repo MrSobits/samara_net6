@@ -127,7 +127,7 @@
                 actions['#complaintsEditWindow #sfSMEVComplaintsDecision'] = { 'beforeload': { fn: this.onBeforeLoadReason, scope: this } };
             },
             onBeforeLoadReason: function (field, options, store) {
-                debugger;
+                
                 var tfLifeEvent = field.up('#complaintsEditWindow').down('#tfLifeEvent');
                 if (tfLifeEvent) {
                     options = options || {};
@@ -139,7 +139,7 @@
             listeners: {
                 aftersetformdata: function (asp, record, form) {
                     var me = this;
-                    debugger;
+                    
                     asp.controller.courtpracticeId = record.getId();
 
                     if (asp.controller.courtpracticeId != 0) {
@@ -270,7 +270,7 @@
         var me = this;
 
         me.mask('Обмен информацией со СМЭВ', this.getMainComponent());
-        debugger;
+        
         B4.Ajax.request({
             url: B4.Url.action('Execute', 'SMEVComplaintsLT'),
             params: {
@@ -322,7 +322,7 @@
     },
 
     onLaunch: function () {
-        debugger;
+        
         var grid = this.getMainView();
         if (this.params && this.params.recId > 0) {
             var model = this.getModel('complaints.SMEVComplaints');

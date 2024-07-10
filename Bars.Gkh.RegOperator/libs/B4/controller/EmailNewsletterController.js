@@ -76,7 +76,7 @@
                     if (record.getId()) {
                         asp.controller.emailNewsletterId = record.getId();
                     }
-                    debugger;
+                    
                     var grid = form.down('emailnewsletterLogGrid'),
                         store = grid.getStore(),
                         success = record.get('Success'),
@@ -119,7 +119,7 @@
         }
     ],
     onSendEmailClick: function (btn) {
-        debugger;
+        
         var me = this,
             form = btn.up('#emailNewsletterEditWindow'),
             sendBtn = form.down('#sendEmailButton'),
@@ -137,7 +137,7 @@
                 emailNewsletterId: this.emailNewsletterId,
             }
         }).next(function (response) {
-            debugger;
+            
             sendBtn.disable();
             tfHeader.disable();
             tfBody.disable();

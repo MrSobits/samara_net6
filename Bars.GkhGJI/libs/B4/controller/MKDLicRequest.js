@@ -138,7 +138,7 @@
                 //
             },
             goToCourtPractice: function () {
-                debugger;
+                
                 var me = this,
                     portal = me.controller.getController('PortalController'),
                     controllerEditName,
@@ -176,7 +176,7 @@
             listeners: {
                 aftersetformdata: function (asp, record, form) {
                     var me = this;
-                    debugger;
+                    
                     mkdlicrequestId = record.getId();
                     asp.controller.mkdlicrequestId = record.getId();
                     var btnGoTo = form.down('#btnCourtPractice');
@@ -233,7 +233,7 @@
                             typeEntity: 'MKDLicRequest'
                         })).next(function (response) {
                             asp.controller.unmask();
-                            debugger;
+                            
                             //десериализуем полученную строку             
                             var data = Ext.decode(response.responseText);
                         
@@ -394,7 +394,7 @@
             listeners: {
                 getdata: function (asp, record) {
                     if (!record.get('Id')) {
-                        debugger;
+                        
                         record.set('MKDLicRequest', mkdlicrequestId);
                     }
                 }
@@ -410,14 +410,14 @@
             editWindowView: 'mkdlicrequest.MKDLicRequestQueryEditWindow',
             listeners: {
                 getdata: function(asp, record) {
-                    debugger;
+                    
                     if (!record.get('Id')) {
                         record.set('MKDLicRequest', mkdlicrequestId);
                     }
                 },
                 aftersetformdata: function (asp, record, form) {
                     var me = this;
-                    debugger;
+                    
                     mkdlicrequestQueryId = record.getId();
                     var grid = form.down('mkdlicrequestqueryanswergrid'),
                         store = grid.getStore();

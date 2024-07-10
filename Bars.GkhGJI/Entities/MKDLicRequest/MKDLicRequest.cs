@@ -16,7 +16,6 @@ namespace Bars.GkhGji.Entities
     /// </summary>
     public partial class MKDLicRequest : BaseEntity, IStatefulEntity
     {
-
         /// <summary>
         /// Статус заявления
         /// </summary>

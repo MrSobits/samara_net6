@@ -20,7 +20,6 @@ namespace Bars.Gkh.Map.Dicts
             this.Property(x => x.Description, "Описание").Column("DESCRIPTION").Length(500);
             this.Property(x => x.Code, "Код").Column("CODE").Length(10);
             this.Property(x => x.ReformCode, "Код реформы").Column("REFORM_CODE").Length(10);
-            this.Property(x => x.GisCode, "Код ГИС").Column("GIS_CODE");
             this.Property(x => x.WorkAssignment, "Назначение работ").Column("WORK_ASSIGNMENT");
             this.Property(x => x.Consistent185Fz, "Соответсвие 185 ФЗ").Column("CONSISTENT185FZ").NotNull();
             this.Property(x => x.IsAdditionalWork, "Дополнительная работа, нужно для ДПКР").Column("IS_ADDITIONAL_WORK").NotNull();
@@ -31,8 +30,6 @@ namespace Bars.Gkh.Map.Dicts
             this.Reference(x => x.UnitMeasure, "Ед. измерения").Column("UNIT_MEASURE_ID").Fetch();
             this.Property(x => x.GisGkhCode, "Код ГИС ЖКХ").Column("GIS_GKH_CODE");
             this.Property(x => x.GisGkhGuid, "ГИС ЖКХ GUID").Column("GIS_GKH_GUID").Length(36);
-            this.Property(x => x.IsActual, "Актуальна").Column("IS_ACTUAL").DefaultValue(true).NotNull();
-            this.Property(x => x.WithinShortProgram, "Проводится в рамках краткосрочной программы").Column("WITHIN_SHORT_PROGRAM").DefaultValue(false).NotNull();
         }
     }
 

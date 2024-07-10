@@ -7,7 +7,7 @@ Ext.define('B4.store.Permission', {
     defaultRootId: 'root',
     proxy: {
         type: 'ajax',
-        url: B4.Url.action('/GkhPermission/GetFiltredRolePermissions'),
+        url: B4.Url.action('/Permission/GetFiltredRolePermissions'),
         reader: {
             type: 'json'
         }

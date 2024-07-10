@@ -18,7 +18,6 @@ namespace Bars.GkhGji.Regions.BaseChelyabinsk.Map
             Property(x => x.Name, "Номер проверки").Column("NAME");
             Property(x => x.FullName, "Пояснительный текст к жалобе").Column("FULLNAME");
             Property(x => x.CompleteReject, "Номер проверки").Column("REC_TYPE");
-
         }
     }
 }

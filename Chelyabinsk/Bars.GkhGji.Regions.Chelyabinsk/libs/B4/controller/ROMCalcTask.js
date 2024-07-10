@@ -91,7 +91,9 @@
                      });
 
                      if (recordIds[0] > 0) {
+                         
                          asp.controller.mask('Сохранение', asp.controller.getMainComponent());
+                         
                          B4.Ajax.request(B4.Url.action('AddManOrg', 'ROMCalcTaskManOrg', {
                              manorgIds: recordIds,
                              taskId: rOMCalcTask

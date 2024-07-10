@@ -76,7 +76,7 @@
                 actions['previewemailgjiattachmentgrid'] = { 'itemclick': { fn: this.changeImage, scope: this } };
             },
             onChangeType: function (field, newValue) {
-                debugger;
+                
                 var me = this;
                 var w = field.up('emailpdfWindow'); 
                 var nfAppealNumber = w.down('#nfAppealNumber'),
@@ -150,7 +150,7 @@
                 var declineBtn = w.down('#btnDecline');
                 nextBtn.setDisabled(false);
              // присваиваем новый номер
-                debugger;
+                
                 btn.setDisabled(true);
                 declineBtn.setDisabled(true);
                 B4.QuickMsg.msg('Email', 'Обращение успешно зарегистрировано', 'success');
@@ -216,7 +216,7 @@
             },
 
             changeImage: function (grid, record) {
-                debugger;
+                
                 var me = this;
                 if (grid) {
                     var win = grid.up('emailpdfWindow');
@@ -283,7 +283,7 @@
             },
 
             SkipEmails: function (btn) {
-                debugger;
+                
                 var w = btn.up('emailpdfWindow');
                 w.close();          
                 var me = this;
@@ -355,7 +355,7 @@
                     }
                 }).error(function (err) {
                     //asp.unmask();
-                    debugger;
+                    
                     Ext.Msg.alert('Ошибка', err.message);
                 });
             },
@@ -363,7 +363,7 @@
             listeners: {
                 aftersetformdata: function (asp, rec, form) {
                     var me = this;
-                    debugger;
+                    
                     if (rec.getId()) {
                         var grid = form.down('emailgjiattachmentgrid'),
                             store = grid.getStore();

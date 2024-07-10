@@ -207,7 +207,7 @@ Ext.define('B4.controller.AppealCits', {
             buttonSelector: '#appealCitsAnswerEditWindow #btnPrint',
             codeForm: 'AppealAnswer1',
             getUserParams: function () {
-                debugger;
+                
                 var param = { Id: this.controller.appealCitsAnswerId };
                 this.params.userParams = Ext.JSON.encode(param);
             }
@@ -267,7 +267,7 @@ Ext.define('B4.controller.AppealCits', {
                     selector: '#appealCitsExecutantGrid',
                     applyBy: function (component, allowed) {
                         var me = this;
-                        debugger;
+                        
                         me.controller.params = me.controller.params || {};
                         if (allowed) {
                             component.show();
@@ -454,7 +454,7 @@ Ext.define('B4.controller.AppealCits', {
                 )).next(function (response) {
                     var data = Ext.decode(response.responseText);
                     if (data.data.soprId != null) {
-                        debugger;
+                        
                         sopr = data.data.soprId;
                         if (sopr != null) {
                             var controllerEditName = 'B4.controller.AppealOrder';
@@ -1224,7 +1224,7 @@ Ext.define('B4.controller.AppealCits', {
             onBeforeLoad: function (store, operation) {
                 operation = operation || {};
                 operation.params = operation.params || {};
-                debugger;
+                
                 operation.params.anotherrelatesToId = this.controller.appealCitizensId;
                 operation.params.anothermatchRelated = true;
 
@@ -2033,7 +2033,7 @@ Ext.define('B4.controller.AppealCits', {
                 },
                 getdata: function (asp, records) {
                     var recordIds = [];
-                    debugger;
+                    
                     records.each(function (rec) {
                         recordIds.push(rec.get('Id'));
                     });
@@ -2067,7 +2067,7 @@ Ext.define('B4.controller.AppealCits', {
                         Ext.Msg.alert('Ошибка!', 'Необходимо выбрать исполнителя');
                         return false;
                     }
-                    debugger;
+                    
                     var resolutionValue = sfResolveGji.value.Name;
 
                     asp.controller.mask('Сохранение', asp.controller.getMainComponent());
@@ -2093,11 +2093,11 @@ Ext.define('B4.controller.AppealCits', {
                     return true;
                 },
                 aftersetformdata: function (asp, record) {
-                    debugger;
+                    
                     this.controller.getAspect('appcitsExecutantStateButtonAspect').setStateData(record.get('Id'), record.get('State'));
                 },
                 panelrendered: function (asp, prm) {
-                    debugger;
+                    
                     var me = this,
                         autoPerformanceDate = true;//Gkh.config.HousingInspection.SettingTheVerification.AutoPerformanceDate;
 

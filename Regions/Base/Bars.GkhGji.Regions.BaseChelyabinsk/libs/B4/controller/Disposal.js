@@ -199,7 +199,6 @@
             },
 
             onChangeTypeAgreementResult: function (field, newValue) {
-                debugger;
                 var form = field.up('#disposalEditPanel');
                 var approveContainer = form.down('#approveContainer');    
                 var approveresContainer = form.down('#approveresContainer');    
@@ -218,7 +217,6 @@
             saveRecord: function (rec) {
                 var me = this;
 
-                debugger;
                 //Ext.Msg.confirm('Внимание!', 'Убедитесь, что вид проверки указан правильно', function (result) {
                 //    if (result === 'yes') {
                 //        if (me.fireEvent('beforesave', me, rec) !== false) {

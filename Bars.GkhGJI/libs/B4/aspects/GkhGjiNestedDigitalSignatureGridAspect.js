@@ -63,7 +63,7 @@
     },
 
     itemClick: function (row, record) {
-        debugger;
+        
         var t = this.getGrid();
         var file = record.get('File' || 'FileDoc');
         var signed = false;

@@ -653,7 +653,6 @@ Ext.define('B4.controller.realityobj.StructElement', {
             rec,
             dynamicFields,
             atrValues = [];
-        debugger;
 
         if (!win.getForm().isValid()) {
             Ext.Msg.alert('Ошибка!', 'Проверьте правильность заполнения формы!');
@@ -682,7 +681,6 @@ Ext.define('B4.controller.realityobj.StructElement', {
     },
 
     saverecordUploaded: function (rec, win) {
-        debugger;
         var me = this,
             form = win.getForm();
             form.submit({
@@ -707,7 +705,6 @@ Ext.define('B4.controller.realityobj.StructElement', {
         rec.save({
             Id: rec.getId()
         }).next(function (resp) {
-            debugger;
             me.params.structElId = resp.record.getId();
             me.getStore('realityobj.StructuralElement').load();
             win.close();
@@ -939,7 +936,6 @@ Ext.define('B4.controller.realityobj.StructElement', {
         var me = this,
             store = grid.getStore(),
             roStructEls = [];
-        debugger;
         Ext.each(records, function(rec) {
             var count = rec.get('Count');
             if (!rec.get('multiple')) {

@@ -35,7 +35,7 @@
                 actions[this.gridSelector + ' #cbShowClose'] = { 'change': { fn: this.onChangeCheckbox, scope: this } };
             },
             onChangeCheckbox: function (field, newValue) {
-                debugger;
+                
                 this.controller.params.showCloseAppeals = newValue;
                 this.controller.getStore('MobileAppAccountComparsion').load();
             },
@@ -82,7 +82,7 @@
     },
 
     onBeforeLoadDoc: function (store, operation) {
-        debugger;
+        
         if (this.params) {
             operation.params.showCloseAppeals = this.params.showCloseAppeals;
         }

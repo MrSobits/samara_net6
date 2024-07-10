@@ -566,7 +566,7 @@
         var me = this,
             win = btn.up('window'),
             params = win.getDistributionParams();
-        debugger;
+        
         me.mask('Подтверждение распределения', me.getMainView());
 
         B4.Ajax.request({
@@ -576,7 +576,7 @@
             win.close();
             me.continueSoftValidating(params);
         }).error(function (e) {
-            debugger;
+            
             Ext.Msg.confirm('Внимание',
                 'Выявлено несоответствие Р/С по выбранным лицевым счетам',
                 function (result) {

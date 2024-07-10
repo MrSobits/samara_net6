@@ -84,7 +84,7 @@
             },
             fillFromDL: function (btn) {
                 var me = this;
-                debugger;
+                
                 me.mask('Получение данных из реестра должностных лиц', me.controller.getMainComponent());
 
                 B4.Ajax.request({

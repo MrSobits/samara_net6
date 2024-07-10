@@ -23,7 +23,6 @@
         controller.control(actions);
     },
     updateGrid: function () {
-        debugger;
         this.getGrid().getStore().load();
     },
     editRecord: function (record) {

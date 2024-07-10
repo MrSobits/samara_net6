@@ -177,8 +177,6 @@
         btn.up('pretensiondebtpaymentgrid').getStore().load();
     },
     genNumPretension: function (btn) {
-        debugger;
-       
         var me = this,
             view = me.getMainView(),
             docId = me.getContextValue(view, 'docId');

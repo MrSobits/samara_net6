@@ -73,7 +73,7 @@
 
             },
             getExtractPdf: function (){
-                debugger;     
+                     
                 Ext.DomHelper.append(document.body, {
                     tag: 'iframe',
                     id: 'downloadIframe',

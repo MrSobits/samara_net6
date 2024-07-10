@@ -17,8 +17,8 @@
         {
             xtype: 'roletreepermissionaspect',
             permissionPanelView: 'localadminrolesettingspanel rolepermissionpanel',
-            saveUrl: '/GkhPermission/UpdateNodePermissions',
-            copyUrl: '/GkhPermission/CopyNodePermission',
+            saveUrl: '/Permission/UpdateNodePermissions',
+            copyUrl: '/Permission/CopyNodePermission',
             copyToRoleFromStore: true,
         },
         //{

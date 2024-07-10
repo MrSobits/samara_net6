@@ -122,7 +122,6 @@
                 var dfDocumentSerial = form.down('#dfDocumentSerial');
                 var dfDocumentNumber = form.down('#dfDocumentNumber');
                 var sfGISGMPPayerStatus = form.down('#sfGISGMPPayerStatus');
-                debugger;
                 if (dfProtocol != null) {
                     if (this.controller.afterset) {
                         this.controller.afterset = false;
@@ -131,12 +130,10 @@
                         }
                         )).next(function (response) {
                             var data = Ext.decode(response.responseText);
-                            debugger;
                             dfPayerType.setValue(data.data.typeVal);
                             dfKBK.setValue(data.data.kbk);
                             dfOKTMO.setValue(data.data.oktmo);
                             dfTotalAmount.setValue(data.data.ammount);
-                            debugger;
                             if (dfBillFor.getValue() === "") {
                                 dfBillFor.setValue(data.data.reasonVal);
                             }                      
@@ -515,7 +512,6 @@
             },
             listeners: {
                 aftersetformdata: function (asp, record, form) {
-                    debugger;
                     this.controller.afterset = true;
                     gisGMP = record.getId();
                     var grid = form.down('gisgmpfileinfogrid'),
@@ -584,7 +580,7 @@
 
     runexport: function (grid, rowIndex, colIndex, param, param2, rec, asp) {
         var me = this;
-        debugger;
+        
         if (rec.get('Reconcile') == 10) {
             Ext.Msg.alert('Внимание', 'Оплата сквитирована, повторный запуск невозможен');
         }
@@ -627,7 +623,7 @@
                 Ext.Msg.alert('Сообщение', response.message);
                 return true;
             }).error(function (response) {
-                debugger;
+                
                 me.unmask();
                 Ext.Msg.alert('Сообщение', response.message);
             });

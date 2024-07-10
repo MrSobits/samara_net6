@@ -257,7 +257,6 @@ Ext.define('B4.controller.objectcr.ProgressExecutionWork', {
                 var me = this,
                     panel = btn.up('#objectcrFileInfoEditWindow'),
                     record = panel.getForm().getRecord();
-                debugger;
                 var recId = record.get('VideoLink');
                 new Ext.Window({
                     title: 'Проcмотр',

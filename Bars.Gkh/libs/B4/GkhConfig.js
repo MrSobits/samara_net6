@@ -49,7 +49,7 @@
         Ext.applyIf(me.signalR, {
           
             start: function () {
-                debugger;
+                
                // connection.hub.start();
             },
             stop: function() {

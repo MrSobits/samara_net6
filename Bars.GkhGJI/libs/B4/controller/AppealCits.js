@@ -146,7 +146,7 @@ Ext.define('B4.controller.AppealCits', {
                     applyTo: '[name=DateFrom]',
                     selector: '#appealCitsEditWindow',
                     applyBy: function (component, allowed) {
-                        debugger;
+                        
                         component.setDisabled(!allowed);
                     }
                 },

@@ -293,7 +293,6 @@ Ext.define('B4.controller.distribution.PersonalAccount', {
                 actions[me.distribPanelSelector + '[ctxKey=' + ctxKey + ']' + ' textfield[name=rospNumber]'] = {
                     specialkey: {
                         fn: function (scope, e) {
-                            debugger;
                             if (e.getKey() == 13) {
                                 me.updateSelectGrid();
                             }
@@ -516,7 +515,6 @@ Ext.define('B4.controller.distribution.PersonalAccount', {
             distributeOn.setValue(B4.enums.DistributeOn.ChargesPenalties);
             distributeOn.hide();
         }
-        debugger;
         if (newVal === B4.enums.SuspenseAccountDistributionParametersView.ByPaymentDocument && panel.code === 'TransferCrDistribution') {
 
             Ext.each(jurFilters, function(cmp) {

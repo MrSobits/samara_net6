@@ -16,14 +16,17 @@
     using Bars.Gkh.Import;
     using Bars.Gkh.RegOperator.Domain;
     using Bars.Gkh.RegOperator.Entities;
+    using Bars.Gkh.RegOperator.Entities.PersonalAccount;
     using Bars.Gkh.RegOperator.Enums;
 
-    using NDbfReaderEx;
 
+     
+    // TODO: Проверить работу после смены библиотеки
+    
     /// <summary>
     /// Импорт начислений dbf 
     /// </summary>
-    internal class PersonalAccountPaymentImport : AbstractDbfImport
+    internal class PersonalAccountPaymentImport : AbstractDbfImport<PersonalAccountPaymentEntity>
     {
         public static string Id = MethodBase.GetCurrentMethod().DeclaringType.FullName;
 
@@ -188,13 +191,13 @@
             TransactionHelper.InsertInManyTransactions(this.Container, this.summaryList, 1000, false, true);
         }
 
-        protected override void ProcessLine(DbfRow row, int rowNumber)
+        protected override void ProcessLine(PersonalAccountPaymentEntity row, int rowNumber)
         {
             var accIds = this.GetPersonalAccountId(row, rowNumber);
 
             if (!accIds.Any())
             {
-                this.LogImport.Error("Лицевой счет", string.Format("{0} не найден, строка {1}", this.GetValueOrDefault(row, "LS"), rowNumber));
+                this.LogImport.Error("Лицевой счет", string.Format("{0} не найден, строка {1}", row.AccNum, rowNumber));
 
                 // не нужно грузить эти данные
                 return;
@@ -209,13 +212,8 @@
                 this.AddUnacceptedCharge(row, accIds);
             }
         }
-
-        private string GetValueOrDefault(DbfRow row, string column)
-        {
-            return this.HeadersIndexes.ContainsKey(column) ? row.GetValue(column).ToString() : string.Empty;
-        }
-
-        private void AddUnacceptedCharge(DbfRow row, List<long> accIds)
+        
+        private void AddUnacceptedCharge(PersonalAccountPaymentEntity row, List<long> accIds)
         {
             var charge = new PersonalAccountCharge
             {
@@ -227,36 +225,52 @@
 
             if (this.HeadersIndexes.ContainsKey("SUMMA"))
             {
-                charge.ChargeTariff = row.GetDecimal("SUMMA");
+                charge.ChargeTariff = row.ChargeTariff;
             }
 
             if (this.HeadersIndexes.ContainsKey("PERRECALC"))
             {
-                charge.RecalcByBaseTariff = row.GetDecimal("PERRECALC");
+                charge.RecalcByBaseTariff = row.RecalcByBaseTariff;
             }
 
             if (this.HeadersIndexes.ContainsKey("PENIASSD"))
             {
-                charge.Penalty = row.GetDecimal("PENIASSD");
+                charge.Penalty = row.Penalty;
             }
 
             charge.Charge = charge.ChargeTariff + charge.RecalcByBaseTariff + charge.Penalty;
 
+            var accNum = string.Empty;
             if (accIds.Count() == 1)
             {
                 charge.BasePersonalAccount = new BasePersonalAccount {Id = accIds.First()};
+                if (this.HeadersIndexes.ContainsKey("LS"))
+                {
+                   accNum = row.AccNum;
+                }
 
                 charge.Packet.Description =
                     string.Format(
                         "В систему ранее были внесены данные по начислениям л.с. {0}, при повторной загрузке данные будут заменены",
-                        this.GetValueOrDefault(row, "LS"));
+                         accNum);
             }
             else if (accIds.Count() > 1)
             {
+                var accOutNum = string.Empty;
+                if (this.HeadersIndexes.ContainsKey("LS"))
+                {
+                    accNum = row.AccNum;
+                }
+                
+                if (this.HeadersIndexes.ContainsKey("OUTERLS"))
+                {
+                    accOutNum = row.AccOuterNum;
+                }
+                
                 charge.Packet.Description = string.Format(
                     "Загружены начисления по л.с. с одинаковыми номерами. номер лс: '{0}', внешний номер лс:'{1}'",
-                    this.GetValueOrDefault(row, "LS"),
-                    this.GetValueOrDefault(row, "OUTERLS"));
+                    accNum,
+                    accOutNum);
             }
 
             var existCharge = this.existsChargeDict.Get(accIds.First());
@@ -282,7 +296,7 @@
             this.LogImport.CountAddedRows++;
         }
 
-        private void ApplyPayment(DbfRow row, long accId)
+        private void ApplyPayment(PersonalAccountPaymentEntity row, long accId)
         {
             if (this.summariesDict.ContainsKey(accId))
             {
@@ -290,11 +304,11 @@
             }
         }
 
-        private List<long> GetPersonalAccountId(DbfRow row, int rowNumber)
+        private List<long> GetPersonalAccountId(PersonalAccountPaymentEntity row, int rowNumber)
         {
             if (this.HeadersIndexes.ContainsKey("LS"))
             {
-                var accNum = row.GetValue("LS").ToString();
+                var accNum = row.AccNum;
 
                 if (this.personalAccountByNumDict.ContainsKey(accNum))
                 {
@@ -304,13 +318,13 @@
 
             if (this.HeadersIndexes.ContainsKey("OUTERLS"))
             {
-                var accOuterNum = row.GetValue("OUTERLS").ToString();
+                var accOuterNum = row.AccOuterNum;
 
                 if (this.personalAccountByOuterNumDict.ContainsKey(accOuterNum))
                 {
                     var rkc = this.personalAccountByOuterNumDict[accOuterNum];
 
-                    var rkcNum = this.HeadersIndexes.ContainsKey("EPD") ? row.GetValue("EPD").ToString() : string.Empty;
+                    var rkcNum = this.HeadersIndexes.ContainsKey("EPD") ? row.RkcNum : string.Empty;
 
                     if (!string.IsNullOrEmpty(rkcNum))
                     {
@@ -322,35 +336,26 @@
                             {
                                 return accIds;
                             }
-                            else
-                            {
-                                // в системе на найден РКЦ «значение поля EPD» 
-                                this.LogImport.Error(
-                                    "У РКЦ не установлен признак «проводит начисления»",
-                                    string.Format("У РКЦ '{0}' не установлен признак «проводит начисления» ", rkcNum));
-                                return null;
-                            }
-                        }
-                        else
-                        {
                             // в системе на найден РКЦ «значение поля EPD» 
-                            this.LogImport.Error("В заданном РКЦ {0} не найден ЛС, строка {1}".FormatUsing(rkcNum, rowNumber), accOuterNum);
+                            this.LogImport.Error(
+                                "У РКЦ не установлен признак «проводит начисления»",
+                                string.Format("У РКЦ '{0}' не установлен признак «проводит начисления» ", rkcNum));
                             return null;
                         }
+                        
+                        // в системе на найден РКЦ «значение поля EPD» 
+                        this.LogImport.Error("В заданном РКЦ {0} не найден ЛС, строка {1}".FormatUsing(rkcNum, rowNumber), accOuterNum);
+                        return null;
                     }
-                    else
-                    {
-                        var result = new List<long>();
-                        rkc.Values.ForEach(result.AddRange);
+                    
+                    var result = new List<long>();
+                    rkc.Values.ForEach(result.AddRange);
 
-                        return result;
-                    }
+                    return result;
                 }
-                else
-                {
-                    this.LogImport.Error("Не найден номер лицевого счета в заданном РКЦ", accOuterNum);
-                    return new List<long>();
-                }
+                
+                this.LogImport.Error("Не найден номер лицевого счета в заданном РКЦ", accOuterNum);
+                return new List<long>();
             }
 
             return new List<long>();

@@ -311,7 +311,7 @@
             },
             listeners: {
                 aftersetformdata: function (asp, record, form) {
-                    debugger;
+                    
                         var numberGji = record.get('NumberGji'),
                         requestId = record.getId();
 
@@ -559,7 +559,7 @@
                 }
             },
             onBeforeLoad: function (store, operation) {
-                debugger;
+                
                 operation = operation || {};
                 operation.params = operation.params || {};
 
@@ -892,7 +892,7 @@
     ],
 
     setCurrentId: function (id, numberGji) {
-        debugger;
+        
         this.requestId = id;
         var editWindow = Ext.ComponentQuery.query(this.editWindowSelector)[0],
             tabpanel = editWindow.down('.tabpanel'),

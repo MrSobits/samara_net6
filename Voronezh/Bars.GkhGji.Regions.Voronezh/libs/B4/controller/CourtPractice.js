@@ -127,7 +127,7 @@
                 B4.QuickMsg.msg('Сохранение', 'Данные успешно сохранены', 'success');
             },
             goToLicRequest: function () {
-                debugger;
+                
                 var me = this,
                     portal = me.controller.getController('PortalController'),
                     controllerEditName,
@@ -149,7 +149,7 @@
                     documentGji,
                     inspection,
                     defaultParams;
-                debugger;
+                
                 documentGji = record.get('DocumentGji');
                 inspectionId = record.get('InspId');
                 model = me.controller.getModel('InspectionGji');
@@ -233,7 +233,7 @@
 
             getDefaultParams: function (typeDocument) {
                 var result = {};
-                debugger;
+                
                 switch (typeDocument) {
                     //Распоряжение
                     case 10:
@@ -356,7 +356,7 @@
             listeners: {
                 aftersetformdata: function (asp, record, form) {
                     var me = this;
-                    debugger;
+                    
                     courtpracticeId = record.getId();
                     //кнопка перехода
                     if (record.get('DocumentGji')) {
@@ -546,7 +546,7 @@
     },
 
     onLaunch: function () {
-        debugger;
+        
         var grid = this.getMainView();        
         if (this.params && this.params.recId > 0) {
             var model = this.getModel('courtpractice.CourtPractice');

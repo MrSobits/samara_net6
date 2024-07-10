@@ -325,7 +325,6 @@
 
                 me.signNextPackage(packageIdsToSign, signingResult);
             }
-            debugger;
             me.signer.signXml(notSignedData, function (xml) {
                /* var dataToSend = [
                 {

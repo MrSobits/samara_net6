@@ -75,7 +75,7 @@
             listeners: {
                 aftersetformdata: function (asp, record, form) {
                     var me = this;
-                    debugger;
+                    
                     mkdlicrequestQueryId = record.getId();
                     var grid = form.down('mkdlicrequestqueryanswergrid'),
                         store = grid.getStore();

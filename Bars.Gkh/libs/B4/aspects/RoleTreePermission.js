@@ -109,7 +109,7 @@
             copyRoleForm = copyRoleWin.getForm(),
             toRoleId = copyRoleForm.getValues().Role,
             fromRoleId = asp.getRolesComboBox().value,
-            url = asp.copyUrl || '/GkhPermission/FiltredCopyRolePermission';
+            url = asp.copyUrl || '/Permission/FiltredCopyRolePermission';
 
         if (!copyRoleForm.isValid) {
             Ext.Msg.alert('Ошибка копирования', 'Не заполнено обязательное поле "Роль"');

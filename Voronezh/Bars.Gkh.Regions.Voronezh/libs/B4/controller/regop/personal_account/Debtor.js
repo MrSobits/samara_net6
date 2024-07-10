@@ -151,7 +151,7 @@
     },
 
     gotoClaimWork: function (grid, rowIndex, colIndex, param, param2, rec, asp) {
-        debugger;
+        
         var me = this,
             ownerType = rec.get('OwnerType'),
             claimWorkId = rec.get('ClaimworkId'),

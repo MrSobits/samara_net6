@@ -130,7 +130,7 @@
                  var asp = this,
                      params,
                      url;
-                 debugger;
+                 
                  asp.controller.mask('Отправка Email', asp.controller.getMainComponent());
                 var result = B4.Ajax.request(B4.Url.action('SendFKRToGZHIMail', 'ObjectCr', {
                     taskId: asp.controller.getContextValue(asp.controller.getMainComponent(), 'realityObjectId')

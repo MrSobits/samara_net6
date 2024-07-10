@@ -814,7 +814,6 @@
                 var obj = Ext.JSON.decode(response.responseText);
                 me.unmask();
                 Ext.Msg.alert('Результаты расчета', obj.message);
-                debugger;
                 var datefieldDSD = panel.down('#sfDebtStartDate');
                 var datefieldDED = panel.down('#sfDebtEndDate');
                 var debtCalcMethod = panel.down('#sfDebtCalcMethod');

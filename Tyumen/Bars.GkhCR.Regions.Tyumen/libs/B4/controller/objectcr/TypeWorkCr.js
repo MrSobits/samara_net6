@@ -393,7 +393,7 @@ Ext.define('B4.controller.objectcr.TypeWorkCr', {
                         me.unmask();
                     });
                 win.close();
-                debugger;
+                
                 var grid = this.componentQuery('objectcr_type_work_cr_grid[_active]'),
                     store = grid.getStore(),
                     id = this.controller.getContextValue(this.controller.getMainComponent(), 'objectcrId');
@@ -479,7 +479,7 @@ Ext.define('B4.controller.objectcr.TypeWorkCr', {
                 }
             },
             onSaveSuccess: function (asp, rec) {
-                debugger;
+                
                 // перекрываем чтобы окно не закрывалось после сохранения
                 if (rec.data.MaxCost && rec.data.MaxCost < rec.data.Sum) 
                     B4.QuickMsg.msg('Внимание!', 'Стоимость больше максимальной стоимости для работы', 'warning', 5000);

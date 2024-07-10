@@ -56,15 +56,17 @@
         if (store) {
             me.relayEvents(store, ['beforeload', 'load'], 'store');
         }
+
         me.mask = Ext.create('Ext.LoadMask', me, {
             msg: "Загрузка.."
         });
+
         me.callParent();
     },
 
     afterRender: function () {
         this.callParent(arguments);
-        if (this.store.isStore) {
+        if (this.store && this.store.isStore) {
             if (this.store.getCount() == 0) {
                 this.store.load();
             } else {
@@ -94,12 +96,16 @@
         me.removeAll();
         me.isBuilt = false;
     },
+
     build: function (store, records) {
         var me = this;
         
         if (!this.isBuilt && records) {
+
             if (records.length > 0) {
+
                 var stringTpl = '';
+
                 Ext.each(records, function(record, i) {
                     stringTpl += '<div class="task-list-item">' +
                         '<div class="task-list-item-inner">' +
@@ -117,8 +123,10 @@
                         '<div class="clearfix"></div>' +
                         '</div>' +
                         '</div>';
+
                 });
-            }            
+            }
+            
             me.add({
                 xtype: 'component',
                 ui: 'tasksportlet',
@@ -151,7 +159,8 @@
                     colorType = 'all';
 
                 me.fireEvent('openregistrtaskcontrol', colorType, inspectorId);
-            });            
+            });
+            
             this.isBuilt = true;
         }
     }

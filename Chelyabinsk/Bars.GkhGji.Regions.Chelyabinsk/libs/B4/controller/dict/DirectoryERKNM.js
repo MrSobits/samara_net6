@@ -42,7 +42,7 @@
             },
             listeners: {
                 aftersetformdata: function (asp, record, form) {
-                    debugger;
+                    
                     asp.controller.erknmId = record.getId();
                     var grid = form.down('recordDirectoryERKNMGrid'),
                         fileGrid = form.down('erknmDictFileGrid'),
@@ -85,7 +85,7 @@
                         dictGuid: code,
                     }
                 }).next(function (response) {
-                    debugger;
+                    
                     me.unmask();
                     var data = Ext.decode(response.responseText);
                     Ext.Msg.alert('Сообщение', data.data);

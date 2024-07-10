@@ -111,7 +111,6 @@
             listeners: {
                 beforesetpaneldata: function (asp, record) {
                     var panel = asp.getPanel();
-                    debugger;
                     if (!record) {
                         asp.controller.getAspect('lawsuitOwnerPrintAspect').loadReportStore();
                         asp.controller.getMainView()
@@ -187,7 +186,6 @@
                     records = grid.getSelectionModel().getSelection(),
                     recIds = [],
                     param = { DocumentId: me.controller.getContextValue(view, 'docId') };
-                debugger;
                 Ext.each(records,
                     function (rec) {
                         recIds.push(rec.get('Id'));
@@ -195,7 +193,6 @@
 
                 Ext.apply(me.params, { recIds: Ext.JSON.encode(recIds) });
                 me.params.userParams = Ext.JSON.encode(param);
-                debugger;
             },
             printReport: function (itemMenu) {
                 var me = this,
@@ -203,7 +200,6 @@
                 if (frame != null) {
                     Ext.destroy(frame);
                 }
-                debugger;
                 me.getUserParams(itemMenu.actionName);
 
                 if (Ext.JSON.decode(me.params.recIds).length == 0) {
@@ -212,7 +208,6 @@
                 }
 
                 Ext.apply(me.params, { reportId: itemMenu.actionName });
-                debugger;
                 me.mask('Обработка...');
                 B4.Ajax.request({
                     url: B4.Url.action('ReportLawsuitOnwerPrint', 'ClaimWorkReport'),
@@ -230,7 +225,6 @@
                         }
 
                         var id = resp.data ? resp.data : tryDecoded.data;
-                        debugger;
                         if (id > 0) {
                             Ext.DomHelper.append(document.body,
                                 {
@@ -264,7 +258,6 @@
                     records = grid.getSelectionModel().getSelection(),
                     recIds = [],
                     param = { DocumentId: me.controller.getContextValue(view, 'docId') };
-                debugger;
 
                 Ext.each(records,
                     function (rec) {
@@ -280,7 +273,6 @@
                 if (frame != null) {
                     Ext.destroy(frame);
                 }
-                debugger;
                 me.getUserParams(itemMenu.actionName);
 
                 if (Ext.JSON.decode(me.params.recIds).length == 0) {
@@ -289,7 +281,6 @@
                 }
 
                 Ext.apply(me.params, { reportId: itemMenu.actionName });
-                debugger;
                 me.mask('Обработка...');
                 B4.Ajax.request({
                     url: B4.Url.action('ReportLawsuitOnwerPrint', 'ClaimWorkReport'),
@@ -536,20 +527,16 @@
                     parentDoc = asp.controller.getCurrentDoc();
                     parentDocSSP = record.getId();
                     if (!record.data.Id) {
-                        debugger;
                         record.data.Lawsuit = asp.controller.getCurrentDoc();
                     }
-                    debugger;
                     var grid = form.down('lawsuitsspdocgrid'),
                         store = grid.getStore();
                     store.filter('docId', record.getId());
                 }
             },
             onBeforeLoadOwners: function (store, operation) {
-                debugger;
                 operation = operation || {};
                 operation.params = operation.params || {};
-                debugger;
                 operation.params.Lawsuit = parentDoc;
             },
             onChangeCheckBox: function (chkbox, newValue) {
@@ -586,7 +573,6 @@
             listeners: {
                 aftersetformdata: function (asp, record) {
                     if (!record.data.Id) {
-                        debugger;
                         record.data.LawSuitDebtWorkSSP = parentDocSSP;
                     }
 
@@ -604,7 +590,6 @@
             editWindowView: 'claimwork.LawsuitOwnerRepresentativeWindow',
             listeners: {
                 aftersetformdata: function (asp, rec, form) {
-                    debugger;
 
                     if (!rec.data.Rloi) {
                         rec.data.Rloi = Rloi;
@@ -1015,7 +1000,6 @@
     },
     calculateDebtStartDateClaim: function (btn) {
         var me = this;
-        debugger;
         view = me.getMainView();
         win = me.getCmpInContext('claimworkoperationwin');
         //  var rec = view.getRecord;
@@ -1067,14 +1051,12 @@
                 var obj = Ext.JSON.decode(response.responseText);
                 me.unmask();
                 Ext.Msg.alert('Результаты расчета', obj.message);
-                debugger;
                 var datefieldDSD = panel.down('#sfDebtStartDate');
                 var datefieldDED = panel.down('#sfDebtEndDate');
                 var debtCalcMethod = panel.down('#sfDebtCalcMethod');
                 datefieldDSD.setValue(obj.dateStartDebt);
                 datefieldDED.setValue(obj.DebtEndDate);
                 debtCalcMethod.setValue(obj.DebtCalcMethod);
-                debugger;
                 // curRec.Descriprion.setValue(obj.Descriprion);
 
                 var debtSumField = panel.down('#fDebtSum');
@@ -1096,7 +1078,6 @@
     },
     getcalculateDebtStartDateClaim: function (btn) {
         var me = this;
-        debugger;
         view = me.getMainView();
         //var curRec = me.getRecord();
         var docId = me.getContextValue(view, 'docId');
@@ -1115,14 +1096,12 @@
                 var obj = Ext.JSON.decode(response.responseText);
                 me.unmask();
                 Ext.Msg.alert('Результаты расчета', obj.message);
-                debugger;
                 var datefieldDSD = panel.down('#sfDebtStartDate');
                 var datefieldDED = panel.down('#sfDebtEndDate');
                 var debtCalcMethod = panel.down('#sfDebtCalcMethod');
                 datefieldDSD.setValue(obj.dateStartDebt);
                 datefieldDED.setValue(obj.DebtEndDate);
                 debtCalcMethod.setValue(obj.DebtCalcMethod);
-                debugger;
                 // curRec.Descriprion.setValue(obj.Descriprion);
 
                 var debtSumField = panel.down('#fDebtSum');
@@ -1142,7 +1121,6 @@
     },
 
     calculateAccept: function (btn) {
-        debugger;
         var me = this,
             win = btn.up('claimworkoperationwin'),
             grid = win.down('grid'),
@@ -1182,7 +1160,6 @@
                     var obj = Ext.JSON.decode(response.responseText);
                     me.unmask();
                     Ext.Msg.alert('Результаты расчета', obj.message);
-                    debugger;
                     var datefieldDSD = panel.down('#sfDebtStartDate');
                     var datefieldDED = panel.down('#sfDebtEndDate');
                     var debtCalcMethod = panel.down('#sfDebtCalcMethod');
@@ -1213,7 +1190,6 @@
 
     },
     calculateDebtStartDate: function (btn) {
-        debugger;
         var me = this,
             win = me.getCmpInContext('claimworkoperationwin'),
             view = me.getMainView();
@@ -1264,7 +1240,6 @@
                     var obj = Ext.JSON.decode(response.responseText);
                     me.unmask();
                     Ext.Msg.alert('Результаты расчета', obj.message);
-                    debugger;
                     var datefieldDSD = panel.down('#sfDebtStartDate');
                     var datefieldDED = panel.down('#sfDebtEndDate');
                     var debtCalcMethod = panel.down('#sfDebtCalcMethod');
@@ -1416,9 +1391,7 @@
             }
         })
             .next(function (response) {
-                //debugger;
                 var obj = Ext.JSON.decode(response.responseText);
-                //debugger;
                 me.unmask();
                 lawgrig.getStore().load();
                 var alertWindow = Ext.Msg.alert('Результаты добавления', obj.message);
@@ -1463,7 +1436,6 @@
             });
     },
     genNumPetition: function (btn) {
-        debugger;
 
         var me = this,
             view = me.getMainView(),

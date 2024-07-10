@@ -51,7 +51,7 @@ Ext.define('B4.aspects.GjiDocument', {
     },
 
     onBeforeSetData: function () {
-        debugger;
+        
         var groups = Ext.ComponentQuery.query(this.editPanelSelector + ' buttongroup');
         var idx = 0;
         //теперь пробегаем по массиву groups и дизаблим все группы кнопок на панели
@@ -68,7 +68,7 @@ Ext.define('B4.aspects.GjiDocument', {
     },
 
     onAfterSetPanelData: function () {
-        debugger;
+        
         var groups = Ext.ComponentQuery.query(this.editPanelSelector + ' buttongroup');
         var idx = 0;
         //теперь пробегаем по массиву groups и активируем все группы кнопок на панели

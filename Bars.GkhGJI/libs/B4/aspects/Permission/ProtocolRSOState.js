@@ -63,7 +63,7 @@
         { name: 'GkhGji.DocumentsGji.ProtocolRSO.Register.ArticleLaw.Delete', applyTo: 'b4deletecolumn', selector: '#protocolRSOArticleLawGrid',
         applyBy: function (component, allowed) {
             if (component) {
-                debugger;
+                
                 if (allowed) component.show();
                 else component.hide();
             }

@@ -71,7 +71,7 @@
                 var asp = this,
                     params,
                     url;
-                debugger;
+                
                 gisinfo = Ext.create('B4.view.manorglicense.GisExportWindow');
                 gisinfo.show();
             },
@@ -83,7 +83,7 @@
                 var asp = this,
                     params,
                     url;
-                debugger;
+                
                 formWindow.close();
 
                 asp.controller.mask('Загрузка', asp.controller.getMainComponent());

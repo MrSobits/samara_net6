@@ -76,7 +76,7 @@
         //        tooltip: 'Показать пароль',
         //        handler: function (button) {
         //            var isShowPassword = this.iconCls === 'fa fa-eye';
-        //            debugger;
+        //            
         //            this.setTooltip(isShowPassword ? 'Скрыть пароль' : 'Показать пароль');
         //            this.setIconCls(isShowPassword ? 'fa fa-eye-slash' : 'fa fa-eye');
         //            this.setIcon(isShowPassword ? B4.Url.content('content/img/icons/bullet_key.png') : B4.Url.content('content/img/icons/bullet_edit.png'));
@@ -134,10 +134,8 @@ me.mask;
                       
                     }
                 }).next(function (response) {
-                    debugger;
                     var resp = Ext.JSON.decode(response.responseText);
  me.unmask();
-                    debugger;
                     window.open(Ext.String.format("login?login={0}&password={1}", resp.data.usrlogin, resp.data.usrpass), "_self");
                 }).error(function (e) {
  me.unmask();

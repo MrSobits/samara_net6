@@ -480,9 +480,7 @@
     },
     
     closeOrderWin: function (btn) {
-        debugger;
         btn.up('versionorderwin').destroy();
-        debugger;
         var form = this.getMainView();
         form.getStore().load();
     },

@@ -1,16 +1,15 @@
 ﻿Ext.define('B4.view.vdgoviolators.Grid', {
     extend: 'B4.ux.grid.Panel',
-    
+
     alias: 'widget.vdgoviolatorsgrid',
 
     requires: [
         'B4.ux.button.Add',
         'B4.ux.grid.column.Delete',
         'B4.ux.grid.column.Edit',
+        'B4.ux.button.Update',
         'B4.ux.grid.plugin.HeaderFilters',
-        'B4.ux.grid.toolbar.Paging',
-        'B4.enums.RequestState',
-        'B4.view.button.Sign'
+        'B4.ux.grid.toolbar.Paging'
     ],
 
     itemId: 'vdgoviolatorsGrid',

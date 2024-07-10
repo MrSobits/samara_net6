@@ -123,7 +123,7 @@
                 actions[this.editFormSelector + ' button[action=ERKNMRequest]'] = { 'click': { fn: this.ERKNMRequest, scope: this } };
             },
             onBeforeLoadReason: function (field, options, store) {
-                debugger;
+                
                 options = options || {};
                 options.params = options.params || {};
                 options.params.ERKNMDocumentType = 20;
@@ -132,7 +132,6 @@
                 var me = this,
                     panel = btn.up('#admonitioneditwindow'),
                     record = panel.getForm().getRecord();
-                debugger;
                 var recId = record.getId();
                 Ext.Msg.confirm('Запрос в ЕРКНМ', 'Подтвердите размещение проверки в ЕРКНМ', function (result) {
                     if (result == 'yes') {
@@ -222,8 +221,9 @@
                  aftersetformdata: function(asp, rec, form) {
                      var me = this,
                          appealCitsAdmonition = rec.getId();
-                     debugger;
+                     
                      me.controller.getAspect('admonitionPrintAspect').loadReportStore();
+                     
                      var grid = form.down('admonVoilationGrid'),
                          store = grid.getStore();
                      var grid_annex = form.down('admonAnnexGrid'),
@@ -293,7 +293,6 @@
                     var recordIds = [];
 
                     records.each(function (rec, index) { recordIds.push(rec.get('Id')); });
-                    debugger;
                     if (recordIds[0] > 0) {
                         asp.controller.mask('Сохранение', asp.controller.getMainComponent());
                         B4.Ajax.request(B4.Url.action('SaveAppeal', 'AdmonitionOperations', {
@@ -650,6 +649,7 @@
     ],
 
     index: function (operation) {
+        
         var me = this,
             view = me.getMainView() || Ext.widget('appealcitsMainPanel');
         me.params = {};
@@ -664,6 +664,7 @@
     },
 
     init: function () {
+        
         var me = this,
             actions = {};
         me.params = {};

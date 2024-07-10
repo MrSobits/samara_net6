@@ -427,7 +427,7 @@
                 select: {
                     fn: function (combo, records) {
                         combo.clearHouseFields();
-                        debugger;
+                        
                         var record = records[0];
                         if (record) {
 
@@ -527,7 +527,7 @@
             listeners: {
                 change: {
                     fn: function () {
-                        debugger;
+                        
                         this.onChangeStructureType();
                         this.fillAddressField();
                     },
@@ -545,7 +545,7 @@
              listeners: {
                  change: {
                      fn: function () {
-                         //debugger;
+                         //
                          this.tfRoom.setDisabled(this.tfFlat.getValue());
                          this.tfOffice.setDisabled(this.tfFlat.getValue());
                          this.fillAddressField();

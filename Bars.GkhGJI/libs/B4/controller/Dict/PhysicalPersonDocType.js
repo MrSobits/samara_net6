@@ -40,12 +40,12 @@
     ],
 
     index: function () {
-        debugger;
+        
         var view = this.getMainView() || Ext.widget('physicalpersondoctypegrid');
-        debugger;
+        
         this.bindContext(view);
         this.application.deployView(view);
-        debugger;
+        
         this.getStore('dict.PhysicalPersonDocType').load();
     }
 });

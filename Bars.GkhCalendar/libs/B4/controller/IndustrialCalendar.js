@@ -168,7 +168,7 @@
                 });
 
                 if (day.id > 0) {
-                    debugger;
+                    
                     element.insert(1, Ext.create('Ext.button.Button', {
                         style: {
                             background: btnBackground

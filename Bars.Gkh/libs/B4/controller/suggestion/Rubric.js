@@ -58,7 +58,6 @@
             },
             listeners: {
                 aftersetformdata: function (asp, rec, win) {
-                    debugger;
                     var rubricId = rec.get('Id');
                     if (rubricId > 0) {
                         asp.controller.parentId = rubricId;
@@ -134,7 +133,6 @@
             editWindowView: 'suggestion.rubric.TypeProblemEditWindow',
             listeners: {
                 aftersetformdata: function (asp, rec, win) {
-                    debugger;
                     rec.set('Rubric', asp.controller.parentId);
                 }
             }

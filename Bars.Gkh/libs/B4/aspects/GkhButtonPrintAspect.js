@@ -85,7 +85,7 @@ Ext.define('B4.aspects.GkhButtonPrintAspect', {
 
         var urlParams = Ext.urlEncode(me.params);
         var newUrl = Ext.urlAppend(Ext.String.format('/{0}/{1}/?{2}', me.printController, me.printAction, urlParams), '_dc=' + (new Date().getTime()));
-        debugger;
+        
         newUrl = B4.Url.action(newUrl);
         if (me.openInNewWindow()) {
             window.open(newUrl);

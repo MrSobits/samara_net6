@@ -5,8 +5,7 @@ namespace Bars.Gkh.Controllers.Administration
     using Bars.B4;
 
     using Microsoft.AspNetCore.Mvc;
-
-    class ExportController : BaseController
+    public class ExportController : BaseController
     {
         public ActionResult GetManagementSysReport(BaseParams baseParams)
         {
